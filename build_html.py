@@ -289,7 +289,7 @@ def get_expanded_struct(type_name: str) -> str:
     return None
 
 
-def generate_gogram_example(item: dict, category: str) -> str:
+def generate_gogram_example(item: dict, category: str, type_map: dict = None) -> str:
     """
     Generate Gogram usage example for a method or constructor.
     
@@ -297,12 +297,21 @@ def generate_gogram_example(item: dict, category: str) -> str:
     - Methods with ≤5 required params use ONLY positional arguments
     - Methods with >5 required params use ONLY a Params struct
     - Constructors are always created as struct literals
+    - If a constructor name matches a type name, add Obj suffix
     """
     import re
     
     name = item['name']
     go_name = to_go_name(name)
     fields = item.get('fields', [])
+    
+    # Check if constructor name conflicts with a type name
+    # If so, Gogram uses the Obj suffix to differentiate
+    if category == 'constructor' and type_map:
+        # Get the base name without namespace
+        base_name = name.split('.')[-1] if '.' in name else name
+        if base_name in type_map:
+            go_name = go_name + 'Obj'
     
     if category == 'method':
         # Collect required and optional parameters
@@ -702,6 +711,11 @@ header .search-container {
     font-family: 'JetBrains Mono', monospace;
     font-size: 13px;
     font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+    min-width: 0;
 }
 
 .search-results-dropdown .search-item-type {
@@ -1305,22 +1319,30 @@ def generate_header(title: str, root_path: str, search_data: list = None) -> str
                     );
                 }});
                 
-                // Sort: methods first, then constructors, then types
+                // Sort: methods first, then types, then constructors
                 // Within each category, prioritize name matches over desc matches
                 results.sort((a, b) => {{
-                    const typeOrder = {{'method': 0, 'constructor': 1, 'type': 2}};
+                    const typeOrder = {{'method': 0, 'type': 1, 'constructor': 2}};
+                    const aOrder = typeOrder[a.type] ?? 3;
+                    const bOrder = typeOrder[b.type] ?? 3;
+                    
+                    // First sort by type (methods first)
+                    if (aOrder !== bOrder) return aOrder - bOrder;
+                    
+                    // Then prioritize name matches within same type
                     const aNameMatch = queryParts.some(p => a.name.toLowerCase().includes(p));
                     const bNameMatch = queryParts.some(p => b.name.toLowerCase().includes(p));
-                    
-                    // Prioritize name matches
                     if (aNameMatch && !bNameMatch) return -1;
                     if (!aNameMatch && bNameMatch) return 1;
                     
-                    // Then by type
-                    return (typeOrder[a.type] || 2) - (typeOrder[b.type] || 2);
+                    return 0;
                 }});
                 
-                const limitedResults = results.slice(0, 20);
+                // Show up to 12 results per category to ensure all types are visible
+                const methodResults = results.filter(r => r.type === 'method').slice(0, 12);
+                const typeResults = results.filter(r => r.type === 'type').slice(0, 12);
+                const constructorResults = results.filter(r => r.type === 'constructor').slice(0, 12);
+                const limitedResults = [...methodResults, ...typeResults, ...constructorResults];
                 
                 if (limitedResults.length === 0) {{
                     searchDropdown.innerHTML = '<div style="padding: 12px 16px; color: var(--text-secondary);">No results found</div>';
@@ -1790,7 +1812,7 @@ def generate_detail_page(item: dict, category: str, search_data: list, type_map:
 """
     
     # Gogram usage example
-    example = generate_gogram_example(item, category)
+    example = generate_gogram_example(item, category, type_map)
     highlighted_example = highlight_go_code(example)
     html += f"""
         <div class="example-section">
