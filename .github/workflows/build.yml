@@ -1,0 +1,61 @@
+name: Build TL Documentation
+
+on:
+  workflow_dispatch:
+    inputs:
+      schema_url:
+        description: 'URL to schema.tl file (optional)'
+        required: false
+        default: ''
+      workers:
+        description: 'Number of parallel workers for scraping'
+        required: false
+        default: '15'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Download schema.tl (if URL provided)
+        if: ${{ github.event.inputs.schema_url != '' }}
+        run: |
+          curl -o schema.tl "${{ github.event.inputs.schema_url }}"
+
+      - name: Scrape TL documentation
+        run: |
+          python tl_doc_scraper.py schema.tl -o output.json -w ${{ github.event.inputs.workers }}
+
+      - name: Build HTML documentation
+        run: |
+          python build_html.py output.json -o public
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'docs: update TL documentation'
+          title: 'Update TL Documentation'
+          body: |
+            Automated update of TL documentation.
+            
+            - Scraped latest schema documentation
+            - Regenerated HTML pages
+          branch: docs/update-tl-docs
+          delete-branch: true
+          add-paths: |
+            public/**
+            output.json
