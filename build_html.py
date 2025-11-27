@@ -1157,6 +1157,7 @@ tr:hover td {
     .item-desc {
         text-align: left;
         white-space: normal;
+        font-size: 13px;
     }
     
     .stats {
@@ -1165,6 +1166,10 @@ tr:hover td {
     
     .page-header h1 {
         font-size: 1.25rem;
+    }
+    
+    .page-header .description {
+        font-size: 14px;
     }
     
     .result-section {
@@ -1179,6 +1184,14 @@ tr:hover td {
     
     th, td {
         padding: 8px 10px;
+    }
+    
+    .about-section p {
+        font-size: 14px;
+    }
+    
+    .hero-section p {
+        font-size: 14px !important;
     }
 }
 
@@ -1208,7 +1221,7 @@ def generate_header(title: str, root_path: str, search_data: list = None) -> str
         search_html = f"""
         <div class="search-container">
             <div class="search-wrapper">
-                <input type="text" id="search-input" placeholder="Search constructors and methods..." autocomplete="off">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
                 <div id="search-dropdown" class="search-results-dropdown hidden"></div>
             </div>
         </div>
@@ -1278,15 +1291,40 @@ def generate_header(title: str, root_path: str, search_data: list = None) -> str
                     return;
                 }}
                 
-                const results = searchData.filter(item => 
-                    item.name.toLowerCase().includes(query) || 
-                    item.desc.toLowerCase().includes(query)
-                ).slice(0, 15);
+                // Split query into parts for wildcard matching
+                const queryParts = query.split(/[.\s]+/).filter(p => p.length > 0);
                 
-                if (results.length === 0) {{
+                const results = searchData.filter(item => {{
+                    const nameLower = item.name.toLowerCase();
+                    const descLower = item.desc.toLowerCase();
+                    
+                    // Check if ALL query parts match somewhere in name or desc
+                    return queryParts.every(part => 
+                        nameLower.includes(part) || descLower.includes(part)
+                    );
+                }});
+                
+                // Sort: methods first, then constructors, then types
+                // Within each category, prioritize name matches over desc matches
+                results.sort((a, b) => {{
+                    const typeOrder = {{'method': 0, 'constructor': 1, 'type': 2}};
+                    const aNameMatch = queryParts.some(p => a.name.toLowerCase().includes(p));
+                    const bNameMatch = queryParts.some(p => b.name.toLowerCase().includes(p));
+                    
+                    // Prioritize name matches
+                    if (aNameMatch && !bNameMatch) return -1;
+                    if (!aNameMatch && bNameMatch) return 1;
+                    
+                    // Then by type
+                    return (typeOrder[a.type] || 2) - (typeOrder[b.type] || 2);
+                }});
+                
+                const limitedResults = results.slice(0, 20);
+                
+                if (limitedResults.length === 0) {{
                     searchDropdown.innerHTML = '<div style="padding: 12px 16px; color: var(--text-secondary);">No results found</div>';
                 }} else {{
-                    searchDropdown.innerHTML = results.map(item => `
+                    searchDropdown.innerHTML = limitedResults.map(item => `
                         <a href="{root_path}/${{item.path}}" class="search-item">
                             <span class="search-item-name">${{item.name}}</span>
                             <span class="search-item-type ${{item.type}}">${{item.type}}</span>
@@ -1347,43 +1385,38 @@ def generate_index_page(data: dict) -> str:
     html = generate_header("Home", ".", search_data)
     html += f"""
     <main class="container">
-        <div class="hero-section" style="text-align: center; margin-bottom: 40px; padding: 30px 0;">
+        <div class="hero-section" style="text-align: center; margin-bottom: 32px; padding: 24px 0;">
             <h1 style="font-size: 2.5rem; font-weight: 600; margin-bottom: 12px;">Gogram TL Reference</h1>
-            <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 700px; margin: 0 auto 16px;">
+            <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 700px; margin: 0 auto 16px; line-height: 1.6;">
                 Complete documentation for Telegram's Type Language (TL) Schema, optimized for <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--accent);">Gogram</a> development.
             </p>
-            <div style="display: inline-flex; align-items: center; gap: 8px; background: var(--bg-secondary); padding: 8px 16px; border-radius: 20px; border: 1px solid var(--border);">
-                <span style="color: var(--text-secondary); font-size: 13px;">TL Schema Layer</span>
-                <span style="background: var(--accent); color: white; padding: 2px 10px; border-radius: 12px; font-weight: 600; font-size: 13px;">{TL_VERSION}</span>
+            <div style="display: inline-flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center;">
+                <div style="display: inline-flex; align-items: center; gap: 8px; background: var(--bg-secondary); padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border);">
+                    <span style="color: var(--text-secondary); font-size: 12px;">Layer</span>
+                    <span style="background: var(--accent); color: white; padding: 2px 8px; border-radius: 10px; font-weight: 600; font-size: 12px;">{TL_VERSION}</span>
+                </div>
+                <div style="display: inline-flex; align-items: center; gap: 6px; background: var(--bg-secondary); padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border);">
+                    <span style="color: var(--constructor); font-weight: 600; font-size: 12px;">{len(constructors)}</span>
+                    <span style="color: var(--text-secondary); font-size: 12px;">Constructors</span>
+                </div>
+                <div style="display: inline-flex; align-items: center; gap: 6px; background: var(--bg-secondary); padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border);">
+                    <span style="color: var(--method); font-weight: 600; font-size: 12px;">{len(methods)}</span>
+                    <span style="color: var(--text-secondary); font-size: 12px;">Methods</span>
+                </div>
             </div>
         </div>
         
-        <div class="about-section" style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-bottom: 32px;">
+        <div class="about-section" style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-bottom: 32px; text-align: left;">
             <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 12px;">About TL Types</h2>
-            <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
+            <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px; text-align: left;">
                 The <strong>Type Language (TL)</strong> is a schema language used by Telegram to define its API. It describes constructors (data types) and methods (API calls) that form the MTProto protocol.
             </p>
-            <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
+            <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px; text-align: left;">
                 In <strong>Gogram</strong>, each TL constructor is represented as a Go struct in the <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">tg</code> package. For example, <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">inputMediaPhoto</code> becomes <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">tg.InputMediaPhoto</code>.
             </p>
-            <p style="color: var(--text-secondary); line-height: 1.7;">
+            <p style="color: var(--text-secondary); line-height: 1.7; text-align: left;">
                 <strong>Types</strong> are abstract interfaces that can be implemented by multiple constructors. For instance, <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">InputMedia</code> is implemented by <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">InputMediaPhoto</code>, <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">InputMediaDocument</code>, and others.
             </p>
-        </div>
-        
-        <div class="stats">
-            <div class="stat-card">
-                <h3>{len(constructors)}</h3>
-                <p>Constructors</p>
-            </div>
-            <div class="stat-card">
-                <h3>{len(methods)}</h3>
-                <p>Methods</p>
-            </div>
-            <div class="stat-card">
-                <h3>{len(constructors) + len(methods)}</h3>
-                <p>Total Entries</p>
-            </div>
         </div>
         
         <div class="section">
