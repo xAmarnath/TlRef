@@ -42,6 +42,7 @@ jobs:
       - name: Build HTML documentation
         run: |
           python build_html.py output.json -o public
+          cp output.json public/tl.json
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
