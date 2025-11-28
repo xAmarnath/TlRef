@@ -969,8 +969,7 @@ header .search-container {
     border: 1px solid var(--border);
     color: var(--text-primary);
     line-height: 1.7;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+    white-space: pre;
 }
 
 /* Go syntax highlighting */
@@ -1229,8 +1228,8 @@ footer a:hover {
 """
 
 
-def generate_header(title: str, root_path: str, search_data: list = None) -> str:
-    """Generate the common header HTML."""
+def generate_header(title: str, root_path: str, search_data: list = None, description: str = None, item_type: str = None) -> str:
+    """Generate the common header HTML with Instant View support."""
     search_html = ""
     if search_data is not None:
         search_html = f"""
@@ -1242,12 +1241,32 @@ def generate_header(title: str, root_path: str, search_data: list = None) -> str
         </div>
 """
     
+    # Meta description for SEO and Instant View
+    meta_desc = description if description else f"TL Schema documentation for {title}"
+    meta_desc = meta_desc[:160]  # Truncate for meta tag
+    
+    # Open Graph and Telegram Instant View meta tags
+    og_type = "article" if item_type in ('method', 'constructor', 'type') else "website"
+    
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{escape(title)} - Gogram TL Reference</title>
+    <meta name="description" content="{escape(meta_desc)}">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="{escape(title)} - Gogram TL Reference">
+    <meta property="og:description" content="{escape(meta_desc)}">
+    <meta property="og:type" content="{og_type}">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    
     <style>{CSS_STYLES}</style>
 </head>
 <body>
@@ -1546,7 +1565,8 @@ def generate_type_page(type_name: str, constructors: list, search_data: list, ty
     """Generate a page for a generic/interface type showing all its constructors."""
     root_path = ".."
     
-    html = generate_header(type_name, root_path, search_data)
+    type_desc = f"Abstract type representing one of {len(constructors)} possible constructors."
+    html = generate_header(type_name, root_path, search_data, type_desc, 'type')
     
     breadcrumb = f'<a href="{root_path}/index.html">Home</a> <span>›</span> <a href="{root_path}/types.html">Types</a> <span>›</span> {type_name}'
     
@@ -1554,16 +1574,17 @@ def generate_type_page(type_name: str, constructors: list, search_data: list, ty
     
     html += f"""
     <main class="container">
+        <article>
         <div class="breadcrumb">{breadcrumb}</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
             <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer {TL_VERSION}</span>
         </div>
         
-        <div class="page-header">
+        <header class="page-header">
             <h1>{escape(type_name)}</h1>
-            <p class="description">Abstract type representing one of {len(constructors)} possible constructors.</p>
-        </div>
+            <p class="description">{type_desc}</p>
+        </header>
         
         <div class="badges">
             <span class="badge badge-type">Type</span>
@@ -1610,6 +1631,7 @@ def generate_type_page(type_name: str, constructors: list, search_data: list, ty
     html += highlight_go_code(example)
     html += """</pre>
         </div>
+        </article>
     </main>
 """
     
@@ -1675,10 +1697,10 @@ def generate_detail_page(item: dict, category: str, search_data: list, type_map:
     path = get_output_path(item['name'], category)
     root_path = get_relative_root(path)
     
-    html = generate_header(item['name'], root_path, search_data)
-    
     # Clean the description
     description = clean_description(item.get('description', 'No description available'))
+    
+    html = generate_header(item['name'], root_path, search_data, description, category)
     
     # Breadcrumb
     if '.' in item['name']:
@@ -1689,16 +1711,17 @@ def generate_detail_page(item: dict, category: str, search_data: list, type_map:
     
     html += f"""
     <main class="container">
+        <article>
         <div class="breadcrumb">{breadcrumb}</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
             <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer {TL_VERSION}</span>
         </div>
         
-        <div class="page-header">
+        <header class="page-header">
             <h1>{escape(item['name'])}</h1>
             <p class="description">{escape(description)}</p>
-        </div>
+        </header>
         
         <div class="badges">
             <span class="badge badge-{category}">{category}</span>
@@ -1740,9 +1763,10 @@ def generate_detail_page(item: dict, category: str, search_data: list, type_map:
 """
         for field in fields:
             field_desc = clean_description(field.get('description', ''))
+            go_field_name = to_go_name(field['name'])
             html += f"""
                         <tr>
-                            <td class="field-name">{escape(field['name'])}</td>
+                            <td class="field-name">{escape(go_field_name)}</td>
                             <td class="field-type">{linkify_type(field['type'], root_path, type_map)}</td>
                             <td>{escape(field_desc)}</td>
                         </tr>
@@ -1819,6 +1843,7 @@ def generate_detail_page(item: dict, category: str, search_data: list, type_map:
             <h2>Gogram Example</h2>
             <pre class="example-code">{highlighted_example}</pre>
         </div>
+        </article>
 """
     
     html += """
