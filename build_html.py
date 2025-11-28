@@ -1357,10 +1357,9 @@ def generate_header(title: str, root_path: str, search_data: list = None, descri
                     return 0;
                 }});
                 
-                // Show up to 12 results per category to ensure all types are visible
-                const methodResults = results.filter(r => r.type === 'method').slice(0, 12);
-                const typeResults = results.filter(r => r.type === 'type').slice(0, 12);
-                const constructorResults = results.filter(r => r.type === 'constructor').slice(0, 12);
+                const methodResults = results.filter(r => r.type === 'method');
+                const typeResults = results.filter(r => r.type === 'type');
+                const constructorResults = results.filter(r => r.type === 'constructor');
                 const limitedResults = [...methodResults, ...typeResults, ...constructorResults];
                 
                 if (limitedResults.length === 0) {{
