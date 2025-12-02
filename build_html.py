@@ -1329,12 +1329,12 @@ def generate_header(title: str, root_path: str, search_data: list = None, descri
                 const queryParts = query.split(/[.\s]+/).filter(p => p.length > 0);
                 
                 const results = searchData.filter(item => {{
-                    const nameLower = item.name.toLowerCase();
+                    const searchNameLower = item.searchName;
                     const descLower = item.desc.toLowerCase();
                     
-                    // Check if ALL query parts match somewhere in name or desc
+                    // Check if ALL query parts match somewhere in searchName or desc
                     return queryParts.every(part => 
-                        nameLower.includes(part) || descLower.includes(part)
+                        searchNameLower.includes(part) || descLower.includes(part)
                     );
                 }});
                 
@@ -1349,8 +1349,8 @@ def generate_header(title: str, root_path: str, search_data: list = None, descri
                     if (aOrder !== bOrder) return aOrder - bOrder;
                     
                     // Then prioritize name matches within same type
-                    const aNameMatch = queryParts.some(p => a.name.toLowerCase().includes(p));
-                    const bNameMatch = queryParts.some(p => b.name.toLowerCase().includes(p));
+                    const aNameMatch = queryParts.some(p => a.searchName.includes(p));
+                    const bNameMatch = queryParts.some(p => b.searchName.includes(p));
                     if (aNameMatch && !bNameMatch) return -1;
                     if (!aNameMatch && bNameMatch) return 1;
                     
@@ -1367,7 +1367,7 @@ def generate_header(title: str, root_path: str, search_data: list = None, descri
                 }} else {{
                     searchDropdown.innerHTML = limitedResults.map(item => `
                         <a href="{root_path}/${{item.path}}" class="search-item">
-                            <span class="search-item-name">${{item.name}}</span>
+                            <span class="search-item-name">${{item.goDisplay}}</span>
                             <span class="search-item-type ${{item.type}}">${{item.type}}</span>
                         </a>
                     `).join('');
@@ -1410,14 +1410,28 @@ def generate_index_page(data: dict) -> str:
     methods = data.get('methods', [])
     metadata = data.get('metadata', {})
     
-    # Build search data
-    search_data = [
-        {"name": item['name'], "desc": item.get('description', ''), "type": "constructor", "path": get_output_path(item['name'], 'constructor')}
-        for item in constructors
-    ] + [
-        {"name": item['name'], "desc": item.get('description', ''), "type": "method", "path": get_output_path(item['name'], 'method')}
-        for item in methods
-    ]
+    # Build search data for index page
+    search_data = []
+    for item in constructors:
+        go_name = to_go_name(item['name'])
+        search_data.append({
+            "name": item['name'],
+            "goDisplay": go_name,
+            "searchName": go_name.lower() + " " + item['name'].lower().replace('.', ' '),
+            "desc": item.get('description', ''),
+            "type": "constructor",
+            "path": get_output_path(item['name'], 'constructor')
+        })
+    for item in methods:
+        go_name = to_go_name(item['name'])
+        search_data.append({
+            "name": item['name'],
+            "goDisplay": go_name,
+            "searchName": go_name.lower() + " " + item['name'].lower().replace('.', ' '),
+            "desc": item.get('description', ''),
+            "type": "method",
+            "path": get_output_path(item['name'], 'method')
+        })
     
     # Get recent items (first 10 of each)
     recent_constructors = constructors[:10]
@@ -1468,9 +1482,10 @@ def generate_index_page(data: dict) -> str:
     for item in recent_constructors:
         path = get_output_path(item['name'], 'constructor')
         desc = clean_description(item.get('description', '')[:100]) or 'No description'
+        go_name = to_go_name(item['name'])
         html += f"""
-                <a href="{path}" class="item" data-name="{escape(item['name'].lower())}" data-type="constructor">
-                    <span class="item-name">{escape(item['name'])}</span>
+                <a href="{path}" class="item" data-name="{escape(go_name.lower())} {escape(item['name'].lower())}" data-type="constructor">
+                    <span class="item-name">{escape(go_name)}</span>
                     <span class="item-desc">{escape(desc)}</span>
                 </a>
 """
@@ -1488,9 +1503,10 @@ def generate_index_page(data: dict) -> str:
     for item in recent_methods:
         path = get_output_path(item['name'], 'method')
         desc = clean_description(item.get('description', '')[:100]) or 'No description'
+        go_name = to_go_name(item['name'])
         html += f"""
-                <a href="{path}" class="item" data-name="{escape(item['name'].lower())}" data-type="method">
-                    <span class="item-name">{escape(item['name'])}</span>
+                <a href="{path}" class="item" data-name="{escape(go_name.lower())} {escape(item['name'].lower())}" data-type="method">
+                    <span class="item-name">{escape(go_name)}</span>
                     <span class="item-desc">{escape(desc)}</span>
                 </a>
 """
@@ -1526,9 +1542,10 @@ def generate_list_page(items: list, category: str, title: str, search_data: list
     for item in items:
         path = get_output_path(item['name'], category)
         desc = clean_description(item.get('description', '')[:100]) or 'No description'
+        go_name = to_go_name(item['name'])
         html += f"""
-            <a href="{path}" class="item" data-name="{escape(item['name'].lower())}">
-                <span class="item-name">{escape(item['name'])}</span>
+            <a href="{path}" class="item" data-name="{escape(go_name.lower())} {escape(item['name'].lower())}">
+                <span class="item-name">{escape(go_name)}</span>
                 <span class="item-desc">{escape(desc)}</span>
             </a>
 """
@@ -1581,7 +1598,7 @@ def generate_type_page(type_name: str, constructors: list, search_data: list, ty
         </div>
         
         <header class="page-header">
-            <h1>{escape(type_name)}</h1>
+            <h1>{escape(go_type_name)}</h1>
             <p class="description">{type_desc}</p>
         </header>
         
@@ -1601,9 +1618,10 @@ def generate_type_page(type_name: str, constructors: list, search_data: list, ty
     for item in constructors:
         path = get_output_path(item['name'], 'constructor')
         desc = clean_description(item.get('description', '')[:100]) or 'No description'
+        go_name = to_go_name(item['name'])
         html += f"""
-            <a href="{root_path}/{path}" class="item" data-name="{escape(item['name'].lower())}">
-                <span class="item-name">{escape(item['name'])}</span>
+            <a href="{root_path}/{path}" class="item" data-name="{escape(go_name.lower())} {escape(item['name'].lower())}">
+                <span class="item-name">{escape(go_name)}</span>
                 <span class="item-desc">{escape(desc)}</span>
             </a>
 """
@@ -1657,9 +1675,10 @@ def generate_types_list_page(type_map: dict, search_data: list) -> str:
     
     for type_name, constructors in sorted(type_map.items()):
         desc = f"{len(constructors)} constructor{'s' if len(constructors) != 1 else ''}"
+        go_type = to_go_name(type_name)
         html += f"""
-            <a href="types/{type_name}.html" class="item" data-name="{escape(type_name.lower())}">
-                <span class="item-name">{escape(type_name)}</span>
+            <a href="types/{type_name}.html" class="item" data-name="{escape(go_type.lower())} {escape(type_name.lower())}">
+                <span class="item-name">{escape(go_type)}</span>
                 <span class="item-desc">{desc}</span>
             </a>
 """
@@ -1699,14 +1718,18 @@ def generate_detail_page(item: dict, category: str, search_data: list, type_map:
     # Clean the description
     description = clean_description(item.get('description', 'No description available'))
     
+    go_name = to_go_name(item['name'])
+    
     html = generate_header(item['name'], root_path, search_data, description, category)
     
     # Breadcrumb
     if '.' in item['name']:
         namespace, name = item['name'].rsplit('.', 1)
-        breadcrumb = f'<a href="{root_path}/index.html">Home</a> <span>›</span> <a href="{root_path}/{category}s.html">{category.title()}s</a> <span>›</span> {namespace} <span>›</span> {name}'
+        go_namespace = to_go_name(namespace)
+        go_item_name = to_go_name(name)
+        breadcrumb = f'<a href="{root_path}/index.html">Home</a> <span>›</span> <a href="{root_path}/{category}s.html">{category.title()}s</a> <span>›</span> {go_namespace} <span>›</span> {go_item_name}'
     else:
-        breadcrumb = f'<a href="{root_path}/index.html">Home</a> <span>›</span> <a href="{root_path}/{category}s.html">{category.title()}s</a> <span>›</span> {item["name"]}'
+        breadcrumb = f'<a href="{root_path}/index.html">Home</a> <span>›</span> <a href="{root_path}/{category}s.html">{category.title()}s</a> <span>›</span> {go_name}'
     
     html += f"""
     <main class="container">
@@ -1718,7 +1741,7 @@ def generate_detail_page(item: dict, category: str, search_data: list, type_map:
         </div>
         
         <header class="page-header">
-            <h1>{escape(item['name'])}</h1>
+            <h1>{escape(go_name)}</h1>
             <p class="description">{escape(description)}</p>
         </header>
         
@@ -1878,16 +1901,37 @@ def build_html_docs(json_path: str, output_dir: str):
     print(f"Found {len(type_map)} unique types")
     
     # Build search data once for all pages
-    search_data = [
-        {"name": item['name'], "desc": item.get('description', ''), "type": "constructor", "path": get_output_path(item['name'], 'constructor')}
-        for item in constructors
-    ] + [
-        {"name": item['name'], "desc": item.get('description', ''), "type": "method", "path": get_output_path(item['name'], 'method')}
-        for item in methods
-    ] + [
-        {"name": type_name, "desc": f"Abstract type with {len(ctors)} constructor{'s' if len(ctors) != 1 else ''}", "type": "type", "path": f"types/{type_name}.html"}
-        for type_name, ctors in type_map.items()
-    ]
+    search_data = []
+    for item in constructors:
+        go_name = to_go_name(item['name'])
+        search_data.append({
+            "name": item['name'],
+            "goDisplay": go_name,
+            "searchName": go_name.lower() + " " + item['name'].lower().replace('.', ' '),
+            "desc": item.get('description', ''),
+            "type": "constructor",
+            "path": get_output_path(item['name'], 'constructor')
+        })
+    for item in methods:
+        go_name = to_go_name(item['name'])
+        search_data.append({
+            "name": item['name'],
+            "goDisplay": go_name,
+            "searchName": go_name.lower() + " " + item['name'].lower().replace('.', ' '),
+            "desc": item.get('description', ''),
+            "type": "method",
+            "path": get_output_path(item['name'], 'method')
+        })
+    for type_name, ctors in type_map.items():
+        go_type = to_go_name(type_name)
+        search_data.append({
+            "name": type_name,
+            "goDisplay": go_type,
+            "searchName": go_type.lower() + " " + type_name.lower(),
+            "desc": f"Abstract type with {len(ctors)} constructor{'s' if len(ctors) != 1 else ''}",
+            "type": "type",
+            "path": f"types/{type_name}.html"
+        })
     
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
