@@ -14,7 +14,7 @@ from html import escape
 
 # Current TL Schema version
 #umm
-TL_VERSION = 218
+TL_VERSION = 220
 
 
 def clean_description(text: str) -> str:
