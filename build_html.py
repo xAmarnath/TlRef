@@ -851,6 +851,8 @@ header .search-container {
     padding: 20px;
     border-radius: var(--radius);
     border: 1px solid var(--border);
+    position: relative;
+    z-index: 1;
 }
 
 .page-header h1 {
