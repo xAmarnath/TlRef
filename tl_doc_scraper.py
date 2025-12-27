@@ -101,10 +101,80 @@ def parse_schema_file(filepath: str) -> tuple[list[str], list[str]]:
     return constructors, methods
 
 
-def fetch_documentation(name: str, category: str) -> Optional[TLEntry]:
+def parse_tl_definition(tl_line: str) -> tuple[str, list[FieldInfo], str]:
+    """
+    Parse a TL schema definition line and extract fields.
+    Returns (name, fields, result_type)
+    
+    Example: inputMediaPhoto#b3ba0635 flags:# spoiler:flags.1?true id:InputPhoto ttl_seconds:flags.0?int = InputMedia;
+    Returns: ("inputMediaPhoto", [FieldInfo(...), ...], "InputMedia")
+    """
+    # Match the TL definition pattern: name#hash params = Type;
+    match = re.match(r'^([a-zA-Z_][a-zA-Z0-9_\.]*)\#[0-9a-fA-F]+\s*(.*?)\s*=\s*([a-zA-Z_][a-zA-Z0-9_\.]*)', tl_line)
+    if not match:
+        return None, [], None
+    
+    name = match.group(1)
+    params_str = match.group(2).strip()
+    result_type = match.group(3)
+    
+    fields = []
+    
+    if params_str:
+        # Split parameters by space, but handle {t:Type} patterns in vectors
+        # Use regex to match param patterns
+        # Pattern: param_name:type or param_name:flags.N?type
+        param_pattern = r'([a-zA-Z_][a-zA-Z0-9_]*):([^\s]+)'
+        
+        for param_match in re.finditer(param_pattern, params_str):
+            field_name = param_match.group(1)
+            field_type = param_match.group(2)
+            
+            # Skip the flags field itself (type is #)
+            if field_type == '#':
+                continue
+            
+            fields.append(FieldInfo(
+                name=field_name,
+                type=field_type,
+                description=""
+            ))
+    
+    return name, fields, result_type
+
+
+def load_schema_definitions(filepath: str) -> dict:
+    """
+    Load all TL definitions from schema.tl file.
+    Returns a dict mapping name -> (fields, result_type, raw_tl)
+    """
+    definitions = {}
+    
+    with open(filepath, 'r', encoding='utf-8') as f:
+        for line in f:
+            line = line.strip()
+            
+            # Skip empty lines, comments, and section markers
+            if not line or line.startswith('//') or line.startswith('---'):
+                continue
+            
+            # Parse the line
+            name, fields, result_type = parse_tl_definition(line)
+            if name:
+                definitions[name] = {
+                    'fields': fields,
+                    'result_type': result_type,
+                    'raw_tl': line
+                }
+    
+    return definitions
+
+
+def fetch_documentation(name: str, category: str, schema_definitions: dict = None) -> Optional[TLEntry]:
     """
     Fetch documentation for a type/method from corefork.telegram.org
     category: "constructor" or "method"
+    schema_definitions: Optional dict with fallback data from schema.tl
     """
     base_url = f"https://corefork.telegram.org/{category}/{name}"
     
@@ -112,6 +182,9 @@ def fetch_documentation(name: str, category: str) -> Optional[TLEntry]:
         response = requests.get(base_url, timeout=30)
         if response.status_code != 200:
             print(f"[{response.status_code}] Failed to fetch: {base_url}")
+            # Use schema fallback if available
+            if schema_definitions and name in schema_definitions:
+                return create_entry_from_schema(name, category, schema_definitions[name])
             return None
         
         soup = BeautifulSoup(response.text, 'html.parser')
@@ -217,14 +290,42 @@ def fetch_documentation(name: str, category: str) -> Optional[TLEntry]:
                             entry.related_pages.append(link.get_text(strip=True))
                     sibling = sibling.find_next_sibling()
         
+        # If we got no useful data from the webpage, use schema fallback
+        if not entry.description and not entry.fields and schema_definitions and name in schema_definitions:
+            schema_entry = create_entry_from_schema(name, category, schema_definitions[name])
+            # Merge schema data into entry
+            entry.fields = schema_entry.fields
+            entry.result_type = schema_entry.result_type
+            entry.raw_tl = schema_entry.raw_tl
+        
         return entry
         
     except requests.RequestException as e:
         print(f"[ERROR] Request failed for {base_url}: {e}")
+        # Use schema fallback if available
+        if schema_definitions and name in schema_definitions:
+            return create_entry_from_schema(name, category, schema_definitions[name])
         return None
     except Exception as e:
         print(f"[ERROR] Parsing failed for {name}: {e}")
+        # Use schema fallback if available
+        if schema_definitions and name in schema_definitions:
+            return create_entry_from_schema(name, category, schema_definitions[name])
         return None
+
+
+def create_entry_from_schema(name: str, category: str, schema_data: dict) -> TLEntry:
+    """
+    Create a TLEntry from schema.tl data.
+    """
+    return TLEntry(
+        name=name,
+        category=category,
+        description="",
+        fields=schema_data['fields'],
+        result_type=schema_data['result_type'],
+        raw_tl=schema_data['raw_tl']
+    )
 
 
 def entry_to_dict(entry: TLEntry) -> dict:
@@ -252,6 +353,11 @@ def scrape_all(schema_path: str, output_path: str, max_workers: int = 10):
     
     print(f"Found {len(constructors)} constructors and {len(methods)} methods")
     
+    # Load schema definitions for fallback
+    print(f"Loading schema definitions for fallback...")
+    schema_definitions = load_schema_definitions(schema_path)
+    print(f"Loaded {len(schema_definitions)} schema definitions")
+    
     # Prepare all tasks
     tasks = []
     for name in constructors:
@@ -268,7 +374,8 @@ def scrape_all(schema_path: str, output_path: str, max_workers: int = 10):
             "total_constructors": len(constructors),
             "total_methods": len(methods),
             "scraped_at": time.strftime("%Y-%m-%d %H:%M:%S"),
-            "source": "https://corefork.telegram.org"
+            "source": "https://corefork.telegram.org",
+            "fallback_source": "schema.tl"
         }
     }
     
@@ -277,9 +384,9 @@ def scrape_all(schema_path: str, output_path: str, max_workers: int = 10):
     failed = 0
     
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        # Submit all tasks
+        # Submit all tasks with schema definitions for fallback
         future_to_task = {
-            executor.submit(fetch_documentation, name, category): (name, category)
+            executor.submit(fetch_documentation, name, category, schema_definitions): (name, category)
             for name, category in tasks
         }
         

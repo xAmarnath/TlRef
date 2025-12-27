@@ -13,7 +13,7 @@ from pathlib import Path
 from html import escape
 
 # Current TL Schema version
-TL_VERSION = 218
+TL_VERSION = 220
 
 
 def clean_description(text: str) -> str:
@@ -847,6 +847,10 @@ header .search-container {
 /* Detail page */
 .page-header {
     margin-bottom: 24px;
+    background: var(--bg-secondary);
+    padding: 20px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
 }
 
 .page-header h1 {
@@ -1466,7 +1470,7 @@ def generate_index_page(data: dict) -> str:
                 The <strong>Type Language (TL)</strong> is a schema language used by Telegram to define its API. It describes constructors (data types) and methods (API calls) that form the MTProto protocol.
             </p>
             <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px; text-align: left;">
-                In <strong>Gogram</strong>, each TL constructor is represented as a Go struct in the <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">tg</code> package. For example, <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">inputMediaPhoto</code> becomes <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">tg.InputMediaPhoto</code>.
+                In <strong>Gogram</strong>, each TL constructor is represented as a Go struct in the <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">telegram</code> package. For example, <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">inputMediaPhoto</code> becomes <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">telegram.InputMediaPhoto</code>.
             </p>
             <p style="color: var(--text-secondary); line-height: 1.7; text-align: left;">
                 <strong>Types</strong> are abstract interfaces that can be implemented by multiple constructors. For instance, <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">InputMedia</code> is implemented by <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">InputMediaPhoto</code>, <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">InputMediaDocument</code>, and others.
