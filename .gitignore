@@ -1,2 +1,6 @@
 *.html
 *.json
+*.wasm
+*.go
+*.mod
+*.sum
