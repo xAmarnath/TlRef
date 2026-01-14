@@ -546,7 +546,6 @@ a:hover {
 
 /* Header */
 header {
-    position: sticky;
     top: 0;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
