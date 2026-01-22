@@ -293,7 +293,8 @@ def get_expanded_struct(type_name: str) -> str:
     return None
 
 
-def generate_gogram_example(item: dict, category: str, type_map: dict = None) -> str:
+
+def generate_gogram_example(item: dict, category: str, type_map: dict = None, go_types_set: set = None) -> str:
     """
     Generate Gogram usage example for a method or constructor.
     
@@ -303,19 +304,21 @@ def generate_gogram_example(item: dict, category: str, type_map: dict = None) ->
     - Constructors are always created as struct literals
     - If a constructor name matches a type name, add Obj suffix
     """
-    import re
-    
     name = item['name']
     go_name = to_go_name(name)
     fields = item.get('fields', [])
     
     # Check if constructor name conflicts with a type name
     # If so, Gogram uses the Obj suffix to differentiate
-    if category == 'constructor' and type_map:
-        # Get the base name without namespace
-        base_name = name.split('.')[-1] if '.' in name else name
-        if base_name in type_map:
+    if category == 'constructor':
+        # Check against go_types_set if available, otherwise fall back to type_map
+        if go_types_set and go_name in go_types_set:
             go_name = go_name + 'Obj'
+        elif type_map and not go_types_set:
+            # Fallback logic (less accurate)
+            base_name = name.split('.')[-1] if '.' in name else name
+            if base_name in type_map:
+                go_name = go_name + 'Obj'
     
     if category == 'method':
         # Collect required and optional parameters
@@ -859,7 +862,6 @@ header .search-container {
     padding: 20px;
     border-radius: var(--radius);
     border: 1px solid var(--border);
-    position: relative;
     /* z-index removed */
 }
 
@@ -1413,36 +1415,15 @@ def generate_header(title: str, root_path: str, search_data: list = None, descri
 def generate_footer() -> str:
     """Generate the common footer HTML."""
     return """
-    <footer>
-        <div class="container">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 24px;">
-                <div>
-                    <h3 style="font-weight: 600; margin-bottom: 8px; color: var(--text-primary);">Gogram TLRef</h3>
-                    <p style="color: var(--text-secondary); max-width: 300px;">
-                        Comprehensive documentation for the Telegram Type Language schema, designed for the Gogram ecosystem.
-                    </p>
-                </div>
-                <div style="display: flex; gap: 48px; flex-wrap: wrap;">
-                    <div>
-                        <h4 style="font-size: 13px; font-weight: 600; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 12px; letter-spacing: 0.5px;">Navigation</h4>
-                        <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px;">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="types.html">Types</a></li>
-                            <li><a href="methods.html">Methods</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 style="font-size: 13px; font-weight: 600; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 12px; letter-spacing: 0.5px;">Resources</h4>
-                        <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px;">
-                            <li><a href="https://github.com/AmarnathCJD/gogram" target="_blank">Gogram Repository</a></li>
-                            <li><a href="https://corefork.telegram.org" target="_blank">Official Docs</a></li>
-                            <li><a href="https://github.com/AmarnathCJD/tl-ref" target="_blank">About This Project</a></li>
-                        </ul>
-                    </div>
-                </div>
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
             </div>
-            <div style="border-top: 1px solid var(--border); margin-top: 32px; padding-top: 24px; text-align: center; color: var(--text-secondary);">
-                <p>Made with ❤ by <a href="https://github.com/AmarnathCJD" target="_blank">AmarnathCJD</a></p>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
             </div>
         </div>
     </footer>
@@ -1757,7 +1738,8 @@ def generate_types_list_page(type_map: dict, search_data: list) -> str:
     return html
 
 
-def generate_detail_page(item: dict, category: str, search_data: list, type_map: dict = None) -> str:
+
+def generate_detail_page(item: dict, category: str, search_data: list, type_map: dict = None, go_types_set: set = None) -> str:
     """Generate a detail page for a constructor or method."""
     path = get_output_path(item['name'], category)
     root_path = get_relative_root(path)
@@ -1769,10 +1751,13 @@ def generate_detail_page(item: dict, category: str, search_data: list, type_map:
     
     # Add Obj suffix for constructors where name matches a type name
     display_name = go_name
-    if category == 'constructor' and type_map:
-        base_name = item['name'].split('.')[-1] if '.' in item['name'] else item['name']
-        if base_name in type_map:
+    if category == 'constructor':
+        if go_types_set and go_name in go_types_set:
             display_name = go_name + 'Obj'
+        elif type_map and not go_types_set and type_map:
+            base_name = item['name'].split('.')[-1] if '.' in item['name'] else item['name']
+            if base_name in type_map:
+                display_name = go_name + 'Obj'
     
     html = generate_header(item['name'], root_path, search_data, description, category)
     
@@ -1782,8 +1767,11 @@ def generate_detail_page(item: dict, category: str, search_data: list, type_map:
         go_namespace = to_go_name(namespace)
         go_item_name = to_go_name(name)
         # Add Obj suffix in breadcrumb if needed
-        if category == 'constructor' and type_map and name in type_map:
-            go_item_name = go_item_name + 'Obj'
+        if category == 'constructor':
+            if go_types_set and go_item_name in go_types_set:
+                go_item_name = go_item_name + 'Obj'
+            elif type_map and not go_types_set and name in type_map:
+                go_item_name = go_item_name + 'Obj'
         breadcrumb = f'<a href="{root_path}/index.html">Home</a> <span>›</span> <a href="{root_path}/{category}s.html">{category.title()}s</a> <span>›</span> {go_namespace} <span>›</span> {go_item_name}'
     else:
         breadcrumb = f'<a href="{root_path}/index.html">Home</a> <span>›</span> <a href="{root_path}/{category}s.html">{category.title()}s</a> <span>›</span> {display_name}'
@@ -1869,7 +1857,7 @@ def generate_detail_page(item: dict, category: str, search_data: list, type_map:
 """
     
     # Gogram usage example - moved BEFORE errors section
-    example = generate_gogram_example(item, category, type_map)
+    example = generate_gogram_example(item, category, type_map, go_types_set)
     highlighted_example = highlight_go_code(example)
     html += f"""
         <div class="example-section">
@@ -1958,20 +1946,19 @@ def build_html_docs(json_path: str, output_dir: str):
                 type_map[result_type] = []
             type_map[result_type].append(item)
     
-    # Filter to only types with multiple constructors (true interface types)
-    # or keep single constructor types too for consistency
-    print(f"Found {len(type_map)} unique types")
+    # Precompute set of Go type names for collision detection
+    go_types_set = {to_go_name(t) for t in type_map.keys()}
+    print(f"Found {len(type_map)} unique types and {len(go_types_set)} Go type names")
     
     # Build search data once for all pages
     search_data = []
     for item in constructors:
         go_name = to_go_name(item['name'])
         # Add Obj suffix for constructors where name matches a type name
-        base_name = item['name'].split('.')[-1] if '.' in item['name'] else item['name']
-        display_name = go_name + 'Obj' if base_name in type_map else go_name
+        display_name = go_name + 'Obj' if go_name in go_types_set else go_name
         search_name = display_name.lower() + " " + item['name'].lower().replace('.', ' ')
         # Also include non-Obj version in search for convenience
-        if base_name in type_map:
+        if display_name != go_name:
             search_name += " " + go_name.lower()
         search_data.append({
             "name": item['name'],
@@ -2041,7 +2028,7 @@ def build_html_docs(json_path: str, output_dir: str):
         full_path = output_path / rel_path
         full_path.parent.mkdir(parents=True, exist_ok=True)
         
-        page_html = generate_detail_page(item, 'constructor', search_data, type_map)
+        page_html = generate_detail_page(item, 'constructor', search_data, type_map, go_types_set)
         full_path.write_text(page_html, encoding='utf-8')
         
         if (i + 1) % 100 == 0:
