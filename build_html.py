@@ -520,6 +520,7 @@ def generate_header(title: str, root_path: str, search_data: list = None, descri
     <meta property="article:author" content="AmarnathCJD">
     <meta name="author" content="AmarnathCJD">
     <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
     
     <link rel="stylesheet" href="{root_path}/css/common.css">
     <script src="{root_path}/js/utils.js"></script>
@@ -556,8 +557,8 @@ def generate_header(title: str, root_path: str, search_data: list = None, descri
 """ + (f"""
     <script>
         const rootPath = "{root_path}";
-        const searchData = {json.dumps(search_data)};
     </script>
+    <script src="{root_path}/js/search_index.js"></script>
     <script src="{root_path}/js/search.js"></script>
 """ if search_data else "")
 
@@ -1117,6 +1118,13 @@ def build_html_docs(json_path: str, output_dir: str):
     print("Generating index.html...")
     index_html = generate_index_page(data)
     (output_path / 'index.html').write_text(index_html, encoding='utf-8')
+    
+    # Save search index to a separate JS file to avoid bloating every page
+    print("Generating search_index.js...")
+    js_dir = output_path / 'js'
+    js_dir.mkdir(parents=True, exist_ok=True)
+    search_js_content = f"window.searchData = {json.dumps(search_data)};"
+    (js_dir / 'search_index.js').write_text(search_js_content, encoding='utf-8')
     
     # Generate constructors list page
     print("Generating constructors.html...")
