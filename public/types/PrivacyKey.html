@@ -89,14 +89,14 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/privacyKeyStatusTimestamp.html" class="item" data-name="privacykeystatustimestamp privacykeystatustimestamp">
-                <span class="item-name">PrivacyKeyStatusTimestamp</span>
-                <span class="item-desc">Whether we can see the last online timestamp of this user.</span>
-            </a>
-
             <a href="../constructors/privacyKeyChatInvite.html" class="item" data-name="privacykeychatinvite privacykeychatinvite">
                 <span class="item-name">PrivacyKeyChatInvite</span>
                 <span class="item-desc">Whether the user can be invited to chats</span>
+            </a>
+
+            <a href="../constructors/privacyKeyStatusTimestamp.html" class="item" data-name="privacykeystatustimestamp privacykeystatustimestamp">
+                <span class="item-name">PrivacyKeyStatusTimestamp</span>
+                <span class="item-desc">Whether we can see the last online timestamp of this user.</span>
             </a>
 
             <a href="../constructors/privacyKeyPhoneCall.html" class="item" data-name="privacykeyphonecall privacykeyphonecall">
@@ -104,9 +104,9 @@
                 <span class="item-desc">Whether the user accepts phone calls</span>
             </a>
 
-            <a href="../constructors/privacyKeyForwards.html" class="item" data-name="privacykeyforwards privacykeyforwards">
-                <span class="item-name">PrivacyKeyForwards</span>
-                <span class="item-desc">Whether messages forwarded from the user will be anonymously forwarded</span>
+            <a href="../constructors/privacyKeyPhoneP2P.html" class="item" data-name="privacykeyphonep2p privacykeyphonep2p">
+                <span class="item-name">PrivacyKeyPhoneP2P</span>
+                <span class="item-desc">Whether P 2 P connections in phone calls with this user are allowed</span>
             </a>
 
             <a href="../constructors/privacyKeyProfilePhoto.html" class="item" data-name="privacykeyprofilephoto privacykeyprofilephoto">
@@ -114,19 +114,19 @@
                 <span class="item-desc">Whether the profile picture of the user is visible</span>
             </a>
 
-            <a href="../constructors/privacyKeyAddedByPhone.html" class="item" data-name="privacykeyaddedbyphone privacykeyaddedbyphone">
-                <span class="item-name">PrivacyKeyAddedByPhone</span>
-                <span class="item-desc">Whether this user can be added to our contact list by their phone number</span>
-            </a>
-
-            <a href="../constructors/privacyKeyPhoneP2P.html" class="item" data-name="privacykeyphonep2p privacykeyphonep2p">
-                <span class="item-name">PrivacyKeyPhoneP2P</span>
-                <span class="item-desc">Whether P 2 P connections in phone calls with this user are allowed</span>
-            </a>
-
             <a href="../constructors/privacyKeyPhoneNumber.html" class="item" data-name="privacykeyphonenumber privacykeyphonenumber">
                 <span class="item-name">PrivacyKeyPhoneNumber</span>
                 <span class="item-desc">Whether the user allows us to see his phone number</span>
+            </a>
+
+            <a href="../constructors/privacyKeyForwards.html" class="item" data-name="privacykeyforwards privacykeyforwards">
+                <span class="item-name">PrivacyKeyForwards</span>
+                <span class="item-desc">Whether messages forwarded from the user will be anonymously forwarded</span>
+            </a>
+
+            <a href="../constructors/privacyKeyAddedByPhone.html" class="item" data-name="privacykeyaddedbyphone privacykeyaddedbyphone">
+                <span class="item-name">PrivacyKeyAddedByPhone</span>
+                <span class="item-desc">Whether this user can be added to our contact list by their phone number</span>
             </a>
 
             <a href="../constructors/privacyKeyVoiceMessages.html" class="item" data-name="privacykeyvoicemessages privacykeyvoicemessages">
@@ -144,6 +144,11 @@
                 <span class="item-desc">Whether people can see your bio</span>
             </a>
 
+            <a href="../constructors/privacyKeySavedMusic.html" class="item" data-name="privacykeysavedmusic privacykeysavedmusic">
+                <span class="item-name">PrivacyKeySavedMusic</span>
+                <span class="item-desc">No description</span>
+            </a>
+
             <a href="../constructors/privacyKeyNoPaidMessages.html" class="item" data-name="privacykeynopaidmessages privacykeynopaidmessages">
                 <span class="item-name">PrivacyKeyNoPaidMessages</span>
                 <span class="item-desc">Who can send you messages without paying, if paid messages are enabled.</span>
@@ -154,11 +159,6 @@
                 <span class="item-desc">Whether received gifts will be automatically displayed on our profile</span>
             </a>
 
-            <a href="../constructors/privacyKeySavedMusic.html" class="item" data-name="privacykeysavedmusic privacykeysavedmusic">
-                <span class="item-name">PrivacyKeySavedMusic</span>
-                <span class="item-desc">No description</span>
-            </a>
-
             </div>
         </div>
         
@@ -166,10 +166,10 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// PrivacyKey is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PrivacyKey</span> = &amp;<span class="package">tg.</span><span class="type">PrivacyKeyStatusTimestamp</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PrivacyKey</span> = &amp;<span class="package">tg.</span><span class="type">PrivacyKeyChatInvite</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PrivacyKey</span> = &amp;<span class="package">tg.</span><span class="type">PrivacyKeyStatusTimestamp</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PrivacyKey</span> = &amp;<span class="package">tg.</span><span class="type">PrivacyKeyPhoneCall</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PrivacyKey</span> = &amp;<span class="package">tg.</span><span class="type">PrivacyKeyForwards</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PrivacyKey</span> = &amp;<span class="package">tg.</span><span class="type">PrivacyKeyPhoneP2P</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PrivacyKey</span> = &amp;<span class="package">tg.</span><span class="type">PrivacyKeyProfilePhoto</span>{}
 <span class="comment">// ... and <span class="number">9</span> more constructors</span>
 </pre>

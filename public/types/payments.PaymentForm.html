@@ -89,11 +89,6 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/payments/paymentFormStars.html" class="item" data-name="paymentspaymentformstars payments.paymentformstars">
-                <span class="item-name">PaymentsPaymentFormStars</span>
-                <span class="item-desc">Represents a payment form, for payments to be using Telegram Stars, see here for more info.</span>
-            </a>
-
             <a href="../constructors/payments/paymentForm.html" class="item" data-name="paymentspaymentform payments.paymentform">
                 <span class="item-name">PaymentsPaymentForm</span>
                 <span class="item-desc">Payment form</span>
@@ -104,6 +99,11 @@
                 <span class="item-desc">Represents a payment form for a gift, see here for more info.</span>
             </a>
 
+            <a href="../constructors/payments/paymentFormStars.html" class="item" data-name="paymentspaymentformstars payments.paymentformstars">
+                <span class="item-name">PaymentsPaymentFormStars</span>
+                <span class="item-desc">Represents a payment form, for payments to be using Telegram Stars, see here for more info.</span>
+            </a>
+
             </div>
         </div>
         
@@ -111,9 +111,9 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// payments.PaymentForm is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PaymentsPaymentForm</span> = &amp;<span class="package">tg.</span><span class="type">PaymentsPaymentFormStars</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PaymentsPaymentForm</span> = &amp;<span class="package">tg.</span><span class="type">PaymentsPaymentForm</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PaymentsPaymentForm</span> = &amp;<span class="package">tg.</span><span class="type">PaymentsPaymentFormStarGift</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PaymentsPaymentForm</span> = &amp;<span class="package">tg.</span><span class="type">PaymentsPaymentFormStars</span>{}
 </pre>
         </div>
         </article>

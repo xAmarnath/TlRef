@@ -89,14 +89,14 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/upload/cdnFile.html" class="item" data-name="uploadcdnfile upload.cdnfile">
-                <span class="item-name">UploadCdnFile</span>
-                <span class="item-desc">Represent a chunk of a CDN file.</span>
-            </a>
-
             <a href="../constructors/upload/cdnFileReuploadNeeded.html" class="item" data-name="uploadcdnfilereuploadneeded upload.cdnfilereuploadneeded">
                 <span class="item-name">UploadCdnFileReuploadNeeded</span>
                 <span class="item-desc">The file was cleared from the temporary RAM cache of the CDN and has to be re-uploaded.</span>
+            </a>
+
+            <a href="../constructors/upload/cdnFile.html" class="item" data-name="uploadcdnfile upload.cdnfile">
+                <span class="item-name">UploadCdnFile</span>
+                <span class="item-desc">Represent a chunk of a CDN file.</span>
             </a>
 
             </div>
@@ -106,8 +106,8 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// upload.CdnFile is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">UploadCdnFile</span> = &amp;<span class="package">tg.</span><span class="type">UploadCdnFile</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">UploadCdnFile</span> = &amp;<span class="package">tg.</span><span class="type">UploadCdnFileReuploadNeeded</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">UploadCdnFile</span> = &amp;<span class="package">tg.</span><span class="type">UploadCdnFile</span>{}
 </pre>
         </div>
         </article>

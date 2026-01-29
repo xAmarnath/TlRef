@@ -89,14 +89,14 @@
             </p>
             <div class="item-list">
 
+            <a href="../constructors/inputPeerChannelFromMessage.html" class="item" data-name="inputpeerchannelfrommessage inputpeerchannelfrommessage">
+                <span class="item-name">InputPeerChannelFromMessage</span>
+                <span class="item-desc">Defines a min channel that was seen in a certain message of a certain chat.</span>
+            </a>
+
             <a href="../constructors/inputPeerUserFromMessage.html" class="item" data-name="inputpeeruserfrommessage inputpeeruserfrommessage">
                 <span class="item-name">InputPeerUserFromMessage</span>
                 <span class="item-desc">Defines a min user that was seen in a certain message of a certain chat.</span>
-            </a>
-
-            <a href="../constructors/inputPeerChat.html" class="item" data-name="inputpeerchat inputpeerchat">
-                <span class="item-name">InputPeerChat</span>
-                <span class="item-desc">Defines a chat for further interaction.</span>
             </a>
 
             <a href="../constructors/inputPeerSelf.html" class="item" data-name="inputpeerself inputpeerself">
@@ -104,14 +104,14 @@
                 <span class="item-desc">Defines the current user.</span>
             </a>
 
-            <a href="../constructors/inputPeerUser.html" class="item" data-name="inputpeeruser inputpeeruser">
-                <span class="item-name">InputPeerUser</span>
-                <span class="item-desc">Defines a user for further interaction.</span>
+            <a href="../constructors/inputPeerEmpty.html" class="item" data-name="inputpeerempty inputpeerempty">
+                <span class="item-name">InputPeerEmpty</span>
+                <span class="item-desc">An empty constructor, no user or chat is defined.</span>
             </a>
 
-            <a href="../constructors/inputPeerChannelFromMessage.html" class="item" data-name="inputpeerchannelfrommessage inputpeerchannelfrommessage">
-                <span class="item-name">InputPeerChannelFromMessage</span>
-                <span class="item-desc">Defines a min channel that was seen in a certain message of a certain chat.</span>
+            <a href="../constructors/inputPeerChat.html" class="item" data-name="inputpeerchat inputpeerchat">
+                <span class="item-name">InputPeerChat</span>
+                <span class="item-desc">Defines a chat for further interaction.</span>
             </a>
 
             <a href="../constructors/inputPeerChannel.html" class="item" data-name="inputpeerchannel inputpeerchannel">
@@ -119,9 +119,9 @@
                 <span class="item-desc">Defines a channel for further interaction.</span>
             </a>
 
-            <a href="../constructors/inputPeerEmpty.html" class="item" data-name="inputpeerempty inputpeerempty">
-                <span class="item-name">InputPeerEmpty</span>
-                <span class="item-desc">An empty constructor, no user or chat is defined.</span>
+            <a href="../constructors/inputPeerUser.html" class="item" data-name="inputpeeruser inputpeeruser">
+                <span class="item-name">InputPeerUser</span>
+                <span class="item-desc">Defines a user for further interaction.</span>
             </a>
 
             </div>
@@ -131,11 +131,11 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// InputPeer is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputPeer</span> = &amp;<span class="package">tg.</span><span class="type">InputPeerUserFromMessage</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputPeer</span> = &amp;<span class="package">tg.</span><span class="type">InputPeerChat</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputPeer</span> = &amp;<span class="package">tg.</span><span class="type">InputPeerSelf</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputPeer</span> = &amp;<span class="package">tg.</span><span class="type">InputPeerUser</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputPeer</span> = &amp;<span class="package">tg.</span><span class="type">InputPeerChannelFromMessage</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputPeer</span> = &amp;<span class="package">tg.</span><span class="type">InputPeerUserFromMessage</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputPeer</span> = &amp;<span class="package">tg.</span><span class="type">InputPeerSelf</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputPeer</span> = &amp;<span class="package">tg.</span><span class="type">InputPeerEmpty</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputPeer</span> = &amp;<span class="package">tg.</span><span class="type">InputPeerChat</span>{}
 <span class="comment">// ... and <span class="number">2</span> more constructors</span>
 </pre>
         </div>

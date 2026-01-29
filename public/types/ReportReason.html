@@ -89,19 +89,14 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/inputReportReasonSpam.html" class="item" data-name="inputreportreasonspam inputreportreasonspam">
-                <span class="item-name">InputReportReasonSpam</span>
-                <span class="item-desc">Report for spam</span>
-            </a>
-
             <a href="../constructors/inputReportReasonViolence.html" class="item" data-name="inputreportreasonviolence inputreportreasonviolence">
                 <span class="item-name">InputReportReasonViolence</span>
                 <span class="item-desc">Report for violence</span>
             </a>
 
-            <a href="../constructors/inputReportReasonChildAbuse.html" class="item" data-name="inputreportreasonchildabuse inputreportreasonchildabuse">
-                <span class="item-name">InputReportReasonChildAbuse</span>
-                <span class="item-desc">Report for child abuse</span>
+            <a href="../constructors/inputReportReasonSpam.html" class="item" data-name="inputreportreasonspam inputreportreasonspam">
+                <span class="item-name">InputReportReasonSpam</span>
+                <span class="item-desc">Report for spam</span>
             </a>
 
             <a href="../constructors/inputReportReasonPornography.html" class="item" data-name="inputreportreasonpornography inputreportreasonpornography">
@@ -109,24 +104,24 @@
                 <span class="item-desc">Report for pornography</span>
             </a>
 
+            <a href="../constructors/inputReportReasonChildAbuse.html" class="item" data-name="inputreportreasonchildabuse inputreportreasonchildabuse">
+                <span class="item-name">InputReportReasonChildAbuse</span>
+                <span class="item-desc">Report for child abuse</span>
+            </a>
+
             <a href="../constructors/inputReportReasonOther.html" class="item" data-name="inputreportreasonother inputreportreasonother">
                 <span class="item-name">InputReportReasonOther</span>
                 <span class="item-desc">Other</span>
             </a>
 
-            <a href="../constructors/inputReportReasonCopyright.html" class="item" data-name="inputreportreasoncopyright inputreportreasoncopyright">
-                <span class="item-name">InputReportReasonCopyright</span>
-                <span class="item-desc">Report for copyrighted content</span>
+            <a href="../constructors/inputReportReasonIllegalDrugs.html" class="item" data-name="inputreportreasonillegaldrugs inputreportreasonillegaldrugs">
+                <span class="item-name">InputReportReasonIllegalDrugs</span>
+                <span class="item-desc">Report for illegal drugs</span>
             </a>
 
             <a href="../constructors/inputReportReasonGeoIrrelevant.html" class="item" data-name="inputreportreasongeoirrelevant inputreportreasongeoirrelevant">
                 <span class="item-name">InputReportReasonGeoIrrelevant</span>
                 <span class="item-desc">Report an irrelevant geogroup</span>
-            </a>
-
-            <a href="../constructors/inputReportReasonIllegalDrugs.html" class="item" data-name="inputreportreasonillegaldrugs inputreportreasonillegaldrugs">
-                <span class="item-name">InputReportReasonIllegalDrugs</span>
-                <span class="item-desc">Report for illegal drugs</span>
             </a>
 
             <a href="../constructors/inputReportReasonFake.html" class="item" data-name="inputreportreasonfake inputreportreasonfake">
@@ -139,6 +134,11 @@
                 <span class="item-desc">Report for divulgation of personal details</span>
             </a>
 
+            <a href="../constructors/inputReportReasonCopyright.html" class="item" data-name="inputreportreasoncopyright inputreportreasoncopyright">
+                <span class="item-name">InputReportReasonCopyright</span>
+                <span class="item-desc">Report for copyrighted content</span>
+            </a>
+
             </div>
         </div>
         
@@ -146,10 +146,10 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// ReportReason is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ReportReason</span> = &amp;<span class="package">tg.</span><span class="type">InputReportReasonSpam</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ReportReason</span> = &amp;<span class="package">tg.</span><span class="type">InputReportReasonViolence</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ReportReason</span> = &amp;<span class="package">tg.</span><span class="type">InputReportReasonChildAbuse</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ReportReason</span> = &amp;<span class="package">tg.</span><span class="type">InputReportReasonSpam</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ReportReason</span> = &amp;<span class="package">tg.</span><span class="type">InputReportReasonPornography</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ReportReason</span> = &amp;<span class="package">tg.</span><span class="type">InputReportReasonChildAbuse</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ReportReason</span> = &amp;<span class="package">tg.</span><span class="type">InputReportReasonOther</span>{}
 <span class="comment">// ... and <span class="number">5</span> more constructors</span>
 </pre>

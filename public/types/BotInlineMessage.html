@@ -94,6 +94,11 @@
                 <span class="item-desc">Send whatever media is attached to the bot Inline Media Result</span>
             </a>
 
+            <a href="../constructors/botInlineMessageText.html" class="item" data-name="botinlinemessagetext botinlinemessagetext">
+                <span class="item-name">BotInlineMessageText</span>
+                <span class="item-desc">Send a simple text message</span>
+            </a>
+
             <a href="../constructors/botInlineMessageMediaVenue.html" class="item" data-name="botinlinemessagemediavenue botinlinemessagemediavenue">
                 <span class="item-name">BotInlineMessageMediaVenue</span>
                 <span class="item-desc">Send a venue</span>
@@ -109,19 +114,14 @@
                 <span class="item-desc">Send a contact</span>
             </a>
 
-            <a href="../constructors/botInlineMessageText.html" class="item" data-name="botinlinemessagetext botinlinemessagetext">
-                <span class="item-name">BotInlineMessageText</span>
-                <span class="item-desc">Send a simple text message</span>
+            <a href="../constructors/botInlineMessageMediaWebPage.html" class="item" data-name="botinlinemessagemediawebpage botinlinemessagemediawebpage">
+                <span class="item-name">BotInlineMessageMediaWebPage</span>
+                <span class="item-desc">Specifies options that must be used to generate the link preview for the message, or even a standalo</span>
             </a>
 
             <a href="../constructors/botInlineMessageMediaInvoice.html" class="item" data-name="botinlinemessagemediainvoice botinlinemessagemediainvoice">
                 <span class="item-name">BotInlineMessageMediaInvoice</span>
                 <span class="item-desc">Send an invoice</span>
-            </a>
-
-            <a href="../constructors/botInlineMessageMediaWebPage.html" class="item" data-name="botinlinemessagemediawebpage botinlinemessagemediawebpage">
-                <span class="item-name">BotInlineMessageMediaWebPage</span>
-                <span class="item-desc">Specifies options that must be used to generate the link preview for the message, or even a standalo</span>
             </a>
 
             </div>
@@ -132,10 +132,10 @@
             <pre class="example-code"><span class="comment">// BotInlineMessage is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotInlineMessage</span> = &amp;<span class="package">tg.</span><span class="type">BotInlineMessageMediaAuto</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotInlineMessage</span> = &amp;<span class="package">tg.</span><span class="type">BotInlineMessageText</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotInlineMessage</span> = &amp;<span class="package">tg.</span><span class="type">BotInlineMessageMediaVenue</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotInlineMessage</span> = &amp;<span class="package">tg.</span><span class="type">BotInlineMessageMediaGeo</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotInlineMessage</span> = &amp;<span class="package">tg.</span><span class="type">BotInlineMessageMediaContact</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotInlineMessage</span> = &amp;<span class="package">tg.</span><span class="type">BotInlineMessageText</span>{}
 <span class="comment">// ... and <span class="number">2</span> more constructors</span>
 </pre>
         </div>

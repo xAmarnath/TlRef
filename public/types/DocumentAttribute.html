@@ -94,6 +94,11 @@
                 <span class="item-desc">Defines an animated GIF</span>
             </a>
 
+            <a href="../constructors/documentAttributeVideo.html" class="item" data-name="documentattributevideo documentattributevideo">
+                <span class="item-name">DocumentAttributeVideo</span>
+                <span class="item-desc">Defines a video</span>
+            </a>
+
             <a href="../constructors/documentAttributeImageSize.html" class="item" data-name="documentattributeimagesize documentattributeimagesize">
                 <span class="item-name">DocumentAttributeImageSize</span>
                 <span class="item-desc">Defines the width and height of an image uploaded as document</span>
@@ -104,19 +109,14 @@
                 <span class="item-desc">Defines a sticker</span>
             </a>
 
-            <a href="../constructors/documentAttributeVideo.html" class="item" data-name="documentattributevideo documentattributevideo">
-                <span class="item-name">DocumentAttributeVideo</span>
-                <span class="item-desc">Defines a video</span>
+            <a href="../constructors/documentAttributeAudio.html" class="item" data-name="documentattributeaudio documentattributeaudio">
+                <span class="item-name">DocumentAttributeAudio</span>
+                <span class="item-desc">Represents an audio file</span>
             </a>
 
             <a href="../constructors/documentAttributeFilename.html" class="item" data-name="documentattributefilename documentattributefilename">
                 <span class="item-name">DocumentAttributeFilename</span>
                 <span class="item-desc">A simple document with a file name</span>
-            </a>
-
-            <a href="../constructors/documentAttributeAudio.html" class="item" data-name="documentattributeaudio documentattributeaudio">
-                <span class="item-name">DocumentAttributeAudio</span>
-                <span class="item-desc">Represents an audio file</span>
             </a>
 
             <a href="../constructors/documentAttributeHasStickers.html" class="item" data-name="documentattributehasstickers documentattributehasstickers">
@@ -137,10 +137,10 @@
             <pre class="example-code"><span class="comment">// DocumentAttribute is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">DocumentAttribute</span> = &amp;<span class="package">tg.</span><span class="type">DocumentAttributeAnimated</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">DocumentAttribute</span> = &amp;<span class="package">tg.</span><span class="type">DocumentAttributeVideo</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">DocumentAttribute</span> = &amp;<span class="package">tg.</span><span class="type">DocumentAttributeImageSize</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">DocumentAttribute</span> = &amp;<span class="package">tg.</span><span class="type">DocumentAttributeSticker</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">DocumentAttribute</span> = &amp;<span class="package">tg.</span><span class="type">DocumentAttributeVideo</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">DocumentAttribute</span> = &amp;<span class="package">tg.</span><span class="type">DocumentAttributeFilename</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">DocumentAttribute</span> = &amp;<span class="package">tg.</span><span class="type">DocumentAttributeAudio</span>{}
 <span class="comment">// ... and <span class="number">3</span> more constructors</span>
 </pre>
         </div>

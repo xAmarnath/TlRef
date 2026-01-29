@@ -99,6 +99,11 @@
                 <span class="item-desc">A group to which the user has no access. E. g., because the user was kicked from the group.</span>
             </a>
 
+            <a href="../constructors/channelForbidden.html" class="item" data-name="channelforbidden channelforbidden">
+                <span class="item-name">ChannelForbidden</span>
+                <span class="item-desc">Indicates a channel/supergroup we can&#x27;t access because we were banned, or for some other reason.</span>
+            </a>
+
             <a href="../constructors/chat.html" class="item" data-name="chat chat">
                 <span class="item-name">Chat</span>
                 <span class="item-desc">Info about a group.</span>
@@ -107,11 +112,6 @@
             <a href="../constructors/channel.html" class="item" data-name="channel channel">
                 <span class="item-name">Channel</span>
                 <span class="item-desc">Channel/supergroup info</span>
-            </a>
-
-            <a href="../constructors/channelForbidden.html" class="item" data-name="channelforbidden channelforbidden">
-                <span class="item-name">ChannelForbidden</span>
-                <span class="item-desc">Indicates a channel/supergroup we can&#x27;t access because we were banned, or for some other reason.</span>
             </a>
 
             </div>
@@ -123,9 +123,9 @@
 <span class="comment">// You can use any of the following constructors:</span>
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Chat</span> = &amp;<span class="package">tg.</span><span class="type">ChatEmpty</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Chat</span> = &amp;<span class="package">tg.</span><span class="type">ChatForbidden</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Chat</span> = &amp;<span class="package">tg.</span><span class="type">ChannelForbidden</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Chat</span> = &amp;<span class="package">tg.</span><span class="type">Chat</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Chat</span> = &amp;<span class="package">tg.</span><span class="type">Channel</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Chat</span> = &amp;<span class="package">tg.</span><span class="type">ChannelForbidden</span>{}
 </pre>
         </div>
         </article>

@@ -89,14 +89,14 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/upload/fileCdnRedirect.html" class="item" data-name="uploadfilecdnredirect upload.filecdnredirect">
-                <span class="item-name">UploadFileCdnRedirect</span>
-                <span class="item-desc">The file must be downloaded from a CDN DC.</span>
-            </a>
-
             <a href="../constructors/upload/file.html" class="item" data-name="uploadfile upload.file">
                 <span class="item-name">UploadFile</span>
                 <span class="item-desc">File content.</span>
+            </a>
+
+            <a href="../constructors/upload/fileCdnRedirect.html" class="item" data-name="uploadfilecdnredirect upload.filecdnredirect">
+                <span class="item-name">UploadFileCdnRedirect</span>
+                <span class="item-desc">The file must be downloaded from a CDN DC.</span>
             </a>
 
             </div>
@@ -106,8 +106,8 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// upload.File is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">UploadFile</span> = &amp;<span class="package">tg.</span><span class="type">UploadFileCdnRedirect</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">UploadFile</span> = &amp;<span class="package">tg.</span><span class="type">UploadFile</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">UploadFile</span> = &amp;<span class="package">tg.</span><span class="type">UploadFileCdnRedirect</span>{}
 </pre>
         </div>
         </article>

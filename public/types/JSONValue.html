@@ -94,11 +94,6 @@
                 <span class="item-desc">JSON boolean value</span>
             </a>
 
-            <a href="../constructors/jsonNull.html" class="item" data-name="jsonnull jsonnull">
-                <span class="item-name">JsonNull</span>
-                <span class="item-desc">null JSON value</span>
-            </a>
-
             <a href="../constructors/jsonNumber.html" class="item" data-name="jsonnumber jsonnumber">
                 <span class="item-name">JsonNumber</span>
                 <span class="item-desc">JSON numeric value</span>
@@ -109,14 +104,19 @@
                 <span class="item-desc">JSON string</span>
             </a>
 
-            <a href="../constructors/jsonObject.html" class="item" data-name="jsonobject jsonobject">
-                <span class="item-name">JsonObject</span>
-                <span class="item-desc">JSON object value</span>
+            <a href="../constructors/jsonNull.html" class="item" data-name="jsonnull jsonnull">
+                <span class="item-name">JsonNull</span>
+                <span class="item-desc">null JSON value</span>
             </a>
 
             <a href="../constructors/jsonArray.html" class="item" data-name="jsonarray jsonarray">
                 <span class="item-name">JsonArray</span>
                 <span class="item-desc">JSON array</span>
+            </a>
+
+            <a href="../constructors/jsonObject.html" class="item" data-name="jsonobject jsonobject">
+                <span class="item-name">JsonObject</span>
+                <span class="item-desc">JSON object value</span>
             </a>
 
             </div>
@@ -127,10 +127,10 @@
             <pre class="example-code"><span class="comment">// JSONValue is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">JsonValue</span> = &amp;<span class="package">tg.</span><span class="type">JsonBool</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">JsonValue</span> = &amp;<span class="package">tg.</span><span class="type">JsonNull</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">JsonValue</span> = &amp;<span class="package">tg.</span><span class="type">JsonNumber</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">JsonValue</span> = &amp;<span class="package">tg.</span><span class="type">JsonString</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">JsonValue</span> = &amp;<span class="package">tg.</span><span class="type">JsonObject</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">JsonValue</span> = &amp;<span class="package">tg.</span><span class="type">JsonNull</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">JsonValue</span> = &amp;<span class="package">tg.</span><span class="type">JsonArray</span>{}
 <span class="comment">// ... and <span class="number">1</span> more constructors</span>
 </pre>
         </div>

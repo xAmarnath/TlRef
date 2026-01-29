@@ -89,14 +89,14 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/contacts/contactsNotModified.html" class="item" data-name="contactscontactsnotmodified contacts.contactsnotmodified">
-                <span class="item-name">ContactsContactsNotModified</span>
-                <span class="item-desc">Contact list on the server is the same as the list on the client.</span>
-            </a>
-
             <a href="../constructors/contacts/contacts.html" class="item" data-name="contactscontacts contacts.contacts">
                 <span class="item-name">ContactsContacts</span>
                 <span class="item-desc">The current user&#x27;s contact list and info on users.</span>
+            </a>
+
+            <a href="../constructors/contacts/contactsNotModified.html" class="item" data-name="contactscontactsnotmodified contacts.contactsnotmodified">
+                <span class="item-name">ContactsContactsNotModified</span>
+                <span class="item-desc">Contact list on the server is the same as the list on the client.</span>
             </a>
 
             </div>
@@ -106,8 +106,8 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// contacts.Contacts is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ContactsContacts</span> = &amp;<span class="package">tg.</span><span class="type">ContactsContactsNotModified</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ContactsContacts</span> = &amp;<span class="package">tg.</span><span class="type">ContactsContacts</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ContactsContacts</span> = &amp;<span class="package">tg.</span><span class="type">ContactsContactsNotModified</span>{}
 </pre>
         </div>
         </article>

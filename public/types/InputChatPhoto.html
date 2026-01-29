@@ -89,6 +89,11 @@
             </p>
             <div class="item-list">
 
+            <a href="../constructors/inputChatPhoto.html" class="item" data-name="inputchatphoto inputchatphoto">
+                <span class="item-name">InputChatPhoto</span>
+                <span class="item-desc">Existing photo to be set as a chat profile photo.</span>
+            </a>
+
             <a href="../constructors/inputChatPhotoEmpty.html" class="item" data-name="inputchatphotoempty inputchatphotoempty">
                 <span class="item-name">InputChatPhotoEmpty</span>
                 <span class="item-desc">Empty constructor, remove group photo.</span>
@@ -99,11 +104,6 @@
                 <span class="item-desc">New photo to be set as group profile photo.</span>
             </a>
 
-            <a href="../constructors/inputChatPhoto.html" class="item" data-name="inputchatphoto inputchatphoto">
-                <span class="item-name">InputChatPhoto</span>
-                <span class="item-desc">Existing photo to be set as a chat profile photo.</span>
-            </a>
-
             </div>
         </div>
         
@@ -111,9 +111,9 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// InputChatPhoto is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputChatPhoto</span> = &amp;<span class="package">tg.</span><span class="type">InputChatPhoto</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputChatPhoto</span> = &amp;<span class="package">tg.</span><span class="type">InputChatPhotoEmpty</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputChatPhoto</span> = &amp;<span class="package">tg.</span><span class="type">InputChatUploadedPhoto</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputChatPhoto</span> = &amp;<span class="package">tg.</span><span class="type">InputChatPhoto</span>{}
 </pre>
         </div>
         </article>

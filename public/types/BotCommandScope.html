@@ -99,14 +99,14 @@
                 <span class="item-desc">The specified bot commands will be valid in all groups and supergroups.</span>
             </a>
 
-            <a href="../constructors/botCommandScopeUsers.html" class="item" data-name="botcommandscopeusers botcommandscopeusers">
-                <span class="item-name">BotCommandScopeUsers</span>
-                <span class="item-desc">The specified bot commands will only be valid in all private chats with users.</span>
-            </a>
-
             <a href="../constructors/botCommandScopeChatAdmins.html" class="item" data-name="botcommandscopechatadmins botcommandscopechatadmins">
                 <span class="item-name">BotCommandScopeChatAdmins</span>
                 <span class="item-desc">The specified bot commands will be valid only for chat administrators, in all groups and supergroups</span>
+            </a>
+
+            <a href="../constructors/botCommandScopeUsers.html" class="item" data-name="botcommandscopeusers botcommandscopeusers">
+                <span class="item-name">BotCommandScopeUsers</span>
+                <span class="item-desc">The specified bot commands will only be valid in all private chats with users.</span>
             </a>
 
             <a href="../constructors/botCommandScopePeer.html" class="item" data-name="botcommandscopepeer botcommandscopepeer">
@@ -133,8 +133,8 @@
 <span class="comment">// You can use any of the following constructors:</span>
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotCommandScope</span> = &amp;<span class="package">tg.</span><span class="type">BotCommandScopeDefault</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotCommandScope</span> = &amp;<span class="package">tg.</span><span class="type">BotCommandScopeChats</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotCommandScope</span> = &amp;<span class="package">tg.</span><span class="type">BotCommandScopeUsers</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotCommandScope</span> = &amp;<span class="package">tg.</span><span class="type">BotCommandScopeChatAdmins</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotCommandScope</span> = &amp;<span class="package">tg.</span><span class="type">BotCommandScopeUsers</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotCommandScope</span> = &amp;<span class="package">tg.</span><span class="type">BotCommandScopePeer</span>{}
 <span class="comment">// ... and <span class="number">2</span> more constructors</span>
 </pre>
