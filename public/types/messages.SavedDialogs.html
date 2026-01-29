@@ -89,6 +89,11 @@
             </p>
             <div class="item-list">
 
+            <a href="../constructors/messages/savedDialogsSlice.html" class="item" data-name="messagessaveddialogsslice messages.saveddialogsslice">
+                <span class="item-name">MessagesSavedDialogsSlice</span>
+                <span class="item-desc">Incomplete list of saved message dialogs with messages and auxiliary data.</span>
+            </a>
+
             <a href="../constructors/messages/savedDialogs.html" class="item" data-name="messagessaveddialogs messages.saveddialogs">
                 <span class="item-name">MessagesSavedDialogs</span>
                 <span class="item-desc">Represents some saved message dialogs.</span>
@@ -99,11 +104,6 @@
                 <span class="item-desc">The saved dialogs haven&#x27;t changed</span>
             </a>
 
-            <a href="../constructors/messages/savedDialogsSlice.html" class="item" data-name="messagessaveddialogsslice messages.saveddialogsslice">
-                <span class="item-name">MessagesSavedDialogsSlice</span>
-                <span class="item-desc">Incomplete list of saved message dialogs with messages and auxiliary data.</span>
-            </a>
-
             </div>
         </div>
         
@@ -111,9 +111,9 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// messages.SavedDialogs is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessagesSavedDialogs</span> = &amp;<span class="package">tg.</span><span class="type">MessagesSavedDialogsSlice</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessagesSavedDialogs</span> = &amp;<span class="package">tg.</span><span class="type">MessagesSavedDialogs</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessagesSavedDialogs</span> = &amp;<span class="package">tg.</span><span class="type">MessagesSavedDialogsNotModified</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessagesSavedDialogs</span> = &amp;<span class="package">tg.</span><span class="type">MessagesSavedDialogsSlice</span>{}
 </pre>
         </div>
         </article>

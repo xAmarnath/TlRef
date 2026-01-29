@@ -89,11 +89,6 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/inputSavedStarGiftUser.html" class="item" data-name="inputsavedstargiftuser inputsavedstargiftuser">
-                <span class="item-name">InputSavedStarGiftUser</span>
-                <span class="item-desc">A gift received in a private chat with another user.</span>
-            </a>
-
             <a href="../constructors/inputSavedStarGiftSlug.html" class="item" data-name="inputsavedstargiftslug inputsavedstargiftslug">
                 <span class="item-name">InputSavedStarGiftSlug</span>
                 <span class="item-desc">Points to a collectible gift obtained from a collectible gift link.</span>
@@ -104,6 +99,11 @@
                 <span class="item-desc">A gift received by a channel we own.</span>
             </a>
 
+            <a href="../constructors/inputSavedStarGiftUser.html" class="item" data-name="inputsavedstargiftuser inputsavedstargiftuser">
+                <span class="item-name">InputSavedStarGiftUser</span>
+                <span class="item-desc">A gift received in a private chat with another user.</span>
+            </a>
+
             </div>
         </div>
         
@@ -111,9 +111,9 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// InputSavedStarGift is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputSavedStarGift</span> = &amp;<span class="package">tg.</span><span class="type">InputSavedStarGiftUser</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputSavedStarGift</span> = &amp;<span class="package">tg.</span><span class="type">InputSavedStarGiftSlug</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputSavedStarGift</span> = &amp;<span class="package">tg.</span><span class="type">InputSavedStarGiftChat</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputSavedStarGift</span> = &amp;<span class="package">tg.</span><span class="type">InputSavedStarGiftUser</span>{}
 </pre>
         </div>
         </article>

@@ -94,14 +94,14 @@
                 <span class="item-desc">This user requires us to buy a Premium subscription in order to contact them.</span>
             </a>
 
-            <a href="../constructors/requirementToContactEmpty.html" class="item" data-name="requirementtocontactempty requirementtocontactempty">
-                <span class="item-name">RequirementToContactEmpty</span>
-                <span class="item-desc">This user can be freely contacted.</span>
-            </a>
-
             <a href="../constructors/requirementToContactPaidMessages.html" class="item" data-name="requirementtocontactpaidmessages requirementtocontactpaidmessages">
                 <span class="item-name">RequirementToContactPaidMessages</span>
                 <span class="item-desc">This user requires us to pay the specified amount of Telegram Stars to send them a message, see here</span>
+            </a>
+
+            <a href="../constructors/requirementToContactEmpty.html" class="item" data-name="requirementtocontactempty requirementtocontactempty">
+                <span class="item-name">RequirementToContactEmpty</span>
+                <span class="item-desc">This user can be freely contacted.</span>
             </a>
 
             </div>
@@ -112,8 +112,8 @@
             <pre class="example-code"><span class="comment">// RequirementToContact is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RequirementToContact</span> = &amp;<span class="package">tg.</span><span class="type">RequirementToContactPremium</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RequirementToContact</span> = &amp;<span class="package">tg.</span><span class="type">RequirementToContactEmpty</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RequirementToContact</span> = &amp;<span class="package">tg.</span><span class="type">RequirementToContactPaidMessages</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RequirementToContact</span> = &amp;<span class="package">tg.</span><span class="type">RequirementToContactEmpty</span>{}
 </pre>
         </div>
         </article>

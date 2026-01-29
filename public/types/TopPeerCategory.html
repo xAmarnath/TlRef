@@ -89,19 +89,14 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/topPeerCategoryBotsInline.html" class="item" data-name="toppeercategorybotsinline toppeercategorybotsinline">
-                <span class="item-name">TopPeerCategoryBotsInline</span>
-                <span class="item-desc">Most used inline bots</span>
-            </a>
-
             <a href="../constructors/topPeerCategoryBotsPM.html" class="item" data-name="toppeercategorybotspm toppeercategorybotspm">
                 <span class="item-name">TopPeerCategoryBotsPm</span>
                 <span class="item-desc">Most used bots</span>
             </a>
 
-            <a href="../constructors/topPeerCategoryCorrespondents.html" class="item" data-name="toppeercategorycorrespondents toppeercategorycorrespondents">
-                <span class="item-name">TopPeerCategoryCorrespondents</span>
-                <span class="item-desc">Users we&#x27;ve chatted most frequently with</span>
+            <a href="../constructors/topPeerCategoryBotsInline.html" class="item" data-name="toppeercategorybotsinline toppeercategorybotsinline">
+                <span class="item-name">TopPeerCategoryBotsInline</span>
+                <span class="item-desc">Most used inline bots</span>
             </a>
 
             <a href="../constructors/topPeerCategoryGroups.html" class="item" data-name="toppeercategorygroups toppeercategorygroups">
@@ -119,6 +114,16 @@
                 <span class="item-desc">Most frequently visited channels</span>
             </a>
 
+            <a href="../constructors/topPeerCategoryCorrespondents.html" class="item" data-name="toppeercategorycorrespondents toppeercategorycorrespondents">
+                <span class="item-name">TopPeerCategoryCorrespondents</span>
+                <span class="item-desc">Users we&#x27;ve chatted most frequently with</span>
+            </a>
+
+            <a href="../constructors/topPeerCategoryBotsApp.html" class="item" data-name="toppeercategorybotsapp toppeercategorybotsapp">
+                <span class="item-name">TopPeerCategoryBotsApp</span>
+                <span class="item-desc">Most frequently used Main Mini Bot Apps.</span>
+            </a>
+
             <a href="../constructors/topPeerCategoryForwardUsers.html" class="item" data-name="toppeercategoryforwardusers toppeercategoryforwardusers">
                 <span class="item-name">TopPeerCategoryForwardUsers</span>
                 <span class="item-desc">Users to which the users often forwards messages to</span>
@@ -129,11 +134,6 @@
                 <span class="item-desc">Chats to which the users often forwards messages to</span>
             </a>
 
-            <a href="../constructors/topPeerCategoryBotsApp.html" class="item" data-name="toppeercategorybotsapp toppeercategorybotsapp">
-                <span class="item-name">TopPeerCategoryBotsApp</span>
-                <span class="item-desc">Most frequently used Main Mini Bot Apps.</span>
-            </a>
-
             </div>
         </div>
         
@@ -141,11 +141,11 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// TopPeerCategory is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">TopPeerCategory</span> = &amp;<span class="package">tg.</span><span class="type">TopPeerCategoryBotsInline</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">TopPeerCategory</span> = &amp;<span class="package">tg.</span><span class="type">TopPeerCategoryBotsPm</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">TopPeerCategory</span> = &amp;<span class="package">tg.</span><span class="type">TopPeerCategoryCorrespondents</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">TopPeerCategory</span> = &amp;<span class="package">tg.</span><span class="type">TopPeerCategoryBotsInline</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">TopPeerCategory</span> = &amp;<span class="package">tg.</span><span class="type">TopPeerCategoryGroups</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">TopPeerCategory</span> = &amp;<span class="package">tg.</span><span class="type">TopPeerCategoryPhoneCalls</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">TopPeerCategory</span> = &amp;<span class="package">tg.</span><span class="type">TopPeerCategoryChannels</span>{}
 <span class="comment">// ... and <span class="number">4</span> more constructors</span>
 </pre>
         </div>

@@ -89,14 +89,14 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/requestedPeerChat.html" class="item" data-name="requestedpeerchat requestedpeerchat">
-                <span class="item-name">RequestedPeerChat</span>
-                <span class="item-desc">Info about a chat, shared by a user with the currently logged in bot using messages. send Bot Requeste</span>
-            </a>
-
             <a href="../constructors/requestedPeerUser.html" class="item" data-name="requestedpeeruser requestedpeeruser">
                 <span class="item-name">RequestedPeerUser</span>
                 <span class="item-desc">Info about a user, shared by a user with the currently logged in bot using messages. send Bot Requested</span>
+            </a>
+
+            <a href="../constructors/requestedPeerChat.html" class="item" data-name="requestedpeerchat requestedpeerchat">
+                <span class="item-name">RequestedPeerChat</span>
+                <span class="item-desc">Info about a chat, shared by a user with the currently logged in bot using messages. send Bot Requeste</span>
             </a>
 
             <a href="../constructors/requestedPeerChannel.html" class="item" data-name="requestedpeerchannel requestedpeerchannel">
@@ -111,8 +111,8 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// RequestedPeer is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RequestedPeer</span> = &amp;<span class="package">tg.</span><span class="type">RequestedPeerChat</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RequestedPeer</span> = &amp;<span class="package">tg.</span><span class="type">RequestedPeerUser</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RequestedPeer</span> = &amp;<span class="package">tg.</span><span class="type">RequestedPeerChat</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RequestedPeer</span> = &amp;<span class="package">tg.</span><span class="type">RequestedPeerChannel</span>{}
 </pre>
         </div>

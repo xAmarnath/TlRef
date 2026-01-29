@@ -89,11 +89,6 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/reactionEmoji.html" class="item" data-name="reactionemoji reactionemoji">
-                <span class="item-name">ReactionEmoji</span>
-                <span class="item-desc">Normal emoji message reaction</span>
-            </a>
-
             <a href="../constructors/reactionEmpty.html" class="item" data-name="reactionempty reactionempty">
                 <span class="item-name">ReactionEmpty</span>
                 <span class="item-desc">No reaction</span>
@@ -102,6 +97,11 @@
             <a href="../constructors/reactionCustomEmoji.html" class="item" data-name="reactioncustomemoji reactioncustomemoji">
                 <span class="item-name">ReactionCustomEmoji</span>
                 <span class="item-desc">Custom emoji message reaction</span>
+            </a>
+
+            <a href="../constructors/reactionEmoji.html" class="item" data-name="reactionemoji reactionemoji">
+                <span class="item-name">ReactionEmoji</span>
+                <span class="item-desc">Normal emoji message reaction</span>
             </a>
 
             <a href="../constructors/reactionPaid.html" class="item" data-name="reactionpaid reactionpaid">
@@ -116,9 +116,9 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// Reaction is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Reaction</span> = &amp;<span class="package">tg.</span><span class="type">ReactionEmoji</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Reaction</span> = &amp;<span class="package">tg.</span><span class="type">ReactionEmpty</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Reaction</span> = &amp;<span class="package">tg.</span><span class="type">ReactionCustomEmoji</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Reaction</span> = &amp;<span class="package">tg.</span><span class="type">ReactionEmoji</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Reaction</span> = &amp;<span class="package">tg.</span><span class="type">ReactionPaid</span>{}
 </pre>
         </div>

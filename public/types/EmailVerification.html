@@ -89,6 +89,11 @@
             </p>
             <div class="item-list">
 
+            <a href="../constructors/emailVerificationCode.html" class="item" data-name="emailverificationcode emailverificationcode">
+                <span class="item-name">EmailVerificationCode</span>
+                <span class="item-desc">Email verification code</span>
+            </a>
+
             <a href="../constructors/emailVerificationGoogle.html" class="item" data-name="emailverificationgoogle emailverificationgoogle">
                 <span class="item-name">EmailVerificationGoogle</span>
                 <span class="item-desc">Google ID email verification token</span>
@@ -99,11 +104,6 @@
                 <span class="item-desc">Apple ID email verification token</span>
             </a>
 
-            <a href="../constructors/emailVerificationCode.html" class="item" data-name="emailverificationcode emailverificationcode">
-                <span class="item-name">EmailVerificationCode</span>
-                <span class="item-desc">Email verification code</span>
-            </a>
-
             </div>
         </div>
         
@@ -111,9 +111,9 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// EmailVerification is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">EmailVerification</span> = &amp;<span class="package">tg.</span><span class="type">EmailVerificationCode</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">EmailVerification</span> = &amp;<span class="package">tg.</span><span class="type">EmailVerificationGoogle</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">EmailVerification</span> = &amp;<span class="package">tg.</span><span class="type">EmailVerificationApple</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">EmailVerification</span> = &amp;<span class="package">tg.</span><span class="type">EmailVerificationCode</span>{}
 </pre>
         </div>
         </article>

@@ -89,6 +89,11 @@
             </p>
             <div class="item-list">
 
+            <a href="../constructors/inputStorePaymentGiftPremium.html" class="item" data-name="inputstorepaymentgiftpremium inputstorepaymentgiftpremium">
+                <span class="item-name">InputStorePaymentGiftPremium</span>
+                <span class="item-desc">Info about a gifted Telegram Premium purchase</span>
+            </a>
+
             <a href="../constructors/inputStorePaymentPremiumSubscription.html" class="item" data-name="inputstorepaymentpremiumsubscription inputstorepaymentpremiumsubscription">
                 <span class="item-name">InputStorePaymentPremiumSubscription</span>
                 <span class="item-desc">Info about a Telegram Premium purchase</span>
@@ -99,9 +104,14 @@
                 <span class="item-desc">Used to gift Telegram Premium subscriptions only to some specific subscribers of a channel/supergrou</span>
             </a>
 
-            <a href="../constructors/inputStorePaymentAuthCode.html" class="item" data-name="inputstorepaymentauthcode inputstorepaymentauthcode">
-                <span class="item-name">InputStorePaymentAuthCode</span>
-                <span class="item-desc">Indicates payment for a login code.</span>
+            <a href="../constructors/inputStorePaymentPremiumGiveaway.html" class="item" data-name="inputstorepaymentpremiumgiveaway inputstorepaymentpremiumgiveaway">
+                <span class="item-name">InputStorePaymentPremiumGiveaway</span>
+                <span class="item-desc">Used to pay for a giveaway, see here for more info.</span>
+            </a>
+
+            <a href="../constructors/inputStorePaymentStarsTopup.html" class="item" data-name="inputstorepaymentstarstopup inputstorepaymentstarstopup">
+                <span class="item-name">InputStorePaymentStarsTopup</span>
+                <span class="item-desc">Used to top up the Telegram Stars balance of the current account.</span>
             </a>
 
             <a href="../constructors/inputStorePaymentStarsGift.html" class="item" data-name="inputstorepaymentstarsgift inputstorepaymentstarsgift">
@@ -114,19 +124,9 @@
                 <span class="item-desc">Used to pay for a star giveaway, see here for more info.</span>
             </a>
 
-            <a href="../constructors/inputStorePaymentStarsTopup.html" class="item" data-name="inputstorepaymentstarstopup inputstorepaymentstarstopup">
-                <span class="item-name">InputStorePaymentStarsTopup</span>
-                <span class="item-desc">Used to top up the Telegram Stars balance of the current account.</span>
-            </a>
-
-            <a href="../constructors/inputStorePaymentGiftPremium.html" class="item" data-name="inputstorepaymentgiftpremium inputstorepaymentgiftpremium">
-                <span class="item-name">InputStorePaymentGiftPremium</span>
-                <span class="item-desc">Info about a gifted Telegram Premium purchase</span>
-            </a>
-
-            <a href="../constructors/inputStorePaymentPremiumGiveaway.html" class="item" data-name="inputstorepaymentpremiumgiveaway inputstorepaymentpremiumgiveaway">
-                <span class="item-name">InputStorePaymentPremiumGiveaway</span>
-                <span class="item-desc">Used to pay for a giveaway, see here for more info.</span>
+            <a href="../constructors/inputStorePaymentAuthCode.html" class="item" data-name="inputstorepaymentauthcode inputstorepaymentauthcode">
+                <span class="item-name">InputStorePaymentAuthCode</span>
+                <span class="item-desc">Indicates payment for a login code.</span>
             </a>
 
             </div>
@@ -136,11 +136,11 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// InputStorePaymentPurpose is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputStorePaymentPurpose</span> = &amp;<span class="package">tg.</span><span class="type">InputStorePaymentGiftPremium</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputStorePaymentPurpose</span> = &amp;<span class="package">tg.</span><span class="type">InputStorePaymentPremiumSubscription</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputStorePaymentPurpose</span> = &amp;<span class="package">tg.</span><span class="type">InputStorePaymentPremiumGiftCode</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputStorePaymentPurpose</span> = &amp;<span class="package">tg.</span><span class="type">InputStorePaymentAuthCode</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputStorePaymentPurpose</span> = &amp;<span class="package">tg.</span><span class="type">InputStorePaymentStarsGift</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputStorePaymentPurpose</span> = &amp;<span class="package">tg.</span><span class="type">InputStorePaymentStarsGiveaway</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputStorePaymentPurpose</span> = &amp;<span class="package">tg.</span><span class="type">InputStorePaymentPremiumGiveaway</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputStorePaymentPurpose</span> = &amp;<span class="package">tg.</span><span class="type">InputStorePaymentStarsTopup</span>{}
 <span class="comment">// ... and <span class="number">3</span> more constructors</span>
 </pre>
         </div>
