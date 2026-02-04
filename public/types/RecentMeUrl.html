@@ -69,7 +69,7 @@
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../types.html">Types</a> <span>›</span> RecentMeUrl</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 221</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
         </div>
         
         <header class="page-header">
@@ -89,9 +89,9 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/recentMeUrlUnknown.html" class="item" data-name="recentmeurlunknown recentmeurlunknown">
-                <span class="item-name">RecentMeUrlUnknown</span>
-                <span class="item-desc">Unknown t. me url</span>
+            <a href="../constructors/recentMeUrlChat.html" class="item" data-name="recentmeurlchat recentmeurlchat">
+                <span class="item-name">RecentMeUrlChat</span>
+                <span class="item-desc">Recent t. me link to a chat</span>
             </a>
 
             <a href="../constructors/recentMeUrlUser.html" class="item" data-name="recentmeurluser recentmeurluser">
@@ -99,14 +99,14 @@
                 <span class="item-desc">Recent t. me link to a user</span>
             </a>
 
-            <a href="../constructors/recentMeUrlChat.html" class="item" data-name="recentmeurlchat recentmeurlchat">
-                <span class="item-name">RecentMeUrlChat</span>
-                <span class="item-desc">Recent t. me link to a chat</span>
-            </a>
-
             <a href="../constructors/recentMeUrlStickerSet.html" class="item" data-name="recentmeurlstickerset recentmeurlstickerset">
                 <span class="item-name">RecentMeUrlStickerSet</span>
                 <span class="item-desc">Recent t. me stickerset installation URL</span>
+            </a>
+
+            <a href="../constructors/recentMeUrlUnknown.html" class="item" data-name="recentmeurlunknown recentmeurlunknown">
+                <span class="item-name">RecentMeUrlUnknown</span>
+                <span class="item-desc">Unknown t. me url</span>
             </a>
 
             <a href="../constructors/recentMeUrlChatInvite.html" class="item" data-name="recentmeurlchatinvite recentmeurlchatinvite">
@@ -121,10 +121,10 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// RecentMeUrl is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RecentMeUrl</span> = &amp;<span class="package">tg.</span><span class="type">RecentMeUrlUnknown</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RecentMeUrl</span> = &amp;<span class="package">tg.</span><span class="type">RecentMeUrlUser</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RecentMeUrl</span> = &amp;<span class="package">tg.</span><span class="type">RecentMeUrlChat</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RecentMeUrl</span> = &amp;<span class="package">tg.</span><span class="type">RecentMeUrlUser</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RecentMeUrl</span> = &amp;<span class="package">tg.</span><span class="type">RecentMeUrlStickerSet</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RecentMeUrl</span> = &amp;<span class="package">tg.</span><span class="type">RecentMeUrlUnknown</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RecentMeUrl</span> = &amp;<span class="package">tg.</span><span class="type">RecentMeUrlChatInvite</span>{}
 </pre>
         </div>

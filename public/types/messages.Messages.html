@@ -69,7 +69,7 @@
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../types.html">Types</a> <span>›</span> messages.Messages</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 221</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
         </div>
         
         <header class="page-header">
@@ -89,11 +89,6 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/messages/channelMessages.html" class="item" data-name="messageschannelmessages messages.channelmessages">
-                <span class="item-name">MessagesChannelMessages</span>
-                <span class="item-desc">Channel messages</span>
-            </a>
-
             <a href="../constructors/messages/messagesSlice.html" class="item" data-name="messagesmessagesslice messages.messagesslice">
                 <span class="item-name">MessagesMessagesSlice</span>
                 <span class="item-desc">Incomplete list of messages and auxiliary data.</span>
@@ -102,6 +97,11 @@
             <a href="../constructors/messages/messages.html" class="item" data-name="messagesmessages messages.messages">
                 <span class="item-name">MessagesMessages</span>
                 <span class="item-desc">Full list of messages with auxiliary data.</span>
+            </a>
+
+            <a href="../constructors/messages/channelMessages.html" class="item" data-name="messageschannelmessages messages.channelmessages">
+                <span class="item-name">MessagesChannelMessages</span>
+                <span class="item-desc">Channel messages</span>
             </a>
 
             <a href="../constructors/messages/messagesNotModified.html" class="item" data-name="messagesmessagesnotmodified messages.messagesnotmodified">
@@ -116,9 +116,9 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// messages.Messages is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessagesMessages</span> = &amp;<span class="package">tg.</span><span class="type">MessagesChannelMessages</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessagesMessages</span> = &amp;<span class="package">tg.</span><span class="type">MessagesMessagesSlice</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessagesMessages</span> = &amp;<span class="package">tg.</span><span class="type">MessagesMessages</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessagesMessages</span> = &amp;<span class="package">tg.</span><span class="type">MessagesChannelMessages</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessagesMessages</span> = &amp;<span class="package">tg.</span><span class="type">MessagesMessagesNotModified</span>{}
 </pre>
         </div>

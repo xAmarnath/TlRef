@@ -69,7 +69,7 @@
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../types.html">Types</a> <span>›</span> InputPrivacyRule</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 221</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
         </div>
         
         <header class="page-header">
@@ -89,19 +89,9 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/inputPrivacyValueAllowContacts.html" class="item" data-name="inputprivacyvalueallowcontacts inputprivacyvalueallowcontacts">
-                <span class="item-name">InputPrivacyValueAllowContacts</span>
-                <span class="item-desc">Allow only contacts</span>
-            </a>
-
             <a href="../constructors/inputPrivacyValueAllowAll.html" class="item" data-name="inputprivacyvalueallowall inputprivacyvalueallowall">
                 <span class="item-name">InputPrivacyValueAllowAll</span>
                 <span class="item-desc">Allow all users</span>
-            </a>
-
-            <a href="../constructors/inputPrivacyValueDisallowContacts.html" class="item" data-name="inputprivacyvaluedisallowcontacts inputprivacyvaluedisallowcontacts">
-                <span class="item-name">InputPrivacyValueDisallowContacts</span>
-                <span class="item-desc">Disallow only contacts</span>
             </a>
 
             <a href="../constructors/inputPrivacyValueAllowUsers.html" class="item" data-name="inputprivacyvalueallowusers inputprivacyvalueallowusers">
@@ -109,14 +99,24 @@
                 <span class="item-desc">Allow only certain users</span>
             </a>
 
-            <a href="../constructors/inputPrivacyValueDisallowAll.html" class="item" data-name="inputprivacyvaluedisallowall inputprivacyvaluedisallowall">
-                <span class="item-name">InputPrivacyValueDisallowAll</span>
-                <span class="item-desc">Disallow all</span>
+            <a href="../constructors/inputPrivacyValueDisallowContacts.html" class="item" data-name="inputprivacyvaluedisallowcontacts inputprivacyvaluedisallowcontacts">
+                <span class="item-name">InputPrivacyValueDisallowContacts</span>
+                <span class="item-desc">Disallow only contacts</span>
+            </a>
+
+            <a href="../constructors/inputPrivacyValueAllowContacts.html" class="item" data-name="inputprivacyvalueallowcontacts inputprivacyvalueallowcontacts">
+                <span class="item-name">InputPrivacyValueAllowContacts</span>
+                <span class="item-desc">Allow only contacts</span>
             </a>
 
             <a href="../constructors/inputPrivacyValueDisallowUsers.html" class="item" data-name="inputprivacyvaluedisallowusers inputprivacyvaluedisallowusers">
                 <span class="item-name">InputPrivacyValueDisallowUsers</span>
                 <span class="item-desc">Disallow only certain users</span>
+            </a>
+
+            <a href="../constructors/inputPrivacyValueDisallowAll.html" class="item" data-name="inputprivacyvaluedisallowall inputprivacyvaluedisallowall">
+                <span class="item-name">InputPrivacyValueDisallowAll</span>
+                <span class="item-desc">Disallow all</span>
             </a>
 
             <a href="../constructors/inputPrivacyValueAllowChatParticipants.html" class="item" data-name="inputprivacyvalueallowchatparticipants inputprivacyvalueallowchatparticipants">
@@ -156,11 +156,11 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// InputPrivacyRule is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputPrivacyRule</span> = &amp;<span class="package">tg.</span><span class="type">InputPrivacyValueAllowContacts</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputPrivacyRule</span> = &amp;<span class="package">tg.</span><span class="type">InputPrivacyValueAllowAll</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputPrivacyRule</span> = &amp;<span class="package">tg.</span><span class="type">InputPrivacyValueDisallowContacts</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputPrivacyRule</span> = &amp;<span class="package">tg.</span><span class="type">InputPrivacyValueAllowUsers</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputPrivacyRule</span> = &amp;<span class="package">tg.</span><span class="type">InputPrivacyValueDisallowAll</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputPrivacyRule</span> = &amp;<span class="package">tg.</span><span class="type">InputPrivacyValueDisallowContacts</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputPrivacyRule</span> = &amp;<span class="package">tg.</span><span class="type">InputPrivacyValueAllowContacts</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputPrivacyRule</span> = &amp;<span class="package">tg.</span><span class="type">InputPrivacyValueDisallowUsers</span>{}
 <span class="comment">// ... and <span class="number">7</span> more constructors</span>
 </pre>
         </div>

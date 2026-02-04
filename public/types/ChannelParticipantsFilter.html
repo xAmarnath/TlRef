@@ -69,7 +69,7 @@
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../types.html">Types</a> <span>›</span> ChannelParticipantsFilter</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 221</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
         </div>
         
         <header class="page-header">
@@ -99,6 +99,11 @@
                 <span class="item-desc">Fetch only admin participants</span>
             </a>
 
+            <a href="../constructors/channelParticipantsKicked.html" class="item" data-name="channelparticipantskicked channelparticipantskicked">
+                <span class="item-name">ChannelParticipantsKicked</span>
+                <span class="item-desc">Fetch only kicked participants</span>
+            </a>
+
             <a href="../constructors/channelParticipantsBanned.html" class="item" data-name="channelparticipantsbanned channelparticipantsbanned">
                 <span class="item-name">ChannelParticipantsBanned</span>
                 <span class="item-desc">Fetch only banned participants</span>
@@ -109,24 +114,19 @@
                 <span class="item-desc">Fetch only bot participants</span>
             </a>
 
-            <a href="../constructors/channelParticipantsKicked.html" class="item" data-name="channelparticipantskicked channelparticipantskicked">
-                <span class="item-name">ChannelParticipantsKicked</span>
-                <span class="item-desc">Fetch only kicked participants</span>
-            </a>
-
             <a href="../constructors/channelParticipantsContacts.html" class="item" data-name="channelparticipantscontacts channelparticipantscontacts">
                 <span class="item-name">ChannelParticipantsContacts</span>
                 <span class="item-desc">Fetch only participants that are also contacts</span>
             </a>
 
-            <a href="../constructors/channelParticipantsMentions.html" class="item" data-name="channelparticipantsmentions channelparticipantsmentions">
-                <span class="item-name">ChannelParticipantsMentions</span>
-                <span class="item-desc">This filter is used when looking for supergroup members to mention. This filter will automatically r</span>
-            </a>
-
             <a href="../constructors/channelParticipantsSearch.html" class="item" data-name="channelparticipantssearch channelparticipantssearch">
                 <span class="item-name">ChannelParticipantsSearch</span>
                 <span class="item-desc">Query participants by name</span>
+            </a>
+
+            <a href="../constructors/channelParticipantsMentions.html" class="item" data-name="channelparticipantsmentions channelparticipantsmentions">
+                <span class="item-name">ChannelParticipantsMentions</span>
+                <span class="item-desc">This filter is used when looking for supergroup members to mention. This filter will automatically r</span>
             </a>
 
             </div>
@@ -138,9 +138,9 @@
 <span class="comment">// You can use any of the following constructors:</span>
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ChannelParticipantsFilter</span> = &amp;<span class="package">tg.</span><span class="type">ChannelParticipantsRecent</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ChannelParticipantsFilter</span> = &amp;<span class="package">tg.</span><span class="type">ChannelParticipantsAdmins</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ChannelParticipantsFilter</span> = &amp;<span class="package">tg.</span><span class="type">ChannelParticipantsKicked</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ChannelParticipantsFilter</span> = &amp;<span class="package">tg.</span><span class="type">ChannelParticipantsBanned</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ChannelParticipantsFilter</span> = &amp;<span class="package">tg.</span><span class="type">ChannelParticipantsBots</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ChannelParticipantsFilter</span> = &amp;<span class="package">tg.</span><span class="type">ChannelParticipantsKicked</span>{}
 <span class="comment">// ... and <span class="number">3</span> more constructors</span>
 </pre>
         </div>

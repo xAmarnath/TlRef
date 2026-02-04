@@ -69,7 +69,7 @@
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../types.html">Types</a> <span>›</span> auth.SentCodeType</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 221</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
         </div>
         
         <header class="page-header">
@@ -94,11 +94,6 @@
                 <span class="item-desc">The code was sent through the telegram app</span>
             </a>
 
-            <a href="../constructors/auth/sentCodeTypeCall.html" class="item" data-name="authsentcodetypecall auth.sentcodetypecall">
-                <span class="item-name">AuthSentCodeTypeCall</span>
-                <span class="item-desc">The code will be sent via a phone call: a synthesized voice will tell the user which verification co</span>
-            </a>
-
             <a href="../constructors/auth/sentCodeTypeSms.html" class="item" data-name="authsentcodetypesms auth.sentcodetypesms">
                 <span class="item-name">AuthSentCodeTypeSms</span>
                 <span class="item-desc">The code was sent via SMS</span>
@@ -107,6 +102,11 @@
             <a href="../constructors/auth/sentCodeTypeFlashCall.html" class="item" data-name="authsentcodetypeflashcall auth.sentcodetypeflashcall">
                 <span class="item-name">AuthSentCodeTypeFlashCall</span>
                 <span class="item-desc">The code will be sent via a flash phone call, that will be closed immediately. The phone code will t</span>
+            </a>
+
+            <a href="../constructors/auth/sentCodeTypeCall.html" class="item" data-name="authsentcodetypecall auth.sentcodetypecall">
+                <span class="item-name">AuthSentCodeTypeCall</span>
+                <span class="item-desc">The code will be sent via a phone call: a synthesized voice will tell the user which verification co</span>
             </a>
 
             <a href="../constructors/auth/sentCodeTypeMissedCall.html" class="item" data-name="authsentcodetypemissedcall auth.sentcodetypemissedcall">
@@ -119,6 +119,11 @@
                 <span class="item-desc">The code was sent via the previously configured login email</span>
             </a>
 
+            <a href="../constructors/auth/sentCodeTypeSetUpEmailRequired.html" class="item" data-name="authsentcodetypesetupemailrequired auth.sentcodetypesetupemailrequired">
+                <span class="item-name">AuthSentCodeTypeSetUpEmailRequired</span>
+                <span class="item-desc">The user should add and verify an email address in order to login as described here.</span>
+            </a>
+
             <a href="../constructors/auth/sentCodeTypeFirebaseSms.html" class="item" data-name="authsentcodetypefirebasesms auth.sentcodetypefirebasesms">
                 <span class="item-name">AuthSentCodeTypeFirebaseSms</span>
                 <span class="item-desc">An authentication code should be delivered via SMS after Firebase attestation, as described in the a</span>
@@ -129,19 +134,14 @@
                 <span class="item-desc">The code was delivered via fragment. com.</span>
             </a>
 
-            <a href="../constructors/auth/sentCodeTypeSmsPhrase.html" class="item" data-name="authsentcodetypesmsphrase auth.sentcodetypesmsphrase">
-                <span class="item-name">AuthSentCodeTypeSmsPhrase</span>
-                <span class="item-desc">The code was sent via SMS as a secret phrase starting with the word specified in beginning</span>
-            </a>
-
-            <a href="../constructors/auth/sentCodeTypeSetUpEmailRequired.html" class="item" data-name="authsentcodetypesetupemailrequired auth.sentcodetypesetupemailrequired">
-                <span class="item-name">AuthSentCodeTypeSetUpEmailRequired</span>
-                <span class="item-desc">The user should add and verify an email address in order to login as described here.</span>
-            </a>
-
             <a href="../constructors/auth/sentCodeTypeSmsWord.html" class="item" data-name="authsentcodetypesmsword auth.sentcodetypesmsword">
                 <span class="item-name">AuthSentCodeTypeSmsWord</span>
                 <span class="item-desc">The code was sent via SMS as a secret word, starting with the letter specified in beginning</span>
+            </a>
+
+            <a href="../constructors/auth/sentCodeTypeSmsPhrase.html" class="item" data-name="authsentcodetypesmsphrase auth.sentcodetypesmsphrase">
+                <span class="item-name">AuthSentCodeTypeSmsPhrase</span>
+                <span class="item-desc">The code was sent via SMS as a secret phrase starting with the word specified in beginning</span>
             </a>
 
             </div>
@@ -152,9 +152,9 @@
             <pre class="example-code"><span class="comment">// auth.SentCodeType is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">AuthSentCodeType</span> = &amp;<span class="package">tg.</span><span class="type">AuthSentCodeTypeApp</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">AuthSentCodeType</span> = &amp;<span class="package">tg.</span><span class="type">AuthSentCodeTypeCall</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">AuthSentCodeType</span> = &amp;<span class="package">tg.</span><span class="type">AuthSentCodeTypeSms</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">AuthSentCodeType</span> = &amp;<span class="package">tg.</span><span class="type">AuthSentCodeTypeFlashCall</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">AuthSentCodeType</span> = &amp;<span class="package">tg.</span><span class="type">AuthSentCodeTypeCall</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">AuthSentCodeType</span> = &amp;<span class="package">tg.</span><span class="type">AuthSentCodeTypeMissedCall</span>{}
 <span class="comment">// ... and <span class="number">6</span> more constructors</span>
 </pre>

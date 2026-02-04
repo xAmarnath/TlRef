@@ -69,7 +69,7 @@
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../types.html">Types</a> <span>›</span> PrivacyRule</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 221</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
         </div>
         
         <header class="page-header">
@@ -89,14 +89,14 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/privacyValueAllowAll.html" class="item" data-name="privacyvalueallowall privacyvalueallowall">
-                <span class="item-name">PrivacyValueAllowAll</span>
-                <span class="item-desc">Allow all users</span>
-            </a>
-
             <a href="../constructors/privacyValueAllowContacts.html" class="item" data-name="privacyvalueallowcontacts privacyvalueallowcontacts">
                 <span class="item-name">PrivacyValueAllowContacts</span>
                 <span class="item-desc">Allow all contacts</span>
+            </a>
+
+            <a href="../constructors/privacyValueAllowAll.html" class="item" data-name="privacyvalueallowall privacyvalueallowall">
+                <span class="item-name">PrivacyValueAllowAll</span>
+                <span class="item-desc">Allow all users</span>
             </a>
 
             <a href="../constructors/privacyValueAllowUsers.html" class="item" data-name="privacyvalueallowusers privacyvalueallowusers">
@@ -104,19 +104,14 @@
                 <span class="item-desc">Allow only certain users</span>
             </a>
 
-            <a href="../constructors/privacyValueDisallowContacts.html" class="item" data-name="privacyvaluedisallowcontacts privacyvaluedisallowcontacts">
-                <span class="item-name">PrivacyValueDisallowContacts</span>
-                <span class="item-desc">Disallow only contacts</span>
-            </a>
-
             <a href="../constructors/privacyValueDisallowAll.html" class="item" data-name="privacyvaluedisallowall privacyvaluedisallowall">
                 <span class="item-name">PrivacyValueDisallowAll</span>
                 <span class="item-desc">Disallow all users</span>
             </a>
 
-            <a href="../constructors/privacyValueAllowChatParticipants.html" class="item" data-name="privacyvalueallowchatparticipants privacyvalueallowchatparticipants">
-                <span class="item-name">PrivacyValueAllowChatParticipants</span>
-                <span class="item-desc">Allow all participants of certain chats</span>
+            <a href="../constructors/privacyValueDisallowContacts.html" class="item" data-name="privacyvaluedisallowcontacts privacyvaluedisallowcontacts">
+                <span class="item-name">PrivacyValueDisallowContacts</span>
+                <span class="item-desc">Disallow only contacts</span>
             </a>
 
             <a href="../constructors/privacyValueDisallowUsers.html" class="item" data-name="privacyvaluedisallowusers privacyvaluedisallowusers">
@@ -124,19 +119,24 @@
                 <span class="item-desc">Disallow only certain users</span>
             </a>
 
+            <a href="../constructors/privacyValueAllowChatParticipants.html" class="item" data-name="privacyvalueallowchatparticipants privacyvalueallowchatparticipants">
+                <span class="item-name">PrivacyValueAllowChatParticipants</span>
+                <span class="item-desc">Allow all participants of certain chats</span>
+            </a>
+
             <a href="../constructors/privacyValueDisallowChatParticipants.html" class="item" data-name="privacyvaluedisallowchatparticipants privacyvaluedisallowchatparticipants">
                 <span class="item-name">PrivacyValueDisallowChatParticipants</span>
                 <span class="item-desc">Disallow only participants of certain chats</span>
             </a>
 
-            <a href="../constructors/privacyValueAllowBots.html" class="item" data-name="privacyvalueallowbots privacyvalueallowbots">
-                <span class="item-name">PrivacyValueAllowBots</span>
-                <span class="item-desc">Allow bots and mini apps</span>
-            </a>
-
             <a href="../constructors/privacyValueAllowPremium.html" class="item" data-name="privacyvalueallowpremium privacyvalueallowpremium">
                 <span class="item-name">PrivacyValueAllowPremium</span>
                 <span class="item-desc">Allow only users with a Premium subscription, currently only usable for input Privacy Key Chat Invite</span>
+            </a>
+
+            <a href="../constructors/privacyValueAllowBots.html" class="item" data-name="privacyvalueallowbots privacyvalueallowbots">
+                <span class="item-name">PrivacyValueAllowBots</span>
+                <span class="item-desc">Allow bots and mini apps</span>
             </a>
 
             <a href="../constructors/privacyValueDisallowBots.html" class="item" data-name="privacyvaluedisallowbots privacyvaluedisallowbots">
@@ -156,11 +156,11 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// PrivacyRule is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PrivacyRule</span> = &amp;<span class="package">tg.</span><span class="type">PrivacyValueAllowAll</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PrivacyRule</span> = &amp;<span class="package">tg.</span><span class="type">PrivacyValueAllowContacts</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PrivacyRule</span> = &amp;<span class="package">tg.</span><span class="type">PrivacyValueAllowAll</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PrivacyRule</span> = &amp;<span class="package">tg.</span><span class="type">PrivacyValueAllowUsers</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PrivacyRule</span> = &amp;<span class="package">tg.</span><span class="type">PrivacyValueDisallowContacts</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PrivacyRule</span> = &amp;<span class="package">tg.</span><span class="type">PrivacyValueDisallowAll</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PrivacyRule</span> = &amp;<span class="package">tg.</span><span class="type">PrivacyValueDisallowContacts</span>{}
 <span class="comment">// ... and <span class="number">7</span> more constructors</span>
 </pre>
         </div>

@@ -69,7 +69,7 @@
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../types.html">Types</a> <span>›</span> updates.ChannelDifference</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 221</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
         </div>
         
         <header class="page-header">
@@ -94,14 +94,14 @@
                 <span class="item-desc">There are no new updates</span>
             </a>
 
-            <a href="../constructors/updates/channelDifference.html" class="item" data-name="updateschanneldifference updates.channeldifference">
-                <span class="item-name">UpdatesChannelDifference</span>
-                <span class="item-desc">The new updates</span>
-            </a>
-
             <a href="../constructors/updates/channelDifferenceTooLong.html" class="item" data-name="updateschanneldifferencetoolong updates.channeldifferencetoolong">
                 <span class="item-name">UpdatesChannelDifferenceTooLong</span>
                 <span class="item-desc">The provided pts + limit &lt; remote pts. Simply, there are too many updates to be fetched (more than</span>
+            </a>
+
+            <a href="../constructors/updates/channelDifference.html" class="item" data-name="updateschanneldifference updates.channeldifference">
+                <span class="item-name">UpdatesChannelDifference</span>
+                <span class="item-desc">The new updates</span>
             </a>
 
             </div>
@@ -112,8 +112,8 @@
             <pre class="example-code"><span class="comment">// updates.ChannelDifference is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">UpdatesChannelDifference</span> = &amp;<span class="package">tg.</span><span class="type">UpdatesChannelDifferenceEmpty</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">UpdatesChannelDifference</span> = &amp;<span class="package">tg.</span><span class="type">UpdatesChannelDifference</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">UpdatesChannelDifference</span> = &amp;<span class="package">tg.</span><span class="type">UpdatesChannelDifferenceTooLong</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">UpdatesChannelDifference</span> = &amp;<span class="package">tg.</span><span class="type">UpdatesChannelDifference</span>{}
 </pre>
         </div>
         </article>

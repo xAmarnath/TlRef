@@ -69,7 +69,7 @@
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../types.html">Types</a> <span>›</span> RequirementToContact</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 221</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
         </div>
         
         <header class="page-header">
@@ -89,9 +89,9 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/requirementToContactPremium.html" class="item" data-name="requirementtocontactpremium requirementtocontactpremium">
-                <span class="item-name">RequirementToContactPremium</span>
-                <span class="item-desc">This user requires us to buy a Premium subscription in order to contact them.</span>
+            <a href="../constructors/requirementToContactEmpty.html" class="item" data-name="requirementtocontactempty requirementtocontactempty">
+                <span class="item-name">RequirementToContactEmpty</span>
+                <span class="item-desc">This user can be freely contacted.</span>
             </a>
 
             <a href="../constructors/requirementToContactPaidMessages.html" class="item" data-name="requirementtocontactpaidmessages requirementtocontactpaidmessages">
@@ -99,9 +99,9 @@
                 <span class="item-desc">This user requires us to pay the specified amount of Telegram Stars to send them a message, see here</span>
             </a>
 
-            <a href="../constructors/requirementToContactEmpty.html" class="item" data-name="requirementtocontactempty requirementtocontactempty">
-                <span class="item-name">RequirementToContactEmpty</span>
-                <span class="item-desc">This user can be freely contacted.</span>
+            <a href="../constructors/requirementToContactPremium.html" class="item" data-name="requirementtocontactpremium requirementtocontactpremium">
+                <span class="item-name">RequirementToContactPremium</span>
+                <span class="item-desc">This user requires us to buy a Premium subscription in order to contact them.</span>
             </a>
 
             </div>
@@ -111,9 +111,9 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// RequirementToContact is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RequirementToContact</span> = &amp;<span class="package">tg.</span><span class="type">RequirementToContactPremium</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RequirementToContact</span> = &amp;<span class="package">tg.</span><span class="type">RequirementToContactPaidMessages</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RequirementToContact</span> = &amp;<span class="package">tg.</span><span class="type">RequirementToContactEmpty</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RequirementToContact</span> = &amp;<span class="package">tg.</span><span class="type">RequirementToContactPaidMessages</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RequirementToContact</span> = &amp;<span class="package">tg.</span><span class="type">RequirementToContactPremium</span>{}
 </pre>
         </div>
         </article>

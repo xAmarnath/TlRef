@@ -69,7 +69,7 @@
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../types.html">Types</a> <span>›</span> BotCommandScope</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 221</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
         </div>
         
         <header class="page-header">
@@ -94,6 +94,11 @@
                 <span class="item-desc">The commands will be valid in all dialogs</span>
             </a>
 
+            <a href="../constructors/botCommandScopeUsers.html" class="item" data-name="botcommandscopeusers botcommandscopeusers">
+                <span class="item-name">BotCommandScopeUsers</span>
+                <span class="item-desc">The specified bot commands will only be valid in all private chats with users.</span>
+            </a>
+
             <a href="../constructors/botCommandScopeChats.html" class="item" data-name="botcommandscopechats botcommandscopechats">
                 <span class="item-name">BotCommandScopeChats</span>
                 <span class="item-desc">The specified bot commands will be valid in all groups and supergroups.</span>
@@ -102,11 +107,6 @@
             <a href="../constructors/botCommandScopeChatAdmins.html" class="item" data-name="botcommandscopechatadmins botcommandscopechatadmins">
                 <span class="item-name">BotCommandScopeChatAdmins</span>
                 <span class="item-desc">The specified bot commands will be valid only for chat administrators, in all groups and supergroups</span>
-            </a>
-
-            <a href="../constructors/botCommandScopeUsers.html" class="item" data-name="botcommandscopeusers botcommandscopeusers">
-                <span class="item-name">BotCommandScopeUsers</span>
-                <span class="item-desc">The specified bot commands will only be valid in all private chats with users.</span>
             </a>
 
             <a href="../constructors/botCommandScopePeer.html" class="item" data-name="botcommandscopepeer botcommandscopepeer">
@@ -132,9 +132,9 @@
             <pre class="example-code"><span class="comment">// BotCommandScope is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotCommandScope</span> = &amp;<span class="package">tg.</span><span class="type">BotCommandScopeDefault</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotCommandScope</span> = &amp;<span class="package">tg.</span><span class="type">BotCommandScopeUsers</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotCommandScope</span> = &amp;<span class="package">tg.</span><span class="type">BotCommandScopeChats</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotCommandScope</span> = &amp;<span class="package">tg.</span><span class="type">BotCommandScopeChatAdmins</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotCommandScope</span> = &amp;<span class="package">tg.</span><span class="type">BotCommandScopeUsers</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotCommandScope</span> = &amp;<span class="package">tg.</span><span class="type">BotCommandScopePeer</span>{}
 <span class="comment">// ... and <span class="number">2</span> more constructors</span>
 </pre>

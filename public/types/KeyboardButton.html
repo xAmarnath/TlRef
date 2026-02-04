@@ -69,7 +69,7 @@
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../types.html">Types</a> <span>›</span> KeyboardButton</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 221</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
         </div>
         
         <header class="page-header">
@@ -89,14 +89,14 @@
             </p>
             <div class="item-list">
 
+            <a href="../constructors/keyboardButton.html" class="item" data-name="keyboardbutton keyboardbutton">
+                <span class="item-name">KeyboardButton</span>
+                <span class="item-desc">Bot keyboard button</span>
+            </a>
+
             <a href="../constructors/keyboardButtonUrl.html" class="item" data-name="keyboardbuttonurl keyboardbuttonurl">
                 <span class="item-name">KeyboardButtonUrl</span>
                 <span class="item-desc">URL button</span>
-            </a>
-
-            <a href="../constructors/keyboardButtonCallback.html" class="item" data-name="keyboardbuttoncallback keyboardbuttoncallback">
-                <span class="item-name">KeyboardButtonCallback</span>
-                <span class="item-desc">Callback button</span>
             </a>
 
             <a href="../constructors/keyboardButtonRequestGeoLocation.html" class="item" data-name="keyboardbuttonrequestgeolocation keyboardbuttonrequestgeolocation">
@@ -104,14 +104,14 @@
                 <span class="item-desc">Button to request a user&#x27;s geolocation</span>
             </a>
 
+            <a href="../constructors/keyboardButtonCallback.html" class="item" data-name="keyboardbuttoncallback keyboardbuttoncallback">
+                <span class="item-name">KeyboardButtonCallback</span>
+                <span class="item-desc">Callback button</span>
+            </a>
+
             <a href="../constructors/keyboardButtonRequestPhone.html" class="item" data-name="keyboardbuttonrequestphone keyboardbuttonrequestphone">
                 <span class="item-name">KeyboardButtonRequestPhone</span>
                 <span class="item-desc">Button to request a user&#x27;s phone number</span>
-            </a>
-
-            <a href="../constructors/keyboardButton.html" class="item" data-name="keyboardbutton keyboardbutton">
-                <span class="item-name">KeyboardButton</span>
-                <span class="item-desc">Bot keyboard button</span>
             </a>
 
             <a href="../constructors/keyboardButtonSwitchInline.html" class="item" data-name="keyboardbuttonswitchinline keyboardbuttonswitchinline">
@@ -119,14 +119,14 @@
                 <span class="item-desc">Button to force a user to switch to inline mode: pressing the button will prompt the user to select</span>
             </a>
 
-            <a href="../constructors/keyboardButtonGame.html" class="item" data-name="keyboardbuttongame keyboardbuttongame">
-                <span class="item-name">KeyboardButtonGame</span>
-                <span class="item-desc">Button to start a game</span>
-            </a>
-
             <a href="../constructors/keyboardButtonBuy.html" class="item" data-name="keyboardbuttonbuy keyboardbuttonbuy">
                 <span class="item-name">KeyboardButtonBuy</span>
                 <span class="item-desc">Button to buy a product</span>
+            </a>
+
+            <a href="../constructors/keyboardButtonGame.html" class="item" data-name="keyboardbuttongame keyboardbuttongame">
+                <span class="item-name">KeyboardButtonGame</span>
+                <span class="item-desc">Button to start a game</span>
             </a>
 
             <a href="../constructors/inputKeyboardButtonUrlAuth.html" class="item" data-name="inputkeyboardbuttonurlauth inputkeyboardbuttonurlauth">
@@ -149,11 +149,6 @@
                 <span class="item-desc">Button that links directly to a user profile</span>
             </a>
 
-            <a href="../constructors/keyboardButtonUserProfile.html" class="item" data-name="keyboardbuttonuserprofile keyboardbuttonuserprofile">
-                <span class="item-name">KeyboardButtonUserProfile</span>
-                <span class="item-desc">Button that links directly to a user profile</span>
-            </a>
-
             <a href="../constructors/keyboardButtonWebView.html" class="item" data-name="keyboardbuttonwebview keyboardbuttonwebview">
                 <span class="item-name">KeyboardButtonWebView</span>
                 <span class="item-desc">Button to open a bot mini app using messages. request Web View, sending over user information after us</span>
@@ -164,9 +159,9 @@
                 <span class="item-desc">Button to open a bot mini app using messages. request Simple Web View, without sending user information</span>
             </a>
 
-            <a href="../constructors/keyboardButtonCopy.html" class="item" data-name="keyboardbuttoncopy keyboardbuttoncopy">
-                <span class="item-name">KeyboardButtonCopy</span>
-                <span class="item-desc">Clipboard button: when clicked, the attached text must be copied to the clipboard.</span>
+            <a href="../constructors/keyboardButtonUserProfile.html" class="item" data-name="keyboardbuttonuserprofile keyboardbuttonuserprofile">
+                <span class="item-name">KeyboardButtonUserProfile</span>
+                <span class="item-desc">Button that links directly to a user profile</span>
             </a>
 
             <a href="../constructors/keyboardButtonRequestPeer.html" class="item" data-name="keyboardbuttonrequestpeer keyboardbuttonrequestpeer">
@@ -179,6 +174,11 @@
                 <span class="item-desc">Prompts the user to select and share one or more peers with the bot using messages. send Bot Requested P</span>
             </a>
 
+            <a href="../constructors/keyboardButtonCopy.html" class="item" data-name="keyboardbuttoncopy keyboardbuttoncopy">
+                <span class="item-name">KeyboardButtonCopy</span>
+                <span class="item-desc">Clipboard button: when clicked, the attached text must be copied to the clipboard.</span>
+            </a>
+
             </div>
         </div>
         
@@ -186,11 +186,11 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// KeyboardButton is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">KeyboardButton</span> = &amp;<span class="package">tg.</span><span class="type">KeyboardButtonUrl</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">KeyboardButton</span> = &amp;<span class="package">tg.</span><span class="type">KeyboardButtonCallback</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">KeyboardButton</span> = &amp;<span class="package">tg.</span><span class="type">KeyboardButtonRequestGeoLocation</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">KeyboardButton</span> = &amp;<span class="package">tg.</span><span class="type">KeyboardButtonRequestPhone</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">KeyboardButton</span> = &amp;<span class="package">tg.</span><span class="type">KeyboardButton</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">KeyboardButton</span> = &amp;<span class="package">tg.</span><span class="type">KeyboardButtonUrl</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">KeyboardButton</span> = &amp;<span class="package">tg.</span><span class="type">KeyboardButtonRequestGeoLocation</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">KeyboardButton</span> = &amp;<span class="package">tg.</span><span class="type">KeyboardButtonCallback</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">KeyboardButton</span> = &amp;<span class="package">tg.</span><span class="type">KeyboardButtonRequestPhone</span>{}
 <span class="comment">// ... and <span class="number">13</span> more constructors</span>
 </pre>
         </div>

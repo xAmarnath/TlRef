@@ -69,7 +69,7 @@
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../types.html">Types</a> <span>›</span> Updates</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 221</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
         </div>
         
         <header class="page-header">
@@ -89,14 +89,14 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/updatesTooLong.html" class="item" data-name="updatestoolong updatestoolong">
-                <span class="item-name">UpdatesTooLong</span>
-                <span class="item-desc">Too many updates, it is necessary to execute updates. get Difference.</span>
-            </a>
-
             <a href="../constructors/updateShortMessage.html" class="item" data-name="updateshortmessage updateshortmessage">
                 <span class="item-name">UpdateShortMessage</span>
                 <span class="item-desc">Info about a message sent to (received from) another user</span>
+            </a>
+
+            <a href="../constructors/updatesTooLong.html" class="item" data-name="updatestoolong updatestoolong">
+                <span class="item-name">UpdatesTooLong</span>
+                <span class="item-desc">Too many updates, it is necessary to execute updates. get Difference.</span>
             </a>
 
             <a href="../constructors/updateShortChatMessage.html" class="item" data-name="updateshortchatmessage updateshortchatmessage">
@@ -131,8 +131,8 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// Updates is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Updates</span> = &amp;<span class="package">tg.</span><span class="type">UpdatesTooLong</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Updates</span> = &amp;<span class="package">tg.</span><span class="type">UpdateShortMessage</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Updates</span> = &amp;<span class="package">tg.</span><span class="type">UpdatesTooLong</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Updates</span> = &amp;<span class="package">tg.</span><span class="type">UpdateShortChatMessage</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Updates</span> = &amp;<span class="package">tg.</span><span class="type">UpdateShort</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Updates</span> = &amp;<span class="package">tg.</span><span class="type">UpdatesCombined</span>{}

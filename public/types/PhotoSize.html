@@ -69,7 +69,7 @@
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../types.html">Types</a> <span>›</span> PhotoSize</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 221</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
         </div>
         
         <header class="page-header">
@@ -89,14 +89,14 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/photoSizeEmpty.html" class="item" data-name="photosizeempty photosizeempty">
-                <span class="item-name">PhotoSizeEmpty</span>
-                <span class="item-desc">Empty constructor. Image with this thumbnail is unavailable.</span>
-            </a>
-
             <a href="../constructors/photoSize.html" class="item" data-name="photosize photosize">
                 <span class="item-name">PhotoSize</span>
                 <span class="item-desc">Image description.</span>
+            </a>
+
+            <a href="../constructors/photoSizeEmpty.html" class="item" data-name="photosizeempty photosizeempty">
+                <span class="item-name">PhotoSizeEmpty</span>
+                <span class="item-desc">Empty constructor. Image with this thumbnail is unavailable.</span>
             </a>
 
             <a href="../constructors/photoCachedSize.html" class="item" data-name="photocachedsize photocachedsize">
@@ -104,14 +104,14 @@
                 <span class="item-desc">Description of an image and its content.</span>
             </a>
 
-            <a href="../constructors/photoSizeProgressive.html" class="item" data-name="photosizeprogressive photosizeprogressive">
-                <span class="item-name">PhotoSizeProgressive</span>
-                <span class="item-desc">Progressively encoded photosize</span>
-            </a>
-
             <a href="../constructors/photoStrippedSize.html" class="item" data-name="photostrippedsize photostrippedsize">
                 <span class="item-name">PhotoStrippedSize</span>
                 <span class="item-desc">A low-resolution compressed JPG payload</span>
+            </a>
+
+            <a href="../constructors/photoSizeProgressive.html" class="item" data-name="photosizeprogressive photosizeprogressive">
+                <span class="item-name">PhotoSizeProgressive</span>
+                <span class="item-desc">Progressively encoded photosize</span>
             </a>
 
             <a href="../constructors/photoPathSize.html" class="item" data-name="photopathsize photopathsize">
@@ -126,11 +126,11 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// PhotoSize is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PhotoSize</span> = &amp;<span class="package">tg.</span><span class="type">PhotoSizeEmpty</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PhotoSize</span> = &amp;<span class="package">tg.</span><span class="type">PhotoSize</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PhotoSize</span> = &amp;<span class="package">tg.</span><span class="type">PhotoSizeEmpty</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PhotoSize</span> = &amp;<span class="package">tg.</span><span class="type">PhotoCachedSize</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PhotoSize</span> = &amp;<span class="package">tg.</span><span class="type">PhotoSizeProgressive</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PhotoSize</span> = &amp;<span class="package">tg.</span><span class="type">PhotoStrippedSize</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PhotoSize</span> = &amp;<span class="package">tg.</span><span class="type">PhotoSizeProgressive</span>{}
 <span class="comment">// ... and <span class="number">1</span> more constructors</span>
 </pre>
         </div>

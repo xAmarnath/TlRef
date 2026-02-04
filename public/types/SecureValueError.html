@@ -69,7 +69,7 @@
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../types.html">Types</a> <span>›</span> SecureValueError</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 221</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
         </div>
         
         <header class="page-header">
@@ -89,29 +89,19 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/secureValueErrorFrontSide.html" class="item" data-name="securevalueerrorfrontside securevalueerrorfrontside">
-                <span class="item-name">SecureValueErrorFrontSide</span>
-                <span class="item-desc">Represents an issue with the front side of a document. The error is considered resolved when the fil</span>
-            </a>
-
             <a href="../constructors/secureValueErrorData.html" class="item" data-name="securevalueerrordata securevalueerrordata">
                 <span class="item-name">SecureValueErrorData</span>
                 <span class="item-desc">Represents an issue in one of the data fields that was provided by the user. The error is considered</span>
             </a>
 
+            <a href="../constructors/secureValueErrorFrontSide.html" class="item" data-name="securevalueerrorfrontside securevalueerrorfrontside">
+                <span class="item-name">SecureValueErrorFrontSide</span>
+                <span class="item-desc">Represents an issue with the front side of a document. The error is considered resolved when the fil</span>
+            </a>
+
             <a href="../constructors/secureValueErrorReverseSide.html" class="item" data-name="securevalueerrorreverseside securevalueerrorreverseside">
                 <span class="item-name">SecureValueErrorReverseSide</span>
                 <span class="item-desc">Represents an issue with the reverse side of a document. The error is considered resolved when the f</span>
-            </a>
-
-            <a href="../constructors/secureValueErrorSelfie.html" class="item" data-name="securevalueerrorselfie securevalueerrorselfie">
-                <span class="item-name">SecureValueErrorSelfie</span>
-                <span class="item-desc">Represents an issue with the selfie with a document. The error is considered resolved when the file</span>
-            </a>
-
-            <a href="../constructors/secureValueErrorFiles.html" class="item" data-name="securevalueerrorfiles securevalueerrorfiles">
-                <span class="item-name">SecureValueErrorFiles</span>
-                <span class="item-desc">Represents an issue with a list of scans. The error is considered resolved when the list of files co</span>
             </a>
 
             <a href="../constructors/secureValueErrorFile.html" class="item" data-name="securevalueerrorfile securevalueerrorfile">
@@ -124,14 +114,24 @@
                 <span class="item-desc">Secure value error</span>
             </a>
 
-            <a href="../constructors/secureValueErrorTranslationFiles.html" class="item" data-name="securevalueerrortranslationfiles securevalueerrortranslationfiles">
-                <span class="item-name">SecureValueErrorTranslationFiles</span>
-                <span class="item-desc">Represents an issue with the translated version of a document. The error is considered resolved when</span>
+            <a href="../constructors/secureValueErrorSelfie.html" class="item" data-name="securevalueerrorselfie securevalueerrorselfie">
+                <span class="item-name">SecureValueErrorSelfie</span>
+                <span class="item-desc">Represents an issue with the selfie with a document. The error is considered resolved when the file</span>
             </a>
 
             <a href="../constructors/secureValueErrorTranslationFile.html" class="item" data-name="securevalueerrortranslationfile securevalueerrortranslationfile">
                 <span class="item-name">SecureValueErrorTranslationFile</span>
                 <span class="item-desc">Represents an issue with one of the files that constitute the translation of a document. The error i</span>
+            </a>
+
+            <a href="../constructors/secureValueErrorFiles.html" class="item" data-name="securevalueerrorfiles securevalueerrorfiles">
+                <span class="item-name">SecureValueErrorFiles</span>
+                <span class="item-desc">Represents an issue with a list of scans. The error is considered resolved when the list of files co</span>
+            </a>
+
+            <a href="../constructors/secureValueErrorTranslationFiles.html" class="item" data-name="securevalueerrortranslationfiles securevalueerrortranslationfiles">
+                <span class="item-name">SecureValueErrorTranslationFiles</span>
+                <span class="item-desc">Represents an issue with the translated version of a document. The error is considered resolved when</span>
             </a>
 
             </div>
@@ -141,11 +141,11 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// SecureValueError is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">SecureValueError</span> = &amp;<span class="package">tg.</span><span class="type">SecureValueErrorFrontSide</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">SecureValueError</span> = &amp;<span class="package">tg.</span><span class="type">SecureValueErrorData</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">SecureValueError</span> = &amp;<span class="package">tg.</span><span class="type">SecureValueErrorFrontSide</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">SecureValueError</span> = &amp;<span class="package">tg.</span><span class="type">SecureValueErrorReverseSide</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">SecureValueError</span> = &amp;<span class="package">tg.</span><span class="type">SecureValueErrorSelfie</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">SecureValueError</span> = &amp;<span class="package">tg.</span><span class="type">SecureValueErrorFiles</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">SecureValueError</span> = &amp;<span class="package">tg.</span><span class="type">SecureValueErrorFile</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">SecureValueError</span> = &amp;<span class="package">tg.</span><span class="type">SecureValueError</span>{}
 <span class="comment">// ... and <span class="number">4</span> more constructors</span>
 </pre>
         </div>

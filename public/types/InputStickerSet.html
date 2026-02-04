@@ -69,7 +69,7 @@
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../types.html">Types</a> <span>›</span> InputStickerSet</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 221</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
         </div>
         
         <header class="page-header">
@@ -94,9 +94,9 @@
                 <span class="item-desc">Empty constructor</span>
             </a>
 
-            <a href="../constructors/inputStickerSetShortName.html" class="item" data-name="inputstickersetshortname inputstickersetshortname">
-                <span class="item-name">InputStickerSetShortName</span>
-                <span class="item-desc">Stickerset by short name, from a stickerset deep link</span>
+            <a href="../constructors/inputStickerSetID.html" class="item" data-name="inputstickersetid inputstickersetid">
+                <span class="item-name">InputStickerSetId</span>
+                <span class="item-desc">Stickerset by ID</span>
             </a>
 
             <a href="../constructors/inputStickerSetAnimatedEmoji.html" class="item" data-name="inputstickersetanimatedemoji inputstickersetanimatedemoji">
@@ -104,9 +104,14 @@
                 <span class="item-desc">Animated emojis stickerset</span>
             </a>
 
-            <a href="../constructors/inputStickerSetID.html" class="item" data-name="inputstickersetid inputstickersetid">
-                <span class="item-name">InputStickerSetId</span>
-                <span class="item-desc">Stickerset by ID</span>
+            <a href="../constructors/inputStickerSetDice.html" class="item" data-name="inputstickersetdice inputstickersetdice">
+                <span class="item-name">InputStickerSetDice</span>
+                <span class="item-desc">Used for fetching animated dice stickers</span>
+            </a>
+
+            <a href="../constructors/inputStickerSetShortName.html" class="item" data-name="inputstickersetshortname inputstickersetshortname">
+                <span class="item-name">InputStickerSetShortName</span>
+                <span class="item-desc">Stickerset by short name, from a stickerset deep link</span>
             </a>
 
             <a href="../constructors/inputStickerSetAnimatedEmojiAnimations.html" class="item" data-name="inputstickersetanimatedemojianimations inputstickersetanimatedemojianimations">
@@ -119,14 +124,9 @@
                 <span class="item-desc">Stickers to show when receiving a gifted Telegram Premium subscription</span>
             </a>
 
-            <a href="../constructors/inputStickerSetDice.html" class="item" data-name="inputstickersetdice inputstickersetdice">
-                <span class="item-name">InputStickerSetDice</span>
-                <span class="item-desc">Used for fetching animated dice stickers</span>
-            </a>
-
-            <a href="../constructors/inputStickerSetEmojiGenericAnimations.html" class="item" data-name="inputstickersetemojigenericanimations inputstickersetemojigenericanimations">
-                <span class="item-name">InputStickerSetEmojiGenericAnimations</span>
-                <span class="item-desc">Generic animation stickerset containing animations to play when reacting to messages using a normal</span>
+            <a href="../constructors/inputStickerSetEmojiDefaultTopicIcons.html" class="item" data-name="inputstickersetemojidefaulttopicicons inputstickersetemojidefaulttopicicons">
+                <span class="item-name">InputStickerSetEmojiDefaultTopicIcons</span>
+                <span class="item-desc">Default custom emoji stickerset for forum topic icons</span>
             </a>
 
             <a href="../constructors/inputStickerSetEmojiDefaultStatuses.html" class="item" data-name="inputstickersetemojidefaultstatuses inputstickersetemojidefaultstatuses">
@@ -134,9 +134,9 @@
                 <span class="item-desc">Default custom emoji status stickerset</span>
             </a>
 
-            <a href="../constructors/inputStickerSetEmojiDefaultTopicIcons.html" class="item" data-name="inputstickersetemojidefaulttopicicons inputstickersetemojidefaulttopicicons">
-                <span class="item-name">InputStickerSetEmojiDefaultTopicIcons</span>
-                <span class="item-desc">Default custom emoji stickerset for forum topic icons</span>
+            <a href="../constructors/inputStickerSetEmojiGenericAnimations.html" class="item" data-name="inputstickersetemojigenericanimations inputstickersetemojigenericanimations">
+                <span class="item-name">InputStickerSetEmojiGenericAnimations</span>
+                <span class="item-desc">Generic animation stickerset containing animations to play when reacting to messages using a normal</span>
             </a>
 
             <a href="../constructors/inputStickerSetEmojiChannelDefaultStatuses.html" class="item" data-name="inputstickersetemojichanneldefaultstatuses inputstickersetemojichanneldefaultstatuses">
@@ -157,10 +157,10 @@
             <pre class="example-code"><span class="comment">// InputStickerSet is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputStickerSet</span> = &amp;<span class="package">tg.</span><span class="type">InputStickerSetEmpty</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputStickerSet</span> = &amp;<span class="package">tg.</span><span class="type">InputStickerSetShortName</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputStickerSet</span> = &amp;<span class="package">tg.</span><span class="type">InputStickerSetAnimatedEmoji</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputStickerSet</span> = &amp;<span class="package">tg.</span><span class="type">InputStickerSetId</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputStickerSet</span> = &amp;<span class="package">tg.</span><span class="type">InputStickerSetAnimatedEmojiAnimations</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputStickerSet</span> = &amp;<span class="package">tg.</span><span class="type">InputStickerSetAnimatedEmoji</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputStickerSet</span> = &amp;<span class="package">tg.</span><span class="type">InputStickerSetDice</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputStickerSet</span> = &amp;<span class="package">tg.</span><span class="type">InputStickerSetShortName</span>{}
 <span class="comment">// ... and <span class="number">7</span> more constructors</span>
 </pre>
         </div>

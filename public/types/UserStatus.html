@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UserStatus - Gogram TL Reference</title>
-    <meta name="description" content="Abstract type representing one of 6 possible constructors.">
+    <meta name="description" content="Abstract type representing one of 7 possible constructors.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="UserStatus - Gogram TL Reference">
-    <meta property="og:description" content="Abstract type representing one of 6 possible constructors.">
+    <meta property="og:description" content="Abstract type representing one of 7 possible constructors.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -69,12 +69,12 @@
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../types.html">Types</a> <span>›</span> UserStatus</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 221</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
         </div>
         
         <header class="page-header">
             <h1>UserStatus</h1>
-            <p class="description">Abstract type representing one of 6 possible constructors.</p>
+            <p class="description">Abstract type representing one of 7 possible constructors.</p>
         </header>
         
         <div class="badges">
@@ -104,11 +104,6 @@
                 <span class="item-desc">The user&#x27;s offline status.</span>
             </a>
 
-            <a href="../constructors/userStatusLastMonth.html" class="item" data-name="userstatuslastmonth userstatuslastmonth">
-                <span class="item-name">UserStatusLastMonth</span>
-                <span class="item-desc">Online status: last seen last month</span>
-            </a>
-
             <a href="../constructors/userStatusRecently.html" class="item" data-name="userstatusrecently userstatusrecently">
                 <span class="item-name">UserStatusRecently</span>
                 <span class="item-desc">Online status: last seen recently</span>
@@ -117,6 +112,16 @@
             <a href="../constructors/userStatusLastWeek.html" class="item" data-name="userstatuslastweek userstatuslastweek">
                 <span class="item-name">UserStatusLastWeek</span>
                 <span class="item-desc">Online status: last seen last week</span>
+            </a>
+
+            <a href="../constructors/userStatusLastMonth.html" class="item" data-name="userstatuslastmonth userstatuslastmonth">
+                <span class="item-name">UserStatusLastMonth</span>
+                <span class="item-desc">Online status: last seen last month</span>
+            </a>
+
+            <a href="../constructors/userStatusHidden.html" class="item" data-name="userstatushidden userstatushidden">
+                <span class="item-name">UserStatusHidden</span>
+                <span class="item-desc">No description</span>
             </a>
 
             </div>
@@ -129,9 +134,9 @@
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">UserStatus</span> = &amp;<span class="package">tg.</span><span class="type">UserStatusEmpty</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">UserStatus</span> = &amp;<span class="package">tg.</span><span class="type">UserStatusOnline</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">UserStatus</span> = &amp;<span class="package">tg.</span><span class="type">UserStatusOffline</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">UserStatus</span> = &amp;<span class="package">tg.</span><span class="type">UserStatusLastMonth</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">UserStatus</span> = &amp;<span class="package">tg.</span><span class="type">UserStatusRecently</span>{}
-<span class="comment">// ... and <span class="number">1</span> more constructors</span>
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">UserStatus</span> = &amp;<span class="package">tg.</span><span class="type">UserStatusLastWeek</span>{}
+<span class="comment">// ... and <span class="number">2</span> more constructors</span>
 </pre>
         </div>
         </article>

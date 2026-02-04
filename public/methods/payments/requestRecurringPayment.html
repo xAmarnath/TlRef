@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payments.requestRecurringPayment - Gogram TL Reference</title>
+    <meta name="description" content="Layer 214 1 – Base layer 2 – New userpic notifications 3 – Send message can trigger link change 4 – Check-in chats 5 – Localized SMS, localized notifications 6 ">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="payments.requestRecurringPayment - Gogram TL Reference">
+    <meta property="og:description" content="Layer 214 1 – Base layer 2 – New userpic notifications 3 – Send message can trigger link change 4 – Check-in chats 5 – Localized SMS, localized notifications 6 ">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../../css/common.css">
+    <script src="../../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../../index.html">Home</a>
+                    <a href="../../types.html">Types</a>
+                    <a href="../../constructors.html">Constructors</a>
+                    <a href="../../methods.html">Methods</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "../..";
+    </script>
+    <script src="../../js/search_index.js"></script>
+    <script src="../../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../../index.html">Home</a> <span>›</span> <a href="../../methods.html">Methods</a> <span>›</span> Payments <span>›</span> RequestRecurringPayment</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>PaymentsRequestRecurringPayment</h1>
+            <p class="description">Layer 214 1 – Base layer 2 – New userpic notifications 3 – Send message can trigger link change 4 – Check-in chats 5 – Localized SMS, localized notifications 6 – Foursquare integration 7 – Added wall Paper Solid 8 – Added end-to-end encryption 9 – Improved big files upload perfomance 10 – Improved chat participants updates 11 – Improved secret chats 12 – New dynamic support 13 – Audio, video MIME; contacts import retry; new secret actions 14 – Notify settings sync, blacklist sync 15 – Modified get History offset behaviour 16 – Split send Code into 2 parts 17 – Added custom typing, introduced message flags 18 – Added usernames 23 – Stickers for secret chats 105 – Scheduled messages, Cloud themes 108 – Login with QR code 109 – Polls v 2 110 – People Nearby 2.0, Bank card entity 111 – Folders, Broadcast Stats 112 – Old featured stickers, generic dice, poll timer, poll solution 113 – PSA 114 – Video thumbs for GIFs 115 – Peek Channel Invite 116 – Group Stats, Profile Videos 117 – Web RTC Phone Calls 118 – Callback with 2 FA, Countries list 119 – Comments in channels, Threads, Anonymous Admins 120 – Multipins, Message Stats, Geo Live v 2 121 – SVG-based Outlines for Stickers 122 – Voice Chats 123 – Voice Chat improvements 124 – Expiring Invite links 125 – Voice Chats in Broadcasts 126 – Ban channels in channels 127 – Payments in channels 128 – Microthumbs for User/Chat profile photos 129 – Video Chats 130 – Custom placeholder for bot reply keyboards 131 – Reset 2 FA Password after a week 132 – Chat themes 133 – 64-bit IDs for User/Chat 134 – Chat Requests, Shared Media Calendar 135 – Send Message As a Channel 136 – Reactions 137 – Translations 138 – GIF Sticker Packs 139 – RTMP streaming 140 – Web Apps, Cloud Ringtones 142 – TCP Reflectors 143 – Premium Subscription, Cloud Invoices 144 – Premium as a Gift, Custom Emoji 145 – Custom Reactions, Statuses, Sign In with email 147 – Keywords for stickers and emojis 148 – Forums, collectible usernames 150 – Pinned forum topics, general topic 151 – Media spoilers, suggested profile photos 152 – Real-time translations, Firebase SMS authentication 153 – Modify created stickersets 155 – Dates for reactions 158 – Shared folders, per-chat wallpapers 159 – Anonymous votes 160 – Stories 164 – Stories in Channels 166 – Giveaways in channels 167 – Similar channels 168 – Channel colors 169 – Multiselection of chats for bots 170 – Saved Messages 2.0 171 – Saved Messages 2.0 174 – Group boosts 176 – Business 177 – Business Bots, Birthdays 178 – Saved Personal channel, Reactions notifications 179 – Channel revenue stats, phrases in SMS 180 – Message Effects, Hashtags 181 – Stars 182 – Stars Revenue 183 – Paid posts 184 – Stars Refunds 185 – Mini App Store, Star Gifts 186 – Channel Subscriptions for Stars 187 – Stars Giveaways 189 – Stars Gifts 192 – Video Qualities, Ads in bots 194 – Stars Subscription for Bots 195 – Affiliate Programs for Bots 196 – Collectible gifts 197 – Similar Bots 198 – Collectibles as emoji statuses 200 – Paid Messages 202 – Conference calls 203 – Resell collectible gifts 204 – Monoforums 205 – TODO lists 207 – Suggested channel posts 210 – Star gift collections, rating 211 – Story Albums 212 – Prepaid gift upgrades 213 – Music in profile 214 – Chat Themes with collectible gifts More. Method schema is available as of layer 143. Switch</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-method">method</span>
+        </div>
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="field-name">UserId</td>
+                            <td class="field-type"><a href="../../types/InputUser.html">InputUser</a></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">RecurringInitCharge</td>
+                            <td class="field-type">string</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">InvoiceMedia</td>
+                            <td class="field-type"><a href="../../types/InputMedia.html">InputMedia</a></td>
+                            <td></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../../types/Updates.html">Updates</a></span>
+        </div>
+
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// PaymentsRequestRecurringPayment - positional arguments</span>
+result, err := <span class="package">client.</span><span class="function">PaymentsRequestRecurringPayment</span>(&amp;<span class="package">tg.</span><span class="type">InputUserSelf</span>{}, <span class="string">&quot;Hello, World!&quot;</span>, &amp;<span class="package">tg.</span><span class="type">InputMediaPhoto</span>{ID: &amp;<span class="package">tg.</span><span class="type">InputPhoto</span>{ID: int64(<span class="number">5678901234567890</span>), AccessHash: int64(<span class="number">1234567890123456</span>), FileReference: []byte{0x01}}})
+<span class="keyword">if</span> err != <span class="keyword">nil</span> {
+    <span class="comment">// handle error</span>
+}
+<span class="comment">// result is *<span class="package">tg.</span><span class="type">Updates</span></span></pre>
+        </div>
+
+        </article>
+
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

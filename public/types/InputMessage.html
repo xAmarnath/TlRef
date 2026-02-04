@@ -69,7 +69,7 @@
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../types.html">Types</a> <span>›</span> InputMessage</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 221</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
         </div>
         
         <header class="page-header">
@@ -89,9 +89,9 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/inputMessageID.html" class="item" data-name="inputmessageid inputmessageid">
-                <span class="item-name">InputMessageId</span>
-                <span class="item-desc">Message by ID</span>
+            <a href="../constructors/inputMessageReplyTo.html" class="item" data-name="inputmessagereplyto inputmessagereplyto">
+                <span class="item-name">InputMessageReplyTo</span>
+                <span class="item-desc">Message to which the specified message replies to</span>
             </a>
 
             <a href="../constructors/inputMessagePinned.html" class="item" data-name="inputmessagepinned inputmessagepinned">
@@ -99,9 +99,9 @@
                 <span class="item-desc">Pinned message</span>
             </a>
 
-            <a href="../constructors/inputMessageReplyTo.html" class="item" data-name="inputmessagereplyto inputmessagereplyto">
-                <span class="item-name">InputMessageReplyTo</span>
-                <span class="item-desc">Message to which the specified message replies to</span>
+            <a href="../constructors/inputMessageID.html" class="item" data-name="inputmessageid inputmessageid">
+                <span class="item-name">InputMessageId</span>
+                <span class="item-desc">Message by ID</span>
             </a>
 
             <a href="../constructors/inputMessageCallbackQuery.html" class="item" data-name="inputmessagecallbackquery inputmessagecallbackquery">
@@ -116,9 +116,9 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// InputMessage is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputMessage</span> = &amp;<span class="package">tg.</span><span class="type">InputMessageId</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputMessage</span> = &amp;<span class="package">tg.</span><span class="type">InputMessagePinned</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputMessage</span> = &amp;<span class="package">tg.</span><span class="type">InputMessageReplyTo</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputMessage</span> = &amp;<span class="package">tg.</span><span class="type">InputMessagePinned</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputMessage</span> = &amp;<span class="package">tg.</span><span class="type">InputMessageId</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputMessage</span> = &amp;<span class="package">tg.</span><span class="type">InputMessageCallbackQuery</span>{}
 </pre>
         </div>

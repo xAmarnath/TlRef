@@ -69,7 +69,7 @@
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../types.html">Types</a> <span>›</span> RichText</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 221</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
         </div>
         
         <header class="page-header">
@@ -104,14 +104,9 @@
                 <span class="item-desc">Bold text</span>
             </a>
 
-            <a href="../constructors/textStrike.html" class="item" data-name="textstrike textstrike">
-                <span class="item-name">TextStrike</span>
-                <span class="item-desc">Strikethrough text</span>
-            </a>
-
-            <a href="../constructors/textFixed.html" class="item" data-name="textfixed textfixed">
-                <span class="item-name">TextFixed</span>
-                <span class="item-desc">fixed-width rich text</span>
+            <a href="../constructors/textItalic.html" class="item" data-name="textitalic textitalic">
+                <span class="item-name">TextItalic</span>
+                <span class="item-desc">Italic text</span>
             </a>
 
             <a href="../constructors/textUnderline.html" class="item" data-name="textunderline textunderline">
@@ -119,9 +114,9 @@
                 <span class="item-desc">Underlined text</span>
             </a>
 
-            <a href="../constructors/textItalic.html" class="item" data-name="textitalic textitalic">
-                <span class="item-name">TextItalic</span>
-                <span class="item-desc">Italic text</span>
+            <a href="../constructors/textStrike.html" class="item" data-name="textstrike textstrike">
+                <span class="item-name">TextStrike</span>
+                <span class="item-desc">Strikethrough text</span>
             </a>
 
             <a href="../constructors/textUrl.html" class="item" data-name="texturl texturl">
@@ -129,9 +124,24 @@
                 <span class="item-desc">Link</span>
             </a>
 
+            <a href="../constructors/textFixed.html" class="item" data-name="textfixed textfixed">
+                <span class="item-name">TextFixed</span>
+                <span class="item-desc">fixed-width rich text</span>
+            </a>
+
             <a href="../constructors/textEmail.html" class="item" data-name="textemail textemail">
                 <span class="item-name">TextEmail</span>
                 <span class="item-desc">Rich text email link</span>
+            </a>
+
+            <a href="../constructors/textConcat.html" class="item" data-name="textconcat textconcat">
+                <span class="item-name">TextConcat</span>
+                <span class="item-desc">Concatenation of rich texts</span>
+            </a>
+
+            <a href="../constructors/textSubscript.html" class="item" data-name="textsubscript textsubscript">
+                <span class="item-name">TextSubscript</span>
+                <span class="item-desc">Subscript text</span>
             </a>
 
             <a href="../constructors/textMarked.html" class="item" data-name="textmarked textmarked">
@@ -142,16 +152,6 @@
             <a href="../constructors/textSuperscript.html" class="item" data-name="textsuperscript textsuperscript">
                 <span class="item-name">TextSuperscript</span>
                 <span class="item-desc">Superscript text</span>
-            </a>
-
-            <a href="../constructors/textSubscript.html" class="item" data-name="textsubscript textsubscript">
-                <span class="item-name">TextSubscript</span>
-                <span class="item-desc">Subscript text</span>
-            </a>
-
-            <a href="../constructors/textConcat.html" class="item" data-name="textconcat textconcat">
-                <span class="item-name">TextConcat</span>
-                <span class="item-desc">Concatenation of rich texts</span>
             </a>
 
             <a href="../constructors/textPhone.html" class="item" data-name="textphone textphone">
@@ -179,8 +179,8 @@
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RichText</span> = &amp;<span class="package">tg.</span><span class="type">TextEmpty</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RichText</span> = &amp;<span class="package">tg.</span><span class="type">TextPlain</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RichText</span> = &amp;<span class="package">tg.</span><span class="type">TextBold</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RichText</span> = &amp;<span class="package">tg.</span><span class="type">TextStrike</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RichText</span> = &amp;<span class="package">tg.</span><span class="type">TextFixed</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RichText</span> = &amp;<span class="package">tg.</span><span class="type">TextItalic</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RichText</span> = &amp;<span class="package">tg.</span><span class="type">TextUnderline</span>{}
 <span class="comment">// ... and <span class="number">11</span> more constructors</span>
 </pre>
         </div>

@@ -69,7 +69,7 @@
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../types.html">Types</a> <span>›</span> LangPackString</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 221</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
         </div>
         
         <header class="page-header">
@@ -89,14 +89,14 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/langPackString.html" class="item" data-name="langpackstring langpackstring">
-                <span class="item-name">LangPackString</span>
-                <span class="item-desc">Translated localization string</span>
-            </a>
-
             <a href="../constructors/langPackStringPluralized.html" class="item" data-name="langpackstringpluralized langpackstringpluralized">
                 <span class="item-name">LangPackStringPluralized</span>
                 <span class="item-desc">A language pack string which has different forms based on the number of some object it mentions. See</span>
+            </a>
+
+            <a href="../constructors/langPackString.html" class="item" data-name="langpackstring langpackstring">
+                <span class="item-name">LangPackString</span>
+                <span class="item-desc">Translated localization string</span>
             </a>
 
             <a href="../constructors/langPackStringDeleted.html" class="item" data-name="langpackstringdeleted langpackstringdeleted">
@@ -111,8 +111,8 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// LangPackString is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">LangPackString</span> = &amp;<span class="package">tg.</span><span class="type">LangPackString</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">LangPackString</span> = &amp;<span class="package">tg.</span><span class="type">LangPackStringPluralized</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">LangPackString</span> = &amp;<span class="package">tg.</span><span class="type">LangPackString</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">LangPackString</span> = &amp;<span class="package">tg.</span><span class="type">LangPackStringDeleted</span>{}
 </pre>
         </div>
