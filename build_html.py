@@ -14,7 +14,7 @@ from pathlib import Path
 from html import escape
 
 # Current TL Schema version
-TL_VERSION = 221
+TL_VERSION = 224
 
 
 
