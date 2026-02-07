@@ -89,14 +89,14 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/secureValueTypePassport.html" class="item" data-name="securevaluetypepassport securevaluetypepassport">
-                <span class="item-name">SecureValueTypePassport</span>
-                <span class="item-desc">Passport</span>
-            </a>
-
             <a href="../constructors/secureValueTypePersonalDetails.html" class="item" data-name="securevaluetypepersonaldetails securevaluetypepersonaldetails">
                 <span class="item-name">SecureValueTypePersonalDetails</span>
                 <span class="item-desc">Personal details</span>
+            </a>
+
+            <a href="../constructors/secureValueTypePassport.html" class="item" data-name="securevaluetypepassport securevaluetypepassport">
+                <span class="item-name">SecureValueTypePassport</span>
+                <span class="item-desc">Passport</span>
             </a>
 
             <a href="../constructors/secureValueTypeDriverLicense.html" class="item" data-name="securevaluetypedriverlicense securevaluetypedriverlicense">
@@ -104,19 +104,9 @@
                 <span class="item-desc">Driver&#x27;s license</span>
             </a>
 
-            <a href="../constructors/secureValueTypeInternalPassport.html" class="item" data-name="securevaluetypeinternalpassport securevaluetypeinternalpassport">
-                <span class="item-name">SecureValueTypeInternalPassport</span>
-                <span class="item-desc">Internal passport</span>
-            </a>
-
             <a href="../constructors/secureValueTypeIdentityCard.html" class="item" data-name="securevaluetypeidentitycard securevaluetypeidentitycard">
                 <span class="item-name">SecureValueTypeIdentityCard</span>
                 <span class="item-desc">Identity card</span>
-            </a>
-
-            <a href="../constructors/secureValueTypeUtilityBill.html" class="item" data-name="securevaluetypeutilitybill securevaluetypeutilitybill">
-                <span class="item-name">SecureValueTypeUtilityBill</span>
-                <span class="item-desc">Utility bill</span>
             </a>
 
             <a href="../constructors/secureValueTypeAddress.html" class="item" data-name="securevaluetypeaddress securevaluetypeaddress">
@@ -124,14 +114,29 @@
                 <span class="item-desc">Address</span>
             </a>
 
+            <a href="../constructors/secureValueTypeRentalAgreement.html" class="item" data-name="securevaluetyperentalagreement securevaluetyperentalagreement">
+                <span class="item-name">SecureValueTypeRentalAgreement</span>
+                <span class="item-desc">Rental agreement</span>
+            </a>
+
+            <a href="../constructors/secureValueTypeUtilityBill.html" class="item" data-name="securevaluetypeutilitybill securevaluetypeutilitybill">
+                <span class="item-name">SecureValueTypeUtilityBill</span>
+                <span class="item-desc">Utility bill</span>
+            </a>
+
             <a href="../constructors/secureValueTypeBankStatement.html" class="item" data-name="securevaluetypebankstatement securevaluetypebankstatement">
                 <span class="item-name">SecureValueTypeBankStatement</span>
                 <span class="item-desc">Bank statement</span>
             </a>
 
-            <a href="../constructors/secureValueTypeRentalAgreement.html" class="item" data-name="securevaluetyperentalagreement securevaluetyperentalagreement">
-                <span class="item-name">SecureValueTypeRentalAgreement</span>
-                <span class="item-desc">Rental agreement</span>
+            <a href="../constructors/secureValueTypePassportRegistration.html" class="item" data-name="securevaluetypepassportregistration securevaluetypepassportregistration">
+                <span class="item-name">SecureValueTypePassportRegistration</span>
+                <span class="item-desc">Internal registration passport</span>
+            </a>
+
+            <a href="../constructors/secureValueTypeInternalPassport.html" class="item" data-name="securevaluetypeinternalpassport securevaluetypeinternalpassport">
+                <span class="item-name">SecureValueTypeInternalPassport</span>
+                <span class="item-desc">Internal passport</span>
             </a>
 
             <a href="../constructors/secureValueTypeTemporaryRegistration.html" class="item" data-name="securevaluetypetemporaryregistration securevaluetypetemporaryregistration">
@@ -142,11 +147,6 @@
             <a href="../constructors/secureValueTypePhone.html" class="item" data-name="securevaluetypephone securevaluetypephone">
                 <span class="item-name">SecureValueTypePhone</span>
                 <span class="item-desc">Phone</span>
-            </a>
-
-            <a href="../constructors/secureValueTypePassportRegistration.html" class="item" data-name="securevaluetypepassportregistration securevaluetypepassportregistration">
-                <span class="item-name">SecureValueTypePassportRegistration</span>
-                <span class="item-desc">Internal registration passport</span>
             </a>
 
             <a href="../constructors/secureValueTypeEmail.html" class="item" data-name="securevaluetypeemail securevaluetypeemail">
@@ -161,11 +161,11 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// SecureValueType is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">SecureValueType</span> = &amp;<span class="package">tg.</span><span class="type">SecureValueTypePassport</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">SecureValueType</span> = &amp;<span class="package">tg.</span><span class="type">SecureValueTypePersonalDetails</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">SecureValueType</span> = &amp;<span class="package">tg.</span><span class="type">SecureValueTypePassport</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">SecureValueType</span> = &amp;<span class="package">tg.</span><span class="type">SecureValueTypeDriverLicense</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">SecureValueType</span> = &amp;<span class="package">tg.</span><span class="type">SecureValueTypeInternalPassport</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">SecureValueType</span> = &amp;<span class="package">tg.</span><span class="type">SecureValueTypeIdentityCard</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">SecureValueType</span> = &amp;<span class="package">tg.</span><span class="type">SecureValueTypeAddress</span>{}
 <span class="comment">// ... and <span class="number">8</span> more constructors</span>
 </pre>
         </div>

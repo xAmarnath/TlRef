@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MessageAction - Gogram TL Reference</title>
-    <meta name="description" content="Abstract type representing one of 60 possible constructors.">
+    <meta name="description" content="Abstract type representing one of 68 possible constructors.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="MessageAction - Gogram TL Reference">
-    <meta property="og:description" content="Abstract type representing one of 60 possible constructors.">
+    <meta property="og:description" content="Abstract type representing one of 68 possible constructors.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -74,7 +74,7 @@
         
         <header class="page-header">
             <h1>MessageAction</h1>
-            <p class="description">Abstract type representing one of 60 possible constructors.</p>
+            <p class="description">Abstract type representing one of 68 possible constructors.</p>
         </header>
         
         <div class="badges">
@@ -94,9 +94,14 @@
                 <span class="item-desc">Empty constructor.</span>
             </a>
 
-            <a href="../constructors/messageActionChatCreate.html" class="item" data-name="messageactionchatcreate messageactionchatcreate">
-                <span class="item-name">MessageActionChatCreate</span>
-                <span class="item-desc">Group created</span>
+            <a href="../constructors/messageActionChatEditTitle.html" class="item" data-name="messageactionchatedittitle messageactionchatedittitle">
+                <span class="item-name">MessageActionChatEditTitle</span>
+                <span class="item-desc">Group name changed.</span>
+            </a>
+
+            <a href="../constructors/messageActionChatDeletePhoto.html" class="item" data-name="messageactionchatdeletephoto messageactionchatdeletephoto">
+                <span class="item-name">MessageActionChatDeletePhoto</span>
+                <span class="item-desc">Group profile photo removed.</span>
             </a>
 
             <a href="../constructors/messageActionChatEditPhoto.html" class="item" data-name="messageactionchateditphoto messageactionchateditphoto">
@@ -104,19 +109,14 @@
                 <span class="item-desc">Group profile changed</span>
             </a>
 
-            <a href="../constructors/messageActionChatEditTitle.html" class="item" data-name="messageactionchatedittitle messageactionchatedittitle">
-                <span class="item-name">MessageActionChatEditTitle</span>
-                <span class="item-desc">Group name changed.</span>
+            <a href="../constructors/messageActionChatCreate.html" class="item" data-name="messageactionchatcreate messageactionchatcreate">
+                <span class="item-name">MessageActionChatCreate</span>
+                <span class="item-desc">Group created</span>
             </a>
 
-            <a href="../constructors/messageActionChatAddUser.html" class="item" data-name="messageactionchatadduser messageactionchatadduser">
-                <span class="item-name">MessageActionChatAddUser</span>
-                <span class="item-desc">New member in the group</span>
-            </a>
-
-            <a href="../constructors/messageActionChatDeletePhoto.html" class="item" data-name="messageactionchatdeletephoto messageactionchatdeletephoto">
-                <span class="item-name">MessageActionChatDeletePhoto</span>
-                <span class="item-desc">Group profile photo removed.</span>
+            <a href="../constructors/messageActionChatJoinedByLink.html" class="item" data-name="messageactionchatjoinedbylink messageactionchatjoinedbylink">
+                <span class="item-name">MessageActionChatJoinedByLink</span>
+                <span class="item-desc">A user joined the chat via an invite link</span>
             </a>
 
             <a href="../constructors/messageActionChatDeleteUser.html" class="item" data-name="messageactionchatdeleteuser messageactionchatdeleteuser">
@@ -129,29 +129,14 @@
                 <span class="item-desc">The channel was created</span>
             </a>
 
+            <a href="../constructors/messageActionChatAddUser.html" class="item" data-name="messageactionchatadduser messageactionchatadduser">
+                <span class="item-name">MessageActionChatAddUser</span>
+                <span class="item-desc">New member in the group</span>
+            </a>
+
             <a href="../constructors/messageActionChannelMigrateFrom.html" class="item" data-name="messageactionchannelmigratefrom messageactionchannelmigratefrom">
                 <span class="item-name">MessageActionChannelMigrateFrom</span>
                 <span class="item-desc">Indicates the channel was migrated from the specified chat</span>
-            </a>
-
-            <a href="../constructors/messageActionChatJoinedByLink.html" class="item" data-name="messageactionchatjoinedbylink messageactionchatjoinedbylink">
-                <span class="item-name">MessageActionChatJoinedByLink</span>
-                <span class="item-desc">A user joined the chat via an invite link</span>
-            </a>
-
-            <a href="../constructors/messageActionChatMigrateTo.html" class="item" data-name="messageactionchatmigrateto messageactionchatmigrateto">
-                <span class="item-name">MessageActionChatMigrateTo</span>
-                <span class="item-desc">Indicates the chat was migrated to the specified supergroup</span>
-            </a>
-
-            <a href="../constructors/messageActionPinMessage.html" class="item" data-name="messageactionpinmessage messageactionpinmessage">
-                <span class="item-name">MessageActionPinMessage</span>
-                <span class="item-desc">A message was pinned</span>
-            </a>
-
-            <a href="../constructors/messageActionHistoryClear.html" class="item" data-name="messageactionhistoryclear messageactionhistoryclear">
-                <span class="item-name">MessageActionHistoryClear</span>
-                <span class="item-desc">Chat history was cleared</span>
             </a>
 
             <a href="../constructors/messageActionPaymentSentMe.html" class="item" data-name="messageactionpaymentsentme messageactionpaymentsentme">
@@ -164,9 +149,24 @@
                 <span class="item-desc">Someone scored in a game</span>
             </a>
 
+            <a href="../constructors/messageActionChatMigrateTo.html" class="item" data-name="messageactionchatmigrateto messageactionchatmigrateto">
+                <span class="item-name">MessageActionChatMigrateTo</span>
+                <span class="item-desc">Indicates the chat was migrated to the specified supergroup</span>
+            </a>
+
+            <a href="../constructors/messageActionHistoryClear.html" class="item" data-name="messageactionhistoryclear messageactionhistoryclear">
+                <span class="item-name">MessageActionHistoryClear</span>
+                <span class="item-desc">Chat history was cleared</span>
+            </a>
+
             <a href="../constructors/messageActionPaymentSent.html" class="item" data-name="messageactionpaymentsent messageactionpaymentsent">
                 <span class="item-name">MessageActionPaymentSent</span>
                 <span class="item-desc">A payment was sent</span>
+            </a>
+
+            <a href="../constructors/messageActionPinMessage.html" class="item" data-name="messageactionpinmessage messageactionpinmessage">
+                <span class="item-name">MessageActionPinMessage</span>
+                <span class="item-desc">A message was pinned</span>
             </a>
 
             <a href="../constructors/messageActionPhoneCall.html" class="item" data-name="messageactionphonecall messageactionphonecall">
@@ -174,14 +174,14 @@
                 <span class="item-desc">A phone call</span>
             </a>
 
-            <a href="../constructors/messageActionScreenshotTaken.html" class="item" data-name="messageactionscreenshottaken messageactionscreenshottaken">
-                <span class="item-name">MessageActionScreenshotTaken</span>
-                <span class="item-desc">A screenshot of the chat was taken</span>
-            </a>
-
             <a href="../constructors/messageActionCustomAction.html" class="item" data-name="messageactioncustomaction messageactioncustomaction">
                 <span class="item-name">MessageActionCustomAction</span>
                 <span class="item-desc">Custom action (most likely not supported by the current layer, an upgrade might be needed)</span>
+            </a>
+
+            <a href="../constructors/messageActionScreenshotTaken.html" class="item" data-name="messageactionscreenshottaken messageactionscreenshottaken">
+                <span class="item-name">MessageActionScreenshotTaken</span>
+                <span class="item-desc">A screenshot of the chat was taken</span>
             </a>
 
             <a href="../constructors/messageActionBotAllowed.html" class="item" data-name="messageactionbotallowed messageactionbotallowed">
@@ -189,19 +189,9 @@
                 <span class="item-desc">We have given the bot permission to send us direct messages.</span>
             </a>
 
-            <a href="../constructors/messageActionSecureValuesSentMe.html" class="item" data-name="messageactionsecurevaluessentme messageactionsecurevaluessentme">
-                <span class="item-name">MessageActionSecureValuesSentMe</span>
-                <span class="item-desc">Secure telegram passport values were received</span>
-            </a>
-
             <a href="../constructors/messageActionSecureValuesSent.html" class="item" data-name="messageactionsecurevaluessent messageactionsecurevaluessent">
                 <span class="item-name">MessageActionSecureValuesSent</span>
                 <span class="item-desc">Request for secure telegram passport values was sent</span>
-            </a>
-
-            <a href="../constructors/messageActionGeoProximityReached.html" class="item" data-name="messageactiongeoproximityreached messageactiongeoproximityreached">
-                <span class="item-name">MessageActionGeoProximityReached</span>
-                <span class="item-desc">A user of the chat is now in proximity of another user</span>
             </a>
 
             <a href="../constructors/messageActionContactSignUp.html" class="item" data-name="messageactioncontactsignup messageactioncontactsignup">
@@ -209,14 +199,19 @@
                 <span class="item-desc">A contact just signed up to telegram</span>
             </a>
 
+            <a href="../constructors/messageActionGeoProximityReached.html" class="item" data-name="messageactiongeoproximityreached messageactiongeoproximityreached">
+                <span class="item-name">MessageActionGeoProximityReached</span>
+                <span class="item-desc">A user of the chat is now in proximity of another user</span>
+            </a>
+
+            <a href="../constructors/messageActionSecureValuesSentMe.html" class="item" data-name="messageactionsecurevaluessentme messageactionsecurevaluessentme">
+                <span class="item-name">MessageActionSecureValuesSentMe</span>
+                <span class="item-desc">Secure telegram passport values were received</span>
+            </a>
+
             <a href="../constructors/messageActionGroupCall.html" class="item" data-name="messageactiongroupcall messageactiongroupcall">
                 <span class="item-name">MessageActionGroupCall</span>
                 <span class="item-desc">The group call has ended</span>
-            </a>
-
-            <a href="../constructors/messageActionSetMessagesTTL.html" class="item" data-name="messageactionsetmessagesttl messageactionsetmessagesttl">
-                <span class="item-name">MessageActionSetMessagesTtl</span>
-                <span class="item-desc">The Time-To-Live of messages in this chat was changed.</span>
             </a>
 
             <a href="../constructors/messageActionInviteToGroupCall.html" class="item" data-name="messageactioninvitetogroupcall messageactioninvitetogroupcall">
@@ -229,14 +224,14 @@
                 <span class="item-desc">A group call was scheduled</span>
             </a>
 
+            <a href="../constructors/messageActionSetMessagesTTL.html" class="item" data-name="messageactionsetmessagesttl messageactionsetmessagesttl">
+                <span class="item-name">MessageActionSetMessagesTtl</span>
+                <span class="item-desc">The Time-To-Live of messages in this chat was changed.</span>
+            </a>
+
             <a href="../constructors/messageActionSetChatTheme.html" class="item" data-name="messageactionsetchattheme messageactionsetchattheme">
                 <span class="item-name">MessageActionSetChatTheme</span>
                 <span class="item-desc">The chat theme was changed</span>
-            </a>
-
-            <a href="../constructors/messageActionGiftPremium.html" class="item" data-name="messageactiongiftpremium messageactiongiftpremium">
-                <span class="item-name">MessageActionGiftPremium</span>
-                <span class="item-desc">Info about a gifted Telegram Premium subscription</span>
             </a>
 
             <a href="../constructors/messageActionWebViewDataSentMe.html" class="item" data-name="messageactionwebviewdatasentme messageactionwebviewdatasentme">
@@ -249,19 +244,9 @@
                 <span class="item-desc">A user was accepted into the group by an admin</span>
             </a>
 
-            <a href="../constructors/messageActionTopicCreate.html" class="item" data-name="messageactiontopiccreate messageactiontopiccreate">
-                <span class="item-name">MessageActionTopicCreate</span>
-                <span class="item-desc">A forum topic was created.</span>
-            </a>
-
-            <a href="../constructors/messageActionWebViewDataSent.html" class="item" data-name="messageactionwebviewdatasent messageactionwebviewdatasent">
-                <span class="item-name">MessageActionWebViewDataSent</span>
-                <span class="item-desc">Data from an opened reply keyboard bot mini app was relayed to the bot that owns it (user side servi</span>
-            </a>
-
-            <a href="../constructors/messageActionSuggestProfilePhoto.html" class="item" data-name="messageactionsuggestprofilephoto messageactionsuggestprofilephoto">
-                <span class="item-name">MessageActionSuggestProfilePhoto</span>
-                <span class="item-desc">A new profile picture was suggested using photos. upload Contact Profile Photo.</span>
+            <a href="../constructors/messageActionGiftPremium.html" class="item" data-name="messageactiongiftpremium messageactiongiftpremium">
+                <span class="item-name">MessageActionGiftPremium</span>
+                <span class="item-desc">Info about a gifted Telegram Premium subscription</span>
             </a>
 
             <a href="../constructors/messageActionTopicEdit.html" class="item" data-name="messageactiontopicedit messageactiontopicedit">
@@ -269,9 +254,9 @@
                 <span class="item-desc">Forum topic information was edited.</span>
             </a>
 
-            <a href="../constructors/messageActionRequestedPeer.html" class="item" data-name="messageactionrequestedpeer messageactionrequestedpeer">
-                <span class="item-name">MessageActionRequestedPeer</span>
-                <span class="item-desc">Contains info about one or more peers that the we (the user) shared with the bot after clicking on a</span>
+            <a href="../constructors/messageActionTopicCreate.html" class="item" data-name="messageactiontopiccreate messageactiontopiccreate">
+                <span class="item-name">MessageActionTopicCreate</span>
+                <span class="item-desc">A forum topic was created.</span>
             </a>
 
             <a href="../constructors/messageActionSetChatWallPaper.html" class="item" data-name="messageactionsetchatwallpaper messageactionsetchatwallpaper">
@@ -279,19 +264,9 @@
                 <span class="item-desc">The wallpaper of the current chat was changed.</span>
             </a>
 
-            <a href="../constructors/messageActionGiveawayResults.html" class="item" data-name="messageactiongiveawayresults messageactiongiveawayresults">
-                <span class="item-name">MessageActionGiveawayResults</span>
-                <span class="item-desc">A giveaway has ended.</span>
-            </a>
-
-            <a href="../constructors/messageActionGiveawayLaunch.html" class="item" data-name="messageactiongiveawaylaunch messageactiongiveawaylaunch">
-                <span class="item-name">MessageActionGiveawayLaunch</span>
-                <span class="item-desc">A giveaway was started.</span>
-            </a>
-
-            <a href="../constructors/messageActionBoostApply.html" class="item" data-name="messageactionboostapply messageactionboostapply">
-                <span class="item-name">MessageActionBoostApply</span>
-                <span class="item-desc">Some boosts were applied to the channel or supergroup.</span>
+            <a href="../constructors/messageActionSuggestProfilePhoto.html" class="item" data-name="messageactionsuggestprofilephoto messageactionsuggestprofilephoto">
+                <span class="item-name">MessageActionSuggestProfilePhoto</span>
+                <span class="item-desc">A new profile picture was suggested using photos. upload Contact Profile Photo.</span>
             </a>
 
             <a href="../constructors/messageActionGiftCode.html" class="item" data-name="messageactiongiftcode messageactiongiftcode">
@@ -299,14 +274,29 @@
                 <span class="item-desc">Contains a Telegram Premium giftcode link.</span>
             </a>
 
-            <a href="../constructors/messageActionRequestedPeerSentMe.html" class="item" data-name="messageactionrequestedpeersentme messageactionrequestedpeersentme">
-                <span class="item-name">MessageActionRequestedPeerSentMe</span>
-                <span class="item-desc">Contains info about one or more peers that the a user shared with the me (the bot) after clicking on</span>
+            <a href="../constructors/messageActionRequestedPeer.html" class="item" data-name="messageactionrequestedpeer messageactionrequestedpeer">
+                <span class="item-name">MessageActionRequestedPeer</span>
+                <span class="item-desc">Contains info about one or more peers that the we (the user) shared with the bot after clicking on a</span>
             </a>
 
-            <a href="../constructors/messageActionGiftStars.html" class="item" data-name="messageactiongiftstars messageactiongiftstars">
-                <span class="item-name">MessageActionGiftStars</span>
-                <span class="item-desc">You gifted or were gifted some Telegram Stars.</span>
+            <a href="../constructors/messageActionGiveawayLaunch.html" class="item" data-name="messageactiongiveawaylaunch messageactiongiveawaylaunch">
+                <span class="item-name">MessageActionGiveawayLaunch</span>
+                <span class="item-desc">A giveaway was started.</span>
+            </a>
+
+            <a href="../constructors/messageActionGiveawayResults.html" class="item" data-name="messageactiongiveawayresults messageactiongiveawayresults">
+                <span class="item-name">MessageActionGiveawayResults</span>
+                <span class="item-desc">A giveaway has ended.</span>
+            </a>
+
+            <a href="../constructors/messageActionWebViewDataSent.html" class="item" data-name="messageactionwebviewdatasent messageactionwebviewdatasent">
+                <span class="item-name">MessageActionWebViewDataSent</span>
+                <span class="item-desc">Data from an opened reply keyboard bot mini app was relayed to the bot that owns it (user side servi</span>
+            </a>
+
+            <a href="../constructors/messageActionBoostApply.html" class="item" data-name="messageactionboostapply messageactionboostapply">
+                <span class="item-name">MessageActionBoostApply</span>
+                <span class="item-desc">Some boosts were applied to the channel or supergroup.</span>
             </a>
 
             <a href="../constructors/messageActionPaymentRefunded.html" class="item" data-name="messageactionpaymentrefunded messageactionpaymentrefunded">
@@ -314,9 +304,19 @@
                 <span class="item-desc">Describes a payment refund (service message received by both users and bots).</span>
             </a>
 
+            <a href="../constructors/messageActionGiftStars.html" class="item" data-name="messageactiongiftstars messageactiongiftstars">
+                <span class="item-name">MessageActionGiftStars</span>
+                <span class="item-desc">You gifted or were gifted some Telegram Stars.</span>
+            </a>
+
             <a href="../constructors/messageActionPrizeStars.html" class="item" data-name="messageactionprizestars messageactionprizestars">
                 <span class="item-name">MessageActionPrizeStars</span>
                 <span class="item-desc">You won some Telegram Stars in a Telegram Star giveaway.</span>
+            </a>
+
+            <a href="../constructors/messageActionRequestedPeerSentMe.html" class="item" data-name="messageactionrequestedpeersentme messageactionrequestedpeersentme">
+                <span class="item-name">MessageActionRequestedPeerSentMe</span>
+                <span class="item-desc">Contains info about one or more peers that the a user shared with the me (the bot) after clicking on</span>
             </a>
 
             <a href="../constructors/messageActionStarGift.html" class="item" data-name="messageactionstargift messageactionstargift">
@@ -324,14 +324,14 @@
                 <span class="item-desc">You received a gift, see here for more info.</span>
             </a>
 
-            <a href="../constructors/messageActionPaidMessagesRefunded.html" class="item" data-name="messageactionpaidmessagesrefunded messageactionpaidmessagesrefunded">
-                <span class="item-name">MessageActionPaidMessagesRefunded</span>
-                <span class="item-desc">Sent from peer A to B, indicates that A refunded all stars B previously paid to send messages to A,</span>
-            </a>
-
             <a href="../constructors/messageActionStarGiftUnique.html" class="item" data-name="messageactionstargiftunique messageactionstargiftunique">
                 <span class="item-name">MessageActionStarGiftUnique</span>
                 <span class="item-desc">A gift was upgraded to a collectible gift.</span>
+            </a>
+
+            <a href="../constructors/messageActionPaidMessagesRefunded.html" class="item" data-name="messageactionpaidmessagesrefunded messageactionpaidmessagesrefunded">
+                <span class="item-name">MessageActionPaidMessagesRefunded</span>
+                <span class="item-desc">Sent from peer A to B, indicates that A refunded all stars B previously paid to send messages to A,</span>
             </a>
 
             <a href="../constructors/messageActionPaidMessagesPrice.html" class="item" data-name="messageactionpaidmessagesprice messageactionpaidmessagesprice">
@@ -349,9 +349,9 @@
                 <span class="item-desc">Items were marked as completed or not completed in a todo list.</span>
             </a>
 
-            <a href="../constructors/messageActionGiftTon.html" class="item" data-name="messageactiongiftton messageactiongiftton">
-                <span class="item-name">MessageActionGiftTon</span>
-                <span class="item-desc">You were gifted some toncoins.</span>
+            <a href="../constructors/messageActionSuggestedPostApproval.html" class="item" data-name="messageactionsuggestedpostapproval messageactionsuggestedpostapproval">
+                <span class="item-name">MessageActionSuggestedPostApproval</span>
+                <span class="item-desc">A suggested post was approved or rejected.</span>
             </a>
 
             <a href="../constructors/messageActionTodoAppendTasks.html" class="item" data-name="messageactiontodoappendtasks messageactiontodoappendtasks">
@@ -359,14 +359,24 @@
                 <span class="item-desc">Items were appended to the todo list.</span>
             </a>
 
+            <a href="../constructors/messageActionSuggestedPostSuccess.html" class="item" data-name="messageactionsuggestedpostsuccess messageactionsuggestedpostsuccess">
+                <span class="item-name">MessageActionSuggestedPostSuccess</span>
+                <span class="item-desc">A suggested post was successfully posted, and payment for it was successfully received.</span>
+            </a>
+
             <a href="../constructors/messageActionSuggestBirthday.html" class="item" data-name="messageactionsuggestbirthday messageactionsuggestbirthday">
                 <span class="item-name">MessageActionSuggestBirthday</span>
                 <span class="item-desc">Birthday suggestion action</span>
             </a>
 
-            <a href="../constructors/messageActionSuggestedPostSuccess.html" class="item" data-name="messageactionsuggestedpostsuccess messageactionsuggestedpostsuccess">
-                <span class="item-name">MessageActionSuggestedPostSuccess</span>
-                <span class="item-desc">A suggested post was successfully posted, and payment for it was successfully received.</span>
+            <a href="../constructors/messageActionGiftTon.html" class="item" data-name="messageactiongiftton messageactiongiftton">
+                <span class="item-name">MessageActionGiftTon</span>
+                <span class="item-desc">You were gifted some toncoins.</span>
+            </a>
+
+            <a href="../constructors/messageActionStarGiftPurchaseOffer.html" class="item" data-name="messageactionstargiftpurchaseoffer messageactionstargiftpurchaseoffer">
+                <span class="item-name">MessageActionStarGiftPurchaseOffer</span>
+                <span class="item-desc">Star gift purchase offer</span>
             </a>
 
             <a href="../constructors/messageActionSuggestedPostRefund.html" class="item" data-name="messageactionsuggestedpostrefund messageactionsuggestedpostrefund">
@@ -374,19 +384,49 @@
                 <span class="item-desc">A suggested post was accepted and posted or scheduled, but either the channel deleted the posted/s</span>
             </a>
 
-            <a href="../constructors/messageActionSuggestedPostApproval.html" class="item" data-name="messageactionsuggestedpostapproval messageactionsuggestedpostapproval">
-                <span class="item-name">MessageActionSuggestedPostApproval</span>
-                <span class="item-desc">A suggested post was approved or rejected.</span>
-            </a>
-
             <a href="../constructors/messageActionStarGiftPurchaseOfferDeclined.html" class="item" data-name="messageactionstargiftpurchaseofferdeclined messageactionstargiftpurchaseofferdeclined">
                 <span class="item-name">MessageActionStarGiftPurchaseOfferDeclined</span>
                 <span class="item-desc">Star gift offer declined</span>
             </a>
 
-            <a href="../constructors/messageActionStarGiftPurchaseOffer.html" class="item" data-name="messageactionstargiftpurchaseoffer messageactionstargiftpurchaseoffer">
-                <span class="item-name">MessageActionStarGiftPurchaseOffer</span>
-                <span class="item-desc">Star gift purchase offer</span>
+            <a href="../constructors/messageActionPhoneNumberRequest.html" class="item" data-name="messageactionphonenumberrequest messageactionphonenumberrequest">
+                <span class="item-name">MessageActionPhoneNumberRequest</span>
+                <span class="item-desc">Phone number requested</span>
+            </a>
+
+            <a href="../constructors/messageActionUserJoined.html" class="item" data-name="messageactionuserjoined messageactionuserjoined">
+                <span class="item-name">MessageActionUserJoined</span>
+                <span class="item-desc">User joined via invite link</span>
+            </a>
+
+            <a href="../constructors/messageActionUserUpdatedPhoto.html" class="item" data-name="messageactionuserupdatedphoto messageactionuserupdatedphoto">
+                <span class="item-name">MessageActionUserUpdatedPhoto</span>
+                <span class="item-desc">User updated profile photo</span>
+            </a>
+
+            <a href="../constructors/messageActionTTLChange.html" class="item" data-name="messageactionttlchange messageactionttlchange">
+                <span class="item-name">MessageActionTtlChange</span>
+                <span class="item-desc">Message TTL changed</span>
+            </a>
+
+            <a href="../constructors/messageActionLoginUnknownLocation.html" class="item" data-name="messageactionloginunknownlocation messageactionloginunknownlocation">
+                <span class="item-name">MessageActionLoginUnknownLocation</span>
+                <span class="item-desc">Login from unknown location</span>
+            </a>
+
+            <a href="../constructors/messageActionCreatedBroadcastList.html" class="item" data-name="messageactioncreatedbroadcastlist messageactioncreatedbroadcastlist">
+                <span class="item-name">MessageActionCreatedBroadcastList</span>
+                <span class="item-desc">Broadcast list created</span>
+            </a>
+
+            <a href="../constructors/messageActionNewCreatorPending.html" class="item" data-name="messageactionnewcreatorpending messageactionnewcreatorpending">
+                <span class="item-name">MessageActionNewCreatorPending</span>
+                <span class="item-desc">Pending creator transfer</span>
+            </a>
+
+            <a href="../constructors/messageActionChangeCreator.html" class="item" data-name="messageactionchangecreator messageactionchangecreator">
+                <span class="item-name">MessageActionChangeCreator</span>
+                <span class="item-desc">Creator changed in group/channel</span>
             </a>
 
             </div>
@@ -397,11 +437,11 @@
             <pre class="example-code"><span class="comment">// MessageAction is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessageAction</span> = &amp;<span class="package">tg.</span><span class="type">MessageActionEmpty</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessageAction</span> = &amp;<span class="package">tg.</span><span class="type">MessageActionChatCreate</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessageAction</span> = &amp;<span class="package">tg.</span><span class="type">MessageActionChatEditPhoto</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessageAction</span> = &amp;<span class="package">tg.</span><span class="type">MessageActionChatEditTitle</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessageAction</span> = &amp;<span class="package">tg.</span><span class="type">MessageActionChatAddUser</span>{}
-<span class="comment">// ... and <span class="number">55</span> more constructors</span>
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessageAction</span> = &amp;<span class="package">tg.</span><span class="type">MessageActionChatDeletePhoto</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessageAction</span> = &amp;<span class="package">tg.</span><span class="type">MessageActionChatEditPhoto</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessageAction</span> = &amp;<span class="package">tg.</span><span class="type">MessageActionChatCreate</span>{}
+<span class="comment">// ... and <span class="number">63</span> more constructors</span>
 </pre>
         </div>
         </article>

@@ -89,14 +89,14 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/messages/reactions.html" class="item" data-name="messagesreactions messages.reactions">
-                <span class="item-name">MessagesReactions</span>
-                <span class="item-desc">List of message reactions</span>
-            </a>
-
             <a href="../constructors/messages/reactionsNotModified.html" class="item" data-name="messagesreactionsnotmodified messages.reactionsnotmodified">
                 <span class="item-name">MessagesReactionsNotModified</span>
                 <span class="item-desc">The server-side list of message reactions hasn&#x27;t changed</span>
+            </a>
+
+            <a href="../constructors/messages/reactions.html" class="item" data-name="messagesreactions messages.reactions">
+                <span class="item-name">MessagesReactions</span>
+                <span class="item-desc">List of message reactions</span>
             </a>
 
             </div>
@@ -106,8 +106,8 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// messages.Reactions is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessagesReactions</span> = &amp;<span class="package">tg.</span><span class="type">MessagesReactions</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessagesReactions</span> = &amp;<span class="package">tg.</span><span class="type">MessagesReactionsNotModified</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessagesReactions</span> = &amp;<span class="package">tg.</span><span class="type">MessagesReactions</span>{}
 </pre>
         </div>
         </article>

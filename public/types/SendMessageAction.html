@@ -89,11 +89,6 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/sendMessageTypingAction.html" class="item" data-name="sendmessagetypingaction sendmessagetypingaction">
-                <span class="item-name">SendMessageTypingAction</span>
-                <span class="item-desc">User is typing.</span>
-            </a>
-
             <a href="../constructors/sendMessageCancelAction.html" class="item" data-name="sendmessagecancelaction sendmessagecancelaction">
                 <span class="item-name">SendMessageCancelAction</span>
                 <span class="item-desc">Invalidate all previous action updates. E. g. when user deletes entered text or aborts a video upload</span>
@@ -114,14 +109,24 @@
                 <span class="item-desc">User is recording a voice message.</span>
             </a>
 
-            <a href="../constructors/sendMessageUploadPhotoAction.html" class="item" data-name="sendmessageuploadphotoaction sendmessageuploadphotoaction">
-                <span class="item-name">SendMessageUploadPhotoAction</span>
-                <span class="item-desc">User is uploading a photo.</span>
+            <a href="../constructors/sendMessageTypingAction.html" class="item" data-name="sendmessagetypingaction sendmessagetypingaction">
+                <span class="item-name">SendMessageTypingAction</span>
+                <span class="item-desc">User is typing.</span>
             </a>
 
             <a href="../constructors/sendMessageUploadAudioAction.html" class="item" data-name="sendmessageuploadaudioaction sendmessageuploadaudioaction">
                 <span class="item-name">SendMessageUploadAudioAction</span>
                 <span class="item-desc">User is uploading a voice message.</span>
+            </a>
+
+            <a href="../constructors/sendMessageUploadPhotoAction.html" class="item" data-name="sendmessageuploadphotoaction sendmessageuploadphotoaction">
+                <span class="item-name">SendMessageUploadPhotoAction</span>
+                <span class="item-desc">User is uploading a photo.</span>
+            </a>
+
+            <a href="../constructors/sendMessageUploadDocumentAction.html" class="item" data-name="sendmessageuploaddocumentaction sendmessageuploaddocumentaction">
+                <span class="item-name">SendMessageUploadDocumentAction</span>
+                <span class="item-desc">User is uploading a file.</span>
             </a>
 
             <a href="../constructors/sendMessageGeoLocationAction.html" class="item" data-name="sendmessagegeolocationaction sendmessagegeolocationaction">
@@ -139,11 +144,6 @@
                 <span class="item-desc">User is playing a game</span>
             </a>
 
-            <a href="../constructors/sendMessageUploadDocumentAction.html" class="item" data-name="sendmessageuploaddocumentaction sendmessageuploaddocumentaction">
-                <span class="item-name">SendMessageUploadDocumentAction</span>
-                <span class="item-desc">User is uploading a file.</span>
-            </a>
-
             <a href="../constructors/sendMessageRecordRoundAction.html" class="item" data-name="sendmessagerecordroundaction sendmessagerecordroundaction">
                 <span class="item-name">SendMessageRecordRoundAction</span>
                 <span class="item-desc">User is recording a round video to share</span>
@@ -159,9 +159,14 @@
                 <span class="item-desc">User is currently speaking in the group call</span>
             </a>
 
-            <a href="../constructors/sendMessageTextDraftAction.html" class="item" data-name="sendmessagetextdraftaction sendmessagetextdraftaction">
-                <span class="item-name">SendMessageTextDraftAction</span>
-                <span class="item-desc">Text draft action message</span>
+            <a href="../constructors/sendMessageHistoryImportAction.html" class="item" data-name="sendmessagehistoryimportaction sendmessagehistoryimportaction">
+                <span class="item-name">SendMessageHistoryImportAction</span>
+                <span class="item-desc">Chat history is being imported</span>
+            </a>
+
+            <a href="../constructors/sendMessageChooseStickerAction.html" class="item" data-name="sendmessagechoosestickeraction sendmessagechoosestickeraction">
+                <span class="item-name">SendMessageChooseStickerAction</span>
+                <span class="item-desc">User is choosing a sticker</span>
             </a>
 
             <a href="../constructors/sendMessageEmojiInteraction.html" class="item" data-name="sendmessageemojiinteraction sendmessageemojiinteraction">
@@ -169,19 +174,14 @@
                 <span class="item-desc">User has clicked on an animated emoji triggering a reaction, click here for more info.</span>
             </a>
 
-            <a href="../constructors/sendMessageHistoryImportAction.html" class="item" data-name="sendmessagehistoryimportaction sendmessagehistoryimportaction">
-                <span class="item-name">SendMessageHistoryImportAction</span>
-                <span class="item-desc">Chat history is being imported</span>
+            <a href="../constructors/sendMessageTextDraftAction.html" class="item" data-name="sendmessagetextdraftaction sendmessagetextdraftaction">
+                <span class="item-name">SendMessageTextDraftAction</span>
+                <span class="item-desc">Text draft action message</span>
             </a>
 
             <a href="../constructors/sendMessageEmojiInteractionSeen.html" class="item" data-name="sendmessageemojiinteractionseen sendmessageemojiinteractionseen">
                 <span class="item-name">SendMessageEmojiInteractionSeen</span>
                 <span class="item-desc">User is watching an animated emoji reaction triggered by another user, click here for more info.</span>
-            </a>
-
-            <a href="../constructors/sendMessageChooseStickerAction.html" class="item" data-name="sendmessagechoosestickeraction sendmessagechoosestickeraction">
-                <span class="item-name">SendMessageChooseStickerAction</span>
-                <span class="item-desc">User is choosing a sticker</span>
             </a>
 
             </div>
@@ -191,11 +191,11 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// SendMessageAction is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">SendMessageAction</span> = &amp;<span class="package">tg.</span><span class="type">SendMessageTypingAction</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">SendMessageAction</span> = &amp;<span class="package">tg.</span><span class="type">SendMessageCancelAction</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">SendMessageAction</span> = &amp;<span class="package">tg.</span><span class="type">SendMessageRecordVideoAction</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">SendMessageAction</span> = &amp;<span class="package">tg.</span><span class="type">SendMessageUploadVideoAction</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">SendMessageAction</span> = &amp;<span class="package">tg.</span><span class="type">SendMessageRecordAudioAction</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">SendMessageAction</span> = &amp;<span class="package">tg.</span><span class="type">SendMessageTypingAction</span>{}
 <span class="comment">// ... and <span class="number">14</span> more constructors</span>
 </pre>
         </div>

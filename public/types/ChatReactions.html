@@ -89,14 +89,14 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/chatReactionsNone.html" class="item" data-name="chatreactionsnone chatreactionsnone">
-                <span class="item-name">ChatReactionsNone</span>
-                <span class="item-desc">No reactions are allowed</span>
-            </a>
-
             <a href="../constructors/chatReactionsAll.html" class="item" data-name="chatreactionsall chatreactionsall">
                 <span class="item-name">ChatReactionsAll</span>
                 <span class="item-desc">All reactions or all non-custom reactions are allowed</span>
+            </a>
+
+            <a href="../constructors/chatReactionsNone.html" class="item" data-name="chatreactionsnone chatreactionsnone">
+                <span class="item-name">ChatReactionsNone</span>
+                <span class="item-desc">No reactions are allowed</span>
             </a>
 
             <a href="../constructors/chatReactionsSome.html" class="item" data-name="chatreactionssome chatreactionssome">
@@ -111,8 +111,8 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// ChatReactions is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ChatReactions</span> = &amp;<span class="package">tg.</span><span class="type">ChatReactionsNone</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ChatReactions</span> = &amp;<span class="package">tg.</span><span class="type">ChatReactionsAll</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ChatReactions</span> = &amp;<span class="package">tg.</span><span class="type">ChatReactionsNone</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ChatReactions</span> = &amp;<span class="package">tg.</span><span class="type">ChatReactionsSome</span>{}
 </pre>
         </div>

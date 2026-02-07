@@ -89,14 +89,14 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/users/savedMusic.html" class="item" data-name="userssavedmusic users.savedmusic">
-                <span class="item-name">UsersSavedMusic</span>
-                <span class="item-desc">List of songs currently pinned on a user&#x27;s profile, see here for more info.</span>
-            </a>
-
             <a href="../constructors/users/savedMusicNotModified.html" class="item" data-name="userssavedmusicnotmodified users.savedmusicnotmodified">
                 <span class="item-name">UsersSavedMusicNotModified</span>
                 <span class="item-desc">This subset of the songs currently pinned on a user&#x27;s profile hasn&#x27;t changed, see here for more in</span>
+            </a>
+
+            <a href="../constructors/users/savedMusic.html" class="item" data-name="userssavedmusic users.savedmusic">
+                <span class="item-name">UsersSavedMusic</span>
+                <span class="item-desc">List of songs currently pinned on a user&#x27;s profile, see here for more info.</span>
             </a>
 
             </div>
@@ -106,8 +106,8 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// users.SavedMusic is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">UsersSavedMusic</span> = &amp;<span class="package">tg.</span><span class="type">UsersSavedMusic</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">UsersSavedMusic</span> = &amp;<span class="package">tg.</span><span class="type">UsersSavedMusicNotModified</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">UsersSavedMusic</span> = &amp;<span class="package">tg.</span><span class="type">UsersSavedMusic</span>{}
 </pre>
         </div>
         </article>

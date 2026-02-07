@@ -94,19 +94,24 @@
                 <span class="item-desc">Send whatever media is attached to the bot Inline Media Result</span>
             </a>
 
-            <a href="../constructors/botInlineMessageMediaVenue.html" class="item" data-name="botinlinemessagemediavenue botinlinemessagemediavenue">
-                <span class="item-name">BotInlineMessageMediaVenue</span>
-                <span class="item-desc">Send a venue</span>
-            </a>
-
             <a href="../constructors/botInlineMessageText.html" class="item" data-name="botinlinemessagetext botinlinemessagetext">
                 <span class="item-name">BotInlineMessageText</span>
                 <span class="item-desc">Send a simple text message</span>
             </a>
 
+            <a href="../constructors/botInlineMessageMediaVenue.html" class="item" data-name="botinlinemessagemediavenue botinlinemessagemediavenue">
+                <span class="item-name">BotInlineMessageMediaVenue</span>
+                <span class="item-desc">Send a venue</span>
+            </a>
+
             <a href="../constructors/botInlineMessageMediaGeo.html" class="item" data-name="botinlinemessagemediageo botinlinemessagemediageo">
                 <span class="item-name">BotInlineMessageMediaGeo</span>
                 <span class="item-desc">Send a geolocation</span>
+            </a>
+
+            <a href="../constructors/botInlineMessageMediaContact.html" class="item" data-name="botinlinemessagemediacontact botinlinemessagemediacontact">
+                <span class="item-name">BotInlineMessageMediaContact</span>
+                <span class="item-desc">Send a contact</span>
             </a>
 
             <a href="../constructors/botInlineMessageMediaWebPage.html" class="item" data-name="botinlinemessagemediawebpage botinlinemessagemediawebpage">
@@ -119,11 +124,6 @@
                 <span class="item-desc">Send an invoice</span>
             </a>
 
-            <a href="../constructors/botInlineMessageMediaContact.html" class="item" data-name="botinlinemessagemediacontact botinlinemessagemediacontact">
-                <span class="item-name">BotInlineMessageMediaContact</span>
-                <span class="item-desc">Send a contact</span>
-            </a>
-
             </div>
         </div>
         
@@ -132,10 +132,10 @@
             <pre class="example-code"><span class="comment">// BotInlineMessage is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotInlineMessage</span> = &amp;<span class="package">tg.</span><span class="type">BotInlineMessageMediaAuto</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotInlineMessage</span> = &amp;<span class="package">tg.</span><span class="type">BotInlineMessageMediaVenue</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotInlineMessage</span> = &amp;<span class="package">tg.</span><span class="type">BotInlineMessageText</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotInlineMessage</span> = &amp;<span class="package">tg.</span><span class="type">BotInlineMessageMediaVenue</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotInlineMessage</span> = &amp;<span class="package">tg.</span><span class="type">BotInlineMessageMediaGeo</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotInlineMessage</span> = &amp;<span class="package">tg.</span><span class="type">BotInlineMessageMediaWebPage</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotInlineMessage</span> = &amp;<span class="package">tg.</span><span class="type">BotInlineMessageMediaContact</span>{}
 <span class="comment">// ... and <span class="number">2</span> more constructors</span>
 </pre>
         </div>

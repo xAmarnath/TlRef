@@ -89,6 +89,11 @@
             </p>
             <div class="item-list">
 
+            <a href="../constructors/storyViewPublicForward.html" class="item" data-name="storyviewpublicforward storyviewpublicforward">
+                <span class="item-name">StoryViewPublicForward</span>
+                <span class="item-desc">A certain peer has forwarded the story as a message to a public chat or channel.</span>
+            </a>
+
             <a href="../constructors/storyView.html" class="item" data-name="storyview storyview">
                 <span class="item-name">StoryView</span>
                 <span class="item-desc">Story view date and reaction information</span>
@@ -99,11 +104,6 @@
                 <span class="item-desc">A certain peer has reposted the story.</span>
             </a>
 
-            <a href="../constructors/storyViewPublicForward.html" class="item" data-name="storyviewpublicforward storyviewpublicforward">
-                <span class="item-name">StoryViewPublicForward</span>
-                <span class="item-desc">A certain peer has forwarded the story as a message to a public chat or channel.</span>
-            </a>
-
             </div>
         </div>
         
@@ -111,9 +111,9 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// StoryView is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">StoryView</span> = &amp;<span class="package">tg.</span><span class="type">StoryViewPublicForward</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">StoryView</span> = &amp;<span class="package">tg.</span><span class="type">StoryView</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">StoryView</span> = &amp;<span class="package">tg.</span><span class="type">StoryViewPublicRepost</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">StoryView</span> = &amp;<span class="package">tg.</span><span class="type">StoryViewPublicForward</span>{}
 </pre>
         </div>
         </article>

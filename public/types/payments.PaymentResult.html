@@ -89,14 +89,14 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/payments/paymentVerificationNeeded.html" class="item" data-name="paymentspaymentverificationneeded payments.paymentverificationneeded">
-                <span class="item-name">PaymentsPaymentVerificationNeeded</span>
-                <span class="item-desc">Payment was not successful, additional verification is needed</span>
-            </a>
-
             <a href="../constructors/payments/paymentResult.html" class="item" data-name="paymentspaymentresult payments.paymentresult">
                 <span class="item-name">PaymentsPaymentResult</span>
                 <span class="item-desc">Payment result</span>
+            </a>
+
+            <a href="../constructors/payments/paymentVerificationNeeded.html" class="item" data-name="paymentspaymentverificationneeded payments.paymentverificationneeded">
+                <span class="item-name">PaymentsPaymentVerificationNeeded</span>
+                <span class="item-desc">Payment was not successful, additional verification is needed</span>
             </a>
 
             </div>
@@ -106,8 +106,8 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// payments.PaymentResult is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PaymentsPaymentResult</span> = &amp;<span class="package">tg.</span><span class="type">PaymentsPaymentVerificationNeeded</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PaymentsPaymentResult</span> = &amp;<span class="package">tg.</span><span class="type">PaymentsPaymentResult</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PaymentsPaymentResult</span> = &amp;<span class="package">tg.</span><span class="type">PaymentsPaymentVerificationNeeded</span>{}
 </pre>
         </div>
         </article>

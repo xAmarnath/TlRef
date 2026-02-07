@@ -89,14 +89,14 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/reactionNotificationsFromContacts.html" class="item" data-name="reactionnotificationsfromcontacts reactionnotificationsfromcontacts">
-                <span class="item-name">ReactionNotificationsFromContacts</span>
-                <span class="item-desc">Receive notifications about reactions made only by our contacts.</span>
-            </a>
-
             <a href="../constructors/reactionNotificationsFromAll.html" class="item" data-name="reactionnotificationsfromall reactionnotificationsfromall">
                 <span class="item-name">ReactionNotificationsFromAll</span>
                 <span class="item-desc">Receive notifications about reactions made by any user.</span>
+            </a>
+
+            <a href="../constructors/reactionNotificationsFromContacts.html" class="item" data-name="reactionnotificationsfromcontacts reactionnotificationsfromcontacts">
+                <span class="item-name">ReactionNotificationsFromContacts</span>
+                <span class="item-desc">Receive notifications about reactions made only by our contacts.</span>
             </a>
 
             </div>
@@ -106,8 +106,8 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// ReactionNotificationsFrom is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ReactionNotificationsFrom</span> = &amp;<span class="package">tg.</span><span class="type">ReactionNotificationsFromContacts</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ReactionNotificationsFrom</span> = &amp;<span class="package">tg.</span><span class="type">ReactionNotificationsFromAll</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ReactionNotificationsFrom</span> = &amp;<span class="package">tg.</span><span class="type">ReactionNotificationsFromContacts</span>{}
 </pre>
         </div>
         </article>

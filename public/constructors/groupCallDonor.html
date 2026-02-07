@@ -80,7 +80,7 @@
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
-        <div class="code-block">groupCallDonor#ee430c85 flags:# top:flags.0?true my:flags.1?true peer_id:flags.3?Peer stars:long = GroupCallDonor;</div>
+        <div class="code-block">groupCallDonor#ee430c85 flags:# top:flags.0?true my:flags.1?true anonymous:flags.2?true peer_id:flags.3?Peer stars:long = GroupCallDonor;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -105,6 +105,12 @@
                             <td class="field-name">My</td>
                             <td class="field-type">flags.1?true</td>
                             <td>Current user&#x27;s donation</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Anonymous</td>
+                            <td class="field-type">flags.2?true</td>
+                            <td>Anonymous donor</td>
                         </tr>
 
                         <tr>
@@ -138,6 +144,7 @@ obj := &amp;<span class="package">tg.</span><span class="type">GroupCallDonorObj
     <span class="comment">// Optional fields:</span>
     <span class="comment">// Top: <span class="keyword">true</span>,</span>
     <span class="comment">// My: <span class="keyword">true</span>,</span>
+    <span class="comment">// Anonymous: <span class="keyword">true</span>,</span>
     <span class="comment">// PeerId: &amp;<span class="package">tg.</span><span class="type">Peer</span>{},</span>
 }</pre>
         </div>

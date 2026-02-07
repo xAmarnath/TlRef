@@ -89,24 +89,14 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/storage/fileUnknown.html" class="item" data-name="storagefileunknown storage.fileunknown">
-                <span class="item-name">StorageFileUnknown</span>
-                <span class="item-desc">Unknown type.</span>
-            </a>
-
             <a href="../constructors/storage/filePartial.html" class="item" data-name="storagefilepartial storage.filepartial">
                 <span class="item-name">StorageFilePartial</span>
                 <span class="item-desc">Part of a bigger file.</span>
             </a>
 
-            <a href="../constructors/storage/fileGif.html" class="item" data-name="storagefilegif storage.filegif">
-                <span class="item-name">StorageFileGif</span>
-                <span class="item-desc">GIF image. MIME type: image/gif.</span>
-            </a>
-
-            <a href="../constructors/storage/fileJpeg.html" class="item" data-name="storagefilejpeg storage.filejpeg">
-                <span class="item-name">StorageFileJpeg</span>
-                <span class="item-desc">JPEG image. MIME type: image/jpeg.</span>
+            <a href="../constructors/storage/fileUnknown.html" class="item" data-name="storagefileunknown storage.fileunknown">
+                <span class="item-name">StorageFileUnknown</span>
+                <span class="item-desc">Unknown type.</span>
             </a>
 
             <a href="../constructors/storage/filePng.html" class="item" data-name="storagefilepng storage.filepng">
@@ -114,9 +104,19 @@
                 <span class="item-desc">PNG image. MIME type: image/png.</span>
             </a>
 
-            <a href="../constructors/storage/filePdf.html" class="item" data-name="storagefilepdf storage.filepdf">
-                <span class="item-name">StorageFilePdf</span>
-                <span class="item-desc">PDF document image. MIME type: application/pdf.</span>
+            <a href="../constructors/storage/fileJpeg.html" class="item" data-name="storagefilejpeg storage.filejpeg">
+                <span class="item-name">StorageFileJpeg</span>
+                <span class="item-desc">JPEG image. MIME type: image/jpeg.</span>
+            </a>
+
+            <a href="../constructors/storage/fileMp3.html" class="item" data-name="storagefilemp3 storage.filemp3">
+                <span class="item-name">StorageFileMp3</span>
+                <span class="item-desc">Mp 3 audio. MIME type: audio/mpeg.</span>
+            </a>
+
+            <a href="../constructors/storage/fileGif.html" class="item" data-name="storagefilegif storage.filegif">
+                <span class="item-name">StorageFileGif</span>
+                <span class="item-desc">GIF image. MIME type: image/gif.</span>
             </a>
 
             <a href="../constructors/storage/fileMov.html" class="item" data-name="storagefilemov storage.filemov">
@@ -124,9 +124,9 @@
                 <span class="item-desc">Quicktime video. MIME type: video/quicktime.</span>
             </a>
 
-            <a href="../constructors/storage/fileMp3.html" class="item" data-name="storagefilemp3 storage.filemp3">
-                <span class="item-name">StorageFileMp3</span>
-                <span class="item-desc">Mp 3 audio. MIME type: audio/mpeg.</span>
+            <a href="../constructors/storage/filePdf.html" class="item" data-name="storagefilepdf storage.filepdf">
+                <span class="item-name">StorageFilePdf</span>
+                <span class="item-desc">PDF document image. MIME type: application/pdf.</span>
             </a>
 
             <a href="../constructors/storage/fileMp4.html" class="item" data-name="storagefilemp4 storage.filemp4">
@@ -146,11 +146,11 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// storage.FileType is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">StorageFileType</span> = &amp;<span class="package">tg.</span><span class="type">StorageFileUnknown</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">StorageFileType</span> = &amp;<span class="package">tg.</span><span class="type">StorageFilePartial</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">StorageFileType</span> = &amp;<span class="package">tg.</span><span class="type">StorageFileGif</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">StorageFileType</span> = &amp;<span class="package">tg.</span><span class="type">StorageFileJpeg</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">StorageFileType</span> = &amp;<span class="package">tg.</span><span class="type">StorageFileUnknown</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">StorageFileType</span> = &amp;<span class="package">tg.</span><span class="type">StorageFilePng</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">StorageFileType</span> = &amp;<span class="package">tg.</span><span class="type">StorageFileJpeg</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">StorageFileType</span> = &amp;<span class="package">tg.</span><span class="type">StorageFileMp3</span>{}
 <span class="comment">// ... and <span class="number">5</span> more constructors</span>
 </pre>
         </div>

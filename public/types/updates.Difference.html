@@ -94,6 +94,11 @@
                 <span class="item-desc">Full list of occurred events.</span>
             </a>
 
+            <a href="../constructors/updates/differenceTooLong.html" class="item" data-name="updatesdifferencetoolong updates.differencetoolong">
+                <span class="item-name">UpdatesDifferenceTooLong</span>
+                <span class="item-desc">The difference is too long, and the specified state must be used to refetch updates.</span>
+            </a>
+
             <a href="../constructors/updates/differenceEmpty.html" class="item" data-name="updatesdifferenceempty updates.differenceempty">
                 <span class="item-name">UpdatesDifferenceEmpty</span>
                 <span class="item-desc">No events.</span>
@@ -104,11 +109,6 @@
                 <span class="item-desc">Incomplete list of occurred events.</span>
             </a>
 
-            <a href="../constructors/updates/differenceTooLong.html" class="item" data-name="updatesdifferencetoolong updates.differencetoolong">
-                <span class="item-name">UpdatesDifferenceTooLong</span>
-                <span class="item-desc">The difference is too long, and the specified state must be used to refetch updates.</span>
-            </a>
-
             </div>
         </div>
         
@@ -117,9 +117,9 @@
             <pre class="example-code"><span class="comment">// updates.Difference is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">UpdatesDifference</span> = &amp;<span class="package">tg.</span><span class="type">UpdatesDifference</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">UpdatesDifference</span> = &amp;<span class="package">tg.</span><span class="type">UpdatesDifferenceTooLong</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">UpdatesDifference</span> = &amp;<span class="package">tg.</span><span class="type">UpdatesDifferenceEmpty</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">UpdatesDifference</span> = &amp;<span class="package">tg.</span><span class="type">UpdatesDifferenceSlice</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">UpdatesDifference</span> = &amp;<span class="package">tg.</span><span class="type">UpdatesDifferenceTooLong</span>{}
 </pre>
         </div>
         </article>

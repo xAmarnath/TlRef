@@ -89,14 +89,14 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/starsAmount.html" class="item" data-name="starsamount starsamount">
-                <span class="item-name">StarsAmount</span>
-                <span class="item-desc">Describes a real (i. e. possibly decimal) amount of Telegram Stars.</span>
-            </a>
-
             <a href="../constructors/starsTonAmount.html" class="item" data-name="starstonamount starstonamount">
                 <span class="item-name">StarsTonAmount</span>
                 <span class="item-desc">Describes an amount of toncoin in nanotons (i. e. 1/1_000_000_000 of a toncoin).</span>
+            </a>
+
+            <a href="../constructors/starsAmount.html" class="item" data-name="starsamount starsamount">
+                <span class="item-name">StarsAmount</span>
+                <span class="item-desc">Describes a real (i. e. possibly decimal) amount of Telegram Stars.</span>
             </a>
 
             </div>
@@ -106,8 +106,8 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// StarsAmount is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">StarsAmount</span> = &amp;<span class="package">tg.</span><span class="type">StarsAmount</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">StarsAmount</span> = &amp;<span class="package">tg.</span><span class="type">StarsTonAmount</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">StarsAmount</span> = &amp;<span class="package">tg.</span><span class="type">StarsAmount</span>{}
 </pre>
         </div>
         </article>

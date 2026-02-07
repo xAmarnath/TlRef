@@ -94,11 +94,6 @@
                 <span class="item-desc">The phone call was missed</span>
             </a>
 
-            <a href="../constructors/phoneCallDiscardReasonMigrateConferenceCall.html" class="item" data-name="phonecalldiscardreasonmigrateconferencecall phonecalldiscardreasonmigrateconferencecall">
-                <span class="item-name">PhoneCallDiscardReasonMigrateConferenceCall</span>
-                <span class="item-desc">This phone call was migrated to a conference call.</span>
-            </a>
-
             <a href="../constructors/phoneCallDiscardReasonDisconnect.html" class="item" data-name="phonecalldiscardreasondisconnect phonecalldiscardreasondisconnect">
                 <span class="item-name">PhoneCallDiscardReasonDisconnect</span>
                 <span class="item-desc">The phone call was disconnected</span>
@@ -114,6 +109,11 @@
                 <span class="item-desc">The phone call was ended normally</span>
             </a>
 
+            <a href="../constructors/phoneCallDiscardReasonMigrateConferenceCall.html" class="item" data-name="phonecalldiscardreasonmigrateconferencecall phonecalldiscardreasonmigrateconferencecall">
+                <span class="item-name">PhoneCallDiscardReasonMigrateConferenceCall</span>
+                <span class="item-desc">This phone call was migrated to a conference call.</span>
+            </a>
+
             </div>
         </div>
         
@@ -122,10 +122,10 @@
             <pre class="example-code"><span class="comment">// PhoneCallDiscardReason is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PhoneCallDiscardReason</span> = &amp;<span class="package">tg.</span><span class="type">PhoneCallDiscardReasonMissed</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PhoneCallDiscardReason</span> = &amp;<span class="package">tg.</span><span class="type">PhoneCallDiscardReasonMigrateConferenceCall</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PhoneCallDiscardReason</span> = &amp;<span class="package">tg.</span><span class="type">PhoneCallDiscardReasonDisconnect</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PhoneCallDiscardReason</span> = &amp;<span class="package">tg.</span><span class="type">PhoneCallDiscardReasonBusy</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PhoneCallDiscardReason</span> = &amp;<span class="package">tg.</span><span class="type">PhoneCallDiscardReasonHangup</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PhoneCallDiscardReason</span> = &amp;<span class="package">tg.</span><span class="type">PhoneCallDiscardReasonMigrateConferenceCall</span>{}
 </pre>
         </div>
         </article>

@@ -89,6 +89,11 @@
             </p>
             <div class="item-list">
 
+            <a href="../constructors/auth/codeTypeMissedCall.html" class="item" data-name="authcodetypemissedcall auth.codetypemissedcall">
+                <span class="item-name">AuthCodeTypeMissedCall</span>
+                <span class="item-desc">The next time, the authentication code will be delivered via an immediately canceled incoming call,</span>
+            </a>
+
             <a href="../constructors/auth/codeTypeSms.html" class="item" data-name="authcodetypesms auth.codetypesms">
                 <span class="item-name">AuthCodeTypeSms</span>
                 <span class="item-desc">The next time, the authentication code will be delivered via an immediately canceled incoming call.</span>
@@ -99,19 +104,14 @@
                 <span class="item-desc">The next time, the authentication code is to be delivered via an outgoing phone call.</span>
             </a>
 
-            <a href="../constructors/auth/codeTypeMissedCall.html" class="item" data-name="authcodetypemissedcall auth.codetypemissedcall">
-                <span class="item-name">AuthCodeTypeMissedCall</span>
-                <span class="item-desc">The next time, the authentication code will be delivered via an immediately canceled incoming call,</span>
+            <a href="../constructors/auth/codeTypeFragmentSms.html" class="item" data-name="authcodetypefragmentsms auth.codetypefragmentsms">
+                <span class="item-name">AuthCodeTypeFragmentSms</span>
+                <span class="item-desc">The next time, the authentication code will be delivered via fragment. com</span>
             </a>
 
             <a href="../constructors/auth/codeTypeFlashCall.html" class="item" data-name="authcodetypeflashcall auth.codetypeflashcall">
                 <span class="item-name">AuthCodeTypeFlashCall</span>
                 <span class="item-desc">The next time, the authentication code will be delivered via an immediately canceled incoming call.</span>
-            </a>
-
-            <a href="../constructors/auth/codeTypeFragmentSms.html" class="item" data-name="authcodetypefragmentsms auth.codetypefragmentsms">
-                <span class="item-name">AuthCodeTypeFragmentSms</span>
-                <span class="item-desc">The next time, the authentication code will be delivered via fragment. com</span>
             </a>
 
             </div>
@@ -121,11 +121,11 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// auth.CodeType is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">AuthCodeType</span> = &amp;<span class="package">tg.</span><span class="type">AuthCodeTypeMissedCall</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">AuthCodeType</span> = &amp;<span class="package">tg.</span><span class="type">AuthCodeTypeSms</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">AuthCodeType</span> = &amp;<span class="package">tg.</span><span class="type">AuthCodeTypeCall</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">AuthCodeType</span> = &amp;<span class="package">tg.</span><span class="type">AuthCodeTypeMissedCall</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">AuthCodeType</span> = &amp;<span class="package">tg.</span><span class="type">AuthCodeTypeFlashCall</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">AuthCodeType</span> = &amp;<span class="package">tg.</span><span class="type">AuthCodeTypeFragmentSms</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">AuthCodeType</span> = &amp;<span class="package">tg.</span><span class="type">AuthCodeTypeFlashCall</span>{}
 </pre>
         </div>
         </article>

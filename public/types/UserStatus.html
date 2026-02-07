@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UserStatus - Gogram TL Reference</title>
-    <meta name="description" content="Abstract type representing one of 6 possible constructors.">
+    <meta name="description" content="Abstract type representing one of 7 possible constructors.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="UserStatus - Gogram TL Reference">
-    <meta property="og:description" content="Abstract type representing one of 6 possible constructors.">
+    <meta property="og:description" content="Abstract type representing one of 7 possible constructors.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -74,7 +74,7 @@
         
         <header class="page-header">
             <h1>UserStatus</h1>
-            <p class="description">Abstract type representing one of 6 possible constructors.</p>
+            <p class="description">Abstract type representing one of 7 possible constructors.</p>
         </header>
         
         <div class="badges">
@@ -109,14 +109,19 @@
                 <span class="item-desc">Online status: last seen recently</span>
             </a>
 
-            <a href="../constructors/userStatusLastWeek.html" class="item" data-name="userstatuslastweek userstatuslastweek">
-                <span class="item-name">UserStatusLastWeek</span>
-                <span class="item-desc">Online status: last seen last week</span>
+            <a href="../constructors/userStatusHidden.html" class="item" data-name="userstatushidden userstatushidden">
+                <span class="item-name">UserStatusHidden</span>
+                <span class="item-desc">User status hidden from others</span>
             </a>
 
             <a href="../constructors/userStatusLastMonth.html" class="item" data-name="userstatuslastmonth userstatuslastmonth">
                 <span class="item-name">UserStatusLastMonth</span>
                 <span class="item-desc">Online status: last seen last month</span>
+            </a>
+
+            <a href="../constructors/userStatusLastWeek.html" class="item" data-name="userstatuslastweek userstatuslastweek">
+                <span class="item-name">UserStatusLastWeek</span>
+                <span class="item-desc">Online status: last seen last week</span>
             </a>
 
             </div>
@@ -130,8 +135,8 @@
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">UserStatus</span> = &amp;<span class="package">tg.</span><span class="type">UserStatusOnline</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">UserStatus</span> = &amp;<span class="package">tg.</span><span class="type">UserStatusOffline</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">UserStatus</span> = &amp;<span class="package">tg.</span><span class="type">UserStatusRecently</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">UserStatus</span> = &amp;<span class="package">tg.</span><span class="type">UserStatusLastWeek</span>{}
-<span class="comment">// ... and <span class="number">1</span> more constructors</span>
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">UserStatus</span> = &amp;<span class="package">tg.</span><span class="type">UserStatusHidden</span>{}
+<span class="comment">// ... and <span class="number">2</span> more constructors</span>
 </pre>
         </div>
         </article>

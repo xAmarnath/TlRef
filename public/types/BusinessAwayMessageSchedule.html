@@ -89,11 +89,6 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/businessAwayMessageScheduleOutsideWorkHours.html" class="item" data-name="businessawaymessagescheduleoutsideworkhours businessawaymessagescheduleoutsideworkhours">
-                <span class="item-name">BusinessAwayMessageScheduleOutsideWorkHours</span>
-                <span class="item-desc">Send Telegram Business away messages to users writing to us in private outside of the configured Tel</span>
-            </a>
-
             <a href="../constructors/businessAwayMessageScheduleAlways.html" class="item" data-name="businessawaymessageschedulealways businessawaymessageschedulealways">
                 <span class="item-name">BusinessAwayMessageScheduleAlways</span>
                 <span class="item-desc">Always send Telegram Business away messages to users writing to us in private.</span>
@@ -104,6 +99,11 @@
                 <span class="item-desc">Send Telegram Business away messages to users writing to us in private in the specified time span.</span>
             </a>
 
+            <a href="../constructors/businessAwayMessageScheduleOutsideWorkHours.html" class="item" data-name="businessawaymessagescheduleoutsideworkhours businessawaymessagescheduleoutsideworkhours">
+                <span class="item-name">BusinessAwayMessageScheduleOutsideWorkHours</span>
+                <span class="item-desc">Send Telegram Business away messages to users writing to us in private outside of the configured Tel</span>
+            </a>
+
             </div>
         </div>
         
@@ -111,9 +111,9 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// BusinessAwayMessageSchedule is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BusinessAwayMessageSchedule</span> = &amp;<span class="package">tg.</span><span class="type">BusinessAwayMessageScheduleOutsideWorkHours</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BusinessAwayMessageSchedule</span> = &amp;<span class="package">tg.</span><span class="type">BusinessAwayMessageScheduleAlways</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BusinessAwayMessageSchedule</span> = &amp;<span class="package">tg.</span><span class="type">BusinessAwayMessageScheduleCustom</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BusinessAwayMessageSchedule</span> = &amp;<span class="package">tg.</span><span class="type">BusinessAwayMessageScheduleOutsideWorkHours</span>{}
 </pre>
         </div>
         </article>

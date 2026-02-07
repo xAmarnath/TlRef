@@ -89,14 +89,14 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/chatInviteExported.html" class="item" data-name="chatinviteexported chatinviteexported">
-                <span class="item-name">ChatInviteExported</span>
-                <span class="item-desc">Exported chat invite</span>
-            </a>
-
             <a href="../constructors/chatInvitePublicJoinRequests.html" class="item" data-name="chatinvitepublicjoinrequests chatinvitepublicjoinrequests">
                 <span class="item-name">ChatInvitePublicJoinRequests</span>
                 <span class="item-desc">Used in updates and in the channel log to indicate when a user is requesting to join or has joined a</span>
+            </a>
+
+            <a href="../constructors/chatInviteExported.html" class="item" data-name="chatinviteexported chatinviteexported">
+                <span class="item-name">ChatInviteExported</span>
+                <span class="item-desc">Exported chat invite</span>
             </a>
 
             </div>
@@ -106,8 +106,8 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// ExportedChatInvite is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ExportedChatInvite</span> = &amp;<span class="package">tg.</span><span class="type">ChatInviteExported</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ExportedChatInvite</span> = &amp;<span class="package">tg.</span><span class="type">ChatInvitePublicJoinRequests</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ExportedChatInvite</span> = &amp;<span class="package">tg.</span><span class="type">ChatInviteExported</span>{}
 </pre>
         </div>
         </article>

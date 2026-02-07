@@ -89,11 +89,6 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/contacts/topPeersNotModified.html" class="item" data-name="contactstoppeersnotmodified contacts.toppeersnotmodified">
-                <span class="item-name">ContactsTopPeersNotModified</span>
-                <span class="item-desc">Top peer info hasn&#x27;t changed</span>
-            </a>
-
             <a href="../constructors/contacts/topPeers.html" class="item" data-name="contactstoppeers contacts.toppeers">
                 <span class="item-name">ContactsTopPeers</span>
                 <span class="item-desc">Top peers</span>
@@ -104,6 +99,11 @@
                 <span class="item-desc">Top peers disabled</span>
             </a>
 
+            <a href="../constructors/contacts/topPeersNotModified.html" class="item" data-name="contactstoppeersnotmodified contacts.toppeersnotmodified">
+                <span class="item-name">ContactsTopPeersNotModified</span>
+                <span class="item-desc">Top peer info hasn&#x27;t changed</span>
+            </a>
+
             </div>
         </div>
         
@@ -111,9 +111,9 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// contacts.TopPeers is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ContactsTopPeers</span> = &amp;<span class="package">tg.</span><span class="type">ContactsTopPeersNotModified</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ContactsTopPeers</span> = &amp;<span class="package">tg.</span><span class="type">ContactsTopPeers</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ContactsTopPeers</span> = &amp;<span class="package">tg.</span><span class="type">ContactsTopPeersDisabled</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ContactsTopPeers</span> = &amp;<span class="package">tg.</span><span class="type">ContactsTopPeersNotModified</span>{}
 </pre>
         </div>
         </article>

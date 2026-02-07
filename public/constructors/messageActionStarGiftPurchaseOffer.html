@@ -80,7 +80,7 @@
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
-        <div class="code-block">messageActionStarGiftPurchaseOffer#774278d4 flags:# accepted:flags.0?true declined:flags.1?true gift:StarGift price:StarsAmount expires_at:int = MessageAction;</div>
+        <div class="code-block">messageActionStarGiftPurchaseOffer#774278d4 flags:# accepted:flags.0?int declined:flags.1?true gift:StarGift price:StarsAmount expires_at:int = MessageAction;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -97,7 +97,7 @@
 
                         <tr>
                             <td class="field-name">Accepted</td>
-                            <td class="field-type">flags.0?true</td>
+                            <td class="field-type">flags.0?int</td>
                             <td>Accepted count</td>
                         </tr>
 
@@ -144,7 +144,7 @@ obj := &amp;<span class="package">tg.</span><span class="type">MessageActionStar
     ExpiresAt: <span class="number">42</span>,
 
     <span class="comment">// Optional fields:</span>
-    <span class="comment">// Accepted: <span class="keyword">true</span>,</span>
+    <span class="comment">// Accepted: <span class="number">42</span>,</span>
     <span class="comment">// Declined: <span class="keyword">true</span>,</span>
 }</pre>
         </div>

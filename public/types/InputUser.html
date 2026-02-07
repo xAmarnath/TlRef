@@ -89,24 +89,24 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/inputUserEmpty.html" class="item" data-name="inputuserempty inputuserempty">
-                <span class="item-name">InputUserEmpty</span>
-                <span class="item-desc">Empty constructor, does not define a user.</span>
-            </a>
-
             <a href="../constructors/inputUserSelf.html" class="item" data-name="inputuserself inputuserself">
                 <span class="item-name">InputUserSelf</span>
                 <span class="item-desc">Defines the current user.</span>
             </a>
 
-            <a href="../constructors/inputUser.html" class="item" data-name="inputuser inputuser">
-                <span class="item-name">InputUser</span>
-                <span class="item-desc">Defines a user for further interaction.</span>
+            <a href="../constructors/inputUserEmpty.html" class="item" data-name="inputuserempty inputuserempty">
+                <span class="item-name">InputUserEmpty</span>
+                <span class="item-desc">Empty constructor, does not define a user.</span>
             </a>
 
             <a href="../constructors/inputUserFromMessage.html" class="item" data-name="inputuserfrommessage inputuserfrommessage">
                 <span class="item-name">InputUserFromMessage</span>
                 <span class="item-desc">Defines a min user that was seen in a certain message of a certain chat.</span>
+            </a>
+
+            <a href="../constructors/inputUser.html" class="item" data-name="inputuser inputuser">
+                <span class="item-name">InputUser</span>
+                <span class="item-desc">Defines a user for further interaction.</span>
             </a>
 
             </div>
@@ -116,10 +116,10 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// InputUser is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputUser</span> = &amp;<span class="package">tg.</span><span class="type">InputUserEmpty</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputUser</span> = &amp;<span class="package">tg.</span><span class="type">InputUserSelf</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputUser</span> = &amp;<span class="package">tg.</span><span class="type">InputUser</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputUser</span> = &amp;<span class="package">tg.</span><span class="type">InputUserEmpty</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputUser</span> = &amp;<span class="package">tg.</span><span class="type">InputUserFromMessage</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputUser</span> = &amp;<span class="package">tg.</span><span class="type">InputUser</span>{}
 </pre>
         </div>
         </article>

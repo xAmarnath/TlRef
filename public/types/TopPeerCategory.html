@@ -89,11 +89,6 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/topPeerCategoryCorrespondents.html" class="item" data-name="toppeercategorycorrespondents toppeercategorycorrespondents">
-                <span class="item-name">TopPeerCategoryCorrespondents</span>
-                <span class="item-desc">Users we&#x27;ve chatted most frequently with</span>
-            </a>
-
             <a href="../constructors/topPeerCategoryBotsPM.html" class="item" data-name="toppeercategorybotspm toppeercategorybotspm">
                 <span class="item-name">TopPeerCategoryBotsPm</span>
                 <span class="item-desc">Most used bots</span>
@@ -107,6 +102,16 @@
             <a href="../constructors/topPeerCategoryGroups.html" class="item" data-name="toppeercategorygroups toppeercategorygroups">
                 <span class="item-name">TopPeerCategoryGroups</span>
                 <span class="item-desc">Often-opened groups and supergroups</span>
+            </a>
+
+            <a href="../constructors/topPeerCategoryPhoneCalls.html" class="item" data-name="toppeercategoryphonecalls toppeercategoryphonecalls">
+                <span class="item-name">TopPeerCategoryPhoneCalls</span>
+                <span class="item-desc">Most frequently called users</span>
+            </a>
+
+            <a href="../constructors/topPeerCategoryCorrespondents.html" class="item" data-name="toppeercategorycorrespondents toppeercategorycorrespondents">
+                <span class="item-name">TopPeerCategoryCorrespondents</span>
+                <span class="item-desc">Users we&#x27;ve chatted most frequently with</span>
             </a>
 
             <a href="../constructors/topPeerCategoryChannels.html" class="item" data-name="toppeercategorychannels toppeercategorychannels">
@@ -124,11 +129,6 @@
                 <span class="item-desc">Chats to which the users often forwards messages to</span>
             </a>
 
-            <a href="../constructors/topPeerCategoryPhoneCalls.html" class="item" data-name="toppeercategoryphonecalls toppeercategoryphonecalls">
-                <span class="item-name">TopPeerCategoryPhoneCalls</span>
-                <span class="item-desc">Most frequently called users</span>
-            </a>
-
             <a href="../constructors/topPeerCategoryBotsApp.html" class="item" data-name="toppeercategorybotsapp toppeercategorybotsapp">
                 <span class="item-name">TopPeerCategoryBotsApp</span>
                 <span class="item-desc">Most frequently used Main Mini Bot Apps.</span>
@@ -141,11 +141,11 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// TopPeerCategory is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">TopPeerCategory</span> = &amp;<span class="package">tg.</span><span class="type">TopPeerCategoryCorrespondents</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">TopPeerCategory</span> = &amp;<span class="package">tg.</span><span class="type">TopPeerCategoryBotsPm</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">TopPeerCategory</span> = &amp;<span class="package">tg.</span><span class="type">TopPeerCategoryBotsInline</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">TopPeerCategory</span> = &amp;<span class="package">tg.</span><span class="type">TopPeerCategoryGroups</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">TopPeerCategory</span> = &amp;<span class="package">tg.</span><span class="type">TopPeerCategoryChannels</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">TopPeerCategory</span> = &amp;<span class="package">tg.</span><span class="type">TopPeerCategoryPhoneCalls</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">TopPeerCategory</span> = &amp;<span class="package">tg.</span><span class="type">TopPeerCategoryCorrespondents</span>{}
 <span class="comment">// ... and <span class="number">4</span> more constructors</span>
 </pre>
         </div>

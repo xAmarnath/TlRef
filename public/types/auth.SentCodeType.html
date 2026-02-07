@@ -99,9 +99,9 @@
                 <span class="item-desc">The code was sent via SMS</span>
             </a>
 
-            <a href="../constructors/auth/sentCodeTypeCall.html" class="item" data-name="authsentcodetypecall auth.sentcodetypecall">
-                <span class="item-name">AuthSentCodeTypeCall</span>
-                <span class="item-desc">The code will be sent via a phone call: a synthesized voice will tell the user which verification co</span>
+            <a href="../constructors/auth/sentCodeTypeFragmentSms.html" class="item" data-name="authsentcodetypefragmentsms auth.sentcodetypefragmentsms">
+                <span class="item-name">AuthSentCodeTypeFragmentSms</span>
+                <span class="item-desc">The code was delivered via fragment. com.</span>
             </a>
 
             <a href="../constructors/auth/sentCodeTypeMissedCall.html" class="item" data-name="authsentcodetypemissedcall auth.sentcodetypemissedcall">
@@ -109,24 +109,19 @@
                 <span class="item-desc">The code will be sent via a flash phone call, that will be closed immediately. The last digits of th</span>
             </a>
 
-            <a href="../constructors/auth/sentCodeTypeFlashCall.html" class="item" data-name="authsentcodetypeflashcall auth.sentcodetypeflashcall">
-                <span class="item-name">AuthSentCodeTypeFlashCall</span>
-                <span class="item-desc">The code will be sent via a flash phone call, that will be closed immediately. The phone code will t</span>
-            </a>
-
             <a href="../constructors/auth/sentCodeTypeEmailCode.html" class="item" data-name="authsentcodetypeemailcode auth.sentcodetypeemailcode">
                 <span class="item-name">AuthSentCodeTypeEmailCode</span>
                 <span class="item-desc">The code was sent via the previously configured login email</span>
             </a>
 
-            <a href="../constructors/auth/sentCodeTypeFirebaseSms.html" class="item" data-name="authsentcodetypefirebasesms auth.sentcodetypefirebasesms">
-                <span class="item-name">AuthSentCodeTypeFirebaseSms</span>
-                <span class="item-desc">An authentication code should be delivered via SMS after Firebase attestation, as described in the a</span>
+            <a href="../constructors/auth/sentCodeTypeCall.html" class="item" data-name="authsentcodetypecall auth.sentcodetypecall">
+                <span class="item-name">AuthSentCodeTypeCall</span>
+                <span class="item-desc">The code will be sent via a phone call: a synthesized voice will tell the user which verification co</span>
             </a>
 
-            <a href="../constructors/auth/sentCodeTypeFragmentSms.html" class="item" data-name="authsentcodetypefragmentsms auth.sentcodetypefragmentsms">
-                <span class="item-name">AuthSentCodeTypeFragmentSms</span>
-                <span class="item-desc">The code was delivered via fragment. com.</span>
+            <a href="../constructors/auth/sentCodeTypeFlashCall.html" class="item" data-name="authsentcodetypeflashcall auth.sentcodetypeflashcall">
+                <span class="item-name">AuthSentCodeTypeFlashCall</span>
+                <span class="item-desc">The code will be sent via a flash phone call, that will be closed immediately. The phone code will t</span>
             </a>
 
             <a href="../constructors/auth/sentCodeTypeSetUpEmailRequired.html" class="item" data-name="authsentcodetypesetupemailrequired auth.sentcodetypesetupemailrequired">
@@ -134,14 +129,19 @@
                 <span class="item-desc">The user should add and verify an email address in order to login as described here.</span>
             </a>
 
-            <a href="../constructors/auth/sentCodeTypeSmsWord.html" class="item" data-name="authsentcodetypesmsword auth.sentcodetypesmsword">
-                <span class="item-name">AuthSentCodeTypeSmsWord</span>
-                <span class="item-desc">The code was sent via SMS as a secret word, starting with the letter specified in beginning</span>
+            <a href="../constructors/auth/sentCodeTypeFirebaseSms.html" class="item" data-name="authsentcodetypefirebasesms auth.sentcodetypefirebasesms">
+                <span class="item-name">AuthSentCodeTypeFirebaseSms</span>
+                <span class="item-desc">An authentication code should be delivered via SMS after Firebase attestation, as described in the a</span>
             </a>
 
             <a href="../constructors/auth/sentCodeTypeSmsPhrase.html" class="item" data-name="authsentcodetypesmsphrase auth.sentcodetypesmsphrase">
                 <span class="item-name">AuthSentCodeTypeSmsPhrase</span>
                 <span class="item-desc">The code was sent via SMS as a secret phrase starting with the word specified in beginning</span>
+            </a>
+
+            <a href="../constructors/auth/sentCodeTypeSmsWord.html" class="item" data-name="authsentcodetypesmsword auth.sentcodetypesmsword">
+                <span class="item-name">AuthSentCodeTypeSmsWord</span>
+                <span class="item-desc">The code was sent via SMS as a secret word, starting with the letter specified in beginning</span>
             </a>
 
             </div>
@@ -153,9 +153,9 @@
 <span class="comment">// You can use any of the following constructors:</span>
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">AuthSentCodeType</span> = &amp;<span class="package">tg.</span><span class="type">AuthSentCodeTypeApp</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">AuthSentCodeType</span> = &amp;<span class="package">tg.</span><span class="type">AuthSentCodeTypeSms</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">AuthSentCodeType</span> = &amp;<span class="package">tg.</span><span class="type">AuthSentCodeTypeCall</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">AuthSentCodeType</span> = &amp;<span class="package">tg.</span><span class="type">AuthSentCodeTypeFragmentSms</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">AuthSentCodeType</span> = &amp;<span class="package">tg.</span><span class="type">AuthSentCodeTypeMissedCall</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">AuthSentCodeType</span> = &amp;<span class="package">tg.</span><span class="type">AuthSentCodeTypeFlashCall</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">AuthSentCodeType</span> = &amp;<span class="package">tg.</span><span class="type">AuthSentCodeTypeEmailCode</span>{}
 <span class="comment">// ... and <span class="number">6</span> more constructors</span>
 </pre>
         </div>

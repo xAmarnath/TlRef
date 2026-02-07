@@ -89,14 +89,14 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/starsTransactionPeerAppStore.html" class="item" data-name="starstransactionpeerappstore starstransactionpeerappstore">
-                <span class="item-name">StarsTransactionPeerAppStore</span>
-                <span class="item-desc">Describes a Telegram Star transaction with the App Store, used when purchasing Telegram Stars throug</span>
-            </a>
-
             <a href="../constructors/starsTransactionPeerUnsupported.html" class="item" data-name="starstransactionpeerunsupported starstransactionpeerunsupported">
                 <span class="item-name">StarsTransactionPeerUnsupported</span>
                 <span class="item-desc">Describes a Telegram Star transaction that cannot be described using the current layer.</span>
+            </a>
+
+            <a href="../constructors/starsTransactionPeerFragment.html" class="item" data-name="starstransactionpeerfragment starstransactionpeerfragment">
+                <span class="item-name">StarsTransactionPeerFragment</span>
+                <span class="item-desc">Describes a Telegram Star transaction with Fragment, used when purchasing Telegram Stars through Fr</span>
             </a>
 
             <a href="../constructors/starsTransactionPeerPlayMarket.html" class="item" data-name="starstransactionpeerplaymarket starstransactionpeerplaymarket">
@@ -109,19 +109,19 @@
                 <span class="item-desc">Describes a Telegram Star transaction made using @Premium Bot (i. e. using the input Invoice Stars flow</span>
             </a>
 
-            <a href="../constructors/starsTransactionPeerFragment.html" class="item" data-name="starstransactionpeerfragment starstransactionpeerfragment">
-                <span class="item-name">StarsTransactionPeerFragment</span>
-                <span class="item-desc">Describes a Telegram Star transaction with Fragment, used when purchasing Telegram Stars through Fr</span>
-            </a>
-
-            <a href="../constructors/starsTransactionPeerAPI.html" class="item" data-name="starstransactionpeerapi starstransactionpeerapi">
-                <span class="item-name">StarsTransactionPeerApi</span>
-                <span class="item-desc">Describes a Telegram Star transaction used to pay for paid API usage, such as paid bot broadcasts.</span>
+            <a href="../constructors/starsTransactionPeerAppStore.html" class="item" data-name="starstransactionpeerappstore starstransactionpeerappstore">
+                <span class="item-name">StarsTransactionPeerAppStore</span>
+                <span class="item-desc">Describes a Telegram Star transaction with the App Store, used when purchasing Telegram Stars throug</span>
             </a>
 
             <a href="../constructors/starsTransactionPeer.html" class="item" data-name="starstransactionpeer starstransactionpeer">
                 <span class="item-name">StarsTransactionPeer</span>
                 <span class="item-desc">Describes a Telegram Star transaction with another peer.</span>
+            </a>
+
+            <a href="../constructors/starsTransactionPeerAPI.html" class="item" data-name="starstransactionpeerapi starstransactionpeerapi">
+                <span class="item-name">StarsTransactionPeerApi</span>
+                <span class="item-desc">Describes a Telegram Star transaction used to pay for paid API usage, such as paid bot broadcasts.</span>
             </a>
 
             <a href="../constructors/starsTransactionPeerAds.html" class="item" data-name="starstransactionpeerads starstransactionpeerads">
@@ -136,11 +136,11 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// StarsTransactionPeer is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">StarsTransactionPeer</span> = &amp;<span class="package">tg.</span><span class="type">StarsTransactionPeerAppStore</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">StarsTransactionPeer</span> = &amp;<span class="package">tg.</span><span class="type">StarsTransactionPeerUnsupported</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">StarsTransactionPeer</span> = &amp;<span class="package">tg.</span><span class="type">StarsTransactionPeerFragment</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">StarsTransactionPeer</span> = &amp;<span class="package">tg.</span><span class="type">StarsTransactionPeerPlayMarket</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">StarsTransactionPeer</span> = &amp;<span class="package">tg.</span><span class="type">StarsTransactionPeerPremiumBot</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">StarsTransactionPeer</span> = &amp;<span class="package">tg.</span><span class="type">StarsTransactionPeerFragment</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">StarsTransactionPeer</span> = &amp;<span class="package">tg.</span><span class="type">StarsTransactionPeerAppStore</span>{}
 <span class="comment">// ... and <span class="number">3</span> more constructors</span>
 </pre>
         </div>
