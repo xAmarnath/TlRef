@@ -89,14 +89,14 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/messages/channelMessages.html" class="item" data-name="messageschannelmessages messages.channelmessages">
-                <span class="item-name">MessagesChannelMessages</span>
-                <span class="item-desc">Channel messages</span>
-            </a>
-
             <a href="../constructors/messages/messages.html" class="item" data-name="messagesmessages messages.messages">
                 <span class="item-name">MessagesMessages</span>
                 <span class="item-desc">Full list of messages with auxiliary data.</span>
+            </a>
+
+            <a href="../constructors/messages/channelMessages.html" class="item" data-name="messageschannelmessages messages.channelmessages">
+                <span class="item-name">MessagesChannelMessages</span>
+                <span class="item-desc">Channel messages</span>
             </a>
 
             <a href="../constructors/messages/messagesNotModified.html" class="item" data-name="messagesmessagesnotmodified messages.messagesnotmodified">
@@ -116,8 +116,8 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// messages.Messages is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessagesMessages</span> = &amp;<span class="package">tg.</span><span class="type">MessagesChannelMessages</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessagesMessages</span> = &amp;<span class="package">tg.</span><span class="type">MessagesMessages</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessagesMessages</span> = &amp;<span class="package">tg.</span><span class="type">MessagesChannelMessages</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessagesMessages</span> = &amp;<span class="package">tg.</span><span class="type">MessagesMessagesNotModified</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessagesMessages</span> = &amp;<span class="package">tg.</span><span class="type">MessagesMessagesSlice</span>{}
 </pre>

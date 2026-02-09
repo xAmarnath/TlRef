@@ -89,9 +89,9 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/chatForbidden.html" class="item" data-name="chatforbidden chatforbidden">
-                <span class="item-name">ChatForbidden</span>
-                <span class="item-desc">A group to which the user has no access. E. g., because the user was kicked from the group.</span>
+            <a href="../constructors/chatEmpty.html" class="item" data-name="chatempty chatempty">
+                <span class="item-name">ChatEmpty</span>
+                <span class="item-desc">Empty constructor, group doesn&#x27;t exist</span>
             </a>
 
             <a href="../constructors/chat.html" class="item" data-name="chat chat">
@@ -99,19 +99,19 @@
                 <span class="item-desc">Info about a group.</span>
             </a>
 
-            <a href="../constructors/chatEmpty.html" class="item" data-name="chatempty chatempty">
-                <span class="item-name">ChatEmpty</span>
-                <span class="item-desc">Empty constructor, group doesn&#x27;t exist</span>
+            <a href="../constructors/channel.html" class="item" data-name="channel channel">
+                <span class="item-name">Channel</span>
+                <span class="item-desc">Channel/supergroup info</span>
+            </a>
+
+            <a href="../constructors/chatForbidden.html" class="item" data-name="chatforbidden chatforbidden">
+                <span class="item-name">ChatForbidden</span>
+                <span class="item-desc">A group to which the user has no access. E. g., because the user was kicked from the group.</span>
             </a>
 
             <a href="../constructors/channelForbidden.html" class="item" data-name="channelforbidden channelforbidden">
                 <span class="item-name">ChannelForbidden</span>
                 <span class="item-desc">Indicates a channel/supergroup we can&#x27;t access because we were banned, or for some other reason.</span>
-            </a>
-
-            <a href="../constructors/channel.html" class="item" data-name="channel channel">
-                <span class="item-name">Channel</span>
-                <span class="item-desc">Channel/supergroup info</span>
             </a>
 
             </div>
@@ -121,11 +121,11 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// Chat is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Chat</span> = &amp;<span class="package">tg.</span><span class="type">ChatForbidden</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Chat</span> = &amp;<span class="package">tg.</span><span class="type">Chat</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Chat</span> = &amp;<span class="package">tg.</span><span class="type">ChatEmpty</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Chat</span> = &amp;<span class="package">tg.</span><span class="type">ChannelForbidden</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Chat</span> = &amp;<span class="package">tg.</span><span class="type">Chat</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Chat</span> = &amp;<span class="package">tg.</span><span class="type">Channel</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Chat</span> = &amp;<span class="package">tg.</span><span class="type">ChatForbidden</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Chat</span> = &amp;<span class="package">tg.</span><span class="type">ChannelForbidden</span>{}
 </pre>
         </div>
         </article>

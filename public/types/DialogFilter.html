@@ -89,14 +89,14 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/dialogFilter.html" class="item" data-name="dialogfilter dialogfilter">
-                <span class="item-name">DialogFilter</span>
-                <span class="item-desc">Dialog filter AKA folder</span>
-            </a>
-
             <a href="../constructors/dialogFilterDefault.html" class="item" data-name="dialogfilterdefault dialogfilterdefault">
                 <span class="item-name">DialogFilterDefault</span>
                 <span class="item-desc">Used only when reordering folders to indicate the default (all chats) folder.</span>
+            </a>
+
+            <a href="../constructors/dialogFilter.html" class="item" data-name="dialogfilter dialogfilter">
+                <span class="item-name">DialogFilter</span>
+                <span class="item-desc">Dialog filter AKA folder</span>
             </a>
 
             <a href="../constructors/dialogFilterChatlist.html" class="item" data-name="dialogfilterchatlist dialogfilterchatlist">
@@ -111,8 +111,8 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// DialogFilter is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">DialogFilter</span> = &amp;<span class="package">tg.</span><span class="type">DialogFilter</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">DialogFilter</span> = &amp;<span class="package">tg.</span><span class="type">DialogFilterDefault</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">DialogFilter</span> = &amp;<span class="package">tg.</span><span class="type">DialogFilter</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">DialogFilter</span> = &amp;<span class="package">tg.</span><span class="type">DialogFilterChatlist</span>{}
 </pre>
         </div>

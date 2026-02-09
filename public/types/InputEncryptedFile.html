@@ -94,6 +94,11 @@
                 <span class="item-desc">Empty constructor.</span>
             </a>
 
+            <a href="../constructors/inputEncryptedFileBigUploaded.html" class="item" data-name="inputencryptedfilebiguploaded inputencryptedfilebiguploaded">
+                <span class="item-name">InputEncryptedFileBigUploaded</span>
+                <span class="item-desc">Assigns a new big encrypted file (over 10 MB in size), saved in parts using the method upload. save Bi</span>
+            </a>
+
             <a href="../constructors/inputEncryptedFileUploaded.html" class="item" data-name="inputencryptedfileuploaded inputencryptedfileuploaded">
                 <span class="item-name">InputEncryptedFileUploaded</span>
                 <span class="item-desc">Sets new encrypted file saved by parts using upload. save File Part method.</span>
@@ -104,11 +109,6 @@
                 <span class="item-desc">Sets forwarded encrypted file for attachment.</span>
             </a>
 
-            <a href="../constructors/inputEncryptedFileBigUploaded.html" class="item" data-name="inputencryptedfilebiguploaded inputencryptedfilebiguploaded">
-                <span class="item-name">InputEncryptedFileBigUploaded</span>
-                <span class="item-desc">Assigns a new big encrypted file (over 10 MB in size), saved in parts using the method upload. save Bi</span>
-            </a>
-
             </div>
         </div>
         
@@ -117,9 +117,9 @@
             <pre class="example-code"><span class="comment">// InputEncryptedFile is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputEncryptedFile</span> = &amp;<span class="package">tg.</span><span class="type">InputEncryptedFileEmpty</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputEncryptedFile</span> = &amp;<span class="package">tg.</span><span class="type">InputEncryptedFileBigUploaded</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputEncryptedFile</span> = &amp;<span class="package">tg.</span><span class="type">InputEncryptedFileUploaded</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputEncryptedFile</span> = &amp;<span class="package">tg.</span><span class="type">InputEncryptedFile</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputEncryptedFile</span> = &amp;<span class="package">tg.</span><span class="type">InputEncryptedFileBigUploaded</span>{}
 </pre>
         </div>
         </article>

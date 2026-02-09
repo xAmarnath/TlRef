@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebPage - Gogram TL Reference</title>
-    <meta name="description" content="Abstract type representing one of 4 possible constructors.">
+    <meta name="description" content="Abstract type representing one of 5 possible constructors.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="WebPage - Gogram TL Reference">
-    <meta property="og:description" content="Abstract type representing one of 4 possible constructors.">
+    <meta property="og:description" content="Abstract type representing one of 5 possible constructors.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -74,7 +74,7 @@
         
         <header class="page-header">
             <h1>WebPage</h1>
-            <p class="description">Abstract type representing one of 4 possible constructors.</p>
+            <p class="description">Abstract type representing one of 5 possible constructors.</p>
         </header>
         
         <div class="badges">
@@ -89,24 +89,29 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/webPagePending.html" class="item" data-name="webpagepending webpagepending">
-                <span class="item-name">WebPagePending</span>
-                <span class="item-desc">A preview of the webpage is currently being generated</span>
-            </a>
-
             <a href="../constructors/webPageEmpty.html" class="item" data-name="webpageempty webpageempty">
                 <span class="item-name">WebPageEmpty</span>
                 <span class="item-desc">No preview is available for the webpage</span>
             </a>
 
-            <a href="../constructors/webPage.html" class="item" data-name="webpage webpage">
-                <span class="item-name">WebPage</span>
-                <span class="item-desc">Webpage preview</span>
+            <a href="../constructors/webPagePending.html" class="item" data-name="webpagepending webpagepending">
+                <span class="item-name">WebPagePending</span>
+                <span class="item-desc">A preview of the webpage is currently being generated</span>
+            </a>
+
+            <a href="../constructors/webPageUrlPending.html" class="item" data-name="webpageurlpending webpageurlpending">
+                <span class="item-name">WebPageUrlPending</span>
+                <span class="item-desc">Web page URL still loading</span>
             </a>
 
             <a href="../constructors/webPageNotModified.html" class="item" data-name="webpagenotmodified webpagenotmodified">
                 <span class="item-name">WebPageNotModified</span>
                 <span class="item-desc">The preview of the webpage hasn&#x27;t changed</span>
+            </a>
+
+            <a href="../constructors/webPage.html" class="item" data-name="webpage webpage">
+                <span class="item-name">WebPage</span>
+                <span class="item-desc">Webpage preview</span>
             </a>
 
             </div>
@@ -116,10 +121,11 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// WebPage is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">WebPage</span> = &amp;<span class="package">tg.</span><span class="type">WebPagePending</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">WebPage</span> = &amp;<span class="package">tg.</span><span class="type">WebPageEmpty</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">WebPage</span> = &amp;<span class="package">tg.</span><span class="type">WebPage</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">WebPage</span> = &amp;<span class="package">tg.</span><span class="type">WebPagePending</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">WebPage</span> = &amp;<span class="package">tg.</span><span class="type">WebPageUrlPending</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">WebPage</span> = &amp;<span class="package">tg.</span><span class="type">WebPageNotModified</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">WebPage</span> = &amp;<span class="package">tg.</span><span class="type">WebPage</span>{}
 </pre>
         </div>
         </article>

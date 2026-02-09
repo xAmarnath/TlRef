@@ -94,14 +94,14 @@
                 <span class="item-desc">Uses the default reaction privacy, set using messages. toggle Paid Reaction Privacy.</span>
             </a>
 
-            <a href="../constructors/paidReactionPrivacyPeer.html" class="item" data-name="paidreactionprivacypeer paidreactionprivacypeer">
-                <span class="item-name">PaidReactionPrivacyPeer</span>
-                <span class="item-desc">Send paid reactions as the specified peer, fetched using channels. get Send As.</span>
-            </a>
-
             <a href="../constructors/paidReactionPrivacyAnonymous.html" class="item" data-name="paidreactionprivacyanonymous paidreactionprivacyanonymous">
                 <span class="item-name">PaidReactionPrivacyAnonymous</span>
                 <span class="item-desc">Send paid reactions anonymously.</span>
+            </a>
+
+            <a href="../constructors/paidReactionPrivacyPeer.html" class="item" data-name="paidreactionprivacypeer paidreactionprivacypeer">
+                <span class="item-name">PaidReactionPrivacyPeer</span>
+                <span class="item-desc">Send paid reactions as the specified peer, fetched using channels. get Send As.</span>
             </a>
 
             </div>
@@ -112,8 +112,8 @@
             <pre class="example-code"><span class="comment">// PaidReactionPrivacy is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PaidReactionPrivacy</span> = &amp;<span class="package">tg.</span><span class="type">PaidReactionPrivacyDefault</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PaidReactionPrivacy</span> = &amp;<span class="package">tg.</span><span class="type">PaidReactionPrivacyPeer</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PaidReactionPrivacy</span> = &amp;<span class="package">tg.</span><span class="type">PaidReactionPrivacyAnonymous</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PaidReactionPrivacy</span> = &amp;<span class="package">tg.</span><span class="type">PaidReactionPrivacyPeer</span>{}
 </pre>
         </div>
         </article>

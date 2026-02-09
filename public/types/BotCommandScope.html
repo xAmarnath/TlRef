@@ -89,9 +89,9 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/botCommandScopeDefault.html" class="item" data-name="botcommandscopedefault botcommandscopedefault">
-                <span class="item-name">BotCommandScopeDefault</span>
-                <span class="item-desc">The commands will be valid in all dialogs</span>
+            <a href="../constructors/botCommandScopeUsers.html" class="item" data-name="botcommandscopeusers botcommandscopeusers">
+                <span class="item-name">BotCommandScopeUsers</span>
+                <span class="item-desc">The specified bot commands will only be valid in all private chats with users.</span>
             </a>
 
             <a href="../constructors/botCommandScopeChatAdmins.html" class="item" data-name="botcommandscopechatadmins botcommandscopechatadmins">
@@ -99,14 +99,9 @@
                 <span class="item-desc">The specified bot commands will be valid only for chat administrators, in all groups and supergroups</span>
             </a>
 
-            <a href="../constructors/botCommandScopeUsers.html" class="item" data-name="botcommandscopeusers botcommandscopeusers">
-                <span class="item-name">BotCommandScopeUsers</span>
-                <span class="item-desc">The specified bot commands will only be valid in all private chats with users.</span>
-            </a>
-
-            <a href="../constructors/botCommandScopePeer.html" class="item" data-name="botcommandscopepeer botcommandscopepeer">
-                <span class="item-name">BotCommandScopePeer</span>
-                <span class="item-desc">The specified bot commands will be valid only in a specific dialog.</span>
+            <a href="../constructors/botCommandScopeDefault.html" class="item" data-name="botcommandscopedefault botcommandscopedefault">
+                <span class="item-name">BotCommandScopeDefault</span>
+                <span class="item-desc">The commands will be valid in all dialogs</span>
             </a>
 
             <a href="../constructors/botCommandScopePeerAdmins.html" class="item" data-name="botcommandscopepeeradmins botcommandscopepeeradmins">
@@ -114,14 +109,19 @@
                 <span class="item-desc">The specified bot commands will be valid for all admins of the specified group or supergroup.</span>
             </a>
 
-            <a href="../constructors/botCommandScopePeerUser.html" class="item" data-name="botcommandscopepeeruser botcommandscopepeeruser">
-                <span class="item-name">BotCommandScopePeerUser</span>
-                <span class="item-desc">The specified bot commands will be valid only for a specific user in the specified group or supergro</span>
+            <a href="../constructors/botCommandScopePeer.html" class="item" data-name="botcommandscopepeer botcommandscopepeer">
+                <span class="item-name">BotCommandScopePeer</span>
+                <span class="item-desc">The specified bot commands will be valid only in a specific dialog.</span>
             </a>
 
             <a href="../constructors/botCommandScopeChats.html" class="item" data-name="botcommandscopechats botcommandscopechats">
                 <span class="item-name">BotCommandScopeChats</span>
                 <span class="item-desc">The specified bot commands will be valid in all groups and supergroups.</span>
+            </a>
+
+            <a href="../constructors/botCommandScopePeerUser.html" class="item" data-name="botcommandscopepeeruser botcommandscopepeeruser">
+                <span class="item-name">BotCommandScopePeerUser</span>
+                <span class="item-desc">The specified bot commands will be valid only for a specific user in the specified group or supergro</span>
             </a>
 
             </div>
@@ -131,11 +131,11 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// BotCommandScope is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotCommandScope</span> = &amp;<span class="package">tg.</span><span class="type">BotCommandScopeDefault</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotCommandScope</span> = &amp;<span class="package">tg.</span><span class="type">BotCommandScopeChatAdmins</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotCommandScope</span> = &amp;<span class="package">tg.</span><span class="type">BotCommandScopeUsers</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotCommandScope</span> = &amp;<span class="package">tg.</span><span class="type">BotCommandScopePeer</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotCommandScope</span> = &amp;<span class="package">tg.</span><span class="type">BotCommandScopeChatAdmins</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotCommandScope</span> = &amp;<span class="package">tg.</span><span class="type">BotCommandScopeDefault</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotCommandScope</span> = &amp;<span class="package">tg.</span><span class="type">BotCommandScopePeerAdmins</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">BotCommandScope</span> = &amp;<span class="package">tg.</span><span class="type">BotCommandScopePeer</span>{}
 <span class="comment">// ... and <span class="number">2</span> more constructors</span>
 </pre>
         </div>

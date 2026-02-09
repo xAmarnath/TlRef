@@ -89,11 +89,6 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/channels/sponsoredMessageReportResultReported.html" class="item" data-name="channelssponsoredmessagereportresultreported channels.sponsoredmessagereportresultreported">
-                <span class="item-name">ChannelsSponsoredMessageReportResultReported</span>
-                <span class="item-desc">The sponsored message was reported successfully.</span>
-            </a>
-
             <a href="../constructors/channels/sponsoredMessageReportResultChooseOption.html" class="item" data-name="channelssponsoredmessagereportresultchooseoption channels.sponsoredmessagereportresultchooseoption">
                 <span class="item-name">ChannelsSponsoredMessageReportResultChooseOption</span>
                 <span class="item-desc">The user must choose a report option from the localized options available in options, and after sel</span>
@@ -104,6 +99,11 @@
                 <span class="item-desc">Sponsored messages were hidden for the user in all chats.</span>
             </a>
 
+            <a href="../constructors/channels/sponsoredMessageReportResultReported.html" class="item" data-name="channelssponsoredmessagereportresultreported channels.sponsoredmessagereportresultreported">
+                <span class="item-name">ChannelsSponsoredMessageReportResultReported</span>
+                <span class="item-desc">The sponsored message was reported successfully.</span>
+            </a>
+
             </div>
         </div>
         
@@ -111,9 +111,9 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// channels.SponsoredMessageReportResult is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ChannelsSponsoredMessageReportResult</span> = &amp;<span class="package">tg.</span><span class="type">ChannelsSponsoredMessageReportResultReported</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ChannelsSponsoredMessageReportResult</span> = &amp;<span class="package">tg.</span><span class="type">ChannelsSponsoredMessageReportResultChooseOption</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ChannelsSponsoredMessageReportResult</span> = &amp;<span class="package">tg.</span><span class="type">ChannelsSponsoredMessageReportResultAdsHidden</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ChannelsSponsoredMessageReportResult</span> = &amp;<span class="package">tg.</span><span class="type">ChannelsSponsoredMessageReportResultReported</span>{}
 </pre>
         </div>
         </article>

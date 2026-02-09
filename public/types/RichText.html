@@ -89,9 +89,9 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/textPlain.html" class="item" data-name="textplain textplain">
-                <span class="item-name">TextPlain</span>
-                <span class="item-desc">Plain text</span>
+            <a href="../constructors/textBold.html" class="item" data-name="textbold textbold">
+                <span class="item-name">TextBold</span>
+                <span class="item-desc">Bold text</span>
             </a>
 
             <a href="../constructors/textEmpty.html" class="item" data-name="textempty textempty">
@@ -99,19 +99,14 @@
                 <span class="item-desc">Empty rich text element</span>
             </a>
 
-            <a href="../constructors/textBold.html" class="item" data-name="textbold textbold">
-                <span class="item-name">TextBold</span>
-                <span class="item-desc">Bold text</span>
+            <a href="../constructors/textPlain.html" class="item" data-name="textplain textplain">
+                <span class="item-name">TextPlain</span>
+                <span class="item-desc">Plain text</span>
             </a>
 
             <a href="../constructors/textItalic.html" class="item" data-name="textitalic textitalic">
                 <span class="item-name">TextItalic</span>
                 <span class="item-desc">Italic text</span>
-            </a>
-
-            <a href="../constructors/textStrike.html" class="item" data-name="textstrike textstrike">
-                <span class="item-name">TextStrike</span>
-                <span class="item-desc">Strikethrough text</span>
             </a>
 
             <a href="../constructors/textUnderline.html" class="item" data-name="textunderline textunderline">
@@ -124,6 +119,16 @@
                 <span class="item-desc">Link</span>
             </a>
 
+            <a href="../constructors/textStrike.html" class="item" data-name="textstrike textstrike">
+                <span class="item-name">TextStrike</span>
+                <span class="item-desc">Strikethrough text</span>
+            </a>
+
+            <a href="../constructors/textEmail.html" class="item" data-name="textemail textemail">
+                <span class="item-name">TextEmail</span>
+                <span class="item-desc">Rich text email link</span>
+            </a>
+
             <a href="../constructors/textFixed.html" class="item" data-name="textfixed textfixed">
                 <span class="item-name">TextFixed</span>
                 <span class="item-desc">fixed-width rich text</span>
@@ -134,29 +139,19 @@
                 <span class="item-desc">Concatenation of rich texts</span>
             </a>
 
-            <a href="../constructors/textEmail.html" class="item" data-name="textemail textemail">
-                <span class="item-name">TextEmail</span>
-                <span class="item-desc">Rich text email link</span>
-            </a>
-
             <a href="../constructors/textSubscript.html" class="item" data-name="textsubscript textsubscript">
                 <span class="item-name">TextSubscript</span>
                 <span class="item-desc">Subscript text</span>
             </a>
 
-            <a href="../constructors/textMarked.html" class="item" data-name="textmarked textmarked">
-                <span class="item-name">TextMarked</span>
-                <span class="item-desc">Highlighted text</span>
-            </a>
-
-            <a href="../constructors/textPhone.html" class="item" data-name="textphone textphone">
-                <span class="item-name">TextPhone</span>
-                <span class="item-desc">Rich text linked to a phone number</span>
-            </a>
-
             <a href="../constructors/textSuperscript.html" class="item" data-name="textsuperscript textsuperscript">
                 <span class="item-name">TextSuperscript</span>
                 <span class="item-desc">Superscript text</span>
+            </a>
+
+            <a href="../constructors/textMarked.html" class="item" data-name="textmarked textmarked">
+                <span class="item-name">TextMarked</span>
+                <span class="item-desc">Highlighted text</span>
             </a>
 
             <a href="../constructors/textImage.html" class="item" data-name="textimage textimage">
@@ -169,6 +164,11 @@
                 <span class="item-desc">Text linking to another section of the page</span>
             </a>
 
+            <a href="../constructors/textPhone.html" class="item" data-name="textphone textphone">
+                <span class="item-name">TextPhone</span>
+                <span class="item-desc">Rich text linked to a phone number</span>
+            </a>
+
             </div>
         </div>
         
@@ -176,11 +176,11 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// RichText is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RichText</span> = &amp;<span class="package">tg.</span><span class="type">TextPlain</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RichText</span> = &amp;<span class="package">tg.</span><span class="type">TextEmpty</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RichText</span> = &amp;<span class="package">tg.</span><span class="type">TextBold</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RichText</span> = &amp;<span class="package">tg.</span><span class="type">TextEmpty</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RichText</span> = &amp;<span class="package">tg.</span><span class="type">TextPlain</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RichText</span> = &amp;<span class="package">tg.</span><span class="type">TextItalic</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RichText</span> = &amp;<span class="package">tg.</span><span class="type">TextStrike</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">RichText</span> = &amp;<span class="package">tg.</span><span class="type">TextUnderline</span>{}
 <span class="comment">// ... and <span class="number">11</span> more constructors</span>
 </pre>
         </div>

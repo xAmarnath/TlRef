@@ -89,14 +89,14 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/peerLocated.html" class="item" data-name="peerlocated peerlocated">
-                <span class="item-name">PeerLocated</span>
-                <span class="item-desc">Peer geolocated nearby</span>
-            </a>
-
             <a href="../constructors/peerSelfLocated.html" class="item" data-name="peerselflocated peerselflocated">
                 <span class="item-name">PeerSelfLocated</span>
                 <span class="item-desc">Current peer</span>
+            </a>
+
+            <a href="../constructors/peerLocated.html" class="item" data-name="peerlocated peerlocated">
+                <span class="item-name">PeerLocated</span>
+                <span class="item-desc">Peer geolocated nearby</span>
             </a>
 
             </div>
@@ -106,8 +106,8 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// PeerLocated is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PeerLocated</span> = &amp;<span class="package">tg.</span><span class="type">PeerLocated</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PeerLocated</span> = &amp;<span class="package">tg.</span><span class="type">PeerSelfLocated</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PeerLocated</span> = &amp;<span class="package">tg.</span><span class="type">PeerLocated</span>{}
 </pre>
         </div>
         </article>

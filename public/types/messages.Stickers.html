@@ -89,14 +89,14 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/messages/stickersNotModified.html" class="item" data-name="messagesstickersnotmodified messages.stickersnotmodified">
-                <span class="item-name">MessagesStickersNotModified</span>
-                <span class="item-desc">No new stickers were found for the given query</span>
-            </a>
-
             <a href="../constructors/messages/stickers.html" class="item" data-name="messagesstickers messages.stickers">
                 <span class="item-name">MessagesStickers</span>
                 <span class="item-desc">Found stickers</span>
+            </a>
+
+            <a href="../constructors/messages/stickersNotModified.html" class="item" data-name="messagesstickersnotmodified messages.stickersnotmodified">
+                <span class="item-name">MessagesStickersNotModified</span>
+                <span class="item-desc">No new stickers were found for the given query</span>
             </a>
 
             </div>
@@ -106,8 +106,8 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// messages.Stickers is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessagesStickers</span> = &amp;<span class="package">tg.</span><span class="type">MessagesStickersNotModified</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessagesStickers</span> = &amp;<span class="package">tg.</span><span class="type">MessagesStickers</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessagesStickers</span> = &amp;<span class="package">tg.</span><span class="type">MessagesStickersNotModified</span>{}
 </pre>
         </div>
         </article>

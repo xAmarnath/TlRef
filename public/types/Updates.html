@@ -94,24 +94,14 @@
                 <span class="item-desc">Too many updates, it is necessary to execute updates. get Difference.</span>
             </a>
 
-            <a href="../constructors/updateShortChatMessage.html" class="item" data-name="updateshortchatmessage updateshortchatmessage">
-                <span class="item-name">UpdateShortChatMessage</span>
-                <span class="item-desc">Shortened constructor containing info on one new incoming text message from a chat</span>
-            </a>
-
             <a href="../constructors/updateShortMessage.html" class="item" data-name="updateshortmessage updateshortmessage">
                 <span class="item-name">UpdateShortMessage</span>
                 <span class="item-desc">Info about a message sent to (received from) another user</span>
             </a>
 
-            <a href="../constructors/updatesCombined.html" class="item" data-name="updatescombined updatescombined">
-                <span class="item-name">UpdatesCombined</span>
-                <span class="item-desc">Constructor for a group of updates.</span>
-            </a>
-
-            <a href="../constructors/updateShortSentMessage.html" class="item" data-name="updateshortsentmessage updateshortsentmessage">
-                <span class="item-name">UpdateShortSentMessage</span>
-                <span class="item-desc">Shortened constructor containing info on one outgoing message to a contact (the destination chat has</span>
+            <a href="../constructors/updateShort.html" class="item" data-name="updateshort updateshort">
+                <span class="item-name">UpdateShort</span>
+                <span class="item-desc">Shortened constructor containing info on one update not requiring auxiliary data</span>
             </a>
 
             <a href="../constructors/updates.html" class="item" data-name="updates updates">
@@ -119,9 +109,19 @@
                 <span class="item-desc">Full constructor of updates</span>
             </a>
 
-            <a href="../constructors/updateShort.html" class="item" data-name="updateshort updateshort">
-                <span class="item-name">UpdateShort</span>
-                <span class="item-desc">Shortened constructor containing info on one update not requiring auxiliary data</span>
+            <a href="../constructors/updatesCombined.html" class="item" data-name="updatescombined updatescombined">
+                <span class="item-name">UpdatesCombined</span>
+                <span class="item-desc">Constructor for a group of updates.</span>
+            </a>
+
+            <a href="../constructors/updateShortChatMessage.html" class="item" data-name="updateshortchatmessage updateshortchatmessage">
+                <span class="item-name">UpdateShortChatMessage</span>
+                <span class="item-desc">Shortened constructor containing info on one new incoming text message from a chat</span>
+            </a>
+
+            <a href="../constructors/updateShortSentMessage.html" class="item" data-name="updateshortsentmessage updateshortsentmessage">
+                <span class="item-name">UpdateShortSentMessage</span>
+                <span class="item-desc">Shortened constructor containing info on one outgoing message to a contact (the destination chat has</span>
             </a>
 
             </div>
@@ -132,10 +132,10 @@
             <pre class="example-code"><span class="comment">// Updates is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Updates</span> = &amp;<span class="package">tg.</span><span class="type">UpdatesTooLong</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Updates</span> = &amp;<span class="package">tg.</span><span class="type">UpdateShortChatMessage</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Updates</span> = &amp;<span class="package">tg.</span><span class="type">UpdateShortMessage</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Updates</span> = &amp;<span class="package">tg.</span><span class="type">UpdateShort</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Updates</span> = &amp;<span class="package">tg.</span><span class="type">Updates</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Updates</span> = &amp;<span class="package">tg.</span><span class="type">UpdatesCombined</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">Updates</span> = &amp;<span class="package">tg.</span><span class="type">UpdateShortSentMessage</span>{}
 <span class="comment">// ... and <span class="number">2</span> more constructors</span>
 </pre>
         </div>

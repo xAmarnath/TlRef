@@ -89,11 +89,6 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/inputMessagePinned.html" class="item" data-name="inputmessagepinned inputmessagepinned">
-                <span class="item-name">InputMessagePinned</span>
-                <span class="item-desc">Pinned message</span>
-            </a>
-
             <a href="../constructors/inputMessageReplyTo.html" class="item" data-name="inputmessagereplyto inputmessagereplyto">
                 <span class="item-name">InputMessageReplyTo</span>
                 <span class="item-desc">Message to which the specified message replies to</span>
@@ -109,6 +104,11 @@
                 <span class="item-desc">Used by bots for fetching information about the message that originated a callback query</span>
             </a>
 
+            <a href="../constructors/inputMessagePinned.html" class="item" data-name="inputmessagepinned inputmessagepinned">
+                <span class="item-name">InputMessagePinned</span>
+                <span class="item-desc">Pinned message</span>
+            </a>
+
             </div>
         </div>
         
@@ -116,10 +116,10 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// InputMessage is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputMessage</span> = &amp;<span class="package">tg.</span><span class="type">InputMessagePinned</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputMessage</span> = &amp;<span class="package">tg.</span><span class="type">InputMessageReplyTo</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputMessage</span> = &amp;<span class="package">tg.</span><span class="type">InputMessageId</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputMessage</span> = &amp;<span class="package">tg.</span><span class="type">InputMessageCallbackQuery</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputMessage</span> = &amp;<span class="package">tg.</span><span class="type">InputMessagePinned</span>{}
 </pre>
         </div>
         </article>

@@ -89,6 +89,11 @@
             </p>
             <div class="item-list">
 
+            <a href="../constructors/inputReplyToMessage.html" class="item" data-name="inputreplytomessage inputreplytomessage">
+                <span class="item-name">InputReplyToMessage</span>
+                <span class="item-desc">Reply to a message.</span>
+            </a>
+
             <a href="../constructors/inputReplyToStory.html" class="item" data-name="inputreplytostory inputreplytostory">
                 <span class="item-name">InputReplyToStory</span>
                 <span class="item-desc">Reply to a story.</span>
@@ -99,11 +104,6 @@
                 <span class="item-desc">Used to send messages to a monoforum topic.</span>
             </a>
 
-            <a href="../constructors/inputReplyToMessage.html" class="item" data-name="inputreplytomessage inputreplytomessage">
-                <span class="item-name">InputReplyToMessage</span>
-                <span class="item-desc">Reply to a message.</span>
-            </a>
-
             </div>
         </div>
         
@@ -111,9 +111,9 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// InputReplyTo is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputReplyTo</span> = &amp;<span class="package">tg.</span><span class="type">InputReplyToMessage</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputReplyTo</span> = &amp;<span class="package">tg.</span><span class="type">InputReplyToStory</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputReplyTo</span> = &amp;<span class="package">tg.</span><span class="type">InputReplyToMonoForum</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputReplyTo</span> = &amp;<span class="package">tg.</span><span class="type">InputReplyToMessage</span>{}
 </pre>
         </div>
         </article>
