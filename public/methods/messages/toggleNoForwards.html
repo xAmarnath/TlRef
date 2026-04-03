@@ -81,7 +81,7 @@
             <span class="badge badge-method">method</span>
             <span class="badge badge-user">Users</span>
         </div>
-        <div class="code-block">messages.toggleNoForwards#b11eafa2 peer:InputPeer enabled:Bool = Updates;</div>
+        <div class="code-block">messages.toggleNoForwards#b2081a35 flags:# peer:InputPeer enabled:Bool request_msg_id:flags.0?int = Updates;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -108,6 +108,12 @@
                             <td>Enable or disable content protection</td>
                         </tr>
 
+                        <tr>
+                            <td class="field-name">RequestMsgId</td>
+                            <td class="field-type">flags.0?int</td>
+                            <td></td>
+                        </tr>
+
                     </tbody>
                 </table>
             </div>
@@ -120,8 +126,14 @@
 
         <div class="example-section">
             <h2>Gogram Example</h2>
-            <pre class="example-code"><span class="comment">// MessagesToggleNoForwards - positional arguments</span>
-result, err := <span class="package">client.</span><span class="function">MessagesToggleNoForwards</span>(&amp;<span class="package">tg.</span><span class="type">InputPeerUser</span>{UserID: int64(<span class="number">777000</span>)}, <span class="keyword">true</span>)
+            <pre class="example-code"><span class="comment">// MessagesToggleNoForwards - using Params <span class="keyword">struct</span></span>
+result, err := <span class="package">client.</span><span class="function">MessagesToggleNoForwards</span>(&amp;<span class="package">tg.</span><span class="type">MessagesToggleNoForwardsParams</span>{
+    Peer: &amp;<span class="package">tg.</span><span class="type">InputPeerUser</span>{UserID: int64(<span class="number">777000</span>)},
+    Enabled: <span class="keyword">true</span>,
+
+    <span class="comment">// Optional fields:</span>
+    <span class="comment">// RequestMsgId: <span class="number">42</span>,</span>
+})
 <span class="keyword">if</span> err != <span class="keyword">nil</span> {
     <span class="comment">// handle error</span>
 }

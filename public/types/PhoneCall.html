@@ -89,9 +89,9 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/phoneCallEmpty.html" class="item" data-name="phonecallempty phonecallempty">
-                <span class="item-name">PhoneCallEmpty</span>
-                <span class="item-desc">Empty constructor</span>
+            <a href="../constructors/phoneCallWaiting.html" class="item" data-name="phonecallwaiting phonecallwaiting">
+                <span class="item-name">PhoneCallWaiting</span>
+                <span class="item-desc">Incoming phone call</span>
             </a>
 
             <a href="../constructors/phoneCallRequested.html" class="item" data-name="phonecallrequested phonecallrequested">
@@ -99,14 +99,9 @@
                 <span class="item-desc">Requested phone call</span>
             </a>
 
-            <a href="../constructors/phoneCallWaiting.html" class="item" data-name="phonecallwaiting phonecallwaiting">
-                <span class="item-name">PhoneCallWaiting</span>
-                <span class="item-desc">Incoming phone call</span>
-            </a>
-
-            <a href="../constructors/phoneCall.html" class="item" data-name="phonecall phonecall">
-                <span class="item-name">PhoneCall</span>
-                <span class="item-desc">Phone call</span>
+            <a href="../constructors/phoneCallEmpty.html" class="item" data-name="phonecallempty phonecallempty">
+                <span class="item-name">PhoneCallEmpty</span>
+                <span class="item-desc">Empty constructor</span>
             </a>
 
             <a href="../constructors/phoneCallAccepted.html" class="item" data-name="phonecallaccepted phonecallaccepted">
@@ -119,6 +114,11 @@
                 <span class="item-desc">Indicates a discarded phone call</span>
             </a>
 
+            <a href="../constructors/phoneCall.html" class="item" data-name="phonecall phonecall">
+                <span class="item-name">PhoneCall</span>
+                <span class="item-desc">Phone call</span>
+            </a>
+
             </div>
         </div>
         
@@ -126,11 +126,11 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// PhoneCall is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PhoneCall</span> = &amp;<span class="package">tg.</span><span class="type">PhoneCallEmpty</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PhoneCall</span> = &amp;<span class="package">tg.</span><span class="type">PhoneCallRequested</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PhoneCall</span> = &amp;<span class="package">tg.</span><span class="type">PhoneCallWaiting</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PhoneCall</span> = &amp;<span class="package">tg.</span><span class="type">PhoneCall</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PhoneCall</span> = &amp;<span class="package">tg.</span><span class="type">PhoneCallRequested</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PhoneCall</span> = &amp;<span class="package">tg.</span><span class="type">PhoneCallEmpty</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PhoneCall</span> = &amp;<span class="package">tg.</span><span class="type">PhoneCallAccepted</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PhoneCall</span> = &amp;<span class="package">tg.</span><span class="type">PhoneCallDiscarded</span>{}
 <span class="comment">// ... and <span class="number">1</span> more constructors</span>
 </pre>
         </div>

@@ -80,7 +80,7 @@
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
-        <div class="code-block">messageActionGiftCode#56d03994 flags:# via_giveaway:flags.0?true unclaimed:flags.5?true boost_peer:flags.1?Peer months:int slug:string currency:flags.2?string amount:flags.2?long crypto_currency:flags.3?string crypto_amount:flags.3?long message:flags.4?TextWithEntities = MessageAction;</div>
+        <div class="code-block">messageActionGiftCode#31c48347 flags:# via_giveaway:flags.0?true unclaimed:flags.5?true boost_peer:flags.1?Peer days:int slug:string currency:flags.2?string amount:flags.2?long crypto_currency:flags.3?string crypto_amount:flags.3?long message:flags.4?TextWithEntities = MessageAction;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -114,9 +114,9 @@
                         </tr>
 
                         <tr>
-                            <td class="field-name">Months</td>
+                            <td class="field-name">Days</td>
                             <td class="field-type">int</td>
-                            <td>Duration in months of the gifted Telegram Premium subscription.</td>
+                            <td></td>
                         </tr>
 
                         <tr>
@@ -169,7 +169,7 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// Creating MessageActionGiftCode constructor</span>
 obj := &amp;<span class="package">tg.</span><span class="type">MessageActionGiftCode</span>{
-    Months: <span class="number">42</span>,
+    Days: <span class="number">42</span>,
     Slug: <span class="string">&quot;Hello, World!&quot;</span>,
 
     <span class="comment">// Optional fields:</span>

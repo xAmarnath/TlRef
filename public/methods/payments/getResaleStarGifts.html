@@ -107,6 +107,18 @@
                         </tr>
 
                         <tr>
+                            <td class="field-name">ForCraft</td>
+                            <td class="field-type">flags.4?true</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">StarsOnly</td>
+                            <td class="field-type">flags.5?true</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
                             <td class="field-name">AttributesHash</td>
                             <td class="field-type">flags.0?long</td>
                             <td>If a previous call to the method was made and payments. resale Star Gifts. attributes_hash was set, pass it here to avoid returning any results if they haven&#x27;t changed. Otherwise, set this flag and pass 0 to return payments. resale Star Gifts. attributes_hash and payments. resale Star Gifts. attributes, these two fields will not be set if this flag is not set.</td>
@@ -157,8 +169,9 @@ result, err := <span class="package">client.</span><span class="function">Paymen
     <span class="comment">// Optional fields:</span>
     <span class="comment">// SortByPrice: <span class="keyword">true</span>,</span>
     <span class="comment">// SortByNum: <span class="keyword">true</span>,</span>
-    <span class="comment">// AttributesHash: int64(<span class="number">1234567890</span>),</span>
-    <span class="comment">// Attributes: []<span class="package">tg.</span><span class="type">StarGiftAttributeId</span>{&amp;<span class="package">tg.</span><span class="type">StarGiftAttributeId</span>{}},</span>
+    <span class="comment">// ForCraft: <span class="keyword">true</span>,</span>
+    <span class="comment">// StarsOnly: <span class="keyword">true</span>,</span>
+    <span class="comment">// ...</span>
 })
 <span class="keyword">if</span> err != <span class="keyword">nil</span> {
     <span class="comment">// handle error</span>
@@ -178,6 +191,12 @@ result, err := <span class="package">client.</span><span class="function">Paymen
                         </tr>
                     </thead>
                     <tbody>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">STARGIFT_ATTRIBUTE_INVALID</td>
+                            <td></td>
+                        </tr>
 
                         <tr>
                             <td class="error-code">400</td>

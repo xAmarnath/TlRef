@@ -83,7 +83,7 @@
             <span class="badge badge-bot">Bots</span>
             <span class="badge badge-business">Business</span>
         </div>
-        <div class="code-block">messages.sendMedia#ac55d9c1 flags:# silent:flags.5?true background:flags.6?true clear_draft:flags.7?true noforwards:flags.14?true update_stickersets_order:flags.15?true invert_media:flags.16?true allow_paid_floodskip:flags.19?true peer:InputPeer reply_to:flags.0?InputReplyTo media:InputMedia message:string random_id:long reply_markup:flags.2?ReplyMarkup entities:flags.3?Vector&lt;MessageEntity&gt; schedule_date:flags.10?int send_as:flags.13?InputPeer quick_reply_shortcut:flags.17?InputQuickReplyShortcut effect:flags.18?long allow_paid_stars:flags.21?long suggested_post:flags.22?SuggestedPost = Updates;</div>
+        <div class="code-block">messages.sendMedia#330e77f flags:# silent:flags.5?true background:flags.6?true clear_draft:flags.7?true noforwards:flags.14?true update_stickersets_order:flags.15?true invert_media:flags.16?true allow_paid_floodskip:flags.19?true peer:InputPeer reply_to:flags.0?InputReplyTo media:InputMedia message:string random_id:long reply_markup:flags.2?ReplyMarkup entities:flags.3?Vector&lt;MessageEntity&gt; schedule_date:flags.10?int schedule_repeat_period:flags.24?int send_as:flags.13?InputPeer quick_reply_shortcut:flags.17?InputQuickReplyShortcut effect:flags.18?long allow_paid_stars:flags.21?long suggested_post:flags.22?SuggestedPost = Updates;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -186,6 +186,12 @@
                             <td class="field-name">ScheduleDate</td>
                             <td class="field-type">flags.10?int</td>
                             <td>Scheduled message date for scheduled messages</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ScheduleRepeatPeriod</td>
+                            <td class="field-type">flags.24?int</td>
+                            <td></td>
                         </tr>
 
                         <tr>
@@ -303,6 +309,12 @@ result, err := <span class="package">client.</span><span class="function">Messag
                             <td class="error-code">400</td>
                             <td class="error-type">BUSINESS_PEER_INVALID</td>
                             <td>Messages can&#x27;t be set to the specified peer through the current business connection.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">BUSINESS_PEER_USAGE_MISSING</td>
+                            <td>You cannot send a message to a user through a business connection if the user hasn&#x27;t recently contacted us.</td>
                         </tr>
 
                         <tr>
@@ -463,6 +475,12 @@ result, err := <span class="package">client.</span><span class="function">Messag
 
                         <tr>
                             <td class="error-code">400</td>
+                            <td class="error-type">EFFECT_CHAT_INVALID</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
                             <td class="error-type">EFFECT_ID_INVALID</td>
                             <td>The specified effect ID is invalid.</td>
                         </tr>
@@ -483,6 +501,12 @@ result, err := <span class="package">client.</span><span class="function">Messag
                             <td class="error-code">400</td>
                             <td class="error-type">EXTENDED_MEDIA_AMOUNT_INVALID</td>
                             <td>The specified stars_amount of the passed input Media Paid Media is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">EXTENDED_MEDIA_EMPTY</td>
+                            <td></td>
                         </tr>
 
                         <tr>
@@ -735,6 +759,12 @@ result, err := <span class="package">client.</span><span class="function">Messag
                             <td class="error-code">400</td>
                             <td class="error-type">REPLY_MESSAGE_ID_INVALID</td>
                             <td>The specified reply-to message ID is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">REPLY_TO_MONOFORUM_PEER_INVALID</td>
+                            <td>The specified input Reply To Mono Forum. monoforum_peer_id is invalid.</td>
                         </tr>
 
                         <tr>

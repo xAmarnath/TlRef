@@ -89,14 +89,14 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/inputReportReasonViolence.html" class="item" data-name="inputreportreasonviolence inputreportreasonviolence">
-                <span class="item-name">InputReportReasonViolence</span>
-                <span class="item-desc">Report for violence</span>
-            </a>
-
             <a href="../constructors/inputReportReasonSpam.html" class="item" data-name="inputreportreasonspam inputreportreasonspam">
                 <span class="item-name">InputReportReasonSpam</span>
                 <span class="item-desc">Report for spam</span>
+            </a>
+
+            <a href="../constructors/inputReportReasonViolence.html" class="item" data-name="inputreportreasonviolence inputreportreasonviolence">
+                <span class="item-name">InputReportReasonViolence</span>
+                <span class="item-desc">Report for violence</span>
             </a>
 
             <a href="../constructors/inputReportReasonPornography.html" class="item" data-name="inputreportreasonpornography inputreportreasonpornography">
@@ -146,8 +146,8 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// ReportReason is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ReportReason</span> = &amp;<span class="package">tg.</span><span class="type">InputReportReasonViolence</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ReportReason</span> = &amp;<span class="package">tg.</span><span class="type">InputReportReasonSpam</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ReportReason</span> = &amp;<span class="package">tg.</span><span class="type">InputReportReasonViolence</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ReportReason</span> = &amp;<span class="package">tg.</span><span class="type">InputReportReasonPornography</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ReportReason</span> = &amp;<span class="package">tg.</span><span class="type">InputReportReasonChildAbuse</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ReportReason</span> = &amp;<span class="package">tg.</span><span class="type">InputReportReasonCopyright</span>{}

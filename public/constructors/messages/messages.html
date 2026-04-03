@@ -80,7 +80,7 @@
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
-        <div class="code-block">messages.messages#8c718e87 messages:Vector&lt;Message&gt; chats:Vector&lt;Chat&gt; users:Vector&lt;User&gt; = messages.Messages;</div>
+        <div class="code-block">messages.messages#1d73e7ea messages:Vector&lt;Message&gt; topics:Vector&lt;ForumTopic&gt; chats:Vector&lt;Chat&gt; users:Vector&lt;User&gt; = messages.Messages;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -99,6 +99,12 @@
                             <td class="field-name">Messages</td>
                             <td class="field-type">Vector&lt;<a href="../../types/Message.html">Message</a>&gt;</td>
                             <td>List of messages</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Topics</td>
+                            <td class="field-type">Vector&lt;<a href="../../types/ForumTopic.html">ForumTopic</a>&gt;</td>
+                            <td></td>
                         </tr>
 
                         <tr>
@@ -128,6 +134,7 @@
             <pre class="example-code"><span class="comment">// Creating MessagesMessagesObj constructor</span>
 obj := &amp;<span class="package">tg.</span><span class="type">MessagesMessagesObj</span>{
     Messages: []<span class="package">tg.</span><span class="type">Message</span>{&amp;<span class="package">tg.</span><span class="type">Message</span>{}},
+    Topics: []<span class="package">tg.</span><span class="type">ForumTopic</span>{&amp;<span class="package">tg.</span><span class="type">ForumTopic</span>{}},
     Chats: []<span class="package">tg.</span><span class="type">Chat</span>{&amp;<span class="package">tg.</span><span class="type">Chat</span>{}},
     Users: []<span class="package">tg.</span><span class="type">User</span>{&amp;<span class="package">tg.</span><span class="type">User</span>{}},
 }</pre>

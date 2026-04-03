@@ -80,7 +80,7 @@
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
-        <div class="code-block">keyboardButtonCallback#35bbdb6b flags:# requires_password:flags.0?true text:string data:bytes = KeyboardButton;</div>
+        <div class="code-block">keyboardButtonCallback#e62bc960 flags:# requires_password:flags.0?true style:flags.10?KeyboardButtonStyle text:string data:bytes = KeyboardButton;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -99,6 +99,12 @@
                             <td class="field-name">RequiresPassword</td>
                             <td class="field-type">flags.0?true</td>
                             <td>Whether the user should verify his identity by entering his 2 FA SRP parameters to the messages. get Bot Callback Answer method. NOTE: telegram and the bot WILL NOT have access to the plaintext password, thanks to SRP. This button is mainly used by the official @botfather bot, for verifying the user&#x27;s identity before transferring ownership of a bot to another user.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Style</td>
+                            <td class="field-type">flags.10?<a href="../types/KeyboardButtonStyle.html">KeyboardButtonStyle</a></td>
+                            <td></td>
                         </tr>
 
                         <tr>
@@ -132,6 +138,7 @@ obj := &amp;<span class="package">tg.</span><span class="type">KeyboardButtonCal
 
     <span class="comment">// Optional fields:</span>
     <span class="comment">// RequiresPassword: <span class="keyword">true</span>,</span>
+    <span class="comment">// Style: &amp;<span class="package">tg.</span><span class="type">KeyboardButtonStyle</span>{},</span>
 }</pre>
         </div>
 

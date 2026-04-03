@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MessageEntity - Gogram TL Reference</title>
-    <meta name="description" content="Abstract type representing one of 21 possible constructors.">
+    <meta name="description" content="Abstract type representing one of 25 possible constructors.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="MessageEntity - Gogram TL Reference">
-    <meta property="og:description" content="Abstract type representing one of 21 possible constructors.">
+    <meta property="og:description" content="Abstract type representing one of 25 possible constructors.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -74,7 +74,7 @@
         
         <header class="page-header">
             <h1>MessageEntity</h1>
-            <p class="description">Abstract type representing one of 21 possible constructors.</p>
+            <p class="description">Abstract type representing one of 25 possible constructors.</p>
         </header>
         
         <div class="badges">
@@ -94,19 +94,9 @@
                 <span class="item-desc">Unknown message entity</span>
             </a>
 
-            <a href="../constructors/messageEntityMention.html" class="item" data-name="messageentitymention messageentitymention">
-                <span class="item-name">MessageEntityMention</span>
-                <span class="item-desc">Message entity mentioning a user by @username; message Entity Mention Name can also be used to mention</span>
-            </a>
-
             <a href="../constructors/messageEntityHashtag.html" class="item" data-name="messageentityhashtag messageentityhashtag">
                 <span class="item-name">MessageEntityHashtag</span>
                 <span class="item-desc">#hashtag message entity</span>
-            </a>
-
-            <a href="../constructors/messageEntityBotCommand.html" class="item" data-name="messageentitybotcommand messageentitybotcommand">
-                <span class="item-name">MessageEntityBotCommand</span>
-                <span class="item-desc">Message entity representing a bot /command</span>
             </a>
 
             <a href="../constructors/messageEntityUrl.html" class="item" data-name="messageentityurl messageentityurl">
@@ -114,19 +104,24 @@
                 <span class="item-desc">Message entity representing an in-text url: https://google. com; for text urls, use message Entity Te</span>
             </a>
 
-            <a href="../constructors/messageEntityBold.html" class="item" data-name="messageentitybold messageentitybold">
-                <span class="item-name">MessageEntityBold</span>
-                <span class="item-desc">Message entity representing bold text.</span>
-            </a>
-
-            <a href="../constructors/messageEntityItalic.html" class="item" data-name="messageentityitalic messageentityitalic">
-                <span class="item-name">MessageEntityItalic</span>
-                <span class="item-desc">Message entity representing italic text.</span>
-            </a>
-
             <a href="../constructors/messageEntityEmail.html" class="item" data-name="messageentityemail messageentityemail">
                 <span class="item-name">MessageEntityEmail</span>
                 <span class="item-desc">Message entity representing an email@example. com.</span>
+            </a>
+
+            <a href="../constructors/messageEntityBotCommand.html" class="item" data-name="messageentitybotcommand messageentitybotcommand">
+                <span class="item-name">MessageEntityBotCommand</span>
+                <span class="item-desc">Message entity representing a bot /command</span>
+            </a>
+
+            <a href="../constructors/messageEntityMention.html" class="item" data-name="messageentitymention messageentitymention">
+                <span class="item-name">MessageEntityMention</span>
+                <span class="item-desc">Message entity mentioning a user by @username; message Entity Mention Name can also be used to mention</span>
+            </a>
+
+            <a href="../constructors/messageEntityBold.html" class="item" data-name="messageentitybold messageentitybold">
+                <span class="item-name">MessageEntityBold</span>
+                <span class="item-desc">Message entity representing bold text.</span>
             </a>
 
             <a href="../constructors/messageEntityCode.html" class="item" data-name="messageentitycode messageentitycode">
@@ -139,9 +134,9 @@
                 <span class="item-desc">Message entity representing a preformatted codeblock, allowing the user to specify a programming la</span>
             </a>
 
-            <a href="../constructors/messageEntityTextUrl.html" class="item" data-name="messageentitytexturl messageentitytexturl">
-                <span class="item-name">MessageEntityTextUrl</span>
-                <span class="item-desc">Message entity representing a text url: for in-text urls like https://google. com use message Entity U</span>
+            <a href="../constructors/messageEntityItalic.html" class="item" data-name="messageentityitalic messageentityitalic">
+                <span class="item-name">MessageEntityItalic</span>
+                <span class="item-desc">Message entity representing italic text.</span>
             </a>
 
             <a href="../constructors/messageEntityMentionName.html" class="item" data-name="messageentitymentionname messageentitymentionname">
@@ -149,14 +144,9 @@
                 <span class="item-desc">Message entity representing a user mention: for creating a mention use input Message Entity Mention Nam</span>
             </a>
 
-            <a href="../constructors/messageEntityPhone.html" class="item" data-name="messageentityphone messageentityphone">
-                <span class="item-name">MessageEntityPhone</span>
-                <span class="item-desc">Message entity representing a phone number.</span>
-            </a>
-
-            <a href="../constructors/messageEntityCashtag.html" class="item" data-name="messageentitycashtag messageentitycashtag">
-                <span class="item-name">MessageEntityCashtag</span>
-                <span class="item-desc">Message entity representing a $cashtag.</span>
+            <a href="../constructors/messageEntityTextUrl.html" class="item" data-name="messageentitytexturl messageentitytexturl">
+                <span class="item-name">MessageEntityTextUrl</span>
+                <span class="item-desc">Message entity representing a text url: for in-text urls like https://google. com use message Entity U</span>
             </a>
 
             <a href="../constructors/inputMessageEntityMentionName.html" class="item" data-name="inputmessageentitymentionname inputmessageentitymentionname">
@@ -167,6 +157,16 @@
             <a href="../constructors/messageEntityUnderline.html" class="item" data-name="messageentityunderline messageentityunderline">
                 <span class="item-name">MessageEntityUnderline</span>
                 <span class="item-desc">Message entity representing underlined text.</span>
+            </a>
+
+            <a href="../constructors/messageEntityCashtag.html" class="item" data-name="messageentitycashtag messageentitycashtag">
+                <span class="item-name">MessageEntityCashtag</span>
+                <span class="item-desc">Message entity representing a $cashtag.</span>
+            </a>
+
+            <a href="../constructors/messageEntityPhone.html" class="item" data-name="messageentityphone messageentityphone">
+                <span class="item-name">MessageEntityPhone</span>
+                <span class="item-desc">Message entity representing a phone number.</span>
             </a>
 
             <a href="../constructors/messageEntityStrike.html" class="item" data-name="messageentitystrike messageentitystrike">
@@ -189,9 +189,29 @@
                 <span class="item-desc">Message entity representing a spoiler</span>
             </a>
 
+            <a href="../constructors/messageEntityFormattedDate.html" class="item" data-name="messageentityformatteddate messageentityformatteddate">
+                <span class="item-name">MessageEntityFormattedDate</span>
+                <span class="item-desc">Layer 223 1 – Base layer 2 – New userpic notifications 3 – Send message can trigger link change 4 –</span>
+            </a>
+
             <a href="../constructors/messageEntityBlockquote.html" class="item" data-name="messageentityblockquote messageentityblockquote">
                 <span class="item-name">MessageEntityBlockquote</span>
                 <span class="item-desc">Message entity representing a block quote.</span>
+            </a>
+
+            <a href="../constructors/messageEntityDiffReplace.html" class="item" data-name="messageentitydiffreplace messageentitydiffreplace">
+                <span class="item-name">MessageEntityDiffReplace</span>
+                <span class="item-desc">No description</span>
+            </a>
+
+            <a href="../constructors/messageEntityDiffInsert.html" class="item" data-name="messageentitydiffinsert messageentitydiffinsert">
+                <span class="item-name">MessageEntityDiffInsert</span>
+                <span class="item-desc">No description</span>
+            </a>
+
+            <a href="../constructors/messageEntityDiffDelete.html" class="item" data-name="messageentitydiffdelete messageentitydiffdelete">
+                <span class="item-name">MessageEntityDiffDelete</span>
+                <span class="item-desc">No description</span>
             </a>
 
             </div>
@@ -202,11 +222,11 @@
             <pre class="example-code"><span class="comment">// MessageEntity is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessageEntity</span> = &amp;<span class="package">tg.</span><span class="type">MessageEntityUnknown</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessageEntity</span> = &amp;<span class="package">tg.</span><span class="type">MessageEntityMention</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessageEntity</span> = &amp;<span class="package">tg.</span><span class="type">MessageEntityHashtag</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessageEntity</span> = &amp;<span class="package">tg.</span><span class="type">MessageEntityBotCommand</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessageEntity</span> = &amp;<span class="package">tg.</span><span class="type">MessageEntityUrl</span>{}
-<span class="comment">// ... and <span class="number">16</span> more constructors</span>
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessageEntity</span> = &amp;<span class="package">tg.</span><span class="type">MessageEntityEmail</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessageEntity</span> = &amp;<span class="package">tg.</span><span class="type">MessageEntityBotCommand</span>{}
+<span class="comment">// ... and <span class="number">20</span> more constructors</span>
 </pre>
         </div>
         </article>

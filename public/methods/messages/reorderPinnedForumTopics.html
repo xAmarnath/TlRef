@@ -79,6 +79,7 @@
         
         <div class="badges">
             <span class="badge badge-method">method</span>
+            <span class="badge badge-user">Users</span>
         </div>
         <div class="code-block">messages.reorderPinnedForumTopics#e7841f0 flags:# force:flags.0?true peer:InputPeer order:Vector&lt;int&gt; = Updates;</div>
 
@@ -98,19 +99,19 @@
                         <tr>
                             <td class="field-name">Force</td>
                             <td class="field-type">flags.0?true</td>
-                            <td></td>
+                            <td>If not set, the order of only the topics present both server-side and in order will be changed (i. e. mentioning topics not pinned server-side in order will not pin them, and not mentioning topics pinned server-side will not unpin them). If set, the entire server-side pinned topic list will be replaced with order (i. e. mentioning topics not pinned server-side in order will pin them, and not mentioning topics pinned server-side will unpin them)</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Peer</td>
                             <td class="field-type"><a href="../../types/InputPeer.html">InputPeer</a></td>
-                            <td>Supergroup</td>
+                            <td>The supergroup forum, private chat (for forum-enabled bots) or bot forum (for users) where the topic is located.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Order</td>
                             <td class="field-type">Vector&lt;int&gt;</td>
-                            <td>New topic order</td>
+                            <td>Topic IDs</td>
                         </tr>
 
                     </tbody>
@@ -137,6 +138,30 @@ result, err := <span class="package">client.</span><span class="function">Messag
     <span class="comment">// handle error</span>
 }
 <span class="comment">// result is *<span class="package">tg.</span><span class="type">Updates</span></span></pre>
+        </div>
+
+        <div class="section">
+            <h2>Possible Errors</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">CHANNEL_INVALID</td>
+                            <td>The provided channel is invalid.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         </article>

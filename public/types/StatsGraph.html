@@ -89,6 +89,11 @@
             </p>
             <div class="item-list">
 
+            <a href="../constructors/statsGraphError.html" class="item" data-name="statsgrapherror statsgrapherror">
+                <span class="item-name">StatsGraphError</span>
+                <span class="item-desc">An error occurred while generating the statistics graph</span>
+            </a>
+
             <a href="../constructors/statsGraphAsync.html" class="item" data-name="statsgraphasync statsgraphasync">
                 <span class="item-name">StatsGraphAsync</span>
                 <span class="item-desc">This channel statistics graph must be generated asynchronously using stats. load Async Graph to reduce</span>
@@ -99,11 +104,6 @@
                 <span class="item-desc">Channel statistics graph</span>
             </a>
 
-            <a href="../constructors/statsGraphError.html" class="item" data-name="statsgrapherror statsgrapherror">
-                <span class="item-name">StatsGraphError</span>
-                <span class="item-desc">An error occurred while generating the statistics graph</span>
-            </a>
-
             </div>
         </div>
         
@@ -111,9 +111,9 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// StatsGraph is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">StatsGraph</span> = &amp;<span class="package">tg.</span><span class="type">StatsGraphError</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">StatsGraph</span> = &amp;<span class="package">tg.</span><span class="type">StatsGraphAsync</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">StatsGraph</span> = &amp;<span class="package">tg.</span><span class="type">StatsGraph</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">StatsGraph</span> = &amp;<span class="package">tg.</span><span class="type">StatsGraphError</span>{}
 </pre>
         </div>
         </article>

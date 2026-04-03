@@ -80,7 +80,7 @@
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
-        <div class="code-block">inputKeyboardButtonUrlAuth#d02e7fd4 flags:# request_write_access:flags.0?true text:string fwd_text:flags.1?string url:string bot:InputUser = KeyboardButton;</div>
+        <div class="code-block">inputKeyboardButtonUrlAuth#68013e72 flags:# request_write_access:flags.0?true style:flags.10?KeyboardButtonStyle text:string fwd_text:flags.1?string url:string bot:InputUser = KeyboardButton;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -99,6 +99,12 @@
                             <td class="field-name">RequestWriteAccess</td>
                             <td class="field-type">flags.0?true</td>
                             <td>Set this flag to request the permission for your bot to send messages to the user.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Style</td>
+                            <td class="field-type">flags.10?<a href="../types/KeyboardButtonStyle.html">KeyboardButtonStyle</a></td>
+                            <td></td>
                         </tr>
 
                         <tr>
@@ -145,6 +151,7 @@ obj := &amp;<span class="package">tg.</span><span class="type">InputKeyboardButt
 
     <span class="comment">// Optional fields:</span>
     <span class="comment">// RequestWriteAccess: <span class="keyword">true</span>,</span>
+    <span class="comment">// Style: &amp;<span class="package">tg.</span><span class="type">KeyboardButtonStyle</span>{},</span>
     <span class="comment">// FwdText: <span class="string">&quot;Hello, World!&quot;</span>,</span>
 }</pre>
         </div>

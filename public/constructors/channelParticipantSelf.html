@@ -80,7 +80,7 @@
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
-        <div class="code-block">channelParticipantSelf#4f607bef flags:# via_request:flags.0?true user_id:long inviter_id:long date:int subscription_until_date:flags.1?int = ChannelParticipant;</div>
+        <div class="code-block">channelParticipantSelf#a9478a1a flags:# via_request:flags.0?true user_id:long inviter_id:long date:int subscription_until_date:flags.1?int rank:flags.2?string = ChannelParticipant;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -125,6 +125,12 @@
                             <td>If set, contains the expiration date of the current Telegram Star subscription period for the specified participant.</td>
                         </tr>
 
+                        <tr>
+                            <td class="field-name">Rank</td>
+                            <td class="field-type">flags.2?string</td>
+                            <td></td>
+                        </tr>
+
                     </tbody>
                 </table>
             </div>
@@ -146,6 +152,7 @@ obj := &amp;<span class="package">tg.</span><span class="type">ChannelParticipan
     <span class="comment">// Optional fields:</span>
     <span class="comment">// ViaRequest: <span class="keyword">true</span>,</span>
     <span class="comment">// SubscriptionUntilDate: <span class="number">42</span>,</span>
+    <span class="comment">// Rank: <span class="string">&quot;Hello, World!&quot;</span>,</span>
 }</pre>
         </div>
 

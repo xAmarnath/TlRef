@@ -89,14 +89,14 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/payments/checkCanSendGiftResultOk.html" class="item" data-name="paymentscheckcansendgiftresultok payments.checkcansendgiftresultok">
-                <span class="item-name">PaymentsCheckCanSendGiftResultOk</span>
-                <span class="item-desc">The specified gift can be sent.</span>
-            </a>
-
             <a href="../constructors/payments/checkCanSendGiftResultFail.html" class="item" data-name="paymentscheckcansendgiftresultfail payments.checkcansendgiftresultfail">
                 <span class="item-name">PaymentsCheckCanSendGiftResultFail</span>
                 <span class="item-desc">The specified gift cannot be sent yet for the specified reason.</span>
+            </a>
+
+            <a href="../constructors/payments/checkCanSendGiftResultOk.html" class="item" data-name="paymentscheckcansendgiftresultok payments.checkcansendgiftresultok">
+                <span class="item-name">PaymentsCheckCanSendGiftResultOk</span>
+                <span class="item-desc">The specified gift can be sent.</span>
             </a>
 
             </div>
@@ -106,8 +106,8 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// payments.CheckCanSendGiftResult is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PaymentsCheckCanSendGiftResult</span> = &amp;<span class="package">tg.</span><span class="type">PaymentsCheckCanSendGiftResultOk</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PaymentsCheckCanSendGiftResult</span> = &amp;<span class="package">tg.</span><span class="type">PaymentsCheckCanSendGiftResultFail</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PaymentsCheckCanSendGiftResult</span> = &amp;<span class="package">tg.</span><span class="type">PaymentsCheckCanSendGiftResultOk</span>{}
 </pre>
         </div>
         </article>

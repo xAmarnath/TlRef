@@ -89,11 +89,6 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/inputEncryptedFileLocation.html" class="item" data-name="inputencryptedfilelocation inputencryptedfilelocation">
-                <span class="item-name">InputEncryptedFileLocation</span>
-                <span class="item-desc">Location of encrypted secret chat file.</span>
-            </a>
-
             <a href="../constructors/inputFileLocation.html" class="item" data-name="inputfilelocation inputfilelocation">
                 <span class="item-name">InputFileLocation</span>
                 <span class="item-desc">DEPRECATED location of a photo</span>
@@ -104,9 +99,9 @@
                 <span class="item-desc">Document location (video, voice, audio, basically every type except photo)</span>
             </a>
 
-            <a href="../constructors/inputSecureFileLocation.html" class="item" data-name="inputsecurefilelocation inputsecurefilelocation">
-                <span class="item-name">InputSecureFileLocation</span>
-                <span class="item-desc">Location of encrypted telegram passport file.</span>
+            <a href="../constructors/inputEncryptedFileLocation.html" class="item" data-name="inputencryptedfilelocation inputencryptedfilelocation">
+                <span class="item-name">InputEncryptedFileLocation</span>
+                <span class="item-desc">Location of encrypted secret chat file.</span>
             </a>
 
             <a href="../constructors/inputTakeoutFileLocation.html" class="item" data-name="inputtakeoutfilelocation inputtakeoutfilelocation">
@@ -114,14 +109,14 @@
                 <span class="item-desc">Used to download a JSON file that will contain all personal data related to features that do not hav</span>
             </a>
 
-            <a href="../constructors/inputPhotoFileLocation.html" class="item" data-name="inputphotofilelocation inputphotofilelocation">
-                <span class="item-name">InputPhotoFileLocation</span>
-                <span class="item-desc">Use this object to download a photo with upload. get File method</span>
+            <a href="../constructors/inputPeerPhotoFileLocation.html" class="item" data-name="inputpeerphotofilelocation inputpeerphotofilelocation">
+                <span class="item-name">InputPeerPhotoFileLocation</span>
+                <span class="item-desc">Location of profile photo of channel/group/supergroup/user</span>
             </a>
 
-            <a href="../constructors/inputPhotoLegacyFileLocation.html" class="item" data-name="inputphotolegacyfilelocation inputphotolegacyfilelocation">
-                <span class="item-name">InputPhotoLegacyFileLocation</span>
-                <span class="item-desc">DEPRECATED legacy photo file location</span>
+            <a href="../constructors/inputSecureFileLocation.html" class="item" data-name="inputsecurefilelocation inputsecurefilelocation">
+                <span class="item-name">InputSecureFileLocation</span>
+                <span class="item-desc">Location of encrypted telegram passport file.</span>
             </a>
 
             <a href="../constructors/inputStickerSetThumb.html" class="item" data-name="inputstickersetthumb inputstickersetthumb">
@@ -129,14 +124,19 @@
                 <span class="item-desc">Location of stickerset thumbnail (see files )</span>
             </a>
 
+            <a href="../constructors/inputPhotoLegacyFileLocation.html" class="item" data-name="inputphotolegacyfilelocation inputphotolegacyfilelocation">
+                <span class="item-name">InputPhotoLegacyFileLocation</span>
+                <span class="item-desc">DEPRECATED legacy photo file location</span>
+            </a>
+
+            <a href="../constructors/inputPhotoFileLocation.html" class="item" data-name="inputphotofilelocation inputphotofilelocation">
+                <span class="item-name">InputPhotoFileLocation</span>
+                <span class="item-desc">Use this object to download a photo with upload. get File method</span>
+            </a>
+
             <a href="../constructors/inputGroupCallStream.html" class="item" data-name="inputgroupcallstream inputgroupcallstream">
                 <span class="item-name">InputGroupCallStream</span>
                 <span class="item-desc">Chunk of a livestream</span>
-            </a>
-
-            <a href="../constructors/inputPeerPhotoFileLocation.html" class="item" data-name="inputpeerphotofilelocation inputpeerphotofilelocation">
-                <span class="item-name">InputPeerPhotoFileLocation</span>
-                <span class="item-desc">Location of profile photo of channel/group/supergroup/user</span>
             </a>
 
             </div>
@@ -146,11 +146,11 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// InputFileLocation is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputFileLocation</span> = &amp;<span class="package">tg.</span><span class="type">InputEncryptedFileLocation</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputFileLocation</span> = &amp;<span class="package">tg.</span><span class="type">InputFileLocation</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputFileLocation</span> = &amp;<span class="package">tg.</span><span class="type">InputDocumentFileLocation</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputFileLocation</span> = &amp;<span class="package">tg.</span><span class="type">InputSecureFileLocation</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputFileLocation</span> = &amp;<span class="package">tg.</span><span class="type">InputEncryptedFileLocation</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputFileLocation</span> = &amp;<span class="package">tg.</span><span class="type">InputTakeoutFileLocation</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputFileLocation</span> = &amp;<span class="package">tg.</span><span class="type">InputPeerPhotoFileLocation</span>{}
 <span class="comment">// ... and <span class="number">5</span> more constructors</span>
 </pre>
         </div>

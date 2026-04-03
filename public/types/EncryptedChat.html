@@ -94,6 +94,11 @@
                 <span class="item-desc">Chat waiting for approval of second participant.</span>
             </a>
 
+            <a href="../constructors/encryptedChatEmpty.html" class="item" data-name="encryptedchatempty encryptedchatempty">
+                <span class="item-name">EncryptedChatEmpty</span>
+                <span class="item-desc">Empty constructor.</span>
+            </a>
+
             <a href="../constructors/encryptedChatDiscarded.html" class="item" data-name="encryptedchatdiscarded encryptedchatdiscarded">
                 <span class="item-name">EncryptedChatDiscarded</span>
                 <span class="item-desc">Discarded or deleted chat.</span>
@@ -102,11 +107,6 @@
             <a href="../constructors/encryptedChat.html" class="item" data-name="encryptedchat encryptedchat">
                 <span class="item-name">EncryptedChat</span>
                 <span class="item-desc">Encrypted chat</span>
-            </a>
-
-            <a href="../constructors/encryptedChatEmpty.html" class="item" data-name="encryptedchatempty encryptedchatempty">
-                <span class="item-name">EncryptedChatEmpty</span>
-                <span class="item-desc">Empty constructor.</span>
             </a>
 
             <a href="../constructors/encryptedChatRequested.html" class="item" data-name="encryptedchatrequested encryptedchatrequested">
@@ -122,9 +122,9 @@
             <pre class="example-code"><span class="comment">// EncryptedChat is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">EncryptedChat</span> = &amp;<span class="package">tg.</span><span class="type">EncryptedChatWaiting</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">EncryptedChat</span> = &amp;<span class="package">tg.</span><span class="type">EncryptedChatEmpty</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">EncryptedChat</span> = &amp;<span class="package">tg.</span><span class="type">EncryptedChatDiscarded</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">EncryptedChat</span> = &amp;<span class="package">tg.</span><span class="type">EncryptedChat</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">EncryptedChat</span> = &amp;<span class="package">tg.</span><span class="type">EncryptedChatEmpty</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">EncryptedChat</span> = &amp;<span class="package">tg.</span><span class="type">EncryptedChatRequested</span>{}
 </pre>
         </div>

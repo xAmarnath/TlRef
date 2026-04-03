@@ -178,6 +178,18 @@ result, err := <span class="package">client.</span><span class="function">Paymen
 
                         <tr>
                             <td class="error-code">400</td>
+                            <td class="error-type">STARGIFT_NOT_OWNER</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">STARGIFT_NOT_UNIQUE</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
                             <td class="error-type">STARGIFT_OWNER_INVALID</td>
                             <td>You cannot transfer or sell a gift owned by another user.</td>
                         </tr>
@@ -186,6 +198,12 @@ result, err := <span class="package">client.</span><span class="function">Paymen
                             <td class="error-code">400</td>
                             <td class="error-type">STARGIFT_PEER_INVALID</td>
                             <td>The specified input Saved Star Gift Chat. peer is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">STARGIFT_TRANSFER_TOO_EARLY_%d</td>
+                            <td>You cannot transfer this gift yet, wait &lt;number&gt; seconds.</td>
                         </tr>
 
                     </tbody>

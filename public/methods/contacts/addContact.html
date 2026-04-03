@@ -81,7 +81,7 @@
             <span class="badge badge-method">method</span>
             <span class="badge badge-user">Users</span>
         </div>
-        <div class="code-block">contacts.addContact#e8f463d0 flags:# add_phone_privacy_exception:flags.0?true id:InputUser first_name:string last_name:string phone:string = Updates;</div>
+        <div class="code-block">contacts.addContact#d9ba2e54 flags:# add_phone_privacy_exception:flags.0?true id:InputUser first_name:string last_name:string phone:string note:flags.1?TextWithEntities = Updates;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -126,6 +126,12 @@
                             <td>User&#x27;s phone number, may be omitted to simply add the user to the contact list, without a phone number.</td>
                         </tr>
 
+                        <tr>
+                            <td class="field-name">Note</td>
+                            <td class="field-type">flags.1?<a href="../../types/TextWithEntities.html">TextWithEntities</a></td>
+                            <td>A private note for this contact, only visible to us; see here for more info on contact notes.</td>
+                        </tr>
+
                     </tbody>
                 </table>
             </div>
@@ -147,6 +153,7 @@ result, err := <span class="package">client.</span><span class="function">Contac
 
     <span class="comment">// Optional fields:</span>
     <span class="comment">// AddPhonePrivacyException: <span class="keyword">true</span>,</span>
+    <span class="comment">// Note: &amp;<span class="package">tg.</span><span class="type">TextWithEntities</span>{},</span>
 })
 <span class="keyword">if</span> err != <span class="keyword">nil</span> {
     <span class="comment">// handle error</span>

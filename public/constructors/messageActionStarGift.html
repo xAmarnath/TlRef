@@ -80,7 +80,7 @@
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
-        <div class="code-block">messageActionStarGift#f24de7fa flags:# name_hidden:flags.0?true saved:flags.2?true converted:flags.3?true upgraded:flags.5?true refunded:flags.9?true can_upgrade:flags.10?true prepaid_upgrade:flags.13?true upgrade_separate:flags.16?true gift:StarGift message:flags.1?TextWithEntities convert_stars:flags.4?long upgrade_msg_id:flags.5?int upgrade_stars:flags.8?long from_id:flags.11?Peer peer:flags.12?Peer saved_id:flags.12?long prepaid_upgrade_hash:flags.14?string gift_msg_id:flags.15?int = MessageAction;</div>
+        <div class="code-block">messageActionStarGift#ea2c31d3 flags:# name_hidden:flags.0?true saved:flags.2?true converted:flags.3?true upgraded:flags.5?true refunded:flags.9?true can_upgrade:flags.10?true prepaid_upgrade:flags.13?true upgrade_separate:flags.16?true auction_acquired:flags.17?true gift:StarGift message:flags.1?TextWithEntities convert_stars:flags.4?long upgrade_msg_id:flags.5?int upgrade_stars:flags.8?long from_id:flags.11?Peer peer:flags.12?Peer saved_id:flags.12?long prepaid_upgrade_hash:flags.14?string gift_msg_id:flags.15?int to_id:flags.18?Peer gift_num:flags.19?int = MessageAction;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -144,6 +144,12 @@
                         </tr>
 
                         <tr>
+                            <td class="field-name">AuctionAcquired</td>
+                            <td class="field-type">flags.17?true</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
                             <td class="field-name">Gift</td>
                             <td class="field-type"><a href="../types/StarGift.html">StarGift</a></td>
                             <td>Info about the gift</td>
@@ -201,6 +207,18 @@
                             <td class="field-name">GiftMsgId</td>
                             <td class="field-type">flags.15?int</td>
                             <td>For separate upgrades, the identifier of the message with the gift whose upgrade was prepaid (only valid for the receiver of the service message).</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ToId</td>
+                            <td class="field-type">flags.18?<a href="../types/Peer.html">Peer</a></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">GiftNum</td>
+                            <td class="field-type">flags.19?int</td>
+                            <td></td>
                         </tr>
 
                     </tbody>

@@ -80,7 +80,7 @@
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
-        <div class="code-block">urlAuthResultRequest#92d33a0e flags:# request_write_access:flags.0?true bot:User domain:string = UrlAuthResult;</div>
+        <div class="code-block">urlAuthResultRequest#f8f8eb1e flags:# request_write_access:flags.0?true request_phone_number:flags.1?true match_codes_first:flags.5?true bot:User domain:string browser:flags.2?string platform:flags.2?string ip:flags.2?string region:flags.2?string match_codes:flags.3?Vector&lt;string&gt; user_id_hint:flags.4?long = UrlAuthResult;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -102,6 +102,18 @@
                         </tr>
 
                         <tr>
+                            <td class="field-name">RequestPhoneNumber</td>
+                            <td class="field-type">flags.1?true</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">MatchCodesFirst</td>
+                            <td class="field-type">flags.5?true</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
                             <td class="field-name">Bot</td>
                             <td class="field-type"><a href="../types/User.html">User</a></td>
                             <td>Username of a bot, which will be used for user authorization. If not specified, the current bot&#x27;s username will be assumed. The url&#x27;s domain must be the same as the domain linked with the bot. See Linking your domain to the bot for more details.</td>
@@ -111,6 +123,42 @@
                             <td class="field-name">Domain</td>
                             <td class="field-type">string</td>
                             <td>The domain name of the website on which the user will log in.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Browser</td>
+                            <td class="field-type">flags.2?string</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Platform</td>
+                            <td class="field-type">flags.2?string</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Ip</td>
+                            <td class="field-type">flags.2?string</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Region</td>
+                            <td class="field-type">flags.2?string</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">MatchCodes</td>
+                            <td class="field-type">Vector&lt;string&gt;</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">UserIdHint</td>
+                            <td class="field-type">flags.4?long</td>
+                            <td></td>
                         </tr>
 
                     </tbody>
@@ -132,6 +180,10 @@ obj := &amp;<span class="package">tg.</span><span class="type">UrlAuthResultRequ
 
     <span class="comment">// Optional fields:</span>
     <span class="comment">// RequestWriteAccess: <span class="keyword">true</span>,</span>
+    <span class="comment">// RequestPhoneNumber: <span class="keyword">true</span>,</span>
+    <span class="comment">// MatchCodesFirst: <span class="keyword">true</span>,</span>
+    <span class="comment">// Browser: <span class="string">&quot;Hello, World!&quot;</span>,</span>
+    <span class="comment">// ... more optional fields</span>
 }</pre>
         </div>
 

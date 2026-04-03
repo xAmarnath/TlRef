@@ -83,7 +83,7 @@
             <span class="badge badge-bot">Bots</span>
             <span class="badge badge-business">Business</span>
         </div>
-        <div class="code-block">messages.editMessage#dfd14005 flags:# no_webpage:flags.1?true invert_media:flags.16?true peer:InputPeer id:int message:flags.11?string media:flags.14?InputMedia reply_markup:flags.2?ReplyMarkup entities:flags.3?Vector&lt;MessageEntity&gt; schedule_date:flags.15?int quick_reply_shortcut_id:flags.17?int = Updates;</div>
+        <div class="code-block">messages.editMessage#51e842e1 flags:# no_webpage:flags.1?true invert_media:flags.16?true peer:InputPeer id:int message:flags.11?string media:flags.14?InputMedia reply_markup:flags.2?ReplyMarkup entities:flags.3?Vector&lt;MessageEntity&gt; schedule_date:flags.15?int schedule_repeat_period:flags.18?int quick_reply_shortcut_id:flags.17?int = Updates;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -150,6 +150,12 @@
                             <td class="field-name">ScheduleDate</td>
                             <td class="field-type">flags.15?int</td>
                             <td>Scheduled message date for scheduled messages</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ScheduleRepeatPeriod</td>
+                            <td class="field-type">flags.18?int</td>
+                            <td></td>
                         </tr>
 
                         <tr>
@@ -427,6 +433,12 @@ result, err := <span class="package">client.</span><span class="function">Messag
                             <td class="error-code">400</td>
                             <td class="error-type">PEER_TYPES_INVALID</td>
                             <td>The passed keyboard Button Switch Inline. peer_types field is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">PHOTO_EXT_INVALID</td>
+                            <td>The extension of the photo is invalid.</td>
                         </tr>
 
                         <tr>

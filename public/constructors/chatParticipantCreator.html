@@ -80,7 +80,7 @@
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
-        <div class="code-block">chatParticipantCreator#e46bcee4 user_id:long = ChatParticipant;</div>
+        <div class="code-block">chatParticipantCreator#e1f867b8 flags:# user_id:long rank:flags.0?string = ChatParticipant;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -101,6 +101,12 @@
                             <td>ID of the user that created the group</td>
                         </tr>
 
+                        <tr>
+                            <td class="field-name">Rank</td>
+                            <td class="field-type">flags.0?string</td>
+                            <td></td>
+                        </tr>
+
                     </tbody>
                 </table>
             </div>
@@ -116,6 +122,9 @@
             <pre class="example-code"><span class="comment">// Creating ChatParticipantCreator constructor</span>
 obj := &amp;<span class="package">tg.</span><span class="type">ChatParticipantCreator</span>{
     UserId: int64(<span class="number">1234567890</span>),
+
+    <span class="comment">// Optional fields:</span>
+    <span class="comment">// Rank: <span class="string">&quot;Hello, World!&quot;</span>,</span>
 }</pre>
         </div>
 

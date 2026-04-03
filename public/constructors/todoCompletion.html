@@ -80,7 +80,7 @@
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
-        <div class="code-block">todoCompletion#4cc120b7 id:int completed_by:long date:int = TodoCompletion;</div>
+        <div class="code-block">todoCompletion#221bb5e4 id:int completed_by:Peer date:int = TodoCompletion;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -103,7 +103,7 @@
 
                         <tr>
                             <td class="field-name">CompletedBy</td>
-                            <td class="field-type">long</td>
+                            <td class="field-type"><a href="../types/Peer.html">Peer</a></td>
                             <td>ID of the user that completed the item.</td>
                         </tr>
 
@@ -128,7 +128,7 @@
             <pre class="example-code"><span class="comment">// Creating TodoCompletionObj constructor</span>
 obj := &amp;<span class="package">tg.</span><span class="type">TodoCompletionObj</span>{
     Id: <span class="number">42</span>,
-    CompletedBy: int64(<span class="number">1234567890</span>),
+    CompletedBy: &amp;<span class="package">tg.</span><span class="type">Peer</span>{},
     Date: <span class="number">42</span>,
 }</pre>
         </div>

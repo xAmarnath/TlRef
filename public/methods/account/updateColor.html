@@ -81,7 +81,7 @@
             <span class="badge badge-method">method</span>
             <span class="badge badge-user">Users</span>
         </div>
-        <div class="code-block">account.updateColor#7cefa15d flags:# for_profile:flags.1?true color:flags.2?int background_emoji_id:flags.0?long = Bool;</div>
+        <div class="code-block">account.updateColor#684d214e flags:# for_profile:flags.1?true color:flags.2?PeerColor = Bool;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -104,14 +104,8 @@
 
                         <tr>
                             <td class="field-name">Color</td>
-                            <td class="field-type">flags.2?int</td>
+                            <td class="field-type">flags.2?<a href="../../types/PeerColor.html">PeerColor</a></td>
                             <td>ID of the accent color palette to use (not RGB 24, see here for more info).</td>
-                        </tr>
-
-                        <tr>
-                            <td class="field-name">BackgroundEmojiId</td>
-                            <td class="field-type">flags.0?long</td>
-                            <td>Custom emoji ID used in the accent color pattern.</td>
                         </tr>
 
                     </tbody>
@@ -131,8 +125,7 @@ result, err := <span class="package">client.</span><span class="function">Accoun
 
     <span class="comment">// Optional fields:</span>
     <span class="comment">// ForProfile: <span class="keyword">true</span>,</span>
-    <span class="comment">// Color: <span class="number">42</span>,</span>
-    <span class="comment">// BackgroundEmojiId: int64(<span class="number">1234567890</span>),</span>
+    <span class="comment">// Color: &amp;<span class="package">tg.</span><span class="type">PeerColor</span>{},</span>
 })
 <span class="keyword">if</span> err != <span class="keyword">nil</span> {
     <span class="comment">// handle error</span>

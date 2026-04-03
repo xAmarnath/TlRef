@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>users.suggestBirthday - Gogram TL Reference</title>
-    <meta name="description" content="Suggest a birthday for a contact">
+    <meta name="description" content="Suggest a birthday to another user, see here for more info on birthdays in the API.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="users.suggestBirthday - Gogram TL Reference">
-    <meta property="og:description" content="Suggest a birthday for a contact">
+    <meta property="og:description" content="Suggest a birthday to another user, see here for more info on birthdays in the API.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -74,11 +74,12 @@
         
         <header class="page-header">
             <h1>UsersSuggestBirthday</h1>
-            <p class="description">Suggest a birthday for a contact</p>
+            <p class="description">Suggest a birthday to another user, see here for more info on birthdays in the API.</p>
         </header>
         
         <div class="badges">
             <span class="badge badge-method">method</span>
+            <span class="badge badge-user">Users</span>
         </div>
         <div class="code-block">users.suggestBirthday#fc533372 id:InputUser birthday:Birthday = Updates;</div>
 
@@ -98,13 +99,13 @@
                         <tr>
                             <td class="field-name">Id</td>
                             <td class="field-type"><a href="../../types/InputUser.html">InputUser</a></td>
-                            <td>User to suggest birthday for</td>
+                            <td>The user that will receive the suggested birthday date.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Birthday</td>
                             <td class="field-type"><a href="../../types/Birthday.html">Birthday</a></td>
-                            <td>Birthday to suggest</td>
+                            <td>The birthday to suggest.</td>
                         </tr>
 
                     </tbody>
@@ -125,6 +126,30 @@ result, err := <span class="package">client.</span><span class="function">UsersS
     <span class="comment">// handle error</span>
 }
 <span class="comment">// result is *<span class="package">tg.</span><span class="type">Updates</span></span></pre>
+        </div>
+
+        <div class="section">
+            <h2>Possible Errors</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">USER_ID_INVALID</td>
+                            <td>The provided user ID is invalid.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         </article>

@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>messages.editForumTopic - Gogram TL Reference</title>
-    <meta name="description" content="Edit properties of a forum topic">
+    <meta name="description" content="Edit forum topic.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="messages.editForumTopic - Gogram TL Reference">
-    <meta property="og:description" content="Edit properties of a forum topic">
+    <meta property="og:description" content="Edit forum topic.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -74,11 +74,13 @@
         
         <header class="page-header">
             <h1>MessagesEditForumTopic</h1>
-            <p class="description">Edit properties of a forum topic</p>
+            <p class="description">Edit forum topic.</p>
         </header>
         
         <div class="badges">
             <span class="badge badge-method">method</span>
+            <span class="badge badge-user">Users</span>
+            <span class="badge badge-bot">Bots</span>
         </div>
         <div class="code-block">messages.editForumTopic#cecc1134 flags:# peer:InputPeer topic_id:int title:flags.0?string icon_emoji_id:flags.1?long closed:flags.2?Bool hidden:flags.3?Bool = Updates;</div>
 
@@ -98,37 +100,37 @@
                         <tr>
                             <td class="field-name">Peer</td>
                             <td class="field-type"><a href="../../types/InputPeer.html">InputPeer</a></td>
-                            <td>Supergroup with topic</td>
+                            <td>The supergroup forum, private chat (for forum-enabled bots) or bot forum (for users) where the topic is located.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">TopicId</td>
                             <td class="field-type">int</td>
-                            <td>Topic ID to edit</td>
+                            <td>Topic ID</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Title</td>
                             <td class="field-type">flags.0?string</td>
-                            <td>Optional new title</td>
+                            <td>If present, will update the topic title (maximum UTF-8 length: 128).</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">IconEmojiId</td>
                             <td class="field-type">flags.1?long</td>
-                            <td>Optional new emoji icon</td>
+                            <td>If present, updates the custom emoji used as topic icon. Telegram Premium users can use any custom emoji, other users can only use the custom emojis contained in the input Sticker Set Emoji Default Topic Icons emoji pack. Pass 0 to switch to the fallback topic icon.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Closed</td>
                             <td class="field-type">flags.2?Bool</td>
-                            <td>Optional close status</td>
+                            <td>If present, will update the open/closed status of the topic.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Hidden</td>
                             <td class="field-type">flags.3?Bool</td>
-                            <td>Optional hidden status</td>
+                            <td>If present, will hide/unhide the topic (only valid for the &quot;General&quot; topic, id=1 ).</td>
                         </tr>
 
                     </tbody>
@@ -158,6 +160,30 @@ result, err := <span class="package">client.</span><span class="function">Messag
     <span class="comment">// handle error</span>
 }
 <span class="comment">// result is *<span class="package">tg.</span><span class="type">Updates</span></span></pre>
+        </div>
+
+        <div class="section">
+            <h2>Possible Errors</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">CHANNEL_INVALID</td>
+                            <td>The provided channel is invalid.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         </article>
