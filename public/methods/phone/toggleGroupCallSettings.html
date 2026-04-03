@@ -81,7 +81,7 @@
             <span class="badge badge-method">method</span>
             <span class="badge badge-user">Users</span>
         </div>
-        <div class="code-block">phone.toggleGroupCallSettings#74bbb43d flags:# reset_invite_hash:flags.1?true call:InputGroupCall join_muted:flags.0?Bool = Updates;</div>
+        <div class="code-block">phone.toggleGroupCallSettings#974392f2 flags:# reset_invite_hash:flags.1?true call:InputGroupCall join_muted:flags.0?Bool messages_enabled:flags.2?Bool send_paid_messages_stars:flags.3?long = Updates;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -114,6 +114,18 @@
                             <td>Whether all users will that join this group call are muted by default upon joining the group call</td>
                         </tr>
 
+                        <tr>
+                            <td class="field-name">MessagesEnabled</td>
+                            <td class="field-type">flags.2?Bool</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">SendPaidMessagesStars</td>
+                            <td class="field-type">flags.3?long</td>
+                            <td></td>
+                        </tr>
+
                     </tbody>
                 </table>
             </div>
@@ -133,6 +145,8 @@ result, err := <span class="package">client.</span><span class="function">PhoneT
     <span class="comment">// Optional fields:</span>
     <span class="comment">// ResetInviteHash: <span class="keyword">true</span>,</span>
     <span class="comment">// JoinMuted: <span class="keyword">true</span>,</span>
+    <span class="comment">// MessagesEnabled: <span class="keyword">true</span>,</span>
+    <span class="comment">// SendPaidMessagesStars: int64(<span class="number">1234567890</span>),</span>
 })
 <span class="keyword">if</span> err != <span class="keyword">nil</span> {
     <span class="comment">// handle error</span>

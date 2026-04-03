@@ -155,8 +155,20 @@ result, err := <span class="package">client.</span><span class="function">Channe
 
                         <tr>
                             <td class="error-code">400</td>
+                            <td class="error-type">CHAT_ADMIN_REQUIRED</td>
+                            <td>You must be an admin in this chat to do this.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
                             <td class="error-type">CHAT_DISCUSSION_UNALLOWED</td>
                             <td>You can&#x27;t enable forum topics in a discussion group linked to a channel.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">CHAT_ID_INVALID</td>
+                            <td>The provided chat id is invalid.</td>
                         </tr>
 
                         <tr>

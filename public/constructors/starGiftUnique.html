@@ -112,6 +112,18 @@
                         </tr>
 
                         <tr>
+                            <td class="field-name">Burned</td>
+                            <td class="field-type">flags.14?true</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Crafted</td>
+                            <td class="field-type">flags.15?true</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
                             <td class="field-name">Id</td>
                             <td class="field-type">long</td>
                             <td>Identifier of the collectible gift.</td>
@@ -208,9 +220,39 @@
                         </tr>
 
                         <tr>
+                            <td class="field-name">ValueUsdAmount</td>
+                            <td class="field-type">flags.8?long</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
                             <td class="field-name">ThemePeer</td>
                             <td class="field-type">flags.10?<a href="../types/Peer.html">Peer</a></td>
                             <td>The current chat where the associated chat theme is installed, if any (gift-based themes can only be installed in one chat at a time).</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PeerColor</td>
+                            <td class="field-type">flags.11?<a href="../types/PeerColor.html">PeerColor</a></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">HostId</td>
+                            <td class="field-type">flags.12?<a href="../types/Peer.html">Peer</a></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">OfferMinStars</td>
+                            <td class="field-type">flags.13?int</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">CraftChancePermille</td>
+                            <td class="field-type">flags.16?int</td>
+                            <td></td>
                         </tr>
 
                     </tbody>
@@ -239,7 +281,7 @@ obj := &amp;<span class="package">tg.</span><span class="type">StarGiftUnique</s
     <span class="comment">// RequirePremium: <span class="keyword">true</span>,</span>
     <span class="comment">// ResaleTonOnly: <span class="keyword">true</span>,</span>
     <span class="comment">// ThemeAvailable: <span class="keyword">true</span>,</span>
-    <span class="comment">// OwnerId: &amp;<span class="package">tg.</span><span class="type">Peer</span>{},</span>
+    <span class="comment">// Burned: <span class="keyword">true</span>,</span>
     <span class="comment">// ... more optional fields</span>
 }</pre>
         </div>

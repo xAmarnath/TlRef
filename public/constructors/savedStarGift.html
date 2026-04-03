@@ -80,7 +80,7 @@
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
-        <div class="code-block">savedStarGift#19a9b572 flags:# name_hidden:flags.0?true unsaved:flags.5?true refunded:flags.9?true can_upgrade:flags.10?true pinned_to_top:flags.12?true upgrade_separate:flags.17?true from_id:flags.1?Peer date:int gift:StarGift message:flags.2?TextWithEntities msg_id:flags.3?int saved_id:flags.11?long convert_stars:flags.4?long upgrade_stars:flags.6?long can_export_at:flags.7?int transfer_stars:flags.8?long can_transfer_at:flags.13?int can_resell_at:flags.14?int collection_id:flags.15?Vector&lt;int&gt; prepaid_upgrade_hash:flags.16?string = SavedStarGift;</div>
+        <div class="code-block">savedStarGift#41df43fc flags:# name_hidden:flags.0?true unsaved:flags.5?true refunded:flags.9?true can_upgrade:flags.10?true pinned_to_top:flags.12?true upgrade_separate:flags.17?true from_id:flags.1?Peer date:int gift:StarGift message:flags.2?TextWithEntities msg_id:flags.3?int saved_id:flags.11?long convert_stars:flags.4?long upgrade_stars:flags.6?long can_export_at:flags.7?int transfer_stars:flags.8?long can_transfer_at:flags.13?int can_resell_at:flags.14?int collection_id:flags.15?Vector&lt;int&gt; prepaid_upgrade_hash:flags.16?string drop_original_details_stars:flags.18?long gift_num:flags.19?int can_craft_at:flags.20?int = SavedStarGift;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -213,6 +213,24 @@
                             <td class="field-name">PrepaidUpgradeHash</td>
                             <td class="field-type">flags.16?string</td>
                             <td>Hash to prepay for a gift upgrade separately.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">DropOriginalDetailsStars</td>
+                            <td class="field-type">flags.18?long</td>
+                            <td>If set, the star Gift Attribute Original Details attribute of this gift may be removed by paying the specified amount of stars, see here for the full flow.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">GiftNum</td>
+                            <td class="field-type">flags.19?int</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">CanCraftAt</td>
+                            <td class="field-type">flags.20?int</td>
+                            <td></td>
                         </tr>
 
                     </tbody>

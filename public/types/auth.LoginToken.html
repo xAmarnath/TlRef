@@ -94,14 +94,14 @@
                 <span class="item-desc">Login token (for QR code login )</span>
             </a>
 
-            <a href="../constructors/auth/loginTokenSuccess.html" class="item" data-name="authlogintokensuccess auth.logintokensuccess">
-                <span class="item-name">AuthLoginTokenSuccess</span>
-                <span class="item-desc">Login via token (QR code) succeeded!</span>
-            </a>
-
             <a href="../constructors/auth/loginTokenMigrateTo.html" class="item" data-name="authlogintokenmigrateto auth.logintokenmigrateto">
                 <span class="item-name">AuthLoginTokenMigrateTo</span>
                 <span class="item-desc">Repeat the query to the specified DC</span>
+            </a>
+
+            <a href="../constructors/auth/loginTokenSuccess.html" class="item" data-name="authlogintokensuccess auth.logintokensuccess">
+                <span class="item-name">AuthLoginTokenSuccess</span>
+                <span class="item-desc">Login via token (QR code) succeeded!</span>
             </a>
 
             </div>
@@ -112,8 +112,8 @@
             <pre class="example-code"><span class="comment">// auth.LoginToken is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">AuthLoginToken</span> = &amp;<span class="package">tg.</span><span class="type">AuthLoginToken</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">AuthLoginToken</span> = &amp;<span class="package">tg.</span><span class="type">AuthLoginTokenSuccess</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">AuthLoginToken</span> = &amp;<span class="package">tg.</span><span class="type">AuthLoginTokenMigrateTo</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">AuthLoginToken</span> = &amp;<span class="package">tg.</span><span class="type">AuthLoginTokenSuccess</span>{}
 </pre>
         </div>
         </article>

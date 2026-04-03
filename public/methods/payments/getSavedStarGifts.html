@@ -80,9 +80,10 @@
         <div class="badges">
             <span class="badge badge-method">method</span>
             <span class="badge badge-user">Users</span>
+            <span class="badge badge-bot">Bots</span>
             <span class="badge badge-business">Business</span>
         </div>
-        <div class="code-block">payments.getSavedStarGifts#a319e569 flags:# exclude_unsaved:flags.0?true exclude_saved:flags.1?true exclude_unlimited:flags.2?true exclude_unique:flags.4?true sort_by_value:flags.5?true exclude_upgradable:flags.7?true exclude_unupgradable:flags.8?true peer:InputPeer collection_id:flags.6?int offset:string limit:int = payments.SavedStarGifts;</div>
+        <div class="code-block">payments.getSavedStarGifts#a319e569 flags:# exclude_unsaved:flags.0?true exclude_saved:flags.1?true exclude_unlimited:flags.2?true exclude_unique:flags.4?true sort_by_value:flags.5?true exclude_upgradable:flags.7?true exclude_unupgradable:flags.8?true peer_color_available:flags.9?true exclude_hosted:flags.10?true peer:InputPeer collection_id:flags.6?int offset:string limit:int = payments.SavedStarGifts;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -137,6 +138,18 @@
                             <td class="field-name">ExcludeUnupgradable</td>
                             <td class="field-type">flags.8?true</td>
                             <td>Exclude gifts that cannot be upgraded to collectible gifts.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PeerColorAvailable</td>
+                            <td class="field-type">flags.9?true</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ExcludeHosted</td>
+                            <td class="field-type">flags.10?true</td>
+                            <td></td>
                         </tr>
 
                         <tr>
@@ -211,6 +224,18 @@ result, err := <span class="package">client.</span><span class="function">Paymen
                             <td class="error-code">400</td>
                             <td class="error-type">BUSINESS_CONNECTION_INVALID</td>
                             <td>The connection_id passed to the wrapping invoke With Business Connection call is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">COLLECTION_ID_INVALID</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">MSG_ID_INVALID</td>
+                            <td>Invalid message ID provided.</td>
                         </tr>
 
                         <tr>

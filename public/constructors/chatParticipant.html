@@ -80,7 +80,7 @@
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
-        <div class="code-block">chatParticipant#c02d4007 user_id:long inviter_id:long date:int = ChatParticipant;</div>
+        <div class="code-block">chatParticipant#38e79fde flags:# user_id:long inviter_id:long date:int rank:flags.0?string = ChatParticipant;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -113,6 +113,12 @@
                             <td>Date added to the group</td>
                         </tr>
 
+                        <tr>
+                            <td class="field-name">Rank</td>
+                            <td class="field-type">flags.0?string</td>
+                            <td></td>
+                        </tr>
+
                     </tbody>
                 </table>
             </div>
@@ -130,6 +136,9 @@ obj := &amp;<span class="package">tg.</span><span class="type">ChatParticipantOb
     UserId: int64(<span class="number">1234567890</span>),
     InviterId: int64(<span class="number">1234567890</span>),
     Date: <span class="number">42</span>,
+
+    <span class="comment">// Optional fields:</span>
+    <span class="comment">// Rank: <span class="string">&quot;Hello, World!&quot;</span>,</span>
 }</pre>
         </div>
 

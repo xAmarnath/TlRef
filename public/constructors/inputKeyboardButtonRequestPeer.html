@@ -80,7 +80,7 @@
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
-        <div class="code-block">inputKeyboardButtonRequestPeer#c9662d05 flags:# name_requested:flags.0?true username_requested:flags.1?true photo_requested:flags.2?true text:string button_id:int peer_type:RequestPeerType max_quantity:int = KeyboardButton;</div>
+        <div class="code-block">inputKeyboardButtonRequestPeer#2b78156 flags:# name_requested:flags.0?true username_requested:flags.1?true photo_requested:flags.2?true style:flags.10?KeyboardButtonStyle text:string button_id:int peer_type:RequestPeerType max_quantity:int = KeyboardButton;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -111,6 +111,12 @@
                             <td class="field-name">PhotoRequested</td>
                             <td class="field-type">flags.2?true</td>
                             <td>Set this flag to request the peer&#x27;s photo (if any).</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Style</td>
+                            <td class="field-type">flags.10?<a href="../types/KeyboardButtonStyle.html">KeyboardButtonStyle</a></td>
+                            <td></td>
                         </tr>
 
                         <tr>
@@ -160,6 +166,7 @@ obj := &amp;<span class="package">tg.</span><span class="type">InputKeyboardButt
     <span class="comment">// NameRequested: <span class="keyword">true</span>,</span>
     <span class="comment">// UsernameRequested: <span class="keyword">true</span>,</span>
     <span class="comment">// PhotoRequested: <span class="keyword">true</span>,</span>
+    <span class="comment">// Style: &amp;<span class="package">tg.</span><span class="type">KeyboardButtonStyle</span>{},</span>
 }</pre>
         </div>
 

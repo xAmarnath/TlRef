@@ -80,7 +80,7 @@
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
-        <div class="code-block">starGiftAttributeModel#39d99013 name:string document:Document rarity_permille:int = StarGiftAttribute;</div>
+        <div class="code-block">starGiftAttributeModel#565251e2 flags:# crafted:flags.0?true name:string document:Document rarity:StarGiftAttributeRarity = StarGiftAttribute;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -96,6 +96,12 @@
                     <tbody>
 
                         <tr>
+                            <td class="field-name">Crafted</td>
+                            <td class="field-type">flags.0?true</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
                             <td class="field-name">Name</td>
                             <td class="field-type">string</td>
                             <td>Name of the model</td>
@@ -108,9 +114,9 @@
                         </tr>
 
                         <tr>
-                            <td class="field-name">RarityPermille</td>
-                            <td class="field-type">int</td>
-                            <td>The number of upgraded gifts that receive this backdrop for each 1000 gifts upgraded.</td>
+                            <td class="field-name">Rarity</td>
+                            <td class="field-type"><a href="../types/StarGiftAttributeRarity.html">StarGiftAttributeRarity</a></td>
+                            <td></td>
                         </tr>
 
                     </tbody>
@@ -129,7 +135,10 @@
 obj := &amp;<span class="package">tg.</span><span class="type">StarGiftAttributeModel</span>{
     Name: <span class="string">&quot;Hello, World!&quot;</span>,
     Document: &amp;<span class="package">tg.</span><span class="type">Document</span>{},
-    RarityPermille: <span class="number">42</span>,
+    Rarity: &amp;<span class="package">tg.</span><span class="type">StarGiftAttributeRarity</span>{},
+
+    <span class="comment">// Optional fields:</span>
+    <span class="comment">// Crafted: <span class="keyword">true</span>,</span>
 }</pre>
         </div>
 

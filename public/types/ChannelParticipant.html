@@ -94,6 +94,11 @@
                 <span class="item-desc">Channel/supergroup participant</span>
             </a>
 
+            <a href="../constructors/channelParticipantCreator.html" class="item" data-name="channelparticipantcreator channelparticipantcreator">
+                <span class="item-name">ChannelParticipantCreator</span>
+                <span class="item-desc">Channel/supergroup creator</span>
+            </a>
+
             <a href="../constructors/channelParticipantSelf.html" class="item" data-name="channelparticipantself channelparticipantself">
                 <span class="item-name">ChannelParticipantSelf</span>
                 <span class="item-desc">Myself</span>
@@ -102,11 +107,6 @@
             <a href="../constructors/channelParticipantAdmin.html" class="item" data-name="channelparticipantadmin channelparticipantadmin">
                 <span class="item-name">ChannelParticipantAdmin</span>
                 <span class="item-desc">Admin</span>
-            </a>
-
-            <a href="../constructors/channelParticipantCreator.html" class="item" data-name="channelparticipantcreator channelparticipantcreator">
-                <span class="item-name">ChannelParticipantCreator</span>
-                <span class="item-desc">Channel/supergroup creator</span>
             </a>
 
             <a href="../constructors/channelParticipantBanned.html" class="item" data-name="channelparticipantbanned channelparticipantbanned">
@@ -127,9 +127,9 @@
             <pre class="example-code"><span class="comment">// ChannelParticipant is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ChannelParticipant</span> = &amp;<span class="package">tg.</span><span class="type">ChannelParticipant</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ChannelParticipant</span> = &amp;<span class="package">tg.</span><span class="type">ChannelParticipantCreator</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ChannelParticipant</span> = &amp;<span class="package">tg.</span><span class="type">ChannelParticipantSelf</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ChannelParticipant</span> = &amp;<span class="package">tg.</span><span class="type">ChannelParticipantAdmin</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ChannelParticipant</span> = &amp;<span class="package">tg.</span><span class="type">ChannelParticipantCreator</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">ChannelParticipant</span> = &amp;<span class="package">tg.</span><span class="type">ChannelParticipantBanned</span>{}
 <span class="comment">// ... and <span class="number">1</span> more constructors</span>
 </pre>

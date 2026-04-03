@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>auth.checkPaidAuth - Gogram TL Reference</title>
-    <meta name="description" content="Verify paid authentication for premium features">
+    <meta name="description" content="Checks the status of a login payment.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="auth.checkPaidAuth - Gogram TL Reference">
-    <meta property="og:description" content="Verify paid authentication for premium features">
+    <meta property="og:description" content="Checks the status of a login payment.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -74,11 +74,12 @@
         
         <header class="page-header">
             <h1>AuthCheckPaidAuth</h1>
-            <p class="description">Verify paid authentication for premium features</p>
+            <p class="description">Checks the status of a login payment.</p>
         </header>
         
         <div class="badges">
             <span class="badge badge-method">method</span>
+            <span class="badge badge-user">Users</span>
         </div>
         <div class="code-block">auth.checkPaidAuth#56e59f9c phone_number:string phone_code_hash:string form_id:long = auth.SentCode;</div>
 
@@ -98,19 +99,19 @@
                         <tr>
                             <td class="field-name">PhoneNumber</td>
                             <td class="field-type">string</td>
-                            <td>User phone number</td>
+                            <td>Phone number</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">PhoneCodeHash</td>
                             <td class="field-type">string</td>
-                            <td>Hash of verification code</td>
+                            <td>The phone code hash obtained from auth. send Code</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">FormId</td>
                             <td class="field-type">long</td>
-                            <td>Payment form ID</td>
+                            <td>The payment form ID passed to payments. send Payment Form.</td>
                         </tr>
 
                     </tbody>
@@ -131,6 +132,30 @@ result, err := <span class="package">client.</span><span class="function">AuthCh
     <span class="comment">// handle error</span>
 }
 <span class="comment">// result is *<span class="package">tg.</span><span class="type">AuthSentCode</span></span></pre>
+        </div>
+
+        <div class="section">
+            <h2>Possible Errors</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">PHONE_NUMBER_INVALID</td>
+                            <td>The phone number is invalid.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         </article>

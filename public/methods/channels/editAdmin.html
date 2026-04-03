@@ -82,7 +82,7 @@
             <span class="badge badge-user">Users</span>
             <span class="badge badge-bot">Bots</span>
         </div>
-        <div class="code-block">channels.editAdmin#d33c8902 channel:InputChannel user_id:InputUser admin_rights:ChatAdminRights rank:string = Updates;</div>
+        <div class="code-block">channels.editAdmin#9a98ad68 flags:# channel:InputChannel user_id:InputUser admin_rights:ChatAdminRights rank:flags.0?string = Updates;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -117,7 +117,7 @@
 
                         <tr>
                             <td class="field-name">Rank</td>
-                            <td class="field-type">string</td>
+                            <td class="field-type">flags.0?string</td>
                             <td>Indicates the role (rank) of the admin in the group: just an arbitrary string</td>
                         </tr>
 
@@ -133,8 +133,15 @@
 
         <div class="example-section">
             <h2>Gogram Example</h2>
-            <pre class="example-code"><span class="comment">// ChannelsEditAdmin - positional arguments</span>
-result, err := <span class="package">client.</span><span class="function">ChannelsEditAdmin</span>(&amp;<span class="package">tg.</span><span class="type">InputChannel</span>{ChannelID: int64(<span class="number">1234567890</span>), AccessHash: int64(<span class="number">5678901234567890</span>)}, &amp;<span class="package">tg.</span><span class="type">InputUserSelf</span>{}, &amp;<span class="package">tg.</span><span class="type">ChatAdminRights</span>{}, <span class="string">&quot;Hello, World!&quot;</span>)
+            <pre class="example-code"><span class="comment">// ChannelsEditAdmin - using Params <span class="keyword">struct</span></span>
+result, err := <span class="package">client.</span><span class="function">ChannelsEditAdmin</span>(&amp;<span class="package">tg.</span><span class="type">ChannelsEditAdminParams</span>{
+    Channel: &amp;<span class="package">tg.</span><span class="type">InputChannel</span>{ChannelID: int64(<span class="number">1234567890</span>), AccessHash: int64(<span class="number">5678901234567890</span>)},
+    UserId: &amp;<span class="package">tg.</span><span class="type">InputUserSelf</span>{},
+    AdminRights: &amp;<span class="package">tg.</span><span class="type">ChatAdminRights</span>{},
+
+    <span class="comment">// Optional fields:</span>
+    <span class="comment">// Rank: <span class="string">&quot;Hello, World!&quot;</span>,</span>
+})
 <span class="keyword">if</span> err != <span class="keyword">nil</span> {
     <span class="comment">// handle error</span>
 }
@@ -284,6 +291,12 @@ result, err := <span class="package">client.</span><span class="function">Channe
                             <td class="error-code">400</td>
                             <td class="error-type">USER_ID_INVALID</td>
                             <td>The provided user ID is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">USER_KICKED</td>
+                            <td>This user was kicked from this supergroup/channel.</td>
                         </tr>
 
                         <tr>

@@ -80,7 +80,7 @@
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
-        <div class="code-block">updateUserTyping#c01e857f user_id:long action:SendMessageAction = Update;</div>
+        <div class="code-block">updateUserTyping#2a17bf5c flags:# user_id:long top_msg_id:flags.0?int action:SendMessageAction = Update;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -99,6 +99,12 @@
                             <td class="field-name">UserId</td>
                             <td class="field-type">long</td>
                             <td>User id</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">TopMsgId</td>
+                            <td class="field-type">flags.0?int</td>
+                            <td>If set, this notification was sent within a bot forum topic.</td>
                         </tr>
 
                         <tr>
@@ -123,6 +129,9 @@
 obj := &amp;<span class="package">tg.</span><span class="type">UpdateUserTyping</span>{
     UserId: int64(<span class="number">1234567890</span>),
     Action: &amp;<span class="package">tg.</span><span class="type">SendMessageAction</span>{},
+
+    <span class="comment">// Optional fields:</span>
+    <span class="comment">// TopMsgId: <span class="number">42</span>,</span>
 }</pre>
         </div>
 

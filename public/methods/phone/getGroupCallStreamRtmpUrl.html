@@ -95,6 +95,12 @@
                     <tbody>
 
                         <tr>
+                            <td class="field-name">LiveStory</td>
+                            <td class="field-type">flags.0?true</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
                             <td class="field-name">Peer</td>
                             <td class="field-type"><a href="../../types/InputPeer.html">InputPeer</a></td>
                             <td>Peer to livestream into</td>
@@ -118,8 +124,14 @@
 
         <div class="example-section">
             <h2>Gogram Example</h2>
-            <pre class="example-code"><span class="comment">// PhoneGetGroupCallStreamRtmpUrl - positional arguments</span>
-result, err := <span class="package">client.</span><span class="function">PhoneGetGroupCallStreamRtmpUrl</span>(&amp;<span class="package">tg.</span><span class="type">InputPeerUser</span>{UserID: int64(<span class="number">777000</span>)}, <span class="keyword">true</span>)
+            <pre class="example-code"><span class="comment">// PhoneGetGroupCallStreamRtmpUrl - using Params <span class="keyword">struct</span></span>
+result, err := <span class="package">client.</span><span class="function">PhoneGetGroupCallStreamRtmpUrl</span>(&amp;<span class="package">tg.</span><span class="type">PhoneGetGroupCallStreamRtmpUrlParams</span>{
+    Peer: &amp;<span class="package">tg.</span><span class="type">InputPeerUser</span>{UserID: int64(<span class="number">777000</span>)},
+    Revoke: <span class="keyword">true</span>,
+
+    <span class="comment">// Optional fields:</span>
+    <span class="comment">// LiveStory: <span class="keyword">true</span>,</span>
+})
 <span class="keyword">if</span> err != <span class="keyword">nil</span> {
     <span class="comment">// handle error</span>
 }

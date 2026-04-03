@@ -89,14 +89,14 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/storyItemDeleted.html" class="item" data-name="storyitemdeleted storyitemdeleted">
-                <span class="item-name">StoryItemDeleted</span>
-                <span class="item-desc">Represents a previously active story, that was deleted</span>
-            </a>
-
             <a href="../constructors/storyItemSkipped.html" class="item" data-name="storyitemskipped storyitemskipped">
                 <span class="item-name">StoryItemSkipped</span>
                 <span class="item-desc">Represents an active story, whose full information was omitted for space and performance reasons; us</span>
+            </a>
+
+            <a href="../constructors/storyItemDeleted.html" class="item" data-name="storyitemdeleted storyitemdeleted">
+                <span class="item-name">StoryItemDeleted</span>
+                <span class="item-desc">Represents a previously active story, that was deleted</span>
             </a>
 
             <a href="../constructors/storyItem.html" class="item" data-name="storyitem storyitem">
@@ -111,8 +111,8 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// StoryItem is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">StoryItem</span> = &amp;<span class="package">tg.</span><span class="type">StoryItemDeleted</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">StoryItem</span> = &amp;<span class="package">tg.</span><span class="type">StoryItemSkipped</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">StoryItem</span> = &amp;<span class="package">tg.</span><span class="type">StoryItemDeleted</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">StoryItem</span> = &amp;<span class="package">tg.</span><span class="type">StoryItem</span>{}
 </pre>
         </div>

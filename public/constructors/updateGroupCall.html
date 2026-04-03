@@ -80,7 +80,7 @@
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
-        <div class="code-block">updateGroupCall#97d64341 flags:# chat_id:flags.0?long call:GroupCall = Update;</div>
+        <div class="code-block">updateGroupCall#9d2216e0 flags:# live_story:flags.2?true peer:flags.1?Peer call:GroupCall = Update;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -96,9 +96,15 @@
                     <tbody>
 
                         <tr>
-                            <td class="field-name">ChatId</td>
-                            <td class="field-type">flags.0?long</td>
-                            <td>The channel/supergroup where this group call or livestream takes place</td>
+                            <td class="field-name">LiveStory</td>
+                            <td class="field-type">flags.2?true</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Peer</td>
+                            <td class="field-type">flags.1?<a href="../types/Peer.html">Peer</a></td>
+                            <td></td>
                         </tr>
 
                         <tr>
@@ -124,7 +130,8 @@ obj := &amp;<span class="package">tg.</span><span class="type">UpdateGroupCall</
     Call: &amp;<span class="package">tg.</span><span class="type">GroupCall</span>{},
 
     <span class="comment">// Optional fields:</span>
-    <span class="comment">// ChatId: int64(<span class="number">1234567890</span>),</span>
+    <span class="comment">// LiveStory: <span class="keyword">true</span>,</span>
+    <span class="comment">// Peer: &amp;<span class="package">tg.</span><span class="type">Peer</span>{},</span>
 }</pre>
         </div>
 

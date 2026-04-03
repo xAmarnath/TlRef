@@ -80,7 +80,7 @@
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
-        <div class="code-block">messages.messagesSlice#762b263d flags:# inexact:flags.1?true count:int next_rate:flags.0?int offset_id_offset:flags.2?int search_flood:flags.3?SearchPostsFlood messages:Vector&lt;Message&gt; chats:Vector&lt;Chat&gt; users:Vector&lt;User&gt; = messages.Messages;</div>
+        <div class="code-block">messages.messagesSlice#5f206716 flags:# inexact:flags.1?true count:int next_rate:flags.0?int offset_id_offset:flags.2?int search_flood:flags.3?SearchPostsFlood messages:Vector&lt;Message&gt; topics:Vector&lt;ForumTopic&gt; chats:Vector&lt;Chat&gt; users:Vector&lt;User&gt; = messages.Messages;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -132,6 +132,12 @@
                         </tr>
 
                         <tr>
+                            <td class="field-name">Topics</td>
+                            <td class="field-type">Vector&lt;<a href="../../types/ForumTopic.html">ForumTopic</a>&gt;</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
                             <td class="field-name">Chats</td>
                             <td class="field-type">Vector&lt;<a href="../../types/Chat.html">Chat</a>&gt;</td>
                             <td>List of chats mentioned in messages</td>
@@ -159,6 +165,7 @@
 obj := &amp;<span class="package">tg.</span><span class="type">MessagesMessagesSlice</span>{
     Count: <span class="number">42</span>,
     Messages: []<span class="package">tg.</span><span class="type">Message</span>{&amp;<span class="package">tg.</span><span class="type">Message</span>{}},
+    Topics: []<span class="package">tg.</span><span class="type">ForumTopic</span>{&amp;<span class="package">tg.</span><span class="type">ForumTopic</span>{}},
     Chats: []<span class="package">tg.</span><span class="type">Chat</span>{&amp;<span class="package">tg.</span><span class="type">Chat</span>{}},
     Users: []<span class="package">tg.</span><span class="type">User</span>{&amp;<span class="package">tg.</span><span class="type">User</span>{}},
 

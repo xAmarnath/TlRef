@@ -80,7 +80,7 @@
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
-        <div class="code-block">keyboardButtonUserProfile#308660c1 text:string user_id:long = KeyboardButton;</div>
+        <div class="code-block">keyboardButtonUserProfile#c0fd5d09 flags:# style:flags.10?KeyboardButtonStyle text:string user_id:long = KeyboardButton;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -94,6 +94,12 @@
                         </tr>
                     </thead>
                     <tbody>
+
+                        <tr>
+                            <td class="field-name">Style</td>
+                            <td class="field-type">flags.10?<a href="../types/KeyboardButtonStyle.html">KeyboardButtonStyle</a></td>
+                            <td></td>
+                        </tr>
 
                         <tr>
                             <td class="field-name">Text</td>
@@ -123,6 +129,9 @@
 obj := &amp;<span class="package">tg.</span><span class="type">KeyboardButtonUserProfile</span>{
     Text: <span class="string">&quot;Hello, World!&quot;</span>,
     UserId: int64(<span class="number">1234567890</span>),
+
+    <span class="comment">// Optional fields:</span>
+    <span class="comment">// Style: &amp;<span class="package">tg.</span><span class="type">KeyboardButtonStyle</span>{},</span>
 }</pre>
         </div>
 

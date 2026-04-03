@@ -81,7 +81,7 @@
             <span class="badge badge-method">method</span>
             <span class="badge badge-user">Users</span>
         </div>
-        <div class="code-block">account.getUniqueGiftChatThemes#fe74ef9f offset:int limit:int hash:long = account.ChatThemes;</div>
+        <div class="code-block">account.getUniqueGiftChatThemes#e42ce9c9 offset:string limit:int hash:long = account.ChatThemes;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -98,14 +98,14 @@
 
                         <tr>
                             <td class="field-name">Offset</td>
-                            <td class="field-type">int</td>
-                            <td>Offset for pagination.</td>
+                            <td class="field-type">string</td>
+                            <td>Offset for pagination, intially an empty string, then equal the value of the last returned account. chat Themes. next_offset (if set).</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Limit</td>
                             <td class="field-type">int</td>
-                            <td>Maximum number of results to return, see pagination</td>
+                            <td>Maximum number of results to return, see pagination. Note that the server may return less than limit results, even if the actual number of remaining results is &gt;= limit, paginate to fetch them all.</td>
                         </tr>
 
                         <tr>
@@ -127,7 +127,7 @@
         <div class="example-section">
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// AccountGetUniqueGiftChatThemes - positional arguments</span>
-result, err := <span class="package">client.</span><span class="function">AccountGetUniqueGiftChatThemes</span>(<span class="number">42</span>, <span class="number">42</span>, int64(<span class="number">1234567890</span>))
+result, err := <span class="package">client.</span><span class="function">AccountGetUniqueGiftChatThemes</span>(<span class="string">&quot;Hello, World!&quot;</span>, <span class="number">42</span>, int64(<span class="number">1234567890</span>))
 <span class="keyword">if</span> err != <span class="keyword">nil</span> {
     <span class="comment">// handle error</span>
 }

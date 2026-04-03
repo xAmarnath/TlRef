@@ -80,7 +80,7 @@
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
-        <div class="code-block">keyboardButtonSwitchInline#93b9fbb5 flags:# same_peer:flags.0?true text:string query:string peer_types:flags.1?Vector&lt;InlineQueryPeerType&gt; = KeyboardButton;</div>
+        <div class="code-block">keyboardButtonSwitchInline#991399fc flags:# same_peer:flags.0?true style:flags.10?KeyboardButtonStyle text:string query:string peer_types:flags.1?Vector&lt;InlineQueryPeerType&gt; = KeyboardButton;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -99,6 +99,12 @@
                             <td class="field-name">SamePeer</td>
                             <td class="field-type">flags.0?true</td>
                             <td>If set, pressing the button will insert the bot&#x27;s username and the specified inline query in the current chat&#x27;s input field.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Style</td>
+                            <td class="field-type">flags.10?<a href="../types/KeyboardButtonStyle.html">KeyboardButtonStyle</a></td>
+                            <td></td>
                         </tr>
 
                         <tr>
@@ -138,6 +144,7 @@ obj := &amp;<span class="package">tg.</span><span class="type">KeyboardButtonSwi
 
     <span class="comment">// Optional fields:</span>
     <span class="comment">// SamePeer: <span class="keyword">true</span>,</span>
+    <span class="comment">// Style: &amp;<span class="package">tg.</span><span class="type">KeyboardButtonStyle</span>{},</span>
     <span class="comment">// PeerTypes: []<span class="package">tg.</span><span class="type">InlineQueryPeerType</span>{&amp;<span class="package">tg.</span><span class="type">InlineQueryPeerType</span>{}},</span>
 }</pre>
         </div>

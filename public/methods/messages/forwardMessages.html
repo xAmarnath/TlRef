@@ -82,7 +82,7 @@
             <span class="badge badge-user">Users</span>
             <span class="badge badge-bot">Bots</span>
         </div>
-        <div class="code-block">messages.forwardMessages#978928ca flags:# silent:flags.5?true background:flags.6?true with_my_score:flags.8?true drop_author:flags.11?true drop_media_captions:flags.12?true noforwards:flags.14?true allow_paid_floodskip:flags.19?true from_peer:InputPeer id:Vector&lt;int&gt; random_id:Vector&lt;long&gt; to_peer:InputPeer top_msg_id:flags.9?int reply_to:flags.22?InputReplyTo schedule_date:flags.10?int send_as:flags.13?InputPeer quick_reply_shortcut:flags.17?InputQuickReplyShortcut video_timestamp:flags.20?int allow_paid_stars:flags.21?long suggested_post:flags.23?SuggestedPost = Updates;</div>
+        <div class="code-block">messages.forwardMessages#13704a7c flags:# silent:flags.5?true background:flags.6?true with_my_score:flags.8?true drop_author:flags.11?true drop_media_captions:flags.12?true noforwards:flags.14?true allow_paid_floodskip:flags.19?true from_peer:InputPeer id:Vector&lt;int&gt; random_id:Vector&lt;long&gt; to_peer:InputPeer top_msg_id:flags.9?int reply_to:flags.22?InputReplyTo schedule_date:flags.10?int schedule_repeat_period:flags.24?int send_as:flags.13?InputPeer quick_reply_shortcut:flags.17?InputQuickReplyShortcut effect:flags.18?long video_timestamp:flags.20?int allow_paid_stars:flags.21?long suggested_post:flags.23?SuggestedPost = Updates;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -182,6 +182,12 @@
                         </tr>
 
                         <tr>
+                            <td class="field-name">ScheduleRepeatPeriod</td>
+                            <td class="field-type">flags.24?int</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
                             <td class="field-name">SendAs</td>
                             <td class="field-type">flags.13?<a href="../../types/InputPeer.html">InputPeer</a></td>
                             <td>Forward the messages as the specified peer</td>
@@ -191,6 +197,12 @@
                             <td class="field-name">QuickReplyShortcut</td>
                             <td class="field-type">flags.17?<a href="../../types/InputQuickReplyShortcut.html">InputQuickReplyShortcut</a></td>
                             <td>Add the messages to the specified quick reply shortcut, instead.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Effect</td>
+                            <td class="field-type">flags.18?long</td>
+                            <td></td>
                         </tr>
 
                         <tr>
@@ -437,6 +449,12 @@ result, err := <span class="package">client.</span><span class="function">Messag
                         </tr>
 
                         <tr>
+                            <td class="error-code">500</td>
+                            <td class="error-type">NEED_DOC_INVALID</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
                             <td class="error-code">406</td>
                             <td class="error-type">PAYMENT_UNSUPPORTED</td>
                             <td>A detailed description of the error will be received separately as described here.</td>
@@ -455,7 +473,7 @@ result, err := <span class="package">client.</span><span class="function">Messag
                         </tr>
 
                         <tr>
-                            <td class="error-code">403</td>
+                            <td class="error-code">406</td>
                             <td class="error-type">PRIVACY_PREMIUM_REQUIRED</td>
                             <td>You need a Telegram Premium subscription to send a message to this user.</td>
                         </tr>

@@ -89,8 +89,8 @@
             </p>
             <div class="item-list">
 
-            <a href="../constructors/mediaAreaVenue.html" class="item" data-name="mediaareavenue mediaareavenue">
-                <span class="item-name">MediaAreaVenue</span>
+            <a href="../constructors/inputMediaAreaVenue.html" class="item" data-name="inputmediaareavenue inputmediaareavenue">
+                <span class="item-name">InputMediaAreaVenue</span>
                 <span class="item-desc">Represents a location tag attached to a story, with additional venue information.</span>
             </a>
 
@@ -99,24 +99,19 @@
                 <span class="item-desc">Represents a geolocation tag attached to a story.</span>
             </a>
 
-            <a href="../constructors/mediaAreaSuggestedReaction.html" class="item" data-name="mediaareasuggestedreaction mediaareasuggestedreaction">
-                <span class="item-name">MediaAreaSuggestedReaction</span>
-                <span class="item-desc">Represents a reaction bubble.</span>
-            </a>
-
-            <a href="../constructors/inputMediaAreaVenue.html" class="item" data-name="inputmediaareavenue inputmediaareavenue">
-                <span class="item-name">InputMediaAreaVenue</span>
+            <a href="../constructors/mediaAreaVenue.html" class="item" data-name="mediaareavenue mediaareavenue">
+                <span class="item-name">MediaAreaVenue</span>
                 <span class="item-desc">Represents a location tag attached to a story, with additional venue information.</span>
             </a>
 
-            <a href="../constructors/mediaAreaStarGift.html" class="item" data-name="mediaareastargift mediaareastargift">
-                <span class="item-name">MediaAreaStarGift</span>
-                <span class="item-desc">Represents a collectible gift.</span>
+            <a href="../constructors/mediaAreaChannelPost.html" class="item" data-name="mediaareachannelpost mediaareachannelpost">
+                <span class="item-name">MediaAreaChannelPost</span>
+                <span class="item-desc">Represents a channel post.</span>
             </a>
 
-            <a href="../constructors/mediaAreaWeather.html" class="item" data-name="mediaareaweather mediaareaweather">
-                <span class="item-name">MediaAreaWeather</span>
-                <span class="item-desc">Represents a weather widget.</span>
+            <a href="../constructors/mediaAreaSuggestedReaction.html" class="item" data-name="mediaareasuggestedreaction mediaareasuggestedreaction">
+                <span class="item-name">MediaAreaSuggestedReaction</span>
+                <span class="item-desc">Represents a reaction bubble.</span>
             </a>
 
             <a href="../constructors/mediaAreaUrl.html" class="item" data-name="mediaareaurl mediaareaurl">
@@ -129,9 +124,14 @@
                 <span class="item-desc">Represents a channel post</span>
             </a>
 
-            <a href="../constructors/mediaAreaChannelPost.html" class="item" data-name="mediaareachannelpost mediaareachannelpost">
-                <span class="item-name">MediaAreaChannelPost</span>
-                <span class="item-desc">Represents a channel post.</span>
+            <a href="../constructors/mediaAreaWeather.html" class="item" data-name="mediaareaweather mediaareaweather">
+                <span class="item-name">MediaAreaWeather</span>
+                <span class="item-desc">Represents a weather widget.</span>
+            </a>
+
+            <a href="../constructors/mediaAreaStarGift.html" class="item" data-name="mediaareastargift mediaareastargift">
+                <span class="item-name">MediaAreaStarGift</span>
+                <span class="item-desc">Represents a collectible gift.</span>
             </a>
 
             </div>
@@ -141,11 +141,11 @@
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// MediaArea is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
 <span class="comment">// You can use any of the following constructors:</span>
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MediaArea</span> = &amp;<span class="package">tg.</span><span class="type">MediaAreaVenue</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MediaArea</span> = &amp;<span class="package">tg.</span><span class="type">MediaAreaGeoPoint</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MediaArea</span> = &amp;<span class="package">tg.</span><span class="type">MediaAreaSuggestedReaction</span>{}
 <span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MediaArea</span> = &amp;<span class="package">tg.</span><span class="type">InputMediaAreaVenue</span>{}
-<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MediaArea</span> = &amp;<span class="package">tg.</span><span class="type">MediaAreaStarGift</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MediaArea</span> = &amp;<span class="package">tg.</span><span class="type">MediaAreaGeoPoint</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MediaArea</span> = &amp;<span class="package">tg.</span><span class="type">MediaAreaVenue</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MediaArea</span> = &amp;<span class="package">tg.</span><span class="type">MediaAreaChannelPost</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MediaArea</span> = &amp;<span class="package">tg.</span><span class="type">MediaAreaSuggestedReaction</span>{}
 <span class="comment">// ... and <span class="number">4</span> more constructors</span>
 </pre>
         </div>

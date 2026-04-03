@@ -81,7 +81,7 @@
             <span class="badge badge-method">method</span>
             <span class="badge badge-user">Users</span>
         </div>
-        <div class="code-block">messages.acceptUrlAuth#b12c7125 flags:# write_allowed:flags.0?true peer:flags.1?InputPeer msg_id:flags.1?int button_id:flags.1?int url:flags.2?string = UrlAuthResult;</div>
+        <div class="code-block">messages.acceptUrlAuth#67a3f0de flags:# write_allowed:flags.0?true share_phone_number:flags.3?true peer:flags.1?InputPeer msg_id:flags.1?int button_id:flags.1?int url:flags.2?string match_code:flags.4?string = UrlAuthResult;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -100,6 +100,12 @@
                             <td class="field-name">WriteAllowed</td>
                             <td class="field-type">flags.0?true</td>
                             <td>Set this flag to allow the bot to send messages to you (if requested)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">SharePhoneNumber</td>
+                            <td class="field-type">flags.3?true</td>
+                            <td></td>
                         </tr>
 
                         <tr>
@@ -126,6 +132,12 @@
                             <td>URL used for link URL authorization, click here for more info</td>
                         </tr>
 
+                        <tr>
+                            <td class="field-name">MatchCode</td>
+                            <td class="field-type">flags.4?string</td>
+                            <td></td>
+                        </tr>
+
                     </tbody>
                 </table>
             </div>
@@ -143,9 +155,9 @@ result, err := <span class="package">client.</span><span class="function">Messag
 
     <span class="comment">// Optional fields:</span>
     <span class="comment">// WriteAllowed: <span class="keyword">true</span>,</span>
+    <span class="comment">// SharePhoneNumber: <span class="keyword">true</span>,</span>
     <span class="comment">// Peer: &amp;<span class="package">tg.</span><span class="type">InputPeerUser</span>{UserID: int64(<span class="number">777000</span>)},</span>
     <span class="comment">// MsgId: <span class="number">42</span>,</span>
-    <span class="comment">// ButtonId: <span class="number">42</span>,</span>
     <span class="comment">// ...</span>
 })
 <span class="keyword">if</span> err != <span class="keyword">nil</span> {

@@ -80,7 +80,7 @@
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
-        <div class="code-block">forumTopic#71701da9 flags:# my:flags.1?true closed:flags.2?true pinned:flags.3?true short:flags.5?true hidden:flags.6?true id:int date:int title:string icon_color:int icon_emoji_id:flags.0?long top_message:int read_inbox_max_id:int read_outbox_max_id:int unread_count:int unread_mentions_count:int unread_reactions_count:int from_id:Peer notify_settings:PeerNotifySettings draft:flags.4?DraftMessage = ForumTopic;</div>
+        <div class="code-block">forumTopic#cdff0eca flags:# my:flags.1?true closed:flags.2?true pinned:flags.3?true short:flags.5?true hidden:flags.6?true title_missing:flags.7?true id:int date:int peer:Peer title:string icon_color:int icon_emoji_id:flags.0?long top_message:int read_inbox_max_id:int read_outbox_max_id:int unread_count:int unread_mentions_count:int unread_reactions_count:int from_id:Peer notify_settings:PeerNotifySettings draft:flags.4?DraftMessage = ForumTopic;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -116,13 +116,19 @@
                         <tr>
                             <td class="field-name">Short</td>
                             <td class="field-type">flags.5?true</td>
-                            <td>Whether this constructor is a reduced version of the full topic information. If set, only the my, closed, id, date, title, icon_color, icon_emoji_id and from_id parameters will contain valid information. Reduced info is usually only returned in topic-related admin log events and in the messages. channel Messages constructor: if needed, full information can be fetched using channels. get Forum Topics By ID.</td>
+                            <td>Whether this constructor is a reduced version of the full topic information. If set, only the my, closed, id, date, title, icon_color, icon_emoji_id and from_id parameters will contain valid information. Reduced info is usually only returned in topic-related admin log events and in the messages. channel Messages constructor: if needed, full information can be fetched using messages. get Forum Topics By ID.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Hidden</td>
                             <td class="field-type">flags.6?true</td>
                             <td>Whether the topic is hidden (only valid for the &quot;General&quot; topic, id=1 )</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">TitleMissing</td>
+                            <td class="field-type">flags.7?true</td>
+                            <td></td>
                         </tr>
 
                         <tr>
@@ -135,6 +141,12 @@
                             <td class="field-name">Date</td>
                             <td class="field-type">int</td>
                             <td>Topic creation date</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Peer</td>
+                            <td class="field-type"><a href="../types/Peer.html">Peer</a></td>
+                            <td></td>
                         </tr>
 
                         <tr>
@@ -225,10 +237,10 @@
 obj := &amp;<span class="package">tg.</span><span class="type">ForumTopicObj</span>{
     Id: <span class="number">42</span>,
     Date: <span class="number">42</span>,
+    Peer: &amp;<span class="package">tg.</span><span class="type">Peer</span>{},
     Title: <span class="string">&quot;Hello, World!&quot;</span>,
     IconColor: <span class="number">42</span>,
     TopMessage: <span class="number">42</span>,
-    ReadInboxMaxId: <span class="number">42</span>,
     <span class="comment">// ... more required fields</span>
 
     <span class="comment">// Optional fields:</span>

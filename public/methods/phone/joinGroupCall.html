@@ -190,8 +190,26 @@ result, err := <span class="package">client.</span><span class="function">PhoneJ
 
                         <tr>
                             <td class="error-code">400</td>
+                            <td class="error-type">CHAT_ADMIN_REQUIRED</td>
+                            <td>You must be an admin in this chat to do this.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">CHAT_WRITE_FORBIDDEN</td>
+                            <td>You can&#x27;t write in this chat.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
                             <td class="error-type">DATA_JSON_INVALID</td>
                             <td>The provided JSON data is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">500</td>
+                            <td class="error-type">GROUPCALL_ADD_PARTICIPANTS_FAILED</td>
+                            <td></td>
                         </tr>
 
                         <tr>

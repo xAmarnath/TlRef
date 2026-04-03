@@ -311,6 +311,12 @@ result, err := <span class="package">client.</span><span class="function">Messag
 
                         <tr>
                             <td class="error-code">400</td>
+                            <td class="error-type">FILE_REFERENCE_%d_EMPTY</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
                             <td class="error-type">FILE_REFERENCE_%d_EXPIRED</td>
                             <td>The file reference of the media file at index &lt;number&gt; in the passed media array expired, it must be refreshed as specified in the documentation..</td>
                         </tr>
@@ -352,7 +358,7 @@ result, err := <span class="package">client.</span><span class="function">Messag
                         </tr>
 
                         <tr>
-                            <td class="error-code">400</td>
+                            <td class="error-code">406</td>
                             <td class="error-type">PEER_ID_INVALID</td>
                             <td>The provided peer id is invalid.</td>
                         </tr>

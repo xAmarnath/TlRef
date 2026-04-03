@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>messages.getForumTopicsByID - Gogram TL Reference</title>
-    <meta name="description" content="Get specific forum topics by ID">
+    <meta name="description" content="Get forum topics by their ID">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="messages.getForumTopicsByID - Gogram TL Reference">
-    <meta property="og:description" content="Get specific forum topics by ID">
+    <meta property="og:description" content="Get forum topics by their ID">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -74,11 +74,13 @@
         
         <header class="page-header">
             <h1>MessagesGetForumTopicsById</h1>
-            <p class="description">Get specific forum topics by ID</p>
+            <p class="description">Get forum topics by their ID</p>
         </header>
         
         <div class="badges">
             <span class="badge badge-method">method</span>
+            <span class="badge badge-user">Users</span>
+            <span class="badge badge-bot">Bots</span>
         </div>
         <div class="code-block">messages.getForumTopicsByID#af0a4a08 peer:InputPeer topics:Vector&lt;int&gt; = messages.ForumTopics;</div>
 
@@ -98,13 +100,13 @@
                         <tr>
                             <td class="field-name">Peer</td>
                             <td class="field-type"><a href="../../types/InputPeer.html">InputPeer</a></td>
-                            <td>Supergroup with topics</td>
+                            <td>The supergroup forum, private chat (for forum-enabled bots) or bot forum (for users) where the topic is located.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Topics</td>
                             <td class="field-type">Vector&lt;int&gt;</td>
-                            <td>Topic IDs to fetch</td>
+                            <td>Topic IDs</td>
                         </tr>
 
                     </tbody>
@@ -125,6 +127,30 @@ result, err := <span class="package">client.</span><span class="function">Messag
     <span class="comment">// handle error</span>
 }
 <span class="comment">// result is *<span class="package">tg.</span><span class="type">MessagesForumTopics</span></span></pre>
+        </div>
+
+        <div class="section">
+            <h2>Possible Errors</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">CHANNEL_INVALID</td>
+                            <td>The provided channel is invalid.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         </article>

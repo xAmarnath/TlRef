@@ -80,7 +80,7 @@
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
-        <div class="code-block">payments.starGiftUpgradePreview#167bd90b sample_attributes:Vector&lt;StarGiftAttribute&gt; = payments.StarGiftUpgradePreview;</div>
+        <div class="code-block">payments.starGiftUpgradePreview#3de1dfed sample_attributes:Vector&lt;StarGiftAttribute&gt; prices:Vector&lt;StarGiftUpgradePrice&gt; next_prices:Vector&lt;StarGiftUpgradePrice&gt; = payments.StarGiftUpgradePreview;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -101,6 +101,18 @@
                             <td>Possible gift attributes</td>
                         </tr>
 
+                        <tr>
+                            <td class="field-name">Prices</td>
+                            <td class="field-type">Vector&lt;<a href="../../types/StarGiftUpgradePrice.html">StarGiftUpgradePrice</a>&gt;</td>
+                            <td>Contains a similar list of upgrade prices and timestamps, not as granular as in next_prices (i. e. prices are approximately 1 month apart), to be used mainly to scale the price graph, and to show a more general future overview of the upgrade price.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">NextPrices</td>
+                            <td class="field-type">Vector&lt;<a href="../../types/StarGiftUpgradePrice.html">StarGiftUpgradePrice</a>&gt;</td>
+                            <td>Contains the current upgrade price and a list of future prices, each associated to a UNIX timestamp that indicates when the price comes in effect (the current price is valid only until the next one comes into effect, and so on for all prices in the list).</td>
+                        </tr>
+
                     </tbody>
                 </table>
             </div>
@@ -116,6 +128,8 @@
             <pre class="example-code"><span class="comment">// Creating PaymentsStarGiftUpgradePreviewObj constructor</span>
 obj := &amp;<span class="package">tg.</span><span class="type">PaymentsStarGiftUpgradePreviewObj</span>{
     SampleAttributes: []<span class="package">tg.</span><span class="type">StarGiftAttribute</span>{&amp;<span class="package">tg.</span><span class="type">StarGiftAttribute</span>{}},
+    Prices: []<span class="package">tg.</span><span class="type">StarGiftUpgradePrice</span>{&amp;<span class="package">tg.</span><span class="type">StarGiftUpgradePrice</span>{}},
+    NextPrices: []<span class="package">tg.</span><span class="type">StarGiftUpgradePrice</span>{&amp;<span class="package">tg.</span><span class="type">StarGiftUpgradePrice</span>{}},
 }</pre>
         </div>
 

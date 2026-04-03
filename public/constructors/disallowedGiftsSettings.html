@@ -80,7 +80,7 @@
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
-        <div class="code-block">disallowedGiftsSettings#71f276c4 flags:# disallow_unlimited_stargifts:flags.0?true disallow_limited_stargifts:flags.1?true disallow_unique_stargifts:flags.2?true disallow_premium_gifts:flags.3?true = DisallowedGiftsSettings;</div>
+        <div class="code-block">disallowedGiftsSettings#71f276c4 flags:# disallow_unlimited_stargifts:flags.0?true disallow_limited_stargifts:flags.1?true disallow_unique_stargifts:flags.2?true disallow_premium_gifts:flags.3?true disallow_stargifts_from_channels:flags.4?true = DisallowedGiftsSettings;</div>
 
         <div class="section">
             <h2>Parameters</h2>
@@ -119,6 +119,12 @@
                             <td>Disallow the reception of gifted Telegram Premium subscriptions.</td>
                         </tr>
 
+                        <tr>
+                            <td class="field-name">DisallowStargiftsFromChannels</td>
+                            <td class="field-type">flags.4?true</td>
+                            <td></td>
+                        </tr>
+
                     </tbody>
                 </table>
             </div>
@@ -139,6 +145,7 @@ obj := &amp;<span class="package">tg.</span><span class="type">DisallowedGiftsSe
     <span class="comment">// DisallowLimitedStargifts: <span class="keyword">true</span>,</span>
     <span class="comment">// DisallowUniqueStargifts: <span class="keyword">true</span>,</span>
     <span class="comment">// DisallowPremiumGifts: <span class="keyword">true</span>,</span>
+    <span class="comment">// ... more optional fields</span>
 }</pre>
         </div>
 

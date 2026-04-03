@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>updatePinnedForumTopic - Gogram TL Reference</title>
-    <meta name="description" content="Forum topic pinned status changed">
+    <meta name="description" content="A forum topic was pinned or unpinned.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="updatePinnedForumTopic - Gogram TL Reference">
-    <meta property="og:description" content="Forum topic pinned status changed">
+    <meta property="og:description" content="A forum topic was pinned or unpinned.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -74,7 +74,7 @@
         
         <header class="page-header">
             <h1>UpdatePinnedForumTopic</h1>
-            <p class="description">Forum topic pinned status changed</p>
+            <p class="description">A forum topic was pinned or unpinned.</p>
         </header>
         
         <div class="badges">
@@ -98,19 +98,19 @@
                         <tr>
                             <td class="field-name">Pinned</td>
                             <td class="field-type">flags.0?true</td>
-                            <td>Whether topic is pinned</td>
+                            <td>Whether the topic was pinned or unpinned</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Peer</td>
                             <td class="field-type"><a href="../types/Peer.html">Peer</a></td>
-                            <td>Forum peer</td>
+                            <td>The supergroup forum, private chat (for forum-enabled bots) or bot forum (for users) where the topic is located.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">TopicId</td>
                             <td class="field-type">int</td>
-                            <td>Topic ID</td>
+                            <td>The topic ID</td>
                         </tr>
 
                     </tbody>
