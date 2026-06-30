@@ -215,33 +215,54 @@ def text_with_spaces(element) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
+JUNK_SELECTORS = (
+    "dev_layer_select",
+    "clearfix",
+    "dropdown",
+    "nav",
+    "breadcrumb",
+    "alert",
+)
+
+BANNERS = ("warning:", "note:", "this method is", "this page is")
+
+
+def is_junk_paragraph(p) -> bool:
+    if p is None:
+        return True
+    classes = []
+    for el in p.find_all(True):
+        cls = el.get("class")
+        if cls:
+            classes.extend(cls)
+    classes_set = {c.lower() for c in classes}
+    if any(j in classes_set for j in JUNK_SELECTORS):
+        return True
+    if p.find("ul") or p.find("ol") or p.find("nav") or p.find("table"):
+        return True
+    if p.find(class_=lambda c: c and any(j in c.lower() for j in JUNK_SELECTORS)):
+        return True
+    return False
+
+
 def extract_description(dev_content) -> str:
-    """
-    The first <p> is sometimes a deprecation / scheduling note. Collect every
-    <p> before the first <h3>, joined with single spaces, and use the first
-    non-trivial paragraph (>= 20 chars) as the headline description plus any
-    follow-up sentences.
-    """
     if dev_content is None:
         return ""
-    parts: list[str] = []
     for child in dev_content.children:
         name = getattr(child, "name", None)
         if name == "h3":
             break
-        if name == "p":
-            t = text_with_spaces(child)
-            if t:
-                parts.append(t)
-    if not parts:
-        return ""
-    # Prefer the first paragraph that isn't an obvious banner.
-    BANNERS = ("warning:", "note:", "this method is", "this page is")
-    primary = next(
-        (p for p in parts if len(p) >= 20 and not p.lower().startswith(BANNERS)),
-        parts[0],
-    )
-    return primary
+        if name != "p":
+            continue
+        if is_junk_paragraph(child):
+            continue
+        t = text_with_spaces(child)
+        if not t or len(t) < 3:
+            continue
+        if t.lower().startswith(BANNERS):
+            continue
+        return t
+    return ""
 
 
 def extract_raw_tl(soup: BeautifulSoup, name: str) -> str:
