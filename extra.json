@@ -12,21 +12,27 @@
         }
       ],
       "returns": "Bool",
-      "can_be_used_by": ["users"]
+      "can_be_used_by": [
+        "users"
+      ]
     },
     {
       "name": "account.getPasskeys",
       "description": "Get all registered passkeys for the account",
       "params": [],
       "returns": "account.Passkeys",
-      "can_be_used_by": ["users"]
+      "can_be_used_by": [
+        "users"
+      ]
     },
     {
       "name": "account.initPasskeyRegistration",
       "description": "Initialize WebAuthn passkey registration process",
       "params": [],
       "returns": "account.PasskeyRegistrationOptions",
-      "can_be_used_by": ["users"]
+      "can_be_used_by": [
+        "users"
+      ]
     },
     {
       "name": "account.registerPasskey",
@@ -39,7 +45,9 @@
         }
       ],
       "returns": "Passkey",
-      "can_be_used_by": ["users"]
+      "can_be_used_by": [
+        "users"
+      ]
     },
     {
       "name": "auth.checkPaidAuth",
@@ -118,7 +126,9 @@
         }
       ],
       "returns": "User",
-      "can_be_used_by": ["users"]
+      "can_be_used_by": [
+        "users"
+      ]
     },
     {
       "name": "contacts.updateContactNote",
@@ -751,6 +761,34 @@
       ],
       "returns": "Updates",
       "can_be_used_by": []
+    },
+    {
+      "name": "account.confirmBotConnection",
+      "description": "Confirm a pending bot connection for the current account."
+    },
+    {
+      "name": "account.deleteWebBrowserSettingsExceptions",
+      "description": "Clear all per-domain web browser settings exceptions for the account."
+    },
+    {
+      "name": "account.getWebBrowserSettings",
+      "description": "Fetch the current account's web browser settings (with hash-based caching)."
+    },
+    {
+      "name": "account.toggleWebBrowserSettingsException",
+      "description": "Add, update, or remove a per-domain web browser settings exception."
+    },
+    {
+      "name": "account.updateWebBrowserSettings",
+      "description": "Update the account's global web browser settings."
+    },
+    {
+      "name": "bots.setJoinChatResults",
+      "description": "Bot reports its decision (approve/decline/queue/web-view) for a chat-join query."
+    },
+    {
+      "name": "messages.getRichMessage",
+      "description": "Fetch a single rich message in a peer by id."
     }
   ],
   "constructors": [
@@ -2204,6 +2242,190 @@
         }
       ],
       "can_be_used_by": []
+    },
+    {
+      "name": "account.webBrowserSettings",
+      "description": "Per-user settings controlling the in-app web browser, including allowed-external-domain exceptions."
+    },
+    {
+      "name": "account.webBrowserSettingsNotModified",
+      "description": "Returned when the web browser settings have not changed since the last fetch."
+    },
+    {
+      "name": "botInlineMessageRichMessage",
+      "description": "Inline-bot result delivered as a rich-formatted message with optional inline keyboard."
+    },
+    {
+      "name": "inputBotInlineMessageRichMessage",
+      "description": "Input variant of a rich-message inline-bot result, used when registering inline-query answers."
+    },
+    {
+      "name": "inputPageBlockMap",
+      "description": "Input for a map page block: a geo point, zoom level, dimensions, and a caption."
+    },
+    {
+      "name": "inputRichFileDocument",
+      "description": "Input rich-message attachment referencing an existing document by id."
+    },
+    {
+      "name": "inputRichFilePhoto",
+      "description": "Input rich-message attachment referencing an existing photo by id."
+    },
+    {
+      "name": "inputRichMessage",
+      "description": "Input rich message built from structured page blocks and uploaded media."
+    },
+    {
+      "name": "inputRichMessageHTML",
+      "description": "Input rich message authored as raw HTML, with optional inline file attachments."
+    },
+    {
+      "name": "inputRichMessageMarkdown",
+      "description": "Input rich message authored as Markdown, with optional inline file attachments."
+    },
+    {
+      "name": "inputSendMessageRichMessageDraftAction",
+      "description": "Typing indicator emitted while the user is drafting a rich message."
+    },
+    {
+      "name": "joinChatBotResultApproved",
+      "description": "Returned by the gatekeeper bot when a chat-join request is approved."
+    },
+    {
+      "name": "joinChatBotResultDeclined",
+      "description": "Returned by the gatekeeper bot when a chat-join request is declined."
+    },
+    {
+      "name": "joinChatBotResultQueued",
+      "description": "Returned by the gatekeeper bot when a chat-join request is queued for review."
+    },
+    {
+      "name": "joinChatBotResultWebView",
+      "description": "Gatekeeper bot result that asks the user to complete a Web App to finish joining."
+    },
+    {
+      "name": "messages.chatInviteJoinResultOk",
+      "description": "Successful chat-invite join result, bundled with the resulting updates."
+    },
+    {
+      "name": "messages.chatInviteJoinResultWebView",
+      "description": "Chat-invite join that requires the user to complete a bot Web App before joining."
+    },
+    {
+      "name": "pageBlockBlockquoteBlocks",
+      "description": "Block-quote page block whose contents are themselves a list of page blocks."
+    },
+    {
+      "name": "pageBlockHeading1",
+      "description": "Top-level (H1) heading in an Instant View page."
+    },
+    {
+      "name": "pageBlockHeading2",
+      "description": "H2 heading in an Instant View page."
+    },
+    {
+      "name": "pageBlockHeading3",
+      "description": "H3 heading in an Instant View page."
+    },
+    {
+      "name": "pageBlockHeading4",
+      "description": "H4 heading in an Instant View page."
+    },
+    {
+      "name": "pageBlockHeading5",
+      "description": "H5 heading in an Instant View page."
+    },
+    {
+      "name": "pageBlockHeading6",
+      "description": "H6 heading (deepest) in an Instant View page."
+    },
+    {
+      "name": "pageBlockMath",
+      "description": "Block-level math expression rendered from a LaTeX source string."
+    },
+    {
+      "name": "pageBlockThinking",
+      "description": "Collapsible chain-of-thought block used to show an AI assistant's reasoning."
+    },
+    {
+      "name": "richMessage",
+      "description": "Rich message composed of structured page blocks, photos, and documents."
+    },
+    {
+      "name": "sendMessageRichMessageDraftAction",
+      "description": "Server-side typing indicator broadcast while a peer is drafting a rich message."
+    },
+    {
+      "name": "textAutoEmail",
+      "description": "Rich-text fragment that is an auto-detected email address."
+    },
+    {
+      "name": "textAutoPhone",
+      "description": "Rich-text fragment that is an auto-detected phone number."
+    },
+    {
+      "name": "textAutoUrl",
+      "description": "Rich-text fragment that is an auto-detected URL."
+    },
+    {
+      "name": "textBankCard",
+      "description": "Rich-text fragment that is an auto-detected bank-card number."
+    },
+    {
+      "name": "textBotCommand",
+      "description": "Rich-text fragment that is a bot command (e.g. /start)."
+    },
+    {
+      "name": "textCashtag",
+      "description": "Rich-text fragment that is a cashtag (e.g. $AAPL)."
+    },
+    {
+      "name": "textCustomEmoji",
+      "description": "Inline custom emoji rendered from a document id, with a plain-text fallback."
+    },
+    {
+      "name": "textDate",
+      "description": "Date or time fragment rendered with the requested relative/short/long formatting."
+    },
+    {
+      "name": "textHashtag",
+      "description": "Rich-text fragment that is a hashtag (e.g. #news)."
+    },
+    {
+      "name": "textMath",
+      "description": "Inline math expression rendered from a LaTeX source string."
+    },
+    {
+      "name": "textMention",
+      "description": "Username mention fragment (e.g. @username)."
+    },
+    {
+      "name": "textMentionName",
+      "description": "Mention of a specific user by id, used when the user has no public username."
+    },
+    {
+      "name": "textSpoiler",
+      "description": "Spoiler fragment whose contents are hidden until the reader taps to reveal them."
+    },
+    {
+      "name": "updateJoinChatWebViewDecision",
+      "description": "Notifies the client of the gatekeeper bot's decision on a Web App-mediated chat join."
+    },
+    {
+      "name": "updateNewBotConnection",
+      "description": "Fired when a new bot connection is established, optionally with device and location metadata."
+    },
+    {
+      "name": "updateWebBrowserException",
+      "description": "A web-browser-settings exception was added, modified, or removed."
+    },
+    {
+      "name": "updateWebBrowserSettings",
+      "description": "Account-level web browser settings changed."
+    },
+    {
+      "name": "webDomainException",
+      "description": "A user-defined exception for a specific web domain (e.g. always open externally)."
     }
   ]
 }
