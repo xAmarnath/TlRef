@@ -594,6 +594,7 @@ def generate_header(title: str, root_path: str, search_data: list = None, descri
                     <a href="{root_path}/types.html">Types</a>
                     <a href="{root_path}/constructors.html">Constructors</a>
                     <a href="{root_path}/methods.html">Methods</a>
+                    <a href="{root_path}/errors.html">Errors</a>
                     <a href="{root_path}/e2e.html">E2E</a>
                 </nav>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
@@ -691,6 +692,10 @@ def generate_index_page(data: dict) -> str:
                     <span style="color: var(--method); font-weight: 600; font-size: 12px;">{len(methods)}</span>
                     <span style="color: var(--text-secondary); font-size: 12px;">Methods</span>
                 </div>
+                <a href="errors.html" style="display: inline-flex; align-items: center; gap: 6px; background: var(--bg-secondary); padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border); text-decoration: none; color: inherit;">
+                    <span style="color: var(--accent); font-weight: 600; font-size: 12px;">Errors</span>
+                    <span style="color: var(--text-secondary); font-size: 12px;">Reference →</span>
+                </a>
                 <a href="e2e.html" style="display: inline-flex; align-items: center; gap: 6px; background: var(--bg-secondary); padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border); text-decoration: none; color: inherit;">
                     <span style="color: var(--accent); font-weight: 600; font-size: 12px;">E2E</span>
                     <span style="color: var(--text-secondary); font-size: 12px;">Schema →</span>
@@ -1113,20 +1118,107 @@ def load_e2e_schema(path: str = 'e2e_schema.json') -> dict | None:
         return None
 
 
-def generate_e2e_page(e2e_data: dict, search_data: list) -> str:
-    """Generate the single-page E2E schema browser at public/e2e.html.
+def load_e2e_schema(path: str = 'e2e_schema.json') -> dict | None:
+    try:
+        with open(path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return None
 
-    The E2E schema is small (~90 constructors, ~14 abstract types, 0 methods),
-    so we render the entire thing on one page grouped by abstract type. Each
-    group is collapsible <details> so the page stays scannable.
-    """
+
+E2E_TYPE_NOTES = {
+    'DecryptedMessage': 'The encrypted-payload counterpart to messages.Message inside a secret chat.',
+    'DecryptedMessageMedia': 'Attachments (photo, video, document, geo, contact, etc.) carried inside a DecryptedMessage.',
+    'DecryptedMessageAction': 'Out-of-band actions inside a secret chat (typing notifications, key rekey, screenshot flagged, etc.).',
+    'DecryptedMessageLayer': 'Wrapper that stamps a DecryptedMessage with the schema layer both peers agreed on.',
+    'FileLocation': 'Pointer to an uploaded encrypted file (dc id + key + iv) needed to fetch the ciphertext.',
+    'MessageEntity': 'Inline formatting span (bold, italic, mention, url, etc.) inside the plaintext of a DecryptedMessage.',
+    'PhotoSize': 'A single rendered size of a photo (thumb, mobile, full, etc.) inside an E2E photo media.',
+    'DocumentAttribute': 'Type-specific metadata attached to an E2E document (filename, animated, sticker, audio, video, …).',
+    'SendMessageAction': 'Real-time activity hint (typing, recording, choosing sticker, …) inside a secret chat.',
+    'InputStickerSet': 'Reference to a sticker set used by an E2E sticker message.',
+    'GroupCallMessage': 'Group-call signaling message piggybacked on the E2E channel.',
+    'JSONObjectValue': 'Single name/value pair inside an E2E JSON object.',
+    'JSONValue': 'Tagged union representing any JSON value (null, bool, number, string, array, object) for E2E payloads.',
+    'TextWithEntities': 'Plain text plus a list of formatting MessageEntity spans, used by newer E2E messages.',
+}
+
+
+PARAM_DESC_HINTS = {
+    'random_id': 'Per-message client-generated nonce used to deduplicate retransmissions.',
+    'random_bytes': 'Random padding so that two identical plaintexts encrypt to different ciphertexts.',
+    'ttl': 'Self-destruct timer in seconds. 0 means the message is permanent.',
+    'message': 'Plaintext of the message.',
+    'media': 'Optional attachment carried in the message.',
+    'reply_to_random_id': 'random_id of the message this one replies to.',
+    'via_bot_name': 'Username of the inline bot that produced this message.',
+    'entities': 'Inline formatting spans (bold, italic, mention, etc.).',
+    'grouped_id': 'Album group id — messages sharing this id are rendered as one media group.',
+    'key_fingerprint': 'Fingerprint of the AES-256 key used to encrypt the file payload.',
+    'dc_id': 'Data-center where the encrypted file lives.',
+    'volume_id': 'File-location volume id (Telegram-internal storage routing).',
+    'local_id': 'File-location local id (within the volume).',
+    'secret': 'AES key half (combined with the auth key) used to decrypt the payload.',
+    'key': 'AES-256 key for the encrypted payload.',
+    'iv': 'AES initialization vector for the encrypted payload.',
+    'size': 'Total ciphertext size in bytes.',
+    'thumb': 'Inline JPEG thumbnail (always sent in clear, downscaled for preview).',
+    'thumb_w': 'Width of the inline thumbnail.',
+    'thumb_h': 'Height of the inline thumbnail.',
+    'w': 'Width in pixels.',
+    'h': 'Height in pixels.',
+    'duration': 'Length in seconds.',
+    'mime_type': 'IANA media type (e.g. image/jpeg, video/mp4).',
+    'caption': 'Optional caption shown under the media.',
+    'file_name': 'Original file name as the sender supplied it.',
+    'layer': 'TL schema layer the encrypted message was generated against.',
+    'in_seq_no': 'Number of incoming messages (peer→self) the sender has acknowledged.',
+    'out_seq_no': 'Number of outgoing messages (self→peer) the sender has sent so far.',
+    'attributes': 'Type-specific metadata (filename, animated, sticker info, …).',
+    'start_seq_no': 'First sequence number of the rekey/handshake window.',
+    'end_seq_no': 'Last sequence number of the rekey/handshake window.',
+    'exchange_id': 'Identifier of the in-progress Diffie–Hellman rekey.',
+    'g_a': 'Sender side of the Diffie–Hellman exchange (g^a).',
+    'g_b': 'Receiver side of the Diffie–Hellman exchange (g^b).',
+    'key_hash': 'Hash of the proposed new key — used to confirm both sides derived the same secret.',
+}
+
+
+def render_e2e_param_table(params: list) -> str:
+    rows = []
+    for p in params:
+        name = p.get('name', '')
+        ptype = p.get('type', '')
+        hint = PARAM_DESC_HINTS.get(name, '')
+        rows.append(
+            '<tr>'
+            f'<td style="padding: 6px 10px; vertical-align: top; font-family: var(--font-mono, monospace); font-size: 12px; white-space: nowrap;">{escape(name)}</td>'
+            f'<td style="padding: 6px 10px; vertical-align: top; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type); white-space: nowrap;">{escape(ptype)}</td>'
+            f'<td style="padding: 6px 10px; vertical-align: top; color: var(--text-secondary); font-size: 12px; line-height: 1.5;">{escape(hint)}</td>'
+            '</tr>'
+        )
+    return (
+        '<table style="margin-top: 10px; border-collapse: collapse; width: 100%;">'
+        '<thead><tr>'
+        '<th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th>'
+        '<th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th>'
+        '<th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Notes</th>'
+        '</tr></thead>'
+        f'<tbody>{"".join(rows)}</tbody></table>'
+    )
+
+
+def generate_e2e_page(e2e_data: dict, search_data: list) -> str:
     constructors = e2e_data.get('constructors', [])
     methods = e2e_data.get('methods', [])
-    # Group constructors by their abstract result type.
+
     by_type: dict[str, list[dict]] = {}
     for c in constructors:
         by_type.setdefault(c.get('type', 'Unknown'), []).append(c)
+    for items in by_type.values():
+        items.sort(key=lambda c: c.get('layer', 0))
     type_order = sorted(by_type.keys())
+
     layers = sorted({c.get('layer', 0) for c in constructors})
     min_layer = min(layers) if layers else 0
     max_layer = max(layers) if layers else 0
@@ -1138,13 +1230,17 @@ def generate_e2e_page(e2e_data: dict, search_data: list) -> str:
     <main class="container">
         <div class="hero-section" style="text-align: center; margin-bottom: 24px; padding: 16px 0;">
             <h1 style="font-size: 2rem; font-weight: 600; margin-bottom: 8px;">E2E Schema</h1>
-            <p style="color: var(--text-secondary); max-width: 720px; margin: 0 auto 12px; line-height: 1.6;">
-                Telegram's <strong>end-to-end encrypted</strong> (secret-chat) TL schema. These constructors travel inside the encrypted message payload, separate from the main MTProto API.
+            <p style="color: var(--text-secondary); max-width: 760px; margin: 0 auto 14px; line-height: 1.6;">
+                Telegram's <strong>end-to-end encrypted</strong> (secret-chat) TL schema. These constructors travel inside the encrypted payload of a regular MTProto message, separate from the main API — every secret chat agrees on its own layer at handshake time and uses these types for everything sent after.
             </p>
             <div style="display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center;">
                 <div style="display: inline-flex; align-items: center; gap: 6px; background: var(--bg-secondary); padding: 6px 12px; border-radius: 18px; border: 1px solid var(--border);">
                     <span style="color: var(--constructor); font-weight: 600; font-size: 12px;">{len(constructors)}</span>
                     <span style="color: var(--text-secondary); font-size: 12px;">Constructors</span>
+                </div>
+                <div style="display: inline-flex; align-items: center; gap: 6px; background: var(--bg-secondary); padding: 6px 12px; border-radius: 18px; border: 1px solid var(--border);">
+                    <span style="color: var(--type); font-weight: 600; font-size: 12px;">{len(by_type)}</span>
+                    <span style="color: var(--text-secondary); font-size: 12px;">Abstract types</span>
                 </div>
                 <div style="display: inline-flex; align-items: center; gap: 6px; background: var(--bg-secondary); padding: 6px 12px; border-radius: 18px; border: 1px solid var(--border);">
                     <span style="color: var(--method); font-weight: 600; font-size: 12px;">{len(methods)}</span>
@@ -1157,14 +1253,21 @@ def generate_e2e_page(e2e_data: dict, search_data: list) -> str:
             </div>
         </div>
 
-        <div class="about-section" style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; margin-bottom: 24px;">
+        <div class="about-section" style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; margin-bottom: 24px;">
+            <h2 style="font-size: 1rem; font-weight: 600; margin: 0 0 10px;">How the E2E schema fits in</h2>
+            <p style="color: var(--text-secondary); line-height: 1.7; margin: 0 0 8px;">
+                Secret chats use a Diffie–Hellman handshake to derive a shared <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">auth_key</code>. Every secret-chat message you'd otherwise pass to <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">messages.sendEncrypted</code> is first serialised as a <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">DecryptedMessageLayer</code> wrapping a <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">DecryptedMessage</code> from this schema, then AES-256-IGE encrypted with that key.
+            </p>
+            <p style="color: var(--text-secondary); line-height: 1.7; margin: 0 0 8px;">
+                Each <strong>abstract type</strong> below (e.g. <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">DecryptedMessage</code>, <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">DecryptedMessageMedia</code>) is a tagged union — the wire id of the chosen constructor selects which variant to decode. Layers only ever <em>add</em> variants, so old peers can still decode messages, but new fields are dropped.
+            </p>
             <p style="color: var(--text-secondary); line-height: 1.7; margin: 0;">
-                Source: <a href="https://core.telegram.org/schema/end-to-end-json" target="_blank" style="color: var(--accent);">core.telegram.org/schema/end-to-end-json</a>. Each abstract type is a tagged union; expand a group to see all constructors that implement it, with their wire id, params, and the schema layer they were introduced in.
+                Source: <a href="https://core.telegram.org/schema/end-to-end-json" target="_blank" style="color: var(--accent);">core.telegram.org/schema/end-to-end-json</a>. Constructors inside each group are sorted by the layer they were introduced in.
             </p>
         </div>
 
         <div style="margin-bottom: 16px;">
-            <input type="text" id="filter-input" placeholder="Filter constructors..." autocomplete="off">
+            <input type="text" id="filter-input" placeholder="Filter E2E constructors or types..." autocomplete="off">
         </div>
 
         <div class="item-list" id="items-list">
@@ -1172,36 +1275,38 @@ def generate_e2e_page(e2e_data: dict, search_data: list) -> str:
 
     for type_name in type_order:
         items = by_type[type_name]
+        note = E2E_TYPE_NOTES.get(type_name, '')
+        layer_span = f"{min(c.get('layer', 0) for c in items)}–{max(c.get('layer', 0) for c in items)}"
         html += f"""
-            <details class="e2e-type" data-name="{escape(type_name.lower())}" style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; padding: 0;">
-                <summary style="cursor: pointer; padding: 14px 16px; font-weight: 600; display: flex; justify-content: space-between; align-items: center;">
-                    <span><span style="color: var(--type);">{escape(type_name)}</span> <span style="color: var(--text-secondary); font-weight: 400; font-size: 12px;">{len(items)} constructor{'s' if len(items) != 1 else ''}</span></span>
+            <details class="e2e-type" data-name="{escape(type_name.lower())} {' '.join(escape(c.get('predicate', '').lower()) for c in items)}" style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 14px; padding: 0;">
+                <summary style="cursor: pointer; padding: 14px 18px; font-weight: 600; display: flex; justify-content: space-between; align-items: center; gap: 16px;">
+                    <span>
+                        <span style="color: var(--type); font-size: 14px;">{escape(type_name)}</span>
+                        <span style="color: var(--text-secondary); font-weight: 400; font-size: 12px; margin-left: 8px;">{len(items)} constructor{'s' if len(items) != 1 else ''} &middot; layer {layer_span}</span>
+                    </span>
                 </summary>
-                <div style="padding: 0 16px 14px;">
+                <div style="padding: 0 18px 16px;">
 """
+        if note:
+            html += f'<p style="margin: 6px 0 14px; color: var(--text-secondary); font-size: 13px; line-height: 1.6;">{escape(note)}</p>\n'
         for c in items:
+            predicate = c.get('predicate', '')
+            ctor_id = c.get('id', '')
+            layer = c.get('layer', '?')
             params = c.get('params', [])
-            param_html = ''
-            if params:
-                param_rows = ''.join(
-                    f'<tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">{escape(p.get("name", ""))}</td>'
-                    f'<td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">{escape(p.get("type", ""))}</td></tr>'
-                    for p in params
-                )
-                param_html = (
-                    '<table style="margin-top: 8px; border-collapse: collapse; width: 100%;">'
-                    '<thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th>'
-                    '<th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead>'
-                    f'<tbody>{param_rows}</tbody></table>'
-                )
-            else:
-                param_html = '<p style="margin-top: 6px; color: var(--text-secondary); font-size: 12px; font-style: italic;">No parameters.</p>'
+            params_summary = ', '.join(p.get('name', '') for p in params) if params else 'no params'
+            param_html = (
+                render_e2e_param_table(params)
+                if params else
+                '<p style="margin: 6px 0 0; color: var(--text-secondary); font-size: 12px; font-style: italic;">No parameters.</p>'
+            )
             html += f"""
-                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="{escape(c.get('predicate', '').lower())} {escape(type_name.lower())}">
-                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
-                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">{escape(c.get('predicate', ''))}</code>
-                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>{escape(c.get('id', ''))}</code> &middot; layer {c.get('layer', '?')}</span>
+                    <div id="{escape(predicate)}" style="border-top: 1px solid var(--border); padding: 12px 0;" data-name="{escape(predicate.lower())} {escape(type_name.lower())}">
+                        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">{escape(predicate)}</code>
+                            <span style="font-size: 11px; color: var(--text-secondary); font-family: var(--font-mono, monospace);">#{escape(ctor_id)} &middot; layer {layer}</span>
                         </div>
+                        <div style="margin-top: 4px; color: var(--text-secondary); font-size: 11px; font-family: var(--font-mono, monospace);">params: {escape(params_summary)}</div>
                         {param_html}
                     </div>
 """
@@ -1215,6 +1320,279 @@ def generate_e2e_page(e2e_data: dict, search_data: list) -> str:
     </main>
 
     <script src="js/filter.js"></script>
+"""
+    html += generate_footer()
+    return html
+
+
+def load_errors(path: str = 'errors.json') -> dict | None:
+    try:
+        with open(path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return None
+
+
+ERROR_HTTP_LABELS = {
+    303: ('See Other', 'The auth key/account lives on a different DC. The gogram client transparently reconnects and replays the request.'),
+    400: ('Bad Request', 'The server rejected the request payload — a parameter is missing, malformed, or fails a server-side invariant.'),
+    401: ('Unauthorized', 'The session/auth key is no longer valid. The user must sign in again.'),
+    403: ('Forbidden', 'The current user lacks permission to perform the action against this peer.'),
+    404: ('Not Found', 'The referenced resource (peer, message, file) does not exist.'),
+    420: ('Flood', 'The account has been rate-limited. Sleep for the supplied seconds before retrying.'),
+    500: ('Internal Server Error', 'The server hit a transient internal problem. Retry with backoff.'),
+}
+
+
+def generate_errors_page(errors_data: dict, search_data: list) -> str:
+    errors = errors_data.get('errors', [])
+    bad_msg = errors_data.get('bad_msg_codes', [])
+
+    by_http: dict[int, dict[str, list[dict]]] = {}
+    for e in errors:
+        by_http.setdefault(e['http'], {}).setdefault(e['category'], []).append(e)
+
+    http_order = sorted(by_http.keys())
+    total = len(errors)
+    parameterized_count = sum(1 for e in errors if e.get('parameterized'))
+
+    html = generate_header("Errors", ".", search_data,
+                           "Telegram RPC errors, what they mean, and when they happen.",
+                           item_type=None)
+    html += f"""
+    <main class="container">
+        <div class="hero-section" style="text-align: center; margin-bottom: 24px; padding: 16px 0;">
+            <h1 style="font-size: 2rem; font-weight: 600; margin-bottom: 8px;">Errors</h1>
+            <p style="color: var(--text-secondary); max-width: 760px; margin: 0 auto 14px; line-height: 1.6;">
+                Every RPC error gogram knows about, grouped by HTTP-style status and topic. Each entry shows the wire code, what the server says, and a short explanation of <strong>when and why</strong> it usually fires.
+            </p>
+            <div style="display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center;">
+                <div style="display: inline-flex; align-items: center; gap: 6px; background: var(--bg-secondary); padding: 6px 12px; border-radius: 18px; border: 1px solid var(--border);">
+                    <span style="color: var(--constructor); font-weight: 600; font-size: 12px;">{total}</span>
+                    <span style="color: var(--text-secondary); font-size: 12px;">RPC errors</span>
+                </div>
+                <div style="display: inline-flex; align-items: center; gap: 6px; background: var(--bg-secondary); padding: 6px 12px; border-radius: 18px; border: 1px solid var(--border);">
+                    <span style="color: var(--method); font-weight: 600; font-size: 12px;">{parameterized_count}</span>
+                    <span style="color: var(--text-secondary); font-size: 12px;">Parameterized</span>
+                </div>
+                <div style="display: inline-flex; align-items: center; gap: 6px; background: var(--bg-secondary); padding: 6px 12px; border-radius: 18px; border: 1px solid var(--border);">
+                    <span style="color: var(--type); font-weight: 600; font-size: 12px;">{len(bad_msg)}</span>
+                    <span style="color: var(--text-secondary); font-size: 12px;">MTProto bad-msg codes</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-section" style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; margin-bottom: 24px;">
+            <p style="color: var(--text-secondary); line-height: 1.7; margin: 0 0 8px;">
+                Source of truth: <a href="https://github.com/AmarnathCJD/gogram/blob/master/errors.go" target="_blank" style="color: var(--accent);">errors.go</a> in gogram. In Go these surface as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">*gogram.ErrResponseCode</code> — match on <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">.Message</code> for the exact code, read <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">.Description</code> for the formatted message, and inspect <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">.AdditionalInfo</code> for the parsed parameter when the code ends in <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">_X</code>.
+            </p>
+            <p style="color: var(--text-secondary); line-height: 1.7; margin: 0;">
+                The HTTP code is the one Telegram returns alongside the error. <strong>420</strong> means the account is being rate-limited and you must wait. <strong>303</strong> means the server is telling you to talk to a different data center; gogram handles that transparently. <strong>401</strong> means the session is gone and the user has to re-authenticate.
+            </p>
+        </div>
+
+        <div style="margin-bottom: 16px;">
+            <input type="text" id="filter-input" placeholder="Filter by code (e.g. FLOOD_WAIT) or topic..." autocomplete="off">
+        </div>
+
+        <div class="item-list" id="items-list">
+"""
+
+    for http in http_order:
+        label, http_blurb = ERROR_HTTP_LABELS.get(http, (f'HTTP {http}', ''))
+        cat_groups = by_http[http]
+        total_in_http = sum(len(v) for v in cat_groups.values())
+        cat_order = sorted(cat_groups.keys())
+        html += f"""
+            <details data-name="{http} {escape(label.lower())} {' '.join(escape(c.lower()) for c in cat_order)}" style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 16px; padding: 0;">
+                <summary style="cursor: pointer; padding: 16px 20px; font-weight: 600; display: flex; justify-content: space-between; align-items: center; gap: 16px;">
+                    <span style="display: inline-flex; align-items: center; gap: 12px;">
+                        <span style="background: var(--accent); color: white; padding: 3px 10px; border-radius: 12px; font-size: 13px; font-weight: 700;">{http}</span>
+                        <span style="font-size: 15px;">{escape(label)}</span>
+                        <span style="color: var(--text-secondary); font-weight: 400; font-size: 12px;">{total_in_http} error{'s' if total_in_http != 1 else ''}</span>
+                    </span>
+                </summary>
+                <div style="padding: 0 20px 16px;">
+                    <p style="color: var(--text-secondary); margin: 6px 0 14px; font-size: 13px; line-height: 1.6;">{escape(http_blurb)}</p>
+"""
+        for category in cat_order:
+            entries = sorted(cat_groups[category], key=lambda e: e['code'])
+            html += f"""
+                    <div style="margin-top: 14px;">
+                        <h3 style="font-size: 12px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 8px;">{escape(category)} <span style="color: var(--text-secondary); font-weight: 400; text-transform: none; letter-spacing: 0;">({len(entries)})</span></h3>
+                        <div style="display: grid; gap: 8px;">
+"""
+            for entry in entries:
+                code = entry['code']
+                message = entry.get('message', '')
+                why = entry.get('why', '')
+                param_badge = ''
+                if entry.get('parameterized'):
+                    param_badge = '<span style="background: var(--bg-tertiary); color: var(--method); padding: 1px 6px; border-radius: 8px; font-size: 10px; font-weight: 600; margin-left: 6px;">PARAM</span>'
+                html += f"""
+                            <div id="{escape(code)}" data-name="{escape(code.lower())} {escape(category.lower())} {escape(message.lower())}" style="background: var(--bg-tertiary); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px;">
+                                <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap;">
+                                    <code style="font-size: 13px; font-weight: 700; color: var(--constructor);">{escape(code)}</code>{param_badge}
+                                </div>
+                                <p style="margin: 6px 0 0; color: var(--text-primary); font-size: 13px; line-height: 1.5;">{escape(message)}</p>
+                                <p style="margin: 6px 0 0; color: var(--text-secondary); font-size: 12.5px; line-height: 1.55;">{escape(why)}</p>
+                            </div>
+"""
+            html += """
+                        </div>
+                    </div>
+"""
+        html += """
+                </div>
+            </details>
+"""
+
+    if bad_msg:
+        html += """
+            <details data-name="badmsg mtproto bad message notification" style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 16px; padding: 0;">
+                <summary style="cursor: pointer; padding: 16px 20px; font-weight: 600; display: flex; justify-content: space-between; align-items: center; gap: 16px;">
+                    <span style="display: inline-flex; align-items: center; gap: 12px;">
+                        <span style="background: var(--type); color: white; padding: 3px 10px; border-radius: 12px; font-size: 13px; font-weight: 700;">MTProto</span>
+                        <span style="font-size: 15px;">Bad-message notifications</span>
+                        <span style="color: var(--text-secondary); font-weight: 400; font-size: 12px;">""" + f"""{len(bad_msg)} codes</span>
+                    </span>
+                </summary>
+                <div style="padding: 0 20px 16px;">
+                    <p style="color: var(--text-secondary); margin: 6px 0 14px; font-size: 13px; line-height: 1.6;">Service-message error codes returned by the MTProto transport itself, before any RPC dispatch happens. Usually the client's clock is wrong, the session salt expired, or a message id collided. Gogram surfaces these as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">*BadMsgError</code>.</p>
+                    <div style="display: grid; gap: 8px;">
+"""
+        for bm in sorted(bad_msg, key=lambda x: x['code']):
+            html += f"""
+                        <div data-name="badmsg {bm['code']} {escape(bm['message'].lower())}" style="background: var(--bg-tertiary); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px;">
+                            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap;">
+                                <code style="font-size: 13px; font-weight: 700; color: var(--constructor);">code {bm['code']}</code>
+                            </div>
+                            <p style="margin: 6px 0 0; color: var(--text-secondary); font-size: 12.5px; line-height: 1.55;">{escape(bm['message'])}</p>
+                        </div>
+"""
+        html += """
+                    </div>
+                </div>
+            </details>
+"""
+
+    html += """
+        </div>
+    </main>
+
+    <script src="js/filter.js"></script>
+"""
+    html += generate_footer()
+    return html
+
+
+def render_error_go_snippet(entry: dict) -> str:
+    code = entry['code']
+    paramed = entry.get('parameterized')
+    if paramed:
+        match_code = code.replace('_X', '_*') + ' / ' + code
+        snippet = (
+            "if err, ok := err.(*gogram.ErrResponseCode); ok {\n"
+            f"    if strings.HasPrefix(err.Message, \"{code.rstrip('_X').rstrip('_XMIN').rstrip('X')}\") {{\n"
+            "        secs := err.AdditionalInfo.(int)\n"
+            "        time.Sleep(time.Duration(secs) * time.Second)\n"
+            "        // retry\n"
+            "    }\n"
+            "}"
+        )
+    else:
+        snippet = (
+            "if err, ok := err.(*gogram.ErrResponseCode); ok {\n"
+            f"    if err.Message == \"{code}\" {{\n"
+            "        // handle this error\n"
+            "    }\n"
+            "}"
+        )
+    return snippet
+
+
+def generate_error_detail_page(entry: dict, search_data: list,
+                               related: list, http_blurb: str) -> str:
+    code = entry['code']
+    http = entry['http']
+    http_label, _ = ERROR_HTTP_LABELS.get(http, (f'HTTP {http}', ''))
+    category = entry.get('category', 'Other')
+    message = entry.get('message', '')
+    why = entry.get('why', '')
+    paramed = entry.get('parameterized', False)
+
+    title = code
+    desc = why or message
+    html = generate_header(title, "..", search_data, desc, item_type='error')
+
+    breadcrumb = (
+        f'<a href="../index.html">Home</a> <span>›</span> '
+        f'<a href="../errors.html">Errors</a> <span>›</span> {escape(code)}'
+    )
+
+    param_section = ''
+    if paramed:
+        param_section = """
+        <section style="margin-top: 28px;">
+            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Parameterized error</h2>
+            <p style="color: var(--text-secondary); line-height: 1.7; margin: 0 0 8px;">
+                The wire code carries a parameter on its tail. Gogram parses it out for you and stores it on
+                <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">ErrResponseCode.AdditionalInfo</code> with the right type. Format-string-style, the literal you'll see on the wire is something like <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">""" + escape(code.replace('_X', '_42').replace('_XMIN', '_5MIN')) + """</code>.
+            </p>
+        </section>
+"""
+
+    related_html = ''
+    if related:
+        items_html = ''.join(
+            f'<a href="{escape(r["code"])}.html" class="item">'
+            f'<span class="item-name">{escape(r["code"])}</span>'
+            f'<span class="item-desc">{escape(r.get("message", ""))}</span>'
+            '</a>'
+            for r in related[:12]
+        )
+        related_html = f"""
+        <section style="margin-top: 28px;">
+            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Related errors</h2>
+            <div class="item-list">{items_html}</div>
+        </section>
+"""
+
+    go_snippet = highlight_go_code(render_error_go_snippet(entry))
+
+    html += f"""
+    <main class="container">
+        <article>
+        <div class="breadcrumb">{breadcrumb}</div>
+
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px; gap: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">{escape(category)}</span>
+            <span style="font-size: 11px; color: white; background: var(--accent); padding: 4px 10px; border-radius: 12px; font-weight: 600;">HTTP {http} &middot; {escape(http_label)}</span>
+        </div>
+
+        <header class="page-header">
+            <h1 style="font-family: var(--font-mono, monospace); font-size: 1.6rem;">{escape(code)}</h1>
+            <p class="description" style="margin-top: 8px;">{escape(message)}</p>
+        </header>
+
+        <section style="margin-top: 24px;">
+            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">When &amp; why it happens</h2>
+            <p style="color: var(--text-secondary); line-height: 1.75; margin: 0;">{escape(why)}</p>
+        </section>
+
+        {param_section}
+
+        <section style="margin-top: 28px;">
+            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Handling in gogram</h2>
+            <p style="color: var(--text-secondary); line-height: 1.7; margin: 0 0 12px;">
+                Gogram surfaces this as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">*gogram.ErrResponseCode</code>. Match on the message:
+            </p>
+            <div class="code-block">{go_snippet}</div>
+        </section>
+
+        {related_html}
+        </article>
+    </main>
 """
     html += generate_footer()
     return html
@@ -1338,11 +1716,9 @@ def build_html_docs(json_path: str, output_dir: str):
     methods_html = generate_list_page(methods, 'method', 'Methods', search_data)
     (output_path / 'methods.html').write_text(methods_html, encoding='utf-8')
 
-    # Generate E2E (secret-chat) schema page
     e2e_data = load_e2e_schema('e2e_schema.json')
     if e2e_data:
         print("Generating e2e.html...")
-        # Extend search index with E2E constructors so they're discoverable.
         for c in e2e_data.get('constructors', []):
             predicate = c.get('predicate', '')
             if not predicate:
@@ -1356,13 +1732,51 @@ def build_html_docs(json_path: str, output_dir: str):
                 "type": "e2e",
                 "path": "e2e.html#" + predicate,
             })
-        # Rewrite the search index file with the augmented data.
-        search_js_content = f"window.searchData = {json.dumps(search_data)};"
-        (js_dir / 'search_index.js').write_text(search_js_content, encoding='utf-8')
-        e2e_html = generate_e2e_page(e2e_data, search_data)
-        (output_path / 'e2e.html').write_text(e2e_html, encoding='utf-8')
     else:
         print("Skipping e2e.html (no e2e_schema.json found)")
+
+    errors_data = load_errors('errors.json')
+    if errors_data:
+        print("Generating errors.html and per-error pages...")
+        for e in errors_data.get('errors', []):
+            search_data.append({
+                "name": e['code'],
+                "goDisplay": e['code'],
+                "searchName": e['code'].lower() + " error " + e.get('category', '').lower() + " " + e.get('message', '').lower()[:80],
+                "desc": e.get('message', ''),
+                "type": "error",
+                "path": f"errors/{e['code']}.html",
+            })
+    else:
+        print("Skipping errors.html (no errors.json found)")
+
+    search_js_content = f"window.searchData = {json.dumps(search_data)};"
+    (js_dir / 'search_index.js').write_text(search_js_content, encoding='utf-8')
+
+    if e2e_data:
+        e2e_html = generate_e2e_page(e2e_data, search_data)
+        (output_path / 'e2e.html').write_text(e2e_html, encoding='utf-8')
+
+    if errors_data:
+        errors_html = generate_errors_page(errors_data, search_data)
+        (output_path / 'errors.html').write_text(errors_html, encoding='utf-8')
+
+        errors_dir = output_path / 'errors'
+        errors_dir.mkdir(parents=True, exist_ok=True)
+        errors_by_category: dict[str, list[dict]] = {}
+        for e in errors_data['errors']:
+            errors_by_category.setdefault(e.get('category', 'Other'), []).append(e)
+        http_blurbs = {h: v[1] for h, v in ERROR_HTTP_LABELS.items()}
+        for entry in errors_data['errors']:
+            related = [r for r in errors_by_category.get(entry.get('category', 'Other'), [])
+                       if r['code'] != entry['code']]
+            related = sorted(related, key=lambda r: r['code'])
+            page_html = generate_error_detail_page(
+                entry, search_data, related,
+                http_blurbs.get(entry['http'], '')
+            )
+            (errors_dir / f"{entry['code']}.html").write_text(page_html, encoding='utf-8')
+        print(f"  Generated {len(errors_data['errors'])} error pages")
     
     # Generate types list page
     print("Generating types.html...")

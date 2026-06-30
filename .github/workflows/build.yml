@@ -43,6 +43,12 @@ jobs:
         run: |
           curl -fsSL -o e2e_schema.json https://core.telegram.org/schema/end-to-end-json || true
 
+      - name: Download gogram errors.go and rebuild errors.json
+        run: |
+          curl -fsSL -o gogram_errors.go https://raw.githubusercontent.com/AmarnathCJD/gogram/master/errors.go
+          python extract_errors.py
+          python enrich_errors.py
+
       - name: Restore scraper cache
         uses: actions/cache@v4
         with:
@@ -76,7 +82,7 @@ jobs:
           fail=0
 
           # Per-entry detail pages must stay <100KB (was 800KB before the fix).
-          big=$(find public/constructors public/methods -name '*.html' -size +100k -printf '%s %p\n' | sort -rn)
+          big=$(find public/constructors public/methods public/errors -name '*.html' -size +100k -printf '%s %p\n' | sort -rn)
           if [ -n "$big" ]; then
             echo "::error::Detail pages exceed 100KB — likely inline-asset regression:"
             echo "$big" | head -20

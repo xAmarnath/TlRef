@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GROUPCALL_ALREADY_DISCARDED - Gogram TL Reference</title>
+    <meta name="description" content="The groupcall is already discarded; the operation would be a no-op.">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="GROUPCALL_ALREADY_DISCARDED - Gogram TL Reference">
+    <meta property="og:description" content="The groupcall is already discarded; the operation would be a no-op.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="../types.html">Types</a>
+                    <a href="../constructors.html">Constructors</a>
+                    <a href="../methods.html">Methods</a>
+                    <a href="../errors.html">Errors</a>
+                    <a href="../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "..";
+    </script>
+    <script src="../js/search_index.js"></script>
+    <script src="../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../errors.html">Errors</a> <span>›</span> GROUPCALL_ALREADY_DISCARDED</div>
+
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px; gap: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Calls / Voice / Video</span>
+            <span style="font-size: 11px; color: white; background: var(--accent); padding: 4px 10px; border-radius: 12px; font-weight: 600;">HTTP 400 &middot; Bad Request</span>
+        </div>
+
+        <header class="page-header">
+            <h1 style="font-family: var(--font-mono, monospace); font-size: 1.6rem;">GROUPCALL_ALREADY_DISCARDED</h1>
+            <p class="description" style="margin-top: 8px;">The group call was already discarded.</p>
+        </header>
+
+        <section style="margin-top: 24px;">
+            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">When &amp; why it happens</h2>
+            <p style="color: var(--text-secondary); line-height: 1.75; margin: 0;">The groupcall is already discarded; the operation would be a no-op.</p>
+        </section>
+
+        
+
+        <section style="margin-top: 28px;">
+            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Handling in gogram</h2>
+            <p style="color: var(--text-secondary); line-height: 1.7; margin: 0 0 12px;">
+                Gogram surfaces this as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">*gogram.ErrResponseCode</code>. Match on the message:
+            </p>
+            <div class="code-block"><span class="keyword">if</span> err, ok := err.(*gogram.ErrResponseCode); ok {
+    <span class="keyword">if</span> err.Message == <span class="string">&quot;GROUPCALL_ALREADY_DISCARDED&quot;</span> {
+        <span class="comment">// handle this error</span>
+    }
+}</div>
+        </section>
+
+        
+        <section style="margin-top: 28px;">
+            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Related errors</h2>
+            <div class="item-list"><a href="CALL_ALREADY_ACCEPTED.html" class="item"><span class="item-name">CALL_ALREADY_ACCEPTED</span><span class="item-desc">The call was already accepted.</span></a><a href="CALL_ALREADY_DECLINED.html" class="item"><span class="item-name">CALL_ALREADY_DECLINED</span><span class="item-desc">The call was already declined.</span></a><a href="CALL_OCCUPY_FAILED.html" class="item"><span class="item-name">CALL_OCCUPY_FAILED</span><span class="item-desc">The call failed because the user is already making another call.</span></a><a href="CALL_PEER_INVALID.html" class="item"><span class="item-name">CALL_PEER_INVALID</span><span class="item-desc">The provided call peer object is invalid.</span></a><a href="CALL_PROTOCOL_COMPAT_LAYER_INVALID.html" class="item"><span class="item-name">CALL_PROTOCOL_COMPAT_LAYER_INVALID</span><span class="item-desc">The other side of the call does not support any of the VoIP protocols supported by the local client.</span></a><a href="CALL_PROTOCOL_FLAGS_INVALID.html" class="item"><span class="item-name">CALL_PROTOCOL_FLAGS_INVALID</span><span class="item-desc">Call protocol flags invalid.</span></a><a href="GROUPCALL_ADD_PARTICIPANTS_FAILED.html" class="item"><span class="item-name">GROUPCALL_ADD_PARTICIPANTS_FAILED</span><span class="item-desc">Failed to add participants to the group call.</span></a><a href="GROUPCALL_ALREADY_STARTED.html" class="item"><span class="item-name">GROUPCALL_ALREADY_STARTED</span><span class="item-desc">The groupcall has already started, you can join directly.</span></a><a href="GROUPCALL_INVALID.html" class="item"><span class="item-name">GROUPCALL_INVALID</span><span class="item-desc">The specified group call is invalid.</span></a><a href="GROUPCALL_JOIN_MISSING.html" class="item"><span class="item-name">GROUPCALL_JOIN_MISSING</span><span class="item-desc">You haven&#x27;t joined this group call.</span></a><a href="GROUPCALL_NOT_MODIFIED.html" class="item"><span class="item-name">GROUPCALL_NOT_MODIFIED</span><span class="item-desc">Group call settings weren&#x27;t modified.</span></a><a href="GROUPCALL_SSRC_DUPLICATE_MUCH.html" class="item"><span class="item-name">GROUPCALL_SSRC_DUPLICATE_MUCH</span><span class="item-desc">The app needs to retry joining the group call with a new SSRC value.</span></a></div>
+        </section>
+
+        </article>
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MESSAGE_ID_INVALID - Gogram TL Reference</title>
+    <meta name="description" content="The message id does not exist in this peer (already deleted, never existed, or wrong chat).">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="MESSAGE_ID_INVALID - Gogram TL Reference">
+    <meta property="og:description" content="The message id does not exist in this peer (already deleted, never existed, or wrong chat).">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="../types.html">Types</a>
+                    <a href="../constructors.html">Constructors</a>
+                    <a href="../methods.html">Methods</a>
+                    <a href="../errors.html">Errors</a>
+                    <a href="../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "..";
+    </script>
+    <script src="../js/search_index.js"></script>
+    <script src="../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../errors.html">Errors</a> <span>›</span> MESSAGE_ID_INVALID</div>
+
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px; gap: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Messages</span>
+            <span style="font-size: 11px; color: white; background: var(--accent); padding: 4px 10px; border-radius: 12px; font-weight: 600;">HTTP 400 &middot; Bad Request</span>
+        </div>
+
+        <header class="page-header">
+            <h1 style="font-family: var(--font-mono, monospace); font-size: 1.6rem;">MESSAGE_ID_INVALID</h1>
+            <p class="description" style="margin-top: 8px;">The provided message id is invalid.</p>
+        </header>
+
+        <section style="margin-top: 24px;">
+            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">When &amp; why it happens</h2>
+            <p style="color: var(--text-secondary); line-height: 1.75; margin: 0;">The message id does not exist in this peer (already deleted, never existed, or wrong chat).</p>
+        </section>
+
+        
+
+        <section style="margin-top: 28px;">
+            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Handling in gogram</h2>
+            <p style="color: var(--text-secondary); line-height: 1.7; margin: 0 0 12px;">
+                Gogram surfaces this as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">*gogram.ErrResponseCode</code>. Match on the message:
+            </p>
+            <div class="code-block"><span class="keyword">if</span> err, ok := err.(*gogram.ErrResponseCode); ok {
+    <span class="keyword">if</span> err.Message == <span class="string">&quot;MESSAGE_ID_INVALID&quot;</span> {
+        <span class="comment">// handle this error</span>
+    }
+}</div>
+        </section>
+
+        
+        <section style="margin-top: 28px;">
+            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Related errors</h2>
+            <div class="item-list"><a href="MESSAGE_AUTHOR_REQUIRED.html" class="item"><span class="item-name">MESSAGE_AUTHOR_REQUIRED</span><span class="item-desc">Message author required.</span></a><a href="MESSAGE_EDIT_TIME_EXPIRED.html" class="item"><span class="item-name">MESSAGE_EDIT_TIME_EXPIRED</span><span class="item-desc">You can&#x27;t edit this message anymore, too much time has passed since its creation.</span></a><a href="MESSAGE_EMPTY.html" class="item"><span class="item-name">MESSAGE_EMPTY</span><span class="item-desc">The provided message is empty.</span></a><a href="MESSAGE_IDS_EMPTY.html" class="item"><span class="item-name">MESSAGE_IDS_EMPTY</span><span class="item-desc">No message ids were provided.</span></a><a href="MESSAGE_NOT_MODIFIED.html" class="item"><span class="item-name">MESSAGE_NOT_MODIFIED</span><span class="item-desc">The provided message data is identical to the previous message data, the message wasn&#x27;t modified.</span></a><a href="MESSAGE_POLL_CLOSED.html" class="item"><span class="item-name">MESSAGE_POLL_CLOSED</span><span class="item-desc">Poll closed.</span></a><a href="MESSAGE_TOO_LONG.html" class="item"><span class="item-name">MESSAGE_TOO_LONG</span><span class="item-desc">The provided message is too long.</span></a><a href="MSG_ID_INVALID.html" class="item"><span class="item-name">MSG_ID_INVALID</span><span class="item-desc">Invalid message ID provided.</span></a><a href="MSG_TOO_OLD.html" class="item"><span class="item-name">MSG_TOO_OLD</span><span class="item-desc">Time has passed since the message was sent, read receipts were deleted.</span></a><a href="MSG_WAIT_FAILED.html" class="item"><span class="item-name">MSG_WAIT_FAILED</span><span class="item-desc">A waiting call returned an error.</span></a><a href="REACTION_EMPTY.html" class="item"><span class="item-name">REACTION_EMPTY</span><span class="item-desc">Empty reaction provided.</span></a><a href="REACTION_INVALID.html" class="item"><span class="item-name">REACTION_INVALID</span><span class="item-desc">The specified reaction is invalid.</span></a></div>
+        </section>
+
+        </article>
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

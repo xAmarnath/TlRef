@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBPUSH_TOKEN_INVALID - Gogram TL Reference</title>
+    <meta name="description" content="The supplied webpush token is malformed, points to nothing the server recognises, or fails a server-side validity check.">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="WEBPUSH_TOKEN_INVALID - Gogram TL Reference">
+    <meta property="og:description" content="The supplied webpush token is malformed, points to nothing the server recognises, or fails a server-side validity check.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="../types.html">Types</a>
+                    <a href="../constructors.html">Constructors</a>
+                    <a href="../methods.html">Methods</a>
+                    <a href="../errors.html">Errors</a>
+                    <a href="../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "..";
+    </script>
+    <script src="../js/search_index.js"></script>
+    <script src="../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../errors.html">Errors</a> <span>›</span> WEBPUSH_TOKEN_INVALID</div>
+
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px; gap: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Other</span>
+            <span style="font-size: 11px; color: white; background: var(--accent); padding: 4px 10px; border-radius: 12px; font-weight: 600;">HTTP 400 &middot; Bad Request</span>
+        </div>
+
+        <header class="page-header">
+            <h1 style="font-family: var(--font-mono, monospace); font-size: 1.6rem;">WEBPUSH_TOKEN_INVALID</h1>
+            <p class="description" style="margin-top: 8px;">The specified web push token is invalid.</p>
+        </header>
+
+        <section style="margin-top: 24px;">
+            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">When &amp; why it happens</h2>
+            <p style="color: var(--text-secondary); line-height: 1.75; margin: 0;">The supplied webpush token is malformed, points to nothing the server recognises, or fails a server-side validity check.</p>
+        </section>
+
+        
+
+        <section style="margin-top: 28px;">
+            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Handling in gogram</h2>
+            <p style="color: var(--text-secondary); line-height: 1.7; margin: 0 0 12px;">
+                Gogram surfaces this as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">*gogram.ErrResponseCode</code>. Match on the message:
+            </p>
+            <div class="code-block"><span class="keyword">if</span> err, ok := err.(*gogram.ErrResponseCode); ok {
+    <span class="keyword">if</span> err.Message == <span class="string">&quot;WEBPUSH_TOKEN_INVALID&quot;</span> {
+        <span class="comment">// handle this error</span>
+    }
+}</div>
+        </section>
+
+        
+        <section style="margin-top: 28px;">
+            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Related errors</h2>
+            <div class="item-list"><a href="ABOUT_TOO_LONG.html" class="item"><span class="item-name">ABOUT_TOO_LONG</span><span class="item-desc">About string too long.</span></a><a href="ACTIVE_USER_REQUIRED.html" class="item"><span class="item-name">ACTIVE_USER_REQUIRED</span><span class="item-desc">The method is only available to already activated users.</span></a><a href="ADDRESS_INVALID.html" class="item"><span class="item-name">ADDRESS_INVALID</span><span class="item-desc">The specified geopoint address is invalid.</span></a><a href="ALBUM_PHOTOS_TOO_MANY.html" class="item"><span class="item-name">ALBUM_PHOTOS_TOO_MANY</span><span class="item-desc">You have uploaded too many profile photos, delete some before retrying.</span></a><a href="ANONYMOUS_REACTIONS_DISABLED.html" class="item"><span class="item-name">ANONYMOUS_REACTIONS_DISABLED</span><span class="item-desc">Sorry, anonymous administrators cannot leave reactions or participate in polls.</span></a><a href="ARTICLE_TITLE_EMPTY.html" class="item"><span class="item-name">ARTICLE_TITLE_EMPTY</span><span class="item-desc">The title of the article is empty.</span></a><a href="AUTOARCHIVE_NOT_AVAILABLE.html" class="item"><span class="item-name">AUTOARCHIVE_NOT_AVAILABLE</span><span class="item-desc">The autoarchive setting is not available at this time; please check the client configuration.</span></a><a href="BANK_CARD_NUMBER_INVALID.html" class="item"><span class="item-name">BANK_CARD_NUMBER_INVALID</span><span class="item-desc">The specified card number is invalid.</span></a><a href="BANNED_RIGHTS_INVALID.html" class="item"><span class="item-name">BANNED_RIGHTS_INVALID</span><span class="item-desc">You provided some invalid flags in the banned rights.</span></a><a href="BASE_PORT_LOC_INVALID.html" class="item"><span class="item-name">BASE_PORT_LOC_INVALID</span><span class="item-desc">Base port location invalid.</span></a><a href="BOOSTS_EMPTY.html" class="item"><span class="item-name">BOOSTS_EMPTY</span><span class="item-desc">No boost slots were specified.</span></a><a href="BOOSTS_REQUIRED.html" class="item"><span class="item-name">BOOSTS_REQUIRED</span><span class="item-desc">The specified channel must first be boosted by its users in order to perform this action.</span></a></div>
+        </section>
+
+        </article>
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

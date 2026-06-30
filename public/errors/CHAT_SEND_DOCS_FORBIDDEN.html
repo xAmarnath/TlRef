@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHAT_SEND_DOCS_FORBIDDEN - Gogram TL Reference</title>
+    <meta name="description" content="The current user is not allowed to perform this action on the targeted chat send docs (permission or privacy restriction).">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="CHAT_SEND_DOCS_FORBIDDEN - Gogram TL Reference">
+    <meta property="og:description" content="The current user is not allowed to perform this action on the targeted chat send docs (permission or privacy restriction).">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="../types.html">Types</a>
+                    <a href="../constructors.html">Constructors</a>
+                    <a href="../methods.html">Methods</a>
+                    <a href="../errors.html">Errors</a>
+                    <a href="../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "..";
+    </script>
+    <script src="../js/search_index.js"></script>
+    <script src="../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../errors.html">Errors</a> <span>›</span> CHAT_SEND_DOCS_FORBIDDEN</div>
+
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px; gap: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Permissions / Forbidden</span>
+            <span style="font-size: 11px; color: white; background: var(--accent); padding: 4px 10px; border-radius: 12px; font-weight: 600;">HTTP 403 &middot; Forbidden</span>
+        </div>
+
+        <header class="page-header">
+            <h1 style="font-family: var(--font-mono, monospace); font-size: 1.6rem;">CHAT_SEND_DOCS_FORBIDDEN</h1>
+            <p class="description" style="margin-top: 8px;">You can&#x27;t send documents in this chat.</p>
+        </header>
+
+        <section style="margin-top: 24px;">
+            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">When &amp; why it happens</h2>
+            <p style="color: var(--text-secondary); line-height: 1.75; margin: 0;">The current user is not allowed to perform this action on the targeted chat send docs (permission or privacy restriction).</p>
+        </section>
+
+        
+
+        <section style="margin-top: 28px;">
+            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Handling in gogram</h2>
+            <p style="color: var(--text-secondary); line-height: 1.7; margin: 0 0 12px;">
+                Gogram surfaces this as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">*gogram.ErrResponseCode</code>. Match on the message:
+            </p>
+            <div class="code-block"><span class="keyword">if</span> err, ok := err.(*gogram.ErrResponseCode); ok {
+    <span class="keyword">if</span> err.Message == <span class="string">&quot;CHAT_SEND_DOCS_FORBIDDEN&quot;</span> {
+        <span class="comment">// handle this error</span>
+    }
+}</div>
+        </section>
+
+        
+        <section style="margin-top: 28px;">
+            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Related errors</h2>
+            <div class="item-list"><a href="ADMIN_ID_INVALID.html" class="item"><span class="item-name">ADMIN_ID_INVALID</span><span class="item-desc">The specified admin ID is invalid.</span></a><a href="ADMIN_RANK_EMOJI_NOT_ALLOWED.html" class="item"><span class="item-name">ADMIN_RANK_EMOJI_NOT_ALLOWED</span><span class="item-desc">An admin rank cannot contain emojis.</span></a><a href="ADMIN_RANK_INVALID.html" class="item"><span class="item-name">ADMIN_RANK_INVALID</span><span class="item-desc">The specified admin rank is invalid.</span></a><a href="ADMIN_RIGHTS_EMPTY.html" class="item"><span class="item-name">ADMIN_RIGHTS_EMPTY</span><span class="item-desc">The admin rights configuration has no rights set.</span></a><a href="BROADCAST_FORBIDDEN.html" class="item"><span class="item-name">BROADCAST_FORBIDDEN</span><span class="item-desc">Channel poll voters and reactions cannot be fetched to prevent deanonymization.</span></a><a href="BROADCAST_PUBLIC_VOTERS_FORBIDDEN.html" class="item"><span class="item-name">BROADCAST_PUBLIC_VOTERS_FORBIDDEN</span><span class="item-desc">You can&#x27;t forward polls with public voters.</span></a><a href="BUTTON_USER_PRIVACY_RESTRICTED.html" class="item"><span class="item-name">BUTTON_USER_PRIVACY_RESTRICTED</span><span class="item-desc">The privacy setting of the user specified in the button do not allow creating such a button.</span></a><a href="CHANNEL_BANNED.html" class="item"><span class="item-name">CHANNEL_BANNED</span><span class="item-desc">The channel is banned.</span></a><a href="CHAT_ADMIN_INVITE_REQUIRED.html" class="item"><span class="item-name">CHAT_ADMIN_INVITE_REQUIRED</span><span class="item-desc">You do not have the rights to do this.</span></a><a href="CHAT_ADMIN_REQUIRED.html" class="item"><span class="item-name">CHAT_ADMIN_REQUIRED</span><span class="item-desc">You must be an admin in this chat to do this.</span></a><a href="CHAT_FORBIDDEN.html" class="item"><span class="item-name">CHAT_FORBIDDEN</span><span class="item-desc">You cannot write in this chat.</span></a><a href="CHAT_FORWARDS_RESTRICTED.html" class="item"><span class="item-name">CHAT_FORWARDS_RESTRICTED</span><span class="item-desc">You can&#x27;t forward messages from a protected chat.</span></a></div>
+        </section>
+
+        </article>
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

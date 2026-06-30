@@ -26,3 +26,5 @@ public_new/
 scrape.log
 e2e_schema.json
 schema.tl
+gogram_errors.go
+errors_raw.json
