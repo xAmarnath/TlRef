@@ -1300,8 +1300,23 @@ def build_html_docs(json_path: str, output_dir: str):
     
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
-    
-    # Generate index page
+
+    assets_src = Path('assets')
+    if assets_src.is_dir():
+        import shutil
+        copied = 0
+        for src_file in assets_src.rglob('*'):
+            if not src_file.is_file():
+                continue
+            rel = src_file.relative_to(assets_src)
+            dest = output_path / rel
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(src_file, dest)
+            copied += 1
+        print(f"Copied {copied} static asset(s) from assets/")
+    else:
+        print("WARNING: assets/ directory missing — generated pages will reference broken css/js")
+
     print("Generating index.html...")
     index_html = generate_index_page(data)
     (output_path / 'index.html').write_text(index_html, encoding='utf-8')
