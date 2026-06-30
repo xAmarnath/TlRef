@@ -1,0 +1,2209 @@
+{
+  "types": [],
+  "methods": [
+    {
+      "name": "account.deletePasskey",
+      "description": "Delete a passkey credential from the account",
+      "params": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "ID of the passkey to delete"
+        }
+      ],
+      "returns": "Bool",
+      "can_be_used_by": ["users"]
+    },
+    {
+      "name": "account.getPasskeys",
+      "description": "Get all registered passkeys for the account",
+      "params": [],
+      "returns": "account.Passkeys",
+      "can_be_used_by": ["users"]
+    },
+    {
+      "name": "account.initPasskeyRegistration",
+      "description": "Initialize WebAuthn passkey registration process",
+      "params": [],
+      "returns": "account.PasskeyRegistrationOptions",
+      "can_be_used_by": ["users"]
+    },
+    {
+      "name": "account.registerPasskey",
+      "description": "Register a new passkey credential",
+      "params": [
+        {
+          "name": "credential",
+          "type": "InputPasskeyCredential",
+          "description": "Passkey credential (public key or Firebase PNV)"
+        }
+      ],
+      "returns": "Passkey",
+      "can_be_used_by": ["users"]
+    },
+    {
+      "name": "auth.checkPaidAuth",
+      "description": "Verify paid authentication for premium features",
+      "params": [
+        {
+          "name": "phone_number",
+          "type": "string",
+          "description": "User phone number"
+        },
+        {
+          "name": "phone_code_hash",
+          "type": "string",
+          "description": "Hash of verification code"
+        },
+        {
+          "name": "form_id",
+          "type": "long",
+          "description": "Payment form ID"
+        }
+      ],
+      "returns": "auth.SentCode",
+      "can_be_used_by": []
+    },
+    {
+      "name": "auth.finishPasskeyLogin",
+      "description": "Complete passkey authentication and get authorization",
+      "params": [
+        {
+          "name": "credential",
+          "type": "InputPasskeyCredential",
+          "description": "Passkey credential for authentication"
+        },
+        {
+          "name": "from_dc_id",
+          "type": "int",
+          "flags": 0,
+          "description": "Optional datacenter ID for import"
+        },
+        {
+          "name": "from_auth_key_id",
+          "type": "long",
+          "flags": 0,
+          "description": "Optional auth key for datacenter transfer"
+        }
+      ],
+      "returns": "auth.Authorization",
+      "can_be_used_by": []
+    },
+    {
+      "name": "auth.initPasskeyLogin",
+      "description": "Initialize passkey-based login",
+      "params": [
+        {
+          "name": "api_id",
+          "type": "int",
+          "description": "App API ID"
+        },
+        {
+          "name": "api_hash",
+          "type": "string",
+          "description": "App API hash"
+        }
+      ],
+      "returns": "auth.PasskeyLoginOptions",
+      "can_be_used_by": []
+    },
+    {
+      "name": "channels.getFutureCreatorAfterLeave",
+      "description": "Get the future creator assigned to the channel, if the current creator leaves",
+      "params": [
+        {
+          "name": "channel",
+          "type": "InputChannel",
+          "description": "Channel to query"
+        }
+      ],
+      "returns": "User",
+      "can_be_used_by": ["users"]
+    },
+    {
+      "name": "contacts.updateContactNote",
+      "description": "Add or update a personal note for a contact",
+      "params": [
+        {
+          "name": "id",
+          "type": "InputUser",
+          "description": "Contact user ID"
+        },
+        {
+          "name": "note",
+          "type": "TextWithEntities",
+          "description": "Note text with formatting"
+        }
+      ],
+      "returns": "Bool",
+      "can_be_used_by": []
+    },
+    {
+      "name": "messages.craftStarGift",
+      "description": "Craft star gifts from saved items",
+      "params": [
+        {
+          "name": "stargift",
+          "type": "Vector<InputSavedStarGift>",
+          "description": "Star gifts to craft"
+        }
+      ],
+      "returns": "Updates",
+      "can_be_used_by": []
+    },
+    {
+      "name": "messages.createForumTopic",
+      "description": "Create a new forum topic in a supergroup",
+      "params": [
+        {
+          "name": "peer",
+          "type": "InputPeer",
+          "description": "Supergroup to create topic in"
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "description": "Topic title"
+        },
+        {
+          "name": "icon_color",
+          "type": "int",
+          "flags": 0,
+          "description": "Optional icon color (RGB)"
+        },
+        {
+          "name": "icon_emoji_id",
+          "type": "long",
+          "flags": 3,
+          "description": "Optional custom emoji for icon"
+        },
+        {
+          "name": "random_id",
+          "type": "long",
+          "description": "Random ID for deduplication"
+        },
+        {
+          "name": "send_as",
+          "type": "InputPeer",
+          "flags": 2,
+          "description": "Optional sender peer"
+        }
+      ],
+      "returns": "Updates",
+      "can_be_used_by": []
+    },
+    {
+      "name": "messages.deleteTopicHistory",
+      "description": "Delete all messages in a forum topic",
+      "params": [
+        {
+          "name": "peer",
+          "type": "InputPeer",
+          "description": "Supergroup with topic"
+        },
+        {
+          "name": "top_msg_id",
+          "type": "int",
+          "description": "Topic ID"
+        }
+      ],
+      "returns": "messages.AffectedHistory",
+      "can_be_used_by": []
+    },
+    {
+      "name": "messages.editForumTopic",
+      "description": "Edit properties of a forum topic",
+      "params": [
+        {
+          "name": "peer",
+          "type": "InputPeer",
+          "description": "Supergroup with topic"
+        },
+        {
+          "name": "topic_id",
+          "type": "int",
+          "description": "Topic ID to edit"
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "flags": 0,
+          "description": "Optional new title"
+        },
+        {
+          "name": "icon_emoji_id",
+          "type": "long",
+          "flags": 1,
+          "description": "Optional new emoji icon"
+        },
+        {
+          "name": "closed",
+          "type": "Bool",
+          "flags": 2,
+          "description": "Optional close status"
+        },
+        {
+          "name": "hidden",
+          "type": "Bool",
+          "flags": 3,
+          "description": "Optional hidden status"
+        }
+      ],
+      "returns": "Updates",
+      "can_be_used_by": []
+    },
+    {
+      "name": "messages.getCraftStarGifts",
+      "description": "Get craftable star gifts",
+      "params": [
+        {
+          "name": "gift_id",
+          "type": "long",
+          "description": "Base gift ID"
+        },
+        {
+          "name": "offset",
+          "type": "string",
+          "description": "Pagination offset"
+        },
+        {
+          "name": "limit",
+          "type": "int",
+          "description": "Maximum results"
+        }
+      ],
+      "returns": "payments.SavedStarGifts",
+      "can_be_used_by": []
+    },
+    {
+      "name": "messages.getEmojiGameInfo",
+      "description": "Get current emoji dice game state",
+      "params": [],
+      "returns": "messages.EmojiGameInfo",
+      "can_be_used_by": []
+    },
+    {
+      "name": "messages.getForumTopics",
+      "description": "Get forum topics from a supergroup",
+      "params": [
+        {
+          "name": "peer",
+          "type": "InputPeer",
+          "description": "Supergroup to query"
+        },
+        {
+          "name": "q",
+          "type": "string",
+          "flags": 0,
+          "description": "Optional search query"
+        },
+        {
+          "name": "offset_date",
+          "type": "int",
+          "description": "Pagination offset date"
+        },
+        {
+          "name": "offset_id",
+          "type": "int",
+          "description": "Pagination offset ID"
+        },
+        {
+          "name": "offset_topic",
+          "type": "int",
+          "description": "Pagination offset topic"
+        },
+        {
+          "name": "limit",
+          "type": "int",
+          "description": "Maximum topics"
+        }
+      ],
+      "returns": "messages.ForumTopics",
+      "can_be_used_by": []
+    },
+    {
+      "name": "messages.getForumTopicsByID",
+      "description": "Get specific forum topics by ID",
+      "params": [
+        {
+          "name": "peer",
+          "type": "InputPeer",
+          "description": "Supergroup with topics"
+        },
+        {
+          "name": "topics",
+          "type": "Vector<int>",
+          "description": "Topic IDs to fetch"
+        }
+      ],
+      "returns": "messages.ForumTopics",
+      "can_be_used_by": []
+    },
+    {
+      "name": "messages.getWebViewResult",
+      "description": "Get result from a web view query",
+      "params": [
+        {
+          "name": "peer",
+          "type": "InputPeer",
+          "description": "Peer context"
+        },
+        {
+          "name": "bot",
+          "type": "InputUser",
+          "description": "Bot user"
+        },
+        {
+          "name": "query_id",
+          "type": "long",
+          "description": "Web view query ID"
+        }
+      ],
+      "returns": "messages.WebViewResult",
+      "can_be_used_by": []
+    },
+    {
+      "name": "messages.reorderPinnedForumTopics",
+      "description": "Reorder pinned forum topics",
+      "params": [
+        {
+          "name": "peer",
+          "type": "InputPeer",
+          "description": "Supergroup"
+        },
+        {
+          "name": "order",
+          "type": "Vector<int>",
+          "description": "New topic order"
+        }
+      ],
+      "returns": "Updates",
+      "can_be_used_by": []
+    },
+    {
+      "name": "messages.setWebViewResult",
+      "description": "Set result of a web view",
+      "params": [
+        {
+          "name": "query_id",
+          "type": "long",
+          "description": "Web view query ID"
+        }
+      ],
+      "returns": "Bool",
+      "can_be_used_by": []
+    },
+    {
+      "name": "messages.summarizeText",
+      "description": "Summarize lengthy text using AI",
+      "params": [
+        {
+          "name": "peer",
+          "type": "InputPeer",
+          "description": "Peer context"
+        },
+        {
+          "name": "id",
+          "type": "int",
+          "description": "Message ID"
+        },
+        {
+          "name": "to_lang",
+          "type": "string",
+          "flags": 0,
+          "description": "Optional target language"
+        }
+      ],
+      "returns": "TextWithEntities",
+      "can_be_used_by": []
+    },
+    {
+      "name": "messages.updatePinnedForumTopic",
+      "description": "Pin or unpin a forum topic",
+      "params": [
+        {
+          "name": "peer",
+          "type": "InputPeer",
+          "description": "Supergroup"
+        },
+        {
+          "name": "topic_id",
+          "type": "int",
+          "description": "Topic ID"
+        },
+        {
+          "name": "pinned",
+          "type": "Bool",
+          "description": "Pin status"
+        }
+      ],
+      "returns": "Updates",
+      "can_be_used_by": []
+    },
+    {
+      "name": "payments.getStarGiftActiveAuctions",
+      "description": "Get active star gift auctions",
+      "params": [
+        {
+          "name": "hash",
+          "type": "long",
+          "description": "Hash for deduplication"
+        }
+      ],
+      "returns": "payments.StarGiftActiveAuctions",
+      "can_be_used_by": []
+    },
+    {
+      "name": "payments.getStarGiftAuctionAcquiredGifts",
+      "description": "Get gifts acquired from auction",
+      "params": [
+        {
+          "name": "gift_id",
+          "type": "long",
+          "description": "Gift ID"
+        }
+      ],
+      "returns": "payments.StarGiftAuctionAcquiredGifts",
+      "can_be_used_by": []
+    },
+    {
+      "name": "payments.getStarGiftAuctionState",
+      "description": "Get current auction state for a gift",
+      "params": [
+        {
+          "name": "auction",
+          "type": "InputStarGiftAuction",
+          "description": "Auction to query"
+        },
+        {
+          "name": "version",
+          "type": "int",
+          "description": "State version"
+        }
+      ],
+      "returns": "payments.StarGiftAuctionState",
+      "can_be_used_by": []
+    },
+    {
+      "name": "payments.getStarGiftUpgradeAttributes",
+      "description": "Get attributes for upgrading star gifts",
+      "params": [
+        {
+          "name": "gift_id",
+          "type": "long",
+          "description": "Gift to upgrade"
+        }
+      ],
+      "returns": "payments.StarGiftUpgradeAttributes",
+      "can_be_used_by": []
+    },
+    {
+      "name": "payments.resolveStarGiftOffer",
+      "description": "Accept or decline a star gift offer",
+      "params": [
+        {
+          "name": "decline",
+          "type": "bool",
+          "flags": 0,
+          "description": "Whether to decline"
+        },
+        {
+          "name": "offer_msg_id",
+          "type": "int",
+          "description": "Offer message ID"
+        }
+      ],
+      "returns": "Updates",
+      "can_be_used_by": []
+    },
+    {
+      "name": "payments.sendStarGiftOffer",
+      "description": "Send a star gift offer to a user",
+      "params": [
+        {
+          "name": "peer",
+          "type": "InputPeer",
+          "description": "Recipient peer"
+        },
+        {
+          "name": "slug",
+          "type": "string",
+          "description": "Gift slug"
+        },
+        {
+          "name": "price",
+          "type": "StarsAmount",
+          "description": "Gift price"
+        },
+        {
+          "name": "duration",
+          "type": "int",
+          "description": "Offer duration"
+        },
+        {
+          "name": "random_id",
+          "type": "long",
+          "description": "Random ID"
+        },
+        {
+          "name": "allow_paid_stars",
+          "type": "long",
+          "flags": 0,
+          "description": "Optional allowed paid stars"
+        }
+      ],
+      "returns": "Updates",
+      "can_be_used_by": []
+    },
+    {
+      "name": "phone.deleteGroupCallMessages",
+      "description": "Delete messages from a group call",
+      "params": [
+        {
+          "name": "report_spam",
+          "type": "bool",
+          "flags": 0,
+          "description": "Report as spam"
+        },
+        {
+          "name": "call",
+          "type": "InputGroupCall",
+          "description": "Group call"
+        },
+        {
+          "name": "messages",
+          "type": "Vector<int>",
+          "description": "Message IDs to delete"
+        }
+      ],
+      "returns": "Updates",
+      "can_be_used_by": []
+    },
+    {
+      "name": "phone.deleteGroupCallParticipantMessages",
+      "description": "Delete messages from a group call participant",
+      "params": [
+        {
+          "name": "report_spam",
+          "type": "bool",
+          "flags": 0,
+          "description": "Report as spam"
+        },
+        {
+          "name": "call",
+          "type": "InputGroupCall",
+          "description": "Group call"
+        },
+        {
+          "name": "participant",
+          "type": "InputPeer",
+          "description": "Participant peer"
+        }
+      ],
+      "returns": "Updates",
+      "can_be_used_by": []
+    },
+    {
+      "name": "phone.getGroupCallStars",
+      "description": "Get star donations in a group call",
+      "params": [
+        {
+          "name": "call",
+          "type": "InputGroupCall",
+          "description": "Group call"
+        }
+      ],
+      "returns": "phone.GroupCallStars",
+      "can_be_used_by": []
+    },
+    {
+      "name": "phone.saveDefaultSendAs",
+      "description": "Set default sender for group call messages",
+      "params": [
+        {
+          "name": "call",
+          "type": "InputGroupCall",
+          "description": "Group call"
+        },
+        {
+          "name": "send_as",
+          "type": "InputPeer",
+          "description": "Peer to send as"
+        }
+      ],
+      "returns": "Bool",
+      "can_be_used_by": []
+    },
+    {
+      "name": "phone.sendGroupCallEncryptedMessage",
+      "description": "Send encrypted message in group call",
+      "params": [
+        {
+          "name": "call",
+          "type": "InputGroupCall",
+          "description": "Group call"
+        },
+        {
+          "name": "encrypted_message",
+          "type": "bytes",
+          "description": "Encrypted message data"
+        }
+      ],
+      "returns": "Bool",
+      "can_be_used_by": []
+    },
+    {
+      "name": "phone.sendGroupCallMessage",
+      "description": "Send message in a group call",
+      "params": [
+        {
+          "name": "call",
+          "type": "InputGroupCall",
+          "description": "Group call"
+        },
+        {
+          "name": "random_id",
+          "type": "long",
+          "description": "Random ID"
+        },
+        {
+          "name": "message",
+          "type": "TextWithEntities",
+          "description": "Message text"
+        },
+        {
+          "name": "allow_paid_stars",
+          "type": "long",
+          "flags": 0,
+          "description": "Optional allowed paid stars"
+        },
+        {
+          "name": "send_as",
+          "type": "InputPeer",
+          "flags": 1,
+          "description": "Optional sender peer"
+        }
+      ],
+      "returns": "Updates",
+      "can_be_used_by": []
+    },
+    {
+      "name": "stories.startLive",
+      "description": "Start a live story broadcast",
+      "params": [
+        {
+          "name": "peer",
+          "type": "InputPeer",
+          "description": "Peer for story"
+        },
+        {
+          "name": "caption",
+          "type": "string",
+          "flags": 0,
+          "description": "Optional caption"
+        },
+        {
+          "name": "entities",
+          "type": "Vector<MessageEntity>",
+          "flags": 1,
+          "description": "Optional formatting entities"
+        },
+        {
+          "name": "privacy_rules",
+          "type": "Vector<InputPrivacyRule>",
+          "description": "Privacy rules"
+        },
+        {
+          "name": "random_id",
+          "type": "long",
+          "description": "Random ID"
+        },
+        {
+          "name": "messages_enabled",
+          "type": "Bool",
+          "flags": 6,
+          "description": "Enable messages"
+        },
+        {
+          "name": "send_paid_messages_stars",
+          "type": "long",
+          "flags": 7,
+          "description": "Paid message cost"
+        }
+      ],
+      "returns": "Updates",
+      "can_be_used_by": []
+    },
+    {
+      "name": "users.suggestBirthday",
+      "description": "Suggest a birthday for a contact",
+      "params": [
+        {
+          "name": "id",
+          "type": "InputUser",
+          "description": "User to suggest birthday for"
+        },
+        {
+          "name": "birthday",
+          "type": "Birthday",
+          "description": "Birthday to suggest"
+        }
+      ],
+      "returns": "Updates",
+      "can_be_used_by": []
+    }
+  ],
+  "constructors": [
+    {
+      "name": "account.passkeyRegistrationOptions",
+      "description": "WebAuthn passkey registration options and challenge",
+      "fields": [
+        {
+          "name": "options",
+          "type": "DataJSON",
+          "description": "Registration options JSON"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "account.passkeys",
+      "description": "List of user's registered passkeys",
+      "fields": [
+        {
+          "name": "passkeys",
+          "type": "Vector<Passkey>",
+          "description": "Array of passkey credentials"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "auctionBidLevel",
+      "description": "Bid level information for auctions",
+      "fields": [
+        {
+          "name": "pos",
+          "type": "int",
+          "description": "Position in bid levels"
+        },
+        {
+          "name": "amount",
+          "type": "long",
+          "description": "Bid amount in stars"
+        },
+        {
+          "name": "date",
+          "type": "int",
+          "description": "Bid timestamp"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "auth.passkeyLoginOptions",
+      "description": "WebAuthn passkey login options and challenge",
+      "fields": [
+        {
+          "name": "options",
+          "type": "DataJSON",
+          "description": "Login options JSON"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "groupCallDonor",
+      "description": "Star donor information in group calls",
+      "fields": [
+        {
+          "name": "top",
+          "type": "bool",
+          "flags": 0,
+          "description": "Top donor flag"
+        },
+        {
+          "name": "my",
+          "type": "bool",
+          "flags": 1,
+          "description": "Current user's donation"
+        },
+        {
+          "name": "anonymous",
+          "type": "bool",
+          "flags": 2,
+          "description": "Anonymous donor"
+        },
+        {
+          "name": "peer_id",
+          "type": "Peer",
+          "flags": 3,
+          "description": "Donor peer ID"
+        },
+        {
+          "name": "stars",
+          "type": "long",
+          "description": "Star amount"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "groupCallMessage",
+      "description": "Message in a group call",
+      "fields": [
+        {
+          "name": "from_admin",
+          "type": "bool",
+          "flags": 1,
+          "description": "Sent by admin"
+        },
+        {
+          "name": "id",
+          "type": "int",
+          "description": "Message ID"
+        },
+        {
+          "name": "from_id",
+          "type": "Peer",
+          "description": "Sender peer"
+        },
+        {
+          "name": "date",
+          "type": "int",
+          "description": "Send timestamp"
+        },
+        {
+          "name": "message",
+          "type": "TextWithEntities",
+          "description": "Message text"
+        },
+        {
+          "name": "paid_message_stars",
+          "type": "long",
+          "flags": 0,
+          "description": "Paid message star cost"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "inputInvoicePremiumAuthCode",
+      "description": "Invoice for premium auth verification",
+      "fields": [
+        {
+          "name": "purpose",
+          "type": "InputStorePaymentPurpose",
+          "description": "Payment purpose"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "inputInvoiceStarGiftAuctionBid",
+      "description": "Invoice for bidding on star gift auction",
+      "fields": [
+        {
+          "name": "hide_name",
+          "type": "bool",
+          "flags": 0,
+          "description": "Hide bidder name"
+        },
+        {
+          "name": "update_bid",
+          "type": "bool",
+          "flags": 2,
+          "description": "Update existing bid"
+        },
+        {
+          "name": "peer",
+          "type": "InputPeer",
+          "flags": 3,
+          "description": "Beneficiary peer"
+        },
+        {
+          "name": "gift_id",
+          "type": "long",
+          "description": "Gift ID"
+        },
+        {
+          "name": "bid_amount",
+          "type": "long",
+          "description": "Bid amount"
+        },
+        {
+          "name": "message",
+          "type": "TextWithEntities",
+          "flags": 1,
+          "description": "Message with bid"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "inputInvoiceStarGiftDropOriginalDetails",
+      "description": "Invoice for dropping original star gift",
+      "fields": [
+        {
+          "name": "stargift",
+          "type": "InputSavedStarGift",
+          "description": "Star gift to drop"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "inputMediaStakeDice",
+      "description": "Stake dice game media",
+      "fields": [
+        {
+          "name": "game_hash",
+          "type": "string",
+          "description": "Game hash"
+        },
+        {
+          "name": "ton_amount",
+          "type": "long",
+          "description": "TON stake amount"
+        },
+        {
+          "name": "client_seed",
+          "type": "bytes",
+          "description": "Client seed"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "inputMessagesFilterPhotoVideoDocuments",
+      "description": "Filter for photos, videos and documents",
+      "fields": [],
+      "can_be_used_by": []
+    },
+    {
+      "name": "inputPasskeyCredentialFirebasePNV",
+      "description": "Firebase PNV passkey credential",
+      "fields": [
+        {
+          "name": "pnv_token",
+          "type": "string",
+          "description": "Firebase Play Integrity token"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "inputPasskeyCredentialPublicKey",
+      "description": "WebAuthn public key credential",
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Credential ID"
+        },
+        {
+          "name": "raw_id",
+          "type": "string",
+          "description": "Raw credential ID"
+        },
+        {
+          "name": "response",
+          "type": "InputPasskeyResponse",
+          "description": "Auth response"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "inputPasskeyResponseLogin",
+      "description": "WebAuthn login response",
+      "fields": [
+        {
+          "name": "client_data",
+          "type": "DataJSON",
+          "description": "Client data JSON"
+        },
+        {
+          "name": "authenticator_data",
+          "type": "bytes",
+          "description": "Authenticator data"
+        },
+        {
+          "name": "signature",
+          "type": "bytes",
+          "description": "Signature"
+        },
+        {
+          "name": "user_handle",
+          "type": "string",
+          "description": "User handle"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "inputPasskeyResponseRegister",
+      "description": "WebAuthn registration response",
+      "fields": [
+        {
+          "name": "client_data",
+          "type": "DataJSON",
+          "description": "Client data JSON"
+        },
+        {
+          "name": "attestation_data",
+          "type": "bytes",
+          "description": "Attestation data"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "inputPeerColorCollectible",
+      "description": "Peer color from collectible",
+      "fields": [
+        {
+          "name": "collectible_id",
+          "type": "long",
+          "description": "Collectible ID"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "inputPrivacyKeySavedMusic",
+      "description": "Privacy key for saved music",
+      "fields": [],
+      "can_be_used_by": []
+    },
+    {
+      "name": "inputStarGiftAuction",
+      "description": "Star gift auction identifier",
+      "fields": [
+        {
+          "name": "gift_id",
+          "type": "long",
+          "description": "Gift ID"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "inputStarGiftAuctionSlug",
+      "description": "Star gift auction by slug",
+      "fields": [
+        {
+          "name": "slug",
+          "type": "string",
+          "description": "Auction slug"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "keyboardButtonStyle",
+      "description": "Styling options for keyboard buttons",
+      "fields": [
+        {
+          "name": "bg_primary",
+          "type": "bool",
+          "flags": 0,
+          "description": "Primary background color"
+        },
+        {
+          "name": "bg_danger",
+          "type": "bool",
+          "flags": 1,
+          "description": "Danger background color"
+        },
+        {
+          "name": "bg_success",
+          "type": "bool",
+          "flags": 2,
+          "description": "Success background color"
+        },
+        {
+          "name": "icon",
+          "type": "long",
+          "flags": 3,
+          "description": "Icon emoji ID"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "messageActionChangeCreator",
+      "description": "Creator changed in group/channel",
+      "fields": [
+        {
+          "name": "new_creator_id",
+          "type": "long",
+          "description": "New creator user ID"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "messageActionCreatedBroadcastList",
+      "description": "Broadcast list created",
+      "fields": [],
+      "can_be_used_by": []
+    },
+    {
+      "name": "messageActionLoginUnknownLocation",
+      "description": "Login from unknown location",
+      "fields": [
+        {
+          "name": "title",
+          "type": "string",
+          "description": "Location title"
+        },
+        {
+          "name": "address",
+          "type": "string",
+          "description": "Location address"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "messageActionNewCreatorPending",
+      "description": "Pending creator transfer",
+      "fields": [
+        {
+          "name": "new_creator_id",
+          "type": "long",
+          "description": "Pending creator ID"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "messageActionPhoneNumberRequest",
+      "description": "Phone number requested",
+      "fields": [],
+      "can_be_used_by": []
+    },
+    {
+      "name": "messageActionStarGiftPurchaseOffer",
+      "description": "Star gift purchase offer",
+      "fields": [
+        {
+          "name": "accepted",
+          "type": "int",
+          "flags": 0,
+          "description": "Accepted count"
+        },
+        {
+          "name": "declined",
+          "type": "bool",
+          "flags": 1,
+          "description": "Declined status"
+        },
+        {
+          "name": "gift",
+          "type": "StarGift",
+          "description": "Gift details"
+        },
+        {
+          "name": "price",
+          "type": "StarsAmount",
+          "description": "Price"
+        },
+        {
+          "name": "expires_at",
+          "type": "int",
+          "description": "Expiration timestamp"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "messageActionStarGiftPurchaseOfferDeclined",
+      "description": "Star gift offer declined",
+      "fields": [
+        {
+          "name": "expired",
+          "type": "bool",
+          "flags": 0,
+          "description": "Expired status"
+        },
+        {
+          "name": "gift",
+          "type": "StarGift",
+          "description": "Gift details"
+        },
+        {
+          "name": "price",
+          "type": "StarsAmount",
+          "description": "Price"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "messageActionSuggestBirthday",
+      "description": "Birthday suggestion action",
+      "fields": [
+        {
+          "name": "birthday",
+          "type": "Birthday",
+          "description": "Suggested birthday"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "messageActionTTLChange",
+      "description": "Message TTL changed",
+      "fields": [
+        {
+          "name": "ttl",
+          "type": "int",
+          "description": "New TTL in seconds"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "messageActionUserJoined",
+      "description": "User joined via invite link",
+      "fields": [],
+      "can_be_used_by": []
+    },
+    {
+      "name": "messageActionUserUpdatedPhoto",
+      "description": "User updated profile photo",
+      "fields": [
+        {
+          "name": "new_user_photo",
+          "type": "UserProfilePhoto",
+          "description": "New profile photo"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "messageMediaVideoStream",
+      "description": "Video stream media",
+      "fields": [
+        {
+          "name": "rtmp_stream",
+          "type": "bool",
+          "flags": 0,
+          "description": "RTMP stream flag"
+        },
+        {
+          "name": "call",
+          "type": "InputGroupCall",
+          "description": "Group call reference"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "messages.emojiGameDiceInfo",
+      "description": "Emoji game dice information",
+      "fields": [
+        {
+          "name": "game_hash",
+          "type": "string",
+          "description": "Game hash"
+        },
+        {
+          "name": "prev_stake",
+          "type": "long",
+          "description": "Previous stake"
+        },
+        {
+          "name": "current_streak",
+          "type": "int",
+          "description": "Current win streak"
+        },
+        {
+          "name": "params",
+          "type": "Vector<int>",
+          "description": "Game parameters"
+        },
+        {
+          "name": "plays_left",
+          "type": "int",
+          "flags": 0,
+          "description": "Remaining plays"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "messages.emojiGameOutcome",
+      "description": "Emoji game outcome",
+      "fields": [
+        {
+          "name": "seed",
+          "type": "bytes",
+          "description": "Game seed"
+        },
+        {
+          "name": "stake_ton_amount",
+          "type": "long",
+          "description": "TON stake"
+        },
+        {
+          "name": "ton_amount",
+          "type": "long",
+          "description": "TON won/lost"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "messages.emojiGameUnavailable",
+      "description": "Emoji game unavailable",
+      "fields": [],
+      "can_be_used_by": []
+    },
+    {
+      "name": "messages.webViewResult",
+      "description": "Web view result",
+      "fields": [
+        {
+          "name": "result",
+          "type": "BotInlineResult",
+          "description": "Result from web view"
+        },
+        {
+          "name": "users",
+          "type": "Vector<User>",
+          "description": "Involved users"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "passkey",
+      "description": "Registered passkey credential",
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Passkey ID"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "Display name"
+        },
+        {
+          "name": "date",
+          "type": "int",
+          "description": "Registration timestamp"
+        },
+        {
+          "name": "software_emoji_id",
+          "type": "long",
+          "flags": 0,
+          "description": "Software type emoji"
+        },
+        {
+          "name": "last_usage_date",
+          "type": "int",
+          "flags": 1,
+          "description": "Last used timestamp"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "payments.starGiftActiveAuctions",
+      "description": "Active star gift auctions",
+      "fields": [
+        {
+          "name": "auctions",
+          "type": "Vector<StarGiftActiveAuctionState>",
+          "description": "Active auctions"
+        },
+        {
+          "name": "users",
+          "type": "Vector<User>",
+          "description": "Involved users"
+        },
+        {
+          "name": "chats",
+          "type": "Vector<Chat>",
+          "description": "Involved chats"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "payments.starGiftActiveAuctionsNotModified",
+      "description": "Star gift auctions unchanged",
+      "fields": [],
+      "can_be_used_by": []
+    },
+    {
+      "name": "payments.starGiftAuctionAcquiredGifts",
+      "description": "Gifts acquired from auction",
+      "fields": [
+        {
+          "name": "gifts",
+          "type": "Vector<StarGiftAuctionAcquiredGift>",
+          "description": "Acquired gifts"
+        },
+        {
+          "name": "users",
+          "type": "Vector<User>",
+          "description": "Gift givers"
+        },
+        {
+          "name": "chats",
+          "type": "Vector<Chat>",
+          "description": "Associated chats"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "payments.starGiftAuctionState",
+      "description": "Star gift auction state",
+      "fields": [
+        {
+          "name": "gift",
+          "type": "StarGift",
+          "description": "Gift details"
+        },
+        {
+          "name": "state",
+          "type": "StarGiftAuctionState",
+          "description": "Auction state"
+        },
+        {
+          "name": "user_state",
+          "type": "StarGiftAuctionUserState",
+          "description": "User's auction state"
+        },
+        {
+          "name": "timeout",
+          "type": "int",
+          "description": "State timeout"
+        },
+        {
+          "name": "users",
+          "type": "Vector<User>",
+          "description": "Top bidders"
+        },
+        {
+          "name": "chats",
+          "type": "Vector<Chat>",
+          "description": "Associated chats"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "payments.starGiftUpgradeAttributes",
+      "description": "Star gift upgrade attributes",
+      "fields": [
+        {
+          "name": "attributes",
+          "type": "Vector<StarGiftAttribute>",
+          "description": "Available attributes"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "peerColorCollectible",
+      "description": "Collectible peer color",
+      "fields": [
+        {
+          "name": "collectible_id",
+          "type": "long",
+          "description": "Collectible ID"
+        },
+        {
+          "name": "gift_emoji_id",
+          "type": "long",
+          "description": "Gift emoji"
+        },
+        {
+          "name": "background_emoji_id",
+          "type": "long",
+          "description": "Background emoji"
+        },
+        {
+          "name": "accent_color",
+          "type": "int",
+          "description": "Light accent color"
+        },
+        {
+          "name": "colors",
+          "type": "Vector<int>",
+          "description": "Color palette"
+        },
+        {
+          "name": "dark_accent_color",
+          "type": "int",
+          "flags": 0,
+          "description": "Dark accent color"
+        },
+        {
+          "name": "dark_colors",
+          "type": "Vector<int>",
+          "flags": 1,
+          "description": "Dark color palette"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "phone.groupCallStars",
+      "description": "Star donations in group call",
+      "fields": [
+        {
+          "name": "total_stars",
+          "type": "long",
+          "description": "Total stars"
+        },
+        {
+          "name": "top_donors",
+          "type": "Vector<GroupCallDonor>",
+          "description": "Top star donors"
+        },
+        {
+          "name": "chats",
+          "type": "Vector<Chat>",
+          "description": "Associated chats"
+        },
+        {
+          "name": "users",
+          "type": "Vector<User>",
+          "description": "Donors"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "privacyKeySavedMusic",
+      "description": "Privacy key for saved music",
+      "fields": [],
+      "can_be_used_by": []
+    },
+    {
+      "name": "recentStory",
+      "description": "Recent story information",
+      "fields": [
+        {
+          "name": "live",
+          "type": "bool",
+          "flags": 0,
+          "description": "Live story"
+        },
+        {
+          "name": "max_id",
+          "type": "int",
+          "flags": 1,
+          "description": "Latest story ID"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "sendMessageTextDraftAction",
+      "description": "Text draft action message",
+      "fields": [
+        {
+          "name": "random_id",
+          "type": "long",
+          "description": "Random ID"
+        },
+        {
+          "name": "text",
+          "type": "TextWithEntities",
+          "description": "Draft text"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "starGiftActiveAuctionState",
+      "description": "Active star gift with user's auction state",
+      "fields": [
+        {
+          "name": "gift",
+          "type": "StarGift",
+          "description": "Gift details"
+        },
+        {
+          "name": "state",
+          "type": "StarGiftAuctionState",
+          "description": "Auction state"
+        },
+        {
+          "name": "user_state",
+          "type": "StarGiftAuctionUserState",
+          "description": "User's participation"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "starGiftAttributeRarity",
+      "description": "Star gift rarity level",
+      "fields": [
+        {
+          "name": "permille",
+          "type": "int",
+          "description": "Rarity in permille"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "starGiftAttributeRarityEpic",
+      "description": "Epic rarity star gift",
+      "fields": [],
+      "can_be_used_by": []
+    },
+    {
+      "name": "starGiftAttributeRarityLegendary",
+      "description": "Legendary rarity star gift",
+      "fields": [],
+      "can_be_used_by": []
+    },
+    {
+      "name": "starGiftAttributeRarityRare",
+      "description": "Rare rarity star gift",
+      "fields": [],
+      "can_be_used_by": []
+    },
+    {
+      "name": "starGiftAttributeRarityUncommon",
+      "description": "Uncommon rarity star gift",
+      "fields": [],
+      "can_be_used_by": []
+    },
+    {
+      "name": "starGiftAuctionAcquiredGift",
+      "description": "Gift acquired in auction",
+      "fields": [
+        {
+          "name": "name_hidden",
+          "type": "bool",
+          "flags": 0,
+          "description": "Giver name hidden"
+        },
+        {
+          "name": "peer",
+          "type": "Peer",
+          "description": "Gift giver"
+        },
+        {
+          "name": "date",
+          "type": "int",
+          "description": "Acquisition date"
+        },
+        {
+          "name": "bid_amount",
+          "type": "long",
+          "description": "Bid amount"
+        },
+        {
+          "name": "round",
+          "type": "int",
+          "description": "Auction round"
+        },
+        {
+          "name": "pos",
+          "type": "int",
+          "description": "Position in bid"
+        },
+        {
+          "name": "message",
+          "type": "TextWithEntities",
+          "flags": 1,
+          "description": "Gift message"
+        },
+        {
+          "name": "gift_num",
+          "type": "int",
+          "flags": 2,
+          "description": "Gift number"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "starGiftAuctionRound",
+      "description": "Current round information in auction",
+      "fields": [
+        {
+          "name": "num",
+          "type": "int",
+          "description": "Round number"
+        },
+        {
+          "name": "duration",
+          "type": "int",
+          "description": "Round duration in seconds"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "starGiftAuctionRoundExtendable",
+      "description": "Extendable auction round",
+      "fields": [
+        {
+          "name": "num",
+          "type": "int",
+          "description": "Round number"
+        },
+        {
+          "name": "duration",
+          "type": "int",
+          "description": "Round duration"
+        },
+        {
+          "name": "extend_top",
+          "type": "int",
+          "description": "Extension threshold"
+        },
+        {
+          "name": "extend_window",
+          "type": "int",
+          "description": "Extension window in seconds"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "starGiftAuctionState",
+      "description": "Star gift auction state",
+      "fields": [
+        {
+          "name": "version",
+          "type": "int",
+          "description": "State version"
+        },
+        {
+          "name": "start_date",
+          "type": "int",
+          "description": "Auction start date"
+        },
+        {
+          "name": "end_date",
+          "type": "int",
+          "description": "Auction end date"
+        },
+        {
+          "name": "min_bid_amount",
+          "type": "long",
+          "description": "Minimum bid amount"
+        },
+        {
+          "name": "bid_levels",
+          "type": "Vector<AuctionBidLevel>",
+          "description": "Available bid levels"
+        },
+        {
+          "name": "top_bidders",
+          "type": "Vector<long>",
+          "description": "Top bidder user IDs"
+        },
+        {
+          "name": "next_round_at",
+          "type": "int",
+          "description": "Next round timestamp"
+        },
+        {
+          "name": "last_gift_num",
+          "type": "int",
+          "description": "Last gift number"
+        },
+        {
+          "name": "gifts_left",
+          "type": "int",
+          "description": "Remaining gifts"
+        },
+        {
+          "name": "current_round",
+          "type": "int",
+          "description": "Current round number"
+        },
+        {
+          "name": "total_rounds",
+          "type": "int",
+          "description": "Total rounds"
+        },
+        {
+          "name": "rounds",
+          "type": "Vector<StarGiftAuctionRound>",
+          "description": "Round information"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "starGiftAuctionStateFinished",
+      "description": "Finished star gift auction state",
+      "fields": [
+        {
+          "name": "start_date",
+          "type": "int",
+          "description": "Auction start date"
+        },
+        {
+          "name": "end_date",
+          "type": "int",
+          "description": "Auction end date"
+        },
+        {
+          "name": "average_price",
+          "type": "long",
+          "description": "Average price paid"
+        },
+        {
+          "name": "listed_count",
+          "type": "int",
+          "flags": 0,
+          "description": "Number listed for sale"
+        },
+        {
+          "name": "fragment_listed_count",
+          "type": "int",
+          "flags": 1,
+          "description": "Fragment listed count"
+        },
+        {
+          "name": "fragment_listed_url",
+          "type": "string",
+          "flags": 1,
+          "description": "Fragment listing URL"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "starGiftAuctionStateNotModified",
+      "description": "Auction state unchanged",
+      "fields": [],
+      "can_be_used_by": []
+    },
+    {
+      "name": "starGiftAuctionUserState",
+      "description": "User's participation in star gift auction",
+      "fields": [
+        {
+          "name": "returned",
+          "type": "bool",
+          "flags": 1,
+          "description": "Gift returned to user"
+        },
+        {
+          "name": "bid_amount",
+          "type": "long",
+          "flags": 0,
+          "description": "User's bid amount"
+        },
+        {
+          "name": "bid_date",
+          "type": "int",
+          "flags": 0,
+          "description": "Bid timestamp"
+        },
+        {
+          "name": "min_bid_amount",
+          "type": "long",
+          "flags": 0,
+          "description": "Minimum bid user can place"
+        },
+        {
+          "name": "bid_peer",
+          "type": "Peer",
+          "flags": 0,
+          "description": "Peer who won against user"
+        },
+        {
+          "name": "acquired_count",
+          "type": "int",
+          "description": "Gifts acquired in auction"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "starGiftBackground",
+      "description": "Star gift background colors",
+      "fields": [
+        {
+          "name": "center_color",
+          "type": "int",
+          "description": "Center color"
+        },
+        {
+          "name": "edge_color",
+          "type": "int",
+          "description": "Edge color"
+        },
+        {
+          "name": "text_color",
+          "type": "int",
+          "description": "Text color"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "starGiftUpgradePrice",
+      "description": "Cost to upgrade star gift",
+      "fields": [
+        {
+          "name": "date",
+          "type": "int",
+          "description": "Price update date"
+        },
+        {
+          "name": "upgrade_stars",
+          "type": "long",
+          "description": "Stars cost to upgrade"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "updateBotSubscriptionExpire",
+      "description": "Bot subscription has expired",
+      "fields": [
+        {
+          "name": "user_id",
+          "type": "long",
+          "description": "Bot user ID"
+        },
+        {
+          "name": "payload",
+          "type": "string",
+          "description": "Bot payload"
+        },
+        {
+          "name": "until_date",
+          "type": "int",
+          "description": "Expiration date"
+        },
+        {
+          "name": "qts",
+          "type": "int",
+          "description": "State number"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "updateDeleteGroupCallMessages",
+      "description": "Messages deleted from group call",
+      "fields": [
+        {
+          "name": "call",
+          "type": "InputGroupCall",
+          "description": "Group call"
+        },
+        {
+          "name": "messages",
+          "type": "Vector<int>",
+          "description": "Deleted message IDs"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "updateEmojiGameInfo",
+      "description": "Emoji game information updated",
+      "fields": [
+        {
+          "name": "info",
+          "type": "messages.EmojiGameInfo",
+          "description": "Updated game info"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "updateGroupCallEncryptedMessage",
+      "description": "Encrypted message in group call",
+      "fields": [
+        {
+          "name": "call",
+          "type": "InputGroupCall",
+          "description": "Group call reference"
+        },
+        {
+          "name": "from_id",
+          "type": "Peer",
+          "description": "Message sender"
+        },
+        {
+          "name": "encrypted_message",
+          "type": "bytes",
+          "description": "Encrypted message data"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "updateGroupCallMessage",
+      "description": "Group call message sent",
+      "fields": [
+        {
+          "name": "call",
+          "type": "InputGroupCall",
+          "description": "Group call"
+        },
+        {
+          "name": "message",
+          "type": "GroupCallMessage",
+          "description": "Message content"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "updatePinnedForumTopic",
+      "description": "Forum topic pinned status changed",
+      "fields": [
+        {
+          "name": "pinned",
+          "type": "bool",
+          "flags": 0,
+          "description": "Whether topic is pinned"
+        },
+        {
+          "name": "peer",
+          "type": "Peer",
+          "description": "Forum peer"
+        },
+        {
+          "name": "topic_id",
+          "type": "int",
+          "description": "Topic ID"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "updatePinnedForumTopics",
+      "description": "Pinned forum topics reordered",
+      "fields": [
+        {
+          "name": "peer",
+          "type": "Peer",
+          "description": "Forum peer"
+        },
+        {
+          "name": "order",
+          "type": "Vector<int>",
+          "flags": 0,
+          "description": "New order of topic IDs"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "updateStarGiftAuctionState",
+      "description": "Star gift auction state updated",
+      "fields": [
+        {
+          "name": "gift_id",
+          "type": "long",
+          "description": "Gift being auctioned"
+        },
+        {
+          "name": "state",
+          "type": "StarGiftAuctionState",
+          "description": "Current auction state"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "updateStarGiftAuctionUserState",
+      "description": "User's star gift auction state changed",
+      "fields": [
+        {
+          "name": "gift_id",
+          "type": "long",
+          "description": "Gift ID"
+        },
+        {
+          "name": "user_state",
+          "type": "StarGiftAuctionUserState",
+          "description": "User's state in auction"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "updateStarGiftCraftFail",
+      "description": "Star gift crafting failed",
+      "fields": [],
+      "can_be_used_by": []
+    },
+    {
+      "name": "updateTranscribeAudio",
+      "description": "Audio transcription result",
+      "fields": [
+        {
+          "name": "final",
+          "type": "bool",
+          "flags": 0,
+          "description": "Is final transcription"
+        },
+        {
+          "name": "transcription_id",
+          "type": "long",
+          "description": "Transcription request ID"
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "description": "Transcribed text"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "userStatusHidden",
+      "description": "User status hidden from others",
+      "fields": [],
+      "can_be_used_by": []
+    },
+    {
+      "name": "webPageAttributeStarGiftAuction",
+      "description": "Web page star gift auction attribute",
+      "fields": [
+        {
+          "name": "gift",
+          "type": "StarGift",
+          "description": "Auctioned star gift"
+        },
+        {
+          "name": "end_date",
+          "type": "int",
+          "description": "Auction end timestamp"
+        }
+      ],
+      "can_be_used_by": []
+    },
+    {
+      "name": "webPageUrlPending",
+      "description": "Web page URL still loading",
+      "fields": [
+        {
+          "name": "url",
+          "type": "string",
+          "description": "URL being loaded"
+        }
+      ],
+      "can_be_used_by": []
+    }
+  ]
+}

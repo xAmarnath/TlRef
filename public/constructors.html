@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructors - Gogram TL Reference</title>
+    <meta name="description" content="TL Schema documentation for Constructors">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="Constructors - Gogram TL Reference">
+    <meta property="og:description" content="TL Schema documentation for Constructors">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="./css/common.css">
+    <script src="./js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="./index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="./index.html">Home</a>
+                    <a href="./types.html">Types</a>
+                    <a href="./constructors.html">Constructors</a>
+                    <a href="./methods.html">Methods</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = ".";
+    </script>
+    <script src="./js/search_index.js"></script>
+    <script src="./js/search.js"></script>
+
+    <main class="container">
+        <div class="page-header">
+            <h1>Constructors</h1>
+            <p class="description">76 entries</p>
+        </div>
+        
+        <div style="margin-bottom: 20px;">
+            <input type="text" id="filter-input" placeholder="Filter constructors..." autocomplete="off">
+        </div>
+        
+        <div class="item-list" id="items-list">
+
+            <a href="constructors/account/passkeyRegistrationOptions.html" class="item" data-name="accountpasskeyregistrationoptions account.passkeyregistrationoptions">
+                <span class="item-name">AccountPasskeyRegistrationOptions</span>
+                <span class="item-desc">Web Authn passkey registration options and challenge</span>
+            </a>
+
+            <a href="constructors/account/passkeys.html" class="item" data-name="accountpasskeys account.passkeys">
+                <span class="item-name">AccountPasskeys</span>
+                <span class="item-desc">List of user&#x27;s registered passkeys</span>
+            </a>
+
+            <a href="constructors/auctionBidLevel.html" class="item" data-name="auctionbidlevel auctionbidlevel">
+                <span class="item-name">AuctionBidLevel</span>
+                <span class="item-desc">Bid level information for auctions</span>
+            </a>
+
+            <a href="constructors/auth/passkeyLoginOptions.html" class="item" data-name="authpasskeyloginoptions auth.passkeyloginoptions">
+                <span class="item-name">AuthPasskeyLoginOptions</span>
+                <span class="item-desc">Web Authn passkey login options and challenge</span>
+            </a>
+
+            <a href="constructors/groupCallDonor.html" class="item" data-name="groupcalldonor groupcalldonor">
+                <span class="item-name">GroupCallDonor</span>
+                <span class="item-desc">Star donor information in group calls</span>
+            </a>
+
+            <a href="constructors/groupCallMessage.html" class="item" data-name="groupcallmessage groupcallmessage">
+                <span class="item-name">GroupCallMessage</span>
+                <span class="item-desc">Message in a group call</span>
+            </a>
+
+            <a href="constructors/inputInvoicePremiumAuthCode.html" class="item" data-name="inputinvoicepremiumauthcode inputinvoicepremiumauthcode">
+                <span class="item-name">InputInvoicePremiumAuthCode</span>
+                <span class="item-desc">Invoice for premium auth verification</span>
+            </a>
+
+            <a href="constructors/inputInvoiceStarGiftAuctionBid.html" class="item" data-name="inputinvoicestargiftauctionbid inputinvoicestargiftauctionbid">
+                <span class="item-name">InputInvoiceStarGiftAuctionBid</span>
+                <span class="item-desc">Invoice for bidding on star gift auction</span>
+            </a>
+
+            <a href="constructors/inputInvoiceStarGiftDropOriginalDetails.html" class="item" data-name="inputinvoicestargiftdroporiginaldetails inputinvoicestargiftdroporiginaldetails">
+                <span class="item-name">InputInvoiceStarGiftDropOriginalDetails</span>
+                <span class="item-desc">Invoice for dropping original star gift</span>
+            </a>
+
+            <a href="constructors/inputMediaStakeDice.html" class="item" data-name="inputmediastakedice inputmediastakedice">
+                <span class="item-name">InputMediaStakeDice</span>
+                <span class="item-desc">Stake dice game media</span>
+            </a>
+
+            <a href="constructors/inputMessagesFilterPhotoVideoDocuments.html" class="item" data-name="inputmessagesfilterphotovideodocuments inputmessagesfilterphotovideodocuments">
+                <span class="item-name">InputMessagesFilterPhotoVideoDocuments</span>
+                <span class="item-desc">Filter for photos, videos and documents</span>
+            </a>
+
+            <a href="constructors/inputPasskeyCredentialFirebasePNV.html" class="item" data-name="inputpasskeycredentialfirebasepnv inputpasskeycredentialfirebasepnv">
+                <span class="item-name">InputPasskeyCredentialFirebasePnv</span>
+                <span class="item-desc">Firebase PNV passkey credential</span>
+            </a>
+
+            <a href="constructors/inputPasskeyCredentialPublicKey.html" class="item" data-name="inputpasskeycredentialpublickey inputpasskeycredentialpublickey">
+                <span class="item-name">InputPasskeyCredentialPublicKey</span>
+                <span class="item-desc">Web Authn public key credential</span>
+            </a>
+
+            <a href="constructors/inputPasskeyResponseLogin.html" class="item" data-name="inputpasskeyresponselogin inputpasskeyresponselogin">
+                <span class="item-name">InputPasskeyResponseLogin</span>
+                <span class="item-desc">Web Authn login response</span>
+            </a>
+
+            <a href="constructors/inputPasskeyResponseRegister.html" class="item" data-name="inputpasskeyresponseregister inputpasskeyresponseregister">
+                <span class="item-name">InputPasskeyResponseRegister</span>
+                <span class="item-desc">Web Authn registration response</span>
+            </a>
+
+            <a href="constructors/inputPeerColorCollectible.html" class="item" data-name="inputpeercolorcollectible inputpeercolorcollectible">
+                <span class="item-name">InputPeerColorCollectible</span>
+                <span class="item-desc">Peer color from collectible</span>
+            </a>
+
+            <a href="constructors/inputPrivacyKeySavedMusic.html" class="item" data-name="inputprivacykeysavedmusic inputprivacykeysavedmusic">
+                <span class="item-name">InputPrivacyKeySavedMusic</span>
+                <span class="item-desc">Privacy key for saved music</span>
+            </a>
+
+            <a href="constructors/inputStarGiftAuction.html" class="item" data-name="inputstargiftauction inputstargiftauction">
+                <span class="item-name">InputStarGiftAuction</span>
+                <span class="item-desc">Star gift auction identifier</span>
+            </a>
+
+            <a href="constructors/inputStarGiftAuctionSlug.html" class="item" data-name="inputstargiftauctionslug inputstargiftauctionslug">
+                <span class="item-name">InputStarGiftAuctionSlug</span>
+                <span class="item-desc">Star gift auction by slug</span>
+            </a>
+
+            <a href="constructors/keyboardButtonStyle.html" class="item" data-name="keyboardbuttonstyle keyboardbuttonstyle">
+                <span class="item-name">KeyboardButtonStyle</span>
+                <span class="item-desc">Styling options for keyboard buttons</span>
+            </a>
+
+            <a href="constructors/messageActionChangeCreator.html" class="item" data-name="messageactionchangecreator messageactionchangecreator">
+                <span class="item-name">MessageActionChangeCreator</span>
+                <span class="item-desc">Creator changed in group/channel</span>
+            </a>
+
+            <a href="constructors/messageActionCreatedBroadcastList.html" class="item" data-name="messageactioncreatedbroadcastlist messageactioncreatedbroadcastlist">
+                <span class="item-name">MessageActionCreatedBroadcastList</span>
+                <span class="item-desc">Broadcast list created</span>
+            </a>
+
+            <a href="constructors/messageActionLoginUnknownLocation.html" class="item" data-name="messageactionloginunknownlocation messageactionloginunknownlocation">
+                <span class="item-name">MessageActionLoginUnknownLocation</span>
+                <span class="item-desc">Login from unknown location</span>
+            </a>
+
+            <a href="constructors/messageActionNewCreatorPending.html" class="item" data-name="messageactionnewcreatorpending messageactionnewcreatorpending">
+                <span class="item-name">MessageActionNewCreatorPending</span>
+                <span class="item-desc">Pending creator transfer</span>
+            </a>
+
+            <a href="constructors/messageActionPhoneNumberRequest.html" class="item" data-name="messageactionphonenumberrequest messageactionphonenumberrequest">
+                <span class="item-name">MessageActionPhoneNumberRequest</span>
+                <span class="item-desc">Phone number requested</span>
+            </a>
+
+            <a href="constructors/messageActionStarGiftPurchaseOffer.html" class="item" data-name="messageactionstargiftpurchaseoffer messageactionstargiftpurchaseoffer">
+                <span class="item-name">MessageActionStarGiftPurchaseOffer</span>
+                <span class="item-desc">Star gift purchase offer</span>
+            </a>
+
+            <a href="constructors/messageActionStarGiftPurchaseOfferDeclined.html" class="item" data-name="messageactionstargiftpurchaseofferdeclined messageactionstargiftpurchaseofferdeclined">
+                <span class="item-name">MessageActionStarGiftPurchaseOfferDeclined</span>
+                <span class="item-desc">Star gift offer declined</span>
+            </a>
+
+            <a href="constructors/messageActionSuggestBirthday.html" class="item" data-name="messageactionsuggestbirthday messageactionsuggestbirthday">
+                <span class="item-name">MessageActionSuggestBirthday</span>
+                <span class="item-desc">Birthday suggestion action</span>
+            </a>
+
+            <a href="constructors/messageActionTTLChange.html" class="item" data-name="messageactionttlchange messageactionttlchange">
+                <span class="item-name">MessageActionTtlChange</span>
+                <span class="item-desc">Message TTL changed</span>
+            </a>
+
+            <a href="constructors/messageActionUserJoined.html" class="item" data-name="messageactionuserjoined messageactionuserjoined">
+                <span class="item-name">MessageActionUserJoined</span>
+                <span class="item-desc">User joined via invite link</span>
+            </a>
+
+            <a href="constructors/messageActionUserUpdatedPhoto.html" class="item" data-name="messageactionuserupdatedphoto messageactionuserupdatedphoto">
+                <span class="item-name">MessageActionUserUpdatedPhoto</span>
+                <span class="item-desc">User updated profile photo</span>
+            </a>
+
+            <a href="constructors/messageMediaVideoStream.html" class="item" data-name="messagemediavideostream messagemediavideostream">
+                <span class="item-name">MessageMediaVideoStream</span>
+                <span class="item-desc">Video stream media</span>
+            </a>
+
+            <a href="constructors/messages/emojiGameDiceInfo.html" class="item" data-name="messagesemojigamediceinfo messages.emojigamediceinfo">
+                <span class="item-name">MessagesEmojiGameDiceInfo</span>
+                <span class="item-desc">Emoji game dice information</span>
+            </a>
+
+            <a href="constructors/messages/emojiGameOutcome.html" class="item" data-name="messagesemojigameoutcome messages.emojigameoutcome">
+                <span class="item-name">MessagesEmojiGameOutcome</span>
+                <span class="item-desc">Emoji game outcome</span>
+            </a>
+
+            <a href="constructors/messages/emojiGameUnavailable.html" class="item" data-name="messagesemojigameunavailable messages.emojigameunavailable">
+                <span class="item-name">MessagesEmojiGameUnavailable</span>
+                <span class="item-desc">Emoji game unavailable</span>
+            </a>
+
+            <a href="constructors/messages/webViewResult.html" class="item" data-name="messageswebviewresult messages.webviewresult">
+                <span class="item-name">MessagesWebViewResult</span>
+                <span class="item-desc">Web view result</span>
+            </a>
+
+            <a href="constructors/passkey.html" class="item" data-name="passkey passkey">
+                <span class="item-name">Passkey</span>
+                <span class="item-desc">Registered passkey credential</span>
+            </a>
+
+            <a href="constructors/payments/starGiftActiveAuctions.html" class="item" data-name="paymentsstargiftactiveauctions payments.stargiftactiveauctions">
+                <span class="item-name">PaymentsStarGiftActiveAuctions</span>
+                <span class="item-desc">Active star gift auctions</span>
+            </a>
+
+            <a href="constructors/payments/starGiftActiveAuctionsNotModified.html" class="item" data-name="paymentsstargiftactiveauctionsnotmodified payments.stargiftactiveauctionsnotmodified">
+                <span class="item-name">PaymentsStarGiftActiveAuctionsNotModified</span>
+                <span class="item-desc">Star gift auctions unchanged</span>
+            </a>
+
+            <a href="constructors/payments/starGiftAuctionAcquiredGifts.html" class="item" data-name="paymentsstargiftauctionacquiredgifts payments.stargiftauctionacquiredgifts">
+                <span class="item-name">PaymentsStarGiftAuctionAcquiredGifts</span>
+                <span class="item-desc">Gifts acquired from auction</span>
+            </a>
+
+            <a href="constructors/payments/starGiftAuctionState.html" class="item" data-name="paymentsstargiftauctionstate payments.stargiftauctionstate">
+                <span class="item-name">PaymentsStarGiftAuctionState</span>
+                <span class="item-desc">Star gift auction state</span>
+            </a>
+
+            <a href="constructors/payments/starGiftUpgradeAttributes.html" class="item" data-name="paymentsstargiftupgradeattributes payments.stargiftupgradeattributes">
+                <span class="item-name">PaymentsStarGiftUpgradeAttributes</span>
+                <span class="item-desc">Star gift upgrade attributes</span>
+            </a>
+
+            <a href="constructors/peerColorCollectible.html" class="item" data-name="peercolorcollectible peercolorcollectible">
+                <span class="item-name">PeerColorCollectible</span>
+                <span class="item-desc">Collectible peer color</span>
+            </a>
+
+            <a href="constructors/phone/groupCallStars.html" class="item" data-name="phonegroupcallstars phone.groupcallstars">
+                <span class="item-name">PhoneGroupCallStars</span>
+                <span class="item-desc">Star donations in group call</span>
+            </a>
+
+            <a href="constructors/privacyKeySavedMusic.html" class="item" data-name="privacykeysavedmusic privacykeysavedmusic">
+                <span class="item-name">PrivacyKeySavedMusic</span>
+                <span class="item-desc">Privacy key for saved music</span>
+            </a>
+
+            <a href="constructors/recentStory.html" class="item" data-name="recentstory recentstory">
+                <span class="item-name">RecentStory</span>
+                <span class="item-desc">Recent story information</span>
+            </a>
+
+            <a href="constructors/sendMessageTextDraftAction.html" class="item" data-name="sendmessagetextdraftaction sendmessagetextdraftaction">
+                <span class="item-name">SendMessageTextDraftAction</span>
+                <span class="item-desc">Text draft action message</span>
+            </a>
+
+            <a href="constructors/starGiftActiveAuctionState.html" class="item" data-name="stargiftactiveauctionstate stargiftactiveauctionstate">
+                <span class="item-name">StarGiftActiveAuctionState</span>
+                <span class="item-desc">Active star gift with user&#x27;s auction state</span>
+            </a>
+
+            <a href="constructors/starGiftAttributeRarity.html" class="item" data-name="stargiftattributerarity stargiftattributerarity">
+                <span class="item-name">StarGiftAttributeRarity</span>
+                <span class="item-desc">Star gift rarity level</span>
+            </a>
+
+            <a href="constructors/starGiftAttributeRarityEpic.html" class="item" data-name="stargiftattributerarityepic stargiftattributerarityepic">
+                <span class="item-name">StarGiftAttributeRarityEpic</span>
+                <span class="item-desc">Epic rarity star gift</span>
+            </a>
+
+            <a href="constructors/starGiftAttributeRarityLegendary.html" class="item" data-name="stargiftattributeraritylegendary stargiftattributeraritylegendary">
+                <span class="item-name">StarGiftAttributeRarityLegendary</span>
+                <span class="item-desc">Legendary rarity star gift</span>
+            </a>
+
+            <a href="constructors/starGiftAttributeRarityRare.html" class="item" data-name="stargiftattributerarityrare stargiftattributerarityrare">
+                <span class="item-name">StarGiftAttributeRarityRare</span>
+                <span class="item-desc">Rare rarity star gift</span>
+            </a>
+
+            <a href="constructors/starGiftAttributeRarityUncommon.html" class="item" data-name="stargiftattributerarityuncommon stargiftattributerarityuncommon">
+                <span class="item-name">StarGiftAttributeRarityUncommon</span>
+                <span class="item-desc">Uncommon rarity star gift</span>
+            </a>
+
+            <a href="constructors/starGiftAuctionAcquiredGift.html" class="item" data-name="stargiftauctionacquiredgift stargiftauctionacquiredgift">
+                <span class="item-name">StarGiftAuctionAcquiredGift</span>
+                <span class="item-desc">Gift acquired in auction</span>
+            </a>
+
+            <a href="constructors/starGiftAuctionRound.html" class="item" data-name="stargiftauctionround stargiftauctionround">
+                <span class="item-name">StarGiftAuctionRound</span>
+                <span class="item-desc">Current round information in auction</span>
+            </a>
+
+            <a href="constructors/starGiftAuctionRoundExtendable.html" class="item" data-name="stargiftauctionroundextendable stargiftauctionroundextendable">
+                <span class="item-name">StarGiftAuctionRoundExtendable</span>
+                <span class="item-desc">Extendable auction round</span>
+            </a>
+
+            <a href="constructors/starGiftAuctionState.html" class="item" data-name="stargiftauctionstate stargiftauctionstate">
+                <span class="item-name">StarGiftAuctionState</span>
+                <span class="item-desc">Star gift auction state</span>
+            </a>
+
+            <a href="constructors/starGiftAuctionStateFinished.html" class="item" data-name="stargiftauctionstatefinished stargiftauctionstatefinished">
+                <span class="item-name">StarGiftAuctionStateFinished</span>
+                <span class="item-desc">Finished star gift auction state</span>
+            </a>
+
+            <a href="constructors/starGiftAuctionStateNotModified.html" class="item" data-name="stargiftauctionstatenotmodified stargiftauctionstatenotmodified">
+                <span class="item-name">StarGiftAuctionStateNotModified</span>
+                <span class="item-desc">Auction state unchanged</span>
+            </a>
+
+            <a href="constructors/starGiftAuctionUserState.html" class="item" data-name="stargiftauctionuserstate stargiftauctionuserstate">
+                <span class="item-name">StarGiftAuctionUserState</span>
+                <span class="item-desc">User&#x27;s participation in star gift auction</span>
+            </a>
+
+            <a href="constructors/starGiftBackground.html" class="item" data-name="stargiftbackground stargiftbackground">
+                <span class="item-name">StarGiftBackground</span>
+                <span class="item-desc">Star gift background colors</span>
+            </a>
+
+            <a href="constructors/starGiftUpgradePrice.html" class="item" data-name="stargiftupgradeprice stargiftupgradeprice">
+                <span class="item-name">StarGiftUpgradePrice</span>
+                <span class="item-desc">Cost to upgrade star gift</span>
+            </a>
+
+            <a href="constructors/updateBotSubscriptionExpire.html" class="item" data-name="updatebotsubscriptionexpire updatebotsubscriptionexpire">
+                <span class="item-name">UpdateBotSubscriptionExpire</span>
+                <span class="item-desc">Bot subscription has expired</span>
+            </a>
+
+            <a href="constructors/updateDeleteGroupCallMessages.html" class="item" data-name="updatedeletegroupcallmessages updatedeletegroupcallmessages">
+                <span class="item-name">UpdateDeleteGroupCallMessages</span>
+                <span class="item-desc">Messages deleted from group call</span>
+            </a>
+
+            <a href="constructors/updateEmojiGameInfo.html" class="item" data-name="updateemojigameinfo updateemojigameinfo">
+                <span class="item-name">UpdateEmojiGameInfo</span>
+                <span class="item-desc">Emoji game information updated</span>
+            </a>
+
+            <a href="constructors/updateGroupCallEncryptedMessage.html" class="item" data-name="updategroupcallencryptedmessage updategroupcallencryptedmessage">
+                <span class="item-name">UpdateGroupCallEncryptedMessage</span>
+                <span class="item-desc">Encrypted message in group call</span>
+            </a>
+
+            <a href="constructors/updateGroupCallMessage.html" class="item" data-name="updategroupcallmessage updategroupcallmessage">
+                <span class="item-name">UpdateGroupCallMessage</span>
+                <span class="item-desc">Group call message sent</span>
+            </a>
+
+            <a href="constructors/updatePinnedForumTopic.html" class="item" data-name="updatepinnedforumtopic updatepinnedforumtopic">
+                <span class="item-name">UpdatePinnedForumTopic</span>
+                <span class="item-desc">Forum topic pinned status changed</span>
+            </a>
+
+            <a href="constructors/updatePinnedForumTopics.html" class="item" data-name="updatepinnedforumtopics updatepinnedforumtopics">
+                <span class="item-name">UpdatePinnedForumTopics</span>
+                <span class="item-desc">Pinned forum topics reordered</span>
+            </a>
+
+            <a href="constructors/updateStarGiftAuctionState.html" class="item" data-name="updatestargiftauctionstate updatestargiftauctionstate">
+                <span class="item-name">UpdateStarGiftAuctionState</span>
+                <span class="item-desc">Star gift auction state updated</span>
+            </a>
+
+            <a href="constructors/updateStarGiftAuctionUserState.html" class="item" data-name="updatestargiftauctionuserstate updatestargiftauctionuserstate">
+                <span class="item-name">UpdateStarGiftAuctionUserState</span>
+                <span class="item-desc">User&#x27;s star gift auction state changed</span>
+            </a>
+
+            <a href="constructors/updateStarGiftCraftFail.html" class="item" data-name="updatestargiftcraftfail updatestargiftcraftfail">
+                <span class="item-name">UpdateStarGiftCraftFail</span>
+                <span class="item-desc">Star gift crafting failed</span>
+            </a>
+
+            <a href="constructors/updateTranscribeAudio.html" class="item" data-name="updatetranscribeaudio updatetranscribeaudio">
+                <span class="item-name">UpdateTranscribeAudio</span>
+                <span class="item-desc">Audio transcription result</span>
+            </a>
+
+            <a href="constructors/userStatusHidden.html" class="item" data-name="userstatushidden userstatushidden">
+                <span class="item-name">UserStatusHidden</span>
+                <span class="item-desc">User status hidden from others</span>
+            </a>
+
+            <a href="constructors/webPageAttributeStarGiftAuction.html" class="item" data-name="webpageattributestargiftauction webpageattributestargiftauction">
+                <span class="item-name">WebPageAttributeStarGiftAuction</span>
+                <span class="item-desc">Web page star gift auction attribute</span>
+            </a>
+
+            <a href="constructors/webPageUrlPending.html" class="item" data-name="webpageurlpending webpageurlpending">
+                <span class="item-name">WebPageUrlPending</span>
+                <span class="item-desc">Web page URL still loading</span>
+            </a>
+
+        </div>
+    </main>
+    
+    <script src="js/filter.js"></script>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

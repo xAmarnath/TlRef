@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methods - Gogram TL Reference</title>
+    <meta name="description" content="TL Schema documentation for Methods">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="Methods - Gogram TL Reference">
+    <meta property="og:description" content="TL Schema documentation for Methods">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="./css/common.css">
+    <script src="./js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="./index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="./index.html">Home</a>
+                    <a href="./types.html">Types</a>
+                    <a href="./constructors.html">Constructors</a>
+                    <a href="./methods.html">Methods</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = ".";
+    </script>
+    <script src="./js/search_index.js"></script>
+    <script src="./js/search.js"></script>
+
+    <main class="container">
+        <div class="page-header">
+            <h1>Methods</h1>
+            <p class="description">36 entries</p>
+        </div>
+        
+        <div style="margin-bottom: 20px;">
+            <input type="text" id="filter-input" placeholder="Filter methods..." autocomplete="off">
+        </div>
+        
+        <div class="item-list" id="items-list">
+
+            <a href="methods/account/deletePasskey.html" class="item" data-name="accountdeletepasskey account.deletepasskey">
+                <span class="item-name">AccountDeletePasskey</span>
+                <span class="item-desc">Delete a passkey credential from the account</span>
+            </a>
+
+            <a href="methods/account/getPasskeys.html" class="item" data-name="accountgetpasskeys account.getpasskeys">
+                <span class="item-name">AccountGetPasskeys</span>
+                <span class="item-desc">Get all registered passkeys for the account</span>
+            </a>
+
+            <a href="methods/account/initPasskeyRegistration.html" class="item" data-name="accountinitpasskeyregistration account.initpasskeyregistration">
+                <span class="item-name">AccountInitPasskeyRegistration</span>
+                <span class="item-desc">Initialize Web Authn passkey registration process</span>
+            </a>
+
+            <a href="methods/account/registerPasskey.html" class="item" data-name="accountregisterpasskey account.registerpasskey">
+                <span class="item-name">AccountRegisterPasskey</span>
+                <span class="item-desc">Register a new passkey credential</span>
+            </a>
+
+            <a href="methods/auth/checkPaidAuth.html" class="item" data-name="authcheckpaidauth auth.checkpaidauth">
+                <span class="item-name">AuthCheckPaidAuth</span>
+                <span class="item-desc">Verify paid authentication for premium features</span>
+            </a>
+
+            <a href="methods/auth/finishPasskeyLogin.html" class="item" data-name="authfinishpasskeylogin auth.finishpasskeylogin">
+                <span class="item-name">AuthFinishPasskeyLogin</span>
+                <span class="item-desc">Complete passkey authentication and get authorization</span>
+            </a>
+
+            <a href="methods/auth/initPasskeyLogin.html" class="item" data-name="authinitpasskeylogin auth.initpasskeylogin">
+                <span class="item-name">AuthInitPasskeyLogin</span>
+                <span class="item-desc">Initialize passkey-based login</span>
+            </a>
+
+            <a href="methods/channels/getFutureCreatorAfterLeave.html" class="item" data-name="channelsgetfuturecreatorafterleave channels.getfuturecreatorafterleave">
+                <span class="item-name">ChannelsGetFutureCreatorAfterLeave</span>
+                <span class="item-desc">Get the future creator assigned to the channel, if the current creator leaves</span>
+            </a>
+
+            <a href="methods/contacts/updateContactNote.html" class="item" data-name="contactsupdatecontactnote contacts.updatecontactnote">
+                <span class="item-name">ContactsUpdateContactNote</span>
+                <span class="item-desc">Add or update a personal note for a contact</span>
+            </a>
+
+            <a href="methods/messages/craftStarGift.html" class="item" data-name="messagescraftstargift messages.craftstargift">
+                <span class="item-name">MessagesCraftStarGift</span>
+                <span class="item-desc">Craft star gifts from saved items</span>
+            </a>
+
+            <a href="methods/messages/createForumTopic.html" class="item" data-name="messagescreateforumtopic messages.createforumtopic">
+                <span class="item-name">MessagesCreateForumTopic</span>
+                <span class="item-desc">Create a new forum topic in a supergroup</span>
+            </a>
+
+            <a href="methods/messages/deleteTopicHistory.html" class="item" data-name="messagesdeletetopichistory messages.deletetopichistory">
+                <span class="item-name">MessagesDeleteTopicHistory</span>
+                <span class="item-desc">Delete all messages in a forum topic</span>
+            </a>
+
+            <a href="methods/messages/editForumTopic.html" class="item" data-name="messageseditforumtopic messages.editforumtopic">
+                <span class="item-name">MessagesEditForumTopic</span>
+                <span class="item-desc">Edit properties of a forum topic</span>
+            </a>
+
+            <a href="methods/messages/getCraftStarGifts.html" class="item" data-name="messagesgetcraftstargifts messages.getcraftstargifts">
+                <span class="item-name">MessagesGetCraftStarGifts</span>
+                <span class="item-desc">Get craftable star gifts</span>
+            </a>
+
+            <a href="methods/messages/getEmojiGameInfo.html" class="item" data-name="messagesgetemojigameinfo messages.getemojigameinfo">
+                <span class="item-name">MessagesGetEmojiGameInfo</span>
+                <span class="item-desc">Get current emoji dice game state</span>
+            </a>
+
+            <a href="methods/messages/getForumTopics.html" class="item" data-name="messagesgetforumtopics messages.getforumtopics">
+                <span class="item-name">MessagesGetForumTopics</span>
+                <span class="item-desc">Get forum topics from a supergroup</span>
+            </a>
+
+            <a href="methods/messages/getForumTopicsByID.html" class="item" data-name="messagesgetforumtopicsbyid messages.getforumtopicsbyid">
+                <span class="item-name">MessagesGetForumTopicsById</span>
+                <span class="item-desc">Get specific forum topics by ID</span>
+            </a>
+
+            <a href="methods/messages/getWebViewResult.html" class="item" data-name="messagesgetwebviewresult messages.getwebviewresult">
+                <span class="item-name">MessagesGetWebViewResult</span>
+                <span class="item-desc">Get result from a web view query</span>
+            </a>
+
+            <a href="methods/messages/reorderPinnedForumTopics.html" class="item" data-name="messagesreorderpinnedforumtopics messages.reorderpinnedforumtopics">
+                <span class="item-name">MessagesReorderPinnedForumTopics</span>
+                <span class="item-desc">Reorder pinned forum topics</span>
+            </a>
+
+            <a href="methods/messages/setWebViewResult.html" class="item" data-name="messagessetwebviewresult messages.setwebviewresult">
+                <span class="item-name">MessagesSetWebViewResult</span>
+                <span class="item-desc">Set result of a web view</span>
+            </a>
+
+            <a href="methods/messages/summarizeText.html" class="item" data-name="messagessummarizetext messages.summarizetext">
+                <span class="item-name">MessagesSummarizeText</span>
+                <span class="item-desc">Summarize lengthy text using AI</span>
+            </a>
+
+            <a href="methods/messages/updatePinnedForumTopic.html" class="item" data-name="messagesupdatepinnedforumtopic messages.updatepinnedforumtopic">
+                <span class="item-name">MessagesUpdatePinnedForumTopic</span>
+                <span class="item-desc">Pin or unpin a forum topic</span>
+            </a>
+
+            <a href="methods/payments/getStarGiftActiveAuctions.html" class="item" data-name="paymentsgetstargiftactiveauctions payments.getstargiftactiveauctions">
+                <span class="item-name">PaymentsGetStarGiftActiveAuctions</span>
+                <span class="item-desc">Get active star gift auctions</span>
+            </a>
+
+            <a href="methods/payments/getStarGiftAuctionAcquiredGifts.html" class="item" data-name="paymentsgetstargiftauctionacquiredgifts payments.getstargiftauctionacquiredgifts">
+                <span class="item-name">PaymentsGetStarGiftAuctionAcquiredGifts</span>
+                <span class="item-desc">Get gifts acquired from auction</span>
+            </a>
+
+            <a href="methods/payments/getStarGiftAuctionState.html" class="item" data-name="paymentsgetstargiftauctionstate payments.getstargiftauctionstate">
+                <span class="item-name">PaymentsGetStarGiftAuctionState</span>
+                <span class="item-desc">Get current auction state for a gift</span>
+            </a>
+
+            <a href="methods/payments/getStarGiftUpgradeAttributes.html" class="item" data-name="paymentsgetstargiftupgradeattributes payments.getstargiftupgradeattributes">
+                <span class="item-name">PaymentsGetStarGiftUpgradeAttributes</span>
+                <span class="item-desc">Get attributes for upgrading star gifts</span>
+            </a>
+
+            <a href="methods/payments/resolveStarGiftOffer.html" class="item" data-name="paymentsresolvestargiftoffer payments.resolvestargiftoffer">
+                <span class="item-name">PaymentsResolveStarGiftOffer</span>
+                <span class="item-desc">Accept or decline a star gift offer</span>
+            </a>
+
+            <a href="methods/payments/sendStarGiftOffer.html" class="item" data-name="paymentssendstargiftoffer payments.sendstargiftoffer">
+                <span class="item-name">PaymentsSendStarGiftOffer</span>
+                <span class="item-desc">Send a star gift offer to a user</span>
+            </a>
+
+            <a href="methods/phone/deleteGroupCallMessages.html" class="item" data-name="phonedeletegroupcallmessages phone.deletegroupcallmessages">
+                <span class="item-name">PhoneDeleteGroupCallMessages</span>
+                <span class="item-desc">Delete messages from a group call</span>
+            </a>
+
+            <a href="methods/phone/deleteGroupCallParticipantMessages.html" class="item" data-name="phonedeletegroupcallparticipantmessages phone.deletegroupcallparticipantmessages">
+                <span class="item-name">PhoneDeleteGroupCallParticipantMessages</span>
+                <span class="item-desc">Delete messages from a group call participant</span>
+            </a>
+
+            <a href="methods/phone/getGroupCallStars.html" class="item" data-name="phonegetgroupcallstars phone.getgroupcallstars">
+                <span class="item-name">PhoneGetGroupCallStars</span>
+                <span class="item-desc">Get star donations in a group call</span>
+            </a>
+
+            <a href="methods/phone/saveDefaultSendAs.html" class="item" data-name="phonesavedefaultsendas phone.savedefaultsendas">
+                <span class="item-name">PhoneSaveDefaultSendAs</span>
+                <span class="item-desc">Set default sender for group call messages</span>
+            </a>
+
+            <a href="methods/phone/sendGroupCallEncryptedMessage.html" class="item" data-name="phonesendgroupcallencryptedmessage phone.sendgroupcallencryptedmessage">
+                <span class="item-name">PhoneSendGroupCallEncryptedMessage</span>
+                <span class="item-desc">Send encrypted message in group call</span>
+            </a>
+
+            <a href="methods/phone/sendGroupCallMessage.html" class="item" data-name="phonesendgroupcallmessage phone.sendgroupcallmessage">
+                <span class="item-name">PhoneSendGroupCallMessage</span>
+                <span class="item-desc">Send message in a group call</span>
+            </a>
+
+            <a href="methods/stories/startLive.html" class="item" data-name="storiesstartlive stories.startlive">
+                <span class="item-name">StoriesStartLive</span>
+                <span class="item-desc">Start a live story broadcast</span>
+            </a>
+
+            <a href="methods/users/suggestBirthday.html" class="item" data-name="userssuggestbirthday users.suggestbirthday">
+                <span class="item-name">UsersSuggestBirthday</span>
+                <span class="item-desc">Suggest a birthday for a contact</span>
+            </a>
+
+        </div>
+    </main>
+    
+    <script src="js/filter.js"></script>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

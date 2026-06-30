@@ -1,0 +1,22 @@
+# binaries / build artifacts
+*.wasm
+*.go
+*.mod
+*.sum
+*.pyc
+*.m3u8
+__pycache__/
+
+# local scratch / experiment files
+a.js
+b.js
+c.js
+s.js
+v.js
+api.js
+encrypt-api.js
+analyze_output.js
+go_wasm.js
+
+# guard: legacy bloated output dir
+public_new/
