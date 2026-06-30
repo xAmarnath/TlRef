@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>messageFwdHeader - Gogram TL Reference</title>
+    <meta name="description" content="Info about a forwarded message">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="messageFwdHeader - Gogram TL Reference">
+    <meta property="og:description" content="Info about a forwarded message">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="../types.html">Types</a>
+                    <a href="../constructors.html">Constructors</a>
+                    <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "..";
+    </script>
+    <script src="../js/search_index.js"></script>
+    <script src="../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> MessageFwdHeaderObj</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>MessageFwdHeaderObj</h1>
+            <p class="description">Info about a forwarded message</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-constructor">constructor</span>
+        </div>
+        <div class="code-block">messageFwdHeader#4e4df4bb flags:# imported:flags.7?true saved_out:flags.11?true from_id:flags.0?Peer from_name:flags.5?string date:int channel_post:flags.2?int post_author:flags.3?string saved_from_peer:flags.4?Peer saved_from_msg_id:flags.4?int saved_from_id:flags.8?Peer saved_from_name:flags.9?string saved_date:flags.10?int psa_type:flags.6?string = MessageFwdHeader;</div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="field-name">Imported</td>
+                            <td class="field-type">flags .7? true</td>
+                            <td>Whether this message was imported from a foreign chat service, click here for more info</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">SavedOut</td>
+                            <td class="field-type">flags .11? true</td>
+                            <td>Only for messages forwarded to saved messages, set if the original message was outgoing (though the message may have been originally outgoing even if this flag is not set, if from_id points to the current user).</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">FromId</td>
+                            <td class="field-type">flags .0? Peer</td>
+                            <td>The ID of the user that originally sent the message</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">FromName</td>
+                            <td class="field-type">flags .5? string</td>
+                            <td>The name of the user that originally sent the message</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Date</td>
+                            <td class="field-type">int</td>
+                            <td>When was the message originally sent</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ChannelPost</td>
+                            <td class="field-type">flags .2? int</td>
+                            <td>ID of the channel message that was forwarded</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PostAuthor</td>
+                            <td class="field-type">flags .3? string</td>
+                            <td>For channels and if signatures are enabled, author of the channel message</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">SavedFromPeer</td>
+                            <td class="field-type">flags .4? Peer</td>
+                            <td>Only for messages forwarded to saved messages, contains the dialog where the message was originally sent.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">SavedFromMsgId</td>
+                            <td class="field-type">flags .4? int</td>
+                            <td>Only for messages forwarded to saved messages, contains the original ID of the message in saved_from_peer.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">SavedFromId</td>
+                            <td class="field-type">flags .8? Peer</td>
+                            <td>Only for forwarded messages reforwarded to saved messages, contains the sender of the original message (i. e. if user A sends a message, then user B forwards it somewhere, then user C saves it to saved messages, this field will contain the ID of user B and from_id will contain the ID of user A).</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">SavedFromName</td>
+                            <td class="field-type">flags .9? string</td>
+                            <td>Only for forwarded messages from users with forward privacy enabled, sent by users with forward privacy enabled, reforwarded to saved messages, contains the sender of the original message (i. e. if user A (fwd privacy enabled) sends a message, then user B (fwd privacy enabled) forwards it somewhere, then user C saves it to saved messages, this field will contain the name of user B and from_name will contain the name of user A).</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">SavedDate</td>
+                            <td class="field-type">flags .10? int</td>
+                            <td>Only for forwarded messages reforwarded to saved messages, indicates when was the original message sent (i. e. if user A sends a message @ unixtime 1, then user B forwards it somewhere @ unixtime 2, then user C saves it to saved messages @ unixtime 3, this field will contain 2, date will contain 1 and the date of the containing message will contain 3).</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PsaType</td>
+                            <td class="field-type">flags .6? string</td>
+                            <td>PSA type</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/MessageFwdHeader.html">MessageFwdHeader</a></span>
+        </div>
+
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// Creating MessageFwdHeaderObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">MessageFwdHeaderObj</span>{
+    Imported: <span class="keyword">nil</span>,
+    SavedOut: <span class="keyword">nil</span>,
+    FromId: <span class="keyword">nil</span>,
+    FromName: <span class="string">&quot;Hello, World!&quot;</span>,
+    Date: <span class="number">42</span>,
+    ChannelPost: <span class="keyword">nil</span>,
+    <span class="comment">// ... more required fields</span>
+}</pre>
+        </div>
+
+        </article>
+
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

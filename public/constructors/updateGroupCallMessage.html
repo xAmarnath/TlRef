@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>updateGroupCallMessage - Gogram TL Reference</title>
-    <meta name="description" content="Group call message sent">
+    <meta name="description" content="A new message, reaction, paid comment or donation was received through the in-call message overlay.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="updateGroupCallMessage - Gogram TL Reference">
-    <meta property="og:description" content="Group call message sent">
+    <meta property="og:description" content="A new message, reaction, paid comment or donation was received through the in-call message overlay.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -38,6 +38,7 @@
                     <a href="../types.html">Types</a>
                     <a href="../constructors.html">Constructors</a>
                     <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
                 </nav>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -69,17 +70,19 @@
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> UpdateGroupCallMessage</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
         </div>
         
         <header class="page-header">
             <h1>UpdateGroupCallMessage</h1>
-            <p class="description">Group call message sent</p>
+            <p class="description">A new message, reaction, paid comment or donation was received through the in-call message overlay.</p>
         </header>
         
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
+        <div class="code-block">updateGroupCallMessage#d8326f0d call:InputGroupCall message:GroupCallMessage = Update;</div>
+
         <div class="section">
             <h2>Parameters</h2>
             <div class="table-container">
@@ -95,19 +98,24 @@
 
                         <tr>
                             <td class="field-name">Call</td>
-                            <td class="field-type"><a href="../constructors/InputGroupCall.html">InputGroupCall</a></td>
-                            <td>Group call</td>
+                            <td class="field-type"><a href="../types/InputGroupCall.html">InputGroupCall</a></td>
+                            <td>Group call that received the message</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Message</td>
-                            <td class="field-type"><a href="../constructors/GroupCallMessage.html">GroupCallMessage</a></td>
-                            <td>Message content</td>
+                            <td class="field-type"><a href="../types/GroupCallMessage.html">GroupCallMessage</a></td>
+                            <td>Received in-call message</td>
                         </tr>
 
                     </tbody>
                 </table>
             </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/Update.html">Update</a></span>
         </div>
 
         <div class="example-section">

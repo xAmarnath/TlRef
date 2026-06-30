@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>starGiftUpgradePrice - Gogram TL Reference</title>
-    <meta name="description" content="Cost to upgrade star gift">
+    <meta name="description" content="Indicates the price for a gift upgrade starting from a specific point in time.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="starGiftUpgradePrice - Gogram TL Reference">
-    <meta property="og:description" content="Cost to upgrade star gift">
+    <meta property="og:description" content="Indicates the price for a gift upgrade starting from a specific point in time.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -38,6 +38,7 @@
                     <a href="../types.html">Types</a>
                     <a href="../constructors.html">Constructors</a>
                     <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
                 </nav>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -66,20 +67,22 @@
 
     <main class="container">
         <article>
-        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> StarGiftUpgradePrice</div>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> StarGiftUpgradePriceObj</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
         </div>
         
         <header class="page-header">
-            <h1>StarGiftUpgradePrice</h1>
-            <p class="description">Cost to upgrade star gift</p>
+            <h1>StarGiftUpgradePriceObj</h1>
+            <p class="description">Indicates the price for a gift upgrade starting from a specific point in time.</p>
         </header>
         
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
+        <div class="code-block">starGiftUpgradePrice#99ea331d date:int upgrade_stars:long = StarGiftUpgradePrice;</div>
+
         <div class="section">
             <h2>Parameters</h2>
             <div class="table-container">
@@ -96,13 +99,13 @@
                         <tr>
                             <td class="field-name">Date</td>
                             <td class="field-type">int</td>
-                            <td>Price update date</td>
+                            <td>UNIX timestamp indicating when the price will be in effect.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">UpgradeStars</td>
                             <td class="field-type">long</td>
-                            <td>Stars cost to upgrade</td>
+                            <td>Upgrade price.</td>
                         </tr>
 
                     </tbody>
@@ -110,10 +113,15 @@
             </div>
         </div>
 
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/StarGiftUpgradePrice.html">StarGiftUpgradePrice</a></span>
+        </div>
+
         <div class="example-section">
             <h2>Gogram Example</h2>
-            <pre class="example-code"><span class="comment">// Creating StarGiftUpgradePrice constructor</span>
-obj := &amp;<span class="package">tg.</span><span class="type">StarGiftUpgradePrice</span>{
+            <pre class="example-code"><span class="comment">// Creating StarGiftUpgradePriceObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">StarGiftUpgradePriceObj</span>{
     Date: <span class="number">42</span>,
     UpgradeStars: int64(<span class="number">1234567890</span>),
 }</pre>

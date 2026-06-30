@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>account.updateConnectedBot - Gogram TL Reference</title>
+    <meta name="description" content="Connect a business bot to the current account, or to change the current connection settings.">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="account.updateConnectedBot - Gogram TL Reference">
+    <meta property="og:description" content="Connect a business bot to the current account, or to change the current connection settings.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../../css/common.css">
+    <script src="../../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../../index.html">Home</a>
+                    <a href="../../types.html">Types</a>
+                    <a href="../../constructors.html">Constructors</a>
+                    <a href="../../methods.html">Methods</a>
+                    <a href="../../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "../..";
+    </script>
+    <script src="../../js/search_index.js"></script>
+    <script src="../../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../../index.html">Home</a> <span>›</span> <a href="../../methods.html">Methods</a> <span>›</span> Account <span>›</span> UpdateConnectedBot</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>AccountUpdateConnectedBot</h1>
+            <p class="description">Connect a business bot to the current account, or to change the current connection settings.</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-method">method</span>
+            <span class="badge badge-user">Users</span>
+            <span class="badge badge-business">Business</span>
+        </div>
+        <div class="code-block">account.updateConnectedBot#66a08c7e flags:# deleted:flags.1?true rights:flags.0?BusinessBotRights bot:InputUser recipients:InputBusinessBotRecipients = Updates;</div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="field-name">Deleted</td>
+                            <td class="field-type">flags .1? true</td>
+                            <td>Whether to fully disconnect the bot from the current account.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Rights</td>
+                            <td class="field-type">flags .0? BusinessBotRights</td>
+                            <td>Business bot rights.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Bot</td>
+                            <td class="field-type"><a href="../../types/InputUser.html">InputUser</a></td>
+                            <td>The bot to connect or disconnect</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Recipients</td>
+                            <td class="field-type"><a href="../../types/InputBusinessBotRecipients.html">InputBusinessBotRecipients</a></td>
+                            <td>Configuration for the business connection</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../../types/Updates.html">Updates</a></span>
+        </div>
+
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// AccountUpdateConnectedBot - positional arguments</span>
+result, err := <span class="package">client.</span><span class="function">AccountUpdateConnectedBot</span>(<span class="keyword">nil</span>, <span class="keyword">nil</span>, &amp;<span class="package">tg.</span><span class="type">InputUserSelf</span>{}, &amp;<span class="package">tg.</span><span class="type">InputBusinessBotRecipients</span>{})
+<span class="keyword">if</span> err != <span class="keyword">nil</span> {
+    <span class="comment">// handle error</span>
+}
+<span class="comment">// result is *<span class="package">tg.</span><span class="type">Updates</span></span></pre>
+        </div>
+
+        <div class="section">
+            <h2>Possible Errors</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">BOT_BUSINESS_MISSING</td>
+                            <td>The specified bot is not a business bot (the user. bot_business flag is not set).</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">BUSINESS_RECIPIENTS_EMPTY</td>
+                            <td>You didn&#x27;t set any flag in input Business Bot Recipients, thus the bot cannot work with any peer.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        </article>
+
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

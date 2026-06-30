@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>groupCallParticipant - Gogram TL Reference</title>
+    <meta name="description" content="Describes a group call participant and their current state, see applying group call updates.">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="groupCallParticipant - Gogram TL Reference">
+    <meta property="og:description" content="Describes a group call participant and their current state, see applying group call updates.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="../types.html">Types</a>
+                    <a href="../constructors.html">Constructors</a>
+                    <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "..";
+    </script>
+    <script src="../js/search_index.js"></script>
+    <script src="../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> GroupCallParticipantObj</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>GroupCallParticipantObj</h1>
+            <p class="description">Describes a group call participant and their current state, see applying group call updates.</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-constructor">constructor</span>
+        </div>
+        <div class="code-block">groupCallParticipant#2a3dc7ac flags:# muted:flags.0?true left:flags.1?true can_self_unmute:flags.2?true just_joined:flags.4?true versioned:flags.5?true min:flags.8?true muted_by_you:flags.9?true volume_by_admin:flags.10?true self:flags.12?true video_joined:flags.15?true peer:Peer date:int active_date:flags.3?int source:int volume:flags.7?int about:flags.11?string raise_hand_rating:flags.13?long video:flags.6?GroupCallParticipantVideo presentation:flags.14?GroupCallParticipantVideo paid_stars_total:flags.16?long = GroupCallParticipant;</div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="field-name">Muted</td>
+                            <td class="field-type">flags .0? true</td>
+                            <td>Whether the participant is muted</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Left</td>
+                            <td class="field-type">flags .1? true</td>
+                            <td>Whether the participant left the media layer; in conferences, another participant must then prune them from the E 2 E blockchain</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">CanSelfUnmute</td>
+                            <td class="field-type">flags .2? true</td>
+                            <td>Whether the participant can unmute themselves</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">JustJoined</td>
+                            <td class="field-type">flags .4? true</td>
+                            <td>Whether the participant has just joined</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Versioned</td>
+                            <td class="field-type">flags .5? true</td>
+                            <td>If set, the application logic for this update is slightly different, see here for more info on the full flow.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Min</td>
+                            <td class="field-type">flags .8? true</td>
+                            <td>If not set, the volume and muted_by_you fields can be safely used to overwrite locally cached information; otherwise, volume will contain valid information only if volume_by_admin is set both in the cache and in the received constructor.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">MutedByYou</td>
+                            <td class="field-type">flags .9? true</td>
+                            <td>Whether this participant was muted by the current user</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">VolumeByAdmin</td>
+                            <td class="field-type">flags .10? true</td>
+                            <td>Whether our volume can only changed by an admin</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Self</td>
+                            <td class="field-type">flags .12? true</td>
+                            <td>Whether this participant is the current user</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">VideoJoined</td>
+                            <td class="field-type">flags .15? true</td>
+                            <td>Whether this participant is currently broadcasting video</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Peer</td>
+                            <td class="field-type"><a href="../types/Peer.html">Peer</a></td>
+                            <td>Peer represented by this participant</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Date</td>
+                            <td class="field-type">int</td>
+                            <td>When did this participant join the group call</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ActiveDate</td>
+                            <td class="field-type">flags .3? int</td>
+                            <td>When was this participant last active in the group call</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Source</td>
+                            <td class="field-type">int</td>
+                            <td>Source ID of the participant&#x27;s main audio stream</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Volume</td>
+                            <td class="field-type">flags .7? int</td>
+                            <td>Volume, between 1 and 20000; 10000 represents 100% volume. If not set, the volume is set to 100%.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">About</td>
+                            <td class="field-type">flags .11? string</td>
+                            <td>Info about this participant</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">RaiseHandRating</td>
+                            <td class="field-type">flags .13? long</td>
+                            <td>Specifies the UI visualization order of peers with raised hands: peers with a higher rating should be showed first in the list.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Video</td>
+                            <td class="field-type">flags .6? GroupCallParticipantVideo</td>
+                            <td>Info about the video stream the participant is currently broadcasting</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Presentation</td>
+                            <td class="field-type">flags .14? GroupCallParticipantVideo</td>
+                            <td>Info about the screen sharing stream the participant is currently broadcasting</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PaidStarsTotal</td>
+                            <td class="field-type">flags .16? long</td>
+                            <td>Total Stars donated by this participant in a live story</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/GroupCallParticipant.html">GroupCallParticipant</a></span>
+        </div>
+
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// Creating GroupCallParticipantObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">GroupCallParticipantObj</span>{
+    Muted: <span class="keyword">nil</span>,
+    Left: <span class="keyword">nil</span>,
+    CanSelfUnmute: <span class="keyword">nil</span>,
+    JustJoined: <span class="keyword">nil</span>,
+    Versioned: <span class="keyword">nil</span>,
+    Min: <span class="keyword">nil</span>,
+    <span class="comment">// ... more required fields</span>
+}</pre>
+        </div>
+
+        </article>
+
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>storyItemSkipped - Gogram TL Reference</title>
+    <meta name="description" content="Represents an active story, whose full information was omitted for space and performance reasons; use stories. get Stories By ID to fetch full info about the sk">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="storyItemSkipped - Gogram TL Reference">
+    <meta property="og:description" content="Represents an active story, whose full information was omitted for space and performance reasons; use stories. get Stories By ID to fetch full info about the sk">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="../types.html">Types</a>
+                    <a href="../constructors.html">Constructors</a>
+                    <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "..";
+    </script>
+    <script src="../js/search_index.js"></script>
+    <script src="../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> StoryItemSkipped</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>StoryItemSkipped</h1>
+            <p class="description">Represents an active story, whose full information was omitted for space and performance reasons; use stories. get Stories By ID to fetch full info about the skipped story when and if needed.</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-constructor">constructor</span>
+        </div>
+        <div class="code-block">storyItemSkipped#ffadc913 flags:# close_friends:flags.8?true live:flags.9?true id:int date:int expire_date:int = StoryItem;</div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="field-name">CloseFriends</td>
+                            <td class="field-type">flags .8? true</td>
+                            <td>Whether this story can only be viewed by our close friends, see here for more info</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Live</td>
+                            <td class="field-type">flags .9? true</td>
+                            <td>Whether this story is a live video stream.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Id</td>
+                            <td class="field-type">int</td>
+                            <td>Story ID</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Date</td>
+                            <td class="field-type">int</td>
+                            <td>When was the story posted.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ExpireDate</td>
+                            <td class="field-type">int</td>
+                            <td>When does the story expire.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/StoryItem.html">StoryItem</a></span>
+        </div>
+
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// Creating StoryItemSkipped constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">StoryItemSkipped</span>{
+    CloseFriends: <span class="keyword">nil</span>,
+    Live: <span class="keyword">nil</span>,
+    Id: <span class="number">42</span>,
+    Date: <span class="number">42</span>,
+    ExpireDate: <span class="number">42</span>,
+}</pre>
+        </div>
+
+        </article>
+
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

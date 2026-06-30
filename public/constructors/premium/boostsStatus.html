@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>premium.boostsStatus - Gogram TL Reference</title>
+    <meta name="description" content="Contains info about the current boost status of a peer.">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="premium.boostsStatus - Gogram TL Reference">
+    <meta property="og:description" content="Contains info about the current boost status of a peer.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../../css/common.css">
+    <script src="../../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../../index.html">Home</a>
+                    <a href="../../types.html">Types</a>
+                    <a href="../../constructors.html">Constructors</a>
+                    <a href="../../methods.html">Methods</a>
+                    <a href="../../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "../..";
+    </script>
+    <script src="../../js/search_index.js"></script>
+    <script src="../../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../../index.html">Home</a> <span>›</span> <a href="../../constructors.html">Constructors</a> <span>›</span> Premium <span>›</span> BoostsStatus</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>PremiumBoostsStatusObj</h1>
+            <p class="description">Contains info about the current boost status of a peer.</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-constructor">constructor</span>
+        </div>
+        <div class="code-block">premium.boostsStatus#4959427a flags:# my_boost:flags.2?true level:int current_level_boosts:int boosts:int gift_boosts:flags.4?int next_level_boosts:flags.0?int premium_audience:flags.1?StatsPercentValue boost_url:string prepaid_giveaways:flags.3?Vector&lt;PrepaidGiveaway&gt; my_boost_slots:flags.2?Vector&lt;int&gt; = premium.BoostsStatus;</div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="field-name">MyBoost</td>
+                            <td class="field-type">flags .2? true</td>
+                            <td>Whether we&#x27;re currently boosting this channel/supergroup, my_boost_slots will also be set.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Level</td>
+                            <td class="field-type">int</td>
+                            <td>The current boost level of the channel/supergroup.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">CurrentLevelBoosts</td>
+                            <td class="field-type">int</td>
+                            <td>The number of boosts acquired so far in the current level.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Boosts</td>
+                            <td class="field-type">int</td>
+                            <td>Total number of boosts acquired so far.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">GiftBoosts</td>
+                            <td class="field-type">flags .4? int</td>
+                            <td>The number of boosts acquired from created Telegram Premium gift codes and giveaways; only returned to channel/supergroup admins.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">NextLevelBoosts</td>
+                            <td class="field-type">flags .0? int</td>
+                            <td>Total number of boosts needed to reach the next level; if absent, the next level isn&#x27;t available.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PremiumAudience</td>
+                            <td class="field-type">flags .1? StatsPercentValue</td>
+                            <td>Only returned to channel/supergroup admins: contains the approximated number of Premium users subscribed to the channel/supergroup, related to the total number of subscribers.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">BoostUrl</td>
+                            <td class="field-type">string</td>
+                            <td>Boost deep link that can be used to boost the chat.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PrepaidGiveaways</td>
+                            <td class="field-type">flags .3? Vector &lt; PrepaidGiveaway &gt;</td>
+                            <td>A list of prepaid giveaways available for the chat; only returned to channel/supergroup admins.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">MyBoostSlots</td>
+                            <td class="field-type">flags .2? Vector &lt; int &gt;</td>
+                            <td>Indicates which of our boost slots we&#x27;ve assigned to this peer (populated if my_boost is set).</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../../types/premium.BoostsStatus.html">premium.BoostsStatus</a></span>
+        </div>
+
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// Creating PremiumBoostsStatusObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">PremiumBoostsStatusObj</span>{
+    MyBoost: <span class="keyword">nil</span>,
+    Level: <span class="number">42</span>,
+    CurrentLevelBoosts: <span class="number">42</span>,
+    Boosts: <span class="number">42</span>,
+    GiftBoosts: <span class="keyword">nil</span>,
+    NextLevelBoosts: <span class="keyword">nil</span>,
+    <span class="comment">// ... more required fields</span>
+}</pre>
+        </div>
+
+        </article>
+
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

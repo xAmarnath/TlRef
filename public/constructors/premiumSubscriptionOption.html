@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>premiumSubscriptionOption - Gogram TL Reference</title>
+    <meta name="description" content="Describes a Telegram Premium subscription option">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="premiumSubscriptionOption - Gogram TL Reference">
+    <meta property="og:description" content="Describes a Telegram Premium subscription option">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="../types.html">Types</a>
+                    <a href="../constructors.html">Constructors</a>
+                    <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "..";
+    </script>
+    <script src="../js/search_index.js"></script>
+    <script src="../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> PremiumSubscriptionOptionObj</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>PremiumSubscriptionOptionObj</h1>
+            <p class="description">Describes a Telegram Premium subscription option</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-constructor">constructor</span>
+        </div>
+        <div class="code-block">premiumSubscriptionOption#5f2d1df2 flags:# current:flags.1?true can_purchase_upgrade:flags.2?true transaction:flags.3?string months:int currency:string amount:long bot_url:string store_product:flags.0?string = PremiumSubscriptionOption;</div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="field-name">Current</td>
+                            <td class="field-type">flags .1? true</td>
+                            <td>Whether this subscription option is currently in use.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">CanPurchaseUpgrade</td>
+                            <td class="field-type">flags .2? true</td>
+                            <td>Whether this subscription option can be used to upgrade the existing Telegram Premium subscription. When upgrading Telegram Premium subscriptions bought through stores, make sure that the store transaction ID is equal to transaction, to avoid upgrading someone else&#x27;s account, if the client is currently logged into multiple accounts.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Transaction</td>
+                            <td class="field-type">flags .3? string</td>
+                            <td>Identifier of the last in-store transaction for the currently used subscription on the current account.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Months</td>
+                            <td class="field-type">int</td>
+                            <td>Duration of subscription in months</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Currency</td>
+                            <td class="field-type">string</td>
+                            <td>Three-letter ISO 4217 currency code</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Amount</td>
+                            <td class="field-type">long</td>
+                            <td>Total price in the smallest units of the currency (integer, not float/double). For example, for a price of US$ 1.45 pass amount = 145. See the exp parameter in currencies. json, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies).</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">BotUrl</td>
+                            <td class="field-type">string</td>
+                            <td>Deep link used to initiate payment</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">StoreProduct</td>
+                            <td class="field-type">flags .0? string</td>
+                            <td>Store product ID, only for official apps</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/PremiumSubscriptionOption.html">PremiumSubscriptionOption</a></span>
+        </div>
+
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// Creating PremiumSubscriptionOptionObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">PremiumSubscriptionOptionObj</span>{
+    Current: <span class="keyword">nil</span>,
+    CanPurchaseUpgrade: <span class="keyword">nil</span>,
+    Transaction: <span class="string">&quot;Hello, World!&quot;</span>,
+    Months: <span class="number">42</span>,
+    Currency: <span class="string">&quot;Hello, World!&quot;</span>,
+    Amount: int64(<span class="number">1234567890</span>),
+    <span class="comment">// ... more required fields</span>
+}</pre>
+        </div>
+
+        </article>
+
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

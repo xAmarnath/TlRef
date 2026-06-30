@@ -30,10 +30,26 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Download schema.tl (if URL provided)
-        if: ${{ github.event.inputs.schema_url != '' }}
+      - name: Download schema.tl
         run: |
-          curl -o schema.tl "${{ github.event.inputs.schema_url }}"
+          # Use the user-provided URL if given, else pull the canonical TDesktop dev schema.
+          url="${{ github.event.inputs.schema_url }}"
+          if [ -z "$url" ]; then
+            url="https://raw.githubusercontent.com/telegramdesktop/tdesktop/dev/Telegram/SourceFiles/mtproto/scheme/api.tl"
+          fi
+          curl -fsSL -o schema.tl "$url"
+
+      - name: Download E2E schema (secret-chat)
+        run: |
+          curl -fsSL -o e2e_schema.json https://core.telegram.org/schema/end-to-end-json || true
+
+      - name: Restore scraper cache
+        uses: actions/cache@v4
+        with:
+          path: .cache/scrape
+          key: tl-scrape-${{ hashFiles('schema.tl') }}
+          restore-keys: |
+            tl-scrape-
 
       - name: Scrape TL documentation
         run: |
@@ -53,16 +69,29 @@ jobs:
 
       - name: Guard against page-size regressions
         run: |
-          # Any single HTML page >50KB means search index / CSS got re-inlined.
-          # Catches the regression that previously made the repo 2.2GB.
-          big=$(find public -name '*.html' -size +50k -printf '%s %p\n' | sort -rn)
+          # Big-list pages (constructors.html, methods.html, types.html, e2e.html, fat
+          # union types like Update.html) legitimately list 100s of entries; everything
+          # else should stay small. A regression that re-inlines the search index would
+          # push every detail page back to ~800KB, which any of these thresholds catch.
+          fail=0
+
+          # Per-entry detail pages must stay <100KB (was 800KB before the fix).
+          big=$(find public/constructors public/methods -name '*.html' -size +100k -printf '%s %p\n' | sort -rn)
           if [ -n "$big" ]; then
-            echo "::error::HTML pages exceed 50KB — likely inline-asset regression:"
+            echo "::error::Detail pages exceed 100KB — likely inline-asset regression:"
             echo "$big" | head -20
-            exit 1
+            fail=1
           fi
-          total=$(du -sh public | cut -f1)
-          echo "public/ total size: $total"
+
+          # Total public/ tree must stay under 100MB (we expect ~30-40MB).
+          total_kb=$(du -sk public | cut -f1)
+          echo "public/ total size: ${total_kb} KB"
+          if [ "$total_kb" -gt 102400 ]; then
+            echo "::error::public/ is ${total_kb} KB (>100 MB) — inline-asset regression likely"
+            fail=1
+          fi
+
+          exit $fail
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6

@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>account.initPasskeyRegistration - Gogram TL Reference</title>
-    <meta name="description" content="Initialize Web Authn passkey registration process">
+    <meta name="description" content="Initialize passkey registration for the current account, see here for more info on the full flow.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="account.initPasskeyRegistration - Gogram TL Reference">
-    <meta property="og:description" content="Initialize Web Authn passkey registration process">
+    <meta property="og:description" content="Initialize passkey registration for the current account, see here for more info on the full flow.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -38,6 +38,7 @@
                     <a href="../../types.html">Types</a>
                     <a href="../../constructors.html">Constructors</a>
                     <a href="../../methods.html">Methods</a>
+                    <a href="../../e2e.html">E2E</a>
                 </nav>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -69,21 +70,23 @@
         <div class="breadcrumb"><a href="../../index.html">Home</a> <span>›</span> <a href="../../methods.html">Methods</a> <span>›</span> Account <span>›</span> InitPasskeyRegistration</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
         </div>
         
         <header class="page-header">
             <h1>AccountInitPasskeyRegistration</h1>
-            <p class="description">Initialize Web Authn passkey registration process</p>
+            <p class="description">Initialize passkey registration for the current account, see here for more info on the full flow.</p>
         </header>
         
         <div class="badges">
             <span class="badge badge-method">method</span>
             <span class="badge badge-user">Users</span>
         </div>
+        <div class="code-block">account.initPasskeyRegistration#429547e8 = account.PasskeyRegistrationOptions;</div>
+
         <div class="result-section">
             <h3>Returns</h3>
-            <span class="result-type"><a href="../../constructors/account/PasskeyRegistrationOptions.html">account.PasskeyRegistrationOptions</a></span>
+            <span class="result-type"><a href="../../types/account.PasskeyRegistrationOptions.html">account.PasskeyRegistrationOptions</a></span>
         </div>
 
         <div class="example-section">
@@ -94,6 +97,36 @@ result, err := <span class="package">client.</span><span class="function">Accoun
     <span class="comment">// handle error</span>
 }
 <span class="comment">// result is *<span class="package">tg.</span><span class="type">AccountPasskeyRegistrationOptions</span></span></pre>
+        </div>
+
+        <div class="section">
+            <h2>Possible Errors</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">ACCESS_DENIED</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">406</td>
+                            <td class="error-type">FRESH_RESET_AUTHORISATION_FORBIDDEN</td>
+                            <td>You can&#x27;t logout other sessions if less than 24 hours have passed since you logged on the current session.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         </article>

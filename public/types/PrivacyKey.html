@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrivacyKey - Gogram TL Reference</title>
+    <meta name="description" content="Abstract type representing one of 14 possible constructors.">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="PrivacyKey - Gogram TL Reference">
+    <meta property="og:description" content="Abstract type representing one of 14 possible constructors.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="../types.html">Types</a>
+                    <a href="../constructors.html">Constructors</a>
+                    <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "..";
+    </script>
+    <script src="../js/search_index.js"></script>
+    <script src="../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../types.html">Types</a> <span>›</span> PrivacyKey</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>PrivacyKey</h1>
+            <p class="description">Abstract type representing one of 14 possible constructors.</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-type">Type</span>
+        </div>
+        
+        <div class="section">
+            <h2>Available Constructors</h2>
+            <p style="margin-bottom: 16px; color: var(--text-secondary);">
+                In Gogram, this type is represented as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">tg.PrivacyKey</code> interface.
+                Use any of the following constructors:
+            </p>
+            <div class="item-list">
+
+            <a href="../constructors/privacyKeyAbout.html" class="item" data-name="privacykeyabout privacykeyabout">
+                <span class="item-name">PrivacyKeyAbout</span>
+                <span class="item-desc">Whether people can see your bio</span>
+            </a>
+
+            <a href="../constructors/privacyKeyAddedByPhone.html" class="item" data-name="privacykeyaddedbyphone privacykeyaddedbyphone">
+                <span class="item-name">PrivacyKeyAddedByPhone</span>
+                <span class="item-desc">Whether this user can be added to our contact list by their phone number</span>
+            </a>
+
+            <a href="../constructors/privacyKeyBirthday.html" class="item" data-name="privacykeybirthday privacykeybirthday">
+                <span class="item-name">PrivacyKeyBirthday</span>
+                <span class="item-desc">Whether the user can see our birthday.</span>
+            </a>
+
+            <a href="../constructors/privacyKeyChatInvite.html" class="item" data-name="privacykeychatinvite privacykeychatinvite">
+                <span class="item-name">PrivacyKeyChatInvite</span>
+                <span class="item-desc">Whether the user can be invited to chats</span>
+            </a>
+
+            <a href="../constructors/privacyKeyForwards.html" class="item" data-name="privacykeyforwards privacykeyforwards">
+                <span class="item-name">PrivacyKeyForwards</span>
+                <span class="item-desc">Whether messages forwarded from the user will be anonymously forwarded</span>
+            </a>
+
+            <a href="../constructors/privacyKeyNoPaidMessages.html" class="item" data-name="privacykeynopaidmessages privacykeynopaidmessages">
+                <span class="item-name">PrivacyKeyNoPaidMessages</span>
+                <span class="item-desc">Who can send you messages without paying, if paid messages are enabled.</span>
+            </a>
+
+            <a href="../constructors/privacyKeyPhoneCall.html" class="item" data-name="privacykeyphonecall privacykeyphonecall">
+                <span class="item-name">PrivacyKeyPhoneCall</span>
+                <span class="item-desc">Whether the user accepts phone calls</span>
+            </a>
+
+            <a href="../constructors/privacyKeyPhoneNumber.html" class="item" data-name="privacykeyphonenumber privacykeyphonenumber">
+                <span class="item-name">PrivacyKeyPhoneNumber</span>
+                <span class="item-desc">Whether the user allows us to see his phone number</span>
+            </a>
+
+            <a href="../constructors/privacyKeyPhoneP2P.html" class="item" data-name="privacykeyphonep2p privacykeyphonep2p">
+                <span class="item-name">PrivacyKeyPhoneP2P</span>
+                <span class="item-desc">Whether P 2 P connections in phone calls with this user are allowed</span>
+            </a>
+
+            <a href="../constructors/privacyKeyProfilePhoto.html" class="item" data-name="privacykeyprofilephoto privacykeyprofilephoto">
+                <span class="item-name">PrivacyKeyProfilePhoto</span>
+                <span class="item-desc">Whether the profile picture of the user is visible</span>
+            </a>
+
+            <a href="../constructors/privacyKeySavedMusic.html" class="item" data-name="privacykeysavedmusic privacykeysavedmusic">
+                <span class="item-name">PrivacyKeySavedMusic</span>
+                <span class="item-desc">Whether the user can see the songs we pinned to our profile.</span>
+            </a>
+
+            <a href="../constructors/privacyKeyStarGiftsAutoSave.html" class="item" data-name="privacykeystargiftsautosave privacykeystargiftsautosave">
+                <span class="item-name">PrivacyKeyStarGiftsAutoSave</span>
+                <span class="item-desc">Whether received gifts will be automatically displayed on our profile</span>
+            </a>
+
+            <a href="../constructors/privacyKeyStatusTimestamp.html" class="item" data-name="privacykeystatustimestamp privacykeystatustimestamp">
+                <span class="item-name">PrivacyKeyStatusTimestamp</span>
+                <span class="item-desc">Whether we can see the last online timestamp of this user.</span>
+            </a>
+
+            <a href="../constructors/privacyKeyVoiceMessages.html" class="item" data-name="privacykeyvoicemessages privacykeyvoicemessages">
+                <span class="item-name">PrivacyKeyVoiceMessages</span>
+                <span class="item-desc">Whether the user accepts voice messages</span>
+            </a>
+
+            </div>
+        </div>
+        
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// PrivacyKey is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
+<span class="comment">// You can use any of the following constructors:</span>
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PrivacyKey</span> = &amp;<span class="package">tg.</span><span class="type">PrivacyKeyAbout</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PrivacyKey</span> = &amp;<span class="package">tg.</span><span class="type">PrivacyKeyAddedByPhone</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PrivacyKey</span> = &amp;<span class="package">tg.</span><span class="type">PrivacyKeyBirthday</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PrivacyKey</span> = &amp;<span class="package">tg.</span><span class="type">PrivacyKeyChatInvite</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">PrivacyKey</span> = &amp;<span class="package">tg.</span><span class="type">PrivacyKeyForwards</span>{}
+<span class="comment">// ... and <span class="number">9</span> more constructors</span>
+</pre>
+        </div>
+        </article>
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

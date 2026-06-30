@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>messages.summarizeText - Gogram TL Reference</title>
-    <meta name="description" content="Summarize lengthy text using AI">
+    <meta name="description" content="Summarize the contents of a message with AI, see here for more info.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="messages.summarizeText - Gogram TL Reference">
-    <meta property="og:description" content="Summarize lengthy text using AI">
+    <meta property="og:description" content="Summarize the contents of a message with AI, see here for more info.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -38,6 +38,7 @@
                     <a href="../../types.html">Types</a>
                     <a href="../../constructors.html">Constructors</a>
                     <a href="../../methods.html">Methods</a>
+                    <a href="../../e2e.html">E2E</a>
                 </nav>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -69,17 +70,20 @@
         <div class="breadcrumb"><a href="../../index.html">Home</a> <span>›</span> <a href="../../methods.html">Methods</a> <span>›</span> Messages <span>›</span> SummarizeText</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
         </div>
         
         <header class="page-header">
             <h1>MessagesSummarizeText</h1>
-            <p class="description">Summarize lengthy text using AI</p>
+            <p class="description">Summarize the contents of a message with AI, see here for more info.</p>
         </header>
         
         <div class="badges">
             <span class="badge badge-method">method</span>
+            <span class="badge badge-user">Users</span>
         </div>
+        <div class="code-block">messages.summarizeText#9d4104e2 flags:# peer:InputPeer id:int to_lang:flags.0?string = TextWithEntities;</div>
+
         <div class="section">
             <h2>Parameters</h2>
             <div class="table-container">
@@ -95,20 +99,26 @@
 
                         <tr>
                             <td class="field-name">Peer</td>
-                            <td class="field-type"><a href="../../constructors/InputPeer.html">InputPeer</a></td>
-                            <td>Peer context</td>
+                            <td class="field-type"><a href="../../types/InputPeer.html">InputPeer</a></td>
+                            <td>The peer where the message is located.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Id</td>
                             <td class="field-type">int</td>
-                            <td>Message ID</td>
+                            <td>Message ID.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">ToLang</td>
-                            <td class="field-type">string</td>
-                            <td>Optional target language</td>
+                            <td class="field-type">flags .0? string</td>
+                            <td>If set, generates the summary in the specified target language (two-letter ISO 639-1 language code) instead of the message&#x27;s language.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Tone</td>
+                            <td class="field-type">flags .2? string</td>
+                            <td>If set, rephrases the summary using the specified AI composer tone (pass the tone identifier)</td>
                         </tr>
 
                     </tbody>
@@ -118,17 +128,53 @@
 
         <div class="result-section">
             <h3>Returns</h3>
-            <span class="result-type"><a href="../../constructors/TextWithEntities.html">TextWithEntities</a></span>
+            <span class="result-type"><a href="../../types/TextWithEntities.html">TextWithEntities</a></span>
         </div>
 
         <div class="example-section">
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// MessagesSummarizeText - positional arguments</span>
-result, err := <span class="package">client.</span><span class="function">MessagesSummarizeText</span>(&amp;<span class="package">tg.</span><span class="type">InputPeerUser</span>{UserID: int64(<span class="number">777000</span>)}, <span class="number">42</span>, <span class="string">&quot;Hello, World!&quot;</span>)
+result, err := <span class="package">client.</span><span class="function">MessagesSummarizeText</span>(&amp;<span class="package">tg.</span><span class="type">InputPeerUser</span>{UserID: int64(<span class="number">777000</span>)}, <span class="number">42</span>, <span class="string">&quot;Hello, World!&quot;</span>, <span class="string">&quot;Hello, World!&quot;</span>)
 <span class="keyword">if</span> err != <span class="keyword">nil</span> {
     <span class="comment">// handle error</span>
 }
 <span class="comment">// result is *<span class="package">tg.</span><span class="type">TextWithEntities</span></span></pre>
+        </div>
+
+        <div class="section">
+            <h2>Possible Errors</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">INPUT_TEXT_TOO_LONG</td>
+                            <td>The specified text is too long.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">MSG_ID_INVALID</td>
+                            <td>Invalid message ID provided.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">PEER_ID_INVALID</td>
+                            <td>The provided peer id is invalid.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         </article>

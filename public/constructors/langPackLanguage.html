@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>langPackLanguage - Gogram TL Reference</title>
+    <meta name="description" content="Identifies a localization pack">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="langPackLanguage - Gogram TL Reference">
+    <meta property="og:description" content="Identifies a localization pack">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="../types.html">Types</a>
+                    <a href="../constructors.html">Constructors</a>
+                    <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "..";
+    </script>
+    <script src="../js/search_index.js"></script>
+    <script src="../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> LangPackLanguageObj</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>LangPackLanguageObj</h1>
+            <p class="description">Identifies a localization pack</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-constructor">constructor</span>
+        </div>
+        <div class="code-block">langPackLanguage#eeca5ce3 flags:# official:flags.0?true rtl:flags.2?true beta:flags.3?true name:string native_name:string lang_code:string base_lang_code:flags.1?string plural_code:string strings_count:int translated_count:int translations_url:string = LangPackLanguage;</div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="field-name">Official</td>
+                            <td class="field-type">flags .0? true</td>
+                            <td>Whether the language pack is official</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Rtl</td>
+                            <td class="field-type">flags .2? true</td>
+                            <td>Is this a localization pack for an RTL language</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Beta</td>
+                            <td class="field-type">flags .3? true</td>
+                            <td>Is this a beta localization pack?</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Name</td>
+                            <td class="field-type">string</td>
+                            <td>Language name</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">NativeName</td>
+                            <td class="field-type">string</td>
+                            <td>Language name in the language itself</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">LangCode</td>
+                            <td class="field-type">string</td>
+                            <td>Language code (pack identifier)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">BaseLangCode</td>
+                            <td class="field-type">flags .1? string</td>
+                            <td>Identifier of a base language pack; may be empty. If a string is missed in the language pack, then it should be fetched from base language pack. Unsupported in custom language packs</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PluralCode</td>
+                            <td class="field-type">string</td>
+                            <td>A language code to be used to apply plural forms. See https://www. unicode. org/cldr/charts/latest/supplemental/language_plural_rules. html for more info</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">StringsCount</td>
+                            <td class="field-type">int</td>
+                            <td>Total number of non-deleted strings from the language pack</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">TranslatedCount</td>
+                            <td class="field-type">int</td>
+                            <td>Total number of translated strings from the language pack</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">TranslationsUrl</td>
+                            <td class="field-type">string</td>
+                            <td>Link to language translation interface; empty for custom local language packs</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/LangPackLanguage.html">LangPackLanguage</a></span>
+        </div>
+
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// Creating LangPackLanguageObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">LangPackLanguageObj</span>{
+    Official: <span class="keyword">nil</span>,
+    Rtl: <span class="keyword">nil</span>,
+    Beta: <span class="keyword">nil</span>,
+    Name: <span class="string">&quot;Hello, World!&quot;</span>,
+    NativeName: <span class="string">&quot;Hello, World!&quot;</span>,
+    LangCode: <span class="string">&quot;Hello, World!&quot;</span>,
+    <span class="comment">// ... more required fields</span>
+}</pre>
+        </div>
+
+        </article>
+
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

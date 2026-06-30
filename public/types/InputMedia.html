@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InputMedia - Gogram TL Reference</title>
+    <meta name="description" content="Abstract type representing one of 20 possible constructors.">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="InputMedia - Gogram TL Reference">
+    <meta property="og:description" content="Abstract type representing one of 20 possible constructors.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="../types.html">Types</a>
+                    <a href="../constructors.html">Constructors</a>
+                    <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "..";
+    </script>
+    <script src="../js/search_index.js"></script>
+    <script src="../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../types.html">Types</a> <span>›</span> InputMedia</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>InputMedia</h1>
+            <p class="description">Abstract type representing one of 20 possible constructors.</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-type">Type</span>
+        </div>
+        
+        <div class="section">
+            <h2>Available Constructors</h2>
+            <p style="margin-bottom: 16px; color: var(--text-secondary);">
+                In Gogram, this type is represented as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">tg.InputMedia</code> interface.
+                Use any of the following constructors:
+            </p>
+            <div class="item-list">
+
+            <a href="../constructors/inputMediaContact.html" class="item" data-name="inputmediacontact inputmediacontact">
+                <span class="item-name">InputMediaContact</span>
+                <span class="item-desc">Layer 223 1 – Base layer 2 – New userpic notifications 3 – Send message can trigger link change 4 –</span>
+            </a>
+
+            <a href="../constructors/inputMediaDice.html" class="item" data-name="inputmediadice inputmediadice">
+                <span class="item-name">InputMediaDice</span>
+                <span class="item-desc">Send a dice-based animated sticker</span>
+            </a>
+
+            <a href="../constructors/inputMediaDocument.html" class="item" data-name="inputmediadocument inputmediadocument">
+                <span class="item-name">InputMediaDocument</span>
+                <span class="item-desc">Layer 223 1 – Base layer 2 – New userpic notifications 3 – Send message can trigger link change 4 –</span>
+            </a>
+
+            <a href="../constructors/inputMediaDocumentExternal.html" class="item" data-name="inputmediadocumentexternal inputmediadocumentexternal">
+                <span class="item-name">InputMediaDocumentExternal</span>
+                <span class="item-desc">Document that will be downloaded by the telegram servers</span>
+            </a>
+
+            <a href="../constructors/inputMediaEmpty.html" class="item" data-name="inputmediaempty inputmediaempty">
+                <span class="item-name">InputMediaEmpty</span>
+                <span class="item-desc">Empty media content of a message.</span>
+            </a>
+
+            <a href="../constructors/inputMediaGame.html" class="item" data-name="inputmediagame inputmediagame">
+                <span class="item-name">InputMediaGame</span>
+                <span class="item-desc">Layer 223 1 – Base layer 2 – New userpic notifications 3 – Send message can trigger link change 4 –</span>
+            </a>
+
+            <a href="../constructors/inputMediaGeoLive.html" class="item" data-name="inputmediageolive inputmediageolive">
+                <span class="item-name">InputMediaGeoLive</span>
+                <span class="item-desc">Layer 223 1 – Base layer 2 – New userpic notifications 3 – Send message can trigger link change 4 –</span>
+            </a>
+
+            <a href="../constructors/inputMediaGeoPoint.html" class="item" data-name="inputmediageopoint inputmediageopoint">
+                <span class="item-name">InputMediaGeoPoint</span>
+                <span class="item-desc">Layer 223 1 – Base layer 2 – New userpic notifications 3 – Send message can trigger link change 4 –</span>
+            </a>
+
+            <a href="../constructors/inputMediaInvoice.html" class="item" data-name="inputmediainvoice inputmediainvoice">
+                <span class="item-name">InputMediaInvoice</span>
+                <span class="item-desc">Generated invoice of a bot payment</span>
+            </a>
+
+            <a href="../constructors/inputMediaPaidMedia.html" class="item" data-name="inputmediapaidmedia inputmediapaidmedia">
+                <span class="item-name">InputMediaPaidMedia</span>
+                <span class="item-desc">Paid media, see here for more info.</span>
+            </a>
+
+            <a href="../constructors/inputMediaPhoto.html" class="item" data-name="inputmediaphoto inputmediaphoto">
+                <span class="item-name">InputMediaPhoto</span>
+                <span class="item-desc">Layer 223 1 – Base layer 2 – New userpic notifications 3 – Send message can trigger link change 4 –</span>
+            </a>
+
+            <a href="../constructors/inputMediaPhotoExternal.html" class="item" data-name="inputmediaphotoexternal inputmediaphotoexternal">
+                <span class="item-name">InputMediaPhotoExternal</span>
+                <span class="item-desc">New photo that will be uploaded by the server using the specified URL</span>
+            </a>
+
+            <a href="../constructors/inputMediaPoll.html" class="item" data-name="inputmediapoll inputmediapoll">
+                <span class="item-name">InputMediaPoll</span>
+                <span class="item-desc">Layer 223 1 – Base layer 2 – New userpic notifications 3 – Send message can trigger link change 4 –</span>
+            </a>
+
+            <a href="../constructors/inputMediaStakeDice.html" class="item" data-name="inputmediastakedice inputmediastakedice">
+                <span class="item-name">InputMediaStakeDice</span>
+                <span class="item-desc">Layer 223 1 – Base layer 2 – New userpic notifications 3 – Send message can trigger link change 4 –</span>
+            </a>
+
+            <a href="../constructors/inputMediaStory.html" class="item" data-name="inputmediastory inputmediastory">
+                <span class="item-name">InputMediaStory</span>
+                <span class="item-desc">Layer 223 1 – Base layer 2 – New userpic notifications 3 – Send message can trigger link change 4 –</span>
+            </a>
+
+            <a href="../constructors/inputMediaTodo.html" class="item" data-name="inputmediatodo inputmediatodo">
+                <span class="item-name">InputMediaTodo</span>
+                <span class="item-desc">Creates a todo list.</span>
+            </a>
+
+            <a href="../constructors/inputMediaUploadedDocument.html" class="item" data-name="inputmediauploadeddocument inputmediauploadeddocument">
+                <span class="item-name">InputMediaUploadedDocument</span>
+                <span class="item-desc">Layer 223 1 – Base layer 2 – New userpic notifications 3 – Send message can trigger link change 4 –</span>
+            </a>
+
+            <a href="../constructors/inputMediaUploadedPhoto.html" class="item" data-name="inputmediauploadedphoto inputmediauploadedphoto">
+                <span class="item-name">InputMediaUploadedPhoto</span>
+                <span class="item-desc">Layer 223 1 – Base layer 2 – New userpic notifications 3 – Send message can trigger link change 4 –</span>
+            </a>
+
+            <a href="../constructors/inputMediaVenue.html" class="item" data-name="inputmediavenue inputmediavenue">
+                <span class="item-name">InputMediaVenue</span>
+                <span class="item-desc">Can be used to send a venue geolocation.</span>
+            </a>
+
+            <a href="../constructors/inputMediaWebPage.html" class="item" data-name="inputmediawebpage inputmediawebpage">
+                <span class="item-name">InputMediaWebPage</span>
+                <span class="item-desc">Specifies options that will be used to generate the link preview for the caption, or even a standalo</span>
+            </a>
+
+            </div>
+        </div>
+        
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// InputMedia is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
+<span class="comment">// You can use any of the following constructors:</span>
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputMedia</span> = &amp;<span class="package">tg.</span><span class="type">InputMediaContact</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputMedia</span> = &amp;<span class="package">tg.</span><span class="type">InputMediaDice</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputMedia</span> = &amp;<span class="package">tg.</span><span class="type">InputMediaDocument</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputMedia</span> = &amp;<span class="package">tg.</span><span class="type">InputMediaDocumentExternal</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">InputMedia</span> = &amp;<span class="package">tg.</span><span class="type">InputMediaEmpty</span>{}
+<span class="comment">// ... and <span class="number">15</span> more constructors</span>
+</pre>
+        </div>
+        </article>
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

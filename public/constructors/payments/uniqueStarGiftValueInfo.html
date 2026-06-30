@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payments.uniqueStarGiftValueInfo - Gogram TL Reference</title>
+    <meta name="description" content="Information about the value of a collectible gift.">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="payments.uniqueStarGiftValueInfo - Gogram TL Reference">
+    <meta property="og:description" content="Information about the value of a collectible gift.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../../css/common.css">
+    <script src="../../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../../index.html">Home</a>
+                    <a href="../../types.html">Types</a>
+                    <a href="../../constructors.html">Constructors</a>
+                    <a href="../../methods.html">Methods</a>
+                    <a href="../../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "../..";
+    </script>
+    <script src="../../js/search_index.js"></script>
+    <script src="../../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../../index.html">Home</a> <span>›</span> <a href="../../constructors.html">Constructors</a> <span>›</span> Payments <span>›</span> UniqueStarGiftValueInfo</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>PaymentsUniqueStarGiftValueInfoObj</h1>
+            <p class="description">Information about the value of a collectible gift.</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-constructor">constructor</span>
+        </div>
+        <div class="code-block">payments.uniqueStarGiftValueInfo#512fe446 flags:# last_sale_on_fragment:flags.1?true value_is_average:flags.6?true currency:string value:long initial_sale_date:int initial_sale_stars:long initial_sale_price:long last_sale_date:flags.0?int last_sale_price:flags.0?long floor_price:flags.2?long average_price:flags.3?long listed_count:flags.4?int fragment_listed_count:flags.5?int fragment_listed_url:flags.5?string = payments.UniqueStarGiftValueInfo;</div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="field-name">LastSaleOnFragment</td>
+                            <td class="field-type">flags .1? true</td>
+                            <td>If set, the last sale was completed on Fragment.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ValueIsAverage</td>
+                            <td class="field-type">flags .6? true</td>
+                            <td>If set, the value is calculated from the average value of sold gifts of the same type. Otherwise, it is based on the sale price of the gift.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Currency</td>
+                            <td class="field-type">string</td>
+                            <td>Three-letter ISO 4217 currency code (a localized fiat currency used to represent prices and price estimations in this constructor).</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Value</td>
+                            <td class="field-type">long</td>
+                            <td>Estimated value of the gift, in the smallest unit of the currency specified in currency.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">InitialSaleDate</td>
+                            <td class="field-type">int</td>
+                            <td>Initial purchase date of the gift.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">InitialSaleStars</td>
+                            <td class="field-type">long</td>
+                            <td>Initial purchase price in Stars.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">InitialSalePrice</td>
+                            <td class="field-type">long</td>
+                            <td>Initial purchase price in the smallest unit of the currency specified in currency (automatically converted from initial_sale_stars ).</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">LastSaleDate</td>
+                            <td class="field-type">flags .0? int</td>
+                            <td>Last resale date of the gift.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">LastSalePrice</td>
+                            <td class="field-type">flags .0? long</td>
+                            <td>Last resale price, in the smallest unit of the currency specified in currency.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">FloorPrice</td>
+                            <td class="field-type">flags .2? long</td>
+                            <td>The current minimum price of collectible gifts of the same type, in the smallest unit of the currency specified in currency.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">AveragePrice</td>
+                            <td class="field-type">flags .3? long</td>
+                            <td>The current average sale price of collectible gifts of the same type, in the smallest unit of the currency specified in currency.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ListedCount</td>
+                            <td class="field-type">flags .4? int</td>
+                            <td>Number of gifts of the same type currently being resold on Telegram.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">FragmentListedCount</td>
+                            <td class="field-type">flags .5? int</td>
+                            <td>Number of gifts of the same type currently being resold on fragment.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">FragmentListedUrl</td>
+                            <td class="field-type">flags .5? string</td>
+                            <td>Fragment link to the listing of gifts of the same type currently being resold on fragment.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../../types/payments.UniqueStarGiftValueInfo.html">payments.UniqueStarGiftValueInfo</a></span>
+        </div>
+
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// Creating PaymentsUniqueStarGiftValueInfoObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">PaymentsUniqueStarGiftValueInfoObj</span>{
+    LastSaleOnFragment: <span class="keyword">nil</span>,
+    ValueIsAverage: <span class="keyword">nil</span>,
+    Currency: <span class="string">&quot;Hello, World!&quot;</span>,
+    Value: int64(<span class="number">1234567890</span>),
+    InitialSaleDate: <span class="number">42</span>,
+    InitialSaleStars: int64(<span class="number">1234567890</span>),
+    <span class="comment">// ... more required fields</span>
+}</pre>
+        </div>
+
+        </article>
+
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

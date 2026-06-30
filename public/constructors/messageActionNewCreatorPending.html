@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>messageActionNewCreatorPending - Gogram TL Reference</title>
-    <meta name="description" content="Pending creator transfer">
+    <meta name="description" content="Service message: emitted to a supergroup when the group/channel creator leaves the group, indicating that ownership transfer is pending. The new_creator_id user">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="messageActionNewCreatorPending - Gogram TL Reference">
-    <meta property="og:description" content="Pending creator transfer">
+    <meta property="og:description" content="Service message: emitted to a supergroup when the group/channel creator leaves the group, indicating that ownership transfer is pending. The new_creator_id user">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -38,6 +38,7 @@
                     <a href="../types.html">Types</a>
                     <a href="../constructors.html">Constructors</a>
                     <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
                 </nav>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -69,17 +70,19 @@
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> MessageActionNewCreatorPending</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
         </div>
         
         <header class="page-header">
             <h1>MessageActionNewCreatorPending</h1>
-            <p class="description">Pending creator transfer</p>
+            <p class="description">Service message: emitted to a supergroup when the group/channel creator leaves the group, indicating that ownership transfer is pending. The new_creator_id user will become the new owner after 7 days if the old owner does not rejoin.</p>
         </header>
         
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
+        <div class="code-block">messageActionNewCreatorPending#b07ed085 new_creator_id:long = MessageAction;</div>
+
         <div class="section">
             <h2>Parameters</h2>
             <div class="table-container">
@@ -96,12 +99,17 @@
                         <tr>
                             <td class="field-name">NewCreatorId</td>
                             <td class="field-type">long</td>
-                            <td>Pending creator ID</td>
+                            <td>The ID of the user who will become the new owner of the group/channel after 7 days if the old owner does not rejoin.</td>
                         </tr>
 
                     </tbody>
                 </table>
             </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/MessageAction.html">MessageAction</a></span>
         </div>
 
         <div class="example-section">

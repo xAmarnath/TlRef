@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>storyItem - Gogram TL Reference</title>
+    <meta name="description" content="Represents a story.">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="storyItem - Gogram TL Reference">
+    <meta property="og:description" content="Represents a story.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="../types.html">Types</a>
+                    <a href="../constructors.html">Constructors</a>
+                    <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "..";
+    </script>
+    <script src="../js/search_index.js"></script>
+    <script src="../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> StoryItemObj</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>StoryItemObj</h1>
+            <p class="description">Represents a story.</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-constructor">constructor</span>
+        </div>
+        <div class="code-block">storyItem#edf164f1 flags:# pinned:flags.5?true public:flags.7?true close_friends:flags.8?true min:flags.9?true noforwards:flags.10?true edited:flags.11?true contacts:flags.12?true selected_contacts:flags.13?true out:flags.16?true id:int date:int from_id:flags.18?Peer fwd_from:flags.17?StoryFwdHeader expire_date:int caption:flags.0?string entities:flags.1?Vector&lt;MessageEntity&gt; media:MessageMedia media_areas:flags.14?Vector&lt;MediaArea&gt; privacy:flags.2?Vector&lt;PrivacyRule&gt; views:flags.3?StoryViews sent_reaction:flags.15?Reaction albums:flags.19?Vector&lt;int&gt; = StoryItem;</div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="field-name">Pinned</td>
+                            <td class="field-type">flags .5? true</td>
+                            <td>Whether this story is pinned on the user&#x27;s profile</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Public</td>
+                            <td class="field-type">flags .7? true</td>
+                            <td>Whether this story is public and can be viewed by everyone</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">CloseFriends</td>
+                            <td class="field-type">flags .8? true</td>
+                            <td>Whether this story can only be viewed by our close friends, see here for more info</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Min</td>
+                            <td class="field-type">flags .9? true</td>
+                            <td>Full information about this story was omitted for space and performance reasons; use stories. get Stories By ID to fetch full info about this story when and if needed.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Noforwards</td>
+                            <td class="field-type">flags .10? true</td>
+                            <td>Whether this story is protected and thus cannot be forwarded; clients should also prevent users from saving attached media (i. e. videos should only be streamed, photos should be kept in RAM, et cetera).</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Edited</td>
+                            <td class="field-type">flags .11? true</td>
+                            <td>Indicates whether the story was edited.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Contacts</td>
+                            <td class="field-type">flags .12? true</td>
+                            <td>Whether this story can only be viewed by our contacts</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">SelectedContacts</td>
+                            <td class="field-type">flags .13? true</td>
+                            <td>Whether this story can only be viewed by a select list of our contacts</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Out</td>
+                            <td class="field-type">flags .16? true</td>
+                            <td>indicates whether we sent this story.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Id</td>
+                            <td class="field-type">int</td>
+                            <td>ID of the story.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Date</td>
+                            <td class="field-type">int</td>
+                            <td>When was the story posted.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">FromId</td>
+                            <td class="field-type">flags .18? Peer</td>
+                            <td>Sender of the story.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">FwdFrom</td>
+                            <td class="field-type">flags .17? StoryFwdHeader</td>
+                            <td>For reposted stories, contains info about the original story.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ExpireDate</td>
+                            <td class="field-type">int</td>
+                            <td>When does the story expire.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Caption</td>
+                            <td class="field-type">flags .0? string</td>
+                            <td>Story caption.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Entities</td>
+                            <td class="field-type">flags .1? Vector &lt; MessageEntity &gt;</td>
+                            <td>Message entities for styled text</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Media</td>
+                            <td class="field-type"><a href="../types/MessageMedia.html">MessageMedia</a></td>
+                            <td>Story media.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">MediaAreas</td>
+                            <td class="field-type">flags .14? Vector &lt; MediaArea &gt;</td>
+                            <td>List of media areas, see here for more info on media areas.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Privacy</td>
+                            <td class="field-type">flags .2? Vector &lt; PrivacyRule &gt;</td>
+                            <td>Privacy rules indicating who can and can&#x27;t view this story</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Views</td>
+                            <td class="field-type">flags .3? StoryViews</td>
+                            <td>View date and reaction information</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">SentReaction</td>
+                            <td class="field-type">flags .15? Reaction</td>
+                            <td>The reaction we sent.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Albums</td>
+                            <td class="field-type">flags .19? Vector &lt; int &gt;</td>
+                            <td>Albums this story is part of.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Music</td>
+                            <td class="field-type">flags .20? Document</td>
+                            <td>If set, the audio track played as background music for the story.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/StoryItem.html">StoryItem</a></span>
+        </div>
+
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// Creating StoryItemObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">StoryItemObj</span>{
+    Pinned: <span class="keyword">nil</span>,
+    Public: <span class="keyword">nil</span>,
+    CloseFriends: <span class="keyword">nil</span>,
+    Min: <span class="keyword">nil</span>,
+    Noforwards: <span class="keyword">nil</span>,
+    Edited: <span class="keyword">nil</span>,
+    <span class="comment">// ... more required fields</span>
+}</pre>
+        </div>
+
+        </article>
+
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>starGift - Gogram TL Reference</title>
+    <meta name="description" content="Represents a star gift, see here for more info.">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="starGift - Gogram TL Reference">
+    <meta property="og:description" content="Represents a star gift, see here for more info.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="../types.html">Types</a>
+                    <a href="../constructors.html">Constructors</a>
+                    <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "..";
+    </script>
+    <script src="../js/search_index.js"></script>
+    <script src="../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> StarGiftObj</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>StarGiftObj</h1>
+            <p class="description">Represents a star gift, see here for more info.</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-constructor">constructor</span>
+        </div>
+        <div class="code-block">starGift#313a9547 flags:# limited:flags.0?true sold_out:flags.1?true birthday:flags.2?true require_premium:flags.7?true limited_per_user:flags.8?true peer_color_available:flags.10?true auction:flags.11?true id:long sticker:Document stars:long availability_remains:flags.0?int availability_total:flags.0?int availability_resale:flags.4?long convert_stars:long first_sale_date:flags.1?int last_sale_date:flags.1?int upgrade_stars:flags.3?long resell_min_stars:flags.4?long title:flags.5?string released_by:flags.6?Peer per_user_total:flags.8?int per_user_remains:flags.8?int locked_until_date:flags.9?int auction_slug:flags.11?string gifts_per_round:flags.11?int auction_start_date:flags.11?int upgrade_variants:flags.12?int background:flags.13?StarGiftBackground = StarGift;</div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="field-name">Limited</td>
+                            <td class="field-type">flags .0? true</td>
+                            <td>Whether this is a limited-supply gift.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">SoldOut</td>
+                            <td class="field-type">flags .1? true</td>
+                            <td>Whether this gift sold out and cannot be bought anymore.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Birthday</td>
+                            <td class="field-type">flags .2? true</td>
+                            <td>Whether this is a birthday-themed gift</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">RequirePremium</td>
+                            <td class="field-type">flags .7? true</td>
+                            <td>This gift can only be bought by users with a Premium subscription.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">LimitedPerUser</td>
+                            <td class="field-type">flags .8? true</td>
+                            <td>If set, the maximum number of gifts of this type that can be owned by a single user is limited and specified in per_user_total, and the remaining slots for the current user in per_user_remains.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PeerColorAvailable</td>
+                            <td class="field-type">flags .10? true</td>
+                            <td>If set, collectible gifts of this type may be used to generate a message color palette and pattern.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Auction</td>
+                            <td class="field-type">flags .11? true</td>
+                            <td>If set, this is a collectible gift that can only be bought through a collectible gift auction.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Id</td>
+                            <td class="field-type">long</td>
+                            <td>Identifier of the gift</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Sticker</td>
+                            <td class="field-type"><a href="../types/Document.html">Document</a></td>
+                            <td>Sticker that represents the gift.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Stars</td>
+                            <td class="field-type">long</td>
+                            <td>Price of the gift in Telegram Stars.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">AvailabilityRemains</td>
+                            <td class="field-type">flags .0? int</td>
+                            <td>For limited-supply gifts: the remaining number of gifts that may be bought.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">AvailabilityTotal</td>
+                            <td class="field-type">flags .0? int</td>
+                            <td>For limited-supply gifts: the total number of gifts that was available in the initial supply.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">AvailabilityResale</td>
+                            <td class="field-type">flags .4? long</td>
+                            <td>The total number of (upgraded to collectibles ) gifts of this type currently on resale</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ConvertStars</td>
+                            <td class="field-type">long</td>
+                            <td>The receiver of this gift may convert it to this many Telegram Stars, instead of displaying it on their profile page. convert_stars will be equal to stars only if the gift was bought using recently bought Telegram Stars, otherwise it will be less than stars.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">FirstSaleDate</td>
+                            <td class="field-type">flags .1? int</td>
+                            <td>For sold out gifts only: when was the gift first bought.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">LastSaleDate</td>
+                            <td class="field-type">flags .1? int</td>
+                            <td>For sold out gifts only: when was the gift last bought.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">UpgradeStars</td>
+                            <td class="field-type">flags .3? long</td>
+                            <td>The number of Telegram Stars the user can pay to convert the gift into a collectible gift.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ResellMinStars</td>
+                            <td class="field-type">flags .4? long</td>
+                            <td>The minimum price in Stars for gifts of this type currently on resale.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Title</td>
+                            <td class="field-type">flags .5? string</td>
+                            <td>Title of the gift</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ReleasedBy</td>
+                            <td class="field-type">flags .6? Peer</td>
+                            <td>This gift was released by the specified peer.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PerUserTotal</td>
+                            <td class="field-type">flags .8? int</td>
+                            <td>Maximum number of gifts of this type that can be owned by any user.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PerUserRemains</td>
+                            <td class="field-type">flags .8? int</td>
+                            <td>Remaining number of gifts of this type that can be owned by the current user.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">LockedUntilDate</td>
+                            <td class="field-type">flags .9? int</td>
+                            <td>If set, the specified gift possibly cannot be sent until the specified date, see here for the full flow.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">AuctionSlug</td>
+                            <td class="field-type">flags .11? string</td>
+                            <td>Always set for gifts that can be bought on auctions, contains the auction deep link slug.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">GiftsPerRound</td>
+                            <td class="field-type">flags .11? int</td>
+                            <td>Always set for gifts that can be bought on auctions, contains the number of gifts of this kind that are distributed on every round.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">AuctionStartDate</td>
+                            <td class="field-type">flags .11? int</td>
+                            <td>Always set for gifts that can be bought on auctions, contains the UNIX timestamp indicating when will the auction start (or when the auction started, if it points to the past).</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">UpgradeVariants</td>
+                            <td class="field-type">flags .12? int</td>
+                            <td>Total number of possible collectible variants for this gift type.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Background</td>
+                            <td class="field-type">flags .13? StarGiftBackground</td>
+                            <td>Default background palette for this gift type, used when rendering gift cards and previews before a specific collectible backdrop is chosen.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/StarGift.html">StarGift</a></span>
+        </div>
+
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// Creating StarGiftObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">StarGiftObj</span>{
+    Limited: <span class="keyword">nil</span>,
+    SoldOut: <span class="keyword">nil</span>,
+    Birthday: <span class="keyword">nil</span>,
+    RequirePremium: <span class="keyword">nil</span>,
+    LimitedPerUser: <span class="keyword">nil</span>,
+    PeerColorAvailable: <span class="keyword">nil</span>,
+    <span class="comment">// ... more required fields</span>
+}</pre>
+        </div>
+
+        </article>
+
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

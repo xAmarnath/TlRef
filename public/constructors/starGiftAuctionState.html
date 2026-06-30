@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>starGiftAuctionState - Gogram TL Reference</title>
-    <meta name="description" content="Star gift auction state">
+    <meta name="description" content="Represents an active or pending auction.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="starGiftAuctionState - Gogram TL Reference">
-    <meta property="og:description" content="Star gift auction state">
+    <meta property="og:description" content="Represents an active or pending auction.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -38,6 +38,7 @@
                     <a href="../types.html">Types</a>
                     <a href="../constructors.html">Constructors</a>
                     <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
                 </nav>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -66,20 +67,22 @@
 
     <main class="container">
         <article>
-        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> StarGiftAuctionState</div>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> StarGiftAuctionStateObj</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
         </div>
         
         <header class="page-header">
-            <h1>StarGiftAuctionState</h1>
-            <p class="description">Star gift auction state</p>
+            <h1>StarGiftAuctionStateObj</h1>
+            <p class="description">Represents an active or pending auction.</p>
         </header>
         
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
+        <div class="code-block">starGiftAuctionState#771a4e66 version:int start_date:int end_date:int min_bid_amount:long bid_levels:Vector&lt;AuctionBidLevel&gt; top_bidders:Vector&lt;long&gt; next_round_at:int last_gift_num:int gifts_left:int current_round:int total_rounds:int rounds:Vector&lt;StarGiftAuctionRound&gt; = StarGiftAuctionState;</div>
+
         <div class="section">
             <h2>Parameters</h2>
             <div class="table-container">
@@ -96,73 +99,73 @@
                         <tr>
                             <td class="field-name">Version</td>
                             <td class="field-type">int</td>
-                            <td>State version</td>
+                            <td>Only apply incoming star Gift Auction State constructors if the received version is bigger than the locally cached version.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">StartDate</td>
                             <td class="field-type">int</td>
-                            <td>Auction start date</td>
+                            <td>UNIX timestamp indicating when the auction will start (or when it started, if it&#x27;s in the past).</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">EndDate</td>
                             <td class="field-type">int</td>
-                            <td>Auction end date</td>
+                            <td>UNIX timestamp indicating when the auction will end</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">MinBidAmount</td>
                             <td class="field-type">long</td>
-                            <td>Minimum bid amount</td>
+                            <td>Minumum allowed bid amount in Telegram Stars: only applicable if the user hasn&#x27;t made a bid yet, otherwise must be overridden to the value of star Gift Auction User State. min_bid_amount (which will be set if and only if the user already made a bid to this auction).</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">BidLevels</td>
-                            <td class="field-type">Vector&lt;<a href="../constructors/AuctionBidLevel.html">AuctionBidLevel</a>&gt;</td>
-                            <td>Available bid levels</td>
+                            <td class="field-type"><a href="../constructors/Vector < AuctionBidLevel >.html">Vector &lt; AuctionBidLevel &gt;</a></td>
+                            <td>Contains a sparse list of bids starting from the top bids, a more detailed description is available in the docs.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">TopBidders</td>
-                            <td class="field-type">Vector&lt;long&gt;</td>
-                            <td>Top bidder user IDs</td>
+                            <td class="field-type"><a href="../constructors/Vector < long >.html">Vector &lt; long &gt;</a></td>
+                            <td>User IDs of the top 3 bidders (the user constructors will be returned as min constructors in the containing object).</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">NextRoundAt</td>
                             <td class="field-type">int</td>
-                            <td>Next round timestamp</td>
+                            <td>UNIX timestamp indicating when the current auction round will end, distributing star Gift. gifts_per_round gifts to the top star Gift. gifts_per_round bidders.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">LastGiftNum</td>
                             <td class="field-type">int</td>
-                            <td>Last gift number</td>
+                            <td>The number of gifts that were distributed in the previous round (also used to compute the approximated index of the gift that the current user will receive, last_gift_num + approx_pos, see here for more info).</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">GiftsLeft</td>
                             <td class="field-type">int</td>
-                            <td>Remaining gifts</td>
+                            <td>The remaining number of gifts that are yet to be distributed.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">CurrentRound</td>
                             <td class="field-type">int</td>
-                            <td>Current round number</td>
+                            <td>The current round number (starting from 1).</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">TotalRounds</td>
                             <td class="field-type">int</td>
-                            <td>Total rounds</td>
+                            <td>The total number of rounds in this auction.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Rounds</td>
-                            <td class="field-type">Vector&lt;<a href="../constructors/StarGiftAuctionRound.html">StarGiftAuctionRound</a>&gt;</td>
-                            <td>Round information</td>
+                            <td class="field-type"><a href="../constructors/Vector < StarGiftAuctionRound >.html">Vector &lt; StarGiftAuctionRound &gt;</a></td>
+                            <td>Detailed round information.</td>
                         </tr>
 
                     </tbody>
@@ -170,16 +173,21 @@
             </div>
         </div>
 
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/StarGiftAuctionState.html">StarGiftAuctionState</a></span>
+        </div>
+
         <div class="example-section">
             <h2>Gogram Example</h2>
-            <pre class="example-code"><span class="comment">// Creating StarGiftAuctionState constructor</span>
-obj := &amp;<span class="package">tg.</span><span class="type">StarGiftAuctionState</span>{
+            <pre class="example-code"><span class="comment">// Creating StarGiftAuctionStateObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">StarGiftAuctionStateObj</span>{
     Version: <span class="number">42</span>,
     StartDate: <span class="number">42</span>,
     EndDate: <span class="number">42</span>,
     MinBidAmount: int64(<span class="number">1234567890</span>),
-    BidLevels: []<span class="package">tg.</span><span class="type">AuctionBidLevel</span>{&amp;<span class="package">tg.</span><span class="type">AuctionBidLevel</span>{}},
-    TopBidders: []long{},
+    BidLevels: &amp;<span class="package">tg.</span><span class="type">VectorAuctionBidLevel</span>{},
+    TopBidders: &amp;<span class="package">tg.</span><span class="type">VectorLong</span>{},
     <span class="comment">// ... more required fields</span>
 }</pre>
         </div>

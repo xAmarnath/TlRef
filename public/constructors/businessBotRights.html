@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>businessBotRights - Gogram TL Reference</title>
+    <meta name="description" content="Business bot rights.">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="businessBotRights - Gogram TL Reference">
+    <meta property="og:description" content="Business bot rights.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="../types.html">Types</a>
+                    <a href="../constructors.html">Constructors</a>
+                    <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "..";
+    </script>
+    <script src="../js/search_index.js"></script>
+    <script src="../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> BusinessBotRightsObj</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>BusinessBotRightsObj</h1>
+            <p class="description">Business bot rights.</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-constructor">constructor</span>
+        </div>
+        <div class="code-block">businessBotRights#a0624cf7 flags:# reply:flags.0?true read_messages:flags.1?true delete_sent_messages:flags.2?true delete_received_messages:flags.3?true edit_name:flags.4?true edit_bio:flags.5?true edit_profile_photo:flags.6?true edit_username:flags.7?true view_gifts:flags.8?true sell_gifts:flags.9?true change_gift_settings:flags.10?true transfer_and_upgrade_gifts:flags.11?true transfer_stars:flags.12?true manage_stories:flags.13?true = BusinessBotRights;</div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="field-name">Reply</td>
+                            <td class="field-type">flags .0? true</td>
+                            <td>Whether the bot can send and edit messages in private chats that had incoming messages in the last 24 hours.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ReadMessages</td>
+                            <td class="field-type">flags .1? true</td>
+                            <td>Whether the bot can mark incoming private messages as read.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">DeleteSentMessages</td>
+                            <td class="field-type">flags .2? true</td>
+                            <td>Whether the bot can delete messages sent by the bot.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">DeleteReceivedMessages</td>
+                            <td class="field-type">flags .3? true</td>
+                            <td>Whether the bot can delete received private messages in managed chats.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">EditName</td>
+                            <td class="field-type">flags .4? true</td>
+                            <td>Whether the bot can edit the first and last name of the business account.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">EditBio</td>
+                            <td class="field-type">flags .5? true</td>
+                            <td>Whether the bot can edit the bio of the business account.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">EditProfilePhoto</td>
+                            <td class="field-type">flags .6? true</td>
+                            <td>Whether the bot can edit the profile photo of the business account.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">EditUsername</td>
+                            <td class="field-type">flags .7? true</td>
+                            <td>Whether the bot can edit the username of the business account.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ViewGifts</td>
+                            <td class="field-type">flags .8? true</td>
+                            <td>Whether the bot can view gifts and the amount of Telegram Stars owned by the business account.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">SellGifts</td>
+                            <td class="field-type">flags .9? true</td>
+                            <td>Whether the bot can convert regular gifts owned by the business account to Telegram Stars.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ChangeGiftSettings</td>
+                            <td class="field-type">flags .10? true</td>
+                            <td>Whether the bot can change the privacy settings pertaining to gifts for the business account.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">TransferAndUpgradeGifts</td>
+                            <td class="field-type">flags .11? true</td>
+                            <td>Whether the bot can transfer and upgrade gifts owned by the business account.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">TransferStars</td>
+                            <td class="field-type">flags .12? true</td>
+                            <td>Whether the bot can transfer Telegram Stars received by the business account to its own account, or use them to upgrade and transfer gifts.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ManageStories</td>
+                            <td class="field-type">flags .13? true</td>
+                            <td>Whether the bot can post, edit and delete stories on behalf of the business account.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/BusinessBotRights.html">BusinessBotRights</a></span>
+        </div>
+
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// Creating BusinessBotRightsObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">BusinessBotRightsObj</span>{
+    Reply: <span class="keyword">nil</span>,
+    ReadMessages: <span class="keyword">nil</span>,
+    DeleteSentMessages: <span class="keyword">nil</span>,
+    DeleteReceivedMessages: <span class="keyword">nil</span>,
+    EditName: <span class="keyword">nil</span>,
+    EditBio: <span class="keyword">nil</span>,
+    <span class="comment">// ... more required fields</span>
+}</pre>
+        </div>
+
+        </article>
+
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

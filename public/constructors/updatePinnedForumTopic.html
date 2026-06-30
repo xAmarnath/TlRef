@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>updatePinnedForumTopic - Gogram TL Reference</title>
-    <meta name="description" content="Forum topic pinned status changed">
+    <meta name="description" content="A forum topic was pinned or unpinned.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="updatePinnedForumTopic - Gogram TL Reference">
-    <meta property="og:description" content="Forum topic pinned status changed">
+    <meta property="og:description" content="A forum topic was pinned or unpinned.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -38,6 +38,7 @@
                     <a href="../types.html">Types</a>
                     <a href="../constructors.html">Constructors</a>
                     <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
                 </nav>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -69,17 +70,19 @@
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> UpdatePinnedForumTopic</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
         </div>
         
         <header class="page-header">
             <h1>UpdatePinnedForumTopic</h1>
-            <p class="description">Forum topic pinned status changed</p>
+            <p class="description">A forum topic was pinned or unpinned.</p>
         </header>
         
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
+        <div class="code-block">updatePinnedForumTopic#683b2c52 flags:# pinned:flags.0?true peer:Peer topic_id:int = Update;</div>
+
         <div class="section">
             <h2>Parameters</h2>
             <div class="table-container">
@@ -95,25 +98,30 @@
 
                         <tr>
                             <td class="field-name">Pinned</td>
-                            <td class="field-type"><a href="../constructors/bool.html">bool</a></td>
-                            <td>Whether topic is pinned</td>
+                            <td class="field-type">flags .0? true</td>
+                            <td>Whether the topic was pinned or unpinned</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Peer</td>
-                            <td class="field-type"><a href="../constructors/Peer.html">Peer</a></td>
-                            <td>Forum peer</td>
+                            <td class="field-type"><a href="../types/Peer.html">Peer</a></td>
+                            <td>The supergroup forum, private chat (for forum-enabled bots) or bot forum (for users) where the topic is located.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">TopicId</td>
                             <td class="field-type">int</td>
-                            <td>Topic ID</td>
+                            <td>The topic ID</td>
                         </tr>
 
                     </tbody>
                 </table>
             </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/Update.html">Update</a></span>
         </div>
 
         <div class="example-section">

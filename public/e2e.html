@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E2E Schema - Gogram TL Reference</title>
+    <meta name="description" content="End-to-end encrypted (secret chat) TL schema reference.">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="E2E Schema - Gogram TL Reference">
+    <meta property="og:description" content="End-to-end encrypted (secret chat) TL schema reference.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="./css/common.css">
+    <script src="./js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="./index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="./index.html">Home</a>
+                    <a href="./types.html">Types</a>
+                    <a href="./constructors.html">Constructors</a>
+                    <a href="./methods.html">Methods</a>
+                    <a href="./e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = ".";
+    </script>
+    <script src="./js/search_index.js"></script>
+    <script src="./js/search.js"></script>
+
+    <main class="container">
+        <div class="hero-section" style="text-align: center; margin-bottom: 24px; padding: 16px 0;">
+            <h1 style="font-size: 2rem; font-weight: 600; margin-bottom: 8px;">E2E Schema</h1>
+            <p style="color: var(--text-secondary); max-width: 720px; margin: 0 auto 12px; line-height: 1.6;">
+                Telegram's <strong>end-to-end encrypted</strong> (secret-chat) TL schema. These constructors travel inside the encrypted message payload, separate from the main MTProto API.
+            </p>
+            <div style="display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center;">
+                <div style="display: inline-flex; align-items: center; gap: 6px; background: var(--bg-secondary); padding: 6px 12px; border-radius: 18px; border: 1px solid var(--border);">
+                    <span style="color: var(--constructor); font-weight: 600; font-size: 12px;">90</span>
+                    <span style="color: var(--text-secondary); font-size: 12px;">Constructors</span>
+                </div>
+                <div style="display: inline-flex; align-items: center; gap: 6px; background: var(--bg-secondary); padding: 6px 12px; border-radius: 18px; border: 1px solid var(--border);">
+                    <span style="color: var(--method); font-weight: 600; font-size: 12px;">0</span>
+                    <span style="color: var(--text-secondary); font-size: 12px;">Methods</span>
+                </div>
+                <div style="display: inline-flex; align-items: center; gap: 6px; background: var(--bg-secondary); padding: 6px 12px; border-radius: 18px; border: 1px solid var(--border);">
+                    <span style="color: var(--text-secondary); font-size: 12px;">Layers</span>
+                    <span style="background: var(--accent); color: white; padding: 2px 8px; border-radius: 10px; font-weight: 600; font-size: 12px;">8–216</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-section" style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; margin-bottom: 24px;">
+            <p style="color: var(--text-secondary); line-height: 1.7; margin: 0;">
+                Source: <a href="https://core.telegram.org/schema/end-to-end-json" target="_blank" style="color: var(--accent);">core.telegram.org/schema/end-to-end-json</a>. Each abstract type is a tagged union; expand a group to see all constructors that implement it, with their wire id, params, and the schema layer they were introduced in.
+            </p>
+        </div>
+
+        <div style="margin-bottom: 16px;">
+            <input type="text" id="filter-input" placeholder="Filter constructors..." autocomplete="off">
+        </div>
+
+        <div class="item-list" id="items-list">
+
+            <details class="e2e-type" data-name="decryptedmessage" style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; padding: 0;">
+                <summary style="cursor: pointer; padding: 14px 16px; font-weight: 600; display: flex; justify-content: space-between; align-items: center;">
+                    <span><span style="color: var(--type);">DecryptedMessage</span> <span style="color: var(--text-secondary); font-weight: 400; font-size: 12px;">6 constructors</span></span>
+                </summary>
+                <div style="padding: 0 16px 14px;">
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessage decryptedmessage">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessage</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>528568095</code> &middot; layer 8</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">random_id</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">long</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">random_bytes</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">message</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">media</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">DecryptedMessageMedia</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessage decryptedmessage">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessage</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>541931640</code> &middot; layer 17</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">random_id</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">long</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">ttl</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">message</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">media</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">DecryptedMessageMedia</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessage decryptedmessage">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessage</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>917541342</code> &middot; layer 45</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">flags</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">#</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">random_id</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">long</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">ttl</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">message</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">media</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">flags.9?DecryptedMessageMedia</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">entities</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">flags.7?Vector&lt;MessageEntity&gt;</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">via_bot_name</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">flags.11?string</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">reply_to_random_id</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">flags.3?long</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessage decryptedmessage">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessage</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-1848883596</code> &middot; layer 73</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">flags</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">#</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">random_id</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">long</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">ttl</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">message</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">media</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">flags.9?DecryptedMessageMedia</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">entities</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">flags.7?Vector&lt;MessageEntity&gt;</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">via_bot_name</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">flags.11?string</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">reply_to_random_id</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">flags.3?long</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">grouped_id</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">flags.17?long</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessageservice decryptedmessage">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageService</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-1438109059</code> &middot; layer 8</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">random_id</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">long</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">random_bytes</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">action</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">DecryptedMessageAction</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessageservice decryptedmessage">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageService</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>1930838368</code> &middot; layer 17</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">random_id</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">long</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">action</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">DecryptedMessageAction</td></tr></tbody></table>
+                    </div>
+
+                </div>
+            </details>
+
+            <details class="e2e-type" data-name="decryptedmessageaction" style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; padding: 0;">
+                <summary style="cursor: pointer; padding: 14px 16px; font-weight: 600; display: flex; justify-content: space-between; align-items: center;">
+                    <span><span style="color: var(--type);">DecryptedMessageAction</span> <span style="color: var(--text-secondary); font-weight: 400; font-size: 12px;">13 constructors</span></span>
+                </summary>
+                <div style="padding: 0 16px 14px;">
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessageactionsetmessagettl decryptedmessageaction">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageActionSetMessageTTL</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-1586283796</code> &middot; layer 8</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">ttl_seconds</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessageactionreadmessages decryptedmessageaction">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageActionReadMessages</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>206520510</code> &middot; layer 8</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">random_ids</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">Vector&lt;long&gt;</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessageactiondeletemessages decryptedmessageaction">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageActionDeleteMessages</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>1700872964</code> &middot; layer 8</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">random_ids</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">Vector&lt;long&gt;</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessageactionscreenshotmessages decryptedmessageaction">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageActionScreenshotMessages</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-1967000459</code> &middot; layer 8</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">random_ids</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">Vector&lt;long&gt;</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessageactionflushhistory decryptedmessageaction">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageActionFlushHistory</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>1729750108</code> &middot; layer 8</span>
+                        </div>
+                        <p style="margin-top: 6px; color: var(--text-secondary); font-size: 12px; font-style: italic;">No parameters.</p>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessageactionresend decryptedmessageaction">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageActionResend</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>1360072880</code> &middot; layer 17</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">start_seq_no</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">end_seq_no</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessageactionnotifylayer decryptedmessageaction">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageActionNotifyLayer</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-217806717</code> &middot; layer 17</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">layer</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessageactiontyping decryptedmessageaction">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageActionTyping</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-860719551</code> &middot; layer 17</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">action</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">SendMessageAction</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessageactionrequestkey decryptedmessageaction">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageActionRequestKey</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-204906213</code> &middot; layer 20</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">exchange_id</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">long</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">g_a</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessageactionacceptkey decryptedmessageaction">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageActionAcceptKey</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>1877046107</code> &middot; layer 20</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">exchange_id</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">long</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">g_b</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">key_fingerprint</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">long</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessageactionabortkey decryptedmessageaction">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageActionAbortKey</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-586814357</code> &middot; layer 20</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">exchange_id</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">long</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessageactioncommitkey decryptedmessageaction">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageActionCommitKey</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-332526693</code> &middot; layer 20</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">exchange_id</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">long</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">key_fingerprint</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">long</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessageactionnoop decryptedmessageaction">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageActionNoop</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-1473258141</code> &middot; layer 20</span>
+                        </div>
+                        <p style="margin-top: 6px; color: var(--text-secondary); font-size: 12px; font-style: italic;">No parameters.</p>
+                    </div>
+
+                </div>
+            </details>
+
+            <details class="e2e-type" data-name="decryptedmessagelayer" style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; padding: 0;">
+                <summary style="cursor: pointer; padding: 14px 16px; font-weight: 600; display: flex; justify-content: space-between; align-items: center;">
+                    <span><span style="color: var(--type);">DecryptedMessageLayer</span> <span style="color: var(--text-secondary); font-weight: 400; font-size: 12px;">1 constructor</span></span>
+                </summary>
+                <div style="padding: 0 16px 14px;">
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessagelayer decryptedmessagelayer">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageLayer</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>467867529</code> &middot; layer 17</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">random_bytes</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">layer</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">in_seq_no</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">out_seq_no</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">message</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">DecryptedMessage</td></tr></tbody></table>
+                    </div>
+
+                </div>
+            </details>
+
+            <details class="e2e-type" data-name="decryptedmessagemedia" style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; padding: 0;">
+                <summary style="cursor: pointer; padding: 14px 16px; font-weight: 600; display: flex; justify-content: space-between; align-items: center;">
+                    <span><span style="color: var(--type);">DecryptedMessageMedia</span> <span style="color: var(--text-secondary); font-weight: 400; font-size: 12px;">16 constructors</span></span>
+                </summary>
+                <div style="padding: 0 16px 14px;">
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessagemediaempty decryptedmessagemedia">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageMediaEmpty</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>144661578</code> &middot; layer 8</span>
+                        </div>
+                        <p style="margin-top: 6px; color: var(--text-secondary); font-size: 12px; font-style: italic;">No parameters.</p>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessagemediaphoto decryptedmessagemedia">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageMediaPhoto</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>846826124</code> &middot; layer 8</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">thumb</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">thumb_w</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">thumb_h</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">w</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">h</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">size</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">key</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">iv</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessagemediaphoto decryptedmessagemedia">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageMediaPhoto</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-235238024</code> &middot; layer 45</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">thumb</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">thumb_w</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">thumb_h</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">w</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">h</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">size</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">key</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">iv</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">caption</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessagemediavideo decryptedmessagemedia">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageMediaVideo</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>1290694387</code> &middot; layer 8</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">thumb</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">thumb_w</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">thumb_h</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">duration</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">w</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">h</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">size</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">key</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">iv</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessagemediavideo decryptedmessagemedia">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageMediaVideo</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>1380598109</code> &middot; layer 17</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">thumb</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">thumb_w</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">thumb_h</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">duration</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">mime_type</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">w</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">h</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">size</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">key</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">iv</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessagemediavideo decryptedmessagemedia">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageMediaVideo</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-1760785394</code> &middot; layer 45</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">thumb</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">thumb_w</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">thumb_h</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">duration</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">mime_type</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">w</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">h</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">size</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">key</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">iv</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">caption</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessagemediageopoint decryptedmessagemedia">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageMediaGeoPoint</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>893913689</code> &middot; layer 8</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">lat</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">double</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">long</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">double</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessagemediacontact decryptedmessagemedia">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageMediaContact</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>1485441687</code> &middot; layer 8</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">phone_number</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">first_name</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">last_name</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">user_id</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessagemediadocument decryptedmessagemedia">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageMediaDocument</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-1332395189</code> &middot; layer 8</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">thumb</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">thumb_w</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">thumb_h</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">file_name</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">mime_type</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">size</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">key</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">iv</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessagemediadocument decryptedmessagemedia">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageMediaDocument</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>2063502050</code> &middot; layer 45</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">thumb</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">thumb_w</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">thumb_h</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">mime_type</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">size</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">key</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">iv</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">attributes</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">Vector&lt;DocumentAttribute&gt;</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">caption</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessagemediadocument decryptedmessagemedia">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageMediaDocument</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>1790809986</code> &middot; layer 143</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">thumb</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">thumb_w</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">thumb_h</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">mime_type</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">size</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">long</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">key</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">iv</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">attributes</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">Vector&lt;DocumentAttribute&gt;</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">caption</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessagemediaaudio decryptedmessagemedia">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageMediaAudio</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>1619031439</code> &middot; layer 8</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">duration</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">size</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">key</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">iv</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessagemediaaudio decryptedmessagemedia">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageMediaAudio</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>1474341323</code> &middot; layer 17</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">duration</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">mime_type</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">size</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">key</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">iv</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessagemediaexternaldocument decryptedmessagemedia">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageMediaExternalDocument</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-90853155</code> &middot; layer 23</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">id</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">long</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">access_hash</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">long</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">date</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">mime_type</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">size</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">thumb</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">PhotoSize</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">dc_id</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">attributes</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">Vector&lt;DocumentAttribute&gt;</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessagemediavenue decryptedmessagemedia">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageMediaVenue</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-1978796689</code> &middot; layer 45</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">lat</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">double</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">long</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">double</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">title</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">address</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">provider</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">venue_id</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="decryptedmessagemediawebpage decryptedmessagemedia">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">decryptedMessageMediaWebPage</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-452652584</code> &middot; layer 45</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">url</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr></tbody></table>
+                    </div>
+
+                </div>
+            </details>
+
+            <details class="e2e-type" data-name="documentattribute" style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; padding: 0;">
+                <summary style="cursor: pointer; padding: 14px 16px; font-weight: 600; display: flex; justify-content: space-between; align-items: center;">
+                    <span><span style="color: var(--type);">DocumentAttribute</span> <span style="color: var(--text-secondary); font-weight: 400; font-size: 12px;">10 constructors</span></span>
+                </summary>
+                <div style="padding: 0 16px 14px;">
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="documentattributeimagesize documentattribute">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">documentAttributeImageSize</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>1815593308</code> &middot; layer 23</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">w</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">h</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="documentattributeanimated documentattribute">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">documentAttributeAnimated</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>297109817</code> &middot; layer 23</span>
+                        </div>
+                        <p style="margin-top: 6px; color: var(--text-secondary); font-size: 12px; font-style: italic;">No parameters.</p>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="documentattributesticker documentattribute">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">documentAttributeSticker</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-83208409</code> &middot; layer 23</span>
+                        </div>
+                        <p style="margin-top: 6px; color: var(--text-secondary); font-size: 12px; font-style: italic;">No parameters.</p>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="documentattributesticker documentattribute">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">documentAttributeSticker</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>978674434</code> &middot; layer 45</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">alt</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">stickerset</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">InputStickerSet</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="documentattributevideo documentattribute">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">documentAttributeVideo</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>1494273227</code> &middot; layer 23</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">duration</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">w</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">h</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="documentattributevideo documentattribute">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">documentAttributeVideo</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>250621158</code> &middot; layer 66</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">flags</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">#</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">duration</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">w</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">h</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="documentattributeaudio documentattribute">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">documentAttributeAudio</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>85215461</code> &middot; layer 23</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">duration</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="documentattributeaudio documentattribute">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">documentAttributeAudio</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-556656416</code> &middot; layer 45</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">duration</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">title</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">performer</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="documentattributeaudio documentattribute">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">documentAttributeAudio</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-1739392570</code> &middot; layer 46</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">flags</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">#</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">duration</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">title</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">flags.0?string</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">performer</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">flags.1?string</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">waveform</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">flags.2?bytes</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="documentattributefilename documentattribute">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">documentAttributeFilename</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>358154344</code> &middot; layer 23</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">file_name</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr></tbody></table>
+                    </div>
+
+                </div>
+            </details>
+
+            <details class="e2e-type" data-name="filelocation" style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; padding: 0;">
+                <summary style="cursor: pointer; padding: 14px 16px; font-weight: 600; display: flex; justify-content: space-between; align-items: center;">
+                    <span><span style="color: var(--type);">FileLocation</span> <span style="color: var(--text-secondary); font-weight: 400; font-size: 12px;">2 constructors</span></span>
+                </summary>
+                <div style="padding: 0 16px 14px;">
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="filelocationunavailable filelocation">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">fileLocationUnavailable</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>2086234950</code> &middot; layer 23</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">volume_id</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">long</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">local_id</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">secret</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">long</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="filelocation filelocation">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">fileLocation</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>1406570614</code> &middot; layer 23</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">dc_id</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">volume_id</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">long</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">local_id</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">secret</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">long</td></tr></tbody></table>
+                    </div>
+
+                </div>
+            </details>
+
+            <details class="e2e-type" data-name="groupcallmessage" style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; padding: 0;">
+                <summary style="cursor: pointer; padding: 14px 16px; font-weight: 600; display: flex; justify-content: space-between; align-items: center;">
+                    <span><span style="color: var(--type);">GroupCallMessage</span> <span style="color: var(--text-secondary); font-weight: 400; font-size: 12px;">1 constructor</span></span>
+                </summary>
+                <div style="padding: 0 16px 14px;">
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="groupcallmessage groupcallmessage">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">groupCallMessage</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-1870862194</code> &middot; layer 216</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">random_id</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">long</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">message</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">TextWithEntities</td></tr></tbody></table>
+                    </div>
+
+                </div>
+            </details>
+
+            <details class="e2e-type" data-name="inputstickerset" style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; padding: 0;">
+                <summary style="cursor: pointer; padding: 14px 16px; font-weight: 600; display: flex; justify-content: space-between; align-items: center;">
+                    <span><span style="color: var(--type);">InputStickerSet</span> <span style="color: var(--text-secondary); font-weight: 400; font-size: 12px;">2 constructors</span></span>
+                </summary>
+                <div style="padding: 0 16px 14px;">
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="inputstickersetshortname inputstickerset">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">inputStickerSetShortName</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-2044933984</code> &middot; layer 45</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">short_name</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="inputstickersetempty inputstickerset">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">inputStickerSetEmpty</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-4838507</code> &middot; layer 45</span>
+                        </div>
+                        <p style="margin-top: 6px; color: var(--text-secondary); font-size: 12px; font-style: italic;">No parameters.</p>
+                    </div>
+
+                </div>
+            </details>
+
+            <details class="e2e-type" data-name="jsonobjectvalue" style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; padding: 0;">
+                <summary style="cursor: pointer; padding: 14px 16px; font-weight: 600; display: flex; justify-content: space-between; align-items: center;">
+                    <span><span style="color: var(--type);">JSONObjectValue</span> <span style="color: var(--text-secondary); font-weight: 400; font-size: 12px;">1 constructor</span></span>
+                </summary>
+                <div style="padding: 0 16px 14px;">
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="jsonobjectvalue jsonobjectvalue">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">jsonObjectValue</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-1059185703</code> &middot; layer 216</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">key</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">value</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">JSONValue</td></tr></tbody></table>
+                    </div>
+
+                </div>
+            </details>
+
+            <details class="e2e-type" data-name="jsonvalue" style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; padding: 0;">
+                <summary style="cursor: pointer; padding: 14px 16px; font-weight: 600; display: flex; justify-content: space-between; align-items: center;">
+                    <span><span style="color: var(--type);">JSONValue</span> <span style="color: var(--text-secondary); font-weight: 400; font-size: 12px;">6 constructors</span></span>
+                </summary>
+                <div style="padding: 0 16px 14px;">
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="jsonnull jsonvalue">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">jsonNull</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>1064139624</code> &middot; layer 216</span>
+                        </div>
+                        <p style="margin-top: 6px; color: var(--text-secondary); font-size: 12px; font-style: italic;">No parameters.</p>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="jsonbool jsonvalue">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">jsonBool</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-952869270</code> &middot; layer 216</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">value</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">Bool</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="jsonnumber jsonvalue">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">jsonNumber</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>736157604</code> &middot; layer 216</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">value</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">double</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="jsonstring jsonvalue">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">jsonString</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-1222740358</code> &middot; layer 216</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">value</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="jsonarray jsonvalue">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">jsonArray</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-146520221</code> &middot; layer 216</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">value</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">Vector&lt;JSONValue&gt;</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="jsonobject jsonvalue">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">jsonObject</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-1715350371</code> &middot; layer 216</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">value</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">Vector&lt;JSONObjectValue&gt;</td></tr></tbody></table>
+                    </div>
+
+                </div>
+            </details>
+
+            <details class="e2e-type" data-name="messageentity" style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; padding: 0;">
+                <summary style="cursor: pointer; padding: 14px 16px; font-weight: 600; display: flex; justify-content: space-between; align-items: center;">
+                    <span><span style="color: var(--type);">MessageEntity</span> <span style="color: var(--text-secondary); font-weight: 400; font-size: 12px;">16 constructors</span></span>
+                </summary>
+                <div style="padding: 0 16px 14px;">
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="messageentityunknown messageentity">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">messageEntityUnknown</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-1148011883</code> &middot; layer 45</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">offset</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">length</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="messageentitymention messageentity">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">messageEntityMention</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-100378723</code> &middot; layer 45</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">offset</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">length</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="messageentityhashtag messageentity">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">messageEntityHashtag</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>1868782349</code> &middot; layer 45</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">offset</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">length</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="messageentitybotcommand messageentity">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">messageEntityBotCommand</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>1827637959</code> &middot; layer 45</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">offset</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">length</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="messageentityurl messageentity">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">messageEntityUrl</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>1859134776</code> &middot; layer 45</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">offset</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">length</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="messageentityemail messageentity">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">messageEntityEmail</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>1692693954</code> &middot; layer 45</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">offset</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">length</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="messageentitybold messageentity">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">messageEntityBold</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-1117713463</code> &middot; layer 45</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">offset</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">length</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="messageentityitalic messageentity">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">messageEntityItalic</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-2106619040</code> &middot; layer 45</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">offset</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">length</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="messageentitycode messageentity">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">messageEntityCode</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>681706865</code> &middot; layer 45</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">offset</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">length</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="messageentitypre messageentity">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">messageEntityPre</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>1938967520</code> &middot; layer 45</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">offset</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">length</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">language</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="messageentitytexturl messageentity">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">messageEntityTextUrl</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>1990644519</code> &middot; layer 45</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">offset</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">length</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">url</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="messageentityunderline messageentity">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">messageEntityUnderline</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-1672577397</code> &middot; layer 101</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">offset</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">length</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="messageentitystrike messageentity">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">messageEntityStrike</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-1090087980</code> &middot; layer 101</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">offset</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">length</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="messageentityblockquote messageentity">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">messageEntityBlockquote</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>34469328</code> &middot; layer 101</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">offset</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">length</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="messageentityspoiler messageentity">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">messageEntitySpoiler</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>852137487</code> &middot; layer 144</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">offset</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">length</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="messageentitycustomemoji messageentity">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">messageEntityCustomEmoji</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-925956616</code> &middot; layer 144</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">offset</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">length</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">document_id</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">long</td></tr></tbody></table>
+                    </div>
+
+                </div>
+            </details>
+
+            <details class="e2e-type" data-name="photosize" style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; padding: 0;">
+                <summary style="cursor: pointer; padding: 14px 16px; font-weight: 600; display: flex; justify-content: space-between; align-items: center;">
+                    <span><span style="color: var(--type);">PhotoSize</span> <span style="color: var(--text-secondary); font-weight: 400; font-size: 12px;">3 constructors</span></span>
+                </summary>
+                <div style="padding: 0 16px 14px;">
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="photosizeempty photosize">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">photoSizeEmpty</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>236446268</code> &middot; layer 23</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">type</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="photosize photosize">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">photoSize</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>2009052699</code> &middot; layer 23</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">type</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">location</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">FileLocation</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">w</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">h</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">size</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr></tbody></table>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="photocachedsize photosize">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">photoCachedSize</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-374917894</code> &middot; layer 23</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">type</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">location</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">FileLocation</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">w</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">h</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">int</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">bytes</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">bytes</td></tr></tbody></table>
+                    </div>
+
+                </div>
+            </details>
+
+            <details class="e2e-type" data-name="sendmessageaction" style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; padding: 0;">
+                <summary style="cursor: pointer; padding: 14px 16px; font-weight: 600; display: flex; justify-content: space-between; align-items: center;">
+                    <span><span style="color: var(--type);">SendMessageAction</span> <span style="color: var(--text-secondary); font-weight: 400; font-size: 12px;">12 constructors</span></span>
+                </summary>
+                <div style="padding: 0 16px 14px;">
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="sendmessagetypingaction sendmessageaction">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">sendMessageTypingAction</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>381645902</code> &middot; layer 17</span>
+                        </div>
+                        <p style="margin-top: 6px; color: var(--text-secondary); font-size: 12px; font-style: italic;">No parameters.</p>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="sendmessagecancelaction sendmessageaction">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">sendMessageCancelAction</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-44119819</code> &middot; layer 17</span>
+                        </div>
+                        <p style="margin-top: 6px; color: var(--text-secondary); font-size: 12px; font-style: italic;">No parameters.</p>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="sendmessagerecordvideoaction sendmessageaction">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">sendMessageRecordVideoAction</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-1584933265</code> &middot; layer 17</span>
+                        </div>
+                        <p style="margin-top: 6px; color: var(--text-secondary); font-size: 12px; font-style: italic;">No parameters.</p>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="sendmessageuploadvideoaction sendmessageaction">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">sendMessageUploadVideoAction</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-1845219337</code> &middot; layer 17</span>
+                        </div>
+                        <p style="margin-top: 6px; color: var(--text-secondary); font-size: 12px; font-style: italic;">No parameters.</p>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="sendmessagerecordaudioaction sendmessageaction">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">sendMessageRecordAudioAction</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-718310409</code> &middot; layer 17</span>
+                        </div>
+                        <p style="margin-top: 6px; color: var(--text-secondary); font-size: 12px; font-style: italic;">No parameters.</p>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="sendmessageuploadaudioaction sendmessageaction">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">sendMessageUploadAudioAction</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-424899985</code> &middot; layer 17</span>
+                        </div>
+                        <p style="margin-top: 6px; color: var(--text-secondary); font-size: 12px; font-style: italic;">No parameters.</p>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="sendmessageuploadphotoaction sendmessageaction">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">sendMessageUploadPhotoAction</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-1727382502</code> &middot; layer 17</span>
+                        </div>
+                        <p style="margin-top: 6px; color: var(--text-secondary); font-size: 12px; font-style: italic;">No parameters.</p>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="sendmessageuploaddocumentaction sendmessageaction">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">sendMessageUploadDocumentAction</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-1884362354</code> &middot; layer 17</span>
+                        </div>
+                        <p style="margin-top: 6px; color: var(--text-secondary); font-size: 12px; font-style: italic;">No parameters.</p>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="sendmessagegeolocationaction sendmessageaction">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">sendMessageGeoLocationAction</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>393186209</code> &middot; layer 17</span>
+                        </div>
+                        <p style="margin-top: 6px; color: var(--text-secondary); font-size: 12px; font-style: italic;">No parameters.</p>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="sendmessagechoosecontactaction sendmessageaction">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">sendMessageChooseContactAction</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>1653390447</code> &middot; layer 17</span>
+                        </div>
+                        <p style="margin-top: 6px; color: var(--text-secondary); font-size: 12px; font-style: italic;">No parameters.</p>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="sendmessagerecordroundaction sendmessageaction">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">sendMessageRecordRoundAction</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-1997373508</code> &middot; layer 66</span>
+                        </div>
+                        <p style="margin-top: 6px; color: var(--text-secondary); font-size: 12px; font-style: italic;">No parameters.</p>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="sendmessageuploadroundaction sendmessageaction">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">sendMessageUploadRoundAction</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>-1150187996</code> &middot; layer 66</span>
+                        </div>
+                        <p style="margin-top: 6px; color: var(--text-secondary); font-size: 12px; font-style: italic;">No parameters.</p>
+                    </div>
+
+                </div>
+            </details>
+
+            <details class="e2e-type" data-name="textwithentities" style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; padding: 0;">
+                <summary style="cursor: pointer; padding: 14px 16px; font-weight: 600; display: flex; justify-content: space-between; align-items: center;">
+                    <span><span style="color: var(--type);">TextWithEntities</span> <span style="color: var(--text-secondary); font-weight: 400; font-size: 12px;">1 constructor</span></span>
+                </summary>
+                <div style="padding: 0 16px 14px;">
+
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="textwithentities textwithentities">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">textWithEntities</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>1964978502</code> &middot; layer 216</span>
+                        </div>
+                        <table style="margin-top: 8px; border-collapse: collapse; width: 100%;"><thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead><tbody><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">text</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">string</td></tr><tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">entities</td><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">Vector&lt;MessageEntity&gt;</td></tr></tbody></table>
+                    </div>
+
+                </div>
+            </details>
+
+        </div>
+    </main>
+
+    <script src="js/filter.js"></script>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

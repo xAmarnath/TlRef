@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>inputStarGiftAuction - Gogram TL Reference</title>
-    <meta name="description" content="Star gift auction identifier">
+    <meta name="description" content="Used to fetch auctions using the ID of the linked collectible gift.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="inputStarGiftAuction - Gogram TL Reference">
-    <meta property="og:description" content="Star gift auction identifier">
+    <meta property="og:description" content="Used to fetch auctions using the ID of the linked collectible gift.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -38,6 +38,7 @@
                     <a href="../types.html">Types</a>
                     <a href="../constructors.html">Constructors</a>
                     <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
                 </nav>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -66,20 +67,22 @@
 
     <main class="container">
         <article>
-        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> InputStarGiftAuction</div>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> InputStarGiftAuctionObj</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
         </div>
         
         <header class="page-header">
-            <h1>InputStarGiftAuction</h1>
-            <p class="description">Star gift auction identifier</p>
+            <h1>InputStarGiftAuctionObj</h1>
+            <p class="description">Used to fetch auctions using the ID of the linked collectible gift.</p>
         </header>
         
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
+        <div class="code-block">inputStarGiftAuction#2e16c98 gift_id:long = InputStarGiftAuction;</div>
+
         <div class="section">
             <h2>Parameters</h2>
             <div class="table-container">
@@ -96,7 +99,7 @@
                         <tr>
                             <td class="field-name">GiftId</td>
                             <td class="field-type">long</td>
-                            <td>Gift ID</td>
+                            <td>Collectible gift ID</td>
                         </tr>
 
                     </tbody>
@@ -104,10 +107,15 @@
             </div>
         </div>
 
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/InputStarGiftAuction.html">InputStarGiftAuction</a></span>
+        </div>
+
         <div class="example-section">
             <h2>Gogram Example</h2>
-            <pre class="example-code"><span class="comment">// Creating InputStarGiftAuction constructor</span>
-obj := &amp;<span class="package">tg.</span><span class="type">InputStarGiftAuction</span>{
+            <pre class="example-code"><span class="comment">// Creating InputStarGiftAuctionObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">InputStarGiftAuctionObj</span>{
     GiftId: int64(<span class="number">1234567890</span>),
 }</pre>
         </div>

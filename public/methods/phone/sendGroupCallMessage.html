@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>phone.sendGroupCallMessage - Gogram TL Reference</title>
-    <meta name="description" content="Send message in a group call">
+    <meta name="description" content="Send an in-call message to all participants of a video chat/livestream or live story, including in RTMP mode, see here for more info.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="phone.sendGroupCallMessage - Gogram TL Reference">
-    <meta property="og:description" content="Send message in a group call">
+    <meta property="og:description" content="Send an in-call message to all participants of a video chat/livestream or live story, including in RTMP mode, see here for more info.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -38,6 +38,7 @@
                     <a href="../../types.html">Types</a>
                     <a href="../../constructors.html">Constructors</a>
                     <a href="../../methods.html">Methods</a>
+                    <a href="../../e2e.html">E2E</a>
                 </nav>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -69,17 +70,20 @@
         <div class="breadcrumb"><a href="../../index.html">Home</a> <span>›</span> <a href="../../methods.html">Methods</a> <span>›</span> Phone <span>›</span> SendGroupCallMessage</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
         </div>
         
         <header class="page-header">
             <h1>PhoneSendGroupCallMessage</h1>
-            <p class="description">Send message in a group call</p>
+            <p class="description">Send an in-call message to all participants of a video chat/livestream or live story, including in RTMP mode, see here for more info.</p>
         </header>
         
         <div class="badges">
             <span class="badge badge-method">method</span>
+            <span class="badge badge-user">Users</span>
         </div>
+        <div class="code-block">phone.sendGroupCallMessage#b1d11410 flags:# call:InputGroupCall random_id:long message:TextWithEntities allow_paid_stars:flags.0?long send_as:flags.1?InputPeer = Updates;</div>
+
         <div class="section">
             <h2>Parameters</h2>
             <div class="table-container">
@@ -95,32 +99,32 @@
 
                         <tr>
                             <td class="field-name">Call</td>
-                            <td class="field-type"><a href="../../constructors/InputGroupCall.html">InputGroupCall</a></td>
-                            <td>Group call</td>
+                            <td class="field-type"><a href="../../types/InputGroupCall.html">InputGroupCall</a></td>
+                            <td>Video chat/livestream or live story that should receive the message, reaction or donation</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">RandomId</td>
                             <td class="field-type">long</td>
-                            <td>Random ID</td>
+                            <td>Fresh client-generated random ID used to deduplicate the message or donation</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Message</td>
-                            <td class="field-type"><a href="../../constructors/TextWithEntities.html">TextWithEntities</a></td>
-                            <td>Message text</td>
+                            <td class="field-type"><a href="../../types/TextWithEntities.html">TextWithEntities</a></td>
+                            <td>Message text or emoji reaction; pass an empty value when sending a standalone paid live story donation</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">AllowPaidStars</td>
-                            <td class="field-type">long</td>
-                            <td>Optional allowed paid stars</td>
+                            <td class="field-type">flags .0? long</td>
+                            <td>User-confirmed number of Telegram Stars to donate with a live story comment or standalone donation</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">SendAs</td>
-                            <td class="field-type"><a href="../../constructors/InputPeer.html">InputPeer</a></td>
-                            <td>Optional sender peer</td>
+                            <td class="field-type">flags .1? InputPeer</td>
+                            <td>Optional peer to display as the author of a live story message or reaction; can only be used for live stories</td>
                         </tr>
 
                     </tbody>
@@ -130,17 +134,47 @@
 
         <div class="result-section">
             <h3>Returns</h3>
-            <span class="result-type"><a href="../../constructors/Updates.html">Updates</a></span>
+            <span class="result-type"><a href="../../types/Updates.html">Updates</a></span>
         </div>
 
         <div class="example-section">
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// PhoneSendGroupCallMessage - positional arguments</span>
-result, err := <span class="package">client.</span><span class="function">PhoneSendGroupCallMessage</span>(&amp;<span class="package">tg.</span><span class="type">InputGroupCall</span>{}, int64(<span class="number">1234567890</span>), &amp;<span class="package">tg.</span><span class="type">TextWithEntities</span>{}, int64(<span class="number">1234567890</span>), &amp;<span class="package">tg.</span><span class="type">InputPeerUser</span>{UserID: int64(<span class="number">777000</span>)})
+result, err := <span class="package">client.</span><span class="function">PhoneSendGroupCallMessage</span>(&amp;<span class="package">tg.</span><span class="type">InputGroupCall</span>{}, int64(<span class="number">1234567890</span>), &amp;<span class="package">tg.</span><span class="type">TextWithEntities</span>{}, <span class="keyword">nil</span>, <span class="keyword">nil</span>)
 <span class="keyword">if</span> err != <span class="keyword">nil</span> {
     <span class="comment">// handle error</span>
 }
 <span class="comment">// result is *<span class="package">tg.</span><span class="type">Updates</span></span></pre>
+        </div>
+
+        <div class="section">
+            <h2>Possible Errors</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">GROUPCALL_INVALID</td>
+                            <td>The specified group call is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">GROUPCALL_JOIN_MISSING</td>
+                            <td>You haven&#x27;t joined this group call.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         </article>

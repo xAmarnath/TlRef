@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>messageReplies - Gogram TL Reference</title>
+    <meta name="description" content="Info about the comment section of a channel post, a simple message thread, a forum topic, or a direct messages topic (all features ultimately based on message t">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="messageReplies - Gogram TL Reference">
+    <meta property="og:description" content="Info about the comment section of a channel post, a simple message thread, a forum topic, or a direct messages topic (all features ultimately based on message t">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="../types.html">Types</a>
+                    <a href="../constructors.html">Constructors</a>
+                    <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "..";
+    </script>
+    <script src="../js/search_index.js"></script>
+    <script src="../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> MessageRepliesObj</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>MessageRepliesObj</h1>
+            <p class="description">Info about the comment section of a channel post, a simple message thread, a forum topic, or a direct messages topic (all features ultimately based on message threads).</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-constructor">constructor</span>
+        </div>
+        <div class="code-block">messageReplies#83d60fc2 flags:# comments:flags.0?true replies:int replies_pts:int recent_repliers:flags.1?Vector&lt;Peer&gt; channel_id:flags.0?long max_id:flags.2?int read_max_id:flags.3?int = MessageReplies;</div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="field-name">Comments</td>
+                            <td class="field-type">flags .0? true</td>
+                            <td>Whether this constructor contains information about the comment section of a channel post, or a simple message thread</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Replies</td>
+                            <td class="field-type">int</td>
+                            <td>Contains the total number of replies in this thread or comment section.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">RepliesPts</td>
+                            <td class="field-type">int</td>
+                            <td>PTS of the message that started this thread.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">RecentRepliers</td>
+                            <td class="field-type">flags .1? Vector &lt; Peer &gt;</td>
+                            <td>For channel post comments, contains information about the last few comment posters for a specific thread, to show a small list of commenter profile pictures in client previews.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ChannelId</td>
+                            <td class="field-type">flags .0? long</td>
+                            <td>For channel post comments, contains the ID of the associated discussion supergroup</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">MaxId</td>
+                            <td class="field-type">flags .2? int</td>
+                            <td>ID of the latest message in this thread or comment section.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ReadMaxId</td>
+                            <td class="field-type">flags .3? int</td>
+                            <td>Contains the ID of the latest read message in this thread or comment section.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/MessageReplies.html">MessageReplies</a></span>
+        </div>
+
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// Creating MessageRepliesObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">MessageRepliesObj</span>{
+    Comments: <span class="keyword">nil</span>,
+    Replies: <span class="number">42</span>,
+    RepliesPts: <span class="number">42</span>,
+    RecentRepliers: <span class="keyword">nil</span>,
+    ChannelId: <span class="keyword">nil</span>,
+    MaxId: <span class="keyword">nil</span>,
+    <span class="comment">// ... more required fields</span>
+}</pre>
+        </div>
+
+        </article>
+
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

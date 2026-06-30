@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>messageActionStarGiftPurchaseOffer - Gogram TL Reference</title>
-    <meta name="description" content="Star gift purchase offer">
+    <meta name="description" content="Contains an offer to purchase a collectible gift, see here for the full flow.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="messageActionStarGiftPurchaseOffer - Gogram TL Reference">
-    <meta property="og:description" content="Star gift purchase offer">
+    <meta property="og:description" content="Contains an offer to purchase a collectible gift, see here for the full flow.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -38,6 +38,7 @@
                     <a href="../types.html">Types</a>
                     <a href="../constructors.html">Constructors</a>
                     <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
                 </nav>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -69,17 +70,19 @@
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> MessageActionStarGiftPurchaseOffer</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
         </div>
         
         <header class="page-header">
             <h1>MessageActionStarGiftPurchaseOffer</h1>
-            <p class="description">Star gift purchase offer</p>
+            <p class="description">Contains an offer to purchase a collectible gift, see here for the full flow.</p>
         </header>
         
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
+        <div class="code-block">messageActionStarGiftPurchaseOffer#774278d4 flags:# accepted:flags.0?true declined:flags.1?true gift:StarGift price:StarsAmount expires_at:int = MessageAction;</div>
+
         <div class="section">
             <h2>Parameters</h2>
             <div class="table-container">
@@ -95,32 +98,32 @@
 
                         <tr>
                             <td class="field-name">Accepted</td>
-                            <td class="field-type">int</td>
-                            <td>Accepted count</td>
+                            <td class="field-type">flags .0? true</td>
+                            <td>If set, the gift owner accepted this offer.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Declined</td>
-                            <td class="field-type"><a href="../constructors/bool.html">bool</a></td>
-                            <td>Declined status</td>
+                            <td class="field-type">flags .1? true</td>
+                            <td>If set, the gift owner declined this offer.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Gift</td>
-                            <td class="field-type"><a href="../constructors/StarGift.html">StarGift</a></td>
-                            <td>Gift details</td>
+                            <td class="field-type"><a href="../types/StarGift.html">StarGift</a></td>
+                            <td>The collectible gift the offer is about.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Price</td>
-                            <td class="field-type"><a href="../constructors/StarsAmount.html">StarsAmount</a></td>
-                            <td>Price</td>
+                            <td class="field-type"><a href="../types/StarsAmount.html">StarsAmount</a></td>
+                            <td>Offered price.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">ExpiresAt</td>
                             <td class="field-type">int</td>
-                            <td>Expiration timestamp</td>
+                            <td>Offer expiration date (UNIX timestamp): if the owner doesn&#x27;t act before this date, the offer will expire and the buyer will be refunded automatically.</td>
                         </tr>
 
                     </tbody>
@@ -128,11 +131,16 @@
             </div>
         </div>
 
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/MessageAction.html">MessageAction</a></span>
+        </div>
+
         <div class="example-section">
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// Creating MessageActionStarGiftPurchaseOffer constructor</span>
 obj := &amp;<span class="package">tg.</span><span class="type">MessageActionStarGiftPurchaseOffer</span>{
-    Accepted: <span class="number">42</span>,
+    Accepted: <span class="keyword">nil</span>,
     Declined: <span class="keyword">nil</span>,
     Gift: &amp;<span class="package">tg.</span><span class="type">StarGift</span>{},
     Price: &amp;<span class="package">tg.</span><span class="type">StarsAmount</span>{},

@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>messageActionStarGiftPurchaseOfferDeclined - Gogram TL Reference</title>
-    <meta name="description" content="Star gift offer declined">
+    <meta name="description" content="A collectible gift purchase offer was declined, or the offer expired, see here for the full flow.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="messageActionStarGiftPurchaseOfferDeclined - Gogram TL Reference">
-    <meta property="og:description" content="Star gift offer declined">
+    <meta property="og:description" content="A collectible gift purchase offer was declined, or the offer expired, see here for the full flow.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -38,6 +38,7 @@
                     <a href="../types.html">Types</a>
                     <a href="../constructors.html">Constructors</a>
                     <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
                 </nav>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -69,17 +70,19 @@
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> MessageActionStarGiftPurchaseOfferDeclined</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
         </div>
         
         <header class="page-header">
             <h1>MessageActionStarGiftPurchaseOfferDeclined</h1>
-            <p class="description">Star gift offer declined</p>
+            <p class="description">A collectible gift purchase offer was declined, or the offer expired, see here for the full flow.</p>
         </header>
         
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
+        <div class="code-block">messageActionStarGiftPurchaseOfferDeclined#73ada76b flags:# expired:flags.0?true gift:StarGift price:StarsAmount = MessageAction;</div>
+
         <div class="section">
             <h2>Parameters</h2>
             <div class="table-container">
@@ -95,25 +98,30 @@
 
                         <tr>
                             <td class="field-name">Expired</td>
-                            <td class="field-type"><a href="../constructors/bool.html">bool</a></td>
-                            <td>Expired status</td>
+                            <td class="field-type">flags .0? true</td>
+                            <td>If set, the owner didn&#x27;t act before the message Action Star Gift Purchase Offer. expires_at deadline and the offer expired automatically; otherwise, the owner explicitly declined the offer.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Gift</td>
-                            <td class="field-type"><a href="../constructors/StarGift.html">StarGift</a></td>
-                            <td>Gift details</td>
+                            <td class="field-type"><a href="../types/StarGift.html">StarGift</a></td>
+                            <td>The collectible gift the declined or expired offer was about.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Price</td>
-                            <td class="field-type"><a href="../constructors/StarsAmount.html">StarsAmount</a></td>
-                            <td>Price</td>
+                            <td class="field-type"><a href="../types/StarsAmount.html">StarsAmount</a></td>
+                            <td>Offered price that is refunded automatically to the buyer.</td>
                         </tr>
 
                     </tbody>
                 </table>
             </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/MessageAction.html">MessageAction</a></span>
         </div>
 
         <div class="example-section">

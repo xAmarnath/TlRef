@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inputStorePaymentStarsGiveaway - Gogram TL Reference</title>
+    <meta name="description" content="Used to pay for a star giveaway, see here for more info.">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="inputStorePaymentStarsGiveaway - Gogram TL Reference">
+    <meta property="og:description" content="Used to pay for a star giveaway, see here for more info.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="../types.html">Types</a>
+                    <a href="../constructors.html">Constructors</a>
+                    <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "..";
+    </script>
+    <script src="../js/search_index.js"></script>
+    <script src="../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> InputStorePaymentStarsGiveaway</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>InputStorePaymentStarsGiveaway</h1>
+            <p class="description">Used to pay for a star giveaway, see here for more info.</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-constructor">constructor</span>
+        </div>
+        <div class="code-block">inputStorePaymentStarsGiveaway#751f08fa flags:# only_new_subscribers:flags.0?true winners_are_visible:flags.3?true stars:long boost_peer:InputPeer additional_peers:flags.1?Vector&lt;InputPeer&gt; countries_iso2:flags.2?Vector&lt;string&gt; prize_description:flags.4?string random_id:long until_date:int currency:string amount:long users:int = InputStorePaymentPurpose;</div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="field-name">OnlyNewSubscribers</td>
+                            <td class="field-type">flags .0? true</td>
+                            <td>If set, only new subscribers starting from the giveaway creation date will be able to participate to the giveaway.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">WinnersAreVisible</td>
+                            <td class="field-type">flags .3? true</td>
+                            <td>If set, giveaway winners are public and will be listed in a message Media Giveaway Results message that will be automatically sent to the channel once the giveaway ends.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Stars</td>
+                            <td class="field-type">long</td>
+                            <td>Total number of Telegram Stars being given away (each user will receive stars/users stars).</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">BoostPeer</td>
+                            <td class="field-type"><a href="../types/InputPeer.html">InputPeer</a></td>
+                            <td>The channel/supergroup starting the giveaway, that the user must join to participate, that will receive the giveaway boosts; see here for more info on giveaways.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">AdditionalPeers</td>
+                            <td class="field-type">flags .1? Vector &lt; InputPeer &gt;</td>
+                            <td>Additional channels that the user must join to participate to the giveaway can be specified here.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">CountriesIso2</td>
+                            <td class="field-type">flags .2? Vector &lt; string &gt;</td>
+                            <td>The set of users that can participate to the giveaway can be restricted by passing here an explicit whitelist of up to giveaway_countries_max countries, specified as two-letter ISO 3166-1 alpha-2 country codes.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PrizeDescription</td>
+                            <td class="field-type">flags .4? string</td>
+                            <td>Can contain a textual description of additional giveaway prizes.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">RandomId</td>
+                            <td class="field-type">long</td>
+                            <td>Random ID to avoid resending the giveaway</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">UntilDate</td>
+                            <td class="field-type">int</td>
+                            <td>The end date of the giveaway, must be at most giveaway_period_max seconds in the future; see here for more info on giveaways.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Currency</td>
+                            <td class="field-type">string</td>
+                            <td>Three-letter ISO 4217 currency code</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Amount</td>
+                            <td class="field-type">long</td>
+                            <td>Total price in the smallest units of the currency (integer, not float/double). For example, for a price of US$ 1.45 pass amount = 145. See the exp parameter in currencies. json, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies).</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Users</td>
+                            <td class="field-type">int</td>
+                            <td>Number of winners.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/InputStorePaymentPurpose.html">InputStorePaymentPurpose</a></span>
+        </div>
+
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// Creating InputStorePaymentStarsGiveaway constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">InputStorePaymentStarsGiveaway</span>{
+    OnlyNewSubscribers: <span class="keyword">nil</span>,
+    WinnersAreVisible: <span class="keyword">nil</span>,
+    Stars: int64(<span class="number">1234567890</span>),
+    BoostPeer: &amp;<span class="package">tg.</span><span class="type">InputPeerUser</span>{UserID: int64(<span class="number">777000</span>)},
+    AdditionalPeers: <span class="keyword">nil</span>,
+    CountriesIso2: <span class="string">&quot;Hello, World!&quot;</span>,
+    <span class="comment">// ... more required fields</span>
+}</pre>
+        </div>
+
+        </article>
+
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

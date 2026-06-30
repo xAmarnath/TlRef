@@ -38,6 +38,7 @@
                     <a href="../../types.html">Types</a>
                     <a href="../../constructors.html">Constructors</a>
                     <a href="../../methods.html">Methods</a>
+                    <a href="../../e2e.html">E2E</a>
                 </nav>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -69,7 +70,7 @@
         <div class="breadcrumb"><a href="../../index.html">Home</a> <span>›</span> <a href="../../methods.html">Methods</a> <span>›</span> Messages <span>›</span> ReorderPinnedForumTopics</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
         </div>
         
         <header class="page-header">
@@ -79,7 +80,10 @@
         
         <div class="badges">
             <span class="badge badge-method">method</span>
+            <span class="badge badge-user">Users</span>
         </div>
+        <div class="code-block">messages.reorderPinnedForumTopics#e7841f0 flags:# force:flags.0?true peer:InputPeer order:Vector&lt;int&gt; = Updates;</div>
+
         <div class="section">
             <h2>Parameters</h2>
             <div class="table-container">
@@ -94,15 +98,21 @@
                     <tbody>
 
                         <tr>
+                            <td class="field-name">Force</td>
+                            <td class="field-type">flags .0? true</td>
+                            <td>If not set, the order of only the topics present both server-side and in order will be changed (i. e. mentioning topics not pinned server-side in order will not pin them, and not mentioning topics pinned server-side will not unpin them). If set, the entire server-side pinned topic list will be replaced with order (i. e. mentioning topics not pinned server-side in order will pin them, and not mentioning topics pinned server-side will unpin them)</td>
+                        </tr>
+
+                        <tr>
                             <td class="field-name">Peer</td>
-                            <td class="field-type"><a href="../../constructors/InputPeer.html">InputPeer</a></td>
-                            <td>Supergroup</td>
+                            <td class="field-type"><a href="../../types/InputPeer.html">InputPeer</a></td>
+                            <td>The supergroup forum, private chat (for forum-enabled bots) or bot forum (for users) where the topic is located.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Order</td>
-                            <td class="field-type">Vector&lt;int&gt;</td>
-                            <td>New topic order</td>
+                            <td class="field-type"><a href="../../constructors/Vector < int >.html">Vector &lt; int &gt;</a></td>
+                            <td>Topic IDs</td>
                         </tr>
 
                     </tbody>
@@ -112,17 +122,41 @@
 
         <div class="result-section">
             <h3>Returns</h3>
-            <span class="result-type"><a href="../../constructors/Updates.html">Updates</a></span>
+            <span class="result-type"><a href="../../types/Updates.html">Updates</a></span>
         </div>
 
         <div class="example-section">
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// MessagesReorderPinnedForumTopics - positional arguments</span>
-result, err := <span class="package">client.</span><span class="function">MessagesReorderPinnedForumTopics</span>(&amp;<span class="package">tg.</span><span class="type">InputPeerUser</span>{UserID: int64(<span class="number">777000</span>)}, []int{})
+result, err := <span class="package">client.</span><span class="function">MessagesReorderPinnedForumTopics</span>(<span class="keyword">nil</span>, &amp;<span class="package">tg.</span><span class="type">InputPeerUser</span>{UserID: int64(<span class="number">777000</span>)}, &amp;<span class="package">tg.</span><span class="type">VectorInt</span>{})
 <span class="keyword">if</span> err != <span class="keyword">nil</span> {
     <span class="comment">// handle error</span>
 }
 <span class="comment">// result is *<span class="package">tg.</span><span class="type">Updates</span></span></pre>
+        </div>
+
+        <div class="section">
+            <h2>Possible Errors</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">CHANNEL_INVALID</td>
+                            <td>The provided channel is invalid.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         </article>

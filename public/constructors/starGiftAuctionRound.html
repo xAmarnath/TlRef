@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>starGiftAuctionRound - Gogram TL Reference</title>
-    <meta name="description" content="Current round information in auction">
+    <meta name="description" content="Describes one or more collectible gift auction rounds.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="starGiftAuctionRound - Gogram TL Reference">
-    <meta property="og:description" content="Current round information in auction">
+    <meta property="og:description" content="Describes one or more collectible gift auction rounds.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -38,6 +38,7 @@
                     <a href="../types.html">Types</a>
                     <a href="../constructors.html">Constructors</a>
                     <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
                 </nav>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -66,20 +67,22 @@
 
     <main class="container">
         <article>
-        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> StarGiftAuctionRound</div>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> StarGiftAuctionRoundObj</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
         </div>
         
         <header class="page-header">
-            <h1>StarGiftAuctionRound</h1>
-            <p class="description">Current round information in auction</p>
+            <h1>StarGiftAuctionRoundObj</h1>
+            <p class="description">Describes one or more collectible gift auction rounds.</p>
         </header>
         
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
+        <div class="code-block">starGiftAuctionRound#3aae0528 num:int duration:int = StarGiftAuctionRound;</div>
+
         <div class="section">
             <h2>Parameters</h2>
             <div class="table-container">
@@ -96,13 +99,13 @@
                         <tr>
                             <td class="field-name">Num</td>
                             <td class="field-type">int</td>
-                            <td>Round number</td>
+                            <td>This object describes all rounds starting from num up until next. num-1 inclusively ( next is the next Star Gift Auction Round ).</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Duration</td>
                             <td class="field-type">int</td>
-                            <td>Round duration in seconds</td>
+                            <td>Duration in seconds of the round(s).</td>
                         </tr>
 
                     </tbody>
@@ -110,10 +113,15 @@
             </div>
         </div>
 
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/StarGiftAuctionRound.html">StarGiftAuctionRound</a></span>
+        </div>
+
         <div class="example-section">
             <h2>Gogram Example</h2>
-            <pre class="example-code"><span class="comment">// Creating StarGiftAuctionRound constructor</span>
-obj := &amp;<span class="package">tg.</span><span class="type">StarGiftAuctionRound</span>{
+            <pre class="example-code"><span class="comment">// Creating StarGiftAuctionRoundObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">StarGiftAuctionRoundObj</span>{
     Num: <span class="number">42</span>,
     Duration: <span class="number">42</span>,
 }</pre>

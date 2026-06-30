@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>keyboardButtonStyle - Gogram TL Reference</title>
-    <meta name="description" content="Styling options for keyboard buttons">
+    <meta name="description" content="This constructor allows setting a custom background color and custom emoji label for a button, see here for more info.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="keyboardButtonStyle - Gogram TL Reference">
-    <meta property="og:description" content="Styling options for keyboard buttons">
+    <meta property="og:description" content="This constructor allows setting a custom background color and custom emoji label for a button, see here for more info.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -38,6 +38,7 @@
                     <a href="../types.html">Types</a>
                     <a href="../constructors.html">Constructors</a>
                     <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
                 </nav>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -66,20 +67,22 @@
 
     <main class="container">
         <article>
-        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> KeyboardButtonStyle</div>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> KeyboardButtonStyleObj</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
         </div>
         
         <header class="page-header">
-            <h1>KeyboardButtonStyle</h1>
-            <p class="description">Styling options for keyboard buttons</p>
+            <h1>KeyboardButtonStyleObj</h1>
+            <p class="description">This constructor allows setting a custom background color and custom emoji label for a button, see here for more info.</p>
         </header>
         
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
+        <div class="code-block">keyboardButtonStyle#4fdd3430 flags:# bg_primary:flags.0?true bg_danger:flags.1?true bg_success:flags.2?true icon:flags.3?long = KeyboardButtonStyle;</div>
+
         <div class="section">
             <h2>Parameters</h2>
             <div class="table-container">
@@ -95,26 +98,26 @@
 
                         <tr>
                             <td class="field-name">BgPrimary</td>
-                            <td class="field-type"><a href="../constructors/bool.html">bool</a></td>
-                            <td>Primary background color</td>
+                            <td class="field-type">flags .0? true</td>
+                            <td>A dark blue color, recommended for main actions.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">BgDanger</td>
-                            <td class="field-type"><a href="../constructors/bool.html">bool</a></td>
-                            <td>Danger background color</td>
+                            <td class="field-type">flags .1? true</td>
+                            <td>A red color, recommended for destructive actions.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">BgSuccess</td>
-                            <td class="field-type"><a href="../constructors/bool.html">bool</a></td>
-                            <td>Success background color</td>
+                            <td class="field-type">flags .2? true</td>
+                            <td>A green color, recommended for positive actions.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Icon</td>
-                            <td class="field-type">long</td>
-                            <td>Icon emoji ID</td>
+                            <td class="field-type">flags .3? long</td>
+                            <td>The ID of a custom emoji to be displayed before the button&#x27;s label.</td>
                         </tr>
 
                     </tbody>
@@ -122,14 +125,19 @@
             </div>
         </div>
 
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/KeyboardButtonStyle.html">KeyboardButtonStyle</a></span>
+        </div>
+
         <div class="example-section">
             <h2>Gogram Example</h2>
-            <pre class="example-code"><span class="comment">// Creating KeyboardButtonStyle constructor</span>
-obj := &amp;<span class="package">tg.</span><span class="type">KeyboardButtonStyle</span>{
+            <pre class="example-code"><span class="comment">// Creating KeyboardButtonStyleObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">KeyboardButtonStyleObj</span>{
     BgPrimary: <span class="keyword">nil</span>,
     BgDanger: <span class="keyword">nil</span>,
     BgSuccess: <span class="keyword">nil</span>,
-    Icon: int64(<span class="number">1234567890</span>),
+    Icon: <span class="keyword">nil</span>,
 }</pre>
         </div>
 

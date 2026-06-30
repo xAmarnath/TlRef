@@ -13,8 +13,8 @@ from functools import lru_cache
 from pathlib import Path
 from html import escape
 
-# Current TL Schema version
-TL_VERSION = 224
+# Current TL Schema version. Overridden by output.json metadata.layer if present.
+TL_VERSION = 227
 
 
 
@@ -594,6 +594,7 @@ def generate_header(title: str, root_path: str, search_data: list = None, descri
                     <a href="{root_path}/types.html">Types</a>
                     <a href="{root_path}/constructors.html">Constructors</a>
                     <a href="{root_path}/methods.html">Methods</a>
+                    <a href="{root_path}/e2e.html">E2E</a>
                 </nav>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -690,6 +691,10 @@ def generate_index_page(data: dict) -> str:
                     <span style="color: var(--method); font-weight: 600; font-size: 12px;">{len(methods)}</span>
                     <span style="color: var(--text-secondary); font-size: 12px;">Methods</span>
                 </div>
+                <a href="e2e.html" style="display: inline-flex; align-items: center; gap: 6px; background: var(--bg-secondary); padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border); text-decoration: none; color: inherit;">
+                    <span style="color: var(--accent); font-weight: 600; font-size: 12px;">E2E</span>
+                    <span style="color: var(--text-secondary); font-size: 12px;">Schema →</span>
+                </a>
             </div>
         </div>
         
@@ -1099,10 +1104,132 @@ def generate_detail_page(item: dict, category: str, search_data: list, type_map:
     return html
 
 
+def load_e2e_schema(path: str = 'e2e_schema.json') -> dict | None:
+    """Load Telegram's E2E (secret chat) schema JSON if present."""
+    try:
+        with open(path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return None
+
+
+def generate_e2e_page(e2e_data: dict, search_data: list) -> str:
+    """Generate the single-page E2E schema browser at public/e2e.html.
+
+    The E2E schema is small (~90 constructors, ~14 abstract types, 0 methods),
+    so we render the entire thing on one page grouped by abstract type. Each
+    group is collapsible <details> so the page stays scannable.
+    """
+    constructors = e2e_data.get('constructors', [])
+    methods = e2e_data.get('methods', [])
+    # Group constructors by their abstract result type.
+    by_type: dict[str, list[dict]] = {}
+    for c in constructors:
+        by_type.setdefault(c.get('type', 'Unknown'), []).append(c)
+    type_order = sorted(by_type.keys())
+    layers = sorted({c.get('layer', 0) for c in constructors})
+    min_layer = min(layers) if layers else 0
+    max_layer = max(layers) if layers else 0
+
+    html = generate_header("E2E Schema", ".", search_data,
+                           "End-to-end encrypted (secret chat) TL schema reference.",
+                           item_type=None)
+    html += f"""
+    <main class="container">
+        <div class="hero-section" style="text-align: center; margin-bottom: 24px; padding: 16px 0;">
+            <h1 style="font-size: 2rem; font-weight: 600; margin-bottom: 8px;">E2E Schema</h1>
+            <p style="color: var(--text-secondary); max-width: 720px; margin: 0 auto 12px; line-height: 1.6;">
+                Telegram's <strong>end-to-end encrypted</strong> (secret-chat) TL schema. These constructors travel inside the encrypted message payload, separate from the main MTProto API.
+            </p>
+            <div style="display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center;">
+                <div style="display: inline-flex; align-items: center; gap: 6px; background: var(--bg-secondary); padding: 6px 12px; border-radius: 18px; border: 1px solid var(--border);">
+                    <span style="color: var(--constructor); font-weight: 600; font-size: 12px;">{len(constructors)}</span>
+                    <span style="color: var(--text-secondary); font-size: 12px;">Constructors</span>
+                </div>
+                <div style="display: inline-flex; align-items: center; gap: 6px; background: var(--bg-secondary); padding: 6px 12px; border-radius: 18px; border: 1px solid var(--border);">
+                    <span style="color: var(--method); font-weight: 600; font-size: 12px;">{len(methods)}</span>
+                    <span style="color: var(--text-secondary); font-size: 12px;">Methods</span>
+                </div>
+                <div style="display: inline-flex; align-items: center; gap: 6px; background: var(--bg-secondary); padding: 6px 12px; border-radius: 18px; border: 1px solid var(--border);">
+                    <span style="color: var(--text-secondary); font-size: 12px;">Layers</span>
+                    <span style="background: var(--accent); color: white; padding: 2px 8px; border-radius: 10px; font-weight: 600; font-size: 12px;">{min_layer}–{max_layer}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-section" style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; margin-bottom: 24px;">
+            <p style="color: var(--text-secondary); line-height: 1.7; margin: 0;">
+                Source: <a href="https://core.telegram.org/schema/end-to-end-json" target="_blank" style="color: var(--accent);">core.telegram.org/schema/end-to-end-json</a>. Each abstract type is a tagged union; expand a group to see all constructors that implement it, with their wire id, params, and the schema layer they were introduced in.
+            </p>
+        </div>
+
+        <div style="margin-bottom: 16px;">
+            <input type="text" id="filter-input" placeholder="Filter constructors..." autocomplete="off">
+        </div>
+
+        <div class="item-list" id="items-list">
+"""
+
+    for type_name in type_order:
+        items = by_type[type_name]
+        html += f"""
+            <details class="e2e-type" data-name="{escape(type_name.lower())}" style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; padding: 0;">
+                <summary style="cursor: pointer; padding: 14px 16px; font-weight: 600; display: flex; justify-content: space-between; align-items: center;">
+                    <span><span style="color: var(--type);">{escape(type_name)}</span> <span style="color: var(--text-secondary); font-weight: 400; font-size: 12px;">{len(items)} constructor{'s' if len(items) != 1 else ''}</span></span>
+                </summary>
+                <div style="padding: 0 16px 14px;">
+"""
+        for c in items:
+            params = c.get('params', [])
+            param_html = ''
+            if params:
+                param_rows = ''.join(
+                    f'<tr><td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px;">{escape(p.get("name", ""))}</td>'
+                    f'<td style="padding: 4px 10px; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--type);">{escape(p.get("type", ""))}</td></tr>'
+                    for p in params
+                )
+                param_html = (
+                    '<table style="margin-top: 8px; border-collapse: collapse; width: 100%;">'
+                    '<thead><tr><th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Name</th>'
+                    '<th style="padding: 4px 10px; text-align: left; color: var(--text-secondary); font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--border);">Type</th></tr></thead>'
+                    f'<tbody>{param_rows}</tbody></table>'
+                )
+            else:
+                param_html = '<p style="margin-top: 6px; color: var(--text-secondary); font-size: 12px; font-style: italic;">No parameters.</p>'
+            html += f"""
+                    <div style="border-top: 1px solid var(--border); padding: 10px 0;" data-name="{escape(c.get('predicate', '').lower())} {escape(type_name.lower())}">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                            <code style="font-size: 13px; font-weight: 600; color: var(--constructor);">{escape(c.get('predicate', ''))}</code>
+                            <span style="font-size: 11px; color: var(--text-secondary);">id <code>{escape(c.get('id', ''))}</code> &middot; layer {c.get('layer', '?')}</span>
+                        </div>
+                        {param_html}
+                    </div>
+"""
+        html += """
+                </div>
+            </details>
+"""
+
+    html += """
+        </div>
+    </main>
+
+    <script src="js/filter.js"></script>
+"""
+    html += generate_footer()
+    return html
+
+
 def build_html_docs(json_path: str, output_dir: str):
     """Build all HTML documentation from JSON."""
+    global TL_VERSION
     print(f"Loading documentation from: {json_path}")
     data = load_documentation(json_path)
+    # Prefer the layer stamped by the scraper so we never ship a stale banner.
+    layer = (data.get('metadata') or {}).get('layer')
+    if isinstance(layer, int) and layer > 0:
+        TL_VERSION = layer
+    print(f"Using TL layer: {TL_VERSION}")
     
     # Load and merge extra.json for missing information
     print(f"Loading extra documentation from: extra.json")
@@ -1195,6 +1322,32 @@ def build_html_docs(json_path: str, output_dir: str):
     print("Generating methods.html...")
     methods_html = generate_list_page(methods, 'method', 'Methods', search_data)
     (output_path / 'methods.html').write_text(methods_html, encoding='utf-8')
+
+    # Generate E2E (secret-chat) schema page
+    e2e_data = load_e2e_schema('e2e_schema.json')
+    if e2e_data:
+        print("Generating e2e.html...")
+        # Extend search index with E2E constructors so they're discoverable.
+        for c in e2e_data.get('constructors', []):
+            predicate = c.get('predicate', '')
+            if not predicate:
+                continue
+            go_name = to_go_name(predicate)
+            search_data.append({
+                "name": predicate,
+                "goDisplay": go_name,
+                "searchName": go_name.lower() + " " + predicate.lower() + " e2e secret",
+                "desc": f"E2E (secret-chat) constructor for {c.get('type', '')}",
+                "type": "e2e",
+                "path": "e2e.html#" + predicate,
+            })
+        # Rewrite the search index file with the augmented data.
+        search_js_content = f"window.searchData = {json.dumps(search_data)};"
+        (js_dir / 'search_index.js').write_text(search_js_content, encoding='utf-8')
+        e2e_html = generate_e2e_page(e2e_data, search_data)
+        (output_path / 'e2e.html').write_text(e2e_html, encoding='utf-8')
+    else:
+        print("Skipping e2e.html (no e2e_schema.json found)")
     
     # Generate types list page
     print("Generating types.html...")

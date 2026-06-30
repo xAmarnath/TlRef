@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>codeSettings - Gogram TL Reference</title>
+    <meta name="description" content="Settings used by telegram servers for sending the confirm code.">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="codeSettings - Gogram TL Reference">
+    <meta property="og:description" content="Settings used by telegram servers for sending the confirm code.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="../types.html">Types</a>
+                    <a href="../constructors.html">Constructors</a>
+                    <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "..";
+    </script>
+    <script src="../js/search_index.js"></script>
+    <script src="../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> CodeSettingsObj</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>CodeSettingsObj</h1>
+            <p class="description">Settings used by telegram servers for sending the confirm code.</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-constructor">constructor</span>
+        </div>
+        <div class="code-block">codeSettings#ad253d78 flags:# allow_flashcall:flags.0?true current_number:flags.1?true allow_app_hash:flags.4?true allow_missed_call:flags.5?true allow_firebase:flags.7?true unknown_number:flags.9?true logout_tokens:flags.6?Vector&lt;bytes&gt; token:flags.8?string app_sandbox:flags.8?Bool = CodeSettings;</div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="field-name">AllowFlashcall</td>
+                            <td class="field-type">flags .0? true</td>
+                            <td>Whether to allow phone verification via phone calls.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">CurrentNumber</td>
+                            <td class="field-type">flags .1? true</td>
+                            <td>Pass true if the phone number is used on the current device. Ignored if allow_flashcall is not set.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">AllowAppHash</td>
+                            <td class="field-type">flags .4? true</td>
+                            <td>If a token that will be included in eventually sent SMSs is required: required in newer versions of android, to use the android SMS receiver APIs</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">AllowMissedCall</td>
+                            <td class="field-type">flags .5? true</td>
+                            <td>Whether this device supports receiving the code using the auth. code Type Missed Call method</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">AllowFirebase</td>
+                            <td class="field-type">flags .7? true</td>
+                            <td>Whether Firebase auth is supported</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">UnknownNumber</td>
+                            <td class="field-type">flags .9? true</td>
+                            <td>Set this flag if there is a SIM card in the current device, but it is not possible to check whether the specified phone number matches the SIM&#x27;s phone number.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">LogoutTokens</td>
+                            <td class="field-type">flags .6? Vector &lt; bytes &gt;</td>
+                            <td>Previously stored future auth tokens, see the documentation for more info</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Token</td>
+                            <td class="field-type">flags .8? string</td>
+                            <td>Used only by official i OS apps for Firebase auth: device token for apple push.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">AppSandbox</td>
+                            <td class="field-type">flags .8? Bool</td>
+                            <td>Used only by official i OS apps for firebase auth: whether a sandbox-certificate will be used during transmission of the push notification.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/CodeSettings.html">CodeSettings</a></span>
+        </div>
+
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// Creating CodeSettingsObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">CodeSettingsObj</span>{
+    AllowFlashcall: <span class="keyword">nil</span>,
+    CurrentNumber: <span class="keyword">nil</span>,
+    AllowAppHash: <span class="keyword">nil</span>,
+    AllowMissedCall: <span class="keyword">nil</span>,
+    AllowFirebase: <span class="keyword">nil</span>,
+    UnknownNumber: <span class="keyword">nil</span>,
+    <span class="comment">// ... more required fields</span>
+}</pre>
+        </div>
+
+        </article>
+
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

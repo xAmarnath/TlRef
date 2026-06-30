@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>urlAuthResultRequest - Gogram TL Reference</title>
+    <meta name="description" content="Details about the authorization request, for more info click here">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="urlAuthResultRequest - Gogram TL Reference">
+    <meta property="og:description" content="Details about the authorization request, for more info click here">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="../types.html">Types</a>
+                    <a href="../constructors.html">Constructors</a>
+                    <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "..";
+    </script>
+    <script src="../js/search_index.js"></script>
+    <script src="../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> UrlAuthResultRequest</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>UrlAuthResultRequest</h1>
+            <p class="description">Details about the authorization request, for more info click here</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-constructor">constructor</span>
+        </div>
+        <div class="code-block">urlAuthResultRequest#f8f8eb1e flags:# request_write_access:flags.0?true request_phone_number:flags.1?true match_codes_first:flags.5?true bot:User domain:string browser:flags.2?string platform:flags.2?string ip:flags.2?string region:flags.2?string match_codes:flags.3?Vector&lt;string&gt; user_id_hint:flags.4?long = UrlAuthResult;</div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="field-name">RequestWriteAccess</td>
+                            <td class="field-type">flags .0? true</td>
+                            <td>Whether the bot would like to send messages to the user</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">RequestPhoneNumber</td>
+                            <td class="field-type">flags .1? true</td>
+                            <td>The app/website is requesting the user&#x27;s phone number; if the user consents, set share_phone_number when calling messages. accept Url Auth</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">MatchCodesFirst</td>
+                            <td class="field-type">flags .5? true</td>
+                            <td>Can only be set if match_codes is also set; if set, clients must ask the user to select the matching code before showing the rest of the login confirmation UI, and must validate the selection with messages. check Url Auth Match Code before proceeding</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">IsApp</td>
+                            <td class="field-type">flags .6? true</td>
+                            <td>Set if an OAuth request originated from an app rather than a website; when set, domain must be replaced in the confirmation prompt by verified_app_name (if present) or &quot;Unverified App&quot;</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Bot</td>
+                            <td class="field-type"><a href="../types/User.html">User</a></td>
+                            <td>Username of a bot, which will be used for user authorization. If not specified, the current bot&#x27;s username will be assumed. The url&#x27;s domain must be the same as the domain linked with the bot. See Linking your domain to the bot for more details.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Domain</td>
+                            <td class="field-type">string</td>
+                            <td>The domain name of the website on which the user will log in.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Browser</td>
+                            <td class="field-type">flags .2? string</td>
+                            <td>The browser the user used to make the OAuth request</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Platform</td>
+                            <td class="field-type">flags .2? string</td>
+                            <td>The platform (operating system) of the user that made the OAuth request</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Ip</td>
+                            <td class="field-type">flags .2? string</td>
+                            <td>The IP address of the user making the OAuth request</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Region</td>
+                            <td class="field-type">flags .2? string</td>
+                            <td>The location of the user, inferred from the IP address</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">MatchCodes</td>
+                            <td class="field-type">flags .3? Vector &lt; string &gt;</td>
+                            <td>A list of emojis or codes, one of which is currently being shown on the login page of the website/app; the user must select the matching one and pass it to messages. accept Url Auth. match_code</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">UserIdHint</td>
+                            <td class="field-type">flags .4? long</td>
+                            <td>May contain the ID of the account for which the login request was created; if it matches a logged-in account, clients should automatically switch to that account and re-invoke messages. request Url Auth before showing the prompt</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">VerifiedAppName</td>
+                            <td class="field-type">flags .7? string</td>
+                            <td>Can only be set if is_app is set and the app is verified; must replace domain in the confirmation prompt when present</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/UrlAuthResult.html">UrlAuthResult</a></span>
+        </div>
+
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// Creating UrlAuthResultRequest constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">UrlAuthResultRequest</span>{
+    RequestWriteAccess: <span class="keyword">nil</span>,
+    RequestPhoneNumber: <span class="keyword">nil</span>,
+    MatchCodesFirst: <span class="keyword">nil</span>,
+    IsApp: <span class="keyword">nil</span>,
+    Bot: &amp;<span class="package">tg.</span><span class="type">User</span>{},
+    Domain: <span class="string">&quot;Hello, World!&quot;</span>,
+    <span class="comment">// ... more required fields</span>
+}</pre>
+        </div>
+
+        </article>
+
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

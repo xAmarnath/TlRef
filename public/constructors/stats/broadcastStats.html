@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stats.broadcastStats - Gogram TL Reference</title>
+    <meta name="description" content="Channel statistics.">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="stats.broadcastStats - Gogram TL Reference">
+    <meta property="og:description" content="Channel statistics.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../../css/common.css">
+    <script src="../../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../../index.html">Home</a>
+                    <a href="../../types.html">Types</a>
+                    <a href="../../constructors.html">Constructors</a>
+                    <a href="../../methods.html">Methods</a>
+                    <a href="../../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "../..";
+    </script>
+    <script src="../../js/search_index.js"></script>
+    <script src="../../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../../index.html">Home</a> <span>›</span> <a href="../../constructors.html">Constructors</a> <span>›</span> Stats <span>›</span> BroadcastStats</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>StatsBroadcastStatsObj</h1>
+            <p class="description">Channel statistics.</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-constructor">constructor</span>
+        </div>
+        <div class="code-block">stats.broadcastStats#396ca5fc period:StatsDateRangeDays followers:StatsAbsValueAndPrev views_per_post:StatsAbsValueAndPrev shares_per_post:StatsAbsValueAndPrev reactions_per_post:StatsAbsValueAndPrev views_per_story:StatsAbsValueAndPrev shares_per_story:StatsAbsValueAndPrev reactions_per_story:StatsAbsValueAndPrev enabled_notifications:StatsPercentValue growth_graph:StatsGraph followers_graph:StatsGraph mute_graph:StatsGraph top_hours_graph:StatsGraph interactions_graph:StatsGraph iv_interactions_graph:StatsGraph views_by_source_graph:StatsGraph new_followers_by_source_graph:StatsGraph languages_graph:StatsGraph reactions_by_emotion_graph:StatsGraph story_interactions_graph:StatsGraph story_reactions_by_emotion_graph:StatsGraph recent_posts_interactions:Vector&lt;PostInteractionCounters&gt; = stats.BroadcastStats;</div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="field-name">Period</td>
+                            <td class="field-type"><a href="../../types/StatsDateRangeDays.html">StatsDateRangeDays</a></td>
+                            <td>Period in consideration</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Followers</td>
+                            <td class="field-type"><a href="../../types/StatsAbsValueAndPrev.html">StatsAbsValueAndPrev</a></td>
+                            <td>Follower count change for period in consideration</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ViewsPerPost</td>
+                            <td class="field-type"><a href="../../types/StatsAbsValueAndPrev.html">StatsAbsValueAndPrev</a></td>
+                            <td>total_viewcount/postcount, for posts posted during the period in consideration. Note that in this case, current refers to the period in consideration ( min_date till max_date ), and prev refers to the previous period ( (min_date - (max_date - min_date)) till min_date ).</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">SharesPerPost</td>
+                            <td class="field-type"><a href="../../types/StatsAbsValueAndPrev.html">StatsAbsValueAndPrev</a></td>
+                            <td>total_sharecount/postcount, for posts posted during the period in consideration. Note that in this case, current refers to the period in consideration ( min_date till max_date ), and prev refers to the previous period ( (min_date - (max_date - min_date)) till min_date )</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ReactionsPerPost</td>
+                            <td class="field-type"><a href="../../types/StatsAbsValueAndPrev.html">StatsAbsValueAndPrev</a></td>
+                            <td>total_reactions/postcount, for posts posted during the period in consideration. Note that in this case, current refers to the period in consideration ( min_date till max_date ), and prev refers to the previous period ( (min_date - (max_date - min_date)) till min_date )</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ViewsPerStory</td>
+                            <td class="field-type"><a href="../../types/StatsAbsValueAndPrev.html">StatsAbsValueAndPrev</a></td>
+                            <td>total_views/storycount, for posts posted during the period in consideration. Note that in this case, current refers to the period in consideration ( min_date till max_date ), and prev refers to the previous period ( (min_date - (max_date - min_date)) till min_date )</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">SharesPerStory</td>
+                            <td class="field-type"><a href="../../types/StatsAbsValueAndPrev.html">StatsAbsValueAndPrev</a></td>
+                            <td>total_shares/storycount, for posts posted during the period in consideration. Note that in this case, current refers to the period in consideration ( min_date till max_date ), and prev refers to the previous period ( (min_date - (max_date - min_date)) till min_date )</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ReactionsPerStory</td>
+                            <td class="field-type"><a href="../../types/StatsAbsValueAndPrev.html">StatsAbsValueAndPrev</a></td>
+                            <td>total_reactions/storycount, for posts posted during the period in consideration. Note that in this case, current refers to the period in consideration ( min_date till max_date ), and prev refers to the previous period ( (min_date - (max_date - min_date)) till min_date )</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">EnabledNotifications</td>
+                            <td class="field-type"><a href="../../types/StatsPercentValue.html">StatsPercentValue</a></td>
+                            <td>Percentage of subscribers with enabled notifications</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">GrowthGraph</td>
+                            <td class="field-type"><a href="../../types/StatsGraph.html">StatsGraph</a></td>
+                            <td>Channel growth graph (absolute subscriber count)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">FollowersGraph</td>
+                            <td class="field-type"><a href="../../types/StatsGraph.html">StatsGraph</a></td>
+                            <td>Followers growth graph (relative subscriber count)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">MuteGraph</td>
+                            <td class="field-type"><a href="../../types/StatsGraph.html">StatsGraph</a></td>
+                            <td>Muted users graph (relative)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">TopHoursGraph</td>
+                            <td class="field-type"><a href="../../types/StatsGraph.html">StatsGraph</a></td>
+                            <td>Views per hour graph (absolute)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">InteractionsGraph</td>
+                            <td class="field-type"><a href="../../types/StatsGraph.html">StatsGraph</a></td>
+                            <td>Interactions graph (absolute)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">IvInteractionsGraph</td>
+                            <td class="field-type"><a href="../../types/StatsGraph.html">StatsGraph</a></td>
+                            <td>IV interactions graph (absolute)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ViewsBySourceGraph</td>
+                            <td class="field-type"><a href="../../types/StatsGraph.html">StatsGraph</a></td>
+                            <td>Views by source graph (absolute)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">NewFollowersBySourceGraph</td>
+                            <td class="field-type"><a href="../../types/StatsGraph.html">StatsGraph</a></td>
+                            <td>New followers by source graph (absolute)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">LanguagesGraph</td>
+                            <td class="field-type"><a href="../../types/StatsGraph.html">StatsGraph</a></td>
+                            <td>Subscriber language graph (pie chart)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ReactionsByEmotionGraph</td>
+                            <td class="field-type"><a href="../../types/StatsGraph.html">StatsGraph</a></td>
+                            <td>A graph containing the number of reactions on posts categorized by emotion</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">StoryInteractionsGraph</td>
+                            <td class="field-type"><a href="../../types/StatsGraph.html">StatsGraph</a></td>
+                            <td>A graph containing the number of story views and shares</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">StoryReactionsByEmotionGraph</td>
+                            <td class="field-type"><a href="../../types/StatsGraph.html">StatsGraph</a></td>
+                            <td>A graph containing the number of reactions on stories categorized by emotion</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">RecentPostsInteractions</td>
+                            <td class="field-type"><a href="../../constructors/Vector < PostInteractionCounters >.html">Vector &lt; PostInteractionCounters &gt;</a></td>
+                            <td>Detailed statistics about number of views and shares of recently sent messages and stories</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../../types/stats.BroadcastStats.html">stats.BroadcastStats</a></span>
+        </div>
+
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// Creating StatsBroadcastStatsObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">StatsBroadcastStatsObj</span>{
+    Period: &amp;<span class="package">tg.</span><span class="type">StatsDateRangeDays</span>{},
+    Followers: &amp;<span class="package">tg.</span><span class="type">StatsAbsValueAndPrev</span>{},
+    ViewsPerPost: &amp;<span class="package">tg.</span><span class="type">StatsAbsValueAndPrev</span>{},
+    SharesPerPost: &amp;<span class="package">tg.</span><span class="type">StatsAbsValueAndPrev</span>{},
+    ReactionsPerPost: &amp;<span class="package">tg.</span><span class="type">StatsAbsValueAndPrev</span>{},
+    ViewsPerStory: &amp;<span class="package">tg.</span><span class="type">StatsAbsValueAndPrev</span>{},
+    <span class="comment">// ... more required fields</span>
+}</pre>
+        </div>
+
+        </article>
+
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

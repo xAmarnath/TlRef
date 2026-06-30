@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>recentStory - Gogram TL Reference</title>
-    <meta name="description" content="Recent story information">
+    <meta name="description" content="Summary of a peer&#x27;s active stories, embedded in user. stories_max_id and channel. stories_max_id and returned by stories. get Peer Max IDs.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="recentStory - Gogram TL Reference">
-    <meta property="og:description" content="Recent story information">
+    <meta property="og:description" content="Summary of a peer&#x27;s active stories, embedded in user. stories_max_id and channel. stories_max_id and returned by stories. get Peer Max IDs.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -38,6 +38,7 @@
                     <a href="../types.html">Types</a>
                     <a href="../constructors.html">Constructors</a>
                     <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
                 </nav>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -66,20 +67,22 @@
 
     <main class="container">
         <article>
-        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> RecentStory</div>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> RecentStoryObj</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
         </div>
         
         <header class="page-header">
-            <h1>RecentStory</h1>
-            <p class="description">Recent story information</p>
+            <h1>RecentStoryObj</h1>
+            <p class="description">Summary of a peer&#x27;s active stories, embedded in user. stories_max_id and channel. stories_max_id and returned by stories. get Peer Max IDs.</p>
         </header>
         
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
+        <div class="code-block">recentStory#711d692d flags:# live:flags.0?true max_id:flags.1?int = RecentStory;</div>
+
         <div class="section">
             <h2>Parameters</h2>
             <div class="table-container">
@@ -95,14 +98,14 @@
 
                         <tr>
                             <td class="field-name">Live</td>
-                            <td class="field-type"><a href="../constructors/bool.html">bool</a></td>
-                            <td>Live story</td>
+                            <td class="field-type">flags .0? true</td>
+                            <td>Whether the peer is currently broadcasting a live story.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">MaxId</td>
-                            <td class="field-type">int</td>
-                            <td>Latest story ID</td>
+                            <td class="field-type">flags .1? int</td>
+                            <td>If live is set, ID of the peer&#x27;s active live story; otherwise, ID of the peer&#x27;s maximum active story.</td>
                         </tr>
 
                     </tbody>
@@ -110,12 +113,17 @@
             </div>
         </div>
 
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/RecentStory.html">RecentStory</a></span>
+        </div>
+
         <div class="example-section">
             <h2>Gogram Example</h2>
-            <pre class="example-code"><span class="comment">// Creating RecentStory constructor</span>
-obj := &amp;<span class="package">tg.</span><span class="type">RecentStory</span>{
+            <pre class="example-code"><span class="comment">// Creating RecentStoryObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">RecentStoryObj</span>{
     Live: <span class="keyword">nil</span>,
-    MaxId: <span class="number">42</span>,
+    MaxId: <span class="keyword">nil</span>,
 }</pre>
         </div>
 

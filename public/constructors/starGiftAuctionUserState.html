@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>starGiftAuctionUserState - Gogram TL Reference</title>
-    <meta name="description" content="User&#x27;s participation in star gift auction">
+    <meta name="description" content="Contains information about the current user&#x27;s state in an auction.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="starGiftAuctionUserState - Gogram TL Reference">
-    <meta property="og:description" content="User&#x27;s participation in star gift auction">
+    <meta property="og:description" content="Contains information about the current user&#x27;s state in an auction.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -38,6 +38,7 @@
                     <a href="../types.html">Types</a>
                     <a href="../constructors.html">Constructors</a>
                     <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
                 </nav>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -66,20 +67,22 @@
 
     <main class="container">
         <article>
-        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> StarGiftAuctionUserState</div>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> StarGiftAuctionUserStateObj</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
         </div>
         
         <header class="page-header">
-            <h1>StarGiftAuctionUserState</h1>
-            <p class="description">User&#x27;s participation in star gift auction</p>
+            <h1>StarGiftAuctionUserStateObj</h1>
+            <p class="description">Contains information about the current user&#x27;s state in an auction.</p>
         </header>
         
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
+        <div class="code-block">starGiftAuctionUserState#2eeed1c4 flags:# returned:flags.1?true bid_amount:flags.0?long bid_date:flags.0?int min_bid_amount:flags.0?long bid_peer:flags.0?Peer acquired_count:int = StarGiftAuctionUserState;</div>
+
         <div class="section">
             <h2>Parameters</h2>
             <div class="table-container">
@@ -95,38 +98,38 @@
 
                         <tr>
                             <td class="field-name">Returned</td>
-                            <td class="field-type"><a href="../constructors/bool.html">bool</a></td>
-                            <td>Gift returned to user</td>
+                            <td class="field-type">flags .1? true</td>
+                            <td>If set, the placed bid was returned to the user, because it was outbid so much that it fell out of the top star Gift Auction State. gifts_left positions, meaning that even if no new bids are placed, the user will never receive any gifts, so the bid was completely removed from the auction, and in order to participate again the user must manually make a new bid.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">BidAmount</td>
-                            <td class="field-type">long</td>
-                            <td>User&#x27;s bid amount</td>
+                            <td class="field-type">flags .0? long</td>
+                            <td>Contains the amount of the placed bid in Telegram Stars.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">BidDate</td>
-                            <td class="field-type">int</td>
-                            <td>Bid timestamp</td>
+                            <td class="field-type">flags .0? int</td>
+                            <td>Contains a UNIX timestamp, indicating when the bid was placed.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">MinBidAmount</td>
-                            <td class="field-type">long</td>
-                            <td>Minimum bid user can place</td>
+                            <td class="field-type">flags .0? long</td>
+                            <td>Contains the minumum allowed bid amount in Telegram Stars, if set overrides star Gift Auction State. min_bid_amount for the current user.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">BidPeer</td>
-                            <td class="field-type"><a href="../constructors/Peer.html">Peer</a></td>
-                            <td>Peer who won against user</td>
+                            <td class="field-type">flags .0? Peer</td>
+                            <td>Contains the peer that will receive the gift, if you end up winning this round</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">AcquiredCount</td>
                             <td class="field-type">int</td>
-                            <td>Gifts acquired in auction</td>
+                            <td>Contains the number of gifts that were purchased so far in the auction by the current user.</td>
                         </tr>
 
                     </tbody>
@@ -134,15 +137,20 @@
             </div>
         </div>
 
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/StarGiftAuctionUserState.html">StarGiftAuctionUserState</a></span>
+        </div>
+
         <div class="example-section">
             <h2>Gogram Example</h2>
-            <pre class="example-code"><span class="comment">// Creating StarGiftAuctionUserState constructor</span>
-obj := &amp;<span class="package">tg.</span><span class="type">StarGiftAuctionUserState</span>{
+            <pre class="example-code"><span class="comment">// Creating StarGiftAuctionUserStateObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">StarGiftAuctionUserStateObj</span>{
     Returned: <span class="keyword">nil</span>,
-    BidAmount: int64(<span class="number">1234567890</span>),
-    BidDate: <span class="number">42</span>,
-    MinBidAmount: int64(<span class="number">1234567890</span>),
-    BidPeer: &amp;<span class="package">tg.</span><span class="type">Peer</span>{},
+    BidAmount: <span class="keyword">nil</span>,
+    BidDate: <span class="keyword">nil</span>,
+    MinBidAmount: <span class="keyword">nil</span>,
+    BidPeer: <span class="keyword">nil</span>,
     AcquiredCount: <span class="number">42</span>,
 }</pre>
         </div>

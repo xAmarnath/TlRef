@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>payments.starGiftAuctionAcquiredGifts - Gogram TL Reference</title>
-    <meta name="description" content="Gifts acquired from auction">
+    <meta name="description" content="Describes all the gifts that the current user won in an auction.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="payments.starGiftAuctionAcquiredGifts - Gogram TL Reference">
-    <meta property="og:description" content="Gifts acquired from auction">
+    <meta property="og:description" content="Describes all the gifts that the current user won in an auction.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -38,6 +38,7 @@
                     <a href="../../types.html">Types</a>
                     <a href="../../constructors.html">Constructors</a>
                     <a href="../../methods.html">Methods</a>
+                    <a href="../../e2e.html">E2E</a>
                 </nav>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -69,17 +70,19 @@
         <div class="breadcrumb"><a href="../../index.html">Home</a> <span>›</span> <a href="../../constructors.html">Constructors</a> <span>›</span> Payments <span>›</span> StarGiftAuctionAcquiredGifts</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
         </div>
         
         <header class="page-header">
-            <h1>PaymentsStarGiftAuctionAcquiredGifts</h1>
-            <p class="description">Gifts acquired from auction</p>
+            <h1>PaymentsStarGiftAuctionAcquiredGiftsObj</h1>
+            <p class="description">Describes all the gifts that the current user won in an auction.</p>
         </header>
         
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
+        <div class="code-block">payments.starGiftAuctionAcquiredGifts#7d5bd1f0 gifts:Vector&lt;StarGiftAuctionAcquiredGift&gt; users:Vector&lt;User&gt; chats:Vector&lt;Chat&gt; = payments.StarGiftAuctionAcquiredGifts;</div>
+
         <div class="section">
             <h2>Parameters</h2>
             <div class="table-container">
@@ -95,20 +98,20 @@
 
                         <tr>
                             <td class="field-name">Gifts</td>
-                            <td class="field-type">Vector&lt;<a href="../../constructors/StarGiftAuctionAcquiredGift.html">StarGiftAuctionAcquiredGift</a>&gt;</td>
-                            <td>Acquired gifts</td>
+                            <td class="field-type"><a href="../../constructors/Vector < StarGiftAuctionAcquiredGift >.html">Vector &lt; StarGiftAuctionAcquiredGift &gt;</a></td>
+                            <td>The gifts</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Users</td>
-                            <td class="field-type">Vector&lt;<a href="../../constructors/User.html">User</a>&gt;</td>
-                            <td>Gift givers</td>
+                            <td class="field-type"><a href="../../constructors/Vector < User >.html">Vector &lt; User &gt;</a></td>
+                            <td>Mentioned users</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Chats</td>
-                            <td class="field-type">Vector&lt;<a href="../../constructors/Chat.html">Chat</a>&gt;</td>
-                            <td>Associated chats</td>
+                            <td class="field-type"><a href="../../constructors/Vector < Chat >.html">Vector &lt; Chat &gt;</a></td>
+                            <td>Mentioned chats</td>
                         </tr>
 
                     </tbody>
@@ -116,13 +119,18 @@
             </div>
         </div>
 
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../../types/payments.StarGiftAuctionAcquiredGifts.html">payments.StarGiftAuctionAcquiredGifts</a></span>
+        </div>
+
         <div class="example-section">
             <h2>Gogram Example</h2>
-            <pre class="example-code"><span class="comment">// Creating PaymentsStarGiftAuctionAcquiredGifts constructor</span>
-obj := &amp;<span class="package">tg.</span><span class="type">PaymentsStarGiftAuctionAcquiredGifts</span>{
-    Gifts: []<span class="package">tg.</span><span class="type">StarGiftAuctionAcquiredGift</span>{&amp;<span class="package">tg.</span><span class="type">StarGiftAuctionAcquiredGift</span>{}},
-    Users: []<span class="package">tg.</span><span class="type">User</span>{&amp;<span class="package">tg.</span><span class="type">User</span>{}},
-    Chats: []<span class="package">tg.</span><span class="type">Chat</span>{&amp;<span class="package">tg.</span><span class="type">Chat</span>{}},
+            <pre class="example-code"><span class="comment">// Creating PaymentsStarGiftAuctionAcquiredGiftsObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">PaymentsStarGiftAuctionAcquiredGiftsObj</span>{
+    Gifts: &amp;<span class="package">tg.</span><span class="type">VectorStarGiftAuctionAcquiredGift</span>{},
+    Users: &amp;<span class="package">tg.</span><span class="type">VectorUser</span>{},
+    Chats: &amp;<span class="package">tg.</span><span class="type">VectorChat</span>{},
 }</pre>
         </div>
 

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>savedStarGift - Gogram TL Reference</title>
+    <meta name="description" content="Represents a gift owned by a peer.">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="savedStarGift - Gogram TL Reference">
+    <meta property="og:description" content="Represents a gift owned by a peer.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="../types.html">Types</a>
+                    <a href="../constructors.html">Constructors</a>
+                    <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "..";
+    </script>
+    <script src="../js/search_index.js"></script>
+    <script src="../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> SavedStarGiftObj</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>SavedStarGiftObj</h1>
+            <p class="description">Represents a gift owned by a peer.</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-constructor">constructor</span>
+        </div>
+        <div class="code-block">savedStarGift#41df43fc flags:# name_hidden:flags.0?true unsaved:flags.5?true refunded:flags.9?true can_upgrade:flags.10?true pinned_to_top:flags.12?true upgrade_separate:flags.17?true from_id:flags.1?Peer date:int gift:StarGift message:flags.2?TextWithEntities msg_id:flags.3?int saved_id:flags.11?long convert_stars:flags.4?long upgrade_stars:flags.6?long can_export_at:flags.7?int transfer_stars:flags.8?long can_transfer_at:flags.13?int can_resell_at:flags.14?int collection_id:flags.15?Vector&lt;int&gt; prepaid_upgrade_hash:flags.16?string drop_original_details_stars:flags.18?long gift_num:flags.19?int can_craft_at:flags.20?int = SavedStarGift;</div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="field-name">NameHidden</td>
+                            <td class="field-type">flags .0? true</td>
+                            <td>If set, the gift sender in from_id and the message are set only for the receiver of the gift.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Unsaved</td>
+                            <td class="field-type">flags .5? true</td>
+                            <td>If set, the gift is not pinned on the user&#x27;s profile.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Refunded</td>
+                            <td class="field-type">flags .9? true</td>
+                            <td>This gift was upgraded to a collectible gift and then re-downgraded to a regular gift because a request to refund the payment related to the upgrade was made, and the money was returned.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">CanUpgrade</td>
+                            <td class="field-type">flags .10? true</td>
+                            <td>Only set for non-collectible gifts, if they can be upgraded to a collectible gift.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PinnedToTop</td>
+                            <td class="field-type">flags .12? true</td>
+                            <td>Whether this gift is pinned on top of the user&#x27;s profile page.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">UpgradeSeparate</td>
+                            <td class="field-type">flags .17? true</td>
+                            <td>If set, someone already separately pre-paid for the upgrade of this gift.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">FromId</td>
+                            <td class="field-type">flags .1? Peer</td>
+                            <td>Sender of the gift (unset for anonymous gifts).</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Date</td>
+                            <td class="field-type">int</td>
+                            <td>Reception date of the gift.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Gift</td>
+                            <td class="field-type"><a href="../types/StarGift.html">StarGift</a></td>
+                            <td>The collectible gift.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Message</td>
+                            <td class="field-type">flags .2? TextWithEntities</td>
+                            <td>Message attached to the gift.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">MsgId</td>
+                            <td class="field-type">flags .3? int</td>
+                            <td>For gifts received by users, ID to use in input Saved Star Gift User constructors.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">SavedId</td>
+                            <td class="field-type">flags .11? long</td>
+                            <td>For gifts received by channels, ID to use in input Saved Star Gift Chat constructors.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ConvertStars</td>
+                            <td class="field-type">flags .4? long</td>
+                            <td>For non-collectible gifts, the receiver of this gift may convert it to this many Telegram Stars, instead of displaying it on their profile page.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">UpgradeStars</td>
+                            <td class="field-type">flags .6? long</td>
+                            <td>Only for pre-paid non-collectible gifts, the number of Telegram Stars the sender has already paid to convert the gift into a collectible gift (this is different from the meaning of the flag in message Action Star Gift, where it signals the upgrade price for not yet upgraded gifts).</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">CanExportAt</td>
+                            <td class="field-type">flags .7? int</td>
+                            <td>If set, indicates that the current gift can&#x27;t be exported to the TON blockchain yet: the owner will be able to export it at the specified unixtime.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">TransferStars</td>
+                            <td class="field-type">flags .8? long</td>
+                            <td>If set, indicates that the gift can be transferred to another user by paying the specified amount of stars.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">CanTransferAt</td>
+                            <td class="field-type">flags .13? int</td>
+                            <td>If set, indicates that the current gift can&#x27;t be transferred yet: the owner will be able to transfer it at the specified unixtime.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">CanResellAt</td>
+                            <td class="field-type">flags .14? int</td>
+                            <td>If set, indicates that the current gift can&#x27;t be resold yet: the owner will be able to put it up for sale at the specified unixtime.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">CollectionId</td>
+                            <td class="field-type">flags .15? Vector &lt; int &gt;</td>
+                            <td>IDs of the collections that this gift is a part of.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PrepaidUpgradeHash</td>
+                            <td class="field-type">flags .16? string</td>
+                            <td>Hash to prepay for a gift upgrade separately.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">DropOriginalDetailsStars</td>
+                            <td class="field-type">flags .18? long</td>
+                            <td>If set, the star Gift Attribute Original Details attribute of this gift may be removed by paying the specified amount of stars, see here for the full flow.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">GiftNum</td>
+                            <td class="field-type">flags .19? int</td>
+                            <td>Collectible number assigned to the gift, if already known.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">CanCraftAt</td>
+                            <td class="field-type">flags .20? int</td>
+                            <td>If set, this gift can be used for crafting only starting from the specified unixtime.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/SavedStarGift.html">SavedStarGift</a></span>
+        </div>
+
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// Creating SavedStarGiftObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">SavedStarGiftObj</span>{
+    NameHidden: <span class="keyword">nil</span>,
+    Unsaved: <span class="keyword">nil</span>,
+    Refunded: <span class="keyword">nil</span>,
+    CanUpgrade: <span class="keyword">nil</span>,
+    PinnedToTop: <span class="keyword">nil</span>,
+    UpgradeSeparate: <span class="keyword">nil</span>,
+    <span class="comment">// ... more required fields</span>
+}</pre>
+        </div>
+
+        </article>
+
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

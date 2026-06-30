@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>userFull - Gogram TL Reference</title>
+    <meta name="description" content="When updating the local peer database, all fields from the newly received constructor take priority over the old constructor cached locally (including by removi">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="userFull - Gogram TL Reference">
+    <meta property="og:description" content="When updating the local peer database, all fields from the newly received constructor take priority over the old constructor cached locally (including by removi">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="../types.html">Types</a>
+                    <a href="../constructors.html">Constructors</a>
+                    <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "..";
+    </script>
+    <script src="../js/search_index.js"></script>
+    <script src="../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> UserFullObj</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>UserFullObj</h1>
+            <p class="description">When updating the local peer database, all fields from the newly received constructor take priority over the old constructor cached locally (including by removing fields that aren&#x27;t set in the new constructor).</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-constructor">constructor</span>
+        </div>
+        <div class="code-block">userFull#a02bc13e flags:# blocked:flags.0?true phone_calls_available:flags.4?true phone_calls_private:flags.5?true can_pin_message:flags.7?true has_scheduled:flags.12?true video_calls_available:flags.13?true voice_messages_forbidden:flags.20?true translations_disabled:flags.23?true stories_pinned_available:flags.26?true blocked_my_stories_from:flags.27?true wallpaper_overridden:flags.28?true contact_require_premium:flags.29?true read_dates_private:flags.30?true flags2:# sponsored_enabled:flags2.7?true can_view_revenue:flags2.9?true bot_can_manage_emoji_status:flags2.10?true display_gifts_button:flags2.16?true noforwards_my_enabled:flags2.23?true noforwards_peer_enabled:flags2.24?true id:long about:flags.1?string settings:PeerSettings personal_photo:flags.21?Photo profile_photo:flags.2?Photo fallback_photo:flags.22?Photo notify_settings:PeerNotifySettings bot_info:flags.3?BotInfo pinned_msg_id:flags.6?int common_chats_count:int folder_id:flags.11?int ttl_period:flags.14?int theme:flags.15?ChatTheme private_forward_name:flags.16?string bot_group_admin_rights:flags.17?ChatAdminRights bot_broadcast_admin_rights:flags.18?ChatAdminRights wallpaper:flags.24?WallPaper stories:flags.25?PeerStories business_work_hours:flags2.0?BusinessWorkHours business_location:flags2.1?BusinessLocation business_greeting_message:flags2.2?BusinessGreetingMessage business_away_message:flags2.3?BusinessAwayMessage business_intro:flags2.4?BusinessIntro birthday:flags2.5?Birthday personal_channel_id:flags2.6?long personal_channel_message:flags2.6?int stargifts_count:flags2.8?int starref_program:flags2.11?StarRefProgram bot_verification:flags2.12?BotVerification send_paid_messages_stars:flags2.14?long disallowed_gifts:flags2.15?DisallowedGiftsSettings stars_rating:flags2.17?StarsRating stars_my_pending_rating:flags2.18?StarsRating stars_my_pending_rating_date:flags2.18?int main_tab:flags2.20?ProfileTab saved_music:flags2.21?Document note:flags2.22?TextWithEntities = UserFull;</div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="field-name">Blocked</td>
+                            <td class="field-type">flags .0? true</td>
+                            <td>Whether you have blocked this user</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PhoneCallsAvailable</td>
+                            <td class="field-type">flags .4? true</td>
+                            <td>Whether this user can make Vo IP calls</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PhoneCallsPrivate</td>
+                            <td class="field-type">flags .5? true</td>
+                            <td>Whether this user&#x27;s privacy settings allow you to call them</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">CanPinMessage</td>
+                            <td class="field-type">flags .7? true</td>
+                            <td>Whether you can pin messages in the chat with this user, you can do this only for a chat with yourself</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">HasScheduled</td>
+                            <td class="field-type">flags .12? true</td>
+                            <td>Whether scheduled messages are available</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">VideoCallsAvailable</td>
+                            <td class="field-type">flags .13? true</td>
+                            <td>Whether the user can receive video calls</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">VoiceMessagesForbidden</td>
+                            <td class="field-type">flags .20? true</td>
+                            <td>Whether this user doesn&#x27;t allow sending voice messages in a private chat with them</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">TranslationsDisabled</td>
+                            <td class="field-type">flags .23? true</td>
+                            <td>Whether the real-time chat translation popup should be hidden.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">StoriesPinnedAvailable</td>
+                            <td class="field-type">flags .26? true</td>
+                            <td>Whether this user has some pinned stories.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">BlockedMyStoriesFrom</td>
+                            <td class="field-type">flags .27? true</td>
+                            <td>Whether we&#x27;ve blocked this user, preventing them from seeing our stories.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">WallpaperOverridden</td>
+                            <td class="field-type">flags .28? true</td>
+                            <td>Whether the other user has chosen a custom wallpaper for us using messages. set Chat Wall Paper and the for_both flag, see here for more info.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ContactRequirePremium</td>
+                            <td class="field-type">flags .29? true</td>
+                            <td>If set, we cannot write to this user: subscribe to Telegram Premium to get permission to write to this user. To set this flag for ourselves invoke account. set Global Privacy Settings, setting the settings. new_noncontact_peers_require_premium flag, see here for more info.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ReadDatesPrivate</td>
+                            <td class="field-type">flags .30? true</td>
+                            <td>If set, we cannot fetch the exact read date of messages we send to this user using messages. get Outbox Read Date. The exact read date of messages might still be unavailable for other reasons, see here for more info. To set this flag for ourselves invoke account. set Global Privacy Settings, setting the settings. hide_read_marks flag.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">SponsoredEnabled</td>
+                            <td class="field-type">flags2 .7? true</td>
+                            <td>Whether ads were re-enabled for the current account (only accessible to the currently logged-in user), see here for more info.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">CanViewRevenue</td>
+                            <td class="field-type">flags2 .9? true</td>
+                            <td>If set, this user can view ad revenue statistics for this bot.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">BotCanManageEmojiStatus</td>
+                            <td class="field-type">flags2 .10? true</td>
+                            <td>If set, this is a bot that can change our emoji status</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">DisplayGiftsButton</td>
+                            <td class="field-type">flags2 .16? true</td>
+                            <td>If this flag is set for both us and another user (changed through global Privacy Settings ), a gift button should always be displayed in the text field in private chats with the other user: once clicked, the gift UI should be displayed, offering the user options to gift Telegram Premium subscriptions or Telegram Gifts.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">NoforwardsMyEnabled</td>
+                            <td class="field-type">flags2 .23? true</td>
+                            <td>If set, content protection was enabled in this private chat by us.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">NoforwardsPeerEnabled</td>
+                            <td class="field-type">flags2 .24? true</td>
+                            <td>If set, content protection was enabled in this private chat by this user.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">UnofficialSecurityRisk</td>
+                            <td class="field-type">flags2 .26? true</td>
+                            <td>If set, this user uses an unofficial Telegram client, and messages sent to them may be less secure; clients should display a warning in the user&#x27;s profile.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Id</td>
+                            <td class="field-type">long</td>
+                            <td>User ID</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">About</td>
+                            <td class="field-type">flags .1? string</td>
+                            <td>Bio of the user</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Settings</td>
+                            <td class="field-type"><a href="../types/PeerSettings.html">PeerSettings</a></td>
+                            <td>Peer settings</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PersonalPhoto</td>
+                            <td class="field-type">flags .21? Photo</td>
+                            <td>Personal profile photo, to be shown instead of profile_photo.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ProfilePhoto</td>
+                            <td class="field-type">flags .2? Photo</td>
+                            <td>Profile photo</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">FallbackPhoto</td>
+                            <td class="field-type">flags .22? Photo</td>
+                            <td>Fallback profile photo, displayed if no photo is present in profile_photo or personal_photo, due to privacy settings.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">NotifySettings</td>
+                            <td class="field-type"><a href="../types/PeerNotifySettings.html">PeerNotifySettings</a></td>
+                            <td>Notification settings</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">BotInfo</td>
+                            <td class="field-type">flags .3? BotInfo</td>
+                            <td>For bots, info about the bot (bot commands, etc)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PinnedMsgId</td>
+                            <td class="field-type">flags .6? int</td>
+                            <td>Message ID of the last pinned message</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">CommonChatsCount</td>
+                            <td class="field-type">int</td>
+                            <td>Chats in common with this user</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">FolderId</td>
+                            <td class="field-type">flags .11? int</td>
+                            <td>Peer folder ID, for more info click here</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">TtlPeriod</td>
+                            <td class="field-type">flags .14? int</td>
+                            <td>Time To Live of all messages in this chat; once a message is this many seconds old, it must be deleted.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Theme</td>
+                            <td class="field-type">flags .15? ChatTheme</td>
+                            <td>The chat theme associated with this user.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PrivateForwardName</td>
+                            <td class="field-type">flags .16? string</td>
+                            <td>Anonymized text to be shown instead of the user&#x27;s name on forwarded messages</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">BotGroupAdminRights</td>
+                            <td class="field-type">flags .17? ChatAdminRights</td>
+                            <td>A suggested set of administrator rights for the bot, to be shown when adding the bot as admin to a group, see here for more info on how to handle them.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">BotBroadcastAdminRights</td>
+                            <td class="field-type">flags .18? ChatAdminRights</td>
+                            <td>A suggested set of administrator rights for the bot, to be shown when adding the bot as admin to a channel, see here for more info on how to handle them.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Wallpaper</td>
+                            <td class="field-type">flags .24? WallPaper</td>
+                            <td>Wallpaper to use in the private chat with the user.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Stories</td>
+                            <td class="field-type">flags .25? PeerStories</td>
+                            <td>Active stories</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">BusinessWorkHours</td>
+                            <td class="field-type">flags2 .0? BusinessWorkHours</td>
+                            <td>Telegram Business working hours.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">BusinessLocation</td>
+                            <td class="field-type">flags2 .1? BusinessLocation</td>
+                            <td>Telegram Business location.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">BusinessGreetingMessage</td>
+                            <td class="field-type">flags2 .2? BusinessGreetingMessage</td>
+                            <td>Telegram Business greeting message.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">BusinessAwayMessage</td>
+                            <td class="field-type">flags2 .3? BusinessAwayMessage</td>
+                            <td>Telegram Business away message.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">BusinessIntro</td>
+                            <td class="field-type">flags2 .4? BusinessIntro</td>
+                            <td>Specifies a custom Telegram Business profile introduction.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Birthday</td>
+                            <td class="field-type">flags2 .5? Birthday</td>
+                            <td>Contains info about the user&#x27;s birthday.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PersonalChannelId</td>
+                            <td class="field-type">flags2 .6? long</td>
+                            <td>ID of the associated personal channel, that should be shown in the profile page.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PersonalChannelMessage</td>
+                            <td class="field-type">flags2 .6? int</td>
+                            <td>ID of the latest message of the associated personal channel, that should be previewed in the profile page.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">StargiftsCount</td>
+                            <td class="field-type">flags2 .8? int</td>
+                            <td>Number of gifts the user has chosen to display on their profile</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">StarrefProgram</td>
+                            <td class="field-type">flags2 .11? StarRefProgram</td>
+                            <td>This bot has an active referral program</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">BotVerification</td>
+                            <td class="field-type">flags2 .12? BotVerification</td>
+                            <td>Describes a bot verification icon.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">SendPaidMessagesStars</td>
+                            <td class="field-type">flags2 .14? long</td>
+                            <td>If set and bigger than 0, this user has enabled paid messages and we must pay the specified amount of Stars to send messages to them, see here for the full flow. If set and equal to 0, the user requires payment in general but we were exempted from paying for any of the reasons specified in the docs.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">DisallowedGifts</td>
+                            <td class="field-type">flags2 .15? DisallowedGiftsSettings</td>
+                            <td>Disallows the reception of specific gift types.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">StarsRating</td>
+                            <td class="field-type">flags2 .17? StarsRating</td>
+                            <td>The user&#x27;s star rating.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">StarsMyPendingRating</td>
+                            <td class="field-type">flags2 .18? StarsRating</td>
+                            <td>Our pending star rating, only visible for ourselves.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">StarsMyPendingRatingDate</td>
+                            <td class="field-type">flags2 .18? int</td>
+                            <td>When the pending star rating will be applied, only visible for ourselves.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">MainTab</td>
+                            <td class="field-type">flags2 .20? ProfileTab</td>
+                            <td>The main tab for the user&#x27;s profile, see here for more info.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">SavedMusic</td>
+                            <td class="field-type">flags2 .21? Document</td>
+                            <td>The first song on the music tab of the profile, see here for more info on the music profile tab.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Note</td>
+                            <td class="field-type">flags2 .22? TextWithEntities</td>
+                            <td>A private note for this contact, only visible to us; see here for more info on contact notes.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">BotManagerId</td>
+                            <td class="field-type">flags2 .25? long</td>
+                            <td>If this user is a managed bot, the ID of the user or manager bot that manages it.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/UserFull.html">UserFull</a></span>
+        </div>
+
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// Creating UserFullObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">UserFullObj</span>{
+    Blocked: <span class="keyword">nil</span>,
+    PhoneCallsAvailable: <span class="keyword">nil</span>,
+    PhoneCallsPrivate: <span class="keyword">nil</span>,
+    CanPinMessage: <span class="keyword">nil</span>,
+    HasScheduled: <span class="keyword">nil</span>,
+    VideoCallsAvailable: <span class="keyword">nil</span>,
+    <span class="comment">// ... more required fields</span>
+}</pre>
+        </div>
+
+        </article>
+
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

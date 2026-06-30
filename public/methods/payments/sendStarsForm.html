@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payments.sendStarsForm - Gogram TL Reference</title>
+    <meta name="description" content="Make a payment using Telegram Stars, see here for more info.">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="payments.sendStarsForm - Gogram TL Reference">
+    <meta property="og:description" content="Make a payment using Telegram Stars, see here for more info.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../../css/common.css">
+    <script src="../../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../../index.html">Home</a>
+                    <a href="../../types.html">Types</a>
+                    <a href="../../constructors.html">Constructors</a>
+                    <a href="../../methods.html">Methods</a>
+                    <a href="../../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "../..";
+    </script>
+    <script src="../../js/search_index.js"></script>
+    <script src="../../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../../index.html">Home</a> <span>›</span> <a href="../../methods.html">Methods</a> <span>›</span> Payments <span>›</span> SendStarsForm</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>PaymentsSendStarsForm</h1>
+            <p class="description">Make a payment using Telegram Stars, see here for more info.</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-method">method</span>
+            <span class="badge badge-user">Users</span>
+            <span class="badge badge-bot">Bots</span>
+            <span class="badge badge-business">Business</span>
+        </div>
+        <div class="code-block">payments.sendStarsForm#7998c914 form_id:long invoice:InputInvoice = payments.PaymentResult;</div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="field-name">FormId</td>
+                            <td class="field-type">long</td>
+                            <td>Payment form ID</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Invoice</td>
+                            <td class="field-type"><a href="../../types/InputInvoice.html">InputInvoice</a></td>
+                            <td>Invoice</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../../types/payments.PaymentResult.html">payments.PaymentResult</a></span>
+        </div>
+
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// PaymentsSendStarsForm - positional arguments</span>
+result, err := <span class="package">client.</span><span class="function">PaymentsSendStarsForm</span>(int64(<span class="number">1234567890</span>), &amp;<span class="package">tg.</span><span class="type">InputInvoice</span>{})
+<span class="keyword">if</span> err != <span class="keyword">nil</span> {
+    <span class="comment">// handle error</span>
+}
+<span class="comment">// result is *<span class="package">tg.</span><span class="type">PaymentsPaymentResult</span></span></pre>
+        </div>
+
+        <div class="section">
+            <h2>Possible Errors</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="error-code">406</td>
+                            <td class="error-type">API_GIFT_RESTRICTED_UPDATE_APP</td>
+                            <td>Please update the app to access the gift API.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">BALANCE_TOO_LOW</td>
+                            <td>The transaction cannot be completed because the current Telegram Stars balance is too low.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">BOT_ACCESS_FORBIDDEN</td>
+                            <td>The specified method can be used over a business connection for some operations, but the specified query attempted an operation that is not allowed over a business connection.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">BOT_INVOICE_INVALID</td>
+                            <td>The specified invoice is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">BUSINESS_CONNECTION_INVALID</td>
+                            <td>The connection_id passed to the wrapping invoke With Business Connection call is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">FORM_EXPIRED</td>
+                            <td>The form was generated more than 10 minutes ago and has expired, please re-generate it using payments. get Payment Form and pass the new form_id.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">FORM_ID_EMPTY</td>
+                            <td>The specified form ID is empty.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">FORM_SUBMIT_DUPLICATE</td>
+                            <td>The same payment form was already submitted..</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">FORM_UNSUPPORTED</td>
+                            <td>Please update your client.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">GIFT_STARS_INVALID</td>
+                            <td>The specified amount of stars is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">MEDIA_ALREADY_PAID</td>
+                            <td>You already paid for the specified media.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">MONTH_INVALID</td>
+                            <td>The number of months specified in input Invoice Premium Gift Stars. months is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">PEER_ID_INVALID</td>
+                            <td>The provided peer id is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">406</td>
+                            <td class="error-type">PRECHECKOUT_FAILED</td>
+                            <td>Precheckout failed, a detailed and localized description for the error will be emitted via an update Service Notification as specified here.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">PURPOSE_INVALID</td>
+                            <td>The specified payment purpose is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">STARGIFT_ALREADY_UPGRADED</td>
+                            <td>The specified gift was already upgraded to a collectible gift.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">STARGIFT_NOT_FOUND</td>
+                            <td>The specified gift was not found.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">STARGIFT_OWNER_INVALID</td>
+                            <td>You cannot transfer or sell a gift owned by another user.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">STARGIFT_SLUG_INVALID</td>
+                            <td>The specified gift slug is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">STARGIFT_USAGE_LIMITED</td>
+                            <td>The gift is sold out.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">STARGIFT_USER_USAGE_LIMITED</td>
+                            <td>You&#x27;ve reached the star Gift. limited_per_user limit, you can&#x27;t buy any more gifts of this type.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">406</td>
+                            <td class="error-type">STARS_FORM_AMOUNT_MISMATCH</td>
+                            <td>The form amount has changed, please fetch the new form using payments. get Payment Form and restart the process.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">TO_ID_INVALID</td>
+                            <td>The specified to_id of the passed input Invoice Star Gift Resale or input Invoice Star Gift Transfer is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">USER_ID_INVALID</td>
+                            <td>The provided user ID is invalid.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        </article>
+
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

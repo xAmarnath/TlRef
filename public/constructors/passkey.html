@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>passkey - Gogram TL Reference</title>
-    <meta name="description" content="Registered passkey credential">
+    <meta name="description" content="Human-readable info about a passkey associated to an account, returned when creating a passkey or listing passkeys.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="passkey - Gogram TL Reference">
-    <meta property="og:description" content="Registered passkey credential">
+    <meta property="og:description" content="Human-readable info about a passkey associated to an account, returned when creating a passkey or listing passkeys.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -38,6 +38,7 @@
                     <a href="../types.html">Types</a>
                     <a href="../constructors.html">Constructors</a>
                     <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
                 </nav>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -66,20 +67,22 @@
 
     <main class="container">
         <article>
-        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> Passkey</div>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> PasskeyObj</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
         </div>
         
         <header class="page-header">
-            <h1>Passkey</h1>
-            <p class="description">Registered passkey credential</p>
+            <h1>PasskeyObj</h1>
+            <p class="description">Human-readable info about a passkey associated to an account, returned when creating a passkey or listing passkeys.</p>
         </header>
         
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
+        <div class="code-block">passkey#98613ebf flags:# id:string name:string date:int software_emoji_id:flags.0?long last_usage_date:flags.1?int = Passkey;</div>
+
         <div class="section">
             <h2>Parameters</h2>
             <div class="table-container">
@@ -96,31 +99,31 @@
                         <tr>
                             <td class="field-name">Id</td>
                             <td class="field-type">string</td>
-                            <td>Passkey ID</td>
+                            <td>Unique passkey ID, usable for example in account. delete Passkey.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Name</td>
                             <td class="field-type">string</td>
-                            <td>Display name</td>
+                            <td>Human-readable passkey name</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Date</td>
                             <td class="field-type">int</td>
-                            <td>Registration timestamp</td>
+                            <td>Creation date of the passkey</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">SoftwareEmojiId</td>
-                            <td class="field-type">long</td>
-                            <td>Software type emoji</td>
+                            <td class="field-type">flags .0? long</td>
+                            <td>ID of the custom emoji used as icon for the software or password manager that created the passkey</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">LastUsageDate</td>
-                            <td class="field-type">int</td>
-                            <td>Last used timestamp</td>
+                            <td class="field-type">flags .1? int</td>
+                            <td>Date when the passkey was last used to log in</td>
                         </tr>
 
                     </tbody>
@@ -128,15 +131,20 @@
             </div>
         </div>
 
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/Passkey.html">Passkey</a></span>
+        </div>
+
         <div class="example-section">
             <h2>Gogram Example</h2>
-            <pre class="example-code"><span class="comment">// Creating Passkey constructor</span>
-obj := &amp;<span class="package">tg.</span><span class="type">Passkey</span>{
+            <pre class="example-code"><span class="comment">// Creating PasskeyObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">PasskeyObj</span>{
     Id: <span class="string">&quot;Hello, World!&quot;</span>,
     Name: <span class="string">&quot;Hello, World!&quot;</span>,
     Date: <span class="number">42</span>,
-    SoftwareEmojiId: int64(<span class="number">1234567890</span>),
-    LastUsageDate: <span class="number">42</span>,
+    SoftwareEmojiId: <span class="keyword">nil</span>,
+    LastUsageDate: <span class="keyword">nil</span>,
 }</pre>
         </div>
 

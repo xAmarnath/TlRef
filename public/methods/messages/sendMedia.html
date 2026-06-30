@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>messages.sendMedia - Gogram TL Reference</title>
+    <meta name="description" content="Layer 223 1 – Base layer 2 – New userpic notifications 3 – Send message can trigger link change 4 – Check-in chats 5 – Localized SMS, localized notifications 6 ">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="messages.sendMedia - Gogram TL Reference">
+    <meta property="og:description" content="Layer 223 1 – Base layer 2 – New userpic notifications 3 – Send message can trigger link change 4 – Check-in chats 5 – Localized SMS, localized notifications 6 ">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../../css/common.css">
+    <script src="../../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../../index.html">Home</a>
+                    <a href="../../types.html">Types</a>
+                    <a href="../../constructors.html">Constructors</a>
+                    <a href="../../methods.html">Methods</a>
+                    <a href="../../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "../..";
+    </script>
+    <script src="../../js/search_index.js"></script>
+    <script src="../../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../../index.html">Home</a> <span>›</span> <a href="../../methods.html">Methods</a> <span>›</span> Messages <span>›</span> SendMedia</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>MessagesSendMedia</h1>
+            <p class="description">Layer 223 1 – Base layer 2 – New userpic notifications 3 – Send message can trigger link change 4 – Check-in chats 5 – Localized SMS, localized notifications 6 – Foursquare integration 7 – Added wall Paper Solid 8 – Added end-to-end encryption 9 – Improved big files upload perfomance 10 – Improved chat participants updates 11 – Improved secret chats 12 – New dynamic support 13 – Audio, video MIME; contacts import retry; new secret actions 14 – Notify settings sync, blacklist sync 15 – Modified get History offset behaviour 16 – Split send Code into 2 parts 17 – Added custom typing, introduced message flags 18 – Added usernames 23 – Stickers for secret chats 105 – Scheduled messages, Cloud themes 108 – Login with QR code 109 – Polls v 2 110 – People Nearby 2.0, Bank card entity 111 – Folders, Broadcast Stats 112 – Old featured stickers, generic dice, poll timer, poll solution 113 – PSA 114 – Video thumbs for GIFs 115 – Peek Channel Invite 116 – Group Stats, Profile Videos 117 – Web RTC Phone Calls 118 – Callback with 2 FA, Countries list 119 – Comments in channels, Threads, Anonymous Admins 120 – Multipins, Message Stats, Geo Live v 2 121 – SVG-based Outlines for Stickers 122 – Voice Chats 123 – Voice Chat improvements 124 – Expiring Invite links 125 – Voice Chats in Broadcasts 126 – Ban channels in channels 127 – Payments in channels 128 – Microthumbs for User/Chat profile photos 129 – Video Chats 130 – Custom placeholder for bot reply keyboards 131 – Reset 2 FA Password after a week 132 – Chat themes 133 – 64-bit IDs for User/Chat 134 – Chat Requests, Shared Media Calendar 135 – Send Message As a Channel 136 – Reactions 137 – Translations 138 – GIF Sticker Packs 139 – RTMP streaming 140 – Web Apps, Cloud Ringtones 142 – TCP Reflectors 143 – Premium Subscription, Cloud Invoices 144 – Premium as a Gift, Custom Emoji 145 – Custom Reactions, Statuses, Sign In with email 147 – Keywords for stickers and emojis 148 – Forums, collectible usernames 150 – Pinned forum topics, general topic 151 – Media spoilers, suggested profile photos 152 – Real-time translations, Firebase SMS authentication 153 – Modify created stickersets 155 – Dates for reactions 158 – Shared folders, per-chat wallpapers 159 – Anonymous votes 160 – Stories 164 – Stories in Channels 166 – Giveaways in channels 167 – Similar channels 168 – Channel colors 169 – Multiselection of chats for bots 170 – Saved Messages 2.0 171 – Saved Messages 2.0 174 – Group boosts 176 – Business 177 – Business Bots, Birthdays 178 – Saved Personal channel, Reactions notifications 179 – Channel revenue stats, phrases in SMS 180 – Message Effects, Hashtags 181 – Stars 182 – Stars Revenue 183 – Paid posts 184 – Stars Refunds 185 – Mini App Store, Star Gifts 186 – Channel Subscriptions for Stars 187 – Stars Giveaways 189 – Stars Gifts 192 – Video Qualities, Ads in bots 194 – Stars Subscription for Bots 195 – Affiliate Programs for Bots 196 – Collectible gifts 197 – Similar Bots 198 – Collectibles as emoji statuses 200 – Paid Messages 202 – Conference calls 203 – Resell collectible gifts 204 – Monoforums 205 – TODO lists 207 – Suggested channel posts 210 – Star gift collections, rating 211 – Story Albums 212 – Prepaid gift upgrades 213 – Music in profile 214 – Chat Themes with collectible gifts 215 – Chat Gift Themes 216 – Threaded view for Bots 217 – Live Stories 218 – Gift Auctions 219 – Passkeys 220 – Gift Offers 222 – Gift Crafts 223 – User tags in groups More. updates Too Long #e 317 af 7 e = Updates; update Short Message #313 bc 7 f 8 flags: # out: flags.1?true mentioned: flags.4?true media_unread: flags.5?true silent: flags.13?true id: int user_id: long message: string pts: int pts_count: int date: int fwd_from: flags.2? Message Fwd Header via_bot_id: flags.11? long reply_to: flags.3? Message Reply Header entities: flags.7? Vector &lt; Message Entity &gt; ttl_period: flags.25? int = Updates; update Short Chat Message #4 d 6 deea 5 flags: # out: flags.1?true mentioned: flags.4?true media_unread: flags.5?true silent: flags.13?true id: int from_id: long chat_id: long message: string pts: int pts_count: int date: int fwd_from: flags.2? Message Fwd Header via_bot_id: flags.11? long reply_to: flags.3? Message Reply Header entities: flags.7? Vector &lt; Message Entity &gt; ttl_period: flags.25? int = Updates; update Short #78 d 4 dec 1 update: Update date: int = Updates; updates Combined #725 b 04 c 3 updates: Vector &lt; Update &gt; users: Vector &lt; User &gt; chats: Vector &lt; Chat &gt; date: int seq_start: int seq: int = Updates; updates #74 ae 4240 updates: Vector &lt; Update &gt; users: Vector &lt; User &gt; chats: Vector &lt; Chat &gt; date: int seq: int = Updates; update Short Sent Message #9015 e 101 flags: # out: flags.1?true id: int pts: int pts_count: int date: int media: flags.9? Message Media entities: flags.7? Vector &lt; Message Entity &gt; ttl_period: flags.25? int = Updates; ---functions--- messages. send Media #330 e 77 f flags: # silent: flags.5?true background: flags.6?true clear_draft: flags.7?true noforwards: flags.14?true update_stickersets_order: flags.15?true invert_media: flags.16?true allow_paid_floodskip: flags.19?true peer: Input Peer reply_to: flags.0? Input Reply To media: Input Media message: string random_id: long reply_markup: flags.2? Reply Markup entities: flags.3? Vector &lt; Message Entity &gt; schedule_date: flags.10? int schedule_repeat_period: flags.24? int send_as: flags.13? Input Peer quick_reply_shortcut: flags.17? Input Quick Reply Shortcut effect: flags.18? long allow_paid_stars: flags.21? long suggested_post: flags.22? Suggested Post = Updates;</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-method">method</span>
+            <span class="badge badge-user">Users</span>
+            <span class="badge badge-bot">Bots</span>
+            <span class="badge badge-business">Business</span>
+        </div>
+        <div class="code-block">messages.sendMedia#330e77f flags:# silent:flags.5?true background:flags.6?true clear_draft:flags.7?true noforwards:flags.14?true update_stickersets_order:flags.15?true invert_media:flags.16?true allow_paid_floodskip:flags.19?true peer:InputPeer reply_to:flags.0?InputReplyTo media:InputMedia message:string random_id:long reply_markup:flags.2?ReplyMarkup entities:flags.3?Vector&lt;MessageEntity&gt; schedule_date:flags.10?int schedule_repeat_period:flags.24?int send_as:flags.13?InputPeer quick_reply_shortcut:flags.17?InputQuickReplyShortcut effect:flags.18?long allow_paid_stars:flags.21?long suggested_post:flags.22?SuggestedPost = Updates;</div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="field-name">Silent</td>
+                            <td class="field-type">flags .5? true</td>
+                            <td>Send message silently (no notification should be triggered)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Background</td>
+                            <td class="field-type">flags .6? true</td>
+                            <td>Send message in background</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ClearDraft</td>
+                            <td class="field-type">flags .7? true</td>
+                            <td>Clear the draft</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Noforwards</td>
+                            <td class="field-type">flags .14? true</td>
+                            <td>Only for bots, disallows forwarding and saving of the messages, even if the destination chat doesn&#x27;t have content protection enabled</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">UpdateStickersetsOrder</td>
+                            <td class="field-type">flags .15? true</td>
+                            <td>Whether to move used stickersets to top, see here for more info on this flag</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">InvertMedia</td>
+                            <td class="field-type">flags .16? true</td>
+                            <td>If set, any eventual webpage preview will be shown on top of the message instead of at the bottom.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">AllowPaidFloodskip</td>
+                            <td class="field-type">flags .19? true</td>
+                            <td>Bots only: if set, allows sending up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#x27;s balance.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Peer</td>
+                            <td class="field-type"><a href="../../types/InputPeer.html">InputPeer</a></td>
+                            <td>Destination</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ReplyTo</td>
+                            <td class="field-type">flags .0? InputReplyTo</td>
+                            <td>If set, indicates that the message should be sent in reply to the specified message or story.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Media</td>
+                            <td class="field-type"><a href="../../types/InputMedia.html">InputMedia</a></td>
+                            <td>Attached media</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Message</td>
+                            <td class="field-type">string</td>
+                            <td>Caption</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">RandomId</td>
+                            <td class="field-type">long</td>
+                            <td>Random ID to avoid resending the same message</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ReplyMarkup</td>
+                            <td class="field-type">flags .2? ReplyMarkup</td>
+                            <td>Reply markup for bot keyboards</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Entities</td>
+                            <td class="field-type">flags .3? Vector &lt; MessageEntity &gt;</td>
+                            <td>Message entities for styled text</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ScheduleDate</td>
+                            <td class="field-type">flags .10? int</td>
+                            <td>Scheduled message date for scheduled messages</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ScheduleRepeatPeriod</td>
+                            <td class="field-type">flags .24? int</td>
+                            <td>Once sent, this message will be automatically re-scheduled to be re-sent again this many seconds in the future, see here for more info on repeating scheduled messages.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">SendAs</td>
+                            <td class="field-type">flags .13? InputPeer</td>
+                            <td>Send this message as the specified peer</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">QuickReplyShortcut</td>
+                            <td class="field-type">flags .17? InputQuickReplyShortcut</td>
+                            <td>Add the message to the specified quick reply shortcut, instead.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Effect</td>
+                            <td class="field-type">flags .18? long</td>
+                            <td>Specifies a message effect to use for the message.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">AllowPaidStars</td>
+                            <td class="field-type">flags .21? long</td>
+                            <td>For paid messages, specifies the amount of Telegram Stars the user has agreed to pay in order to send the message.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">SuggestedPost</td>
+                            <td class="field-type">flags .22? SuggestedPost</td>
+                            <td>Used to suggest a post to a channel, see here for more info on the full flow.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../../types/Updates.html">Updates</a></span>
+        </div>
+
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// MessagesSendMedia - using Params <span class="keyword">struct</span></span>
+result, err := <span class="package">client.</span><span class="function">MessagesSendMedia</span>(&amp;<span class="package">tg.</span><span class="type">MessagesSendMediaParams</span>{
+    Silent: <span class="keyword">nil</span>,
+    Background: <span class="keyword">nil</span>,
+    ClearDraft: <span class="keyword">nil</span>,
+    Noforwards: <span class="keyword">nil</span>,
+    UpdateStickersetsOrder: <span class="keyword">nil</span>,
+    InvertMedia: <span class="keyword">nil</span>,
+    AllowPaidFloodskip: <span class="keyword">nil</span>,
+    Peer: &amp;<span class="package">tg.</span><span class="type">InputPeerUser</span>{UserID: int64(<span class="number">777000</span>)},
+    <span class="comment">// ...</span>
+})
+<span class="keyword">if</span> err != <span class="keyword">nil</span> {
+    <span class="comment">// handle error</span>
+}
+<span class="comment">// result is *<span class="package">tg.</span><span class="type">Updates</span></span></pre>
+        </div>
+
+        <div class="section">
+            <h2>Possible Errors</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="error-code">406</td>
+                            <td class="error-type">ALLOW_PAYMENT_REQUIRED</td>
+                            <td>This peer only accepts paid messages: this error is only emitted for older layers without paid messages support, so the client must be updated in order to use paid messages..</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">ALLOW_PAYMENT_REQUIRED_%d</td>
+                            <td>This peer charges &lt;number&gt; Telegram Stars per message, but the allow_paid_stars was not set or its value is smaller than &lt;number&gt;.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">BOT_GAMES_DISABLED</td>
+                            <td>Games can&#x27;t be sent to channels.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">BOT_PAYMENTS_DISABLED</td>
+                            <td>Please enable bot payments in botfather before calling this method.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">BROADCAST_PUBLIC_VOTERS_FORBIDDEN</td>
+                            <td>You can&#x27;t forward polls with public voters.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">BUSINESS_CONNECTION_INVALID</td>
+                            <td>The connection_id passed to the wrapping invoke With Business Connection call is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">BUSINESS_PEER_INVALID</td>
+                            <td>Messages can&#x27;t be set to the specified peer through the current business connection.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">BUSINESS_PEER_USAGE_MISSING</td>
+                            <td>You cannot send a message to a user through a business connection if the user hasn&#x27;t recently contacted us.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">BUTTON_COPY_TEXT_INVALID</td>
+                            <td>The specified keyboard Button Copy. copy_text is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">BUTTON_DATA_INVALID</td>
+                            <td>The data of one or more of the buttons you provided is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">BUTTON_POS_INVALID</td>
+                            <td>The position of one of the keyboard buttons is invalid (i. e. a Game or Pay button not in the first position, and so on.).</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">BUTTON_TYPE_INVALID</td>
+                            <td>The type of one or more of the buttons you provided is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">BUTTON_URL_INVALID</td>
+                            <td>Button URL invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">BUTTON_USER_PRIVACY_RESTRICTED</td>
+                            <td>The privacy setting of the user specified in a input Keyboard Button User Profile button do not allow creating such a button.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">CHANNEL_INVALID</td>
+                            <td>The provided channel is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">406</td>
+                            <td class="error-type">CHANNEL_PRIVATE</td>
+                            <td>You haven&#x27;t joined this channel/supergroup.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">CHAT_ADMIN_REQUIRED</td>
+                            <td>You must be an admin in this chat to do this.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">CHAT_FORWARDS_RESTRICTED</td>
+                            <td>You can&#x27;t forward messages from a protected chat.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">CHAT_GUEST_SEND_FORBIDDEN</td>
+                            <td>You join the discussion group before commenting, see here for more info.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">CHAT_RESTRICTED</td>
+                            <td>You can&#x27;t send messages in this chat, you were restricted.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">CHAT_SEND_AUDIOS_FORBIDDEN</td>
+                            <td>You can&#x27;t send audio messages in this chat.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">CHAT_SEND_DOCS_FORBIDDEN</td>
+                            <td>You can&#x27;t send documents in this chat.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">CHAT_SEND_GIFS_FORBIDDEN</td>
+                            <td>You can&#x27;t send gifs in this chat.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">CHAT_SEND_MEDIA_FORBIDDEN</td>
+                            <td>You can&#x27;t send media in this chat.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">CHAT_SEND_PHOTOS_FORBIDDEN</td>
+                            <td>You can&#x27;t send photos in this chat.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">CHAT_SEND_PLAIN_FORBIDDEN</td>
+                            <td>You can&#x27;t send non-media (text) messages in this chat.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">CHAT_SEND_POLL_FORBIDDEN</td>
+                            <td>You can&#x27;t send polls in this chat.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">CHAT_SEND_ROUNDVIDEOS_FORBIDDEN</td>
+                            <td>You can&#x27;t send round videos to this chat.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">CHAT_SEND_STICKERS_FORBIDDEN</td>
+                            <td>You can&#x27;t send stickers in this chat.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">CHAT_SEND_VIDEOS_FORBIDDEN</td>
+                            <td>You can&#x27;t send videos in this chat.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">CHAT_SEND_VOICES_FORBIDDEN</td>
+                            <td>You can&#x27;t send voice recordings in this chat.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">CHAT_WRITE_FORBIDDEN</td>
+                            <td>You can&#x27;t write in this chat.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">CURRENCY_TOTAL_AMOUNT_INVALID</td>
+                            <td>The total amount of all prices is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">DOCUMENT_INVALID</td>
+                            <td>The specified document is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">EFFECT_CHAT_INVALID</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">EFFECT_ID_INVALID</td>
+                            <td>The specified effect ID is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">EMOTICON_INVALID</td>
+                            <td>The specified emoji is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">ENTITY_BOUNDS_INVALID</td>
+                            <td>A specified entity offset or length is invalid, see here for info on how to properly compute the entity offset/length.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">EXTENDED_MEDIA_AMOUNT_INVALID</td>
+                            <td>The specified stars_amount of the passed input Media Paid Media is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">EXTENDED_MEDIA_EMPTY</td>
+                            <td>The specified extended media is empty.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">EXTENDED_MEDIA_INVALID</td>
+                            <td>The specified paid media is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">EXTENDED_MEDIA_PEER_INVALID</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">EXTERNAL_URL_INVALID</td>
+                            <td>External URL invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">FILE_PARTS_INVALID</td>
+                            <td>The number of file parts is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">FILE_PART_LENGTH_INVALID</td>
+                            <td>The length of a file part is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">FILE_REFERENCE_EMPTY</td>
+                            <td>An empty file reference was specified.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">FILE_REFERENCE_EXPIRED</td>
+                            <td>File reference expired, it must be refetched as described in the documentation.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">GAME_BOT_INVALID</td>
+                            <td>Bots can&#x27;t send another bot&#x27;s game.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">IMAGE_PROCESS_FAILED</td>
+                            <td>Failure while processing image.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">INPUT_FILE_INVALID</td>
+                            <td>The specified Input File is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">INPUT_USER_DEACTIVATED</td>
+                            <td>The specified user was deleted.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">INVOICE_PAYLOAD_INVALID</td>
+                            <td>The specified invoice payload is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">MD5_CHECKSUM_INVALID</td>
+                            <td>The MD 5 checksums do not match.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">MEDIA_CAPTION_TOO_LONG</td>
+                            <td>The caption is too long.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">MEDIA_EMPTY</td>
+                            <td>The provided media object is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">MEDIA_INVALID</td>
+                            <td>Media invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">MESSAGE_EMPTY</td>
+                            <td>The provided message is empty.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">MESSAGE_TOO_LONG</td>
+                            <td>The provided message is too long.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">MSG_ID_INVALID</td>
+                            <td>Invalid message ID provided.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">PAYMENT_PROVIDER_INVALID</td>
+                            <td>The specified payment provider is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">406</td>
+                            <td class="error-type">PEER_ID_INVALID</td>
+                            <td>The provided peer id is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">PHOTO_EXT_INVALID</td>
+                            <td>The extension of the photo is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">PHOTO_INVALID_DIMENSIONS</td>
+                            <td>The photo dimensions are invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">PHOTO_SAVE_FILE_INVALID</td>
+                            <td>Internal issues, try again later.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">POLL_ANSWERS_INVALID</td>
+                            <td>Invalid poll answers were provided.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">POLL_ANSWER_INVALID</td>
+                            <td>One of the poll answers is not acceptable.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">POLL_OPTION_DUPLICATE</td>
+                            <td>Duplicate poll options provided.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">POLL_OPTION_INVALID</td>
+                            <td>Invalid poll option provided.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">POLL_QUESTION_INVALID</td>
+                            <td>One of the poll questions is not acceptable.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">PREMIUM_ACCOUNT_REQUIRED</td>
+                            <td>A premium account is required to execute this action.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">PRIVACY_PREMIUM_REQUIRED</td>
+                            <td>You need a Telegram Premium subscription to send a message to this user.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">QUICK_REPLIES_BOT_NOT_ALLOWED</td>
+                            <td>Quick replies cannot be used by bots.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">QUICK_REPLIES_TOO_MUCH</td>
+                            <td>A maximum of app Config. quick_replies_limit shortcuts may be created, the limit was reached.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">QUIZ_CORRECT_ANSWERS_EMPTY</td>
+                            <td>No correct quiz answer was specified.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">QUIZ_CORRECT_ANSWERS_TOO_MUCH</td>
+                            <td>You specified too many correct answers in a quiz, quizzes can only have one right answer!</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">QUIZ_CORRECT_ANSWER_INVALID</td>
+                            <td>An invalid value was provided to the correct_answers field.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">QUIZ_MULTIPLE_INVALID</td>
+                            <td>Quizzes can&#x27;t have the multiple_choice flag set!</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">500</td>
+                            <td class="error-type">RANDOM_ID_DUPLICATE</td>
+                            <td>You provided a random ID that was already used.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">REPLY_MARKUP_BUY_EMPTY</td>
+                            <td>Reply markup for buy button empty.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">REPLY_MARKUP_GAME_EMPTY</td>
+                            <td>A game message is being edited, but the newly provided keyboard doesn&#x27;t have a keyboard Button Game button.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">REPLY_MARKUP_INVALID</td>
+                            <td>The provided reply markup is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">REPLY_MARKUP_TOO_LONG</td>
+                            <td>The specified reply_markup is too long.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">REPLY_MESSAGES_TOO_MUCH</td>
+                            <td>Each shortcut can contain a maximum of app Config. quick_reply_messages_limit messages, the limit was reached.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">REPLY_MESSAGE_ID_INVALID</td>
+                            <td>The specified reply-to message ID is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">REPLY_TO_MONOFORUM_PEER_INVALID</td>
+                            <td>The specified input Reply To Mono Forum. monoforum_peer_id is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">SCHEDULE_BOT_NOT_ALLOWED</td>
+                            <td>Bots cannot schedule messages.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">SCHEDULE_DATE_TOO_LATE</td>
+                            <td>You can&#x27;t schedule a message this far in the future.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">SCHEDULE_TOO_MUCH</td>
+                            <td>There are too many scheduled messages.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">SEND_AS_PEER_INVALID</td>
+                            <td>You can&#x27;t send messages as the specified peer.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">420</td>
+                            <td class="error-type">SLOWMODE_WAIT_%d</td>
+                            <td>Slowmode is enabled in this chat: wait &lt;number&gt; seconds before sending another message to this chat.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">STARS_INVOICE_INVALID</td>
+                            <td>The specified Telegram Star invoice is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">STORY_ID_INVALID</td>
+                            <td>The specified story ID is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">SUBSCRIPTION_EXPORT_MISSING</td>
+                            <td>You cannot send a bot subscription invoice directly, you may only create invoice links using payments. export Invoice.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">SUGGESTED_POST_PEER_INVALID</td>
+                            <td>You cannot send suggested posts to non- monoforum peers.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">TERMS_URL_INVALID</td>
+                            <td>The specified invoice. terms_url is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">TODO_ITEMS_EMPTY</td>
+                            <td>A checklist was specified, but no checklist items were passed.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">TODO_ITEMS_TOO_MUCH</td>
+                            <td>You specified too many todo list items.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">TODO_ITEM_DUPLICATE</td>
+                            <td>Duplicate checklist items detected.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">406</td>
+                            <td class="error-type">TOPIC_CLOSED</td>
+                            <td>This topic was closed, you can&#x27;t send messages to it anymore.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">406</td>
+                            <td class="error-type">TOPIC_DELETED</td>
+                            <td>The specified topic was deleted.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">TTL_MEDIA_INVALID</td>
+                            <td>Invalid media Time To Live was provided.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">USER_BANNED_IN_CHANNEL</td>
+                            <td>You&#x27;re banned from sending messages in supergroups/channels.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">USER_BOT_TO_BOT_DISABLED</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">USER_IS_BLOCKED</td>
+                            <td>You were blocked by this user.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">USER_IS_BOT</td>
+                            <td>Bots can&#x27;t send messages to other bots.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">VIDEO_CONTENT_TYPE_INVALID</td>
+                            <td>The video&#x27;s content type is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">VOICE_MESSAGES_FORBIDDEN</td>
+                            <td>This user&#x27;s privacy settings forbid you from sending voice messages.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">WEBDOCUMENT_MIME_INVALID</td>
+                            <td>Invalid webdocument mime type provided.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">WEBPAGE_CURL_FAILED</td>
+                            <td>Failure while fetching the webpage with c URL.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">WEBPAGE_MEDIA_EMPTY</td>
+                            <td>Webpage media empty.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">WEBPAGE_NOT_FOUND</td>
+                            <td>A preview for the specified webpage url could not be generated.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">WEBPAGE_URL_INVALID</td>
+                            <td>The specified webpage url is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">YOU_BLOCKED_USER</td>
+                            <td>You blocked this user.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        </article>
+
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

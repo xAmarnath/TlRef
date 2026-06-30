@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>messageActionStarGift - Gogram TL Reference</title>
+    <meta name="description" content="You received a gift, see here for more info.">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="messageActionStarGift - Gogram TL Reference">
+    <meta property="og:description" content="You received a gift, see here for more info.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="../types.html">Types</a>
+                    <a href="../constructors.html">Constructors</a>
+                    <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "..";
+    </script>
+    <script src="../js/search_index.js"></script>
+    <script src="../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> MessageActionStarGift</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>MessageActionStarGift</h1>
+            <p class="description">You received a gift, see here for more info.</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-constructor">constructor</span>
+        </div>
+        <div class="code-block">messageActionStarGift#ea2c31d3 flags:# name_hidden:flags.0?true saved:flags.2?true converted:flags.3?true upgraded:flags.5?true refunded:flags.9?true can_upgrade:flags.10?true prepaid_upgrade:flags.13?true upgrade_separate:flags.16?true auction_acquired:flags.17?true gift:StarGift message:flags.1?TextWithEntities convert_stars:flags.4?long upgrade_msg_id:flags.5?int upgrade_stars:flags.8?long from_id:flags.11?Peer peer:flags.12?Peer saved_id:flags.12?long prepaid_upgrade_hash:flags.14?string gift_msg_id:flags.15?int to_id:flags.18?Peer gift_num:flags.19?int = MessageAction;</div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="field-name">NameHidden</td>
+                            <td class="field-type">flags .0? true</td>
+                            <td>If set, the name of the sender of the gift will be hidden if the destination user decides to display the gift on their profile</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Saved</td>
+                            <td class="field-type">flags .2? true</td>
+                            <td>Whether this gift was added to the destination user&#x27;s profile (may be toggled using payments. save Star Gift and fetched using payments. get Saved Star Gifts )</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Converted</td>
+                            <td class="field-type">flags .3? true</td>
+                            <td>Whether this gift was converted to Telegram Stars and cannot be displayed on the profile anymore.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Upgraded</td>
+                            <td class="field-type">flags .5? true</td>
+                            <td>This gift was upgraded to a collectible gift.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Refunded</td>
+                            <td class="field-type">flags .9? true</td>
+                            <td>This gift is not available anymore because a request to refund the payment related to this gift was made, and the money was returned.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">CanUpgrade</td>
+                            <td class="field-type">flags .10? true</td>
+                            <td>If set, this gift can be upgraded to a collectible gift; can only be set for the receiver of a gift.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PrepaidUpgrade</td>
+                            <td class="field-type">flags .13? true</td>
+                            <td>The sender has already pre-paid for the upgrade of this gift to a collectible gift.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">UpgradeSeparate</td>
+                            <td class="field-type">flags .16? true</td>
+                            <td>This service message is the notification of a separate pre-payment for the upgrade of a gift we own.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">AuctionAcquired</td>
+                            <td class="field-type">flags .17? true</td>
+                            <td>If set, this gift was acquired in a collectible gifts auction.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Gift</td>
+                            <td class="field-type"><a href="../types/StarGift.html">StarGift</a></td>
+                            <td>Info about the gift</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Message</td>
+                            <td class="field-type">flags .1? TextWithEntities</td>
+                            <td>Additional message from the sender of the gift</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ConvertStars</td>
+                            <td class="field-type">flags .4? long</td>
+                            <td>The receiver of this gift may convert it to this many Telegram Stars, instead of displaying it on their profile page. convert_stars will be equal to stars only if the gift was bought using recently bought Telegram Stars, otherwise it will be less than stars.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">UpgradeMsgId</td>
+                            <td class="field-type">flags .5? int</td>
+                            <td>If set, this gift was upgraded to a collectible gift, and the corresponding message Action Star Gift Unique is available at the specified message ID.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">UpgradeStars</td>
+                            <td class="field-type">flags .8? long</td>
+                            <td>The number of Telegram Stars the user can pay to convert the gift into a collectible gift.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">FromId</td>
+                            <td class="field-type">flags .11? Peer</td>
+                            <td>Sender of the gift (unset for anonymous gifts).</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Peer</td>
+                            <td class="field-type">flags .12? Peer</td>
+                            <td>Receiver of the gift.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">SavedId</td>
+                            <td class="field-type">flags .12? long</td>
+                            <td>For channel gifts, ID to use in input Saved Star Gift Chat constructors.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PrepaidUpgradeHash</td>
+                            <td class="field-type">flags .14? string</td>
+                            <td>Hash to prepay for a gift upgrade separately.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">GiftMsgId</td>
+                            <td class="field-type">flags .15? int</td>
+                            <td>For separate upgrades, the identifier of the message with the gift whose upgrade was prepaid (only valid for the receiver of the service message).</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ToId</td>
+                            <td class="field-type">flags .18? Peer</td>
+                            <td>For gifts acquired in an auction (i. e. when auction_acquired is set), the peer the gift was assigned to; only present if the target peer is different from the bidder, in which case it will only be present to the message Action Star Gift sent to the bidder, not to the message Action Star Gift sent to the target peer.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">GiftNum</td>
+                            <td class="field-type">flags .19? int</td>
+                            <td>For gifts acquired in an auction, the collectible number of the won collectible gift; this field is disjoint from auction_acquired because only auction collectibles won before this field was introduced in the API will not have this flag set.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/MessageAction.html">MessageAction</a></span>
+        </div>
+
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// Creating MessageActionStarGift constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">MessageActionStarGift</span>{
+    NameHidden: <span class="keyword">nil</span>,
+    Saved: <span class="keyword">nil</span>,
+    Converted: <span class="keyword">nil</span>,
+    Upgraded: <span class="keyword">nil</span>,
+    Refunded: <span class="keyword">nil</span>,
+    CanUpgrade: <span class="keyword">nil</span>,
+    <span class="comment">// ... more required fields</span>
+}</pre>
+        </div>
+
+        </article>
+
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

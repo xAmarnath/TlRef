@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>phone.groupCallStars - Gogram TL Reference</title>
-    <meta name="description" content="Star donations in group call">
+    <meta name="description" content="Contains a live story&#x27;s total donations and top donors, see paid live story donations.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="phone.groupCallStars - Gogram TL Reference">
-    <meta property="og:description" content="Star donations in group call">
+    <meta property="og:description" content="Contains a live story&#x27;s total donations and top donors, see paid live story donations.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -38,6 +38,7 @@
                     <a href="../../types.html">Types</a>
                     <a href="../../constructors.html">Constructors</a>
                     <a href="../../methods.html">Methods</a>
+                    <a href="../../e2e.html">E2E</a>
                 </nav>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -69,17 +70,19 @@
         <div class="breadcrumb"><a href="../../index.html">Home</a> <span>›</span> <a href="../../constructors.html">Constructors</a> <span>›</span> Phone <span>›</span> GroupCallStars</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
         </div>
         
         <header class="page-header">
-            <h1>PhoneGroupCallStars</h1>
-            <p class="description">Star donations in group call</p>
+            <h1>PhoneGroupCallStarsObj</h1>
+            <p class="description">Contains a live story&#x27;s total donations and top donors, see paid live story donations.</p>
         </header>
         
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
+        <div class="code-block">phone.groupCallStars#9d1dbd26 total_stars:long top_donors:Vector&lt;GroupCallDonor&gt; chats:Vector&lt;Chat&gt; users:Vector&lt;User&gt; = phone.GroupCallStars;</div>
+
         <div class="section">
             <h2>Parameters</h2>
             <div class="table-container">
@@ -96,25 +99,25 @@
                         <tr>
                             <td class="field-name">TotalStars</td>
                             <td class="field-type">long</td>
-                            <td>Total stars</td>
+                            <td>Total Stars donated to the live story</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">TopDonors</td>
-                            <td class="field-type">Vector&lt;<a href="../../constructors/GroupCallDonor.html">GroupCallDonor</a>&gt;</td>
-                            <td>Top star donors</td>
+                            <td class="field-type"><a href="../../constructors/Vector < GroupCallDonor >.html">Vector &lt; GroupCallDonor &gt;</a></td>
+                            <td>Top donors</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Chats</td>
-                            <td class="field-type">Vector&lt;<a href="../../constructors/Chat.html">Chat</a>&gt;</td>
-                            <td>Associated chats</td>
+                            <td class="field-type"><a href="../../constructors/Vector < Chat >.html">Vector &lt; Chat &gt;</a></td>
+                            <td>Chats mentioned in top_donors</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Users</td>
-                            <td class="field-type">Vector&lt;<a href="../../constructors/User.html">User</a>&gt;</td>
-                            <td>Donors</td>
+                            <td class="field-type"><a href="../../constructors/Vector < User >.html">Vector &lt; User &gt;</a></td>
+                            <td>Users mentioned in top_donors</td>
                         </tr>
 
                     </tbody>
@@ -122,14 +125,19 @@
             </div>
         </div>
 
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../../types/phone.GroupCallStars.html">phone.GroupCallStars</a></span>
+        </div>
+
         <div class="example-section">
             <h2>Gogram Example</h2>
-            <pre class="example-code"><span class="comment">// Creating PhoneGroupCallStars constructor</span>
-obj := &amp;<span class="package">tg.</span><span class="type">PhoneGroupCallStars</span>{
+            <pre class="example-code"><span class="comment">// Creating PhoneGroupCallStarsObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">PhoneGroupCallStarsObj</span>{
     TotalStars: int64(<span class="number">1234567890</span>),
-    TopDonors: []<span class="package">tg.</span><span class="type">GroupCallDonor</span>{&amp;<span class="package">tg.</span><span class="type">GroupCallDonor</span>{}},
-    Chats: []<span class="package">tg.</span><span class="type">Chat</span>{&amp;<span class="package">tg.</span><span class="type">Chat</span>{}},
-    Users: []<span class="package">tg.</span><span class="type">User</span>{&amp;<span class="package">tg.</span><span class="type">User</span>{}},
+    TopDonors: &amp;<span class="package">tg.</span><span class="type">VectorGroupCallDonor</span>{},
+    Chats: &amp;<span class="package">tg.</span><span class="type">VectorChat</span>{},
+    Users: &amp;<span class="package">tg.</span><span class="type">VectorUser</span>{},
 }</pre>
         </div>
 

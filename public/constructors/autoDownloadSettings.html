@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>autoDownloadSettings - Gogram TL Reference</title>
+    <meta name="description" content="Autodownload settings">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="autoDownloadSettings - Gogram TL Reference">
+    <meta property="og:description" content="Autodownload settings">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="../types.html">Types</a>
+                    <a href="../constructors.html">Constructors</a>
+                    <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "..";
+    </script>
+    <script src="../js/search_index.js"></script>
+    <script src="../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> AutoDownloadSettingsObj</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>AutoDownloadSettingsObj</h1>
+            <p class="description">Autodownload settings</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-constructor">constructor</span>
+        </div>
+        <div class="code-block">autoDownloadSettings#baa57628 flags:# disabled:flags.0?true video_preload_large:flags.1?true audio_preload_next:flags.2?true phonecalls_less_data:flags.3?true stories_preload:flags.4?true photo_size_max:int video_size_max:long file_size_max:long video_upload_maxbitrate:int small_queue_active_operations_max:int large_queue_active_operations_max:int = AutoDownloadSettings;</div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="field-name">Disabled</td>
+                            <td class="field-type">flags .0? true</td>
+                            <td>Disable automatic media downloads?</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">VideoPreloadLarge</td>
+                            <td class="field-type">flags .1? true</td>
+                            <td>Whether to preload the first seconds of videos larger than the specified limit</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">AudioPreloadNext</td>
+                            <td class="field-type">flags .2? true</td>
+                            <td>Whether to preload the next audio track when you&#x27;re listening to music</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PhonecallsLessData</td>
+                            <td class="field-type">flags .3? true</td>
+                            <td>Whether to enable data saving mode in phone calls</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">StoriesPreload</td>
+                            <td class="field-type">flags .4? true</td>
+                            <td>Whether to preload stories; in particular, the first document Attribute Video. preload_prefix_size bytes of story videos should be preloaded.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PhotoSizeMax</td>
+                            <td class="field-type">int</td>
+                            <td>Maximum size of photos to preload</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">VideoSizeMax</td>
+                            <td class="field-type">long</td>
+                            <td>Maximum size of videos to preload</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">FileSizeMax</td>
+                            <td class="field-type">long</td>
+                            <td>Maximum size of other files to preload</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">VideoUploadMaxbitrate</td>
+                            <td class="field-type">int</td>
+                            <td>Maximum suggested bitrate for uploading videos</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">SmallQueueActiveOperationsMax</td>
+                            <td class="field-type">int</td>
+                            <td>A limit, specifying the maximum number of files that should be downloaded in parallel from the same DC, for files smaller than 20 MB.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">LargeQueueActiveOperationsMax</td>
+                            <td class="field-type">int</td>
+                            <td>A limit, specifying the maximum number of files that should be downloaded in parallel from the same DC, for files bigger than 20 MB.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/AutoDownloadSettings.html">AutoDownloadSettings</a></span>
+        </div>
+
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// Creating AutoDownloadSettingsObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">AutoDownloadSettingsObj</span>{
+    Disabled: <span class="keyword">nil</span>,
+    VideoPreloadLarge: <span class="keyword">nil</span>,
+    AudioPreloadNext: <span class="keyword">nil</span>,
+    PhonecallsLessData: <span class="keyword">nil</span>,
+    StoriesPreload: <span class="keyword">nil</span>,
+    PhotoSizeMax: <span class="number">42</span>,
+    <span class="comment">// ... more required fields</span>
+}</pre>
+        </div>
+
+        </article>
+
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

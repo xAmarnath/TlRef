@@ -20,3 +20,9 @@ go_wasm.js
 
 # guard: legacy bloated output dir
 public_new/
+
+# scraper cache + intermediate logs
+.cache/
+scrape.log
+e2e_schema.json
+schema.tl

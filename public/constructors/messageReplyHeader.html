@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>messageReplyHeader - Gogram TL Reference</title>
+    <meta name="description" content="Message replies and thread information">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="messageReplyHeader - Gogram TL Reference">
+    <meta property="og:description" content="Message replies and thread information">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="../types.html">Types</a>
+                    <a href="../constructors.html">Constructors</a>
+                    <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "..";
+    </script>
+    <script src="../js/search_index.js"></script>
+    <script src="../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> MessageReplyHeaderObj</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>MessageReplyHeaderObj</h1>
+            <p class="description">Message replies and thread information</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-constructor">constructor</span>
+        </div>
+        <div class="code-block">messageReplyHeader#6917560b flags:# reply_to_scheduled:flags.2?true forum_topic:flags.3?true quote:flags.9?true reply_to_msg_id:flags.4?int reply_to_peer_id:flags.0?Peer reply_from:flags.5?MessageFwdHeader reply_media:flags.8?MessageMedia reply_to_top_id:flags.1?int quote_text:flags.6?string quote_entities:flags.7?Vector&lt;MessageEntity&gt; quote_offset:flags.10?int todo_item_id:flags.11?int = MessageReplyHeader;</div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="field-name">ReplyToScheduled</td>
+                            <td class="field-type">flags .2? true</td>
+                            <td>This is a reply to a scheduled message.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ForumTopic</td>
+                            <td class="field-type">flags .3? true</td>
+                            <td>Whether this message was sent in a forum topic (except for the General topic).</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Quote</td>
+                            <td class="field-type">flags .9? true</td>
+                            <td>Whether this message is quoting a part of another message.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ReplyToMsgId</td>
+                            <td class="field-type">flags .4? int</td>
+                            <td>ID of message to which this message is replying</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ReplyToPeerId</td>
+                            <td class="field-type">flags .0? Peer</td>
+                            <td>For replies sent in channel discussion threads of which the current user is not a member, the discussion group ID</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ReplyFrom</td>
+                            <td class="field-type">flags .5? MessageFwdHeader</td>
+                            <td>When replying to a message sent by a certain peer to another chat, contains info about the peer that originally sent the message to that other chat.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ReplyMedia</td>
+                            <td class="field-type">flags .8? MessageMedia</td>
+                            <td>When replying to a media sent by a certain peer to another chat, contains the media of the replied-to message.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ReplyToTopId</td>
+                            <td class="field-type">flags .1? int</td>
+                            <td>ID of the message that started this message thread</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">QuoteText</td>
+                            <td class="field-type">flags .6? string</td>
+                            <td>Used to quote-reply to only a certain section (specified here) of the original message.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">QuoteEntities</td>
+                            <td class="field-type">flags .7? Vector &lt; MessageEntity &gt;</td>
+                            <td>Message entities for styled text from the quote_text field.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">QuoteOffset</td>
+                            <td class="field-type">flags .10? int</td>
+                            <td>Offset of the message quote_text within the original message (in UTF-16 code units ).</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">TodoItemId</td>
+                            <td class="field-type">flags .11? int</td>
+                            <td>Can be set to reply to the specified item of a todo list.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PollOption</td>
+                            <td class="field-type">flags .12? bytes</td>
+                            <td>If the message is a reply to a specific poll answer option, the option bytes of the answer the reply is directed at.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/MessageReplyHeader.html">MessageReplyHeader</a></span>
+        </div>
+
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// Creating MessageReplyHeaderObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">MessageReplyHeaderObj</span>{
+    ReplyToScheduled: <span class="keyword">nil</span>,
+    ForumTopic: <span class="keyword">nil</span>,
+    Quote: <span class="keyword">nil</span>,
+    ReplyToMsgId: <span class="keyword">nil</span>,
+    ReplyToPeerId: <span class="keyword">nil</span>,
+    ReplyFrom: <span class="keyword">nil</span>,
+    <span class="comment">// ... more required fields</span>
+}</pre>
+        </div>
+
+        </article>
+
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

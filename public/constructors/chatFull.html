@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chatFull - Gogram TL Reference</title>
+    <meta name="description" content="Full info about a basic group.">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="chatFull - Gogram TL Reference">
+    <meta property="og:description" content="Full info about a basic group.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="../types.html">Types</a>
+                    <a href="../constructors.html">Constructors</a>
+                    <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "..";
+    </script>
+    <script src="../js/search_index.js"></script>
+    <script src="../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> ChatFullObj</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>ChatFullObj</h1>
+            <p class="description">Full info about a basic group.</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-constructor">constructor</span>
+        </div>
+        <div class="code-block">chatFull#2633421b flags:# can_set_username:flags.7?true has_scheduled:flags.8?true translations_disabled:flags.19?true id:long about:string participants:ChatParticipants chat_photo:flags.2?Photo notify_settings:PeerNotifySettings exported_invite:flags.13?ExportedChatInvite bot_info:flags.3?Vector&lt;BotInfo&gt; pinned_msg_id:flags.6?int folder_id:flags.11?int call:flags.12?InputGroupCall ttl_period:flags.14?int groupcall_default_join_as:flags.15?Peer theme_emoticon:flags.16?string requests_pending:flags.17?int recent_requesters:flags.17?Vector&lt;long&gt; available_reactions:flags.18?ChatReactions reactions_limit:flags.20?int = ChatFull;</div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="field-name">CanSetUsername</td>
+                            <td class="field-type">flags .7? true</td>
+                            <td>Can we change the username of this chat</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">HasScheduled</td>
+                            <td class="field-type">flags .8? true</td>
+                            <td>Whether scheduled messages are available</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">TranslationsDisabled</td>
+                            <td class="field-type">flags .19? true</td>
+                            <td>Whether the real-time chat translation popup should be hidden.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Id</td>
+                            <td class="field-type">long</td>
+                            <td>ID of the chat</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">About</td>
+                            <td class="field-type">string</td>
+                            <td>About string for this chat</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Participants</td>
+                            <td class="field-type"><a href="../types/ChatParticipants.html">ChatParticipants</a></td>
+                            <td>Participant list</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ChatPhoto</td>
+                            <td class="field-type">flags .2? Photo</td>
+                            <td>Chat photo</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">NotifySettings</td>
+                            <td class="field-type"><a href="../types/PeerNotifySettings.html">PeerNotifySettings</a></td>
+                            <td>Notification settings</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ExportedInvite</td>
+                            <td class="field-type">flags .13? ExportedChatInvite</td>
+                            <td>Chat invite</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">BotInfo</td>
+                            <td class="field-type">flags .3? Vector &lt; BotInfo &gt;</td>
+                            <td>Info about bots that are in this chat</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PinnedMsgId</td>
+                            <td class="field-type">flags .6? int</td>
+                            <td>Message ID of the last pinned message</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">FolderId</td>
+                            <td class="field-type">flags .11? int</td>
+                            <td>Peer folder ID, for more info click here</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Call</td>
+                            <td class="field-type">flags .12? InputGroupCall</td>
+                            <td>Active or scheduled video chat associated with this basic group</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">TtlPeriod</td>
+                            <td class="field-type">flags .14? int</td>
+                            <td>Time-To-Live of messages sent by the current user to this chat</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">GroupcallDefaultJoinAs</td>
+                            <td class="field-type">flags .15? Peer</td>
+                            <td>Explicitly saved default peer used to join this group&#x27;s video chat; if absent, the current user is used</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ThemeEmoticon</td>
+                            <td class="field-type">flags .16? string</td>
+                            <td>Emoji representing a specific chat theme</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">RequestsPending</td>
+                            <td class="field-type">flags .17? int</td>
+                            <td>Pending join requests</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">RecentRequesters</td>
+                            <td class="field-type">flags .17? Vector &lt; long &gt;</td>
+                            <td>IDs of users who requested to join recently</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">AvailableReactions</td>
+                            <td class="field-type">flags .18? ChatReactions</td>
+                            <td>Allowed message reactions</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ReactionsLimit</td>
+                            <td class="field-type">flags .20? int</td>
+                            <td>This flag may be used to impose a custom limit of unique reactions (i. e. a customizable version of app Config. reactions_uniq_max ).</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/ChatFull.html">ChatFull</a></span>
+        </div>
+
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// Creating ChatFullObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">ChatFullObj</span>{
+    CanSetUsername: <span class="keyword">nil</span>,
+    HasScheduled: <span class="keyword">nil</span>,
+    TranslationsDisabled: <span class="keyword">nil</span>,
+    Id: int64(<span class="number">1234567890</span>),
+    About: <span class="string">&quot;Hello, World!&quot;</span>,
+    Participants: &amp;<span class="package">tg.</span><span class="type">ChatParticipants</span>{},
+    <span class="comment">// ... more required fields</span>
+}</pre>
+        </div>
+
+        </article>
+
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

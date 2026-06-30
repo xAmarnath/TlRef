@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>starGiftAttributeRarity - Gogram TL Reference</title>
-    <meta name="description" content="Star gift rarity level">
+    <meta name="description" content="Exact rarity value for a collectible gift attribute.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="starGiftAttributeRarity - Gogram TL Reference">
-    <meta property="og:description" content="Star gift rarity level">
+    <meta property="og:description" content="Exact rarity value for a collectible gift attribute.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -38,6 +38,7 @@
                     <a href="../types.html">Types</a>
                     <a href="../constructors.html">Constructors</a>
                     <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
                 </nav>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -66,20 +67,22 @@
 
     <main class="container">
         <article>
-        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> StarGiftAttributeRarity</div>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> StarGiftAttributeRarityObj</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
         </div>
         
         <header class="page-header">
-            <h1>StarGiftAttributeRarity</h1>
-            <p class="description">Star gift rarity level</p>
+            <h1>StarGiftAttributeRarityObj</h1>
+            <p class="description">Exact rarity value for a collectible gift attribute.</p>
         </header>
         
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
+        <div class="code-block">starGiftAttributeRarity#36437737 permille:int = StarGiftAttributeRarity;</div>
+
         <div class="section">
             <h2>Parameters</h2>
             <div class="table-container">
@@ -96,7 +99,7 @@
                         <tr>
                             <td class="field-name">Permille</td>
                             <td class="field-type">int</td>
-                            <td>Rarity in permille</td>
+                            <td>Probability of this attribute, in permille</td>
                         </tr>
 
                     </tbody>
@@ -104,10 +107,15 @@
             </div>
         </div>
 
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/StarGiftAttributeRarity.html">StarGiftAttributeRarity</a></span>
+        </div>
+
         <div class="example-section">
             <h2>Gogram Example</h2>
-            <pre class="example-code"><span class="comment">// Creating StarGiftAttributeRarity constructor</span>
-obj := &amp;<span class="package">tg.</span><span class="type">StarGiftAttributeRarity</span>{
+            <pre class="example-code"><span class="comment">// Creating StarGiftAttributeRarityObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">StarGiftAttributeRarityObj</span>{
     Permille: <span class="number">42</span>,
 }</pre>
         </div>

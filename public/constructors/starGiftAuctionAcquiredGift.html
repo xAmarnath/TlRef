@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>starGiftAuctionAcquiredGift - Gogram TL Reference</title>
-    <meta name="description" content="Gift acquired in auction">
+    <meta name="description" content="Describes a gift that the current user won in an auction.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="starGiftAuctionAcquiredGift - Gogram TL Reference">
-    <meta property="og:description" content="Gift acquired in auction">
+    <meta property="og:description" content="Describes a gift that the current user won in an auction.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -38,6 +38,7 @@
                     <a href="../types.html">Types</a>
                     <a href="../constructors.html">Constructors</a>
                     <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
                 </nav>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -66,20 +67,22 @@
 
     <main class="container">
         <article>
-        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> StarGiftAuctionAcquiredGift</div>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> StarGiftAuctionAcquiredGiftObj</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
         </div>
         
         <header class="page-header">
-            <h1>StarGiftAuctionAcquiredGift</h1>
-            <p class="description">Gift acquired in auction</p>
+            <h1>StarGiftAuctionAcquiredGiftObj</h1>
+            <p class="description">Describes a gift that the current user won in an auction.</p>
         </header>
         
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
+        <div class="code-block">starGiftAuctionAcquiredGift#42b00348 flags:# name_hidden:flags.0?true peer:Peer date:int bid_amount:long round:int pos:int message:flags.1?TextWithEntities gift_num:flags.2?int = StarGiftAuctionAcquiredGift;</div>
+
         <div class="section">
             <h2>Parameters</h2>
             <div class="table-container">
@@ -95,50 +98,50 @@
 
                         <tr>
                             <td class="field-name">NameHidden</td>
-                            <td class="field-type"><a href="../constructors/bool.html">bool</a></td>
-                            <td>Giver name hidden</td>
+                            <td class="field-type">flags .0? true</td>
+                            <td>If set, your name will be hidden if the destination peer decides to display the gift on their profile (they will still see that you sent the gift).</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Peer</td>
-                            <td class="field-type"><a href="../constructors/Peer.html">Peer</a></td>
-                            <td>Gift giver</td>
+                            <td class="field-type"><a href="../types/Peer.html">Peer</a></td>
+                            <td>The peer that received the gift.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Date</td>
                             <td class="field-type">int</td>
-                            <td>Acquisition date</td>
+                            <td>When was the gift obtained.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">BidAmount</td>
                             <td class="field-type">long</td>
-                            <td>Bid amount</td>
+                            <td>The amount in Telegram Stars that was bid in order to obtain the gift.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Round</td>
                             <td class="field-type">int</td>
-                            <td>Auction round</td>
+                            <td>The round number where the gift was obtained.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Pos</td>
                             <td class="field-type">int</td>
-                            <td>Position in bid</td>
+                            <td>The position of the gift in the auction.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Message</td>
-                            <td class="field-type"><a href="../constructors/TextWithEntities.html">TextWithEntities</a></td>
-                            <td>Gift message</td>
+                            <td class="field-type">flags .1? TextWithEntities</td>
+                            <td>Optional message that attached with the gift, passed when making the bid.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">GiftNum</td>
-                            <td class="field-type">int</td>
-                            <td>Gift number</td>
+                            <td class="field-type">flags .2? int</td>
+                            <td>If set, the collectible number of the won gift among all collectibles of the same type. This field is optional because only auction collectibles won before this field was introduced in the API will not have this flag set.</td>
                         </tr>
 
                     </tbody>
@@ -146,10 +149,15 @@
             </div>
         </div>
 
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/StarGiftAuctionAcquiredGift.html">StarGiftAuctionAcquiredGift</a></span>
+        </div>
+
         <div class="example-section">
             <h2>Gogram Example</h2>
-            <pre class="example-code"><span class="comment">// Creating StarGiftAuctionAcquiredGift constructor</span>
-obj := &amp;<span class="package">tg.</span><span class="type">StarGiftAuctionAcquiredGift</span>{
+            <pre class="example-code"><span class="comment">// Creating StarGiftAuctionAcquiredGiftObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">StarGiftAuctionAcquiredGiftObj</span>{
     NameHidden: <span class="keyword">nil</span>,
     Peer: &amp;<span class="package">tg.</span><span class="type">Peer</span>{},
     Date: <span class="number">42</span>,

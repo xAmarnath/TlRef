@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>stories.startLive - Gogram TL Reference</title>
-    <meta name="description" content="Start a live story broadcast">
+    <meta name="description" content="Start a live story, optionally using RTMP livestream mode, see here for the full flow.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="stories.startLive - Gogram TL Reference">
-    <meta property="og:description" content="Start a live story broadcast">
+    <meta property="og:description" content="Start a live story, optionally using RTMP livestream mode, see here for the full flow.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -38,6 +38,7 @@
                     <a href="../../types.html">Types</a>
                     <a href="../../constructors.html">Constructors</a>
                     <a href="../../methods.html">Methods</a>
+                    <a href="../../e2e.html">E2E</a>
                 </nav>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -69,17 +70,20 @@
         <div class="breadcrumb"><a href="../../index.html">Home</a> <span>›</span> <a href="../../methods.html">Methods</a> <span>›</span> Stories <span>›</span> StartLive</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
         </div>
         
         <header class="page-header">
             <h1>StoriesStartLive</h1>
-            <p class="description">Start a live story broadcast</p>
+            <p class="description">Start a live story, optionally using RTMP livestream mode, see here for the full flow.</p>
         </header>
         
         <div class="badges">
             <span class="badge badge-method">method</span>
+            <span class="badge badge-user">Users</span>
         </div>
+        <div class="code-block">stories.startLive#d069ccde flags:# pinned:flags.2?true noforwards:flags.4?true rtmp_stream:flags.5?true peer:InputPeer caption:flags.0?string entities:flags.1?Vector&lt;MessageEntity&gt; privacy_rules:Vector&lt;InputPrivacyRule&gt; random_id:long messages_enabled:flags.6?Bool send_paid_messages_stars:flags.7?long = Updates;</div>
+
         <div class="section">
             <h2>Parameters</h2>
             <div class="table-container">
@@ -94,45 +98,63 @@
                     <tbody>
 
                         <tr>
+                            <td class="field-name">Pinned</td>
+                            <td class="field-type">flags .2? true</td>
+                            <td>Whether to pin the live story on the peer&#x27;s profile</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Noforwards</td>
+                            <td class="field-type">flags .4? true</td>
+                            <td>Whether viewers must be prevented from forwarding or saving the live story</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">RtmpStream</td>
+                            <td class="field-type">flags .5? true</td>
+                            <td>Create the live story in RTMP livestream mode, where one external streamer publishes all audio and video</td>
+                        </tr>
+
+                        <tr>
                             <td class="field-name">Peer</td>
-                            <td class="field-type"><a href="../../constructors/InputPeer.html">InputPeer</a></td>
-                            <td>Peer for story</td>
+                            <td class="field-type"><a href="../../types/InputPeer.html">InputPeer</a></td>
+                            <td>User, supergroup or channel that will own the live story; basic groups cannot post live stories</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Caption</td>
-                            <td class="field-type">string</td>
-                            <td>Optional caption</td>
+                            <td class="field-type">flags .0? string</td>
+                            <td>Live story caption</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Entities</td>
-                            <td class="field-type">Vector&lt;<a href="../../constructors/MessageEntity.html">MessageEntity</a>&gt;</td>
-                            <td>Optional formatting entities</td>
+                            <td class="field-type">flags .1? Vector &lt; MessageEntity &gt;</td>
+                            <td>Message entities for styled text</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">PrivacyRules</td>
-                            <td class="field-type">Vector&lt;<a href="../../constructors/InputPrivacyRule.html">InputPrivacyRule</a>&gt;</td>
-                            <td>Privacy rules</td>
+                            <td class="field-type"><a href="../../constructors/Vector < InputPrivacyRule >.html">Vector &lt; InputPrivacyRule &gt;</a></td>
+                            <td>Privacy rules defining who can view the live story</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">RandomId</td>
                             <td class="field-type">long</td>
-                            <td>Random ID</td>
+                            <td>Client-generated random ID used to prevent duplicate live stories</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">MessagesEnabled</td>
-                            <td class="field-type">Bool</td>
-                            <td>Enable messages</td>
+                            <td class="field-type">flags .6? Bool</td>
+                            <td>Whether the in-call message overlay should be enabled</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">SendPaidMessagesStars</td>
-                            <td class="field-type">long</td>
-                            <td>Paid message cost</td>
+                            <td class="field-type">flags .7? long</td>
+                            <td>Minimum Telegram Stars donation required from users other than the live story owner for each comment; the owner may always comment without donating, and 0 allows free comments for everyone</td>
                         </tr>
 
                     </tbody>
@@ -142,25 +164,69 @@
 
         <div class="result-section">
             <h3>Returns</h3>
-            <span class="result-type"><a href="../../constructors/Updates.html">Updates</a></span>
+            <span class="result-type"><a href="../../types/Updates.html">Updates</a></span>
         </div>
 
         <div class="example-section">
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// StoriesStartLive - using Params <span class="keyword">struct</span></span>
 result, err := <span class="package">client.</span><span class="function">StoriesStartLive</span>(&amp;<span class="package">tg.</span><span class="type">StoriesStartLiveParams</span>{
+    Pinned: <span class="keyword">nil</span>,
+    Noforwards: <span class="keyword">nil</span>,
+    RtmpStream: <span class="keyword">nil</span>,
     Peer: &amp;<span class="package">tg.</span><span class="type">InputPeerUser</span>{UserID: int64(<span class="number">777000</span>)},
     Caption: <span class="string">&quot;Hello, World!&quot;</span>,
-    Entities: []<span class="package">tg.</span><span class="type">MessageEntity</span>{&amp;<span class="package">tg.</span><span class="type">MessageEntityBold</span>{Offset: <span class="number">0</span>, Length: <span class="number">11</span>}},
-    PrivacyRules: []<span class="package">tg.</span><span class="type">InputPrivacyRule</span>{&amp;<span class="package">tg.</span><span class="type">InputPrivacyValueAllowAll</span>{}},
+    Entities: <span class="keyword">nil</span>,
+    PrivacyRules: &amp;<span class="package">tg.</span><span class="type">VectorInputPrivacyRule</span>{},
     RandomId: int64(<span class="number">1234567890</span>),
-    MessagesEnabled: <span class="keyword">true</span>,
-    SendPaidMessagesStars: int64(<span class="number">1234567890</span>),
+    <span class="comment">// ...</span>
 })
 <span class="keyword">if</span> err != <span class="keyword">nil</span> {
     <span class="comment">// handle error</span>
 }
 <span class="comment">// result is *<span class="package">tg.</span><span class="type">Updates</span></span></pre>
+        </div>
+
+        <div class="section">
+            <h2>Possible Errors</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">CHANNEL_MONOFORUM_UNSUPPORTED</td>
+                            <td>Monoforums do not support this feature.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">CHAT_ADMIN_REQUIRED</td>
+                            <td>You must be an admin in this chat to do this.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">PEER_ID_INVALID</td>
+                            <td>The provided peer id is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">STORY_LIVE_ALREADY_%d</td>
+                            <td>This peer already has an active live story, and its ID is equal to &lt;number&gt;.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         </article>

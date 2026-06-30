@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>globalPrivacySettings - Gogram TL Reference</title>
+    <meta name="description" content="Global privacy settings">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="globalPrivacySettings - Gogram TL Reference">
+    <meta property="og:description" content="Global privacy settings">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="../types.html">Types</a>
+                    <a href="../constructors.html">Constructors</a>
+                    <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "..";
+    </script>
+    <script src="../js/search_index.js"></script>
+    <script src="../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> GlobalPrivacySettingsObj</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>GlobalPrivacySettingsObj</h1>
+            <p class="description">Global privacy settings</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-constructor">constructor</span>
+        </div>
+        <div class="code-block">globalPrivacySettings#fe41b34f flags:# archive_and_mute_new_noncontact_peers:flags.0?true keep_archived_unmuted:flags.1?true keep_archived_folders:flags.2?true hide_read_marks:flags.3?true new_noncontact_peers_require_premium:flags.4?true display_gifts_button:flags.7?true noncontact_peers_paid_stars:flags.5?long disallowed_gifts:flags.6?DisallowedGiftsSettings = GlobalPrivacySettings;</div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="field-name">ArchiveAndMuteNewNoncontactPeers</td>
+                            <td class="field-type">flags .0? true</td>
+                            <td>Whether to archive and mute new chats from non-contacts</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">KeepArchivedUnmuted</td>
+                            <td class="field-type">flags .1? true</td>
+                            <td>Whether unmuted chats will be kept in the Archive chat list when they get a new message.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">KeepArchivedFolders</td>
+                            <td class="field-type">flags .2? true</td>
+                            <td>Whether unmuted chats that are always included or pinned in a folder, will be kept in the Archive chat list when they get a new message. Ignored if keep_archived_unmuted is set.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">HideReadMarks</td>
+                            <td class="field-type">flags .3? true</td>
+                            <td>If this flag is set, the input Privacy Key Status Timestamp key will also apply to the ability to use messages. get Outbox Read Date on messages sent to us. Meaning, users that cannot see our exact last online date due to the current value of the input Privacy Key Status Timestamp key will receive a 403 USER_PRIVACY_RESTRICTED error when invoking messages. get Outbox Read Date to fetch the exact read date of a message they sent to us. The user Full. read_dates_private flag will be set for users that have this flag enabled.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">NewNoncontactPeersRequirePremium</td>
+                            <td class="field-type">flags .4? true</td>
+                            <td>See here for more info on this flag.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">DisplayGiftsButton</td>
+                            <td class="field-type">flags .7? true</td>
+                            <td>Enables or disables our user Full. display_gifts_button flag: if the user Full. display_gifts_button flag of both us and another user is set, a gift button should always be displayed in the text field in private chats with the other user: once clicked, the gift UI should be displayed, offering the user options to gift Telegram Premium subscriptions or Telegram Gifts.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">NoncontactPeersPaidStars</td>
+                            <td class="field-type">flags .5? long</td>
+                            <td>If configured, specifies the number of stars users must pay us to send us a message, see here for more info on paid messages.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">DisallowedGifts</td>
+                            <td class="field-type">flags .6? DisallowedGiftsSettings</td>
+                            <td>Disallows the reception of specific gift types.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/GlobalPrivacySettings.html">GlobalPrivacySettings</a></span>
+        </div>
+
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// Creating GlobalPrivacySettingsObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">GlobalPrivacySettingsObj</span>{
+    ArchiveAndMuteNewNoncontactPeers: <span class="keyword">nil</span>,
+    KeepArchivedUnmuted: <span class="keyword">nil</span>,
+    KeepArchivedFolders: <span class="keyword">nil</span>,
+    HideReadMarks: <span class="keyword">nil</span>,
+    NewNoncontactPeersRequirePremium: <span class="keyword">nil</span>,
+    DisplayGiftsButton: <span class="keyword">nil</span>,
+    <span class="comment">// ... more required fields</span>
+}</pre>
+        </div>
+
+        </article>
+
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

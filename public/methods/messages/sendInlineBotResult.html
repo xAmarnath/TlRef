@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>messages.sendInlineBotResult - Gogram TL Reference</title>
+    <meta name="description" content="Send a result obtained using messages. get Inline Bot Results.">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="messages.sendInlineBotResult - Gogram TL Reference">
+    <meta property="og:description" content="Send a result obtained using messages. get Inline Bot Results.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../../css/common.css">
+    <script src="../../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../../index.html">Home</a>
+                    <a href="../../types.html">Types</a>
+                    <a href="../../constructors.html">Constructors</a>
+                    <a href="../../methods.html">Methods</a>
+                    <a href="../../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "../..";
+    </script>
+    <script src="../../js/search_index.js"></script>
+    <script src="../../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../../index.html">Home</a> <span>›</span> <a href="../../methods.html">Methods</a> <span>›</span> Messages <span>›</span> SendInlineBotResult</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>MessagesSendInlineBotResult</h1>
+            <p class="description">Send a result obtained using messages. get Inline Bot Results.</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-method">method</span>
+            <span class="badge badge-user">Users</span>
+        </div>
+        <div class="code-block">messages.sendInlineBotResult#c0cf7646 flags:# silent:flags.5?true background:flags.6?true clear_draft:flags.7?true hide_via:flags.11?true peer:InputPeer reply_to:flags.0?InputReplyTo random_id:long query_id:long id:string schedule_date:flags.10?int send_as:flags.13?InputPeer quick_reply_shortcut:flags.17?InputQuickReplyShortcut allow_paid_stars:flags.21?long = Updates;</div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="field-name">Silent</td>
+                            <td class="field-type">flags .5? true</td>
+                            <td>Whether to send the message silently (no notification will be triggered on the other client)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Background</td>
+                            <td class="field-type">flags .6? true</td>
+                            <td>Whether to send the message in background</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ClearDraft</td>
+                            <td class="field-type">flags .7? true</td>
+                            <td>Whether to clear the draft</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">HideVia</td>
+                            <td class="field-type">flags .11? true</td>
+                            <td>Whether to hide the via @botname in the resulting message (only for bot usernames encountered in the config )</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Peer</td>
+                            <td class="field-type"><a href="../../types/InputPeer.html">InputPeer</a></td>
+                            <td>Destination</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ReplyTo</td>
+                            <td class="field-type">flags .0? InputReplyTo</td>
+                            <td>If set, indicates that the message should be sent in reply to the specified message or story.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">RandomId</td>
+                            <td class="field-type">long</td>
+                            <td>Random ID to avoid resending the same query</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">QueryId</td>
+                            <td class="field-type">long</td>
+                            <td>Query ID from messages. get Inline Bot Results</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Id</td>
+                            <td class="field-type">string</td>
+                            <td>Result ID from messages. get Inline Bot Results</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ScheduleDate</td>
+                            <td class="field-type">flags .10? int</td>
+                            <td>Scheduled message date for scheduled messages</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">SendAs</td>
+                            <td class="field-type">flags .13? InputPeer</td>
+                            <td>Send this message as the specified peer</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">QuickReplyShortcut</td>
+                            <td class="field-type">flags .17? InputQuickReplyShortcut</td>
+                            <td>Add the message to the specified quick reply shortcut, instead.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">AllowPaidStars</td>
+                            <td class="field-type">flags .21? long</td>
+                            <td>For paid messages, specifies the amount of Telegram Stars the user has agreed to pay in order to send the message.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../../types/Updates.html">Updates</a></span>
+        </div>
+
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// MessagesSendInlineBotResult - using Params <span class="keyword">struct</span></span>
+result, err := <span class="package">client.</span><span class="function">MessagesSendInlineBotResult</span>(&amp;<span class="package">tg.</span><span class="type">MessagesSendInlineBotResultParams</span>{
+    Silent: <span class="keyword">nil</span>,
+    Background: <span class="keyword">nil</span>,
+    ClearDraft: <span class="keyword">nil</span>,
+    HideVia: <span class="keyword">nil</span>,
+    Peer: &amp;<span class="package">tg.</span><span class="type">InputPeerUser</span>{UserID: int64(<span class="number">777000</span>)},
+    ReplyTo: <span class="keyword">nil</span>,
+    RandomId: int64(<span class="number">1234567890</span>),
+    QueryId: int64(<span class="number">1234567890</span>),
+    <span class="comment">// ...</span>
+})
+<span class="keyword">if</span> err != <span class="keyword">nil</span> {
+    <span class="comment">// handle error</span>
+}
+<span class="comment">// result is *<span class="package">tg.</span><span class="type">Updates</span></span></pre>
+        </div>
+
+        <div class="section">
+            <h2>Possible Errors</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">ALLOW_PAYMENT_REQUIRED_%d</td>
+                            <td>This peer charges &lt;number&gt; Telegram Stars per message, but the allow_paid_stars was not set or its value is smaller than &lt;number&gt;.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">CHANNEL_INVALID</td>
+                            <td>The provided channel is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">CHANNEL_PRIVATE</td>
+                            <td>You haven&#x27;t joined this channel/supergroup.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">CHAT_ADMIN_REQUIRED</td>
+                            <td>You must be an admin in this chat to do this.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">CHAT_GUEST_SEND_FORBIDDEN</td>
+                            <td>You join the discussion group before commenting, see here for more info.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">CHAT_RESTRICTED</td>
+                            <td>You can&#x27;t send messages in this chat, you were restricted.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">CHAT_SEND_AUDIOS_FORBIDDEN</td>
+                            <td>You can&#x27;t send audio messages in this chat.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">CHAT_SEND_GAME_FORBIDDEN</td>
+                            <td>You can&#x27;t send a game to this chat.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">CHAT_SEND_GIFS_FORBIDDEN</td>
+                            <td>You can&#x27;t send gifs in this chat.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">CHAT_SEND_INLINE_FORBIDDEN</td>
+                            <td>You can&#x27;t send inline messages in this group.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">CHAT_SEND_MEDIA_FORBIDDEN</td>
+                            <td>You can&#x27;t send media in this chat.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">CHAT_SEND_PHOTOS_FORBIDDEN</td>
+                            <td>You can&#x27;t send photos in this chat.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">CHAT_SEND_PLAIN_FORBIDDEN</td>
+                            <td>You can&#x27;t send non-media (text) messages in this chat.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">CHAT_SEND_STICKERS_FORBIDDEN</td>
+                            <td>You can&#x27;t send stickers in this chat.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">CHAT_SEND_VOICES_FORBIDDEN</td>
+                            <td>You can&#x27;t send voice recordings in this chat.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">CHAT_WRITE_FORBIDDEN</td>
+                            <td>You can&#x27;t write in this chat.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">ENTITY_BOUNDS_INVALID</td>
+                            <td>A specified entity offset or length is invalid, see here for info on how to properly compute the entity offset/length.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">INLINE_RESULT_EXPIRED</td>
+                            <td>The inline query expired.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">INPUT_USER_DEACTIVATED</td>
+                            <td>The specified user was deleted.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">MEDIA_EMPTY</td>
+                            <td>The provided media object is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">MSG_ID_INVALID</td>
+                            <td>Invalid message ID provided.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">PEER_ID_INVALID</td>
+                            <td>The provided peer id is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">403</td>
+                            <td class="error-type">PRIVACY_PREMIUM_REQUIRED</td>
+                            <td>You need a Telegram Premium subscription to send a message to this user.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">QUERY_ID_EMPTY</td>
+                            <td>The query ID is empty.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">QUICK_REPLIES_TOO_MUCH</td>
+                            <td>A maximum of app Config. quick_replies_limit shortcuts may be created, the limit was reached.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">500</td>
+                            <td class="error-type">RANDOM_ID_DUPLICATE</td>
+                            <td>You provided a random ID that was already used.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">REPLY_MESSAGES_TOO_MUCH</td>
+                            <td>Each shortcut can contain a maximum of app Config. quick_reply_messages_limit messages, the limit was reached.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">RESULT_ID_EMPTY</td>
+                            <td>Result ID empty.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">RESULT_ID_INVALID</td>
+                            <td>One of the specified result IDs is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">SCHEDULE_DATE_TOO_LATE</td>
+                            <td>You can&#x27;t schedule a message this far in the future.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">SCHEDULE_TOO_MUCH</td>
+                            <td>There are too many scheduled messages.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">SEND_AS_PEER_INVALID</td>
+                            <td>You can&#x27;t send messages as the specified peer.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">500</td>
+                            <td class="error-type">SEND_MEDIA_INVALID</td>
+                            <td>The specified media is invalid.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">420</td>
+                            <td class="error-type">SLOWMODE_WAIT_%d</td>
+                            <td>Slowmode is enabled in this chat: wait &lt;number&gt; seconds before sending another message to this chat.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">TOPIC_DELETED</td>
+                            <td>The specified topic was deleted.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">USER_BANNED_IN_CHANNEL</td>
+                            <td>You&#x27;re banned from sending messages in supergroups/channels.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">VOICE_MESSAGES_FORBIDDEN</td>
+                            <td>This user&#x27;s privacy settings forbid you from sending voice messages.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">WEBPAGE_CURL_FAILED</td>
+                            <td>Failure while fetching the webpage with c URL.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">WEBPAGE_MEDIA_EMPTY</td>
+                            <td>Webpage media empty.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="error-code">400</td>
+                            <td class="error-type">YOU_BLOCKED_USER</td>
+                            <td>You blocked this user.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        </article>
+
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

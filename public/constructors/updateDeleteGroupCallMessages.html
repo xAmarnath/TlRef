@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>updateDeleteGroupCallMessages - Gogram TL Reference</title>
-    <meta name="description" content="Messages deleted from group call">
+    <meta name="description" content="Indicates that messages were deleted from the in-call message overlay of a video chat/livestream or live story, including in RTMP mode.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="updateDeleteGroupCallMessages - Gogram TL Reference">
-    <meta property="og:description" content="Messages deleted from group call">
+    <meta property="og:description" content="Indicates that messages were deleted from the in-call message overlay of a video chat/livestream or live story, including in RTMP mode.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -38,6 +38,7 @@
                     <a href="../types.html">Types</a>
                     <a href="../constructors.html">Constructors</a>
                     <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
                 </nav>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -69,17 +70,19 @@
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> UpdateDeleteGroupCallMessages</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
         </div>
         
         <header class="page-header">
             <h1>UpdateDeleteGroupCallMessages</h1>
-            <p class="description">Messages deleted from group call</p>
+            <p class="description">Indicates that messages were deleted from the in-call message overlay of a video chat/livestream or live story, including in RTMP mode.</p>
         </header>
         
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
+        <div class="code-block">updateDeleteGroupCallMessages#3e85e92c call:InputGroupCall messages:Vector&lt;int&gt; = Update;</div>
+
         <div class="section">
             <h2>Parameters</h2>
             <div class="table-container">
@@ -95,14 +98,14 @@
 
                         <tr>
                             <td class="field-name">Call</td>
-                            <td class="field-type"><a href="../constructors/InputGroupCall.html">InputGroupCall</a></td>
-                            <td>Group call</td>
+                            <td class="field-type"><a href="../types/InputGroupCall.html">InputGroupCall</a></td>
+                            <td>Video chat/livestream or live story from which the messages were deleted</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Messages</td>
-                            <td class="field-type">Vector&lt;int&gt;</td>
-                            <td>Deleted message IDs</td>
+                            <td class="field-type"><a href="../constructors/Vector < int >.html">Vector &lt; int &gt;</a></td>
+                            <td>IDs of the deleted in-call messages</td>
                         </tr>
 
                     </tbody>
@@ -110,12 +113,17 @@
             </div>
         </div>
 
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/Update.html">Update</a></span>
+        </div>
+
         <div class="example-section">
             <h2>Gogram Example</h2>
             <pre class="example-code"><span class="comment">// Creating UpdateDeleteGroupCallMessages constructor</span>
 obj := &amp;<span class="package">tg.</span><span class="type">UpdateDeleteGroupCallMessages</span>{
     Call: &amp;<span class="package">tg.</span><span class="type">InputGroupCall</span>{},
-    Messages: []int{},
+    Messages: &amp;<span class="package">tg.</span><span class="type">VectorInt</span>{},
 }</pre>
         </div>
 

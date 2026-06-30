@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>starGiftAuctionStateFinished - Gogram TL Reference</title>
-    <meta name="description" content="Finished star gift auction state">
+    <meta name="description" content="Represents a finished auction.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="starGiftAuctionStateFinished - Gogram TL Reference">
-    <meta property="og:description" content="Finished star gift auction state">
+    <meta property="og:description" content="Represents a finished auction.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -38,6 +38,7 @@
                     <a href="../types.html">Types</a>
                     <a href="../constructors.html">Constructors</a>
                     <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
                 </nav>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -69,17 +70,19 @@
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> StarGiftAuctionStateFinished</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
         </div>
         
         <header class="page-header">
             <h1>StarGiftAuctionStateFinished</h1>
-            <p class="description">Finished star gift auction state</p>
+            <p class="description">Represents a finished auction.</p>
         </header>
         
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
+        <div class="code-block">starGiftAuctionStateFinished#972dabbf flags:# start_date:int end_date:int average_price:long listed_count:flags.0?int fragment_listed_count:flags.1?int fragment_listed_url:flags.1?string = StarGiftAuctionState;</div>
+
         <div class="section">
             <h2>Parameters</h2>
             <div class="table-container">
@@ -96,42 +99,47 @@
                         <tr>
                             <td class="field-name">StartDate</td>
                             <td class="field-type">int</td>
-                            <td>Auction start date</td>
+                            <td>UNIX timestamp indicating when the auction started.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">EndDate</td>
                             <td class="field-type">int</td>
-                            <td>Auction end date</td>
+                            <td>UNIX timestamp indicating when the auction ended.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">AveragePrice</td>
                             <td class="field-type">long</td>
-                            <td>Average price paid</td>
+                            <td>Average price of distributed gifts.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">ListedCount</td>
-                            <td class="field-type">int</td>
-                            <td>Number listed for sale</td>
+                            <td class="field-type">flags .0? int</td>
+                            <td>Number of gifts from the auction currently being resold on Telegram: if set, when the corresponding element is clicked in graphical clients, payments. get Resale Star Gifts should be invoked with the ID of the gift associated to this auction, see here for more info.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">FragmentListedCount</td>
-                            <td class="field-type">int</td>
-                            <td>Fragment listed count</td>
+                            <td class="field-type">flags .1? int</td>
+                            <td>Number of gifts from the auction currently being resold on Fragment.</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">FragmentListedUrl</td>
-                            <td class="field-type">string</td>
-                            <td>Fragment listing URL</td>
+                            <td class="field-type">flags .1? string</td>
+                            <td>Only set if fragment_listed_count is set. If set, when the corresponding element is clicked in graphical clients, this URL should be opened.</td>
                         </tr>
 
                     </tbody>
                 </table>
             </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/StarGiftAuctionState.html">StarGiftAuctionState</a></span>
         </div>
 
         <div class="example-section">
@@ -141,8 +149,8 @@ obj := &amp;<span class="package">tg.</span><span class="type">StarGiftAuctionSt
     StartDate: <span class="number">42</span>,
     EndDate: <span class="number">42</span>,
     AveragePrice: int64(<span class="number">1234567890</span>),
-    ListedCount: <span class="number">42</span>,
-    FragmentListedCount: <span class="number">42</span>,
+    ListedCount: <span class="keyword">nil</span>,
+    FragmentListedCount: <span class="keyword">nil</span>,
     FragmentListedUrl: <span class="string">&quot;Hello, World!&quot;</span>,
 }</pre>
         </div>

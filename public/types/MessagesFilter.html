@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MessagesFilter - Gogram TL Reference</title>
+    <meta name="description" content="Abstract type representing one of 18 possible constructors.">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="MessagesFilter - Gogram TL Reference">
+    <meta property="og:description" content="Abstract type representing one of 18 possible constructors.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="../types.html">Types</a>
+                    <a href="../constructors.html">Constructors</a>
+                    <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "..";
+    </script>
+    <script src="../js/search_index.js"></script>
+    <script src="../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../types.html">Types</a> <span>›</span> MessagesFilter</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>MessagesFilter</h1>
+            <p class="description">Abstract type representing one of 18 possible constructors.</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-type">Type</span>
+        </div>
+        
+        <div class="section">
+            <h2>Available Constructors</h2>
+            <p style="margin-bottom: 16px; color: var(--text-secondary);">
+                In Gogram, this type is represented as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">tg.MessagesFilter</code> interface.
+                Use any of the following constructors:
+            </p>
+            <div class="item-list">
+
+            <a href="../constructors/inputMessagesFilterChatPhotos.html" class="item" data-name="inputmessagesfilterchatphotos inputmessagesfilterchatphotos">
+                <span class="item-name">InputMessagesFilterChatPhotos</span>
+                <span class="item-desc">Return only chat photo changes</span>
+            </a>
+
+            <a href="../constructors/inputMessagesFilterContacts.html" class="item" data-name="inputmessagesfiltercontacts inputmessagesfiltercontacts">
+                <span class="item-name">InputMessagesFilterContacts</span>
+                <span class="item-desc">Return only messages containing contacts</span>
+            </a>
+
+            <a href="../constructors/inputMessagesFilterDocument.html" class="item" data-name="inputmessagesfilterdocument inputmessagesfilterdocument">
+                <span class="item-name">InputMessagesFilterDocument</span>
+                <span class="item-desc">Filter for messages containing documents.</span>
+            </a>
+
+            <a href="../constructors/inputMessagesFilterEmpty.html" class="item" data-name="inputmessagesfilterempty inputmessagesfilterempty">
+                <span class="item-name">InputMessagesFilterEmpty</span>
+                <span class="item-desc">Layer 223 1 – Base layer 2 – New userpic notifications 3 – Send message can trigger link change 4 –</span>
+            </a>
+
+            <a href="../constructors/inputMessagesFilterGeo.html" class="item" data-name="inputmessagesfiltergeo inputmessagesfiltergeo">
+                <span class="item-name">InputMessagesFilterGeo</span>
+                <span class="item-desc">Return only messages containing geolocations</span>
+            </a>
+
+            <a href="../constructors/inputMessagesFilterGif.html" class="item" data-name="inputmessagesfiltergif inputmessagesfiltergif">
+                <span class="item-name">InputMessagesFilterGif</span>
+                <span class="item-desc">Return only messages containing gifs</span>
+            </a>
+
+            <a href="../constructors/inputMessagesFilterMusic.html" class="item" data-name="inputmessagesfiltermusic inputmessagesfiltermusic">
+                <span class="item-name">InputMessagesFilterMusic</span>
+                <span class="item-desc">Return only messages containing audio files</span>
+            </a>
+
+            <a href="../constructors/inputMessagesFilterMyMentions.html" class="item" data-name="inputmessagesfiltermymentions inputmessagesfiltermymentions">
+                <span class="item-name">InputMessagesFilterMyMentions</span>
+                <span class="item-desc">Return only messages where the current user was mentioned.</span>
+            </a>
+
+            <a href="../constructors/inputMessagesFilterPhoneCalls.html" class="item" data-name="inputmessagesfilterphonecalls inputmessagesfilterphonecalls">
+                <span class="item-name">InputMessagesFilterPhoneCalls</span>
+                <span class="item-desc">Return only phone calls</span>
+            </a>
+
+            <a href="../constructors/inputMessagesFilterPhotoVideo.html" class="item" data-name="inputmessagesfilterphotovideo inputmessagesfilterphotovideo">
+                <span class="item-name">InputMessagesFilterPhotoVideo</span>
+                <span class="item-desc">Filter for messages containing photos or videos.</span>
+            </a>
+
+            <a href="../constructors/inputMessagesFilterPhotos.html" class="item" data-name="inputmessagesfilterphotos inputmessagesfilterphotos">
+                <span class="item-name">InputMessagesFilterPhotos</span>
+                <span class="item-desc">Filter for messages containing photos.</span>
+            </a>
+
+            <a href="../constructors/inputMessagesFilterPinned.html" class="item" data-name="inputmessagesfilterpinned inputmessagesfilterpinned">
+                <span class="item-name">InputMessagesFilterPinned</span>
+                <span class="item-desc">Fetch only pinned messages</span>
+            </a>
+
+            <a href="../constructors/inputMessagesFilterPoll.html" class="item" data-name="inputmessagesfilterpoll inputmessagesfilterpoll">
+                <span class="item-name">InputMessagesFilterPoll</span>
+                <span class="item-desc">Filter for poll messages, see searching for polls</span>
+            </a>
+
+            <a href="../constructors/inputMessagesFilterRoundVideo.html" class="item" data-name="inputmessagesfilterroundvideo inputmessagesfilterroundvideo">
+                <span class="item-name">InputMessagesFilterRoundVideo</span>
+                <span class="item-desc">Return only round videos</span>
+            </a>
+
+            <a href="../constructors/inputMessagesFilterRoundVoice.html" class="item" data-name="inputmessagesfilterroundvoice inputmessagesfilterroundvoice">
+                <span class="item-name">InputMessagesFilterRoundVoice</span>
+                <span class="item-desc">Return only round videos and voice notes</span>
+            </a>
+
+            <a href="../constructors/inputMessagesFilterUrl.html" class="item" data-name="inputmessagesfilterurl inputmessagesfilterurl">
+                <span class="item-name">InputMessagesFilterUrl</span>
+                <span class="item-desc">Return only messages containing URLs</span>
+            </a>
+
+            <a href="../constructors/inputMessagesFilterVideo.html" class="item" data-name="inputmessagesfiltervideo inputmessagesfiltervideo">
+                <span class="item-name">InputMessagesFilterVideo</span>
+                <span class="item-desc">Filter for messages containing videos.</span>
+            </a>
+
+            <a href="../constructors/inputMessagesFilterVoice.html" class="item" data-name="inputmessagesfiltervoice inputmessagesfiltervoice">
+                <span class="item-name">InputMessagesFilterVoice</span>
+                <span class="item-desc">Return only messages containing voice notes</span>
+            </a>
+
+            </div>
+        </div>
+        
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// MessagesFilter is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
+<span class="comment">// You can use any of the following constructors:</span>
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessagesFilter</span> = &amp;<span class="package">tg.</span><span class="type">InputMessagesFilterChatPhotos</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessagesFilter</span> = &amp;<span class="package">tg.</span><span class="type">InputMessagesFilterContacts</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessagesFilter</span> = &amp;<span class="package">tg.</span><span class="type">InputMessagesFilterDocument</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessagesFilter</span> = &amp;<span class="package">tg.</span><span class="type">InputMessagesFilterEmpty</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">MessagesFilter</span> = &amp;<span class="package">tg.</span><span class="type">InputMessagesFilterGeo</span>{}
+<span class="comment">// ... and <span class="number">13</span> more constructors</span>
+</pre>
+        </div>
+        </article>
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

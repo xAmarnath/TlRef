@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>inputPasskeyResponseLogin - Gogram TL Reference</title>
-    <meta name="description" content="Web Authn login response">
+    <meta name="description" content="Web Authn authentication response used when logging in with a passkey, see here for more info on the full flow.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="inputPasskeyResponseLogin - Gogram TL Reference">
-    <meta property="og:description" content="Web Authn login response">
+    <meta property="og:description" content="Web Authn authentication response used when logging in with a passkey, see here for more info on the full flow.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -38,6 +38,7 @@
                     <a href="../types.html">Types</a>
                     <a href="../constructors.html">Constructors</a>
                     <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
                 </nav>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -69,17 +70,19 @@
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> InputPasskeyResponseLogin</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
         </div>
         
         <header class="page-header">
             <h1>InputPasskeyResponseLogin</h1>
-            <p class="description">Web Authn login response</p>
+            <p class="description">Web Authn authentication response used when logging in with a passkey, see here for more info on the full flow.</p>
         </header>
         
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
+        <div class="code-block">inputPasskeyResponseLogin#c31fc14a client_data:DataJSON authenticator_data:bytes signature:bytes user_handle:string = InputPasskeyResponse;</div>
+
         <div class="section">
             <h2>Parameters</h2>
             <div class="table-container">
@@ -95,31 +98,36 @@
 
                         <tr>
                             <td class="field-name">ClientData</td>
-                            <td class="field-type"><a href="../constructors/DataJSON.html">DataJSON</a></td>
-                            <td>Client data JSON</td>
+                            <td class="field-type"><a href="../types/DataJSON.html">DataJSON</a></td>
+                            <td>Base 64 url-decoded client Data JSON field of an Authenticator Assertion Response, wrapped in data JSON</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">AuthenticatorData</td>
                             <td class="field-type">bytes</td>
-                            <td>Authenticator data</td>
+                            <td>Base 64 url-decoded authenticator Data field of an Authenticator Assertion Response</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Signature</td>
                             <td class="field-type">bytes</td>
-                            <td>Signature</td>
+                            <td>Base 64 url-decoded signature field of an Authenticator Assertion Response</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">UserHandle</td>
                             <td class="field-type">string</td>
-                            <td>User handle</td>
+                            <td>Base 64 url-decoded user Handle field of an Authenticator Assertion Response. The user handle specified by the server is in &lt;dc_id&gt;:&lt;user_id&gt; format.</td>
                         </tr>
 
                     </tbody>
                 </table>
             </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/InputPasskeyResponse.html">InputPasskeyResponse</a></span>
         </div>
 
         <div class="example-section">

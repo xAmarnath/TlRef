@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chatInviteExported - Gogram TL Reference</title>
+    <meta name="description" content="Exported chat invite">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="chatInviteExported - Gogram TL Reference">
+    <meta property="og:description" content="Exported chat invite">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="../types.html">Types</a>
+                    <a href="../constructors.html">Constructors</a>
+                    <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "..";
+    </script>
+    <script src="../js/search_index.js"></script>
+    <script src="../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> ChatInviteExported</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>ChatInviteExported</h1>
+            <p class="description">Exported chat invite</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-constructor">constructor</span>
+        </div>
+        <div class="code-block">chatInviteExported#a22cbd96 flags:# revoked:flags.0?true permanent:flags.5?true request_needed:flags.6?true link:string admin_id:long date:int start_date:flags.4?int expire_date:flags.1?int usage_limit:flags.2?int usage:flags.3?int requested:flags.7?int subscription_expired:flags.10?int title:flags.8?string subscription_pricing:flags.9?StarsSubscriptionPricing = ExportedChatInvite;</div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="field-name">Revoked</td>
+                            <td class="field-type">flags .0? true</td>
+                            <td>Whether this chat invite was revoked</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Permanent</td>
+                            <td class="field-type">flags .5? true</td>
+                            <td>Whether this chat invite has no expiration</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">RequestNeeded</td>
+                            <td class="field-type">flags .6? true</td>
+                            <td>Whether users importing this invite link will have to be approved to join the channel or group</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Link</td>
+                            <td class="field-type">string</td>
+                            <td>Chat invitation link</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">AdminId</td>
+                            <td class="field-type">long</td>
+                            <td>ID of the admin that created this chat invite</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Date</td>
+                            <td class="field-type">int</td>
+                            <td>When was this chat invite created</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">StartDate</td>
+                            <td class="field-type">flags .4? int</td>
+                            <td>When was this chat invite last modified</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ExpireDate</td>
+                            <td class="field-type">flags .1? int</td>
+                            <td>When does this chat invite expire</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">UsageLimit</td>
+                            <td class="field-type">flags .2? int</td>
+                            <td>Maximum number of users that can join using this link</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Usage</td>
+                            <td class="field-type">flags .3? int</td>
+                            <td>How many users joined using this link</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Requested</td>
+                            <td class="field-type">flags .7? int</td>
+                            <td>Number of users that have already used this link to join</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">SubscriptionExpired</td>
+                            <td class="field-type">flags .10? int</td>
+                            <td>For Telegram Star subscriptions, contains the number of chat members which have already joined the chat using the link, but have already left due to expiration of their subscription.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Title</td>
+                            <td class="field-type">flags .8? string</td>
+                            <td>Custom description for the invite link, visible only to admins</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">SubscriptionPricing</td>
+                            <td class="field-type">flags .9? StarsSubscriptionPricing</td>
+                            <td>For Telegram Star subscriptions, contains the pricing of the subscription the user must activate to join the private channel.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/ExportedChatInvite.html">ExportedChatInvite</a></span>
+        </div>
+
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// Creating ChatInviteExported constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">ChatInviteExported</span>{
+    Revoked: <span class="keyword">nil</span>,
+    Permanent: <span class="keyword">nil</span>,
+    RequestNeeded: <span class="keyword">nil</span>,
+    Link: <span class="string">&quot;Hello, World!&quot;</span>,
+    AdminId: int64(<span class="number">1234567890</span>),
+    Date: <span class="number">42</span>,
+    <span class="comment">// ... more required fields</span>
+}</pre>
+        </div>
+
+        </article>
+
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

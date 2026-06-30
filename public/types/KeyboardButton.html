@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyboardButton - Gogram TL Reference</title>
+    <meta name="description" content="Abstract type representing one of 18 possible constructors.">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="KeyboardButton - Gogram TL Reference">
+    <meta property="og:description" content="Abstract type representing one of 18 possible constructors.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="../types.html">Types</a>
+                    <a href="../constructors.html">Constructors</a>
+                    <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "..";
+    </script>
+    <script src="../js/search_index.js"></script>
+    <script src="../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../types.html">Types</a> <span>›</span> KeyboardButton</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>KeyboardButton</h1>
+            <p class="description">Abstract type representing one of 18 possible constructors.</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-type">Type</span>
+        </div>
+        
+        <div class="section">
+            <h2>Available Constructors</h2>
+            <p style="margin-bottom: 16px; color: var(--text-secondary);">
+                In Gogram, this type is represented as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">tg.KeyboardButton</code> interface.
+                Use any of the following constructors:
+            </p>
+            <div class="item-list">
+
+            <a href="../constructors/inputKeyboardButtonRequestPeer.html" class="item" data-name="inputkeyboardbuttonrequestpeer inputkeyboardbuttonrequestpeer">
+                <span class="item-name">InputKeyboardButtonRequestPeer</span>
+                <span class="item-desc">Prompts the user to select and share one or more peers with the bot using messages. send Bot Requested P</span>
+            </a>
+
+            <a href="../constructors/inputKeyboardButtonUrlAuth.html" class="item" data-name="inputkeyboardbuttonurlauth inputkeyboardbuttonurlauth">
+                <span class="item-name">InputKeyboardButtonUrlAuth</span>
+                <span class="item-desc">Button to request a user to authorize via URL using Seamless Telegram Login.</span>
+            </a>
+
+            <a href="../constructors/inputKeyboardButtonUserProfile.html" class="item" data-name="inputkeyboardbuttonuserprofile inputkeyboardbuttonuserprofile">
+                <span class="item-name">InputKeyboardButtonUserProfile</span>
+                <span class="item-desc">Button that links directly to a user profile</span>
+            </a>
+
+            <a href="../constructors/keyboardButton.html" class="item" data-name="keyboardbutton keyboardbutton">
+                <span class="item-name">KeyboardButton</span>
+                <span class="item-desc">Available only in reply keyboards.</span>
+            </a>
+
+            <a href="../constructors/keyboardButtonBuy.html" class="item" data-name="keyboardbuttonbuy keyboardbuttonbuy">
+                <span class="item-name">KeyboardButtonBuy</span>
+                <span class="item-desc">Button to buy a product</span>
+            </a>
+
+            <a href="../constructors/keyboardButtonCallback.html" class="item" data-name="keyboardbuttoncallback keyboardbuttoncallback">
+                <span class="item-name">KeyboardButtonCallback</span>
+                <span class="item-desc">Available only in inline keyboards.</span>
+            </a>
+
+            <a href="../constructors/keyboardButtonCopy.html" class="item" data-name="keyboardbuttoncopy keyboardbuttoncopy">
+                <span class="item-name">KeyboardButtonCopy</span>
+                <span class="item-desc">Available only in inline keyboards.</span>
+            </a>
+
+            <a href="../constructors/keyboardButtonGame.html" class="item" data-name="keyboardbuttongame keyboardbuttongame">
+                <span class="item-name">KeyboardButtonGame</span>
+                <span class="item-desc">Button to start a game</span>
+            </a>
+
+            <a href="../constructors/keyboardButtonRequestGeoLocation.html" class="item" data-name="keyboardbuttonrequestgeolocation keyboardbuttonrequestgeolocation">
+                <span class="item-name">KeyboardButtonRequestGeoLocation</span>
+                <span class="item-desc">Button to request a user&#x27;s geolocation</span>
+            </a>
+
+            <a href="../constructors/keyboardButtonRequestPeer.html" class="item" data-name="keyboardbuttonrequestpeer keyboardbuttonrequestpeer">
+                <span class="item-name">KeyboardButtonRequestPeer</span>
+                <span class="item-desc">Prompts the user to select and share one or more peers with the bot using messages. send Bot Requested P</span>
+            </a>
+
+            <a href="../constructors/keyboardButtonRequestPhone.html" class="item" data-name="keyboardbuttonrequestphone keyboardbuttonrequestphone">
+                <span class="item-name">KeyboardButtonRequestPhone</span>
+                <span class="item-desc">Button to request a user&#x27;s phone number</span>
+            </a>
+
+            <a href="../constructors/keyboardButtonRequestPoll.html" class="item" data-name="keyboardbuttonrequestpoll keyboardbuttonrequestpoll">
+                <span class="item-name">KeyboardButtonRequestPoll</span>
+                <span class="item-desc">Button to request a poll from the user</span>
+            </a>
+
+            <a href="../constructors/keyboardButtonSimpleWebView.html" class="item" data-name="keyboardbuttonsimplewebview keyboardbuttonsimplewebview">
+                <span class="item-name">KeyboardButtonSimpleWebView</span>
+                <span class="item-desc">Button to open a bot mini app using messages. request Simple Web View, without sending user information</span>
+            </a>
+
+            <a href="../constructors/keyboardButtonSwitchInline.html" class="item" data-name="keyboardbuttonswitchinline keyboardbuttonswitchinline">
+                <span class="item-name">KeyboardButtonSwitchInline</span>
+                <span class="item-desc">Button to switch the user to inline mode</span>
+            </a>
+
+            <a href="../constructors/keyboardButtonUrl.html" class="item" data-name="keyboardbuttonurl keyboardbuttonurl">
+                <span class="item-name">KeyboardButtonUrl</span>
+                <span class="item-desc">Available only in inline keyboards.</span>
+            </a>
+
+            <a href="../constructors/keyboardButtonUrlAuth.html" class="item" data-name="keyboardbuttonurlauth keyboardbuttonurlauth">
+                <span class="item-name">KeyboardButtonUrlAuth</span>
+                <span class="item-desc">Button to request a user to authorize via URL using Seamless Telegram Login. When the user clicks o</span>
+            </a>
+
+            <a href="../constructors/keyboardButtonUserProfile.html" class="item" data-name="keyboardbuttonuserprofile keyboardbuttonuserprofile">
+                <span class="item-name">KeyboardButtonUserProfile</span>
+                <span class="item-desc">Button that links directly to a user profile</span>
+            </a>
+
+            <a href="../constructors/keyboardButtonWebView.html" class="item" data-name="keyboardbuttonwebview keyboardbuttonwebview">
+                <span class="item-name">KeyboardButtonWebView</span>
+                <span class="item-desc">Button to open a bot mini app using messages. request Web View, sending over user information after us</span>
+            </a>
+
+            </div>
+        </div>
+        
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// KeyboardButton is an <span class="keyword">interface</span> <span class="keyword">type</span></span>
+<span class="comment">// You can use any of the following constructors:</span>
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">KeyboardButton</span> = &amp;<span class="package">tg.</span><span class="type">InputKeyboardButtonRequestPeer</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">KeyboardButton</span> = &amp;<span class="package">tg.</span><span class="type">InputKeyboardButtonUrlAuth</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">KeyboardButton</span> = &amp;<span class="package">tg.</span><span class="type">InputKeyboardButtonUserProfile</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">KeyboardButton</span> = &amp;<span class="package">tg.</span><span class="type">KeyboardButton</span>{}
+<span class="keyword">var</span> _ <span class="package">tg.</span><span class="type">KeyboardButton</span> = &amp;<span class="package">tg.</span><span class="type">KeyboardButtonBuy</span>{}
+<span class="comment">// ... and <span class="number">13</span> more constructors</span>
+</pre>
+        </div>
+        </article>
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

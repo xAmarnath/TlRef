@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>channelFull - Gogram TL Reference</title>
+    <meta name="description" content="Full info about a channel, supergroup or gigagroup.">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="channelFull - Gogram TL Reference">
+    <meta property="og:description" content="Full info about a channel, supergroup or gigagroup.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="../types.html">Types</a>
+                    <a href="../constructors.html">Constructors</a>
+                    <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "..";
+    </script>
+    <script src="../js/search_index.js"></script>
+    <script src="../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> ChannelFull</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>ChannelFull</h1>
+            <p class="description">Full info about a channel, supergroup or gigagroup.</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-constructor">constructor</span>
+        </div>
+        <div class="code-block">channelFull#e4e0b29d flags:# can_view_participants:flags.3?true can_set_username:flags.6?true can_set_stickers:flags.7?true hidden_prehistory:flags.10?true can_set_location:flags.16?true has_scheduled:flags.19?true can_view_stats:flags.20?true blocked:flags.22?true flags2:# can_delete_channel:flags2.0?true antispam:flags2.1?true participants_hidden:flags2.2?true translations_disabled:flags2.3?true stories_pinned_available:flags2.5?true view_forum_as_messages:flags2.6?true restricted_sponsored:flags2.11?true can_view_revenue:flags2.12?true paid_media_allowed:flags2.14?true can_view_stars_revenue:flags2.15?true paid_reactions_available:flags2.16?true stargifts_available:flags2.19?true paid_messages_available:flags2.20?true id:long about:string participants_count:flags.0?int admins_count:flags.1?int kicked_count:flags.2?int banned_count:flags.2?int online_count:flags.13?int read_inbox_max_id:int read_outbox_max_id:int unread_count:int chat_photo:Photo notify_settings:PeerNotifySettings exported_invite:flags.23?ExportedChatInvite bot_info:Vector&lt;BotInfo&gt; migrated_from_chat_id:flags.4?long migrated_from_max_id:flags.4?int pinned_msg_id:flags.5?int stickerset:flags.8?StickerSet available_min_id:flags.9?int folder_id:flags.11?int linked_chat_id:flags.14?long location:flags.15?ChannelLocation slowmode_seconds:flags.17?int slowmode_next_send_date:flags.18?int stats_dc:flags.12?int pts:int call:flags.21?InputGroupCall ttl_period:flags.24?int pending_suggestions:flags.25?Vector&lt;string&gt; groupcall_default_join_as:flags.26?Peer theme_emoticon:flags.27?string requests_pending:flags.28?int recent_requesters:flags.28?Vector&lt;long&gt; default_send_as:flags.29?Peer available_reactions:flags.30?ChatReactions reactions_limit:flags2.13?int stories:flags2.4?PeerStories wallpaper:flags2.7?WallPaper boosts_applied:flags2.8?int boosts_unrestrict:flags2.9?int emojiset:flags2.10?StickerSet bot_verification:flags2.17?BotVerification stargifts_count:flags2.18?int send_paid_messages_stars:flags2.21?long main_tab:flags2.22?ProfileTab = ChatFull;</div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="field-name">CanViewParticipants</td>
+                            <td class="field-type">flags .3? true</td>
+                            <td>Can we view the participant list?</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">CanSetUsername</td>
+                            <td class="field-type">flags .6? true</td>
+                            <td>Can we set the channel&#x27;s username?</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">CanSetStickers</td>
+                            <td class="field-type">flags .7? true</td>
+                            <td>Can we associate a stickerpack to the supergroup?</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">HiddenPrehistory</td>
+                            <td class="field-type">flags .10? true</td>
+                            <td>Is the history before we joined hidden to us?</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">CanSetLocation</td>
+                            <td class="field-type">flags .16? true</td>
+                            <td>Can we set the geolocation of this group (for geogroups)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">HasScheduled</td>
+                            <td class="field-type">flags .19? true</td>
+                            <td>Whether scheduled messages are available</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">CanViewStats</td>
+                            <td class="field-type">flags .20? true</td>
+                            <td>Can the user view channel/supergroup statistics</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Blocked</td>
+                            <td class="field-type">flags .22? true</td>
+                            <td>Whether any anonymous admin of this supergroup was blocked: if set, you won&#x27;t receive messages from anonymous group admins in discussion replies via @replies</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">CanDeleteChannel</td>
+                            <td class="field-type">flags2 .0? true</td>
+                            <td>Can we delete this channel?</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Antispam</td>
+                            <td class="field-type">flags2 .1? true</td>
+                            <td>Whether native antispam functionality is enabled in this supergroup.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ParticipantsHidden</td>
+                            <td class="field-type">flags2 .2? true</td>
+                            <td>Whether the participant list is hidden.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">TranslationsDisabled</td>
+                            <td class="field-type">flags2 .3? true</td>
+                            <td>Whether the real-time chat translation popup should be hidden.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">StoriesPinnedAvailable</td>
+                            <td class="field-type">flags2 .5? true</td>
+                            <td>Whether this user has some pinned stories.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ViewForumAsMessages</td>
+                            <td class="field-type">flags2 .6? true</td>
+                            <td>Users may also choose to display messages from all topics of a forum as if they were sent to a normal group, using a &quot;View as messages&quot; setting in the local client. This setting only affects the current account, and is synced to other logged in sessions using the channels. toggle View Forum As Messages method; invoking this method will update the value of this flag.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">RestrictedSponsored</td>
+                            <td class="field-type">flags2 .11? true</td>
+                            <td>Whether ads on this channel were disabled as specified here (this flag is only visible to the owner of the channel).</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">CanViewRevenue</td>
+                            <td class="field-type">flags2 .12? true</td>
+                            <td>If set, this user can view ad revenue statistics for this channel.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PaidMediaAllowed</td>
+                            <td class="field-type">flags2 .14? true</td>
+                            <td>Whether the current user can send or forward paid media to this channel.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">CanViewStarsRevenue</td>
+                            <td class="field-type">flags2 .15? true</td>
+                            <td>If set, this user can view Telegram Star revenue statistics for this channel.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PaidReactionsAvailable</td>
+                            <td class="field-type">flags2 .16? true</td>
+                            <td>If set, users may send paid Telegram Star reactions to messages of this channel.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">StargiftsAvailable</td>
+                            <td class="field-type">flags2 .19? true</td>
+                            <td>If set, users may send Gifts to this channel.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PaidMessagesAvailable</td>
+                            <td class="field-type">flags2 .20? true</td>
+                            <td>If set, admins may enable enable paid messages in this supergroup.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Id</td>
+                            <td class="field-type">long</td>
+                            <td>ID of the channel</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">About</td>
+                            <td class="field-type">string</td>
+                            <td>Info about the channel</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ParticipantsCount</td>
+                            <td class="field-type">flags .0? int</td>
+                            <td>Number of participants of the channel</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">AdminsCount</td>
+                            <td class="field-type">flags .1? int</td>
+                            <td>Number of channel admins</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">KickedCount</td>
+                            <td class="field-type">flags .2? int</td>
+                            <td>Number of users kicked from the channel</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">BannedCount</td>
+                            <td class="field-type">flags .2? int</td>
+                            <td>Number of users banned from the channel</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">OnlineCount</td>
+                            <td class="field-type">flags .13? int</td>
+                            <td>Number of users currently online</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ReadInboxMaxId</td>
+                            <td class="field-type">int</td>
+                            <td>Position up to which all incoming messages are read.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ReadOutboxMaxId</td>
+                            <td class="field-type">int</td>
+                            <td>Position up to which all outgoing messages are read.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">UnreadCount</td>
+                            <td class="field-type">int</td>
+                            <td>Count of unread messages</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ChatPhoto</td>
+                            <td class="field-type"><a href="../types/Photo.html">Photo</a></td>
+                            <td>Channel picture</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">NotifySettings</td>
+                            <td class="field-type"><a href="../types/PeerNotifySettings.html">PeerNotifySettings</a></td>
+                            <td>Notification settings</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ExportedInvite</td>
+                            <td class="field-type">flags .23? ExportedChatInvite</td>
+                            <td>Invite link</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">BotInfo</td>
+                            <td class="field-type"><a href="../constructors/Vector < BotInfo >.html">Vector &lt; BotInfo &gt;</a></td>
+                            <td>Info about bots in the channel/supergroup</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">MigratedFromChatId</td>
+                            <td class="field-type">flags .4? long</td>
+                            <td>The chat ID from which this group was migrated</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">MigratedFromMaxId</td>
+                            <td class="field-type">flags .4? int</td>
+                            <td>The message ID in the original chat at which this group was migrated</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PinnedMsgId</td>
+                            <td class="field-type">flags .5? int</td>
+                            <td>Message ID of the last pinned message</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Stickerset</td>
+                            <td class="field-type">flags .8? StickerSet</td>
+                            <td>Associated stickerset</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">AvailableMinId</td>
+                            <td class="field-type">flags .9? int</td>
+                            <td>Identifier of a maximum unavailable message in a channel due to hidden history.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">FolderId</td>
+                            <td class="field-type">flags .11? int</td>
+                            <td>Peer folder ID, for more info click here</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">LinkedChatId</td>
+                            <td class="field-type">flags .14? long</td>
+                            <td>ID of the linked discussion chat for channels (and vice versa, the ID of the linked channel for discussion chats).</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Location</td>
+                            <td class="field-type">flags .15? ChannelLocation</td>
+                            <td>Location of the geogroup</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">SlowmodeSeconds</td>
+                            <td class="field-type">flags .17? int</td>
+                            <td>If specified, users in supergroups will only be able to send one message every slowmode_seconds seconds</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">SlowmodeNextSendDate</td>
+                            <td class="field-type">flags .18? int</td>
+                            <td>Indicates when the user will be allowed to send another message in the supergroup (unixtime)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">StatsDc</td>
+                            <td class="field-type">flags .12? int</td>
+                            <td>If set, specifies the DC to use for fetching channel statistics</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Pts</td>
+                            <td class="field-type">int</td>
+                            <td>Latest PTS for this channel</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Call</td>
+                            <td class="field-type">flags .21? InputGroupCall</td>
+                            <td>Active or scheduled video chat/livestream associated with this supergroup/channel</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">TtlPeriod</td>
+                            <td class="field-type">flags .24? int</td>
+                            <td>Time-To-Live of messages in this channel or supergroup</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PendingSuggestions</td>
+                            <td class="field-type">flags .25? Vector &lt; string &gt;</td>
+                            <td>A list of suggested actions for the supergroup admin, see here for more info.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">GroupcallDefaultJoinAs</td>
+                            <td class="field-type">flags .26? Peer</td>
+                            <td>Explicitly saved default peer used to join this supergroup/channel&#x27;s video chat/livestream; if absent, the current user is used</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ThemeEmoticon</td>
+                            <td class="field-type">flags .27? string</td>
+                            <td>Emoji representing a specific chat theme</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">RequestsPending</td>
+                            <td class="field-type">flags .28? int</td>
+                            <td>Pending join requests</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">RecentRequesters</td>
+                            <td class="field-type">flags .28? Vector &lt; long &gt;</td>
+                            <td>IDs of users who requested to join recently</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">DefaultSendAs</td>
+                            <td class="field-type">flags .29? Peer</td>
+                            <td>Default peer used for sending messages to this channel</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">AvailableReactions</td>
+                            <td class="field-type">flags .30? ChatReactions</td>
+                            <td>Allowed message reactions</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ReactionsLimit</td>
+                            <td class="field-type">flags2 .13? int</td>
+                            <td>This flag may be used to impose a custom limit of unique reactions (i. e. a customizable version of app Config. reactions_uniq_max ).</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Stories</td>
+                            <td class="field-type">flags2 .4? PeerStories</td>
+                            <td>Channel stories</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Wallpaper</td>
+                            <td class="field-type">flags2 .7? WallPaper</td>
+                            <td>Wallpaper</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">BoostsApplied</td>
+                            <td class="field-type">flags2 .8? int</td>
+                            <td>The number of boosts the current user has applied to the current supergroup.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">BoostsUnrestrict</td>
+                            <td class="field-type">flags2 .9? int</td>
+                            <td>The number of boosts this supergroup requires to bypass slowmode and other restrictions, see here for more info.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Emojiset</td>
+                            <td class="field-type">flags2 .10? StickerSet</td>
+                            <td>Custom emoji stickerset associated to the current supergroup, set using channels. set Emoji Stickers after reaching the appropriate boost level, see here for more info.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">BotVerification</td>
+                            <td class="field-type">flags2 .17? BotVerification</td>
+                            <td>Bot verification icon</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">StargiftsCount</td>
+                            <td class="field-type">flags2 .18? int</td>
+                            <td>Admins with chat Admin Rights. post_messages rights will see the total number of received gifts, everyone else will see the number of gifts added to the channel&#x27;s profile.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">SendPaidMessagesStars</td>
+                            <td class="field-type">flags2 .21? long</td>
+                            <td>If set and bigger than 0, this supergroup, monoforum or the monoforum associated to this channel has enabled paid messages and we must pay the specified amount of Stars to send messages to it, see here for the full flow. This flag will be set both for the monoforum and for channel Full of the associated channel). If set and equal to 0, the monoforum requires payment in general but we were exempted from paying.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">MainTab</td>
+                            <td class="field-type">flags2 .22? ProfileTab</td>
+                            <td>The main tab for the channel&#x27;s profile, see here for more info.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/ChatFull.html">ChatFull</a></span>
+        </div>
+
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// Creating ChannelFull constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">ChannelFull</span>{
+    CanViewParticipants: <span class="keyword">nil</span>,
+    CanSetUsername: <span class="keyword">nil</span>,
+    CanSetStickers: <span class="keyword">nil</span>,
+    HiddenPrehistory: <span class="keyword">nil</span>,
+    CanSetLocation: <span class="keyword">nil</span>,
+    HasScheduled: <span class="keyword">nil</span>,
+    <span class="comment">// ... more required fields</span>
+}</pre>
+        </div>
+
+        </article>
+
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

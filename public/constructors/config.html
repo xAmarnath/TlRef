@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>config - Gogram TL Reference</title>
+    <meta name="description" content="Current configuration">
+    
+    <!-- Open Graph / Telegram Instant View -->
+    <meta property="og:title" content="config - Gogram TL Reference">
+    <meta property="og:description" content="Current configuration">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gogram TL Reference">
+    
+    <!-- Telegram Instant View hints -->
+    <meta property="article:author" content="AmarnathCJD">
+    <meta name="author" content="AmarnathCJD">
+    <meta name="telegram:channel" content="@gaborern">
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/utils.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark';
+            if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">Gogram <span>TLRef</span></a>
+            <div class="header-right">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="../types.html">Types</a>
+                    <a href="../constructors.html">Constructors</a>
+                    <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search methods, constructors, types..." autocomplete="off">
+                <div id="search-dropdown" class="search-results-dropdown hidden"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const rootPath = "..";
+    </script>
+    <script src="../js/search_index.js"></script>
+    <script src="../js/search.js"></script>
+
+    <main class="container">
+        <article>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> ConfigObj</div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
+        </div>
+        
+        <header class="page-header">
+            <h1>ConfigObj</h1>
+            <p class="description">Current configuration</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-constructor">constructor</span>
+        </div>
+        <div class="code-block">config#cc1a241e flags:# default_p2p_contacts:flags.3?true preload_featured_stickers:flags.4?true revoke_pm_inbox:flags.6?true blocked_mode:flags.8?true force_try_ipv6:flags.14?true date:int expires:int test_mode:Bool this_dc:int dc_options:Vector&lt;DcOption&gt; dc_txt_domain_name:string chat_size_max:int megagroup_size_max:int forwarded_count_max:int online_update_period_ms:int offline_blur_timeout_ms:int offline_idle_timeout_ms:int online_cloud_timeout_ms:int notify_cloud_delay_ms:int notify_default_delay_ms:int push_chat_period_ms:int push_chat_limit:int edit_time_limit:int revoke_time_limit:int revoke_pm_time_limit:int rating_e_decay:int stickers_recent_limit:int channels_read_media_period:int tmp_sessions:flags.0?int call_receive_timeout_ms:int call_ring_timeout_ms:int call_connect_timeout_ms:int call_packet_timeout_ms:int me_url_prefix:string autoupdate_url_prefix:flags.7?string gif_search_username:flags.9?string venue_search_username:flags.10?string img_search_username:flags.11?string static_maps_provider:flags.12?string caption_length_max:int message_length_max:int webfile_dc_id:int suggested_lang_code:flags.2?string lang_pack_version:flags.2?int base_lang_pack_version:flags.2?int reactions_default:flags.15?Reaction autologin_token:flags.16?string = Config;</div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="field-name">DefaultP2PContacts</td>
+                            <td class="field-type">flags .3? true</td>
+                            <td>Whether the client should use P 2 P by default for phone calls with contacts</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PreloadFeaturedStickers</td>
+                            <td class="field-type">flags .4? true</td>
+                            <td>Whether the client should preload featured stickers</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">RevokePmInbox</td>
+                            <td class="field-type">flags .6? true</td>
+                            <td>Whether incoming private messages can be deleted for both participants</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">BlockedMode</td>
+                            <td class="field-type">flags .8? true</td>
+                            <td>Indicates that telegram is probably censored by governments/ISPs in the current region</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ForceTryIpv6</td>
+                            <td class="field-type">flags .14? true</td>
+                            <td>Whether to forcefully connect using IPv 6 dc Options, even if the client knows that IPv 4 is available.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Date</td>
+                            <td class="field-type">int</td>
+                            <td>Current date at the server</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">Expires</td>
+                            <td class="field-type">int</td>
+                            <td>Expiration date of this config: when it expires it&#x27;ll have to be refetched using help. get Config</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">TestMode</td>
+                            <td class="field-type">Bool</td>
+                            <td>Whether we&#x27;re connected to the test DCs</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ThisDc</td>
+                            <td class="field-type">int</td>
+                            <td>ID of the DC that returned the reply</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">DcOptions</td>
+                            <td class="field-type"><a href="../constructors/Vector < DcOption >.html">Vector &lt; DcOption &gt;</a></td>
+                            <td>DC IP list</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">DcTxtDomainName</td>
+                            <td class="field-type">string</td>
+                            <td>Domain name for fetching encrypted DC list from DNS TXT record</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ChatSizeMax</td>
+                            <td class="field-type">int</td>
+                            <td>Maximum member count for normal groups</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">MegagroupSizeMax</td>
+                            <td class="field-type">int</td>
+                            <td>Maximum member count for supergroups</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ForwardedCountMax</td>
+                            <td class="field-type">int</td>
+                            <td>Maximum number of messages that can be forwarded at once using messages. forward Messages.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">OnlineUpdatePeriodMs</td>
+                            <td class="field-type">int</td>
+                            <td>The client should update its online status every N milliseconds</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">OfflineBlurTimeoutMs</td>
+                            <td class="field-type">int</td>
+                            <td>Delay before offline status needs to be sent to the server</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">OfflineIdleTimeoutMs</td>
+                            <td class="field-type">int</td>
+                            <td>Time without any user activity after which it should be treated offline</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">OnlineCloudTimeoutMs</td>
+                            <td class="field-type">int</td>
+                            <td>If we are offline, but were online from some other client in last online_cloud_timeout_ms milliseconds after we had gone offline, then delay offline notification for notify_cloud_delay_ms milliseconds.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">NotifyCloudDelayMs</td>
+                            <td class="field-type">int</td>
+                            <td>If we are offline, but online from some other client then delay sending the offline notification for notify_cloud_delay_ms milliseconds.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">NotifyDefaultDelayMs</td>
+                            <td class="field-type">int</td>
+                            <td>If some other client is online, then delay notification for notification_default_delay_ms milliseconds</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PushChatPeriodMs</td>
+                            <td class="field-type">int</td>
+                            <td>Not for client use</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">PushChatLimit</td>
+                            <td class="field-type">int</td>
+                            <td>Not for client use</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">EditTimeLimit</td>
+                            <td class="field-type">int</td>
+                            <td>Only messages with age (in seconds) smaller than the one specified in this field can be edited</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">RevokeTimeLimit</td>
+                            <td class="field-type">int</td>
+                            <td>Only channel/supergroup messages with age smaller than the specified can be deleted</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">RevokePmTimeLimit</td>
+                            <td class="field-type">int</td>
+                            <td>Only private messages with age smaller than the specified can be deleted</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">RatingEDecay</td>
+                            <td class="field-type">int</td>
+                            <td>Exponential decay rate for computing top peer rating</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">StickersRecentLimit</td>
+                            <td class="field-type">int</td>
+                            <td>Maximum number of recent stickers</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ChannelsReadMediaPeriod</td>
+                            <td class="field-type">int</td>
+                            <td>Indicates that round videos (video notes) and voice messages sent in channels and older than the specified period must be marked as read</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">TmpSessions</td>
+                            <td class="field-type">flags .0? int</td>
+                            <td>Number of parallel sessions the client may open to the main connection of its home DC to increase throughput; if absent or ≤ 1, a single main session must be used</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">CallReceiveTimeoutMs</td>
+                            <td class="field-type">int</td>
+                            <td>Maximum allowed outgoing ring time in Vo IP calls: if the user we&#x27;re calling doesn&#x27;t reply within the specified time (in milliseconds), we should hang up the call</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">CallRingTimeoutMs</td>
+                            <td class="field-type">int</td>
+                            <td>Maximum allowed incoming ring time in Vo IP calls: if the current user doesn&#x27;t reply within the specified time (in milliseconds), the call will be automatically refused</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">CallConnectTimeoutMs</td>
+                            <td class="field-type">int</td>
+                            <td>Vo IP connection timeout: if the instance of libtgvoip on the other side of the call doesn&#x27;t connect to our instance of libtgvoip within the specified time (in milliseconds), the call must be aborted</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">CallPacketTimeoutMs</td>
+                            <td class="field-type">int</td>
+                            <td>If during a Vo IP call a packet isn&#x27;t received for the specified period of time, the call must be aborted</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">MeUrlPrefix</td>
+                            <td class="field-type">string</td>
+                            <td>The domain to use to parse deep links.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">AutoupdateUrlPrefix</td>
+                            <td class="field-type">flags .7? string</td>
+                            <td>URL to use to auto-update the current app</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">GifSearchUsername</td>
+                            <td class="field-type">flags .9? string</td>
+                            <td>Username of the bot to use to search for GIFs</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">VenueSearchUsername</td>
+                            <td class="field-type">flags .10? string</td>
+                            <td>Username of the bot to use to search for venues</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ImgSearchUsername</td>
+                            <td class="field-type">flags .11? string</td>
+                            <td>Username of the bot to use for image search</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">StaticMapsProvider</td>
+                            <td class="field-type">flags .12? string</td>
+                            <td>ID of the map provider to use for venues</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">CaptionLengthMax</td>
+                            <td class="field-type">int</td>
+                            <td>Maximum length of caption (length in utf 8 codepoints)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">MessageLengthMax</td>
+                            <td class="field-type">int</td>
+                            <td>Maximum length of messages (length in utf 8 codepoints)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">WebfileDcId</td>
+                            <td class="field-type">int</td>
+                            <td>DC ID to use to download webfiles</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">SuggestedLangCode</td>
+                            <td class="field-type">flags .2? string</td>
+                            <td>Suggested language code</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">LangPackVersion</td>
+                            <td class="field-type">flags .2? int</td>
+                            <td>Language pack version</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">BaseLangPackVersion</td>
+                            <td class="field-type">flags .2? int</td>
+                            <td>Basic language pack version</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">ReactionsDefault</td>
+                            <td class="field-type">flags .15? Reaction</td>
+                            <td>Default message reaction</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-name">AutologinToken</td>
+                            <td class="field-type">flags .16? string</td>
+                            <td>Autologin token, click here for more info on URL authorization.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/Config.html">Config</a></span>
+        </div>
+
+        <div class="example-section">
+            <h2>Gogram Example</h2>
+            <pre class="example-code"><span class="comment">// Creating ConfigObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">ConfigObj</span>{
+    DefaultP2PContacts: <span class="keyword">nil</span>,
+    PreloadFeaturedStickers: <span class="keyword">nil</span>,
+    RevokePmInbox: <span class="keyword">nil</span>,
+    BlockedMode: <span class="keyword">nil</span>,
+    ForceTryIpv6: <span class="keyword">nil</span>,
+    Date: <span class="number">42</span>,
+    <span class="comment">// ... more required fields</span>
+}</pre>
+        </div>
+
+        </article>
+
+    </main>
+
+    <footer style="margin-top: 48px; border-top: 1px solid var(--border); padding: 24px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="color: var(--text-secondary); font-size: 13px;">
+                &copy; 2025 Gogram TLRef. Licensed under MIT.
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 13px;">
+                <a href="https://github.com/AmarnathCJD/gogram" target="_blank" style="color: var(--text-secondary);">Gogram</a>
+                <a href="https://corefork.telegram.org" target="_blank" style="color: var(--text-secondary);">Telegram Core</a>
+                <a href="https://github.com/AmarnathCJD/tl-ref" target="_blank" style="color: var(--text-secondary);">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

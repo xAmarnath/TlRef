@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>groupCallDonor - Gogram TL Reference</title>
-    <meta name="description" content="Star donor information in group calls">
+    <meta name="description" content="Describes a live story donor in the donation leaderboard.">
     
     <!-- Open Graph / Telegram Instant View -->
     <meta property="og:title" content="groupCallDonor - Gogram TL Reference">
-    <meta property="og:description" content="Star donor information in group calls">
+    <meta property="og:description" content="Describes a live story donor in the donation leaderboard.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gogram TL Reference">
     
@@ -38,6 +38,7 @@
                     <a href="../types.html">Types</a>
                     <a href="../constructors.html">Constructors</a>
                     <a href="../methods.html">Methods</a>
+                    <a href="../e2e.html">E2E</a>
                 </nav>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -66,20 +67,22 @@
 
     <main class="container">
         <article>
-        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> GroupCallDonor</div>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../constructors.html">Constructors</a> <span>›</span> GroupCallDonorObj</div>
         
         <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 224</span>
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Layer 227</span>
         </div>
         
         <header class="page-header">
-            <h1>GroupCallDonor</h1>
-            <p class="description">Star donor information in group calls</p>
+            <h1>GroupCallDonorObj</h1>
+            <p class="description">Describes a live story donor in the donation leaderboard.</p>
         </header>
         
         <div class="badges">
             <span class="badge badge-constructor">constructor</span>
         </div>
+        <div class="code-block">groupCallDonor#ee430c85 flags:# top:flags.0?true my:flags.1?true peer_id:flags.3?Peer stars:long = GroupCallDonor;</div>
+
         <div class="section">
             <h2>Parameters</h2>
             <div class="table-container">
@@ -95,32 +98,26 @@
 
                         <tr>
                             <td class="field-name">Top</td>
-                            <td class="field-type"><a href="../constructors/bool.html">bool</a></td>
-                            <td>Top donor flag</td>
+                            <td class="field-type">flags .0? true</td>
+                            <td>Whether this donor is included in the top-donor leaderboard</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">My</td>
-                            <td class="field-type"><a href="../constructors/bool.html">bool</a></td>
-                            <td>Current user&#x27;s donation</td>
-                        </tr>
-
-                        <tr>
-                            <td class="field-name">Anonymous</td>
-                            <td class="field-type"><a href="../constructors/bool.html">bool</a></td>
-                            <td>Anonymous donor</td>
+                            <td class="field-type">flags .1? true</td>
+                            <td>Whether this entry describes the current user&#x27;s donations</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">PeerId</td>
-                            <td class="field-type"><a href="../constructors/Peer.html">Peer</a></td>
-                            <td>Donor peer ID</td>
+                            <td class="field-type">flags .3? Peer</td>
+                            <td>Donor displayed in the leaderboard</td>
                         </tr>
 
                         <tr>
                             <td class="field-name">Stars</td>
                             <td class="field-type">long</td>
-                            <td>Star amount</td>
+                            <td>Total Stars donated by this donor</td>
                         </tr>
 
                     </tbody>
@@ -128,14 +125,18 @@
             </div>
         </div>
 
+        <div class="result-section">
+            <h3>Returns</h3>
+            <span class="result-type"><a href="../types/GroupCallDonor.html">GroupCallDonor</a></span>
+        </div>
+
         <div class="example-section">
             <h2>Gogram Example</h2>
-            <pre class="example-code"><span class="comment">// Creating GroupCallDonor constructor</span>
-obj := &amp;<span class="package">tg.</span><span class="type">GroupCallDonor</span>{
+            <pre class="example-code"><span class="comment">// Creating GroupCallDonorObj constructor</span>
+obj := &amp;<span class="package">tg.</span><span class="type">GroupCallDonorObj</span>{
     Top: <span class="keyword">nil</span>,
     My: <span class="keyword">nil</span>,
-    Anonymous: <span class="keyword">nil</span>,
-    PeerId: &amp;<span class="package">tg.</span><span class="type">Peer</span>{},
+    PeerId: <span class="keyword">nil</span>,
     Stars: int64(<span class="number">1234567890</span>),
 }</pre>
         </div>
