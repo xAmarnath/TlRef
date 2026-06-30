@@ -70,40 +70,45 @@
         <article>
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../errors.html">Errors</a> <span>›</span> CHAT_PUBLIC_REQUIRED</div>
 
-        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px; gap: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Channels &amp; Chats</span>
-            <span style="font-size: 11px; color: white; background: var(--accent); padding: 4px 10px; border-radius: 12px; font-weight: 600;">HTTP 400 &middot; Bad Request</span>
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">HTTP 400 · Bad Request</span>
         </div>
 
         <header class="page-header">
-            <h1 style="font-family: var(--font-mono, monospace); font-size: 1.6rem;">CHAT_PUBLIC_REQUIRED</h1>
-            <p class="description" style="margin-top: 8px;">You can only enable join requests in public groups.</p>
+            <h1>CHAT_PUBLIC_REQUIRED</h1>
+            <p class="description">You can only enable join requests in public groups.</p>
         </header>
 
-        <section style="margin-top: 24px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">When &amp; why it happens</h2>
+        <div class="badges">
+            <span class="badge badge-method">HTTP 400</span>
+            <span class="badge badge-type">Channels &amp; Chats</span>
+            
+        </div>
+
+        <div class="section">
+            <h2>When &amp; why it happens</h2>
             <p style="color: var(--text-secondary); line-height: 1.75; margin: 0;">You can only enable join requests in public groups. Treated by gogram as a regular API error; inspect ErrResponseCode.Message for the exact code.</p>
-        </section>
+        </div>
 
         
 
-        <section style="margin-top: 28px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Handling in gogram</h2>
+        <div class="section">
+            <h2>Handling in gogram</h2>
             <p style="color: var(--text-secondary); line-height: 1.7; margin: 0 0 12px;">
-                Gogram surfaces this as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">*gogram.ErrResponseCode</code>. Match on the message:
+                Surfaced as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">*gogram.ErrResponseCode</code>. Match on the message:
             </p>
             <div class="code-block"><span class="keyword">if</span> err, ok := err.(*gogram.ErrResponseCode); ok {
     <span class="keyword">if</span> err.Message == <span class="string">&quot;CHAT_PUBLIC_REQUIRED&quot;</span> {
         <span class="comment">// handle this error</span>
     }
 }</div>
-        </section>
+        </div>
 
         
-        <section style="margin-top: 28px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Related errors</h2>
+        <div class="section">
+            <h2>Related errors</h2>
             <div class="item-list"><a href="BROADCAST_CALLS_DISABLED.html" class="item"><span class="item-name">BROADCAST_CALLS_DISABLED</span><span class="item-desc">Broadcast calls are disabled for this chat/channel.</span></a><a href="BROADCAST_ID_INVALID.html" class="item"><span class="item-name">BROADCAST_ID_INVALID</span><span class="item-desc">Broadcast ID invalid.</span></a><a href="BROADCAST_REQUIRED.html" class="item"><span class="item-name">BROADCAST_REQUIRED</span><span class="item-desc">This method can only be called on a channel.</span></a><a href="CHANNEL_ADD_INVALID.html" class="item"><span class="item-name">CHANNEL_ADD_INVALID</span><span class="item-desc">The specified channel is invalid.</span></a><a href="CHANNEL_FORUM_MISSING.html" class="item"><span class="item-name">CHANNEL_FORUM_MISSING</span><span class="item-desc">This supergroup is not a forum.</span></a><a href="CHANNEL_ID_INVALID.html" class="item"><span class="item-name">CHANNEL_ID_INVALID</span><span class="item-desc">The specified supergroup ID is invalid.</span></a><a href="CHANNEL_INVALID.html" class="item"><span class="item-name">CHANNEL_INVALID</span><span class="item-desc">The provided channel is invalid.</span></a><a href="CHANNEL_PARTICIPANT_MISSING.html" class="item"><span class="item-name">CHANNEL_PARTICIPANT_MISSING</span><span class="item-desc">The current user is not in the channel.</span></a><a href="CHANNEL_PRIVATE.html" class="item"><span class="item-name">CHANNEL_PRIVATE</span><span class="item-desc">You haven&#x27;t joined this channel/supergroup.</span></a><a href="CHANNEL_PUBLIC_GROUP_NA.html" class="item"><span class="item-name">CHANNEL_PUBLIC_GROUP_NA</span><span class="item-desc">Channel/supergroup not available.</span></a><a href="CHANNEL_TOO_BIG.html" class="item"><span class="item-name">CHANNEL_TOO_BIG</span><span class="item-desc">This channel has too many participants (&gt;1000) to be deleted.</span></a><a href="CHANNEL_TOO_LARGE.html" class="item"><span class="item-name">CHANNEL_TOO_LARGE</span><span class="item-desc">Channel is too large to be deleted.</span></a></div>
-        </section>
+        </div>
 
         </article>
     </main>

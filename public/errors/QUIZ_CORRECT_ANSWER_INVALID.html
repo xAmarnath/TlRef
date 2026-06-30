@@ -70,40 +70,45 @@
         <article>
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../errors.html">Errors</a> <span>›</span> QUIZ_CORRECT_ANSWER_INVALID</div>
 
-        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px; gap: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Polls &amp; Quizzes</span>
-            <span style="font-size: 11px; color: white; background: var(--accent); padding: 4px 10px; border-radius: 12px; font-weight: 600;">HTTP 400 &middot; Bad Request</span>
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">HTTP 400 · Bad Request</span>
         </div>
 
         <header class="page-header">
-            <h1 style="font-family: var(--font-mono, monospace); font-size: 1.6rem;">QUIZ_CORRECT_ANSWER_INVALID</h1>
-            <p class="description" style="margin-top: 8px;">An invalid value was provided to the correct_answers field.</p>
+            <h1>QUIZ_CORRECT_ANSWER_INVALID</h1>
+            <p class="description">An invalid value was provided to the correct_answers field.</p>
         </header>
 
-        <section style="margin-top: 24px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">When &amp; why it happens</h2>
+        <div class="badges">
+            <span class="badge badge-method">HTTP 400</span>
+            <span class="badge badge-type">Polls &amp; Quizzes</span>
+            
+        </div>
+
+        <div class="section">
+            <h2>When &amp; why it happens</h2>
             <p style="color: var(--text-secondary); line-height: 1.75; margin: 0;">The supplied quiz correct answer is malformed, points to nothing the server recognises, or fails a server-side validity check.</p>
-        </section>
+        </div>
 
         
 
-        <section style="margin-top: 28px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Handling in gogram</h2>
+        <div class="section">
+            <h2>Handling in gogram</h2>
             <p style="color: var(--text-secondary); line-height: 1.7; margin: 0 0 12px;">
-                Gogram surfaces this as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">*gogram.ErrResponseCode</code>. Match on the message:
+                Surfaced as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">*gogram.ErrResponseCode</code>. Match on the message:
             </p>
             <div class="code-block"><span class="keyword">if</span> err, ok := err.(*gogram.ErrResponseCode); ok {
     <span class="keyword">if</span> err.Message == <span class="string">&quot;QUIZ_CORRECT_ANSWER_INVALID&quot;</span> {
         <span class="comment">// handle this error</span>
     }
 }</div>
-        </section>
+        </div>
 
         
-        <section style="margin-top: 28px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Related errors</h2>
+        <div class="section">
+            <h2>Related errors</h2>
             <div class="item-list"><a href="POLL_ANSWERS_INVALID.html" class="item"><span class="item-name">POLL_ANSWERS_INVALID</span><span class="item-desc">Invalid poll answers were provided.</span></a><a href="POLL_ANSWER_INVALID.html" class="item"><span class="item-name">POLL_ANSWER_INVALID</span><span class="item-desc">One of the poll answers is not acceptable.</span></a><a href="POLL_OPTION_DUPLICATE.html" class="item"><span class="item-name">POLL_OPTION_DUPLICATE</span><span class="item-desc">Duplicate poll options provided.</span></a><a href="POLL_OPTION_INVALID.html" class="item"><span class="item-name">POLL_OPTION_INVALID</span><span class="item-desc">Invalid poll option provided.</span></a><a href="POLL_QUESTION_INVALID.html" class="item"><span class="item-name">POLL_QUESTION_INVALID</span><span class="item-desc">One of the poll questions is not acceptable.</span></a><a href="POLL_UNSUPPORTED.html" class="item"><span class="item-name">POLL_UNSUPPORTED</span><span class="item-desc">This layer does not support polls in the issued method.</span></a><a href="POLL_VOTE_REQUIRED.html" class="item"><span class="item-name">POLL_VOTE_REQUIRED</span><span class="item-desc">Cast a vote in the poll before calling this method.</span></a><a href="QUIZ_ANSWER_MISSING.html" class="item"><span class="item-name">QUIZ_ANSWER_MISSING</span><span class="item-desc">You can forward a quiz while hiding the original author only after choosing an option in the quiz.</span></a><a href="QUIZ_CORRECT_ANSWERS_EMPTY.html" class="item"><span class="item-name">QUIZ_CORRECT_ANSWERS_EMPTY</span><span class="item-desc">No correct quiz answer was specified.</span></a><a href="QUIZ_MULTIPLE_INVALID.html" class="item"><span class="item-name">QUIZ_MULTIPLE_INVALID</span><span class="item-desc">Quizzes can&#x27;t have the multiple_choice flag set!</span></a></div>
-        </section>
+        </div>
 
         </article>
     </main>

@@ -70,40 +70,45 @@
         <article>
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../errors.html">Errors</a> <span>›</span> INVITES_TOO_MUCH</div>
 
-        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px; gap: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Flood / Rate limits</span>
-            <span style="font-size: 11px; color: white; background: var(--accent); padding: 4px 10px; border-radius: 12px; font-weight: 600;">HTTP 400 &middot; Bad Request</span>
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">HTTP 400 · Bad Request</span>
         </div>
 
         <header class="page-header">
-            <h1 style="font-family: var(--font-mono, monospace); font-size: 1.6rem;">INVITES_TOO_MUCH</h1>
-            <p class="description" style="margin-top: 8px;">The maximum number of per-folder invites was reached.</p>
+            <h1>INVITES_TOO_MUCH</h1>
+            <p class="description">The maximum number of per-folder invites was reached.</p>
         </header>
 
-        <section style="margin-top: 24px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">When &amp; why it happens</h2>
+        <div class="badges">
+            <span class="badge badge-method">HTTP 400</span>
+            <span class="badge badge-type">Flood / Rate limits</span>
+            
+        </div>
+
+        <div class="section">
+            <h2>When &amp; why it happens</h2>
             <p style="color: var(--text-secondary); line-height: 1.75; margin: 0;">The account already has the maximum number of invites allowed. Remove some before adding more.</p>
-        </section>
+        </div>
 
         
 
-        <section style="margin-top: 28px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Handling in gogram</h2>
+        <div class="section">
+            <h2>Handling in gogram</h2>
             <p style="color: var(--text-secondary); line-height: 1.7; margin: 0 0 12px;">
-                Gogram surfaces this as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">*gogram.ErrResponseCode</code>. Match on the message:
+                Surfaced as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">*gogram.ErrResponseCode</code>. Match on the message:
             </p>
             <div class="code-block"><span class="keyword">if</span> err, ok := err.(*gogram.ErrResponseCode); ok {
     <span class="keyword">if</span> err.Message == <span class="string">&quot;INVITES_TOO_MUCH&quot;</span> {
         <span class="comment">// handle this error</span>
     }
 }</div>
-        </section>
+        </div>
 
         
-        <section style="margin-top: 28px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Related errors</h2>
+        <div class="section">
+            <h2>Related errors</h2>
             <div class="item-list"><a href="ADMINS_TOO_MUCH.html" class="item"><span class="item-name">ADMINS_TOO_MUCH</span><span class="item-desc">There are too many admins.</span></a><a href="BOTS_TOO_MUCH.html" class="item"><span class="item-name">BOTS_TOO_MUCH</span><span class="item-desc">There are too many bots in this chat/channel.</span></a><a href="BOT_COMMANDS_TOO_MUCH.html" class="item"><span class="item-name">BOT_COMMANDS_TOO_MUCH</span><span class="item-desc">The provided commands are too many.</span></a><a href="CHANNELS_ADMIN_LOCATED_TOO_MUCH.html" class="item"><span class="item-name">CHANNELS_ADMIN_LOCATED_TOO_MUCH</span><span class="item-desc">The user has reached the limit of public geogroups.</span></a><a href="CHANNELS_ADMIN_PUBLIC_TOO_MUCH.html" class="item"><span class="item-name">CHANNELS_ADMIN_PUBLIC_TOO_MUCH</span><span class="item-desc">You&#x27;re admin of too many public channels, make some channels private to change the username of this channel.</span></a><a href="CHANNELS_TOO_MUCH.html" class="item"><span class="item-name">CHANNELS_TOO_MUCH</span><span class="item-desc">You have joined too many channels/supergroups.</span></a><a href="FLOOD_PREMIUM_WAIT_X.html" class="item"><span class="item-name">FLOOD_PREMIUM_WAIT_X</span><span class="item-desc">A wait of %v seconds is required before calling the method.</span></a><a href="FLOOD_TEST_PHONE_WAIT_X.html" class="item"><span class="item-name">FLOOD_TEST_PHONE_WAIT_X</span><span class="item-desc">A wait of %v seconds is required in the test servers.</span></a><a href="FLOOD_WAIT_X.html" class="item"><span class="item-name">FLOOD_WAIT_X</span><span class="item-desc">Please wait %v seconds before repeating the action.</span></a><a href="OPTIONS_TOO_MUCH.html" class="item"><span class="item-name">OPTIONS_TOO_MUCH</span><span class="item-desc">Too many options provided.</span></a><a href="PINNED_DIALOGS_TOO_MUCH.html" class="item"><span class="item-name">PINNED_DIALOGS_TOO_MUCH</span><span class="item-desc">Too many pinned dialogs.</span></a><a href="QUIZ_CORRECT_ANSWERS_TOO_MUCH.html" class="item"><span class="item-name">QUIZ_CORRECT_ANSWERS_TOO_MUCH</span><span class="item-desc">You specified too many correct answers in a quiz, quizzes can only have one right answer!</span></a></div>
-        </section>
+        </div>
 
         </article>
     </main>

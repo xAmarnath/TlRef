@@ -70,40 +70,45 @@
         <article>
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../errors.html">Errors</a> <span>›</span> CONNECTION_NOT_INITED</div>
 
-        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px; gap: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Server / Internal</span>
-            <span style="font-size: 11px; color: white; background: var(--accent); padding: 4px 10px; border-radius: 12px; font-weight: 600;">HTTP 400 &middot; Bad Request</span>
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">HTTP 400 · Bad Request</span>
         </div>
 
         <header class="page-header">
-            <h1 style="font-family: var(--font-mono, monospace); font-size: 1.6rem;">CONNECTION_NOT_INITED</h1>
-            <p class="description" style="margin-top: 8px;">Connection not initialized.</p>
+            <h1>CONNECTION_NOT_INITED</h1>
+            <p class="description">Connection not initialized.</p>
         </header>
 
-        <section style="margin-top: 24px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">When &amp; why it happens</h2>
+        <div class="badges">
+            <span class="badge badge-method">HTTP 400</span>
+            <span class="badge badge-type">Server / Internal</span>
+            
+        </div>
+
+        <div class="section">
+            <h2>When &amp; why it happens</h2>
             <p style="color: var(--text-secondary); line-height: 1.75; margin: 0;">Connection not initialized. Treated by gogram as a regular API error; inspect ErrResponseCode.Message for the exact code.</p>
-        </section>
+        </div>
 
         
 
-        <section style="margin-top: 28px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Handling in gogram</h2>
+        <div class="section">
+            <h2>Handling in gogram</h2>
             <p style="color: var(--text-secondary); line-height: 1.7; margin: 0 0 12px;">
-                Gogram surfaces this as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">*gogram.ErrResponseCode</code>. Match on the message:
+                Surfaced as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">*gogram.ErrResponseCode</code>. Match on the message:
             </p>
             <div class="code-block"><span class="keyword">if</span> err, ok := err.(*gogram.ErrResponseCode); ok {
     <span class="keyword">if</span> err.Message == <span class="string">&quot;CONNECTION_NOT_INITED&quot;</span> {
         <span class="comment">// handle this error</span>
     }
 }</div>
-        </section>
+        </div>
 
         
-        <section style="margin-top: 28px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Related errors</h2>
+        <div class="section">
+            <h2>Related errors</h2>
             <div class="item-list"><a href="API_ID_INVALID.html" class="item"><span class="item-name">API_ID_INVALID</span><span class="item-desc">API ID invalid.</span></a><a href="API_ID_PUBLISHED_FLOOD.html" class="item"><span class="item-name">API_ID_PUBLISHED_FLOOD</span><span class="item-desc">This API ID was published somewhere, you can&#x27;t use it now.</span></a><a href="CONNECTION_API_ID_INVALID.html" class="item"><span class="item-name">CONNECTION_API_ID_INVALID</span><span class="item-desc">The provided API id is invalid.</span></a><a href="CONNECTION_APP_VERSION_EMPTY.html" class="item"><span class="item-name">CONNECTION_APP_VERSION_EMPTY</span><span class="item-desc">App version is empty.</span></a><a href="CONNECTION_DEVICE_MODEL_EMPTY.html" class="item"><span class="item-name">CONNECTION_DEVICE_MODEL_EMPTY</span><span class="item-desc">Device model empty.</span></a><a href="CONNECTION_LANG_PACK_INVALID.html" class="item"><span class="item-name">CONNECTION_LANG_PACK_INVALID</span><span class="item-desc">The specified language pack is not valid.</span></a><a href="CONNECTION_LAYER_INVALID.html" class="item"><span class="item-name">CONNECTION_LAYER_INVALID</span><span class="item-desc">Layer invalid.</span></a><a href="CONNECTION_SYSTEM_EMPTY.html" class="item"><span class="item-name">CONNECTION_SYSTEM_EMPTY</span><span class="item-desc">Connection system empty.</span></a><a href="CONNECTION_SYSTEM_LANG_CODE_EMPTY.html" class="item"><span class="item-name">CONNECTION_SYSTEM_LANG_CODE_EMPTY</span><span class="item-desc">The system language string was empty during connection.</span></a><a href="INTERDC_X_CALL_ERROR.html" class="item"><span class="item-name">INTERDC_X_CALL_ERROR</span><span class="item-desc">An error occurred while communicating with DC %v.</span></a><a href="INTERDC_X_CALL_RICH_ERROR.html" class="item"><span class="item-name">INTERDC_X_CALL_RICH_ERROR</span><span class="item-desc">A rich error occurred while communicating with DC %v.</span></a><a href="TIMEOUT.html" class="item"><span class="item-name">TIMEOUT</span><span class="item-desc">A timeout occurred while fetching data from the worker.</span></a></div>
-        </section>
+        </div>
 
         </article>
     </main>

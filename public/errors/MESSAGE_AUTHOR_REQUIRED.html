@@ -70,40 +70,45 @@
         <article>
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../errors.html">Errors</a> <span>›</span> MESSAGE_AUTHOR_REQUIRED</div>
 
-        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px; gap: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Messages</span>
-            <span style="font-size: 11px; color: white; background: var(--accent); padding: 4px 10px; border-radius: 12px; font-weight: 600;">HTTP 400 &middot; Bad Request</span>
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">HTTP 400 · Bad Request</span>
         </div>
 
         <header class="page-header">
-            <h1 style="font-family: var(--font-mono, monospace); font-size: 1.6rem;">MESSAGE_AUTHOR_REQUIRED</h1>
-            <p class="description" style="margin-top: 8px;">Message author required.</p>
+            <h1>MESSAGE_AUTHOR_REQUIRED</h1>
+            <p class="description">Message author required.</p>
         </header>
 
-        <section style="margin-top: 24px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">When &amp; why it happens</h2>
+        <div class="badges">
+            <span class="badge badge-method">HTTP 400</span>
+            <span class="badge badge-type">Messages</span>
+            
+        </div>
+
+        <div class="section">
+            <h2>When &amp; why it happens</h2>
             <p style="color: var(--text-secondary); line-height: 1.75; margin: 0;">Message author required. Treated by gogram as a regular API error; inspect ErrResponseCode.Message for the exact code.</p>
-        </section>
+        </div>
 
         
 
-        <section style="margin-top: 28px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Handling in gogram</h2>
+        <div class="section">
+            <h2>Handling in gogram</h2>
             <p style="color: var(--text-secondary); line-height: 1.7; margin: 0 0 12px;">
-                Gogram surfaces this as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">*gogram.ErrResponseCode</code>. Match on the message:
+                Surfaced as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">*gogram.ErrResponseCode</code>. Match on the message:
             </p>
             <div class="code-block"><span class="keyword">if</span> err, ok := err.(*gogram.ErrResponseCode); ok {
     <span class="keyword">if</span> err.Message == <span class="string">&quot;MESSAGE_AUTHOR_REQUIRED&quot;</span> {
         <span class="comment">// handle this error</span>
     }
 }</div>
-        </section>
+        </div>
 
         
-        <section style="margin-top: 28px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Related errors</h2>
+        <div class="section">
+            <h2>Related errors</h2>
             <div class="item-list"><a href="MESSAGE_EDIT_TIME_EXPIRED.html" class="item"><span class="item-name">MESSAGE_EDIT_TIME_EXPIRED</span><span class="item-desc">You can&#x27;t edit this message anymore, too much time has passed since its creation.</span></a><a href="MESSAGE_EMPTY.html" class="item"><span class="item-name">MESSAGE_EMPTY</span><span class="item-desc">The provided message is empty.</span></a><a href="MESSAGE_IDS_EMPTY.html" class="item"><span class="item-name">MESSAGE_IDS_EMPTY</span><span class="item-desc">No message ids were provided.</span></a><a href="MESSAGE_ID_INVALID.html" class="item"><span class="item-name">MESSAGE_ID_INVALID</span><span class="item-desc">The provided message id is invalid.</span></a><a href="MESSAGE_NOT_MODIFIED.html" class="item"><span class="item-name">MESSAGE_NOT_MODIFIED</span><span class="item-desc">The provided message data is identical to the previous message data, the message wasn&#x27;t modified.</span></a><a href="MESSAGE_POLL_CLOSED.html" class="item"><span class="item-name">MESSAGE_POLL_CLOSED</span><span class="item-desc">Poll closed.</span></a><a href="MESSAGE_TOO_LONG.html" class="item"><span class="item-name">MESSAGE_TOO_LONG</span><span class="item-desc">The provided message is too long.</span></a><a href="MSG_ID_INVALID.html" class="item"><span class="item-name">MSG_ID_INVALID</span><span class="item-desc">Invalid message ID provided.</span></a><a href="MSG_TOO_OLD.html" class="item"><span class="item-name">MSG_TOO_OLD</span><span class="item-desc">Time has passed since the message was sent, read receipts were deleted.</span></a><a href="MSG_WAIT_FAILED.html" class="item"><span class="item-name">MSG_WAIT_FAILED</span><span class="item-desc">A waiting call returned an error.</span></a><a href="REACTION_EMPTY.html" class="item"><span class="item-name">REACTION_EMPTY</span><span class="item-desc">Empty reaction provided.</span></a><a href="REACTION_INVALID.html" class="item"><span class="item-name">REACTION_INVALID</span><span class="item-desc">The specified reaction is invalid.</span></a></div>
-        </section>
+        </div>
 
         </article>
     </main>

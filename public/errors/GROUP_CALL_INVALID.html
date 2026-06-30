@@ -70,40 +70,45 @@
         <article>
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../errors.html">Errors</a> <span>›</span> GROUP_CALL_INVALID</div>
 
-        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px; gap: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Calls / Voice / Video</span>
-            <span style="font-size: 11px; color: white; background: var(--accent); padding: 4px 10px; border-radius: 12px; font-weight: 600;">HTTP 400 &middot; Bad Request</span>
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">HTTP 400 · Bad Request</span>
         </div>
 
         <header class="page-header">
-            <h1 style="font-family: var(--font-mono, monospace); font-size: 1.6rem;">GROUP_CALL_INVALID</h1>
-            <p class="description" style="margin-top: 8px;">Group call invalid.</p>
+            <h1>GROUP_CALL_INVALID</h1>
+            <p class="description">Group call invalid.</p>
         </header>
 
-        <section style="margin-top: 24px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">When &amp; why it happens</h2>
+        <div class="badges">
+            <span class="badge badge-method">HTTP 400</span>
+            <span class="badge badge-type">Calls / Voice / Video</span>
+            
+        </div>
+
+        <div class="section">
+            <h2>When &amp; why it happens</h2>
             <p style="color: var(--text-secondary); line-height: 1.75; margin: 0;">The supplied group call is malformed, points to nothing the server recognises, or fails a server-side validity check.</p>
-        </section>
+        </div>
 
         
 
-        <section style="margin-top: 28px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Handling in gogram</h2>
+        <div class="section">
+            <h2>Handling in gogram</h2>
             <p style="color: var(--text-secondary); line-height: 1.7; margin: 0 0 12px;">
-                Gogram surfaces this as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">*gogram.ErrResponseCode</code>. Match on the message:
+                Surfaced as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">*gogram.ErrResponseCode</code>. Match on the message:
             </p>
             <div class="code-block"><span class="keyword">if</span> err, ok := err.(*gogram.ErrResponseCode); ok {
     <span class="keyword">if</span> err.Message == <span class="string">&quot;GROUP_CALL_INVALID&quot;</span> {
         <span class="comment">// handle this error</span>
     }
 }</div>
-        </section>
+        </div>
 
         
-        <section style="margin-top: 28px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Related errors</h2>
+        <div class="section">
+            <h2>Related errors</h2>
             <div class="item-list"><a href="CALL_ALREADY_ACCEPTED.html" class="item"><span class="item-name">CALL_ALREADY_ACCEPTED</span><span class="item-desc">The call was already accepted.</span></a><a href="CALL_ALREADY_DECLINED.html" class="item"><span class="item-name">CALL_ALREADY_DECLINED</span><span class="item-desc">The call was already declined.</span></a><a href="CALL_OCCUPY_FAILED.html" class="item"><span class="item-name">CALL_OCCUPY_FAILED</span><span class="item-desc">The call failed because the user is already making another call.</span></a><a href="CALL_PEER_INVALID.html" class="item"><span class="item-name">CALL_PEER_INVALID</span><span class="item-desc">The provided call peer object is invalid.</span></a><a href="CALL_PROTOCOL_COMPAT_LAYER_INVALID.html" class="item"><span class="item-name">CALL_PROTOCOL_COMPAT_LAYER_INVALID</span><span class="item-desc">The other side of the call does not support any of the VoIP protocols supported by the local client.</span></a><a href="CALL_PROTOCOL_FLAGS_INVALID.html" class="item"><span class="item-name">CALL_PROTOCOL_FLAGS_INVALID</span><span class="item-desc">Call protocol flags invalid.</span></a><a href="GROUPCALL_ADD_PARTICIPANTS_FAILED.html" class="item"><span class="item-name">GROUPCALL_ADD_PARTICIPANTS_FAILED</span><span class="item-desc">Failed to add participants to the group call.</span></a><a href="GROUPCALL_ALREADY_DISCARDED.html" class="item"><span class="item-name">GROUPCALL_ALREADY_DISCARDED</span><span class="item-desc">The group call was already discarded.</span></a><a href="GROUPCALL_ALREADY_STARTED.html" class="item"><span class="item-name">GROUPCALL_ALREADY_STARTED</span><span class="item-desc">The groupcall has already started, you can join directly.</span></a><a href="GROUPCALL_INVALID.html" class="item"><span class="item-name">GROUPCALL_INVALID</span><span class="item-desc">The specified group call is invalid.</span></a><a href="GROUPCALL_JOIN_MISSING.html" class="item"><span class="item-name">GROUPCALL_JOIN_MISSING</span><span class="item-desc">You haven&#x27;t joined this group call.</span></a><a href="GROUPCALL_NOT_MODIFIED.html" class="item"><span class="item-name">GROUPCALL_NOT_MODIFIED</span><span class="item-desc">Group call settings weren&#x27;t modified.</span></a></div>
-        </section>
+        </div>
 
         </article>
     </main>

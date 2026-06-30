@@ -70,40 +70,45 @@
         <article>
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../errors.html">Errors</a> <span>›</span> STORY_PERIOD_INVALID</div>
 
-        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px; gap: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Stories</span>
-            <span style="font-size: 11px; color: white; background: var(--accent); padding: 4px 10px; border-radius: 12px; font-weight: 600;">HTTP 400 &middot; Bad Request</span>
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">HTTP 400 · Bad Request</span>
         </div>
 
         <header class="page-header">
-            <h1 style="font-family: var(--font-mono, monospace); font-size: 1.6rem;">STORY_PERIOD_INVALID</h1>
-            <p class="description" style="margin-top: 8px;">The specified story period is invalid for this account.</p>
+            <h1>STORY_PERIOD_INVALID</h1>
+            <p class="description">The specified story period is invalid for this account.</p>
         </header>
 
-        <section style="margin-top: 24px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">When &amp; why it happens</h2>
+        <div class="badges">
+            <span class="badge badge-method">HTTP 400</span>
+            <span class="badge badge-type">Stories</span>
+            
+        </div>
+
+        <div class="section">
+            <h2>When &amp; why it happens</h2>
             <p style="color: var(--text-secondary); line-height: 1.75; margin: 0;">The supplied story period is malformed, points to nothing the server recognises, or fails a server-side validity check.</p>
-        </section>
+        </div>
 
         
 
-        <section style="margin-top: 28px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Handling in gogram</h2>
+        <div class="section">
+            <h2>Handling in gogram</h2>
             <p style="color: var(--text-secondary); line-height: 1.7; margin: 0 0 12px;">
-                Gogram surfaces this as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">*gogram.ErrResponseCode</code>. Match on the message:
+                Surfaced as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">*gogram.ErrResponseCode</code>. Match on the message:
             </p>
             <div class="code-block"><span class="keyword">if</span> err, ok := err.(*gogram.ErrResponseCode); ok {
     <span class="keyword">if</span> err.Message == <span class="string">&quot;STORY_PERIOD_INVALID&quot;</span> {
         <span class="comment">// handle this error</span>
     }
 }</div>
-        </section>
+        </div>
 
         
-        <section style="margin-top: 28px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Related errors</h2>
+        <div class="section">
+            <h2>Related errors</h2>
             <div class="item-list"><a href="STORIES_NEVER_CREATED.html" class="item"><span class="item-name">STORIES_NEVER_CREATED</span><span class="item-desc">This peer hasn&#x27;t ever posted any stories.</span></a><a href="STORY_ID_EMPTY.html" class="item"><span class="item-name">STORY_ID_EMPTY</span><span class="item-desc">You specified no story IDs.</span></a><a href="STORY_ID_INVALID.html" class="item"><span class="item-name">STORY_ID_INVALID</span><span class="item-desc">The specified story ID is invalid.</span></a><a href="STORY_NOT_MODIFIED.html" class="item"><span class="item-name">STORY_NOT_MODIFIED</span><span class="item-desc">The new story information you passed is equal to the previous story information, thus it wasn&#x27;t modified.</span></a><a href="STORY_SEND_FLOOD_MONTHLY_X.html" class="item"><span class="item-name">STORY_SEND_FLOOD_MONTHLY_X</span><span class="item-desc">You&#x27;ve hit the monthly story limit; wait for the specified number of seconds before posting a new story.</span></a><a href="STORY_SEND_FLOOD_WEEKLY_X.html" class="item"><span class="item-name">STORY_SEND_FLOOD_WEEKLY_X</span><span class="item-desc">You&#x27;ve hit the weekly story limit; wait for the specified number of seconds before posting a new story.</span></a></div>
-        </section>
+        </div>
 
         </article>
     </main>

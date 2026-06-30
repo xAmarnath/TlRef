@@ -70,35 +70,39 @@
         <article>
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../errors.html">Errors</a> <span>›</span> NETWORK_MIGRATE_X</div>
 
-        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px; gap: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Migration</span>
-            <span style="font-size: 11px; color: white; background: var(--accent); padding: 4px 10px; border-radius: 12px; font-weight: 600;">HTTP 303 &middot; See Other</span>
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">HTTP 303 · See Other</span>
         </div>
 
         <header class="page-header">
-            <h1 style="font-family: var(--font-mono, monospace); font-size: 1.6rem;">NETWORK_MIGRATE_X</h1>
-            <p class="description" style="margin-top: 8px;">The source IP address is associated with DC %v.</p>
+            <h1>NETWORK_MIGRATE_X</h1>
+            <p class="description">The source IP address is associated with DC %v.</p>
         </header>
 
-        <section style="margin-top: 24px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">When &amp; why it happens</h2>
+        <div class="badges">
+            <span class="badge badge-method">HTTP 303</span>
+            <span class="badge badge-type">Migration</span>
+            <span class="badge badge-business">Parameterized</span>
+        </div>
+
+        <div class="section">
+            <h2>When &amp; why it happens</h2>
             <p style="color: var(--text-secondary); line-height: 1.75; margin: 0;">The auth key/account lives on a different data center. Reconnect to DC X and replay the request; the gogram client handles this transparently.</p>
-        </section>
+        </div>
 
         
-        <section style="margin-top: 28px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Parameterized error</h2>
-            <p style="color: var(--text-secondary); line-height: 1.7; margin: 0 0 8px;">
-                The wire code carries a parameter on its tail. Gogram parses it out for you and stores it on
-                <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">ErrResponseCode.AdditionalInfo</code> with the right type. Format-string-style, the literal you'll see on the wire is something like <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">NETWORK_MIGRATE_42</code>.
+        <div class="section">
+            <h2>Parameterized error</h2>
+            <p style="color: var(--text-secondary); line-height: 1.7; margin: 0;">
+                The wire code carries a parameter on its tail (literal you'll see: <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">NETWORK_MIGRATE_42</code>). Gogram parses it out and stores it on <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">ErrResponseCode.AdditionalInfo</code> with the right type.
             </p>
-        </section>
+        </div>
 
 
-        <section style="margin-top: 28px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Handling in gogram</h2>
+        <div class="section">
+            <h2>Handling in gogram</h2>
             <p style="color: var(--text-secondary); line-height: 1.7; margin: 0 0 12px;">
-                Gogram surfaces this as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">*gogram.ErrResponseCode</code>. Match on the message:
+                Surfaced as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">*gogram.ErrResponseCode</code>. Match on the message:
             </p>
             <div class="code-block"><span class="keyword">if</span> err, ok := err.(*gogram.ErrResponseCode); ok {
     <span class="keyword">if</span> strings.HasPrefix(err.Message, <span class="string">&quot;NETWORK_MIGRATE&quot;</span>) {
@@ -107,13 +111,13 @@
         <span class="comment">// retry</span>
     }
 }</div>
-        </section>
+        </div>
 
         
-        <section style="margin-top: 28px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Related errors</h2>
+        <div class="section">
+            <h2>Related errors</h2>
             <div class="item-list"><a href="FILE_MIGRATE_X.html" class="item"><span class="item-name">FILE_MIGRATE_X</span><span class="item-desc">The file to be accessed is currently stored in DC %v.</span></a><a href="PHONE_MIGRATE_X.html" class="item"><span class="item-name">PHONE_MIGRATE_X</span><span class="item-desc">The phone number a user is trying to use for authorization is associated with DC %v.</span></a><a href="STATS_MIGRATE_X.html" class="item"><span class="item-name">STATS_MIGRATE_X</span><span class="item-desc">The channel statistics must be fetched from DC %v.</span></a><a href="USER_MIGRATE_X.html" class="item"><span class="item-name">USER_MIGRATE_X</span><span class="item-desc">The user whose identity is being used to execute queries is associated with DC %v.</span></a></div>
-        </section>
+        </div>
 
         </article>
     </main>

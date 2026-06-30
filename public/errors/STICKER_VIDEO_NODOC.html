@@ -70,40 +70,45 @@
         <article>
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../errors.html">Errors</a> <span>›</span> STICKER_VIDEO_NODOC</div>
 
-        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px; gap: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Media / Files</span>
-            <span style="font-size: 11px; color: white; background: var(--accent); padding: 4px 10px; border-radius: 12px; font-weight: 600;">HTTP 400 &middot; Bad Request</span>
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">HTTP 400 · Bad Request</span>
         </div>
 
         <header class="page-header">
-            <h1 style="font-family: var(--font-mono, monospace); font-size: 1.6rem;">STICKER_VIDEO_NODOC</h1>
-            <p class="description" style="margin-top: 8px;">You must send the video sticker as a document.</p>
+            <h1>STICKER_VIDEO_NODOC</h1>
+            <p class="description">You must send the video sticker as a document.</p>
         </header>
 
-        <section style="margin-top: 24px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">When &amp; why it happens</h2>
+        <div class="badges">
+            <span class="badge badge-method">HTTP 400</span>
+            <span class="badge badge-type">Media / Files</span>
+            
+        </div>
+
+        <div class="section">
+            <h2>When &amp; why it happens</h2>
             <p style="color: var(--text-secondary); line-height: 1.75; margin: 0;">You must send the video sticker as a document. Treated by gogram as a regular API error; inspect ErrResponseCode.Message for the exact code.</p>
-        </section>
+        </div>
 
         
 
-        <section style="margin-top: 28px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Handling in gogram</h2>
+        <div class="section">
+            <h2>Handling in gogram</h2>
             <p style="color: var(--text-secondary); line-height: 1.7; margin: 0 0 12px;">
-                Gogram surfaces this as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">*gogram.ErrResponseCode</code>. Match on the message:
+                Surfaced as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">*gogram.ErrResponseCode</code>. Match on the message:
             </p>
             <div class="code-block"><span class="keyword">if</span> err, ok := err.(*gogram.ErrResponseCode); ok {
     <span class="keyword">if</span> err.Message == <span class="string">&quot;STICKER_VIDEO_NODOC&quot;</span> {
         <span class="comment">// handle this error</span>
     }
 }</div>
-        </section>
+        </div>
 
         
-        <section style="margin-top: 28px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Related errors</h2>
+        <div class="section">
+            <h2>Related errors</h2>
             <div class="item-list"><a href="AUDIO_CONTENT_URL_EMPTY.html" class="item"><span class="item-name">AUDIO_CONTENT_URL_EMPTY</span><span class="item-desc">The remote URL specified in the content field is empty.</span></a><a href="AUDIO_TITLE_EMPTY.html" class="item"><span class="item-name">AUDIO_TITLE_EMPTY</span><span class="item-desc">An empty audio title was provided.</span></a><a href="DOCUMENT_INVALID.html" class="item"><span class="item-name">DOCUMENT_INVALID</span><span class="item-desc">The specified document is invalid.</span></a><a href="FILE_CONTENT_TYPE_INVALID.html" class="item"><span class="item-name">FILE_CONTENT_TYPE_INVALID</span><span class="item-desc">File content-type is invalid.</span></a><a href="FILE_EMPTY.html" class="item"><span class="item-name">FILE_EMPTY</span><span class="item-desc">An empty file was provided.</span></a><a href="FILE_EMTPY.html" class="item"><span class="item-name">FILE_EMTPY</span><span class="item-desc">An empty file was provided.</span></a><a href="FILE_ID_INVALID.html" class="item"><span class="item-name">FILE_ID_INVALID</span><span class="item-desc">The provided file id is invalid.</span></a><a href="FILE_PARTS_INVALID.html" class="item"><span class="item-name">FILE_PARTS_INVALID</span><span class="item-desc">The number of file parts is invalid.</span></a><a href="FILE_PART_EMPTY.html" class="item"><span class="item-name">FILE_PART_EMPTY</span><span class="item-desc">The provided file part is empty.</span></a><a href="FILE_PART_INVALID.html" class="item"><span class="item-name">FILE_PART_INVALID</span><span class="item-desc">The file part number is invalid.</span></a><a href="FILE_PART_LENGTH_INVALID.html" class="item"><span class="item-name">FILE_PART_LENGTH_INVALID</span><span class="item-desc">The length of a file part is invalid.</span></a><a href="FILE_PART_SIZE_CHANGED.html" class="item"><span class="item-name">FILE_PART_SIZE_CHANGED</span><span class="item-desc">Provided file part size has changed.</span></a></div>
-        </section>
+        </div>
 
         </article>
     </main>

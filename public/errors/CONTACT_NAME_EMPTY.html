@@ -70,40 +70,45 @@
         <article>
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../errors.html">Errors</a> <span>›</span> CONTACT_NAME_EMPTY</div>
 
-        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px; gap: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Users &amp; Peers</span>
-            <span style="font-size: 11px; color: white; background: var(--accent); padding: 4px 10px; border-radius: 12px; font-weight: 600;">HTTP 400 &middot; Bad Request</span>
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">HTTP 400 · Bad Request</span>
         </div>
 
         <header class="page-header">
-            <h1 style="font-family: var(--font-mono, monospace); font-size: 1.6rem;">CONTACT_NAME_EMPTY</h1>
-            <p class="description" style="margin-top: 8px;">Contact name empty.</p>
+            <h1>CONTACT_NAME_EMPTY</h1>
+            <p class="description">Contact name empty.</p>
         </header>
 
-        <section style="margin-top: 24px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">When &amp; why it happens</h2>
+        <div class="badges">
+            <span class="badge badge-method">HTTP 400</span>
+            <span class="badge badge-type">Users &amp; Peers</span>
+            
+        </div>
+
+        <div class="section">
+            <h2>When &amp; why it happens</h2>
             <p style="color: var(--text-secondary); line-height: 1.75; margin: 0;">A required contact name was omitted from the request. Populate it and retry.</p>
-        </section>
+        </div>
 
         
 
-        <section style="margin-top: 28px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Handling in gogram</h2>
+        <div class="section">
+            <h2>Handling in gogram</h2>
             <p style="color: var(--text-secondary); line-height: 1.7; margin: 0 0 12px;">
-                Gogram surfaces this as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">*gogram.ErrResponseCode</code>. Match on the message:
+                Surfaced as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">*gogram.ErrResponseCode</code>. Match on the message:
             </p>
             <div class="code-block"><span class="keyword">if</span> err, ok := err.(*gogram.ErrResponseCode); ok {
     <span class="keyword">if</span> err.Message == <span class="string">&quot;CONTACT_NAME_EMPTY&quot;</span> {
         <span class="comment">// handle this error</span>
     }
 }</div>
-        </section>
+        </div>
 
         
-        <section style="margin-top: 28px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Related errors</h2>
+        <div class="section">
+            <h2>Related errors</h2>
             <div class="item-list"><a href="CONTACT_ADD_MISSING.html" class="item"><span class="item-name">CONTACT_ADD_MISSING</span><span class="item-desc">Contact to add is missing.</span></a><a href="CONTACT_ID_INVALID.html" class="item"><span class="item-name">CONTACT_ID_INVALID</span><span class="item-desc">The provided contact ID is invalid.</span></a><a href="CONTACT_MISSING.html" class="item"><span class="item-name">CONTACT_MISSING</span><span class="item-desc">The specified user is not a contact.</span></a><a href="CONTACT_REQ_MISSING.html" class="item"><span class="item-name">CONTACT_REQ_MISSING</span><span class="item-desc">Missing contact request.</span></a><a href="INPUT_USER_DEACTIVATED.html" class="item"><span class="item-name">INPUT_USER_DEACTIVATED</span><span class="item-desc">The specified user was deleted.</span></a><a href="PEER_FLOOD.html" class="item"><span class="item-name">PEER_FLOOD</span><span class="item-desc">Too many requests.</span></a><a href="PEER_HISTORY_EMPTY.html" class="item"><span class="item-name">PEER_HISTORY_EMPTY</span><span class="item-desc">You can&#x27;t pin an empty chat with a user.</span></a><a href="PEER_ID_INVALID.html" class="item"><span class="item-name">PEER_ID_INVALID</span><span class="item-desc">The provided peer id is invalid.</span></a><a href="PEER_ID_NOT_SUPPORTED.html" class="item"><span class="item-name">PEER_ID_NOT_SUPPORTED</span><span class="item-desc">The provided peer ID is not supported.</span></a><a href="USERNAME_INVALID.html" class="item"><span class="item-name">USERNAME_INVALID</span><span class="item-desc">The provided username is not valid.</span></a><a href="USERNAME_NOT_MODIFIED.html" class="item"><span class="item-name">USERNAME_NOT_MODIFIED</span><span class="item-desc">The username was not modified.</span></a><a href="USERNAME_NOT_OCCUPIED.html" class="item"><span class="item-name">USERNAME_NOT_OCCUPIED</span><span class="item-desc">The provided username is not occupied.</span></a></div>
-        </section>
+        </div>
 
         </article>
     </main>

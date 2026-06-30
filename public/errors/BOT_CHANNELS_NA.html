@@ -70,40 +70,45 @@
         <article>
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../errors.html">Errors</a> <span>›</span> BOT_CHANNELS_NA</div>
 
-        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px; gap: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Bots &amp; Inline</span>
-            <span style="font-size: 11px; color: white; background: var(--accent); padding: 4px 10px; border-radius: 12px; font-weight: 600;">HTTP 400 &middot; Bad Request</span>
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">HTTP 400 · Bad Request</span>
         </div>
 
         <header class="page-header">
-            <h1 style="font-family: var(--font-mono, monospace); font-size: 1.6rem;">BOT_CHANNELS_NA</h1>
-            <p class="description" style="margin-top: 8px;">Bots can&#x27;t edit admin privileges.</p>
+            <h1>BOT_CHANNELS_NA</h1>
+            <p class="description">Bots can&#x27;t edit admin privileges.</p>
         </header>
 
-        <section style="margin-top: 24px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">When &amp; why it happens</h2>
+        <div class="badges">
+            <span class="badge badge-method">HTTP 400</span>
+            <span class="badge badge-type">Bots &amp; Inline</span>
+            
+        </div>
+
+        <div class="section">
+            <h2>When &amp; why it happens</h2>
             <p style="color: var(--text-secondary); line-height: 1.75; margin: 0;">Bots can&#x27;t edit admin privileges. Treated by gogram as a regular API error; inspect ErrResponseCode.Message for the exact code.</p>
-        </section>
+        </div>
 
         
 
-        <section style="margin-top: 28px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Handling in gogram</h2>
+        <div class="section">
+            <h2>Handling in gogram</h2>
             <p style="color: var(--text-secondary); line-height: 1.7; margin: 0 0 12px;">
-                Gogram surfaces this as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">*gogram.ErrResponseCode</code>. Match on the message:
+                Surfaced as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">*gogram.ErrResponseCode</code>. Match on the message:
             </p>
             <div class="code-block"><span class="keyword">if</span> err, ok := err.(*gogram.ErrResponseCode); ok {
     <span class="keyword">if</span> err.Message == <span class="string">&quot;BOT_CHANNELS_NA&quot;</span> {
         <span class="comment">// handle this error</span>
     }
 }</div>
-        </section>
+        </div>
 
         
-        <section style="margin-top: 28px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Related errors</h2>
+        <div class="section">
+            <h2>Related errors</h2>
             <div class="item-list"><a href="BOT_APP_INVALID.html" class="item"><span class="item-name">BOT_APP_INVALID</span><span class="item-desc">The specified bot app is invalid.</span></a><a href="BOT_APP_SHORTNAME_INVALID.html" class="item"><span class="item-name">BOT_APP_SHORTNAME_INVALID</span><span class="item-desc">The specified bot app short name is invalid.</span></a><a href="BOT_COMMAND_DESCRIPTION_INVALID.html" class="item"><span class="item-name">BOT_COMMAND_DESCRIPTION_INVALID</span><span class="item-desc">The specified command description is invalid.</span></a><a href="BOT_COMMAND_INVALID.html" class="item"><span class="item-name">BOT_COMMAND_INVALID</span><span class="item-desc">The specified command is invalid.</span></a><a href="BOT_DOMAIN_INVALID.html" class="item"><span class="item-name">BOT_DOMAIN_INVALID</span><span class="item-desc">Bot domain invalid.</span></a><a href="BOT_GAMES_DISABLED.html" class="item"><span class="item-name">BOT_GAMES_DISABLED</span><span class="item-desc">Bot games cannot be used in this type of chat.</span></a><a href="BOT_GROUPS_BLOCKED.html" class="item"><span class="item-name">BOT_GROUPS_BLOCKED</span><span class="item-desc">This bot can&#x27;t be added to groups.</span></a><a href="BOT_INLINE_DISABLED.html" class="item"><span class="item-name">BOT_INLINE_DISABLED</span><span class="item-desc">This bot can&#x27;t be used in inline mode.</span></a><a href="BOT_INVALID.html" class="item"><span class="item-name">BOT_INVALID</span><span class="item-desc">This is not a valid bot.</span></a><a href="BOT_METHOD_INVALID.html" class="item"><span class="item-name">BOT_METHOD_INVALID</span><span class="item-desc">The API access for bot users is restricted. This method cannot be executed as a bot.</span></a><a href="BOT_MISSING.html" class="item"><span class="item-name">BOT_MISSING</span><span class="item-desc">Only bots can call this method.</span></a><a href="BOT_ONESIDE_NOT_AVAIL.html" class="item"><span class="item-name">BOT_ONESIDE_NOT_AVAIL</span><span class="item-desc">Bots can&#x27;t pin messages in PM just for themselves.</span></a></div>
-        </section>
+        </div>
 
         </article>
     </main>

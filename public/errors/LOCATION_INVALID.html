@@ -70,40 +70,45 @@
         <article>
         <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="../errors.html">Errors</a> <span>›</span> LOCATION_INVALID</div>
 
-        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px; gap: 8px;">
-            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">Other</span>
-            <span style="font-size: 11px; color: white; background: var(--accent); padding: 4px 10px; border-radius: 12px; font-weight: 600;">HTTP 400 &middot; Bad Request</span>
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary); padding: 4px 10px; border-radius: 12px;">HTTP 400 · Bad Request</span>
         </div>
 
         <header class="page-header">
-            <h1 style="font-family: var(--font-mono, monospace); font-size: 1.6rem;">LOCATION_INVALID</h1>
-            <p class="description" style="margin-top: 8px;">The provided location is invalid.</p>
+            <h1>LOCATION_INVALID</h1>
+            <p class="description">The provided location is invalid.</p>
         </header>
 
-        <section style="margin-top: 24px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">When &amp; why it happens</h2>
+        <div class="badges">
+            <span class="badge badge-method">HTTP 400</span>
+            <span class="badge badge-type">Other</span>
+            
+        </div>
+
+        <div class="section">
+            <h2>When &amp; why it happens</h2>
             <p style="color: var(--text-secondary); line-height: 1.75; margin: 0;">The supplied location is malformed, points to nothing the server recognises, or fails a server-side validity check.</p>
-        </section>
+        </div>
 
         
 
-        <section style="margin-top: 28px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Handling in gogram</h2>
+        <div class="section">
+            <h2>Handling in gogram</h2>
             <p style="color: var(--text-secondary); line-height: 1.7; margin: 0 0 12px;">
-                Gogram surfaces this as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">*gogram.ErrResponseCode</code>. Match on the message:
+                Surfaced as <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">*gogram.ErrResponseCode</code>. Match on the message:
             </p>
             <div class="code-block"><span class="keyword">if</span> err, ok := err.(*gogram.ErrResponseCode); ok {
     <span class="keyword">if</span> err.Message == <span class="string">&quot;LOCATION_INVALID&quot;</span> {
         <span class="comment">// handle this error</span>
     }
 }</div>
-        </section>
+        </div>
 
         
-        <section style="margin-top: 28px;">
-            <h2 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Related errors</h2>
+        <div class="section">
+            <h2>Related errors</h2>
             <div class="item-list"><a href="ABOUT_TOO_LONG.html" class="item"><span class="item-name">ABOUT_TOO_LONG</span><span class="item-desc">About string too long.</span></a><a href="ACTIVE_USER_REQUIRED.html" class="item"><span class="item-name">ACTIVE_USER_REQUIRED</span><span class="item-desc">The method is only available to already activated users.</span></a><a href="ADDRESS_INVALID.html" class="item"><span class="item-name">ADDRESS_INVALID</span><span class="item-desc">The specified geopoint address is invalid.</span></a><a href="ALBUM_PHOTOS_TOO_MANY.html" class="item"><span class="item-name">ALBUM_PHOTOS_TOO_MANY</span><span class="item-desc">You have uploaded too many profile photos, delete some before retrying.</span></a><a href="ANONYMOUS_REACTIONS_DISABLED.html" class="item"><span class="item-name">ANONYMOUS_REACTIONS_DISABLED</span><span class="item-desc">Sorry, anonymous administrators cannot leave reactions or participate in polls.</span></a><a href="ARTICLE_TITLE_EMPTY.html" class="item"><span class="item-name">ARTICLE_TITLE_EMPTY</span><span class="item-desc">The title of the article is empty.</span></a><a href="AUTOARCHIVE_NOT_AVAILABLE.html" class="item"><span class="item-name">AUTOARCHIVE_NOT_AVAILABLE</span><span class="item-desc">The autoarchive setting is not available at this time; please check the client configuration.</span></a><a href="BANK_CARD_NUMBER_INVALID.html" class="item"><span class="item-name">BANK_CARD_NUMBER_INVALID</span><span class="item-desc">The specified card number is invalid.</span></a><a href="BANNED_RIGHTS_INVALID.html" class="item"><span class="item-name">BANNED_RIGHTS_INVALID</span><span class="item-desc">You provided some invalid flags in the banned rights.</span></a><a href="BASE_PORT_LOC_INVALID.html" class="item"><span class="item-name">BASE_PORT_LOC_INVALID</span><span class="item-desc">Base port location invalid.</span></a><a href="BOOSTS_EMPTY.html" class="item"><span class="item-name">BOOSTS_EMPTY</span><span class="item-desc">No boost slots were specified.</span></a><a href="BOOSTS_REQUIRED.html" class="item"><span class="item-name">BOOSTS_REQUIRED</span><span class="item-desc">The specified channel must first be boosted by its users in order to perform this action.</span></a></div>
-        </section>
+        </div>
 
         </article>
     </main>
